@@ -1,8 +1,8 @@
 #############################################################################
 ##
-#W  lists.gi                  GAP4 package `XMod'               Chris Wensley
+#W  lists.gi                  GAP4 package `Utils'              Chris Wensley
 ##
-##  version 0.11, 12/11/2015 
+##  version 0.11, 24/11/2015 
 ##
 #Y  Copyright (C) 2015, Chris Wensley et al,  
 #Y  School of Computer Science, Bangor University, U.K. 
@@ -11,7 +11,6 @@
 ##
 #M  PrintListOneItemPerLine( <list> )
 ##
-##  (was "Display" until June 2012) 
 InstallMethod( PrintListOneItemPerLine, "generic method for lists", 
     true, [ IsList ], 0,
 function( L )

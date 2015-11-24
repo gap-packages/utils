@@ -5,3 +5,5 @@ Problems and ToDos:
 #############################################################################
 Version 0.11 for GAP 4.8.0 (November 2015)
 
+ - (24/11/15) added general.g{d,i} from RWCA and ResClasses to lib/ 
+ - (24/11/15) added combinat.g{d,i} to lib/ 

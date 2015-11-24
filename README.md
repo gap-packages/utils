@@ -34,8 +34,7 @@ Installation
 1) unpack `utils-0.11.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
-gap> LoadPackage("Utils");
-true
+gap> LoadPackage("Utils"); 
 
 3) The file manual.pdf is in the `doc' subdirectory.
 

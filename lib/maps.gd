@@ -7,11 +7,17 @@
 #Y  Copyright (C) 2015, Chris Wensley et al,  
 #Y  School of Computer Science, Bangor University, U.K. 
 
-##############################################################################
+#############################################################################
 ##
-#O  PrintListOneItemPerLine( <L> )
-##  
-DeclareOperation( "PrintListOneItemPerLine", [ IsList ] );
+#A  IsomorphismFpInfo( <G> )
+#A  IsomorphismPermInfo( <G> )
+#A  IsomorphismPcInfo( <G> )
+#A  IsomorphismPermOrPcInfo( <G> )
+##
+DeclareAttribute( "IsomorphismFpInfo", IsGroup, "mutable" );
+DeclareAttribute( "IsomorphismPermInfo", IsGroup, "mutable" );
+DeclareAttribute( "IsomorphismPcInfo", IsGroup, "mutable" );
+DeclareAttribute( "IsomorphismPermOrPcInfo", IsGroup, "mutable" );
 
 #############################################################################
 ##
