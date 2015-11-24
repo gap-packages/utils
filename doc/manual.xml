@@ -1,0 +1,89 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  manual.xml          Utils documentation              Chris Wensley -->
+<!--                                                                     -->
+<!--  version 0.11, 12/11/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
+<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Reading data chunk from the PackageInfo.g file --> 
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+  [<!ENTITY utils "<Package>Utils</Package>"> 
+   <#Include Label="PKGVERSIONDATA">,
+   <!ENTITY Stab "\mathop{\textrm{Stab}\rm}">
+  ]> 
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+[<!ENTITY Utils "<Package>Utils</Package>">] >
+
+<!-- The documentation to the Utils package. -->
+
+<Book Name="Utils"> 
+
+<TitlePage>
+  <Title>&Utils;</Title>
+  <Subtitle>Utility functions in &GAP;</Subtitle>
+  <Version>Version &VERSION;</Version>
+  <Date>&RELEASEDATE;</Date> 
+  <Author> Chris Wensley
+    <Email>c.d.wensley@bangor.ac.uk</Email>
+    <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
+    <Address>
+      School of Computer Science, Bangor University,<Br/>
+      Dean Street, Bangor, Gwynedd, LL57 1UT, U.K.
+    </Address>
+  </Author>
+
+<Abstract>
+The &utils; package provides a space for utility functions in a variety 
+of &GAP; packages to be collected together into a single package. 
+In this way it is hoped that they will become more visible to package authors. 
+<P/>
+Any package author who transfers a function to &utils; will become 
+an author of &utils;. 
+<P/>
+The current version is &VERSION;, released &LONGRELEASEDATE; for &GAP; 4.7. 
+<P/>
+Bug reports, suggestions and comments are, of course, welcome. 
+Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
+or submit an issue at the GitHub repository 
+<URL>http://github.com/gap-packages/utils/issues/</URL>. 
+</Abstract>
+
+<Copyright> 
+<Index>License</Index>
+&copyright; &COPYRIGHTYEARS; Chris Wensley et al.  
+
+&utils; is free software; you can redistribute it 
+and/or modify it under the terms of the 
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+as published by the Free Software Foundation; 
+either version 2 of the License, or (at your option) any later version.
+</Copyright>
+
+<Acknowledgements>
+This documentation was prepared with the <Package>GAPDoc</Package> 
+package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer. 
+</Acknowledgements>
+
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "intro.xml">
+
+</Body>
+
+<Bibliography Databases="manual"/>
+
+<TheIndex/>
+
+</Book>

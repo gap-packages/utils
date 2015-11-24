@@ -1,0 +1,73 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  intro.xml            Utils documentation            Chris Wensley  -->
+<!--                                                                     -->
+<!--  version 0.11, 12/11/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
+<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Chapter Label="Intro">
+
+<Heading>Introduction</Heading>
+
+The &utils; package provides a collection of utility functions. 
+
+It is loaded with the command
+<Example>
+<![CDATA[
+gap> LoadPackage( "utils" ); 
+]]>
+</Example>
+<P/>
+The current version is &VERSION; for &GAP; 4.8, released on &LONGRELEASEDATE;. 
+<P/> 
+The package may be obtained as a compressed tar file 
+<File>&TARFILENAME;</File>
+by ftp from one of the following sites: 
+<List>
+<Item>
+any &GAP; archive, e.g. 
+<URL>http://www.gap-system.org/Packages/packages.html</URL>; 
+</Item>
+<Item>
+the Bangor site: 
+<URL>http://www.maths.bangor.ac.uk/chda/&HTMLFILENAME;</URL>;
+</Item>
+<Item>
+the package GitHub repository: 
+<URL>https://github.com/gap-packages/utils</URL>. 
+</Item>
+</List>
+<P/> 
+Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
+can be found in the documentation folder. 
+The <Code>html</Code> versions, with or without MathJax, 
+should be rebuilt as follows: 
+<P/>
+<Example>
+<![CDATA[
+gap> ReadPackage( "utils", "makedocrel.g" ); 
+]]>
+</Example>
+<P/>
+It is possible to check that the package has been installed correctly
+by running the test files: 
+<P/>
+<Example>
+<![CDATA[
+gap> ReadPackage( "utils", "tst/testall.g" );
+#I  Testing .../pkg/utils/tst/lists.tst 
+... 
+]]>
+</Example>
+<P/>
+Additional information can be found on the
+<E>Computational Higher-dimensional Discrete Algebra</E> website at
+<URL>http://pages.bangor.ac.uk/~mas023/chda/</URL>. 
+
+</Chapter>
