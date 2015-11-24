@@ -32,9 +32,11 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 Installation
 ------------
 1) unpack `utils-0.11.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+
 2) From within GAP load the package with:
 gap> LoadPackage("Utils");
 true
+
 3) The file manual.pdf is in the `doc' subdirectory.
 
 Contact
@@ -42,4 +44,4 @@ Contact
 If you have a question relating to Utils, encounter any problems, 
 or wish to suggest other functions to be transferred to the package, please
  - email c.d.wensley@bangor.ac.uk 
- - or report an issue at https://github.com/gap-system/utils/issues/new 
+ - or report an issue at https://github.com/cdwensley/utils/issues/new 
