@@ -5,5 +5,8 @@ Problems and ToDos:
 #############################################################################
 Version 0.11 for GAP 4.8.0 (November 2015)
 
- - (24/11/15) added general.g{d,i} from RWCA and ResClasses to lib/ 
+ - (25/11/15) added UTILS_FUNCTION_NAMES to global.g 
+ - (25/11/15) added names.g{d,i}, tests.g{d,i}
+ - (25/11/15) added sebastian.gi to lib/
+ - (24/11/15) added rwca.g{d,i} and resclasses.g{d,i} to lib/ 
  - (24/11/15) added combinat.g{d,i} to lib/ 
