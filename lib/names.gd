@@ -2,7 +2,7 @@
 ##
 #W  names.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.11, 24/11/2015 
+##  version 0.11, 27/11/2015 
 ##
 #Y  Copyright (C) 2015, Chris Wensley et al,  
 #Y  School of Computer Science, Bangor University, U.K. 
@@ -13,7 +13,16 @@
 UTILS_FUNCTION_NAMES := 
   [ "DifferencesList", 
     "QuotientsList", 
-    "FloatQuotientsList" 
+    "FloatQuotientsList",
+    "SendEmail", 
+    "EmailLogFile", 
+    "DownloadFile",
+    "BlankFreeString",
+    "QuotesStripped", 
+    "IntOrInfinityToLaTeX",
+    "SetupCache", 
+    "PutIntoCache", 
+    "FetchFromCache"
   ];
 
 UTILS_FUNCTION_STATUS := ListWithIdenticalEntries( 
