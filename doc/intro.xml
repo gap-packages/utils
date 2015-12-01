@@ -2,10 +2,9 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.11, 30/11/2015                                           --> 
+<!--  version 0.12, 01/12/2015                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
-<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -97,6 +96,19 @@ in <File>PackageInfo.g</File>.
 </List>  
 <E>The following procedure is suggested for transferring a function</E> 
 <C>func</C> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
+<P/> 
+There are two cases to consider. 
+If the functions being transferred have names of the form <C>Home_this_func</C>, 
+then it is probably sensible to change the name in <Package>Utils</Package>, 
+to <C>ThisFunc</C> say. 
+In this case there is no duplication of declarations or implementations. 
+However, once the functions have appeared in a release of 
+<Package>Utils</Package>, the author(s) of <Package>Home</Package> will 
+have a significant amount of editing to do. 
+<P/> 
+In the second case, the functions names in <Package>Utils</Package> 
+will be the same as in <Package>Home</Package>, and the following steps 
+are proposed. 
 <List>
 <Item>
 The package <Package>Home</Package> is added to the required packages 
@@ -106,7 +118,7 @@ in <Package>Utils</Package>.
 Copy the code for <C>func</C> into the appropriate <File>*.gd, *.gi</File> 
 files in <Package>Utils</Package>. 
 <P/>
-For attributes and properties this duplication produced no obvious effect 
+For attributes and properties this duplication produces no obvious effect 
 in &GAP;.  
 <P/>
 For operations the following warning is printed: 
@@ -180,6 +192,7 @@ A conditional clause is inserted into the implementation of the function
 
 It is envisioned that these changes to <File>global.g</File> will be temporary, 
 during the three-month period while packages are adjusting to the beta release of &GAP; 4.8. 
+<P/> 
 
 <Example>
 <![CDATA[

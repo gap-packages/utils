@@ -2,10 +2,9 @@
 ##
 #W  combinat.gi               GAP4 package `Utils'              Chris Wensley
 ##
-##  version 0.11, 24/11/2015 
+##  version 0.12, 01/12/2015 
 ##
-#Y  Copyright (C) 2015, Chris Wensley et al,  
-#Y  School of Computer Science, Bangor University, U.K. 
+#Y  Copyright (C) 2015, TRhe GAP Group, 
 
 ##############################################################################
 ##  this function has been transferred from XMod 

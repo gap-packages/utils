@@ -2,10 +2,9 @@
 ##
 #W  names.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.11, 27/11/2015 
+##  version 0.12, 01/12/2015 
 ##
-#Y  Copyright (C) 2015, Chris Wensley et al,  
-#Y  School of Computer Science, Bangor University, U.K. 
+#Y  Copyright (C) 2015, The GAP Group, 
 
 ##  allow global functions which are being transferred to this package 
 ##  to be declared twice 
@@ -22,7 +21,14 @@ UTILS_FUNCTION_NAMES :=
     "IntOrInfinityToLaTeX",
     "SetupCache", 
     "PutIntoCache", 
-    "FetchFromCache"
+    "FetchFromCache",
+    "SearchCycle",
+    "AllSmoothIntegers",
+    "ExponentOfPrime",
+    "NextProbablyPrimeInt",
+    "PrimeNumbersIterator",
+    "AllProducts",
+    "RestrictedPartitionsWithoutRepetitions"
   ];
 
 UTILS_FUNCTION_STATUS := ListWithIdenticalEntries( 

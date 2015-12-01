@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.11, 30th November 2015 
+Version 0.12, December 2015 
 
 Introduction 
 ------------
@@ -15,14 +15,14 @@ Started 12/11/1515.  First release, utils-0.11, on 30/11/15.
 Distribution
 -------------
 The ``Utils'' package is distributed with the deposited GAP packages, see: 
-     http://www.gap-system.org/Packages/xmod.html
+     http://www.gap-system.org/Packages/utils.html
 It may also be obtained from the Bangor ftp pages for
 Computational Higher-dimensional Discrete Algebra at: 
-     http://pages.bangor.ac.uk/~mas023/chda/
+     http://pages.bangor.ac.uk/~mas023/chda/utils/
 
 Copyright
 ---------
-The Utils package is Copyright {\copyright} Chris Wensley et al, 2015. 
+The Utils package is Copyright {\copyright} The GAP Group, 2015. 
 Utils is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
@@ -31,7 +31,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.11.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.12.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 

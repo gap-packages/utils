@@ -1,11 +1,10 @@
 #############################################################################
 ##
-#W  lists.gi                  GAP4 package `Utils'              Chris Wensley
+#W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.11, 27/11/2015 
+##  version 0.12, 01/12/2015 
 ##
-#Y  Copyright (C) 2015, Chris Wensley et al,  
-#Y  School of Computer Science, Bangor University, U.K. 
+#Y  Copyright (C) 2015, The GAP Group, 
 
 #############################################################################
 ##  this function transferred from Gpd 
@@ -84,6 +83,61 @@ InstallMethod( RandomCombination, "default method",
     od;
     return Set(c);
   end );
+
+#############################################################################
+##  this function transferred from RCWA 
+##
+#F  SearchCycle( <list> ) .  a utility function for detecting cycles in lists
+##
+if ( UTILS_FUNCTION_STATUS[ 
+    Position( UTILS_FUNCTION_NAMES, "SearchCycle" )] = 0 ) then 
+InstallGlobalFunction( SearchCycle,
+
+  function ( list )
+
+    local  preperiod, cycle, startpos, mainpart, mainpartdiffs,
+           elms, inds, min, n, d, i, j;
+
+    n        := Length(list);
+    mainpart := list{[Int(n/3)..n]};
+    elms     := Set(mainpart);
+    cycle    := [elms[1]];
+    startpos := Filtered(Positions(list,elms[1]),i->i>n/3);
+    if Length(elms) = 1 then
+      if ValueOption("alsopreperiod") <> true then return cycle; else
+        i := Length(list);
+        repeat i := i - 1; until i = 0 or list[i] <> elms[1];
+        preperiod := list{[1..i]};
+        return [preperiod,cycle];
+      fi;
+    fi;
+    i := 0;
+    repeat
+      i := i + 1;
+      inds := Intersection(startpos+i,[1..n]);
+      if inds = [] then return fail; fi;
+      min := Minimum(list{inds});
+      Add(cycle,min);
+      startpos := Filtered(startpos,j->j+i<=n and list[j+i]=min);
+      if Length(startpos) <= 1 then return fail; fi;
+      mainpartdiffs := DifferencesList(Intersection(startpos,[Int(n/3)..n]));
+      if mainpartdiffs = [] then return fail; fi;
+      d := Maximum(mainpartdiffs); 
+    until Length(cycle) = d;
+    if    Minimum(startpos) > n/2
+       or n-Maximum(startpos)-d+1 > d
+       or list{[Maximum(startpos)+d..n]}<>cycle{[1..n-Maximum(startpos)-d+1]}
+    then return fail; fi;
+    if ValueOption("alsopreperiod") <> true then return cycle; else
+      i := Minimum(startpos) + Length(cycle);
+      repeat
+        i := i - Length(cycle);
+      until i <= 0 or list{[i..i+Length(cycle)-1]} <> cycle;
+      preperiod := list{[1..i+Length(cycle)-1]};
+      return [preperiod,cycle];
+    fi;
+  end );
+fi; 
 
 #############################################################################
 ##

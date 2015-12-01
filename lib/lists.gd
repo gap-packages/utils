@@ -1,11 +1,10 @@
 ##############################################################################
 ##
-#W  lists.gd                    GAP4 package `Utils'             Chris Wensley
+#W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-##  version 0.11, 27/11/2015 
+##  version 0.12, 01/12/2015 
 ##
-#Y  Copyright (C) 2015, Chris Wensley et al,  
-#Y  School of Computer Science, Bangor University, U.K. 
+#Y  Copyright (C) 2015, The GAP Group, 
 
 ##############################################################################
 ##  this function transferred from Gpd 
@@ -35,6 +34,13 @@ DeclareGlobalFunction( "SumsOfCubes" );
 ##  Returns a random unordered <k>-tuple of distinct elements of the set <S>.
 ##
 DeclareOperation( "RandomCombination", [ IsListOrCollection, IsPosInt ] );
+
+#############################################################################
+##  this function transferred from RCWA 
+##
+#F  SearchCycle( <l> ) . . . a utility function for detecting cycles in lists
+##
+DeclareGlobalFunction( "SearchCycle" );
 
 #############################################################################
 ##

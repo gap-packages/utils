@@ -1,11 +1,10 @@
 <!-- ------------------------------------------------------------------- -->
 <!--                                                                     -->
-<!--  lists.xml           Utils documentation              Chris Wensley -->
+<!--  lists.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.11, 30/11/2015                                           --> 
+<!--  version 0.12, 01/12/2015                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
-<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -53,6 +52,25 @@ gap> FloatQuotientsList( L );
 
 
 <ManSection>
+   <Oper Name="SearchCycle"
+         Arg="L" />
+<Description>
+This operation has transferred from package <Package>RCWA</Package>. 
+<P/>
+A utility function for detecting cycles in lists. 
+Better example needed! 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> L := [ 1, 2, 3, 5, 4, 7, 6 ];;
+gap> SearchCycle( L );             
+fail
+]]>
+</Example>
+
+<ManSection>
    <Oper Name="PrintListOneItemPerLine"
          Arg="L" />
 <Description>
@@ -72,8 +90,65 @@ gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );
 ]]>
 </Example>
 
+</Section>
+
+
+<Section><Heading>Distinct and Common Representatives</Heading>
+<Index>distinct and common representatives</Index>
+
+<ManSection>
+   <Oper Name="DistinctRepresentatives"
+         Arg="list" />
+   <Oper Name="CommonRepresentatives"
+         Arg="list" />
+   <Oper Name="CommonTransversal"
+         Arg="grp subgrp" />
+   <Oper Name="IsCommonTransversal"
+         Arg="grp subgrp list" />
+<Description>
+These functions deal with lists of subsets of <M>[1 \ldots n]</M>
+and construct systems of distinct and common representatives using
+simple, non-recursive, combinatorial algorithms.
+<P/>
+When <M>L</M> is a set of <M>n</M> subsets of <M>[1 \ldots n]</M> 
+and the Hall condition is satisfied
+(the union of any <M>k</M> subsets has at least <M>k</M> elements),
+a set of <C>DistinctRepresentatives</C> exists.
+<P/>
+When <M>J,K</M> are both lists of <M>n</M> sets, 
+the function <C>CommonRepresentatives</C> returns two lists: 
+the set of representatives, 
+and a permutation of the subsets of the second list.
+It may also be used to provide a common transversal
+for sets of left and right cosets of a subgroup <M>H</M> of a group <M>G</M>,
+although a greedy algorithm is usually quicker.
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;
+gap> DistinctRepresentatives( J );
+[ 1, 3, 4, 2 ]
+gap> K := [ [3,4], [1,2], [2,3], [2,3,4] ];;
+gap> CommonRepresentatives( J, K );
+[ [ 3, 3, 3, 1 ], [ 1, 3, 4, 2 ] ]
+gap> d16 := DihedralGroup( IsPermGroup, 16 );  SetName( d16, "d16" );
+Group([ (1,2,3,4,5,6,7,8), (2,8)(3,7)(4,6) ])
+gap> c4 := Subgroup( d16, [ d16.1^2 ] );  SetName( c4, "c4" );
+Group([ (1,3,5,7)(2,4,6,8) ])
+gap> RightCosets( d16, c4 );
+[ RightCoset(c4,()), RightCoset(c4,(2,8)(3,7)(4,6)), RightCoset(c4,(1,8,7,6,5,
+   4,3,2)), RightCoset(c4,(1,8)(2,7)(3,6)(4,5)) ]
+gap> trans := CommonTransversal( d16, c4 );
+[ (), (2,8)(3,7)(4,6), (1,2,3,4,5,6,7,8), (1,2)(3,8)(4,7)(5,6) ]
+gap> IsCommonTransversal( d16, c4, trans );
+true
+]]>
+</Example>
 
 </Section>
+
 
 
 <Section Label="sec-strings">

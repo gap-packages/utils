@@ -1,33 +1,55 @@
 #############################################################################
 ##
 ##  PackageInfo.g  file for the package Utils 
-##  Chris Wensley and Murat Alp 
 ##
 
 SetPackageInfo( rec(
 PackageName := "Utils",
-Subtitle := "Crossed Modules and Cat1-Groups",
+Subtitle := "Utility functions in GAP",
 
-Version := "0.11",
-Date := "30/11/2015",
+Version := "0.12",
+Date := "01/12/2015",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.11">
-##  <!ENTITY TARFILENAME "utils-0.11.tar.gz">
-##  <!ENTITY HTMLFILENAME "utils011.html">
-##  <!ENTITY RELEASEDATE "30/11/2015">
-##  <!ENTITY LONGRELEASEDATE "30th November 2015">
+##  <!ENTITY VERSION "0.12">
+##  <!ENTITY TARFILENAME "utils-0.12.tar.gz">
+##  <!ENTITY HTMLFILENAME "utils012.html">
+##  <!ENTITY RELEASEDATE "01/12/2015">
+##  <!ENTITY LONGRELEASEDATE "1st December 2015">
 ##  <!ENTITY COPYRIGHTYEARS "2015">
 ##  <#/GAPDoc>
 
 PackageWWWHome := 
   "http://pages.bangor.ac.uk/~mas023/chda/utils/",
 
-ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils-0.11", 
+ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils-0.12", 
 ArchiveFormats := ".tar.gz",
 
 Persons := [
+  rec(
+    LastName      := "Gutsche",
+    FirstNames    := "Sebastian",
+    IsAuthor      := true,
+    IsMaintainer  := true,
+    Email         := "gutsche@mathematik.uni-kl.de",
+    WWWHome       := "http://wwwb.math.rwth-aachen.de/~gutsche/",
+    PostalAddress := Concatenation( [
+                       "Department of Mathematics\n",
+                       "University of Kaiserslautern\n",
+                       "67653 Kaiserslautern\n",
+                       "Germany" ] ),
+    Place         := "Kaiserslautern",
+    Institution   := "University of Kaiserslautern"
+  ),
+  rec( 
+    LastName      := "Kohl",
+    FirstNames    := "Stefan",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    Email         := "stefan@mcs.st-and.ac.uk",
+    WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
+  ), 
   rec(
     LastName      := "Wensley",
     FirstNames    := "Christopher D.",
@@ -53,7 +75,7 @@ Status := "deposited",
 ## AcceptDate := "  ",
 
 README_URL := 
-  Concatenation( ~.PackageWWWHome, "README" ),
+  Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL := 
   Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
@@ -63,8 +85,8 @@ PackageInfoURL :=
 ##    - Support email address
 SourceRepository :=
   rec( Type := "git", # must be one of "git", "hg", "svn", "cvs"
-       URL  := "http://github.com/gap-packages/utils"),
-IssueTrackerURL := "http://github.com/gap-packages/utils/issues",
+       URL  := "http://github.com/cdwensley/utils"),
+IssueTrackerURL := "http://github.com/cdwensley/utils/issues",
 SupportEmail := "c.d.wensley@bangor.ac.uk",
 
 AbstractHTML :=
@@ -77,7 +99,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "Utility functions collected together",
+  LongTitle := "Utility functions in GAP",
   Autoload  := true
 ),
 
