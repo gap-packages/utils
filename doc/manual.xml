@@ -79,6 +79,9 @@ package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer.
 <Body>
 
 <#Include SYSTEM "intro.xml">
+<#Include SYSTEM "lists.xml">
+<#Include SYSTEM "groups.xml">
+<#Include SYSTEM "others.xml">
 
 </Body>
 

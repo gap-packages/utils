@@ -1,0 +1,75 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  groups.xml          Utils documentation              Chris Wensley -->
+<!--                                                                     -->
+<!--  version 0.11, 30/11/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
+<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-groups">
+<Heading>Groups and homomorphisms</Heading>
+
+
+
+<Section Label="sec-groups">
+<Heading>Functions for groups</Heading>
+
+
+
+<ManSection>
+   <Oper Name="IsCommuting"
+         Arg="a b" />
+<Description>
+This operation has transferred from package <Package>ResClasses</Package>. 
+<P/>
+This operation tests whether two group elements commute. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> D12 := DihedralGroup( 12 );  SetName( D12, "D12" ); 
+<pc group of size 12 with 3 generators>
+gap> a := D12.1;;  b := D12.2;;  
+gap> IsCommuting( a, b );
+false
+]]>
+</Example>
+
+
+<ManSection>
+   <Attr Name="UpperFittingSeries"
+         Arg="G" />
+   <Attr Name="LowerFittingSeries"
+         Arg="G" />
+   <Attr Name="FittingLength"
+         Arg="G" />
+<Description>
+These operations have transferred from package <Package>ResClasses</Package>. 
+<P/>
+The upper and lower Fitting series and the Fitting length of a solvable
+group are described here: 
+<URL>https://en.wikipedia.org/wiki/Fitting_length</URL>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> UpperFittingSeries( D12 );
+[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
+gap> LowerFittingSeries( D12 );
+[ D12, Group([ f3 ]), Group([  ]) ]
+gap> FittingLength( D12 );
+2
+]]>
+</Example>
+
+
+</Section>
+
+</Chapter>

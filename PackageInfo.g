@@ -9,15 +9,15 @@ PackageName := "Utils",
 Subtitle := "Crossed Modules and Cat1-Groups",
 
 Version := "0.11",
-Date := "24/11/2015",
+Date := "30/11/2015",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.11">
 ##  <!ENTITY TARFILENAME "utils-0.11.tar.gz">
 ##  <!ENTITY HTMLFILENAME "utils011.html">
-##  <!ENTITY RELEASEDATE "24/11/2015">
-##  <!ENTITY LONGRELEASEDATE "24th November 2015">
+##  <!ENTITY RELEASEDATE "30/11/2015">
+##  <!ENTITY LONGRELEASEDATE "30th November 2015">
 ##  <!ENTITY COPYRIGHTYEARS "2015">
 ##  <#/GAPDoc>
 

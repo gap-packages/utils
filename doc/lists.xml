@@ -1,0 +1,119 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  lists.xml           Utils documentation              Chris Wensley -->
+<!--                                                                     -->
+<!--  version 0.11, 30/11/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
+<!--  School of Computer Science, Bangor University, U.K.                --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-lists">
+<Heading>Lists, Sets and Strings</Heading>
+
+
+
+<Section Label="sec-lists">
+<Heading>Functions for lists</Heading>
+
+
+<ManSection>
+   <Func Name="DifferencesList"
+         Arg="L" />
+   <Func Name="QuotientsList"
+         Arg="L" />
+   <Func Name="FloatQuotientsList"
+         Arg="L" />
+<Description>
+These functions have transferred from package <Package>ResClasses</Package>. 
+<P/>
+They take a list <M>L</M> of length <M>n</M> and output 
+the lists of length <M>n-1</M> containing all the differences <M>L[i]-L[i-1]</M> 
+and all the quotients <M>L[i]/L[i-1]</M> of consecutive entries in <M>L</M>. 
+<P/>
+In the quotient functions an error is returned if an entry is zero. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> L := [ 1, 3, 5, -1, -3, -5 ];;
+gap> DifferencesList( L );        
+[ 2, 2, -6, -2, -2 ]
+gap> QuotientsList( L );
+[ 3, 5/3, -1/5, 3, 5/3 ]
+gap> FloatQuotientsList( L );
+[ 3., 1.66667, -0.2, 3., 1.66667 ]
+]]>
+</Example>
+
+
+
+<ManSection>
+   <Oper Name="PrintListOneItemPerLine"
+         Arg="L" />
+<Description>
+This operation has transferred from package <Package>Gpd</Package>. 
+<P/>
+Printing lists vertically, rather than horizantally, may be useful 
+when the entries are lengthy. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );  
+[ IsFinite,
+  IsSmallList
+  ]
+]]>
+</Example>
+
+
+</Section>
+
+
+<Section Label="sec-strings">
+<Heading>Functions for strings</Heading>
+
+
+<ManSection>
+   <Func Name="BlankFreeString"
+         Arg="obj" />
+   <Func Name="QuotesStripped"
+         Arg="str" />
+<Description>
+These functions have transferred from package <Package>ResClasses</Package>. 
+<P/>
+It's not exactly clear what these functions do! 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> D12 := DihedralGroup( 12 ); 
+<pc group of size 12 with 3 generators>
+gap> BlankFreeString( D12 );     
+"Group([f1,f2,f3])"
+gap> S5 := SymmetricGroup( 5 );
+Sym( [ 1 .. 5 ] )
+gap> BlankFreeString( S5 );    
+"SymmetricGroup([1..5])"
+gap> S := "Hello\!\,\ Goodbye\?";
+"Hello!, Goodbye?"
+gap> QuotesStripped(S);
+"Hello!, Goodbye?"
+]]>
+</Example>
+
+
+
+
+</Section>
+
+
+</Chapter>
+

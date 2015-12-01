@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.11, 12/11/2015                                           --> 
+<!--  version 0.11, 30/11/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, Chris Wensley et al,                           --> 
 <!--  School of Computer Science, Bangor University, U.K.                --> 
@@ -11,13 +11,17 @@
 
 <?xml version="1.0" encoding="UTF-8"?> 
 
-<Chapter Label="Intro">
+<Chapter Label="chap-intro">
 
 <Heading>Introduction</Heading>
 
-The &utils; package provides a collection of utility functions. 
-
-It is loaded with the command
+The &utils; package provides a space for utility functions in a variety 
+of &GAP; packages to be collected together into a single package. 
+In this way it is hoped that they will become more visible to package authors. 
+Any package author who transfers a function to &utils; will become 
+an author of &utils;. 
+<P/> 
+The package is loaded with the command
 <Example>
 <![CDATA[
 gap> LoadPackage( "utils" ); 
@@ -38,11 +42,9 @@ any &GAP; archive, e.g.
 the Bangor site: 
 <URL>http://www.maths.bangor.ac.uk/chda/&HTMLFILENAME;</URL>;
 </Item>
-<Item>
-the package GitHub repository: 
+</List> 
+The package also has a GitHub repository: 
 <URL>https://github.com/gap-packages/utils</URL>. 
-</Item>
-</List>
 <P/> 
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
@@ -69,5 +71,149 @@ gap> ReadPackage( "utils", "tst/testall.g" );
 Additional information can be found on the
 <E>Computational Higher-dimensional Discrete Algebra</E> website at
 <URL>http://pages.bangor.ac.uk/~mas023/chda/</URL>. 
+
+
+<Section Label="sect-procedure"> 
+<Heading>The transfer procedure</Heading>
+
+The process for transferring utility functions from an existing package 
+(the <Package>Home</Package> package, say) to <Package>Utils</Package> 
+should only require the following steps from <Package>Home</Package>'s 
+author(s). 
+<List>
+<Item>
+Offer functions for inclusion. 
+This may be simply done by emailing a list of functions. 
+More usefully, email the following files: <File>home.gd</File>, 
+<File>home.gi</File>, <File>home.tst</File> and <File>home.xml</File>, 
+</Item>
+<Item>
+Once the functions have been included in <Package>Utils</Package>, 
+and a new version of <Package>Utils</Package> released, 
+remove the functions from <Package>Home</Package>, and add 
+<Package>Utils</Package> to the list of required packages 
+in <File>PackageInfo.g</File>. 
+</Item>
+</List>  
+<E>The following procedure is suggested for transferring a function</E> 
+<C>func</C> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
+<List>
+<Item>
+The package <Package>Home</Package> is added to the required packages 
+in <Package>Utils</Package>. 
+</Item>
+<Item>
+Copy the code for <C>func</C> into the appropriate <File>*.gd, *.gi</File> 
+files in <Package>Utils</Package>. 
+<P/>
+For attributes and properties this duplication produced no obvious effect 
+in &GAP;.  
+<P/>
+For operations the following warning is printed: 
+<Listing>
+#I  equal requirements in multiple declarations for operation `func'. 
+</Listing>
+For a global function <C>glob</C> duplicate declarations produce an error. 
+To avoid this three steps are required. 
+<P/>
+The function <C>BIND_GLOBAL</C> in <File>gap4r8/lib/global.g</File> 
+is replaced by the code shown below in section  <Ref Sect="sect-global" />. 
+<P/>
+Secondly,  "<C>glob</C>" is added to the list <C>UTILS_FUNCTION_NAMES</C> 
+in <File>utils/lib/names.gd</File>. 
+<P/>
+Thirdly, the installed method for <C>glob</C> is surrounded by 
+a conditional clause of the form: 
+<Listing>
+if ( UTILS_FUNCTION_STATUS[ 
+    Position( UTILS_FUNCTION_NAMES, "glob" )] = 0 ) then 
+        InstallGlobalFunction( glob,
+        . . . 
+        end ); 
+fi;
+</Listing>
+</Item>
+<Item>
+Copy and edit any tests and documentation into the corresponding 
+<File>*.tst, *.xml</File> files in <Package>Utils</Package>. 
+</Item>
+<Item>
+When all is working satisfactorily, publish a new version of 
+<Package>Utils</Package>; notify the author(s) of <Package>Home</Package>, 
+asking them to check that the functions are working correctly. 
+</Item>
+<Item>
+The author(s) of <Package>Home</Package> remove the declaration 
+and implementation of <C>func</C> from their files, and (possibly) 
+edit reference to <C>func</C> in their manual.  
+</Item>
+<Item>
+They make <Package>Utils</Package> a required package in 
+<File>PackageInfo.g</File> and publish a new release of 
+<Package>Home</Package>. 
+</Item>
+<Item>
+Now <C>glob</C> can be removed from <C>UTILS_FUNCTION_NAMES</C>, 
+and the conditional clause removed from the implementation file 
+in <Package>Utils</Package>. 
+</Item>
+</List>
+
+</Section>
+
+<Section Label="sect-global"> 
+<Heading>Modification to global.g</Heading>
+
+In order to deal with duplicate declarations of a global function <C>func</C>, 
+the final section of the library file <File>global.g</File> 
+has been modified as shown below. 
+There are two changes:
+<List>
+<Item>
+The list <C>UTILS_FUNCTION_NAMES</C> is initialized. 
+</Item >
+<Item> 
+A conditional clause is inserted into the implementation of the function 
+<C>BIND_GLOBAL</C> which prevents <C>func</C> being bound twice. 
+</Item>
+</List>
+
+It is envisioned that these changes to <File>global.g</File> will be temporary, 
+during the three-month period while packages are adjusting to the beta release of &GAP; 4.8. 
+
+<Example>
+<![CDATA[
+UTILS_FUNCTION_NAMES := [];
+
+#############################################################################
+##
+#F  BIND_GLOBAL ( <name>, <val> ) . . . . . .sets a global variable 'safely'
+##
+##  BIND_GLOBAL ( <name>, <val> ) sets the global variable named by
+##  the string <name> to the value <val>, provided it was previously
+##  unbound, and makes it read-only. This is intended to be the normal
+##  way to create and set "official" global variable (such as
+##  Operations and Categories)
+##
+  
+BIND_GLOBAL := function( name, val)
+if not ( ISBOUND_GLOBAL( name ) and 
+         ( name in UTILS_FUNCTION_NAMES ) ) then 
+    if not REREADING and ISBOUND_GLOBAL( name ) then
+        if (IS_READ_ONLY_GLOBAL(name)) then
+            Error("BIND_GLOBAL: variable `", name, "' must be unbound");
+        else
+            Print("#W BIND_GLOBAL: variable `", name,"' already has a value\n");
+        fi;
+    fi;
+    ASS_GVAR(name, val);
+    MAKE_READ_ONLY_GLOBAL(name);
+    return val;
+fi;
+end;
+]]>
+</Example>
+
+</Section> 
 
 </Chapter>
