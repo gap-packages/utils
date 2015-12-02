@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.12, December 2015 
+Version 0.12, 2nd December 2015 
 
 Introduction 
 ------------

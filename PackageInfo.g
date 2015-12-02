@@ -8,15 +8,15 @@ PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
 Version := "0.12",
-Date := "01/12/2015",
+Date := "02/12/2015",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.12">
 ##  <!ENTITY TARFILENAME "utils-0.12.tar.gz">
 ##  <!ENTITY HTMLFILENAME "utils012.html">
-##  <!ENTITY RELEASEDATE "01/12/2015">
-##  <!ENTITY LONGRELEASEDATE "1st December 2015">
+##  <!ENTITY RELEASEDATE "02/12/2015">
+##  <!ENTITY LONGRELEASEDATE "2nd December 2015">
 ##  <!ENTITY COPYRIGHTYEARS "2015">
 ##  <#/GAPDoc>
 
