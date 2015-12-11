@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.12, 2nd December 2015 
+Version 0.13, December 2015 
 
 Introduction 
 ------------
@@ -31,7 +31,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.12.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.13.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 

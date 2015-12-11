@@ -2,7 +2,7 @@
 ##
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 02/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -44,21 +44,32 @@ end );
 if ( UTILS_FUNCTION_STATUS[ 
     Position( UTILS_FUNCTION_NAMES, "DifferencesList" )] = 0 ) then 
 InstallGlobalFunction( DifferencesList,
-                       list -> List( [ 2..Length(list) ],
-                                     pos -> list[ pos ] - list[ pos-1 ] ) );
+    list -> List( [ 2..Length(list) ],
+                  pos -> list[ pos ] - list[ pos-1 ] ) );
 fi;
 
 if ( UTILS_FUNCTION_STATUS[ 
     Position( UTILS_FUNCTION_NAMES, "QuotientsList" )] = 0 ) then 
-InstallGlobalFunction( QuotientsList,
-                       list -> List( [ 2 .. Length( list ) ],
-                                     pos -> list[ pos ] / list[ pos-1 ] ) );
+InstallGlobalFunction( QuotientsList, 
+    function( list ) 
+    local  len, pos, quot;
+    len := Length( list ); 
+    quot := ListWithIdenticalEntries( len-1, 0 ); 
+    for pos in [2..len] do 
+        if ( list[pos-1] = 0 ) then 
+            quot[pos] := fail; 
+        else 
+            quot[pos] := list[pos]/list[pos-1]; 
+        fi; 
+    od;
+    return quot;
+    end );
 fi;
 
 if ( UTILS_FUNCTION_STATUS[ 
     Position( UTILS_FUNCTION_NAMES, "FloatQuotientsList" )] = 0 ) then 
 InstallGlobalFunction( FloatQuotientsList,
-                       list -> List( QuotientsList( list ), Float ) );
+    list -> List( QuotientsList( list ), Float ) );
 fi;
 
 #############################################################################

@@ -110,7 +110,7 @@ MAKE_READ_ONLY_GLOBAL("REREADING");
 ## by Add/Append commands in utils/init.g 
 ## This list should be empty when a new GAP release is in process. 
 
-UTILS_FUNCTION_NAMES := [];
+UTILS_FUNCTION_NAMES := rec ( );
 
 #############################################################################
 ##
