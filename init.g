@@ -2,15 +2,15 @@
 ##
 #W  init.g                 GAP package `Utils'                  Chris Wensley
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 14/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group,  
 ##
 
 ##  read the function declarations
 
-ReadPackage( "utils", "lib/names.gd" );
-ReadPackage( "utils", "lib/tests.gd" );
+ReadPackage( "utils", "lib/first.gd" );
+## ReadPackage( "utils", "lib/tests.gd" );
 
 ReadPackage( "utils", "lib/bitmap.gd" );
 ReadPackage( "utils", "lib/cache.gd" );
@@ -24,3 +24,5 @@ ReadPackage( "utils", "lib/maps.gd" );
 ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/poly.gd" );
 ReadPackage( "utils", "lib/string.gd" );
+
+ReadPackage( "utils", "lib/last.gd" );

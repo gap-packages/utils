@@ -2,7 +2,7 @@
 ##
 #W  string.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 11/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -55,9 +55,6 @@ InstallMethod( ViewString,
 ##
 #F  BlankFreeString( <obj> ) . . . . . . . . . . . . .  string without blanks
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "BlankFreeString" )] = 0 ) then 
-
 InstallGlobalFunction( BlankFreeString,
 
   function ( obj )
@@ -69,24 +66,17 @@ InstallGlobalFunction( BlankFreeString,
     return str;
   end );
 
-fi;
-
 #############################################################################
 ##  this function transferred from ResClasses 
 ##
 #F  QuotesStripped( <str> ) . . . . . . . . . . . . . . string without quotes
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "QuotesStripped" )] = 0 ) then 
-
 InstallGlobalFunction( QuotesStripped,
 
   function ( str )
     RemoveCharacters(str,"\"");
     return str;
   end );
-
-fi;
 
 #############################################################################
 ##

@@ -8,15 +8,15 @@ PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
 Version := "0.13",
-Date := "11/12/2015",
+Date := "14/12/2015",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.13">
 ##  <!ENTITY TARFILENAME "utils-0.13.tar.gz">
 ##  <!ENTITY HTMLFILENAME "utils013.html">
-##  <!ENTITY RELEASEDATE "11/12/2015">
-##  <!ENTITY LONGRELEASEDATE "11th December 2015">
+##  <!ENTITY RELEASEDATE "14/12/2015">
+##  <!ENTITY LONGRELEASEDATE "14th December 2015">
 ##  <!ENTITY COPYRIGHTYEARS "2015">
 ##  <#/GAPDoc>
 
@@ -105,10 +105,8 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.8",
-  NeededOtherPackages := [ ["ResClasses", ">= 3.4.0"], 
-                           ["RCWA", ">= 3.7.0"], 
-                           ["Gpd", ">= 1.34"],
-                           ["XMod", ">= 2.44"], 
+  NeededOtherPackages := [ ## ["ResClasses", ">= 3.4.0"], 
+                           ## ["RCWA", ">= 3.7.0"], 
                            ["GAPDoc", ">= 1.5.1"] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]

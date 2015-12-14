@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  manual.xml          Utils documentation              Chris Wensley -->
 <!--                                                                     -->
-<!--  version 0.12, 01/12/2015                                           --> 
+<!--  version 0.13, 14/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -98,6 +98,8 @@ package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer.
 <#Include SYSTEM "others.xml">
 
 </Body>
+
+<#Include SYSTEM "appendix.xml">
 
 <Bibliography Databases="manual"/>
 

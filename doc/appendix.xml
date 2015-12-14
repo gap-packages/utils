@@ -1,0 +1,118 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  appendix.xml         Utils documentation            Chris Wensley  -->
+<!--                                                                     -->
+<!--  version 0.13, 14/12/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, The GAP Group,                                 --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Appendix Label="appendix">
+
+<Heading>Appendix</Heading>
+
+In order to deal with duplicate declarations and implementations 
+of a global function <C>glob</C>, 
+the final section of the library file <File>oper.g</File> 
+has been modified as shown below. 
+The nine extra lines all end with the string "<C>## for Utils</C>". 
+<P/>
+There are two changes:
+<List>
+<Item>
+The lists <C>UTILS_FUNCTION_NAMES</C>, <C>UTILS_FUNCTION_OPERS</C> 
+and <C>UTILS_FUNCTION_COUNT</C> are initialized. 
+</Item >
+<Item> 
+A conditional clause is inserted into the implementation of the functions 
+<C>DeclareGlobalFunction</C> and <C>InstallGlobalFunction</C> 
+which prevent their application to <C>glob</C> a second time, 
+but ensures a first application. 
+</Item>
+</List>
+
+It is envisioned that these changes to <File>oper.g</File> will be temporary, 
+during the three-month period while packages are adjusting to the beta release of &GAP; 4.8. 
+<P/> 
+
+<Listing>
+BIND_GLOBAL( "UTILS_FUNCTION_NAMES",                    ## for Utils 
+    ShareSpecialObj([], "UTILS_FUNCTION_NAMES") );      ## for Utils 
+BIND_GLOBAL( "UTILS_FUNCTION_OPERS",                    ## for Utils 
+    ShareSpecialObj([], "UTILS_FUNCTION_OPERS") );      ## for Utils 
+BIND_GLOBAL( "UTILS_FUNCTION_COUNT",                    ## for Utils 
+    ShareSpecialObj([], "UTILS_FUNCTION_COUNT") );      ## for Utils 
+
+BIND_GLOBAL( "GLOBAL_FUNCTION_NAMES", ShareSpecialObj([], "GLOBAL_FUNCTION_NAMES") );
+
+BIND_GLOBAL( "DeclareGlobalFunction", function( arg )
+    local   
+            pos,  val,                                  ## for Utils 
+            name;
+
+    name := arg[1];
+if not ( ISBOUND_GLOBAL( name ) and                     ## for Utils 
+         ( name in UTILS_FUNCTION_NAMES ) ) then        ## for Utils 
+    atomic GLOBAL_FUNCTION_NAMES do
+    ADD_SET( GLOBAL_FUNCTION_NAMES, IMMUTABLE_COPY_OBJ(name) );
+    od;
+    BIND_GLOBAL( name, NEW_OPERATION_ARGS( name ) );
+fi;                                                     ## for Utils 
+if ( name in UTILS_FUNCTION_NAMES ) then                ## for Utils  
+    pos := 1;                                           ## for Utils 
+    while not ( name = UTILS_FUNCTION_NAMES[pos] ) do   ## for Utils 
+        pos := pos + 1;                                 ## for Utils 
+    od;                                                 ## for Utils 
+    val := UTILS_FUNCTION_COUNT[pos] + 1;               ## for Utils 
+    UTILS_FUNCTION_COUNT[pos] := val;                   ## for Utils 
+    Print( "#Ud: ", name, ", ", val, "\n" );            ## for Utils 
+fi;                                                     ## for Utils 
+end );
+
+BIND_GLOBAL( "InstallGlobalFunction", function( arg )
+    local   
+            ok,  pos,  val,                             ## for Utils 
+            oper,  info,  func;
+
+    if LEN_LIST(arg) = 3  then
+        oper := arg[1];
+        info := arg[2];
+        func := arg[3];
+    else
+        oper := arg[1];
+        func := arg[2];
+    fi;
+    if IS_STRING( oper ) then
+      oper := VALUE_GLOBAL( oper );
+    fi;
+
+ok := true;                                             ## for Utils 
+if ( oper in UTILS_FUNCTION_OPERS ) then                ## for Utils 
+    pos := 1;                                           ## for Utils 
+    while not ( oper = UTILS_FUNCTION_OPERS[pos] ) do   ## for Utils 
+        pos := pos + 1;                                 ## for Utils 
+    od;                                                 ## for Utils 
+    val := UTILS_FUNCTION_COUNT[pos];                   ## for Utils 
+    if ( val >= 2 ) then                                ## for Utils 
+        ok := false;                                    ## for Utils 
+    fi;                                                 ## for Utils 
+    Print( "#Ui: ", UTILS_FUNCTION_NAMES[pos],          ## for Utils  
+           ", ", val, ", ok = ", ok, "\n" );            ## for Utils 
+fi;                                                     ## for Utils 
+
+if ok then                                              ## for Utils 
+    atomic readonly GLOBAL_FUNCTION_NAMES do
+    if NAME_FUNC(func) in GLOBAL_FUNCTION_NAMES then
+      Error("you cannot install a global function for another global ",
+            "function,\nuse `DeclareSynonym' instead!");
+    fi;
+    INSTALL_METHOD_ARGS( oper, func );
+    od;
+fi;                                                     ## for Utils 
+end );
+</Listing>
+
+</Appendix>

@@ -2,7 +2,7 @@
 ##
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.13, 02/12/2015 
+##  version 0.13, 11/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -41,15 +41,10 @@ end );
 #F  FloatQuotientsList( <list> )  . . . . . . . . . . . . dito, but as floats
 ##
 
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "DifferencesList" )] = 0 ) then 
 InstallGlobalFunction( DifferencesList,
     list -> List( [ 2..Length(list) ],
                   pos -> list[ pos ] - list[ pos-1 ] ) );
-fi;
 
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "QuotientsList" )] = 0 ) then 
 InstallGlobalFunction( QuotientsList, 
     function( list ) 
     local  len, pos, quot;
@@ -64,13 +59,9 @@ InstallGlobalFunction( QuotientsList,
     od;
     return quot;
     end );
-fi;
 
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "FloatQuotientsList" )] = 0 ) then 
 InstallGlobalFunction( FloatQuotientsList,
     list -> List( QuotientsList( list ), Float ) );
-fi;
 
 #############################################################################
 ##  this function transferred from ResClasses 
@@ -100,8 +91,6 @@ InstallMethod( RandomCombination, "default method",
 ##
 #F  SearchCycle( <list> ) .  a utility function for detecting cycles in lists
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "SearchCycle" )] = 0 ) then 
 InstallGlobalFunction( SearchCycle,
 
   function ( list )
@@ -148,7 +137,6 @@ InstallGlobalFunction( SearchCycle,
       return [preperiod,cycle];
     fi;
   end );
-fi; 
 
 #############################################################################
 ##

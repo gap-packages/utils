@@ -3,15 +3,16 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.13 for GAP 4.8.0 (11/12/15)
+Version 0.13 for GAP 4.8.0 (14/12/15)
 
- - (30/11/15) 
-
+ - (14/12/15) 
+ - (13/12/15) library file oper.g edited to prevent repeat declarations etc. 
+ - (13/12/15) names.g{d,i} now first.g{d,i} with last.gd added, containing 
+              UTILS_FUNCTION_NAMES and UTILS_FUNCTION_OPERS 
 
 Version 0.11 for GAP 4.8.0 (30/11/15)
 
  - (30/11/15) added tests and documentation for ResClasses functions 
- - (25/11/15) added UTILS_FUNCTION_NAMES to global.g 
  - (25/11/15) added names.g{d,i}, tests.g{d,i}
  - (25/11/15) added sebastian.gi to lib/
  - (24/11/15) added rwca.g{d,i} and resclasses.g{d,i} to lib/ 

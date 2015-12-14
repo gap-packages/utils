@@ -2,7 +2,7 @@
 ##
 #W  cache.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 11/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -17,23 +17,16 @@
 ##
 #F  SetupCache( <name>, <size> )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "SetupCache" )] = 0 ) then 
-
 InstallGlobalFunction( SetupCache,
                        function ( name, size )
                          BindGlobal(name,[[size,-1,fail]]);
                        end );
-fi;
 
 #############################################################################
 ##  this function transferred from ResClasses 
 ##
 #F  PutIntoCache( <name>, <key>, <value> )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "PutIntoCache" )] = 0 ) then 
-
 InstallGlobalFunction( PutIntoCache,
 
   function ( name, key, value )
@@ -54,16 +47,11 @@ InstallGlobalFunction( PutIntoCache,
     MakeReadOnlyGlobal(name);
   end );
 
-fi; 
-
 #############################################################################
 ##  this function transferred from ResClasses 
 ##
 #F  FetchFromCache( <name>, <key> )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "FetchFromCache" )] = 0 ) then 
-
 InstallGlobalFunction( "FetchFromCache",
 
   function ( name, key )
@@ -83,8 +71,6 @@ InstallGlobalFunction( "FetchFromCache",
     fi;
     return fail;
   end );
-
-fi; 
 
 #############################################################################
 ##

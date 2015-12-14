@@ -2,9 +2,9 @@
 ##
 #W  combinat.gi               GAP4 package `Utils'              Chris Wensley
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 14/12/2015 
 ##
-#Y  Copyright (C) 2015, TRhe GAP Group, 
+#Y  Copyright (C) 2015, The GAP Group, 
 
 ##############################################################################
 ##  this function has been transferred from XMod 
@@ -178,8 +178,8 @@ function( G, H )
     R := RightCosets( G, H );
     ER := List( R, x -> Elements( x ) );
     EL := List( ER, C -> List( C, x -> x^(-1) ) );
-    Info( InfoXMod, 3, "right cosets: ", ER );
-    Info( InfoXMod, 3, " left cosets: ", EL );
+    Info( InfoUtils, 3, "right cosets: ", ER );
+    Info( InfoUtils, 3, " left cosets: ", EL );
     T := CommonRepresentatives( EL, ER );
     return T[1];
 end );

@@ -2,7 +2,7 @@
 ##
 #W  email.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 11/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -11,9 +11,6 @@
 ##
 #F  SendEmail( <sendto>, <copyto>, <subject>, <text> ) . . . . send an e-mail
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "SendEmail" )] = 0 ) then 
-
 InstallGlobalFunction( SendEmail,
 
   function ( sendto, copyto, subject, text )
@@ -28,16 +25,11 @@ InstallGlobalFunction( SendEmail,
                     [ "-s", subject, "-c", copyto, sendto ] );
   end );
 
-fi;
-
 #############################################################################
 ##  this function transferred from ResClasses 
 ##
 #F  EmailLogFile( <addresses> ) . . .  send log file by e-mail to <addresses>
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "EmailLogFile" )] = 0 ) then 
-
 InstallGlobalFunction( EmailLogFile, 
 
   function ( addresses )
@@ -74,16 +66,11 @@ InstallGlobalFunction( EmailLogFile,
     fi;
   end );
 
-fi;
-
 #############################################################################
 ##  this function transferred from ResClasses 
 ##
 #F  DownloadFile( <url> ) . . . . . . . . . download a file from the internet
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "DownloadFile" )] = 0 ) then 
-
 InstallGlobalFunction( DownloadFile,
 
   function ( url )
@@ -107,8 +94,6 @@ InstallGlobalFunction( DownloadFile,
     fi;
     return r.body;
   end );
-
-fi; 
 
 #############################################################################
 ##

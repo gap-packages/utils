@@ -2,15 +2,14 @@
 ##
 #W  read.g                 The Utils package                     Chris Wensley
 ## 
-##  version 0.12, 01/12/2015 
+##  version 0.13, 14/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group,  
 ##
 
 ## read the actual code 
 
-ReadPackage( "utils", "lib/names.gi" );
-ReadPackage( "utils", "lib/tests.gi" );
+## ReadPackage( "utils", "lib/tests.gi" );
 
 ReadPackage( "utils", "lib/bitmap.gi" );
 ReadPackage( "utils", "lib/cache.gi" );

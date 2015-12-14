@@ -2,7 +2,7 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-##  version 0.12, 03/12/2015   
+##  version 0.13, 14/12/2015   
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 ##  

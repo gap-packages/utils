@@ -2,7 +2,7 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.13, 11/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -12,8 +12,6 @@
 #F  AllSmoothIntegers( <maxp>, <maxn> )
 #F  AllSmoothIntegers( <primes>, <maxn> )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "AllSmoothIntegers" )] = 0 ) then 
 InstallGlobalFunction( AllSmoothIntegers,
 
   function ( maxp, maxn )
@@ -42,15 +40,12 @@ InstallGlobalFunction( AllSmoothIntegers,
     extend(1,1);
     return Set(nums);
   end );
-fi; 
 
 #############################################################################
 ##  this function transferred from RCWA 
 ##
 #F  ExponentOfPrime( <n>, <p> )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "ExponentOfPrime" )] = 0 ) then 
 InstallGlobalFunction( ExponentOfPrime,
 
   function ( n, p )
@@ -63,15 +58,12 @@ InstallGlobalFunction( ExponentOfPrime,
     while IsZero(n mod p) do n := n/p; k := k + 1; od;
     return k;
   end );
-fi; 
 
 #############################################################################
 ##  this function transferred from RCWA 
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "NextProbablyPrimeInt" )] = 0 ) then 
 InstallGlobalFunction( NextProbablyPrimeInt,
 
   function ( n )
@@ -87,7 +79,6 @@ InstallGlobalFunction( NextProbablyPrimeInt,
     od;
     return n;
   end );
-fi; 
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -95,12 +86,9 @@ fi;
 #M  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
 #M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "AllProducts" )] = 0 ) then 
 InstallMethod( AllProducts,
                "for lists (RCWA)", ReturnTrue, [ IsList, IsPosInt ], 0,
                function ( l, k ) return List(Tuples(l,k),Product); end );
-fi; 
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -112,8 +100,6 @@ fi;
 ##  The only difference to `RestrictedPartitions' is that no repetitions are
 ##  allowed.
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "RestrictedPartitionsWithoutRepetitions" )] = 0 ) then 
 InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
 
   function ( n, S )
@@ -143,7 +129,6 @@ InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
     look([],n,S);
     return comps;
   end );
-fi; 
 
 #############################################################################
 ##
@@ -157,8 +142,6 @@ fi;
 #F  PrimeNumbersIterator(  )
 #F  PrimeNumbersIterator( chunksize )
 ##
-if ( UTILS_FUNCTION_STATUS[ 
-    Position( UTILS_FUNCTION_NAMES, "PrimeNumbersIterator" )] = 0 ) then 
 InstallGlobalFunction( PrimeNumbersIterator,
 
   function ( arg )
@@ -243,7 +226,6 @@ InstallGlobalFunction( PrimeNumbersIterator,
       maxdiv         := maxdiv,
       offset         := offset ) );
   end );
-fi;
 
 #############################################################################
 ##
