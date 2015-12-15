@@ -2,7 +2,7 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-##  version 0.13, 14/12/2015   
+##  version 0.13, 15/12/2015   
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 ##  
@@ -11,9 +11,16 @@ TestMyPackage := function( pkgname )
     local  pkgdir, testfiles, testresult, ff, fn;
     LoadPackage( pkgname );
     pkgdir := DirectoriesPackageLibrary( pkgname, "tst" );
+
     # Arrange chapters as required
     testfiles := 
-        [ "lists.tst", "number.tst", "groups.tst", "others.tst" ];
+        [ "lists.tst", 
+          "string.tst", 
+          "number.tst", 
+          "groups.tst", 
+          "record.tst", 
+          "others.tst" ];
+
     testresult:=true;
     for ff in testfiles do
         fn := Filename( pkgdir, ff );

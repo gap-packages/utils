@@ -2,7 +2,7 @@
 ##
 #W  string.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.13, 11/12/2015 
+##  version 0.13, 15/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -77,6 +77,29 @@ InstallGlobalFunction( QuotesStripped,
     RemoveCharacters(str,"\"");
     return str;
   end );
+
+#############################################################################
+##  these functions transferred from AutoDoc 
+##
+#O  StringDotSuffix( <str> ) 
+##
+InstallMethod( StringDotSuffix, "for a string containing a dot", true, 
+    [ IsString ], 0, 
+function(str)
+    local i;
+    i := Length(str);
+    while i > 0 and str[i] <> '.' do 
+        i := i - 1; 
+    od;
+    if i = 0 then 
+        return fail; 
+    fi;
+    return str{[i+1..Length(str)]};
+end );
+
+
+
+
 
 #############################################################################
 ##

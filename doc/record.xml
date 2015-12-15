@@ -1,0 +1,48 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  record.xml              Utils documentation                        -->
+<!--                                                                     -->
+<!--  version 0.13, 15/12/2015                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015, The GAP Group,                                 --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-record">
+<Heading>Records</Heading>
+
+
+
+<Section Label="sec-records">
+<Heading>Functions for records</Heading>
+
+
+<ManSection>
+   <Func Name="WriteOnceInRecord"
+         Arg="rec name val" />
+<Description>
+This function has transferred from package <Package>AutoDoc</Package>, 
+where it was called <C>AUTODOIC_WriteOnce</C>. 
+It writes into a record provided the position is not yet bound. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> r := rec( a := 1, b := 2 );                                      
+rec( a := 1, b := 2 )
+gap> WriteOnceInRecord( r, "c", 3 );
+gap> RecNames( r );
+[ "b", "c", "a" ]
+gap> WriteOnceInRecord( r, "c", 4 );
+gap> r;
+rec( a := 1, b := 2, c := 3 )
+]]>
+</Example>
+
+</Section>
+
+
+</Chapter>

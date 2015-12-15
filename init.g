@@ -2,7 +2,7 @@
 ##
 #W  init.g                 GAP package `Utils'                  Chris Wensley
 ##
-##  version 0.13, 14/12/2015 
+##  version 0.13, 15/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group,  
 ##
@@ -23,6 +23,7 @@ ReadPackage( "utils", "lib/log2html.gd" );
 ReadPackage( "utils", "lib/maps.gd" );
 ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/poly.gd" );
+ReadPackage( "utils", "lib/record.gd" );
 ReadPackage( "utils", "lib/string.gd" );
 
 ReadPackage( "utils", "lib/last.gd" );

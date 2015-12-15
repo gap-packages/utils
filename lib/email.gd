@@ -1,8 +1,9 @@
 ##############################################################################
 ##
 #W  email.gd                    GAP4 package `Utils'               Stefan Kohl
-##
-##  version 0.12, 01/12/2015 
+##                                                           Sebastian Gutsche
+##                                                                    Max Horn
+##  version 0.13, 15/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -43,6 +44,14 @@ DeclareGlobalFunction( "EmailLogFile" );
 ##
 DeclareGlobalFunction( "DownloadFile" );
 
+#############################################################################
+##  these functions transferred from AutoDoc 
+##
+#F  CreateDirIfMissing( <str> )
+#F  FindMatchingFiles( <args> )
+##
+DeclareGlobalFunction( "CreateDirIfMissing" );
+DeclareGlobalFunction( "FindMatchingFiles" );
 
 
 #############################################################################

@@ -1,8 +1,9 @@
 <!-- ------------------------------------------------------------------- -->
 <!--                                                                     -->
-<!--  others.xml          Utils documentation                Stefan Kohn -->
-<!--                                                                     -->
-<!--  version 0.12, 01/12/2015                                           --> 
+<!--  others.xml          Utils documentation                Stefan Kohl -->
+<!--                                                   Sebastian Gutsche -->
+<!--                                                            Max Horn -->
+<!--  version 0.13, 15/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -96,8 +97,47 @@ gap> ## examples needed!
 ]]>
 </Example>
 
+</Section>
+
+
+<Section Label="sec:folder-ops">
+<Heading>Operations on folders</Heading>
+
+<ManSection>
+  <Func Name="CreateDirIfMissing" 
+        Arg="str"/>
+  <Func Name="FindMatchingFiles" 
+        Arg="str"/>
+<Description>
+These functions have transferred from package <Package>AutoDoc</Package>. 
+<P/>
+<C>CreateDirIfMissing</C> checks whether the given directory exists 
+and, if not, attempts to create it. 
+In either case <C>true</C> is returned. 
+<P/>
+<C>FindMatchingFiles</C> scans the given (by name) subdirectories 
+of a package directory for files with one of the given extensions, 
+and returns the corresponding filenames, as relative paths 
+(relative to the package directory).
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> CreateDirIfMissing( "/Applications/gap/temp/" );
+true
+gap> FindMatchingFiles( "utils", [ "doc/", "tst/" ], [ "xml", "g" ] );     
+[ "doc/appendix.xml", "doc/groups.xml", "doc/intro.xml", "doc/lists.xml", 
+  "doc/manual.xml", "doc/number.xml", "doc/others.xml", "doc/record.xml", 
+  "tst/testall.g" ]
+]]>
+</Example>
+
 
 </Section>
+
+
+
 
 </Chapter>
 

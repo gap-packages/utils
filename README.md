@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.13, December 2015 
+Version 0.13, December 15th 2015 
 
 Introduction 
 ------------
@@ -11,6 +11,7 @@ packages in order to make them more widely visible to package authors.
 History
 -------
 Started 12/11/1515.  First release, utils-0.11, on 30/11/15. 
+Latest release, utils-0.13, on 15/12/15. 
 
 Distribution
 -------------

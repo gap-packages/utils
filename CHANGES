@@ -3,11 +3,11 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.13 for GAP 4.8.0 (14/12/15)
+Version 0.13 for GAP 4.8.0 (15/12/15)
 
- - (14/12/15) 
- - (13/12/15) library file oper.g edited to prevent repeat declarations etc. 
- - (13/12/15) names.g{d,i} now first.g{d,i} with last.gd added, containing 
+ - (15/12/15) added some functions from AutoDoc; packed up version 0.13 
+ - (14/12/15) library file oper.g edited to prevent repeat declarations etc. 
+ - (14/12/15) names.g{d,i} now first.g{d,i} with last.gd added, containing 
               UTILS_FUNCTION_NAMES and UTILS_FUNCTION_OPERS 
 
 Version 0.11 for GAP 4.8.0 (30/11/15)
