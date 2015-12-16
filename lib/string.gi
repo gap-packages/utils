@@ -2,7 +2,7 @@
 ##
 #W  string.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.13, 15/12/2015 
+##  version 0.14, 16/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
@@ -79,9 +79,10 @@ InstallGlobalFunction( QuotesStripped,
   end );
 
 #############################################################################
-##  these functions transferred from AutoDoc 
+##  this function transferred from AutoDoc 
 ##
-#O  StringDotSuffix( <str> ) 
+#O  StringDotSuffix( <str> ), but originally 
+#F  AUTODOC_GetSuffix( <str> ) 
 ##
 InstallMethod( StringDotSuffix, "for a string containing a dot", true, 
     [ IsString ], 0, 
@@ -97,6 +98,17 @@ function(str)
     return str{[i+1..Length(str)]};
 end );
 
+##  this original version is included only to test code in global.g which uses 
+##  AllowGlobalRebinding, GLOBAL_REBINDING_LIST and GLOBAL_REBINDING_COUNT. 
+
+BindGlobal( "AUTODOC_GetSuffix",
+function(str)
+    local i;
+    i := Length(str);
+    while i > 0 and str[i] <> '.' do i := i - 1; od;
+    if i < 0 then return ""; fi;
+    return str{[i+1..Length(str)]};
+end );
 
 
 

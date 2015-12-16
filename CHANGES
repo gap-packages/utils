@@ -3,6 +3,15 @@
 Problems and ToDos: 
 
 #############################################################################
+Version 0.14 for GAP 4.8.0 (16/12/15)
+
+ - (15/12/16) changed global lists in oper.g to GLOBAL_REDECLARATION_LIST, 
+              GLOBAL_REDECLARATION_COUNT and GLOBAL_REINSTALLATION_LIST; 
+              added functions (in oper.g) AllowGlobalRedeclaration and 
+              AllowGlobalReinstallation; added GLOBAL_REBINDING_LIST and 
+              AllowGlobalRebinding (in global.g) to cope with BIND_GLOBAL. 
+
+#############################################################################
 Version 0.13 for GAP 4.8.0 (15/12/15)
 
  - (15/12/15) added some functions from AutoDoc; packed up version 0.13 

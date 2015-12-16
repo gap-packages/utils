@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.13, 14/12/2015                                           --> 
+<!--  version 0.14, 16/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -97,12 +97,12 @@ in <File>PackageInfo.g</File>.
 </List>  
 
 <E>The following procedure is suggested for transferring a function</E> 
-<C>func</C> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
+<A>func</A> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
 <P/> 
 There are two cases to consider. 
-If the functions being transferred have names of the form <C>Home_this_func</C>, 
+If the functions being transferred have names of the form <A>Home_this_func</A>, 
 then it is probably sensible to change the name in <Package>Utils</Package> 
-to <C>ThisFunc</C>. 
+to <A>ThisFunc</A>. 
 In this case there is no duplication of declarations or implementations. 
 However, once the functions have appeared in a new release of 
 <Package>Utils</Package>, the author(s) of <Package>Home</Package> will 
@@ -115,7 +115,7 @@ are proposed.
 <P/>
 <List> 
 <Item> 
-For each function <C>func</C> copy the code into the appropriate 
+For each function <A>func</A> copy the code into the appropriate 
 <File>*.gd, *.gi</File> files in <Package>Utils</Package>. 
 <P/>
 For attributes and properties this duplication produces no obvious effect 
@@ -127,13 +127,13 @@ For operations the following warning is printed when the second of
 #I  equal requirements in multiple declarations for operation `func'. 
 </Listing>
 <P/>
-For a global function <C>glob</C> duplicate declarations produce an error. 
+For a global function <A>glob</A> duplicate declarations produce an error. 
 This is avoided as follows. 
 <List>
 <Item>
 The library file <File>oper.g</File> has been modified to include 
-the declaration of empty lists UTILS_FUNCTION_NAMES, UTILS_FUNCTION_OPERS 
-and UTILS_FUNCTION_COUNT. 
+the declaration of empty lists GLOBAL_REDECLARATION_LIST, GLOBAL_REINSTALLATION_LIST 
+and GLOBAL_REDECLARATION_COUNT. 
 Also, in <File>oper.g</File>, the functions <C>DeclareGlobalFunction</C> and 
 <C>InstallGlobalFunction</C> have been modified to prevent the execution 
 of a second declaration or installation of functions in these lists. 
@@ -141,11 +141,17 @@ The revised code in <File>oper.g</File>
 is shown in Appendix <Ref Chap="appendix" />. 
 </Item> 
 <Item>
-Now "<C>glob</C>" is added to the list <C>UTILS_FUNCTION_NAMES</C> 
-in <File>utils/lib/first.gd</File> and <C>glob</C> is added to the list 
-<C>UTILS_FUNCTION_OPERS</C> in <File>utils/lib/last.gd</File>. 
+Now "<A>glob</A>" is added to the list <A>GLOBAL_REDECLARATION_LIST</A> 
+by calling (in file <File>first.gd</File>) the function 
+<C>AllowGlobalRedeclaration</C>, while <A>glob</A> is added to the list 
+<A>GLOBAL_REINSTALLATION_LIST</A> by calling (in file <File>last.gd</File>) 
+the function <C>AllowGlobalReinstallation</C>.  
 </Item>
 </List> 
+To allow for functions installed just using <C>BIND_GLOBAL</C>, 
+there is (in file <File>global.g</File>) a function 
+<C>AllowGlobalRebinding</C> which adds function names to the list 
+<A>GLOBAL_REBINDING_LIST</A>. 
 </Item> 
 <Item>
 Copy and edit any tests and documentation into the corresponding 
@@ -171,8 +177,8 @@ They make <Package>Utils</Package> a required package in
 </Item>
 <Item>
 In the next version of <Package>Utils</Package> 
-remove each "<C>glob</C>" from <C>UTILS_FUNCTION_NAMES</C> 
-and each <C>glob</C> from <C>UTILS_FUNCTION_OPERS</C>. 
+remove each "<A>glob</A>" from <A>GLOBAL_REDECLARATION_LIST</A> 
+and each <A>glob</A> from <A>GLOBAL_REINSTALLATION_LIST</A>. 
 </Item>
 </List>
 
@@ -181,81 +187,82 @@ and each <C>glob</C> from <C>UTILS_FUNCTION_OPERS</C>.
 <Section Label="sect-comments"> 
 <Heading>Comments on the transfer procedure for global functions</Heading>
 
-Suppose that, at the start of the transfer of <C>glob</C> 
+Suppose that, at the start of the transfer of <A>glob</A> 
 from <Package>Home</Package> to <Package>Utils</Package>, 
-the version of <Package>Home</Package> is <C>6.78</C> and 
-the version of <Package>Utils</Package> is <C>2.34</C>. 
-In what follows, <C>val</C> refers to the value of 
-<C>UTILS_FUNCTION_COUNT[pos]</C> where <C>pos</C> is the position of 
-"<C>glob</C>" in <C>UTILS_FUNCTION_NAMES</C>. 
+the version of <Package>Home</Package> is <A>6.78</A> and 
+the version of <Package>Utils</Package> is <A>2.34</A>. 
+In what follows, <A>val</A> refers to the value of 
+<A>GLOBAL_REDECLARATION_COUNT[pos]</A> where <A>pos</A> is the position of 
+"<A>glob</A>" in <A>GLOBAL_REDECLARATION_LIST</A>. 
 <P/> 
 There are three stages to the process. 
 <P/> 
 In the first stage the declaration, implementation, documentation and tests 
-referring to <C>glob</C> are copied to files in <Package>Utils</Package>. 
-Suppose <Package>Home</Package> is loaded first, so that <C>glob</C> 
+referring to <A>glob</A> are copied to files in <Package>Utils</Package>. 
+Suppose <Package>Home</Package> is loaded first, so that <A>glob</A> 
 is both declared and implemented from <Package>Home</Package>. 
 Then, when <Package>Utils</Package> is loaded, 
 <List>
 <Item>
-<C>ISBOUND_GLOBAL</C> will be true for <C>glob</C> 
-and so <C>val</C> will be set to <M>1</M> by <File>first.gd</File>; 
+<C>ISBOUND_GLOBAL</C> will be true for <A>glob</A> 
+and so <A>val</A> will be set to <M>1</M> by <File>first.gd</File>; 
 </Item> 
 <Item> 
-the declaration of <C>glob</C> is then found, and ignored, 
-but <C>val</C> is increased to <M>2</M>; 
+the declaration of <A>glob</A> is then found, and ignored, 
+but <A>val</A> is increased to <M>2</M>; 
 </Item> 
 <Item> 
-when the implementation of <C>glob</C> is found, it is ignored because 
-<C>val</C> is too large. 
+when the implementation of <A>glob</A> is found, it is ignored because 
+<A>val</A> is too large. 
 </Item>
 </List> 
 
 Alternatively, suppose <Package>Utils</Package> is loaded first, so that: 
 <List>
 <Item>
-<C>ISBOUND_GLOBAL</C> will be false for <C>glob</C> 
-and so <C>val</C> will be set to <M>0</M> by <File>first.gd</File>; 
+<C>ISBOUND_GLOBAL</C> will be false for <A>glob</A> 
+and so <A>val</A> will be set to <M>0</M> by <File>first.gd</File>; 
 </Item> 
 <Item> 
-the declaration of <C>glob</C> is then accepted
-and <C>val</C> is increased to <M>1</M>; 
+the declaration of <A>glob</A> is then accepted
+and <A>val</A> is increased to <M>1</M>; 
 </Item> 
 <Item> 
-when the implementation of <C>glob</C> is found, it is accepted because 
-<C>val</C> is less than <M>2</M>.
+when the implementation of <A>glob</A> is found, it is accepted because 
+<A>val</A> is less than <M>2</M>.
 </Item>
 </List> 
 Then, when <Package>Home</Package> is loaded, 
 <List>
 <Item> 
-the declaration of <C>glob</C> is found, and ignored, 
-and <C>val</C> is increased to <M>2</M>; 
+the declaration of <A>glob</A> is found, and ignored, 
+and <A>val</A> is increased to <M>2</M>; 
 </Item> 
 <Item> 
-when the implementation of <C>glob</C> is found, it is ignored because 
-<C>val</C> is too large. 
+when the implementation of <A>glob</A> is found, it is ignored because 
+<A>val</A> is too large. 
 </Item>
 </List> 
-When all the tests pass, version <C>2.35</C> of <Package>Utils</Package> 
+When all the tests pass, version <A>2.35</A> of <Package>Utils</Package> 
 is published, and the authors of <Package>Home</Package> notified. 
 <P/> 
 In the second stage, the authors of <Package>Home</Package> do their own tests. 
 If satisfied, they remove all declaration and implementation code 
-for <C>glob</C> from <Package>Home</Package>, and add <Package>Utils</Package> 
+for <A>glob</A> from <Package>Home</Package>, and add <Package>Utils</Package> 
 to their list of required packages in their <File>PackageInfo.g</File>. 
 Now, in a new &GAP; session, when <C>RequirePackage(home);</C> is called, 
 <Package>Utils</Package> is loaded first, providing the declaration 
-and implementation of <C>glob</C>. 
+and implementation of <A>glob</A>. 
 Further tests are then required to check that any other 
-<Package>Home</Package> functions which use <C>glob</C> still work correctly. 
-If still satisfied, the authors publish version <C>6.79</C> 
+<Package>Home</Package> functions which use <A>glob</A> still work correctly. 
+If still satisfied, the authors publish version <A>6.79</A> 
 of <Package>Home</Package>.
 <P/> 
-In the final stage, "<C>glob</C>" and <C>glob</C> are removed from 
-<C>UTILS_FUNCTION_NAMES</C> and <C>UTILS_FUNCTION_OPERS</C> respectively. 
-The additional code in <File>oper.g</File> no longer applies to <C>glob</C>, 
-and version <C>2.36</C> of <Package>Utils</Package> may be published. 
+In the final stage, "<A>glob</A>" and <A>glob</A> are removed from 
+<A>GLOBAL_REDECLARATION_LIST</A> and <A>GLOBAL_REINSTALLATION_LIST</A> respectively (ditto <A>GLOBAL_REBINDING_LIST</A>). 
+The additional code in <File>oper.g</File> (or <File>global.g</File>) 
+no longer applies to <A>glob</A>, and version <A>2.36</A> 
+of <Package>Utils</Package> may be published. 
 
 </Section> 
 
