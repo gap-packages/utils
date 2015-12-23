@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  lists.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.13, 15/12/2015                                           --> 
+<!--  version 0.16, 21/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -163,24 +163,40 @@ true
 <Description>
 These functions have transferred from package <Package>ResClasses</Package>. 
 <P/>
-It's not exactly clear what these functions do! 
+The function call <C>BlankFreeString(s)</C> removes space characters from a string <C>s</C>. 
+It is similar to the library call 
+<C>RemoveCharacters( String(obj), " " );</C> but the latter changes 
+the original <C>s</C>. 
+<P/>
+The function <C>QuotesStripped(s)</C> removes double-quote characters 
+<C>\"</C> from a string.  It is equivalent to the library call 
+<C>RemoveCharacters( String(obj), "\"" );</C> since it <E>does</E> 
+change the original <C>s</C>.  
 <P/>
 </Description>
 </ManSection>
 <Example>
 <![CDATA[
-gap> D12 := DihedralGroup( 12 ); 
-<pc group of size 12 with 3 generators>
-gap> BlankFreeString( D12 );     
-"Group([f1,f2,f3])"
-gap> S5 := SymmetricGroup( 5 );
-Sym( [ 1 .. 5 ] )
-gap> BlankFreeString( S5 );    
-"SymmetricGroup([1..5])"
-gap> S := "Hello\!\, What's yours\?\, Goodbye\!";
-"Hello!, What's yours?, Goodbye!"
-gap> QuotesStripped(S);                          
-"Hello!, What's yours?, Goodbye!"
+gap> s:="abc def  \"Hello\" ";     
+"abc def  \"Hello\" "
+gap> t := BlankFreeString(s); 
+"abcdef\"Hello\""
+gap> s;
+"abc def  \"Hello\" "
+gap> RemoveCharacters( s, " " );
+gap> s;
+"abcdef\"Hello\""
+gap> s:="abc def  \"Hello\" ";  
+"abc def  \"Hello\" "
+gap> t := QuotesStripped( s );
+"abc def  Hello "
+gap> s;
+"abc def  Hello "
+gap> s:="abc def  \"Hello\" ";
+"abc def  \"Hello\" "
+gap> RemoveCharacters( s, "\"" );
+gap> s;
+"abc def  Hello "
 ]]>
 </Example>
 

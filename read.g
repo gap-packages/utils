@@ -24,3 +24,5 @@ ReadPackage( "utils", "lib/number.gi" );
 ReadPackage( "utils", "lib/poly.gi" );
 ReadPackage( "utils", "lib/record.gi" );
 ReadPackage( "utils", "lib/string.gi" );
+
+ReadPackage( "utils", "lib/last.gi" );

@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.14, 16/12/2015                                           --> 
+<!--  version 0.16, 23/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -20,6 +20,11 @@ In this way it is hoped that they will become more visible
 to other package authors. 
 Any package author who transfers a function to &utils; will become 
 an author of &utils;. 
+This package relies on modifications to the library files oper.g and global.g. 
+It appears that these modifications will not appear in a GAP release until at 
+least version 4.8.3, so development of this package is suspended until 
+further notice. 
+
 <P/> 
 The package is loaded with the command
 <Example>
@@ -44,7 +49,7 @@ the Bangor site:
 </Item>
 </List> 
 The package also has a GitHub repository: 
-<URL>https://github.com/gap-packages/utils</URL>. 
+<URL>https://github.com/cdwensley/utils</URL>. 
 <P/> 
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
@@ -96,13 +101,13 @@ in <File>PackageInfo.g</File>.
 </Item>
 </List>  
 
-<E>The following procedure is suggested for transferring a function</E> 
+<E>The following procedure is useded for transferring a function</E> 
 <A>func</A> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
 <P/> 
 There are two cases to consider. 
 If the functions being transferred have names of the form <A>Home_this_func</A>, 
 then it is probably sensible to change the name in <Package>Utils</Package> 
-to <A>ThisFunc</A>. 
+to <A>ThisFunc</A> (if not already in use). 
 In this case there is no duplication of declarations or implementations. 
 However, once the functions have appeared in a new release of 
 <Package>Utils</Package>, the author(s) of <Package>Home</Package> will 
@@ -141,17 +146,18 @@ The revised code in <File>oper.g</File>
 is shown in Appendix <Ref Chap="appendix" />. 
 </Item> 
 <Item>
-Now "<A>glob</A>" is added to the list <A>GLOBAL_REDECLARATION_LIST</A> 
-by calling (in file <File>first.gd</File>) the function 
-<C>AllowGlobalRedeclaration</C>, while <A>glob</A> is added to the list 
-<A>GLOBAL_REINSTALLATION_LIST</A> by calling (in file <File>last.gd</File>) 
-the function <C>AllowGlobalReinstallation</C>.  
+The function <C>AllowGlobalRedeclaration</C> is used 
+(in file <File>utils/lib/first.gd</File>) to add "<A>glob</A>" 
+to the list <A>GLOBAL_REDECLARATION_LIST</A>, 
+while the function <C>AllowGlobalReinstallation</C> is used 
+(in file <File>utils/lib/last.gd</File>) to add <A>glob</A> 
+to the list <A>GLOBAL_REINSTALLATION_LIST</A>.  
 </Item>
 </List> 
 To allow for functions installed just using <C>BIND_GLOBAL</C>, 
 there is (in file <File>global.g</File>) a function 
-<C>AllowGlobalRebinding</C> which adds function names to the list 
-<A>GLOBAL_REBINDING_LIST</A>. 
+<C>AllowGlobalRebinding</C> and lists <A>GLOBAL_REBINDING_LIST</A>, 
+<A>GLOBAL_REBINDING_COUNT</A>. 
 </Item> 
 <Item>
 Copy and edit any tests and documentation into the corresponding 
@@ -178,7 +184,8 @@ They make <Package>Utils</Package> a required package in
 <Item>
 In the next version of <Package>Utils</Package> 
 remove each "<A>glob</A>" from <A>GLOBAL_REDECLARATION_LIST</A> 
-and each <A>glob</A> from <A>GLOBAL_REINSTALLATION_LIST</A>. 
+and each <A>glob</A> from <A>GLOBAL_REINSTALLATION_LIST</A>
+or <A>GLOBAL_REBINDING_LIST</A>. 
 </Item>
 </List>
 

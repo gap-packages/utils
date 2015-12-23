@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  appendix.xml         Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.14, 16/12/2015                                           --> 
+<!--  version 0.16, 23/12/2015                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015, The GAP Group,                                 --> 
 <!--                                                                     -->
@@ -49,7 +49,6 @@ The additional and modified code in <File>oper.g</File> is listed here.
 #F  AllowGlobalRedeclaration( <list> ) . . function(s) may be declared twice
 #F  AllowGlobalReinstallation( <list> ) . . . . . .  and implemented twice
 ## 
-
 BIND_GLOBAL( "GLOBAL_REDECLARATION_LIST",   
     ShareSpecialObj([], "GLOBAL_REDECLARATION_LIST") );  
 BIND_GLOBAL( "GLOBAL_REINSTALLATION_LIST",  
@@ -59,6 +58,7 @@ BIND_GLOBAL( "GLOBAL_REDECLARATION_COUNT",
 
 BIND_GLOBAL( "AllowGlobalRedeclaration", function( arg ) 
     local  L, pos, name, count;
+    ##  form the arguments into a list L 
     if LEN_LIST(arg) = 1 then 
         if IS_STRING_REP( arg[1] ) then 
             L := arg;
@@ -71,10 +71,11 @@ BIND_GLOBAL( "AllowGlobalRedeclaration", function( arg )
         L := arg;
     fi;
     for name in L do 
-        ##  prevent duplicate entries 
+        ##  avoid duplicate entries in GLOBAL_REDECLARATION_LIST 
         pos := POS_LIST_DEFAULT( GLOBAL_REDECLARATION_LIST, name, 0 ); 
-        if ( ( pos = fail ) and IS_STRING_REP( name ) ) then 
+        if ( pos = fail ) then 
             ADD_LIST( GLOBAL_REDECLARATION_LIST, name ); 
+            ##  has name been declared already? 
             if ISBOUND_GLOBAL( name ) then 
                 count := 1; 
             else 
@@ -86,7 +87,8 @@ BIND_GLOBAL( "AllowGlobalRedeclaration", function( arg )
 end );
 
 BIND_GLOBAL( "AllowGlobalReinstallation", function( arg ) 
-    local  L, pos, oper;
+    local  L, oper, posd, posi, name; 
+    ##  form the arguments into a list L 
     if LEN_LIST(arg) = 1 then 
         if IS_FUNCTION( arg[1] ) then 
             L := arg;
@@ -99,19 +101,33 @@ BIND_GLOBAL( "AllowGlobalReinstallation", function( arg )
         L := arg;
     fi;
     for oper in L do 
-        ##  prevent duplicate entries 
-        pos := POS_LIST_DEFAULT( GLOBAL_REINSTALLATION_LIST, oper, 0 ); 
-        if ( ( pos = fail ) and IS_FUNCTION( oper ) ) then 
-            ADD_LIST( GLOBAL_REINSTALLATION_LIST, oper ); 
+        ##  avoid duplicate entries in GLOBAL_REINSTALLATION_LIST 
+        posi := POS_LIST_DEFAULT( GLOBAL_REINSTALLATION_LIST, oper, 0 ); 
+        if ( ( posi = fail ) and IS_FUNCTION( oper ) ) then 
+            ##  check that the two lists are consistently ordered 
+            posi := LEN_LIST( GLOBAL_REINSTALLATION_LIST ) + 1; 
+            name := NAME_FUNC( oper ); 
+            posd := POS_LIST_DEFAULT( GLOBAL_REDECLARATION_LIST, name, 0 ); 
+            if ( posd = posi ) then 
+                ADD_LIST( GLOBAL_REINSTALLATION_LIST, oper ); 
+            else 
+                Error( "redeclaration and reinstallation lists inconsistent" );
+            fi;
         fi;
     od;
 end );
+
 
 #############################################################################
 ##
 #F  DeclareGlobalFunction( <name>, <info> ) . .  create a new global function
 #F  InstallGlobalFunction( <oper>, <func> )
 ##
+##  Global functions of the &GAP; library must be distinguished from other
+##  global variables (see <C>variable.g</C>) because of the completion
+##  mechanism.
+##
+
 BIND_GLOBAL( "GLOBAL_FUNCTION_NAMES", 
     ShareSpecialObj([], "GLOBAL_FUNCTION_NAMES") );
 
@@ -119,23 +135,24 @@ BIND_GLOBAL( "DeclareGlobalFunction", function( arg )
     local   pos,  count,  name;
 
     name := arg[1];
-if not ( ISBOUND_GLOBAL( name ) and  
-         ( name in GLOBAL_REDECLARATION_LIST ) ) then 
+    ## special case: redeclaration is permitted so increment count for 'name' 
+    if ( name in GLOBAL_REDECLARATION_LIST ) then 
+        pos := POS_LIST_DEFAULT( GLOBAL_REDECLARATION_LIST, name, 0 );   
+        count := GLOBAL_REDECLARATION_COUNT[pos] + 1; 
+        GLOBAL_REDECLARATION_COUNT[pos] := count; 
+        ## if already declared then there is nothing to do 
+        if ISBOUND_GLOBAL( name ) then
+            return; 
+        fi;
+    fi; 
     atomic GLOBAL_FUNCTION_NAMES do
     ADD_SET( GLOBAL_FUNCTION_NAMES, IMMUTABLE_COPY_OBJ(name) );
     od;
-    BIND_GLOBAL( name, NEW_OPERATION_ARGS( name ) );
-fi;   
-if ( name in GLOBAL_REDECLARATION_LIST ) then  
-    pos := POS_LIST_DEFAULT( GLOBAL_REDECLARATION_LIST, name, 0 );   
-    count := GLOBAL_REDECLARATION_COUNT[pos] + 1; 
-    GLOBAL_REDECLARATION_COUNT[pos] := count; 
-  Print( "#Ud: ", name, ", ", count, "\n" ); 
-fi; 
+    BIND_GLOBAL( name, NEW_OPERATION_ARGS( name ) ); 
 end );
 
 BIND_GLOBAL( "InstallGlobalFunction", function( arg )
-    local   ok,  pos,  count,  oper,  info,  func;
+    local   oper,  info,  func,  pos;
 
     if LEN_LIST(arg) = 3  then
         oper := arg[1];
@@ -146,32 +163,32 @@ BIND_GLOBAL( "InstallGlobalFunction", function( arg )
         func := arg[2];
     fi;
     if IS_STRING( oper ) then
-      oper := VALUE_GLOBAL( oper );
+        oper := VALUE_GLOBAL( oper );
     fi;
-ok := true;  
-if ( oper in GLOBAL_REINSTALLATION_LIST ) then 
-    pos := POS_LIST_DEFAULT( GLOBAL_REINSTALLATION_LIST, oper, 0 );   
-    count := GLOBAL_REDECLARATION_COUNT[pos];  
-    if ( count >= 2 ) then  
-        ok := false; 
-    fi; 
-  Print( "#Ui: ", GLOBAL_REDECLARATION_LIST[pos],   
-         ", ", count, ", ok = ", ok, "\n" ); 
-fi;  
-if ok then 
+    ## special case: reinstallation is permitted so check declaration number 
+    if ( oper in GLOBAL_REINSTALLATION_LIST ) then 
+        pos := POS_LIST_DEFAULT( GLOBAL_REINSTALLATION_LIST, oper, 0 );   
+        if ( GLOBAL_REDECLARATION_COUNT[pos] >= 2 ) then 
+            ## there have been 2 declarations so this is a repeat installation 
+            return; 
+        fi; 
+    fi;  
     atomic readonly GLOBAL_FUNCTION_NAMES do
     if NAME_FUNC(func) in GLOBAL_FUNCTION_NAMES then
-      Error("you cannot install a global function for another global ",
-            "function,\nuse `DeclareSynonym' instead!");
+        Error("you cannot install a global function for another global ",
+              "function,\nuse `DeclareSynonym' instead!");
     fi;
     INSTALL_METHOD_ARGS( oper, func );
     od;
-fi;  
 end );
 ]]>
 </Example>
 <P/> 
 
+
+For functions installed directly using <C>BIND_GLOBAL</C> lists 
+<A>GLOBAL_REBINDING_LIST</A> and <A>GLOBAL_REBINDING_COUNT</A> are used, 
+and the function <C>AllowGlobalRebinding</C> added.
 The additional and modified code in <File>global.g</File> is listed here. 
 <Example>
 <![CDATA[
@@ -191,8 +208,16 @@ GLOBAL_REBINDING_COUNT := [ ];
   
 BIND_GLOBAL := function( name, val)
 local   pos,  count; 
-if not ( ISBOUND_GLOBAL( name ) and  
-         ( name in GLOBAL_REBINDING_LIST ) ) then 
+    ## special case: rebinding is permitted so increment count for 'name'  
+    if ( name in GLOBAL_REBINDING_LIST ) then 
+        pos := POS_LIST_DEFAULT( GLOBAL_REBINDING_LIST, name, 0 );   
+        count := GLOBAL_REBINDING_COUNT[pos] + 1; 
+        GLOBAL_REBINDING_COUNT[pos] := count; 
+        ## if already bound then there is nothing to do 
+        if ISBOUND_GLOBAL( name ) then 
+            return; 
+        fi;
+    fi; 
     if not REREADING and ISBOUND_GLOBAL( name ) then
         if (IS_READ_ONLY_GLOBAL(name)) then
             Error("BIND_GLOBAL: variable `", name, "' must be unbound");
@@ -203,13 +228,6 @@ if not ( ISBOUND_GLOBAL( name ) and
     ASS_GVAR(name, val);
     MAKE_READ_ONLY_GLOBAL(name);
     return val;
-fi; 
-if ( name in GLOBAL_REBINDING_LIST ) then  
-    pos := POS_LIST_DEFAULT( GLOBAL_REBINDING_LIST, name, 0 );   
-    count := GLOBAL_REBINDING_COUNT[pos] + 1; 
-    GLOBAL_REBINDING_COUNT[pos] := count; 
-  Print( "#Ub: ", name, ", ", count, "\n" ); 
-fi; 
 end;
 
 #############################################################################
@@ -218,6 +236,7 @@ end;
 ##
 BIND_GLOBAL( "AllowGlobalRebinding", function( arg ) 
     local  L, pos, name, val;
+    ##  form the arguments into a list L 
     if LEN_LIST(arg) = 1 then 
         if IS_STRING_REP( arg[1] ) then 
             L := arg;
@@ -230,10 +249,11 @@ BIND_GLOBAL( "AllowGlobalRebinding", function( arg )
         L := arg;
     fi;
     for name in L do 
-        ##  prevent duplicate entries 
+        ##  avoid duplicate entries in GLOBAL_REBINDING_LIST 
         pos := POS_LIST_DEFAULT( GLOBAL_REBINDING_LIST, name, 0 ); 
-        if ( ( pos = fail ) and IS_STRING_REP( name ) ) then 
+        if ( pos = fail ) then 
             ADD_LIST( GLOBAL_REBINDING_LIST, name ); 
+            ##  has 'name' been declared already? 
             if ISBOUND_GLOBAL( name ) then 
                 val := 1; 
             else 

@@ -2,16 +2,16 @@
 ##
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn
-##  version 0.13, 15/12/2015 
+##  version 0.16, 21/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
 #############################################################################
-##  these functions transferred from AutoDoc
+##  this function transferred from AutoDoc, was AUTODOC_WriteOnce 
 ##
-#F  WriteOnceInRecord( <rec>, <name>, <val> ) . only if position not yet bound
+#F  BindInRecordIfMissing( <rec>, <name>, <val> ) 
 ##
-DeclareGlobalFunction( "WriteOnceInRecord" );
+DeclareGlobalFunction( "BindInRecordIfMissing" );
 
 
 #############################################################################

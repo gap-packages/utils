@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.14, December 16th 2015 
+Version 0.16, December 23rd 2015 
 
 Introduction 
 ------------
@@ -10,8 +10,15 @@ packages in order to make them more widely visible to package authors.
 
 History
 -------
-Started 12/11/1515.  First release, utils-0.11, on 30/11/15. 
-Latest release, utils-0.14, on 16/12/15. 
+Started 12/11/15.  First release, utils-0.11, on 30/11/15. 
+Latest release, utils-0.16, on 23/12/15. 
+
+Timetable
+---------
+This package relies on modifications to the library files oper.g and global.g. 
+It appears that these modifications will not appear in a GAP release until at 
+least version 4.8.3, so development of this package is suspended until 
+further notice. 
 
 Distribution
 -------------
@@ -32,7 +39,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.14.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.16.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 

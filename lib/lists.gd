@@ -2,7 +2,7 @@
 ##
 #W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.15, 18/12/2015 
 ##
 #Y  Copyright (C) 2015, The GAP Group, 
 
