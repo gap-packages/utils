@@ -3,10 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.16 for GAP 4.8.0 (21/12/15)
+Version 0.17 for GAP 4.8.1 (12/01/16)
 
- - (23/12/15) development suspended until further notice since modifications 
-              to oper.g and global.g unlikely to appear until GAP 4.8.3
+ - (12/01/16) more edits to oper.g and global.g suggested by Chris J.
 
 #############################################################################
 Version 0.15 for GAP 4.8.0 (18/12/15)

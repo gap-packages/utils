@@ -2,9 +2,9 @@
 <!--                                                                     -->
 <!--  manual.xml          Utils documentation              Chris Wensley -->
 <!--                                                                     -->
-<!--  version 0.16, 23/12/2015                                           --> 
+<!--  version 0.17, 12/01/2016                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015, The GAP Group,                                 --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                                 --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -27,8 +27,8 @@
 <TitlePage>
   <Title>&Utils;</Title>
   <Subtitle>Utility functions in &GAP;</Subtitle>
-  <Version>Version &VERSION;</Version>
-  <Date>&RELEASEDATE;</Date> 
+  <Version>Version &UTILSVERSION;</Version>
+  <Date>&UTILSRELEASEDATE;</Date> 
 
   <Author>
     Sebastian Gutsche,
@@ -61,7 +61,8 @@ In this way it is hoped that they will become more visible to package authors.
 Any package author who transfers a function to &utils; will become 
 an author of &utils;. 
 <P/>
-The current version is &VERSION;, released &LONGRELEASEDATE; for &GAP; 4.7. 
+The current version is &UTILSVERSION;, 
+released &UTILSLONGRELEASEDATE; for &GAP; 4.8. 
 <P/>
 This package relies on modifications to the library files oper.g and global.g. 
 It appears that these modifications will not appear in a GAP release until at 
@@ -76,7 +77,7 @@ or submit an issue at the GitHub repository
 
 <Copyright> 
 <Index>License</Index>
-&copyright; &COPYRIGHTYEARS; The &GAP; Group.  
+&copyright; &UTILSCOPYRIGHTYEARS; The &GAP; Group.  
 
 &utils; is free software; you can redistribute it 
 and/or modify it under the terms of the 

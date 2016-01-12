@@ -7,23 +7,23 @@ SetPackageInfo( rec(
 PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
-Version := "0.16",
-Date := "23/12/2015",
+Version := "0.17",
+Date := "12/01/2016",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.16">
-##  <!ENTITY TARFILENAME "utils-0.16.tar.gz">
-##  <!ENTITY HTMLFILENAME "utils.html">
-##  <!ENTITY RELEASEDATE "23/12/2015">
-##  <!ENTITY LONGRELEASEDATE "23rd December 2015">
-##  <!ENTITY COPYRIGHTYEARS "2015">
+##  <!ENTITY UTILSVERSION "0.17">
+##  <!ENTITY UTILSTARFILENAME "utils-0.17.tar.gz">
+##  <!ENTITY UTILSHTMLFILENAME "utils.html">
+##  <!ENTITY UTILSRELEASEDATE "12/01/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "12th January 2016">
+##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
 ##  <#/GAPDoc>
 
 PackageWWWHome := 
   "http://pages.bangor.ac.uk/~mas023/chda/utils/",
 
-ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils-0.16", 
+ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils-0.17", 
 ArchiveFormats := ".tar.gz",
 
 Persons := [
@@ -56,7 +56,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "c.d.wensley@bangor.ac.uk",
-    WWWHome       := "http://www.bangor.ac.uk/~mas023/",
+    WWWHome       := "http://www.bangor.ac.uk/~mas012/",
     PostalAddress := Concatenation( [
                        "Dr. C.D. Wensley\n",
                        "School of Computer Science\n",

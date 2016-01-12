@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.16, December 23rd 2015 
+Version 0.17, January 12th 2016 
 
 Introduction 
 ------------
@@ -11,7 +11,7 @@ packages in order to make them more widely visible to package authors.
 History
 -------
 Started 12/11/15.  First release, utils-0.11, on 30/11/15. 
-Latest release, utils-0.16, on 23/12/15. 
+Latest release, utils-0.17, on 12/01/16. 
 
 Timetable
 ---------
@@ -30,7 +30,7 @@ Computational Higher-dimensional Discrete Algebra at:
 
 Copyright
 ---------
-The Utils package is Copyright {\copyright} The GAP Group, 2015. 
+The Utils package is Copyright {\copyright} The GAP Group, 2015-2016. 
 Utils is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
@@ -39,7 +39,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.16.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.17.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 
