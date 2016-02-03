@@ -2,9 +2,9 @@
 <!--                                                                     -->
 <!--  manual.xml          Utils documentation              Chris Wensley -->
 <!--                                                                     -->
-<!--  version 0.17, 12/01/2016                                           --> 
+<!--  version 0.21, 02/02/2016                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015-2016, The GAP Group,                                 --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -13,12 +13,10 @@
 <!-- Reading data chunk from the PackageInfo.g file --> 
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-  [<!ENTITY utils "<Package>Utils</Package>"> 
+  [<!ENTITY Utils "<Package>Utils</Package>"> 
    <#Include Label="PKGVERSIONDATA">,
+   <!ENTITY Home "<Package>Home</Package>">
   ]> 
-
-<!DOCTYPE Book SYSTEM "gapdoc.dtd"
-[<!ENTITY Utils "<Package>Utils</Package>">] >
 
 <!-- The documentation to the Utils package. -->
 
@@ -54,12 +52,12 @@
   </Author>
 
 <Abstract>
-The &utils; package provides a space for utility functions in a variety 
+The &Utils; package provides a space for utility functions in a variety 
 of &GAP; packages to be collected together into a single package. 
 In this way it is hoped that they will become more visible to package authors. 
 <P/>
-Any package author who transfers a function to &utils; will become 
-an author of &utils;. 
+Any package author who transfers a function to &Utils; will become 
+an author of &Utils;. 
 <P/>
 The current version is &UTILSVERSION;, 
 released &UTILSLONGRELEASEDATE; for &GAP; 4.8. 
@@ -79,7 +77,7 @@ or submit an issue at the GitHub repository
 <Index>License</Index>
 &copyright; &UTILSCOPYRIGHTYEARS; The &GAP; Group.  
 
-&utils; is free software; you can redistribute it 
+&Utils; is free software; you can redistribute it 
 and/or modify it under the terms of the 
 <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
 as published by the Free Software Foundation; 
@@ -105,8 +103,6 @@ package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer.
 <#Include SYSTEM "others.xml">
 
 </Body>
-
-<#Include SYSTEM "appendix.xml">
 
 <Bibliography Databases="manual"/>
 

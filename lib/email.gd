@@ -3,9 +3,11 @@
 #W  email.gd                    GAP4 package `Utils'               Stefan Kohl
 ##                                                           Sebastian Gutsche
 ##                                                                    Max Horn
-##  version 0.13, 15/12/2015 
+##  version 0.21, 01/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
 ##  this function transferred from ResClasses 
@@ -44,15 +46,7 @@ DeclareGlobalFunction( "EmailLogFile" );
 ##
 DeclareGlobalFunction( "DownloadFile" );
 
-#############################################################################
-##  these functions transferred from AutoDoc 
-##
-#F  CreateDirIfMissing( <str> )
-#F  FindMatchingFiles( <args> )
-##
-DeclareGlobalFunction( "CreateDirIfMissing" );
-DeclareGlobalFunction( "FindMatchingFiles" );
-
+fi;
 
 #############################################################################
 ##

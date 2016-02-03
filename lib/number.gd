@@ -2,9 +2,30 @@
 ##
 #W  number.gd                    GAP4 package `Utils'             Stefan Kohl 
 ##
-##  version 0.15, 18/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2016, The GAP Group, 
+
+if OKtoReadFromUtils( "ResClasses" ) then
+
+#############################################################################
+##  this function transferred from ResClasses
+##
+#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
+##
+##  Returns the smallest integer larger than <n> which passes GAP's
+##  probabilistic primality test.
+##
+##  The function `NextProbablyPrimeInt' does the same as `NextPrimeInt',
+##  except that for reasons of performance it tests numbers only for
+##  `IsProbablyPrimeInt' instead of `IsPrimeInt'.
+##  For large <n>, this function is much faster than `NextPrimeInt'.
+##
+DeclareGlobalFunction( "NextProbablyPrimeInt" );
+
+fi; 
+
+if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -24,21 +45,6 @@ DeclareGlobalFunction( "AllSmoothIntegers" );
 ##  The exponent of the prime <p> in the prime factorization of <n>.
 ##
 DeclareGlobalFunction( "ExponentOfPrime" );
-
-#############################################################################
-##  this function transferred from ResClasses
-##
-#F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
-##
-##  Returns the smallest integer larger than <n> which passes GAP's
-##  probabilistic primality test.
-##
-##  The function `NextProbablyPrimeInt' does the same as `NextPrimeInt',
-##  except that for reasons of performance it tests numbers only for
-##  `IsProbablyPrimeInt' instead of `IsPrimeInt'.
-##  For large <n>, this function is much faster than `NextPrimeInt'.
-##
-DeclareGlobalFunction( "NextProbablyPrimeInt" );
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -70,7 +76,7 @@ DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
 ##
 DeclareGlobalFunction( "RestrictedPartitionsWithoutRepetitions" );
 
-
+fi; 
 
 #############################################################################
 ##

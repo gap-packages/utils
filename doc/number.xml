@@ -2,9 +2,9 @@
 <!--                                                                     -->
 <!--  number.xml          Utils documentation                Stefan Kohn -->
 <!--                                                                     -->
-<!--  version 0.12, 01/12/2015                                           --> 
+<!--  version 0.21, 01/02/2016                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015, The GAP Group,                                 --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -43,6 +43,55 @@ gap> Length(last);
 </Example>
 
 <ManSection>
+   <Func Name="AllProducts"
+         Arg="L, k" />
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+The function <C>AllProducts(<A>L</A>,<A>k</A>)</C> returns the list of
+all products of <A>k</A> entries of the list&nbsp;<A>L</A>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> AllProducts([1..4],3); 
+[ 1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16, 2, 4, 6, 8, 4, 8, 12, 
+  16, 6, 12, 18, 24, 8, 16, 24, 32, 3, 6, 9, 12, 6, 12, 18, 24, 9, 18, 27, 
+  36, 12, 24, 36, 48, 4, 8, 12, 16, 8, 16, 24, 32, 12, 24, 36, 48, 16, 32, 
+  48, 64 ]
+gap> Set(last);            
+[ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 64 ]
+]]>
+</Example>
+
+<ManSection>
+   <Func Name="RestrictedPartitionsWithoutRepetitions"
+         Arg="L, k" />
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+Given a positive integer <A>n</A> and a set of positive integers <A>S</A>, 
+this function returns a list of all partitions of <A>n</A> 
+into distinct elements of <A>S</A>.
+The only difference to <C>RestrictedPartitions</C> 
+is that no repetitions are allowed.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> RestrictedPartitions( 20, [4..10] );
+[ [ 4, 4, 4, 4, 4 ], [ 5, 5, 5, 5 ], [ 6, 5, 5, 4 ], [ 6, 6, 4, 4 ], 
+  [ 7, 5, 4, 4 ], [ 7, 7, 6 ], [ 8, 4, 4, 4 ], [ 8, 6, 6 ], [ 8, 7, 5 ], 
+  [ 8, 8, 4 ], [ 9, 6, 5 ], [ 9, 7, 4 ], [ 10, 5, 5 ], [ 10, 6, 4 ], 
+  [ 10, 10 ] ]
+gap> RestrictedPartitionsWithoutRepetitions( 20, [4..10] );
+[ [ 10, 6, 4 ], [ 9, 7, 4 ], [ 9, 6, 5 ], [ 8, 7, 5 ] ]
+]]>
+</Example>
+
+<ManSection>
    <Func Name="ExponentOfPrime"
          Arg="n p" />
 <Description>
@@ -58,6 +107,38 @@ in the prime factorization of <A>n</A>.
 <![CDATA[
 gap> ExponentOfPrime( 13577531, 11 ); 
 3
+]]>
+</Example>
+
+<ManSection>
+   <Func Name="NextProbablyPrimeInt"
+         Arg="n" />
+<Description>
+This function has transferred from package <Package>ResClasses</Package>. 
+<P/>
+The function <C>NextProbablyPrimeInt(<A>n</A>)</C> 
+does the same as <C>NextPrimeInt(<A>n</A>)</C> 
+except that for reasons of performance it tests numbers only for
+<C>IsProbablyPrimeInt(<A>n</A>)</C> instead of <C>IsPrimeInt(<A>n</A>)</C>.
+For large <A>n</A>, this function is much faster than 
+<C>NextPrimeInt(<A>n</A>)</C> 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> n := 2^251;
+3618502788666131106986593281521497120414687020801267626233049500247285301248
+gap> time;      
+0
+gap> NextProbablyPrimeInt( n );
+3618502788666131106986593281521497120414687020801267626233049500247285301313
+gap> time;                     
+1
+gap> NextPrimeInt( n );        
+3618502788666131106986593281521497120414687020801267626233049500247285301313
+gap> time;             
+12346
 ]]>
 </Example>
 

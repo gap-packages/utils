@@ -2,9 +2,9 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.17, 12/01/2016                                           --> 
+<!--  version 0.21, 03/02/2016                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015-2016, The GAP Group,                                 --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -14,18 +14,33 @@
 
 <Heading>Introduction</Heading>
 
-The &utils; package provides a space for utility functions from a variety 
+The &Utils; package provides a space for utility functions from a variety 
 of &GAP; packages to be collected together into a single package. 
 In this way it is hoped that they will become more visible 
 to other package authors. 
-Any package author who transfers a function to &utils; will become 
-an author of &utils;. 
-This package relies on modifications to the library files oper.g and global.g. 
-It appears that these modifications will not appear in a GAP release until at 
-least version 4.8.3, so development of this package is suspended until 
-further notice. 
-
+Any package author who transfers a function to &Utils; will become 
+an author of &Utils;. 
 <P/> 
+A function (or collection of functions) is suitable for transfer 
+from a package &Home; to &Utils; 
+if the following conditions are satisfied. 
+<List>
+<Item>
+The function does not depend on the remaining functions in &Home; 
+</Item>
+<Item>
+The function does not do what can already be done with a &GAP; library function. 
+</Item>
+<Item>
+Documentation of the function and test examples are available. 
+</Item>
+<Item>
+The function is sufficiently non-specialised so that it might ber of use 
+to other authors.
+</Item>
+</List> 
+<P/>
+
 The package is loaded with the command
 <Example>
 <![CDATA[
@@ -79,198 +94,106 @@ Additional information can be found on the
 <URL>http://pages.bangor.ac.uk/~mas023/chda/</URL>. 
 
 
-<Section Label="sect-procedure"> 
-<Heading>The transfer procedure</Heading>
+<Section Label="sect-current-procedure"> 
+<Heading>The current transfer procedure</Heading> 
 
-The process for transferring utility functions from an existing package 
-(the <Package>Home</Package> package, say) to <Package>Utils</Package> 
-should only require the following steps from <Package>Home</Package>'s 
-author(s). 
-<List>
+We consider here the process for transferring utility functions 
+from an existing package (the &Home; package, say) to &Utils;. 
+<P/>
+If the functions in &Home; all have names of the form 
+<C>HOME_FunctionName</C> then, in &Utils;, these functions 
+are likely to be renamed as <C>FunctionName</C> or something similar. 
+In this case the problem of duplicate declarations does not arise. 
+This is what has happened with transfers from the <Package>AutoDoc</Package> 
+package. 
+<P/>
+The case where the function names are unchanged is more complicated. 
+Initially we tried out a process which allowed repeated declarations and 
+installations of the functions being transferred. 
+This involved additions to the main library files <File>global.g</File> 
+and <File>oper.g</File>. 
+Since there were misgivings about interfering in this way 
+with basic operations such as <C>BIND_GLOBAL</C>, 
+a simpler (but slightly less convenient) process has been adopted. 
+(The discussion about the possible additions to <File>global.g</File> 
+and <File>oper.g</File> can be found at 
+<URL>https://github.com/gap-system/gap/pull/539</URL>.) 
+<P/> 
+Here are the proposed steps to be followed when making transfers from &Home;. 
+<Enum>
 <Item>
+(&Home;:)
 Offer functions for inclusion. 
 This may be simply done by emailing a list of functions. 
-More usefully, email the following files: <File>home.gd</File>, 
+More usefully, email the declaration, implementation, test and 
+documentation files, e.g.: <File>home.gd</File>, 
 <File>home.gi</File>, <File>home.tst</File> and <File>home.xml</File>, 
 </Item>
 <Item>
-Once the functions have been included in <Package>Utils</Package>, 
-and a new version of <Package>Utils</Package> released, 
-remove the functions from <Package>Home</Package>, and add 
-<Package>Utils</Package> to the list of required packages 
+(&Home;:)
+Declare that <B>m.n</B> is the last version of &Home; 
+to contain these functions. 
+</Item>
+<Item>
+(&Utils;:)
+Add strings <A>"home"</A> and <A>"m.n"</A> to the list 
+<C>UtilsPackageVersions</C> in the file <File>utils/lib/start.gd</File>. 
+<Example>
+<![CDATA[
+UtilsPackageVersions := 
+  [ "autodoc",     "2015.09.30", 
+    "resclasses",  "3.4.0", 
+    "home",        "m.n",
+    ...,           ... 
+  ];
+]]>
+</Example>
+</Item>
+<Item>
+(&Utils;:)
+Include the function declaration and implentation sections 
+in suitable files, enclosed within a conditional clause of the form: 
+<Example>
+<![CDATA[
+if OKtoReadFromUtils( "Home" ) then
+. . . . . . 
+ <the code> 
+. . . . . . 
+fi;
+]]>
+</Example> 
+<Index>OKtoReadFromUtils</Index>
+The function <C>OKtoReadFromUtils</C> returns <C>true</C> 
+only if there is an installed version of &Home; 
+and this version is greater than <B>m.n</B>. 
+So, at this stage, <E>the copied code will not be read</E>. 
+</Item>
+<Item>
+(&Utils;:)
+Add the test and documentation material to the appropriate files. 
+The copied code can be tested by temporarily moving &Home; away from 
+&GAP;'s package directory. 
+</Item>
+<Item>
+(&Utils;:)
+Release a new version of &Utils;. 
+</Item>
+<Item>
+(&Home;:)
+Edit out the declarations and implementations of all the transferred functions. 
+Edit or remove references to them in the manual and tests, 
+and add a note to the manual that these functions have been transferred. 
+Add  &Utils; to the list of &Home;'s required packages 
 in <File>PackageInfo.g</File>. 
+Release a new version of &Home;. 
 </Item>
-</List>  
+<Item>
+(&Utils;:) 
+In due course, when the new version(s) of &Home; are well established, 
+it may be possible to remove the conditional clauses mentioned in item 4 above. 
+</Item>
+</Enum>  
 
-<E>The following procedure is useded for transferring a function</E> 
-<A>func</A> <E>from <Package>Home</Package> to <Package>Utils</Package>.</E>
-<P/> 
-There are two cases to consider. 
-If the functions being transferred have names of the form <A>Home_this_func</A>, 
-then it is probably sensible to change the name in <Package>Utils</Package> 
-to <A>ThisFunc</A> (if not already in use). 
-In this case there is no duplication of declarations or implementations. 
-However, once the functions have appeared in a new release of 
-<Package>Utils</Package>, the author(s) of <Package>Home</Package> will 
-have a significant amount of editing to do. 
-<P/> 
-
-In the second case, the functions names in <Package>Utils</Package> 
-will be the same as in <Package>Home</Package>, and the following steps 
-are proposed. 
-<P/>
-<List> 
-<Item> 
-For each function <A>func</A> copy the code into the appropriate 
-<File>*.gd, *.gi</File> files in <Package>Utils</Package>. 
-<P/>
-For attributes and properties this duplication produces no obvious effect 
-in &GAP;.  
-<P/>
-For operations the following warning is printed when the second of 
-<Package>Home</Package> or <Package>Utils</Package> is loaded: 
-<Listing>
-#I  equal requirements in multiple declarations for operation `func'. 
-</Listing>
-<P/>
-For a global function <A>glob</A> duplicate declarations produce an error. 
-This is avoided as follows. 
-<List>
-<Item>
-The library file <File>oper.g</File> has been modified to include 
-the declaration of empty lists <A>GLOBAL_REDECLARATION_LIST</A>, 
-<A>GLOBAL_REINSTALLATION_LIST</A> and <A>GLOBAL_REDECLARATION_COUNT</A>. 
-Also, in <File>oper.g</File>, the functions <C>DeclareGlobalFunction</C> and 
-<C>InstallGlobalFunction</C> have been modified to prevent the execution 
-of a second declaration or installation of functions in these lists. 
-The revised code in <File>oper.g</File> 
-is shown in Appendix <Ref Chap="appendix" />. 
-</Item> 
-<Item>
-The function <C>AllowGlobalRedeclaration</C> is used 
-(in file <File>utils/lib/first.gd</File>) to add "<A>glob</A>" 
-to the list <A>GLOBAL_REDECLARATION_LIST</A>, 
-while the function <C>AllowGlobalReinstallation</C> is used 
-(in file <File>utils/lib/last.gd</File>) to add <A>glob</A> 
-to the list <A>GLOBAL_REINSTALLATION_LIST</A>.  
-</Item>
-</List> 
-To allow for functions installed just using <C>BIND_GLOBAL</C>, 
-there is (in file <File>global.g</File>) a function 
-<C>AllowGlobalRebinding</C> and lists <A>GLOBAL_REBINDING_LIST</A>, 
-<A>GLOBAL_REBINDING_COUNT</A>. 
-</Item> 
-<Item>
-Copy and edit any tests and documentation into the corresponding 
-<File>*.tst, *.xml</File> files in <Package>Utils</Package>. 
-</Item>
-<Item>
-When all is working satisfactorily, publish a new version of 
-<Package>Utils</Package>; then notify the author(s) of <Package>Home</Package>, 
-asking them to check that the functions are working correctly. 
-These checks should involve loading <Package>Utils</Package> first, 
-and then <Package>Home</Package>, and, in a separate &GAP; session, 
-loading <Package>Home</Package> first, and then <Package>Utils</Package>. 
-</Item> 
-<Item>
-The author(s) of <Package>Home</Package> remove the declarations 
-and implementations of all the transferred functions from their files, 
-and (possibly) edit references to them in their manual and tests.  
-</Item>
-<Item>
-They make <Package>Utils</Package> a required package in 
-<File>PackageInfo.g</File> and publish a new release of 
-<Package>Home</Package>. 
-</Item>
-<Item>
-In the next version of <Package>Utils</Package> 
-remove each "<A>glob</A>" from <A>GLOBAL_REDECLARATION_LIST</A> 
-and each <A>glob</A> from <A>GLOBAL_REINSTALLATION_LIST</A>
-or <A>GLOBAL_REBINDING_LIST</A>. 
-</Item>
-</List>
-
-</Section>
-
-<Section Label="sect-comments"> 
-<Heading>Comments on the transfer procedure for global functions</Heading>
-
-Suppose that, at the start of the transfer of <A>glob</A> 
-from <Package>Home</Package> to <Package>Utils</Package>, 
-the version of <Package>Home</Package> is <A>6.78</A> and 
-the version of <Package>Utils</Package> is <A>2.34</A>. 
-In what follows, <A>val</A> refers to the value of 
-<A>GLOBAL_REDECLARATION_COUNT[pos]</A> where <A>pos</A> is the position of 
-"<A>glob</A>" in <A>GLOBAL_REDECLARATION_LIST</A>. 
-<P/> 
-There are three stages to the process. 
-<P/> 
-In the first stage the declaration, implementation, documentation and tests 
-referring to <A>glob</A> are copied to files in <Package>Utils</Package>. 
-Suppose <Package>Home</Package> is loaded first, so that <A>glob</A> 
-is both declared and implemented from <Package>Home</Package>. 
-Then, when <Package>Utils</Package> is loaded, 
-<List>
-<Item>
-<C>ISBOUND_GLOBAL</C> will be true for <A>glob</A> 
-and so <A>val</A> will be set to <M>1</M> by <File>first.gd</File>; 
-</Item> 
-<Item> 
-the declaration of <A>glob</A> is then found, and ignored, 
-but <A>val</A> is increased to <M>2</M>; 
-</Item> 
-<Item> 
-when the implementation of <A>glob</A> is found, it is ignored because 
-<A>val</A> is too large. 
-</Item>
-</List> 
-
-Alternatively, suppose <Package>Utils</Package> is loaded first, so that: 
-<List>
-<Item>
-<C>ISBOUND_GLOBAL</C> will be false for <A>glob</A> 
-and so <A>val</A> will be set to <M>0</M> by <File>first.gd</File>; 
-</Item> 
-<Item> 
-the declaration of <A>glob</A> is then accepted
-and <A>val</A> is increased to <M>1</M>; 
-</Item> 
-<Item> 
-when the implementation of <A>glob</A> is found, it is accepted because 
-<A>val</A> is less than <M>2</M>.
-</Item>
-</List> 
-Then, when <Package>Home</Package> is loaded, 
-<List>
-<Item> 
-the declaration of <A>glob</A> is found, and ignored, 
-and <A>val</A> is increased to <M>2</M>; 
-</Item> 
-<Item> 
-when the implementation of <A>glob</A> is found, it is ignored because 
-<A>val</A> is too large. 
-</Item>
-</List> 
-When all the tests pass, version <A>2.35</A> of <Package>Utils</Package> 
-is published, and the authors of <Package>Home</Package> notified. 
-<P/> 
-In the second stage, the authors of <Package>Home</Package> do their own tests. 
-If satisfied, they remove all declaration and implementation code 
-for <A>glob</A> from <Package>Home</Package>, and add <Package>Utils</Package> 
-to their list of required packages in their <File>PackageInfo.g</File>. 
-Now, in a new &GAP; session, when <C>RequirePackage(home);</C> is called, 
-<Package>Utils</Package> is loaded first, providing the declaration 
-and implementation of <A>glob</A>. 
-Further tests are then required to check that any other 
-<Package>Home</Package> functions which use <A>glob</A> still work correctly. 
-If still satisfied, the authors publish version <A>6.79</A> 
-of <Package>Home</Package>.
-<P/> 
-In the final stage, "<A>glob</A>" and <A>glob</A> are removed from 
-<A>GLOBAL_REDECLARATION_LIST</A> and <A>GLOBAL_REINSTALLATION_LIST</A> respectively (ditto <A>GLOBAL_REBINDING_LIST</A>). 
-The additional code in <File>oper.g</File> (or <File>global.g</File>) 
-no longer applies to <A>glob</A>, and version <A>2.36</A> 
-of <Package>Utils</Package> may be published. 
 
 </Section> 
 

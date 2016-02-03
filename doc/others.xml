@@ -3,9 +3,9 @@
 <!--  others.xml          Utils documentation                Stefan Kohl -->
 <!--                                                   Sebastian Gutsche -->
 <!--                                                            Max Horn -->
-<!--  version 0.13, 15/12/2015                                           --> 
+<!--  version 0.21, 03/02/2016                                           --> 
 <!--                                                                     --> 
-<!--  Copyright (C) 2015, The GAP Group,                                 --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -104,38 +104,123 @@ gap> ## examples needed!
 <Heading>Operations on folders</Heading>
 
 <ManSection>
-  <Func Name="CreateDirIfMissing" 
-        Arg="str"/>
   <Func Name="FindMatchingFiles" 
+        Arg="pkg dirs extns"/>
+  <Func Name="CreateDirIfMissing" 
         Arg="str"/>
 <Description>
 These functions have transferred from package <Package>AutoDoc</Package>. 
+<P/>
+<C>FindMatchingFiles</C> scans the given (by name) subdirectories 
+of a package directory for files with one of the given extensions, 
+and returns the corresponding filenames, 
+as paths relative to the package directory.
 <P/>
 <C>CreateDirIfMissing</C> checks whether the given directory exists 
 and, if not, attempts to create it. 
 In either case <C>true</C> is returned. 
 <P/>
-<C>FindMatchingFiles</C> scans the given (by name) subdirectories 
-of a package directory for files with one of the given extensions, 
-and returns the corresponding filenames, as relative paths 
-(relative to the package directory).
+<E>Warning:</E> this function relies on the undocumented library function 
+<C>CreateDir</C>, so use it with caution. 
+<P/>
 </Description>
 </ManSection>
 <P/>
 <Example>
 <![CDATA[
+gap> FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "log" ] );
+[ "/PackageInfo.g", "/feb1.log", "/init.g", "/makedocrel.g", "/read.g", 
+  "/start.g", "/test.log", "tst/testall.g" ]
 gap> CreateDirIfMissing( "/Applications/gap/temp/" );
 true
-gap> FindMatchingFiles( "utils", [ "doc/", "tst/" ], [ "xml", "g" ] );     
-[ "doc/appendix.xml", "doc/groups.xml", "doc/intro.xml", "doc/lists.xml", 
-  "doc/manual.xml", "doc/number.xml", "doc/others.xml", "doc/record.xml", 
-  "tst/testall.g" ]
 ]]>
 </Example>
 
 
 </Section>
 
+
+<Section Label="sec:log2html">
+<Heading>File operations</Heading>
+
+<ManSection>
+  <Func Name="Log2HTML" 
+        Arg="filename"/>
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+This function converts the &GAP; logfile logfilename to HTML. 
+The extension of the input file must be <A>*.log</A>. 
+The name of the output file is the same as the one of the input file 
+except that the extension <A>*.log</A> is replaced by <A>*.html</A>. 
+There is a sample CSS file in <File>utils/doc/gaplog.css</File>, 
+which you can adjust to your taste. 
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> LogTo("feb1.log");
+gap> FindMatchingFiles( "utils", [""], ["g"] ); 
+[ "/PackageInfo.g", "/init.g", "/makedocrel.g", "/read.g", "/start.g" ]
+gap> LogTo();
+gap> FindMatchingFiles( "utils", [""], ["log"] );
+[ "/feb1.log", "/test.log" ]
+gap> Log2HTML( "feb1.log" );
+gap> FindMatchingFiles( "utils", [""], ["html"] );
+[ "/feb1.html" ]
+]]>
+</Example>
+
+</Section>
+
+
+
+<Section Label="sec:latex">
+<Heading>&LaTeX; strings</Heading>
+
+<ManSection>
+  <Func Name="IntOrOnfinityToLaTeX" 
+        Arg="n"/>
+<Description>
+This function has transferred from package <Package>ResClasses</Package>. 
+<P/>
+<C>IntOrInfinityToLaTeX(n)</C> returns the &LaTeX; string for <A>n</A>. 
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> IntOrInfinityToLaTeX( 10^3 );
+"1000"
+gap> IntOrInfinityToLaTeX( infinity );
+"\\infty"
+]]>
+</Example>
+
+<ManSection>
+  <Func Name="LaTeXStringFactorsInt" 
+        Arg="n"/>
+<Description>
+This function has transferred from package <Package>RCWA</Package>. 
+<P/>
+It returns the prime factorization of the integer <M>n</M> as a string in 
+&LaTeX; format.
+<P/>
+</Description>
+</ManSection>
+<P/>
+<Example>
+<![CDATA[
+gap> LaTeXStringFactorsInt( Factorial(12) );
+"2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
+]]>
+</Example>
+
+
+</Section>
 
 
 

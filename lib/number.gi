@@ -2,9 +2,12 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-##  version 0.15, 18/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "RCWA" ) then
+Print( "reading RCWA functions from number.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -59,6 +62,11 @@ InstallGlobalFunction( ExponentOfPrime,
     return k;
   end );
 
+fi; 
+
+if OKtoReadFromUtils( "ResClasses" ) then
+Print( "reading Resclasses functions from number.gi\n" ); 
+
 #############################################################################
 ##  this function transferred from Resclasses 
 ##
@@ -79,6 +87,11 @@ InstallGlobalFunction( NextProbablyPrimeInt,
     od;
     return n;
   end );
+
+fi;
+
+if OKtoReadFromUtils( "RCWA" ) then
+Print( "reading RCWA functions from number.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -226,6 +239,8 @@ InstallGlobalFunction( PrimeNumbersIterator,
       maxdiv         := maxdiv,
       offset         := offset ) );
   end );
+
+fi; 
 
 #############################################################################
 ##

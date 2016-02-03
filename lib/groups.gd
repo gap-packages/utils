@@ -2,9 +2,11 @@
 ##
 #W  groups.gd                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.21, 02/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
 ##  this function transferred from ResClasses 
@@ -31,8 +33,52 @@ if not IsBound( LowerFittingSeries ) then
 if not IsBound( FittingLength ) then 
     DeclareAttribute( "FittingLength", IsGroup ); fi;
 
+fi; 
 
+if OKtoReadFromUtils( "RCWA" ) then
 
+#############################################################################
+##  this function transferred from RCWA 
+##
+#F  ListOfPowers( <g>, <exp> ) . . . . . .  list of powers <g>^1 .. <g>^<exp>
+##
+DeclareGlobalFunction( "ListOfPowers" );
+
+#############################################################################
+##
+#O  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
+#M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
+##
+DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
+
+#############################################################################
+##
+#F  ReducedWordByOrdersOfGenerators( <w>, <gensords> )
+##
+##  Given a word <w>, this function returns the word obtained from <w> by
+##  reducing the exponents of powers of generators modulo their orders, as
+##  specified in the list <gensords>.
+##
+DeclareGlobalFunction( "ReducedWordByOrdersOfGenerators" );
+
+#############################################################################
+##
+#O  NormalizedRelator( <w>, <gensords> )
+##
+##  Given a word <w>, this operation returns its normal form obtained by
+##
+##    1. reducing the exponents of powers of generators modulo their orders,
+##       as specified in the list <gensords>,
+##    2. cyclic reduction and
+##    3. cyclic conjugation to the lexicographically smallest such conjugate.
+##
+##  As the name of the operation suggests, the main purpose of this operation
+##  is to get the relators in a finite presentation short and nice, and to be
+##  able to spot and remove redundant relators in easy cases.
+##
+DeclareOperation( "NormalizedRelator", [ IsAssocWord, IsList ] );
+
+fi; 
 
 #############################################################################
 ##

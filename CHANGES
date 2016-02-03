@@ -3,6 +3,12 @@
 Problems and ToDos: 
 
 #############################################################################
+Version 0.21 for GAP 4.8.1 (29/01/16)
+
+ - (29/01/16) switching to using Frank's suggestion:
+              if TestPackageAvailability("Bla", ">=x.(y+1)") = fail then ... 
+
+#############################################################################
 Version 0.17 for GAP 4.8.1 (12/01/16)
 
  - (12/01/16) more edits to oper.g and global.g suggested by Chris J.

@@ -2,9 +2,9 @@
 ##
 #W  record.tst                  Utils Package                    
 ##
-##  version 0.16, 21/12/2015   
+##  version 0.21, 02/02/2016   
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 ##  
 
 ## SubSection 2.1.1 
@@ -18,6 +18,12 @@ gap> BindInRecordIfMissing( r, "c", 4 );
 gap> r;
 rec( a := 1, b := 2, c := 3 )
 
+## SubSection 2.1.1 
+gap> AssignGlobals(r);
+The following global variables have been assigned:
+[ "b", "c", "a" ]
+gap> [a,b,c];
+[ 1, 2, 3 ]
 
 #############################################################################
 ##

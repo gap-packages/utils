@@ -2,9 +2,12 @@
 ##
 #W  combinat.gi               GAP4 package `Utils'              Chris Wensley
 ##
-##  version 0.13, 14/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "XMod" ) then
+Print( "reading XMod functions from combinat.gi\n" ); 
 
 ##############################################################################
 ##  this function has been transferred from XMod 
@@ -227,6 +230,8 @@ function( G, H, T )
     od;
     return true;
 end );
+
+fi; 
 
 #############################################################################
 ##

@@ -2,15 +2,17 @@
 ##
 #W  cache.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
 ##
 #S  A simple caching facility. 
 ##
 #############################################################################
+
+if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
 ##  these functions transferred from ResClasses 
@@ -32,7 +34,7 @@ DeclareGlobalFunction( "SetupCache" );
 DeclareGlobalFunction( "PutIntoCache" );
 DeclareGlobalFunction( "FetchFromCache" );
 
-
+fi;
 
 #############################################################################
 ##

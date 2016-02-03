@@ -1,29 +1,22 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.17, January 12th 2016 
+Version 0.21, February 3rd 2016 
 
 Introduction 
 ------------
 This package collects together utility functions from a selection of GAP 
-packages in order to make them more widely visible to package authors.
+packages in order to make them more widely visible to other package authors.
 
 History
 -------
 Started 12/11/15.  First release, utils-0.11, on 30/11/15. 
-Latest release, utils-0.17, on 12/01/16. 
-
-Timetable
----------
-This package relies on modifications to the library files oper.g and global.g. 
-It appears that these modifications will not appear in a GAP release until at 
-least version 4.8.3, so development of this package is suspended until 
-further notice. 
+Latest release, utils-0.21, on 03/02/16. 
 
 Distribution
 -------------
-The ``Utils'' package is distributed with the deposited GAP packages, see: 
-     http://www.gap-system.org/Packages/utils.html
+The ``Utils'' package will soon be distributed with the deposited GAP packages, 
+see: http://www.gap-system.org/Packages/utils.html
 It may also be obtained from the Bangor ftp pages for
 Computational Higher-dimensional Discrete Algebra at: 
      http://pages.bangor.ac.uk/~mas023/chda/utils/
@@ -39,7 +32,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.17.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.21.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 

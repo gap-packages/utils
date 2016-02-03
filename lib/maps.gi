@@ -2,11 +2,15 @@
 ##
 #W  maps.gi                   GAP4 package `XMod'               Chris Wensley
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.21, 02/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "XMod" ) then
+Print( "reading XMod functions from maps.gi\n" ); 
 
 ##############################################################################
+##  this method transferred from XMod 
 ##
 #M  IsomorphismFpInfo( <G> ) . . . . . . . . . . . . isomorphic fp-group for G
 ##
@@ -28,6 +32,7 @@ function( grp )
 end );
 
 ##############################################################################
+##  this method transferred from XMod 
 ##
 #M  IsomorphismPermInfo( <G> ) . . . . . . . . . . isomorphic perm group for G
 ##
@@ -49,6 +54,7 @@ function( grp )
 end );
 
 ##############################################################################
+##  this method transferred from XMod 
 ##
 #M  IsomorphismPcInfo( <G> ) . . . . . . . . . . . . isomorphic pc group for G
 ##
@@ -76,6 +82,7 @@ function( grp )
 end );
 
 ##############################################################################
+##  this method transferred from XMod 
 ##
 #M  IsomorphismPermOrPcInfo( <G> ) . . . . . isomorphic perm or pc group for G
 ##
@@ -113,6 +120,33 @@ function( grp )
         fi; 
     fi; 
 end );
+
+fi; 
+
+if OKtoReadFromUtils( "RCWA" ) then
+Print( "reading RCWA functions from maps.gi\n" ); 
+
+#############################################################################
+##  these methods transferred from RCWA
+##
+#F  EpimorphismByGenerators( <D1>, <D2> ) . epi: gen's of <D1>->gen's of <D2>
+#M  EpimorphismByGeneratorsNC( <D1>, <D2> ) .  NC version as underlying oper.
+#M  EpimorphismByGeneratorsNC( <G>, <H> ) . . . . . . . . . . . .  for groups
+##
+InstallMethod( EpimorphismByGeneratorsNC, "for groups", ReturnTrue, 
+    [ IsGroup, IsGroup ], 0,
+
+    function ( G, H )
+    return GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),
+                                           GeneratorsOfGroup(H));
+    end );
+
+InstallGlobalFunction( EpimorphismByGenerators,
+  function ( D1, D2 )
+    return EpimorphismByGeneratorsNC( D1, D2 );
+  end );
+
+fi; 
 
 #############################################################################
 ##

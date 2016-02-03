@@ -2,9 +2,12 @@
 ##
 #W  string.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.14, 16/12/2015 
+##  version 0.21, 02/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2016, The GAP Group, 
+
+if OKtoReadFromUtils( "ResClasses" ) then
+Print( "reading ResClasses functions from string.gi\n" ); 
 
 #############################################################################
 ##  this method transferred from ResClasses 
@@ -78,6 +81,8 @@ InstallGlobalFunction( QuotesStripped,
     return str;
   end );
 
+fi; 
+
 #############################################################################
 ##  this function transferred from AutoDoc 
 ##
@@ -97,21 +102,6 @@ function(str)
     fi;
     return str{[i+1..Length(str)]};
 end );
-
-##  this original version is included only to test code in global.g which uses 
-##  AllowGlobalRebinding, GLOBAL_REBINDING_LIST and GLOBAL_REBINDING_COUNT. 
-
-BindGlobal( "AUTODOC_GetSuffix",
-function(str)
-    local i;
-    i := Length(str);
-    while i > 0 and str[i] <> '.' do i := i - 1; od;
-    if i < 0 then return ""; fi;
-    return str{[i+1..Length(str)]};
-end );
-
-
-
 
 #############################################################################
 ##

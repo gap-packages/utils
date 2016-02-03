@@ -2,10 +2,24 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-##  version 0.13, 15/12/2015   
+##  version 0.21, 29/01/2016   
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 ##  
+
+##  first make sure that, if the transferred code has not been read, 
+##  then the appropriate packages are loaded. 
+
+len := Length( UtilsPackageVersions ); 
+j := 0; 
+while ( j < len ) do 
+    j := j+1; 
+    name := UtilsPackageVersions[j]; 
+    if not OKtoReadFromUtils( name ) then 
+        LoadPackage( name ); 
+    fi; 
+    j := j+1;
+od; 
 
 TestMyPackage := function( pkgname )
     local  pkgdir, testfiles, testresult, ff, fn;
@@ -36,5 +50,7 @@ TestMyPackage := function( pkgname )
     fi;
 end;
 
+Print( "\n#I  Test output starts here" ); 
+Print( "\n#I  =======================\n" );
 ##  Set the name of the package here
 TestMyPackage( "utils" );

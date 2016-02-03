@@ -2,9 +2,12 @@
 ##
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.13, 11/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "Gpd" ) then
+Print( "reading Gpd functions from lists.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from Gpd 
@@ -33,6 +36,11 @@ function( L )
     fi;
 end );
 
+fi; 
+
+if OKtoReadFromUtils( "ResClasses" ) then
+Print( "reading ResClasses functions from lists.gi\n" ); 
+
 #############################################################################
 ##  these functions transferred from ResClasses 
 ##
@@ -50,11 +58,11 @@ InstallGlobalFunction( QuotientsList,
     local  len, pos, quot;
     len := Length( list ); 
     quot := ListWithIdenticalEntries( len-1, 0 ); 
-    for pos in [2..len] do 
-        if ( list[pos-1] = 0 ) then 
+    for pos in [1..len-1] do 
+        if ( list[pos] = 0 ) then 
             quot[pos] := fail; 
         else 
-            quot[pos] := list[pos]/list[pos-1]; 
+            quot[pos] := list[pos+1]/list[pos]; 
         fi; 
     od;
     return quot;
@@ -85,6 +93,11 @@ InstallMethod( RandomCombination, "default method",
     od;
     return Set(c);
   end );
+
+fi; 
+
+if OKtoReadFromUtils( "RCWA" ) then
+Print( "reading RCWA functions from lists.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -137,6 +150,8 @@ InstallGlobalFunction( SearchCycle,
       return [preperiod,cycle];
     fi;
   end );
+
+fi;
 
 #############################################################################
 ##

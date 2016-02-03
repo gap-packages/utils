@@ -2,15 +2,18 @@
 ##
 #W  cache.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.13, 11/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
 ##
 #S  A simple caching facility. 
 ##
 #############################################################################
+
+if OKtoReadFromUtils( "ResClasses" ) then
+Print( "reading ResClasses functions from cache.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from ResClasses 
@@ -71,6 +74,8 @@ InstallGlobalFunction( "FetchFromCache",
     fi;
     return fail;
   end );
+
+fi; 
 
 #############################################################################
 ##

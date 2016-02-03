@@ -2,9 +2,9 @@
 ##
 #W  string.tst                  Utils Package                    
 ##
-##  version 0.13, 15/12/2015   
+##  version 0.21, 02/01/2016   
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 ##  
 
 ## SubSection 2.3.1 
@@ -26,6 +26,10 @@ gap> QuotesStripped(S);
 
 gap> StringDotSuffix( "file.ext" );
 "ext"
+gap> StringDotSuffix( "file.ext.bak" );
+"bak"
+gap> StringDotSuffix( "file." );
+""
 gap> StringDotSuffix( "Hello" );   
 fail
 

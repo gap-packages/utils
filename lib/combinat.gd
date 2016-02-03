@@ -2,9 +2,11 @@
 ##
 #W  combinat.gd                 GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.12, 01/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "XMod" ) then
 
 #############################################################################
 ##  these functions have been transferred from XMod 
@@ -18,6 +20,8 @@ DeclareOperation( "DistinctRepresentatives", [ IsList ] );
 DeclareOperation( "CommonRepresentatives", [ IsList, IsList ] );
 DeclareOperation( "CommonTransversal", [ IsGroup, IsGroup ] );
 DeclareOperation( "IsCommonTransversal", [ IsGroup, IsGroup, IsList ] );
+
+fi; 
 
 #############################################################################
 ##

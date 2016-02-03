@@ -2,9 +2,11 @@
 ##
 #W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-##  version 0.15, 18/12/2015 
+##  version 0.21, 29/01/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
+
+if OKtoReadFromUtils( "Gpd" ) then
 
 ##############################################################################
 ##  this function transferred from Gpd 
@@ -12,6 +14,10 @@
 #O  PrintListOneItemPerLine( <L> )
 ##  
 DeclareOperation( "PrintListOneItemPerLine", [ IsList ] );
+
+fi; 
+
+if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
 ##  these functions transferred from ResClasses 
@@ -35,12 +41,18 @@ DeclareGlobalFunction( "SumsOfCubes" );
 ##
 DeclareOperation( "RandomCombination", [ IsListOrCollection, IsPosInt ] );
 
+fi; 
+
+if OKtoReadFromUtils( "RCWA" ) then
+
 #############################################################################
 ##  this function transferred from RCWA 
 ##
 #F  SearchCycle( <l> ) . . . a utility function for detecting cycles in lists
 ##
 DeclareGlobalFunction( "SearchCycle" );
+
+fi; 
 
 #############################################################################
 ##

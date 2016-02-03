@@ -2,9 +2,10 @@
 ##
 #W  record.gi                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn
-##  version 0.16, 21/12/2015 
+##                                                           Stefan Kohl 
+##  version 0.21, 02/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
 ##  this method transferred from AutoDoc, was AUTODOC_WriteOnce 
@@ -19,6 +20,45 @@ InstallGlobalFunction( BindInRecordIfMissing,
     fi;
 end );
 
+if OKtoReadFromUtils( "RCWA" ) then
+Print( "reading RCWA functions from record.gi\n" ); 
+
+#############################################################################
+##  this method transferred from RCWA
+##
+#F  AssignGlobals( <record> )
+##
+##  This auxiliary function assigns the record components of <record>
+##  to global variables with the same names.
+##
+InstallGlobalFunction( AssignGlobals,
+
+  function ( record )
+
+    local  names, name;
+
+    names := RecNames(record);
+    for name in names do
+      if IsBoundGlobal(name) then
+        if IsReadOnlyGlobal(name)
+        then
+          MakeReadWriteGlobal(name);
+          Info(InfoWarning,1,"The read-only global variable ",name,
+                             " has been overwritten.");
+        else
+          Info(InfoUtils,1,"The global variable ",name,
+                          " has been overwritten.");
+        fi;
+        UnbindGlobal(name);
+      fi;
+      BindGlobal(name,record.(name));
+      MakeReadWriteGlobal(name);
+    od;
+    Print("The following global variables have been assigned:\n",
+          names,"\n");
+  end );
+
+fi; 
 
 #############################################################################
 ##

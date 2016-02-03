@@ -1,10 +1,11 @@
 ##############################################################################
 ##
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
-##                                                           Max Horn
-##  version 0.16, 21/12/2015 
+##                                                           Max Horn 
+##                                                           Stefan Kohl 
+##  version 0.21, 02/02/2016 
 ##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
 ##  this function transferred from AutoDoc, was AUTODOC_WriteOnce 
@@ -13,6 +14,19 @@
 ##
 DeclareGlobalFunction( "BindInRecordIfMissing" );
 
+if OKtoReadFromUtils( "RCWA" ) then
+
+#############################################################################
+##  this function transferred from RCWA
+##
+#F  AssignGlobals( <record> )
+##
+##  This auxiliary function assigns the record components of <record> to
+##  global variables with the same names.
+##
+DeclareGlobalFunction( "AssignGlobals" );
+
+fi; 
 
 #############################################################################
 ##
