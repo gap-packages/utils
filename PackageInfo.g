@@ -23,7 +23,7 @@ Date := "03/02/2016",
 PackageWWWHome := 
   "http://pages.bangor.ac.uk/~mas023/chda/utils/",
 
-ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils-0.21", 
+ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils/utils-0.21", 
 ArchiveFormats := ".tar.gz",
 
 Persons := [
@@ -56,7 +56,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "c.d.wensley@bangor.ac.uk",
-    WWWHome       := "http://www.bangor.ac.uk/~mas012/",
+    WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
     PostalAddress := Concatenation( [
                        "Dr. C.D. Wensley\n",
                        "School of Computer Science\n",
