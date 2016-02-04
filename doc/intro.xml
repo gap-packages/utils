@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.21, 03/02/2016                                           --> 
+<!--  version 0.22, 04/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -65,7 +65,7 @@ the Bangor site:
 </Item>
 </List> 
 The package also has a GitHub repository: 
-<URL>https://github.com/cdwensley/utils</URL>. 
+<URL>https://github.com/gap-packages/utils</URL>. 
 <P/> 
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 

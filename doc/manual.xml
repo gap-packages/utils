@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  manual.xml          Utils documentation              Chris Wensley -->
 <!--                                                                     -->
-<!--  version 0.21, 02/02/2016                                           --> 
+<!--  version 0.22, 04/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -70,7 +70,7 @@ further notice.
 Bug reports, suggestions and comments are, of course, welcome. 
 Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
 or submit an issue at the GitHub repository 
-<URL>http://github.com/cdwensley/utils/issues/</URL>. 
+<URL>http://github.com/gap-packages/utils/issues/</URL>. 
 </Abstract>
 
 <Copyright> 

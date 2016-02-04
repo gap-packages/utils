@@ -1,7 +1,7 @@
                        README file for the Utils package 
                        ================================= 
 
-Version 0.21, February 3rd 2016 
+Version 0.22, February 4th 2016 
 
 Introduction 
 ------------
@@ -11,7 +11,7 @@ packages in order to make them more widely visible to other package authors.
 History
 -------
 Started 12/11/15.  First release, utils-0.11, on 30/11/15. 
-Latest release, utils-0.21, on 03/02/16. 
+Latest release, utils-0.22, on 04/02/16. 
 
 Distribution
 -------------
@@ -32,7 +32,7 @@ For details, see \URL{http://www.gnu.org/licenses/gpl.html}
 
 Installation
 ------------
-1) unpack `utils-0.21.tar.gz' in the `pkg' subdirectory of the GAP root directory.
+1) unpack `utils-0.22.tar.gz' in the `pkg' subdirectory of the GAP root directory.
 
 2) From within GAP load the package with:
 gap> LoadPackage("Utils"); 
@@ -44,4 +44,4 @@ Contact
 If you have a question relating to Utils, encounter any problems, 
 or wish to suggest other functions to be transferred to the package, please
  - email c.d.wensley@bangor.ac.uk 
- - or report an issue at https://github.com/cdwensley/utils/issues/new 
+ - or report an issue at https://github.com/gap-packages/utils/issues/new 

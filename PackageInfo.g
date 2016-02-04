@@ -7,23 +7,23 @@ SetPackageInfo( rec(
 PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
-Version := "0.21",
-Date := "03/02/2016",
+Version := "0.22",
+Date := "04/02/2016",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.21">
-##  <!ENTITY UTILSTARFILENAME "utils-0.21.tar.gz">
+##  <!ENTITY UTILSVERSION "0.22">
+##  <!ENTITY UTILSTARFILENAME "utils-0.22.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "03/02/2016">
-##  <!ENTITY UTILSLONGRELEASEDATE "3rd February 2016">
+##  <!ENTITY UTILSRELEASEDATE "04/02/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "4th February 2016">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
 ##  <#/GAPDoc>
 
 PackageWWWHome := 
   "http://pages.bangor.ac.uk/~mas023/chda/utils/",
 
-ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils/utils-0.21", 
+ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils/utils-0.22", 
 ArchiveFormats := ".tar.gz",
 
 Persons := [
@@ -85,8 +85,8 @@ PackageInfoURL :=
 ##    - Support email address
 SourceRepository :=
   rec( Type := "git", # must be one of "git", "hg", "svn", "cvs"
-       URL  := "http://github.com/cdwensley/utils"),
-IssueTrackerURL := "http://github.com/cdwensley/utils/issues",
+       URL  := "http://github.com/gap-packages/utils"),
+IssueTrackerURL := "http://github.com/gap-packages/utils/issues",
 SupportEmail := "c.d.wensley@bangor.ac.uk",
 
 AbstractHTML :=

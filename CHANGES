@@ -3,9 +3,15 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.21 for GAP 4.8.1 (29/01/16)
+Version 0.22 for GAP 4.8.1 (04/02/16)
 
- - (29/01/16) switching to using Frank's suggestion:
+ - (04/02/16) repository moved to gap-packages 
+
+#############################################################################
+Version 0.21 for GAP 4.8.1 (03/02/16)
+
+ - (03/02/16) added several more functions from RCWA
+ - (29/01/16) switching to a protocol based on Frank's suggestion:
               if TestPackageAvailability("Bla", ">=x.(y+1)") = fail then ... 
 
 #############################################################################
