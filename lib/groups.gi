@@ -2,7 +2,7 @@
 ##
 #W  groups.gi                 GAP4 package `Utils'                 Stefan Kohl
 ##
-##  version 0.21, 02/02/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -26,7 +26,12 @@ InstallOtherMethod( Comm,
 InstallMethod( IsCommuting,
                "fallback method (ResClasses)", IsIdenticalObj,
                [ IsMultiplicativeElement, IsMultiplicativeElement ], 0,
-               function ( a, b ) return a*b = b*a; end );
+               function ( a, b ) return a*b = b*a; end ); 
+
+fi; 
+
+if ( ( InstalledPackageVersion("resclasses") <> fail ) and 
+     ( InstalledPackageVersion("resclasses") > "4.1.0" ) ) then  
 
 #############################################################################
 ##  this function transferred from ResClasses 

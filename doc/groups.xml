@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.21, 02/02/2016                                           --> 
+<!--  version 0.23, 10/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -86,6 +86,8 @@ gap> GeneratorsAndInverses( D12 );
          Arg="G" />
 <Description>
 These operations have transferred from package <Package>ResClasses</Package>. 
+Note that these three functions have been removed from version 4.0.1 of 
+<Package>ResClasses</Package>, but will not yet be read by &Utils;. 
 <P/>
 The upper and lower Fitting series and the Fitting length of a solvable
 group are described here: 

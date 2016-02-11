@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  lists.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.21, 02/02/2016                                           --> 
+<!--  version 0.25, 11/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -182,45 +182,20 @@ true
 <ManSection>
    <Func Name="BlankFreeString"
          Arg="obj" />
-   <Func Name="QuotesStripped"
-         Arg="str" />
 <Description>
-These functions have transferred from package <Package>ResClasses</Package>. 
+This function has transferred from package <Package>ResClasses</Package>. 
 <P/>
-The function call <C>BlankFreeString(s)</C> removes space characters from a string <C>s</C>. 
-It is similar to the library call 
-<C>RemoveCharacters( String(obj), " " );</C> but the latter changes 
-the original <C>s</C>. 
-<P/>
-The function <C>QuotesStripped(s)</C> removes double-quote characters 
-<C>\"</C> from a string.  It is equivalent to the library call 
-<C>RemoveCharacters( String(obj), "\"" );</C> since it <E>does</E> 
-change the original <C>s</C>.  
+The result of <C>BlankFreeString( obj );</C> 
+is a composite of the functions <C>String( obj )</C> and 
+<C>RemoveCharacters( obj, " " );</C>. 
 <P/>
 </Description>
 </ManSection>
 <Example>
 <![CDATA[
-gap> s:="abc def  \"Hello\" ";     
-"abc def  \"Hello\" "
-gap> t := BlankFreeString(s); 
-"abcdef\"Hello\""
-gap> s;
-"abc def  \"Hello\" "
-gap> RemoveCharacters( s, " " );
-gap> s;
-"abcdef\"Hello\""
-gap> s:="abc def  \"Hello\" ";  
-"abc def  \"Hello\" "
-gap> t := QuotesStripped( s );
-"abc def  Hello "
-gap> s;
-"abc def  Hello "
-gap> s:="abc def  \"Hello\" ";
-"abc def  \"Hello\" "
-gap> RemoveCharacters( s, "\"" );
-gap> s;
-"abc def  Hello "
+gap> D12 := DihedralGroup( 12 );; 
+gap> BlankFreeString( D12 );
+"Group([f1,f2,f3])"
 ]]>
 </Example>
 
@@ -228,7 +203,9 @@ gap> s;
    <Oper Name="StringDotSuffix"
          Arg="str suf" />
 <Description>
-These functions have transferred from package <Package>AutoDoc</Package>. 
+These functions have transferred from package <Package>AutoDoc</Package>, 
+and were originally named <C>AUTODOC_GetSuffix</C> 
+and <C>AUTODOC_HasSuffix</C>. 
 <P/>
 When <C>StringDotSuffix</C> is given a string containing a "." 
 it return its extension, i.e. the bit after the last ".". 

@@ -2,10 +2,12 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-##  version 0.21, 29/01/2016   
+##  version 0.22, 09/02/2016   
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 ##  
+
+LoadPackage( "utils" ); 
 
 ##  first make sure that, if the transferred code has not been read, 
 ##  then the appropriate packages are loaded. 

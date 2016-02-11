@@ -3,16 +3,17 @@
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn 
 ##                                                           Stefan Kohl 
-##  version 0.21, 02/02/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
-##  this function transferred from AutoDoc, was AUTODOC_WriteOnce 
+##  this function transferred from AutoDoc, 
+##  was originally AUTODOC_WriteOnce and then AUTODOC_SetIfMissing  
 ##
-#F  BindInRecordIfMissing( <rec>, <name>, <val> ) 
+#F  SetIfMissing( <rec>, <name>, <val> ) 
 ##
-DeclareGlobalFunction( "BindInRecordIfMissing" );
+DeclareGlobalFunction( "SetIfMissing" );
 
 if OKtoReadFromUtils( "RCWA" ) then
 

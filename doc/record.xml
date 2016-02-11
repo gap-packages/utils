@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
-<!--  version 0.21, 02/02/2016                                           --> 
+<!--  version 0.25, 11Set/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -20,7 +20,7 @@
 
 
 <ManSection>
-   <Func Name="BindInRecordIfMissing"
+   <Func Name="SetIfMissing"
          Arg="rec name val" />
 <Description>
 This function has transferred from package <Package>AutoDoc</Package>, 
@@ -32,10 +32,10 @@ It writes into a record provided the position is not yet bound.
 <Example>
 <![CDATA[
 gap> r := rec( a := 1, b := 2 );;                                      
-gap> BindInRecordIfMissing( r, "c", 3 );
+gap> SetIfMissing( r, "c", 3 );
 gap> RecNames( r );
 [ "b", "c", "a" ]
-gap> BindInRecordIfMissing( r, "c", 4 );
+gap> SetIfMissing( r, "c", 4 );
 gap> r;
 rec( a := 1, b := 2, c := 3 )
 ]]>

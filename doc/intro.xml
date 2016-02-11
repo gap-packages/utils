@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.22, 04/02/2016                                           --> 
+<!--  version 0.25, 11/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -64,6 +64,7 @@ the Bangor site:
 <URL>http://www.maths.bangor.ac.uk/chda/&UTILSHTMLFILENAME;</URL>;
 </Item>
 </List> 
+<Index>repository</Index> 
 The package also has a GitHub repository: 
 <URL>https://github.com/gap-packages/utils</URL>. 
 <P/> 
@@ -115,11 +116,9 @@ and <File>oper.g</File>.
 Since there were misgivings about interfering in this way 
 with basic operations such as <C>BIND_GLOBAL</C>, 
 a simpler (but slightly less convenient) process has been adopted. 
-(The discussion about the possible additions to <File>global.g</File> 
-and <File>oper.g</File> can be found at 
-<URL>https://github.com/gap-system/gap/pull/539</URL>.) 
 <P/> 
-Here are the proposed steps to be followed when making transfers from &Home;. 
+Using an alternative procedure, the following steps are proposed 
+when making transfers from &Home; to &Utils;. 
 <Enum>
 <Item>
 (&Home;:)
@@ -141,8 +140,8 @@ Add strings <A>"home"</A> and <A>"m.n"</A> to the list
 <Example>
 <![CDATA[
 UtilsPackageVersions := 
-  [ "autodoc",     "2015.09.30", 
-    "resclasses",  "3.4.0", 
+  [ "autodoc",     "2016.01.31", 
+    "resclasses",  "4.1.9", 
     "home",        "m.n",
     ...,           ... 
   ];
@@ -194,6 +193,14 @@ it may be possible to remove the conditional clauses mentioned in item 4 above.
 </Item>
 </Enum>  
 
+<P/> 
+A note on running the tests. 
+As long as a function being transferred still exists in the &Home; package, 
+the code will not be read from &Utils;. 
+So, when the tests are run, it is necessary to <C>LoadPackage( "home" );</C> 
+before the function is called. 
+The file <File>testall.g</File> makes sure that all the necessary packages 
+are loaded before the individual tests are called. 
 
 </Section> 
 

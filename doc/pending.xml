@@ -1,0 +1,52 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  pending.xml         Utils documentation                Stefan Kohl -->
+<!--                                                   Sebastian Gutsche -->
+<!--                                                            Max Horn -->
+<!--  version 0.25, 11/02/2016                                           --> 
+<!--                                                                     --> 
+<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManSection>
+   <Func Name="QuotesStripped"
+         Arg="str" />
+<Description>
+These functions have transferred from package <Package>ResClasses</Package>. 
+<P/>
+The function <C>QuotesStripped(s)</C> removes double-quote characters 
+<C>\"</C> from a string.  It is equivalent to the library call 
+<C>RemoveCharacters( String(obj), "\"" );</C> since it <E>does</E> 
+change the original <C>s</C>.  
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> s:="abc def  \"Hello\" ";     
+"abc def  \"Hello\" "
+gap> t := BlankFreeString(s); 
+"abcdef\"Hello\""
+gap> s;
+"abc def  \"Hello\" "
+gap> RemoveCharacters( s, " " );
+gap> s;
+"abcdef\"Hello\""
+gap> s:="abc def  \"Hello\" ";  
+"abc def  \"Hello\" "
+gap> t := QuotesStripped( s );
+"abc def  Hello "
+gap> s;
+"abc def  Hello "
+gap> s:="abc def  \"Hello\" ";
+"abc def  \"Hello\" "
+gap> RemoveCharacters( s, "\"" );
+gap> s;
+"abc def  Hello "
+]]>
+</Example>
+
+

@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  number.xml          Utils documentation                Stefan Kohn -->
 <!--                                                                     -->
-<!--  version 0.21, 01/02/2016                                           --> 
+<!--  version 0.23, 10/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -47,6 +47,8 @@ gap> Length(last);
          Arg="L, k" />
 <Description>
 This function has transferred from package <Package>RCWA</Package>. 
+Note that it has been removed from version 4.0.0 of <Package>RCWA</Package> 
+but will not yet be read from &Utils;. 
 <P/>
 The function <C>AllProducts(<A>L</A>,<A>k</A>)</C> returns the list of
 all products of <A>k</A> entries of the list&nbsp;<A>L</A>. 

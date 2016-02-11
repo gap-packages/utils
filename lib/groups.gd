@@ -2,7 +2,7 @@
 ##
 #W  groups.gd                  GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.21, 02/02/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -14,7 +14,12 @@ if OKtoReadFromUtils( "ResClasses" ) then
 #O  IsCommuting( <a>, <b> ) .  checks whether two group elements etc. commute
 ##
 DeclareOperation( "IsCommuting", [ IsMultiplicativeElement,
-                                   IsMultiplicativeElement ] );
+                                   IsMultiplicativeElement ] ); 
+
+fi;
+
+if ( ( InstalledPackageVersion("resclasses") <> fail ) and 
+     ( InstalledPackageVersion("resclasses") > "4.1.0" ) ) then  
 
 #############################################################################
 ##  these functions transferred from ResClasses 

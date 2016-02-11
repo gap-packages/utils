@@ -2,7 +2,7 @@
 ##
 #W  init.g                 GAP package `Utils'                  Chris Wensley
 ##
-##  version 0.21, 01/02/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group,  
 ##
@@ -17,7 +17,7 @@ ReadPackage( "utils", "lib/start.gd" );
 #ReadPackage( "utils", "lib/bitmap.gd" );
 ReadPackage( "utils", "lib/cache.gd" );
 ReadPackage( "utils", "lib/combinat.gd" );
-ReadPackage( "utils", "lib/email.gd" );
+#ReadPackage( "utils", "lib/email.gd" );
 ReadPackage( "utils", "lib/files.gd" );
 ReadPackage( "utils", "lib/groups.gd" );
 ReadPackage( "utils", "lib/latex.gd" );

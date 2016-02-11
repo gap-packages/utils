@@ -3,16 +3,17 @@
 #W  record.gi                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn
 ##                                                           Stefan Kohl 
-##  version 0.21, 02/02/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
-##  this method transferred from AutoDoc, was AUTODOC_WriteOnce 
+##  this method transferred from AutoDoc, 
+##  was originally AUTODOC_WriteOnce and then AUTODOC_SetIfMissing  
 ##
-#M  BindInRecordIfMissing( <rec>, <name>, <val> ) 
+#M  SetIfMissing( <rec>, <name>, <val> ) 
 ##
-InstallGlobalFunction( BindInRecordIfMissing, 
+InstallGlobalFunction( SetIfMissing, 
     function( record, name, val )
     
     if not IsBound( record.(name) ) then    

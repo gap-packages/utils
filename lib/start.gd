@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.21, 29/01/2016 
+##  version 0.25, 11/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -12,11 +12,11 @@ DeclareInfoClass( "InfoUtils" );
 ##  containing the code which is to be transferred 
 
 UtilsPackageVersions := 
-  [ "autodoc",     "2015.09.30", 
-    "gpd",         "1.41",
-    "resclasses",  "3.4.0", 
-    "rcwa",        "3.7.0", 
-    "xmod",        "2.51" 
+  [ "autodoc",     "2016.01.31", 
+    "gpd",         "1.45",
+    "resclasses",  "4.1.9", 
+    "rcwa",        "4.0.9", 
+    "xmod",        "2.55" 
   ];
 
 #############################################################################

@@ -2,7 +2,7 @@
 ##
 #W  string.tst                  Utils Package                    
 ##
-##  version 0.21, 02/01/2016   
+##  version 0.25, 11/02/2016   
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 ##  
@@ -17,10 +17,6 @@ gap> S5 := SymmetricGroup( 5 );
 Sym( [ 1 .. 5 ] )
 gap> BlankFreeString( S5 );    
 "SymmetricGroup([1..5])"
-gap> S := "Hello\!\, What's yours\?\, Goodbye\!";
-"Hello!, What's yours?, Goodbye!"
-gap> QuotesStripped(S);                          
-"Hello!, What's yours?, Goodbye!"
 
 ## SubSection 2.3.2 
 
