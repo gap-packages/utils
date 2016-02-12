@@ -3,8 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.25 for GAP 4.8.1 (11/02/16)
+Version 0.26 for GAP 4.8.1 (12/02/16)
 
+ - (12/02/16) Added warning to manual about the need to load packages. 
  - (11/02/16) BindInRecordIfMissing -> SetIfMissing (from AutoDoc) 
               moved a number of functions to pending.gd(gi) 
  - (10/02/16) adjustments due to new RCWA 4.0.0 and ResClasses 4.1.1
