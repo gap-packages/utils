@@ -203,15 +203,11 @@ gap> BlankFreeString( D12 );
    <Oper Name="StringDotSuffix"
          Arg="str suf" />
 <Description>
-These functions have transferred from package <Package>AutoDoc</Package>, 
-and were originally named <C>AUTODOC_GetSuffix</C> 
-and <C>AUTODOC_HasSuffix</C>. 
+This function has transferred from package <Package>AutoDoc</Package>, 
+and was originally named <C>AUTODOC_GetSuffix</C>. 
 <P/>
 When <C>StringDotSuffix</C> is given a string containing a "." 
 it return its extension, i.e. the bit after the last ".". 
-<P/>
-The function <C>StringEndsWithOtherString</C> predates the &GAP;4.8 
-function <C>EndsWith</C>, and is kept for consistency. 
 </Description>
 </ManSection>
 <Example>
@@ -224,13 +220,8 @@ gap> StringDotSuffix( "file." );
 ""
 gap> StringDotSuffix( "Hello" );   
 fail
-gap> StringEndsWithOtherString( "file.ext", ".txt" );
-false
 ]]>
 </Example>
-
-
-
 
 
 </Section>

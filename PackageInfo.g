@@ -117,8 +117,6 @@ BannerString := Concatenation(
   " - a collection of utility functions.\n"
 ),
 
-Autoload := false,
-
 TestFile := "tst/testall.g",
 
 Keywords := [ ]
