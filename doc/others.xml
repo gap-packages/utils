@@ -124,7 +124,6 @@ gap> FindMatchingFiles( "utils", [""], ["html"] );
 </Section>
 
 
-
 <Section Label="sec:latex">
 <Heading>&LaTeX; strings</Heading>
 
