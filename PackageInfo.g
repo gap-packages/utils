@@ -1,102 +1,124 @@
 #############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
+##
+##  PackageInfo.g  file for the package Utils 
 ##
 
 SetPackageInfo( rec(
+PackageName := "Utils",
+Subtitle := "Utility functions in GAP",
 
-PackageName := "GitHubPagesForGAP",
+Version := "0.26",
+Date := "12/02/2016",
 
-Subtitle := "A GitHubPages generator for GAP packages",
-Version := "0.1",
-Date := "21/03/2014", # dd/mm/yyyy format
+##  duplicate these values for inclusion in the manual: 
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY UTILSVERSION "0.26">
+##  <!ENTITY UTILSTARFILENAME "utils-0.26.tar.gz">
+##  <!ENTITY UTILSHTMLFILENAME "utils.html">
+##  <!ENTITY UTILSRELEASEDATE "12/02/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "12th February 2016">
+##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
+##  <#/GAPDoc>
+
+PackageWWWHome := 
+  "http://pages.bangor.ac.uk/~mas023/chda/utils/",
+
+ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils/utils-0.26", 
+ArchiveFormats := ".tar.gz",
 
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
+    LastName      := "Gutsche",
+    FirstNames    := "Sebastian",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universit‰t Gieﬂen\n",
-                       "Arndtstraﬂe 2\n",
-                       "35392 Gieﬂen\n",
-                       "Germany" ),
-    Place         := "Gieﬂen",
-    Institution   := "Justus-Liebig-Universit‰t Gieﬂen"
+    Email         := "gutsche@mathematik.uni-kl.de",
+    WWWHome       := "http://wwwb.math.rwth-aachen.de/~gutsche/",
+    PostalAddress := Concatenation( [
+                       "Department of Mathematics\n",
+                       "University of Kaiserslautern\n",
+                       "67653 Kaiserslautern\n",
+                       "Germany" ] ),
+    Place         := "Kaiserslautern",
+    Institution   := "University of Kaiserslautern"
   ),
-
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
+  rec( 
+    LastName      := "Kohl",
+    FirstNames    := "Stefan",
     IsAuthor      := true,
     IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
+    Email         := "stefan@mcs.st-and.ac.uk",
+    WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
+  ), 
   rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
+    LastName      := "Wensley",
+    FirstNames    := "Christopher D.",
+    IsAuthor      := true,
     IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
+    Email         := "c.d.wensley@bangor.ac.uk",
+    WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
+    PostalAddress := Concatenation( [
+                       "Dr. C.D. Wensley\n",
+                       "School of Computer Science\n",
+                       "Bangor University\n",
+                       "Dean Street\n",
+                       "Bangor\n",
+                       "Gwynedd LL57 1UT\n",
+                       "UK"] ),
+    Place         := "Bangor",
+    Institution   := "Bangor University"
+  )
 ],
 
-Status := "other",
+Status := "deposited",
+## CommunicatedBy := "  ",
+## AcceptDate := "  ",
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "fingolfin",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
+README_URL := 
+  Concatenation( ~.PackageWWWHome, "README.md" ),
+PackageInfoURL := 
+  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
-PackageWWWHome := Concatenation("http://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
+##  Optional:
+##    - Type and the URL of the source code repository
+##    - URL of the public issue tracker
+##    - Support email address
+SourceRepository :=
+  rec( Type := "git", # must be one of "git", "hg", "svn", "cvs"
+       URL  := "http://github.com/gap-packages/utils"),
+IssueTrackerURL := "http://github.com/gap-packages/utils/issues",
+SupportEmail := "c.d.wensley@bangor.ac.uk",
 
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub pages.",
+AbstractHTML :=
+ "The <span class=\"pkgname\">Utils</span> package provides a collection \
+  of utility functions gleaned from many packages.",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "Utils",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHubPages generator for GAP packages",
+  LongTitle := "Utility functions in GAP",
+  Autoload  := true
 ),
 
-# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := ">=4.5.5",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">=4.8",
+  NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"] ], 
+  SuggestedOtherPackages := [ ],
+  ExternalConditions := [ ]
 ),
 
 AvailabilityTest := ReturnTrue,
 
-Keywords := ["GitHub pages", "GAP"]
+BannerString := Concatenation( 
+  "Loading Utils ", String( ~.Version ), " for GAP 4.8", 
+  " - a collection of utility functions.\n"
+),
+
+TestFile := "tst/testall.g",
+
+Keywords := [ ]
 
 ));
-
-

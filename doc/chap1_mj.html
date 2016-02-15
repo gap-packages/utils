@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (Utils) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1.html">[MathJax off]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1_mj.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7806D2388165CF6E">1.1 <span class="Heading">The current transfer procedure</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>The <strong class="pkg">Utils</strong> package provides a space for utility functions from a variety of <strong class="pkg">GAP</strong> packages to be collected together into a single package. In this way it is hoped that they will become more visible to other package authors. Any package author who transfers a function to <strong class="pkg">Utils</strong> will become an author of <strong class="pkg">Utils</strong>.</p>
+
+<p>A function (or collection of functions) is suitable for transfer from a package <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong> if the following conditions are satisfied.</p>
+
+
+<ul>
+<li><p>The function does not depend on the remaining functions in <strong class="pkg">Home</strong></p>
+
+</li>
+<li><p>The function does not do what can already be done with a <strong class="pkg">GAP</strong> library function.</p>
+
+</li>
+<li><p>Documentation of the function and test examples are available.</p>
+
+</li>
+<li><p>The function is sufficiently non-specialised so that it might ber of use to other authors.</p>
+
+</li>
+</ul>
+<p>The package is loaded with the command</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage( "utils" ); </span>
+
+</pre></div>
+
+<p>The current version is 0.26 for <strong class="pkg">GAP</strong> 4.8, released on 12th February 2016.</p>
+
+<p>The package may be obtained as a compressed tar file <code class="file">utils-0.26.tar.gz</code> by ftp from one of the following sites:</p>
+
+
+<ul>
+<li><p>any <strong class="pkg">GAP</strong> archive, e.g. <span class="URL"><a href="http://www.gap-system.org/Packages/packages.html">http://www.gap-system.org/Packages/packages.html</a></span>;</p>
+
+</li>
+<li><p>the Bangor site: <span class="URL"><a href="http://www.maths.bangor.ac.uk/chda/utils.html">http://www.maths.bangor.ac.uk/chda/utils.html</a></span>;</p>
+
+</li>
+</ul>
+<p>The package also has a GitHub repository: <span class="URL"><a href="https://github.com/gap-packages/utils">https://github.com/gap-packages/utils</a></span>.</p>
+
+<p>Once the package is loaded, the manual <code class="code">doc/manual.pdf</code> can be found in the documentation folder. The <code class="code">html</code> versions, with or without MathJax, may be rebuilt as follows:</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReadPackage( "utils", "makedocrel.g" ); </span>
+
+</pre></div>
+
+<p>It is possible to check that the package has been installed correctly by running the test files:</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReadPackage( "utils", "tst/testall.g" );</span>
+#I  Testing .../pkg/utils/tst/lists.tst 
+... 
+
+</pre></div>
+
+<p>Additional information can be found on the <em>Computational Higher-dimensional Discrete Algebra</em> website at <span class="URL"><a href="http://pages.bangor.ac.uk/~mas023/chda/">http://pages.bangor.ac.uk/~mas023/chda/</a></span>.</p>
+
+<p><a id="X7806D2388165CF6E" name="X7806D2388165CF6E"></a></p>
+
+<h4>1.1 <span class="Heading">The current transfer procedure</span></h4>
+
+<p>We consider here the process for transferring utility functions from an existing package (the <strong class="pkg">Home</strong> package, say) to <strong class="pkg">Utils</strong>.</p>
+
+<p>If the functions in <strong class="pkg">Home</strong> all have names of the form <code class="code">HOME_FunctionName</code> then, in <strong class="pkg">Utils</strong>, these functions are likely to be renamed as <code class="code">FunctionName</code> or something similar. In this case the problem of duplicate declarations does not arise. This is what has happened with transfers from the <strong class="pkg">AutoDoc</strong> package.</p>
+
+<p>The case where the function names are unchanged is more complicated. Initially we tried out a process which allowed repeated declarations and installations of the functions being transferred. This involved additions to the main library files <code class="file">global.g</code> and <code class="file">oper.g</code>. Since there were misgivings about interfering in this way with basic operations such as <code class="code">BIND_GLOBAL</code>, a simpler (but slightly less convenient) process has been adopted.</p>
+
+<p>Using an alternative procedure, the following steps are proposed when making transfers from <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong>.</p>
+
+<ol>
+<li><p>(<strong class="pkg">Home</strong>:) Offer functions for inclusion. This may be simply done by emailing a list of functions. More usefully, email the declaration, implementation, test and documentation files, e.g.: <code class="file">home.gd</code>, <code class="file">home.gi</code>, <code class="file">home.tst</code> and <code class="file">home.xml</code>,</p>
+
+</li>
+<li><p>(<strong class="pkg">Home</strong>:) Declare that <strong class="button">m.n</strong> is the last version of <strong class="pkg">Home</strong> to contain these functions.</p>
+
+</li>
+<li><p>(<strong class="pkg">Utils</strong>:) Add strings <var class="Arg">"home"</var> and <var class="Arg">"m.n"</var> to the list <code class="code">UtilsPackageVersions</code> in the file <code class="file">utils/lib/start.gd</code>.</p>
+
+
+<div class="example"><pre>
+
+UtilsPackageVersions := 
+  [ "autodoc",     "2016.01.31", 
+    "resclasses",  "4.1.9", 
+    "home",        "m.n",
+    ...,           ... 
+  ];
+
+</pre></div>
+
+</li>
+<li><p>(<strong class="pkg">Utils</strong>:) Include the function declaration and implentation sections in suitable files, enclosed within a conditional clause of the form:</p>
+
+
+<div class="example"><pre>
+
+if OKtoReadFromUtils( "Home" ) then
+. . . . . . 
+ &lt;the code&gt; 
+. . . . . . 
+fi;
+
+</pre></div>
+
+<p>The function <code class="code">OKtoReadFromUtils</code> returns <code class="code">true</code> only if there is an installed version of <strong class="pkg">Home</strong> and this version is greater than <strong class="button">m.n</strong>. So, at this stage, <em>the copied code will not be read</em>.</p>
+
+</li>
+<li><p>(<strong class="pkg">Utils</strong>:) Add the test and documentation material to the appropriate files. The copied code can be tested by temporarily moving <strong class="pkg">Home</strong> away from <strong class="pkg">GAP</strong>'s package directory.</p>
+
+</li>
+<li><p>(<strong class="pkg">Utils</strong>:) Release a new version of <strong class="pkg">Utils</strong>.</p>
+
+</li>
+<li><p>(<strong class="pkg">Home</strong>:) Edit out the declarations and implementations of all the transferred functions. Edit or remove references to them in the manual and tests, and add a note to the manual that these functions have been transferred. Add <strong class="pkg">Utils</strong> to the list of <strong class="pkg">Home</strong>'s required packages in <code class="file">PackageInfo.g</code>. Release a new version of <strong class="pkg">Home</strong>.</p>
+
+</li>
+<li><p>(<strong class="pkg">Utils</strong>:) In due course, when the new version(s) of <strong class="pkg">Home</strong> are well established, it may be possible to remove the conditional clauses mentioned in item 4 above.</p>
+
+</li>
+</ol>
+<p>A note on running the tests. As long as a function being transferred still exists in the <strong class="pkg">Home</strong> package, the code will not be read from <strong class="pkg">Utils</strong>. So, when the tests are run, it is necessary to <code class="code">LoadPackage( "home" );</code> before the function is called. The file <code class="file">testall.g</code> makes sure that all the necessary packages are loaded before the individual tests are called.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

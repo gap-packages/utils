@@ -1,1 +1,121 @@
-Placeholder
+  
+  
+                                     [1X[5XUtils[105X[101X
+  
+  
+                            [1XUtility functions in [5XGAP[105X[101X
+  
+  
+                                  Version 0.26
+  
+  
+                                   12/02/2016
+  
+  
+                               Sebastian Gutsche,
+  
+                                  Stefan Kohl,
+  
+                                 Chris Wensley,
+  
+     and any other package author who transfers functions to this package.
+  
+  
+  
+  Sebastian Gutsche,
+      Email:    [7Xmailto:gutsche@mathematik.uni-kl.de[107X
+      Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~gutsche/[107X
+  Stefan Kohl,
+      Email:    [7Xmailto:stefan@mcs.st-and.ac.uk[107X
+      Homepage: [7Xhttp://www.gap-system.org/DevelopersPages/StefanKohl/[107X
+  Chris Wensley,
+      Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
+      Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0YThe [5XUtils[105X package provides a space for utility functions in a variety of [5XGAP[105X
+  packages  to  be collected together into a single package. In this way it is
+  hoped that they will become more visible to package authors.[133X
+  
+  [33X[0;0YAny  package  author who transfers a function to [5XUtils[105X will become an author
+  of [5XUtils[105X.[133X
+  
+  [33X[0;0YThe current version is 0.26, released 12th February 2016 for [5XGAP[105X 4.8.[133X
+  
+  [33X[0;0YThis  package  relies  on  modifications  to  the  library  files oper.g and
+  global.g.  It  appears  that  these  modifications  will not appear in a GAP
+  release  until  at  least  version  4.8.3, so development of this package is
+  suspended until further notice.[133X
+  
+  [33X[0;0YBug  reports,  suggestions  and  comments  are,  of  course, welcome. Please
+  contact  the  last  author  at  [7Xmailto:c.d.wensley@bangor.ac.uk[107X or submit an
+  issue at the GitHub repository [7Xhttp://github.com/gap-packages/utils/issues/[107X.[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y©  2015-2016  The [5XGAP[105X Group. [5XUtils[105X is free software; you can redistribute it
+  and/or  modify  it  under  the  terms  of  the  GNU  General  Public License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThis  documentation was prepared with the [5XGAPDoc[105X package of Frank Lübeck and
+  Max Neunhöffer.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (Utils)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YThe current transfer procedure[133X
+  2 [33X[0;0YLists, Sets and Strings[133X
+    2.1 [33X[0;0YFunctions for lists[133X
+      2.1-1 DifferencesList
+      2.1-2 SearchCycle
+      2.1-3 PrintListOneItemPerLine
+    2.2 [33X[0;0YDistinct and Common Representatives[133X
+      2.2-1 DistinctRepresentatives
+    2.3 [33X[0;0YFunctions for strings[133X
+      2.3-1 BlankFreeString
+      2.3-2 StringDotSuffix
+  3 [33X[0;0YNumber-theoretic functions[133X
+    3.1 [33X[0;0YFunctions for integers[133X
+      3.1-1 AllSmoothIntegers
+      3.1-2 AllProducts
+      3.1-3 RestrictedPartitionsWithoutRepetitions
+      3.1-4 ExponentOfPrime
+      3.1-5 NextProbablyPrimeInt
+  4 [33X[0;0YGroups and homomorphisms[133X
+    4.1 [33X[0;0YFunctions for groups[133X
+      4.1-1 IsCommuting
+      4.1-2 ListOfPowers
+      4.1-3 GeneratorsAndInverses
+      4.1-4 UpperFittingSeries
+    4.2 [33X[0;0YFunctions for words in finitely presented groups[133X
+      4.2-1 ReducedWordByOrdersOfGenerators
+    4.3 [33X[0;0YFunctions for group homomorphisms[133X
+      4.3-1 EpimorphismByGenerators
+  5 [33X[0;0YRecords[133X
+    5.1 [33X[0;0YFunctions for records[133X
+      5.1-1 SetIfMissing
+      5.1-2 AssignGlobals
+  6 [33X[0;0YVarious other functions[133X
+    6.1 [33X[0;0YA simple caching facility[133X
+      6.1-1 SetupCache
+    6.2 [33X[0;0YOperations on folders[133X
+      6.2-1 FindMatchingFiles
+    6.3 [33X[0;0YFile operations[133X
+      6.3-1 Log2HTML
+    6.4 [33X[0;0YLaTeX strings[133X
+      6.4-1 IntOrOnfinityToLaTeX
+      6.4-2 LaTeXStringFactorsInt
+  
+  
+  [32X

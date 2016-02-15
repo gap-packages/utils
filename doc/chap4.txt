@@ -1,0 +1,121 @@
+  
+  [1X4 [33X[0;0YGroups and homomorphisms[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YFunctions for groups[133X[101X
+  
+  [1X4.1-1 IsCommuting[101X
+  
+  [29X[2XIsCommuting[102X( [3Xa[103X, [3Xb[103X ) [32X operation
+  
+  [33X[0;0YThis operation has transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0YThis operation tests whether two group elements commute.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XD12 := DihedralGroup( 12 );  SetName( D12, "D12" ); [127X[104X
+    [4X[28X<pc group of size 12 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xa := D12.1;;  b := D12.2;;  [127X[104X
+    [4X[25Xgap>[125X [27XIsCommuting( a, b );[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 ListOfPowers[101X
+  
+  [29X[2XListOfPowers[102X( [3Xg[103X, [3Xexp[103X ) [32X operation
+  
+  [33X[0;0YThis operation has transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YThe  operation  [10XListOfPowers(g,exp)[110X  returns  the  list [22X[g,g^2,...,g^exp][122X of
+  powers of the element [22Xg[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XListOfPowers( D12.2, 6 );[127X[104X
+    [4X[28X[ f2, f3, f2*f3, f3^2, f2*f3^2, <identity> of ... ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 GeneratorsAndInverses[101X
+  
+  [29X[2XGeneratorsAndInverses[102X( [3XG[103X ) [32X operation
+  
+  [33X[0;0YThis operation has transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YThis operation returns a list containing the generators of [22XG[122X followed by the
+  inverses of these generators.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsAndInverses( D12 );[127X[104X
+    [4X[28X[ f1, f2, f3, f1, f2*f3^2, f3^2 ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-4 UpperFittingSeries[101X
+  
+  [29X[2XUpperFittingSeries[102X( [3XG[103X ) [32X attribute
+  [29X[2XLowerFittingSeries[102X( [3XG[103X ) [32X attribute
+  [29X[2XFittingLength[102X( [3XG[103X ) [32X attribute
+  
+  [33X[0;0YThese  operations  have transferred from package [5XResClasses[105X. Note that these
+  three functions have been removed from version 4.0.1 of [5XResClasses[105X, but will
+  not yet be read by [5XUtils[105X.[133X
+  
+  [33X[0;0YThe  upper  and  lower  Fitting  series and the Fitting length of a solvable
+  group are described here: [7Xhttps://en.wikipedia.org/wiki/Fitting_length[107X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XUpperFittingSeries( D12 );[127X[104X
+    [4X[28X[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ][128X[104X
+    [4X[25Xgap>[125X [27XLowerFittingSeries( D12 );[127X[104X
+    [4X[28X[ D12, Group([ f3 ]), Group([  ]) ][128X[104X
+    [4X[25Xgap>[125X [27XFittingLength( D12 );[127X[104X
+    [4X[28X2[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YFunctions for words in finitely presented groups[133X[101X
+  
+  [1X4.2-1 ReducedWordByOrdersOfGenerators[101X
+  
+  [29X[2XReducedWordByOrdersOfGenerators[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
+  [29X[2XNormalizedRelator[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
+  
+  [33X[0;0YThese operations have transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YSome description needed here.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X## some examples needed here [127X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.3 [33X[0;0YFunctions for group homomorphisms[133X[101X
+  
+  [1X4.3-1 EpimorphismByGenerators[101X
+  
+  [29X[2XEpimorphismByGenerators[102X( [3XG[103X, [3XH[103X ) [32X attribute
+  
+  [33X[0;0YThese operations have transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YThis function maps the generators of [22XG[122X to those of [22XH[122X. It is not checked that
+  this map is a group homomorphism![133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XG:=Group((1,2,3),(3,4,5));;[127X[104X
+    [4X[25Xgap>[125X [27XH:=Group((6,7),(8,9));;    [127X[104X
+    [4X[25Xgap>[125X [27Xe:=EpimorphismByGenerators(G,H);[127X[104X
+    [4X[28X[ (1,2,3), (3,4,5) ] -> [ (6,7), (8,9) ][128X[104X
+    [4X[25Xgap>[125X [27XIsGroupHomomorphism(e);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
