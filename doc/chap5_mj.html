@@ -64,7 +64,7 @@ rec( a := 1, b := 2, c := 3 )
 <h5>5.1-2 AssignGlobals</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AssignGlobals</code>( <var class="Arg">rec</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>This function assigns the record components of <var class="Arg">rec</var> to global variables with the same names.</p>
 
@@ -73,7 +73,7 @@ rec( a := 1, b := 2, c := 3 )
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AssignGlobals( r );</span>
 The following global variables have been assigned:
-[ "b", "c", "a" ]
+[ "a", "b", "c" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[a,b,c];</span>
 [ 1, 2, 3 ]
 

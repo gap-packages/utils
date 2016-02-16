@@ -57,12 +57,43 @@
 
 </pre></div>
 
-<p>The current version is 0.26 for <strong class="pkg">GAP</strong> 4.8, released on 12th February 2016.</p>
+<p>The current version is 0.26 for <strong class="pkg">GAP</strong> 4.8, released on 15th February 2016.</p>
 
+<p>Functions are currently being transferred from the following packages:</p>
+
+
+<ul>
+<li><p><strong class="pkg">AutoDoc</strong> (with function names changed);</p>
+
+</li>
+<li><p><strong class="pkg">Gpd</strong>;</p>
+
+</li>
+<li><p><strong class="pkg">ResClasses</strong>;</p>
+
+</li>
+<li><p><strong class="pkg">RCWA</strong>;</p>
+
+</li>
+<li><p><strong class="pkg">XMod</strong>;</p>
+
+</li>
+</ul>
+<p>Transfer is complete for functions from the following packages:</p>
+
+
+<ul>
+<li><p>(none so far).</p>
+
+</li>
+</ul>
 <p>The package may be obtained as a compressed tar file <code class="file">utils-0.26.tar.gz</code> by ftp from one of the following sites:</p>
 
 
 <ul>
+<li><p>the package GitHub site: <span class="URL"><a href="http://gap-packages.github.io/utils/">http://gap-packages.github.io/utils/</a></span>.</p>
+
+</li>
 <li><p>any <strong class="pkg">GAP</strong> archive, e.g. <span class="URL"><a href="http://www.gap-system.org/Packages/packages.html">http://www.gap-system.org/Packages/packages.html</a></span>;</p>
 
 </li>
@@ -92,7 +123,7 @@
 
 </pre></div>
 
-<p>Additional information can be found on the <em>Computational Higher-dimensional Discrete Algebra</em> website at <span class="URL"><a href="http://pages.bangor.ac.uk/~mas023/chda/">http://pages.bangor.ac.uk/~mas023/chda/</a></span>.</p>
+<p>Note that functions listed in this manual that are currently being transferred are only read from the source package <strong class="pkg">Home</strong>, and so can only be used if <strong class="pkg">Home</strong> has been previously loaded.</p>
 
 <p><a id="X7806D2388165CF6E" name="X7806D2388165CF6E"></a></p>
 
@@ -157,7 +188,7 @@ fi;
 
 </li>
 </ol>
-<p>A note on running the tests. As long as a function being transferred still exists in the <strong class="pkg">Home</strong> package, the code will not be read from <strong class="pkg">Utils</strong>. So, when the tests are run, it is necessary to <code class="code">LoadPackage( "home" );</code> before the function is called. The file <code class="file">testall.g</code> makes sure that all the necessary packages are loaded before the individual tests are called.</p>
+<p>A note on the procedure for testing these functions. As long as a function being transferred still exists in the <strong class="pkg">Home</strong> package, the code will not be read from <strong class="pkg">Utils</strong>. So, when the tests are run, it is necessary to <code class="code">LoadPackage("home")</code> before the function is called. The file <code class="file">tst/testall.g</code> makes sure that all the necessary packages are loaded before the individual tests are called.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>

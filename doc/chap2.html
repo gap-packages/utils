@@ -55,7 +55,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferencesList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FloatQuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions have transferred from package <strong class="pkg">ResClasses</strong>.</p>
+<p>These functions are being transferred from package <strong class="pkg">ResClasses</strong>: to use them you should <code class="code">LoadPackage(ResClasses)</code> first.</p>
 
 <p>They take a list <span class="SimpleMath">L</span> of length <span class="SimpleMath">n</span> and output the lists of length <span class="SimpleMath">n-1</span> containing all the differences <span class="SimpleMath">L[i]-L[i-1]</span> and all the quotients <span class="SimpleMath">L[i]/L[i-1]</span> of consecutive entries in <span class="SimpleMath">L</span>.</p>
 
@@ -81,7 +81,7 @@
 <h5>2.1-2 SearchCycle</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SearchCycle</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This operation has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>A utility function for detecting cycles in lists. But what <em>is</em> the <em>definition</em> of a cycle here?</p>
 
@@ -121,9 +121,7 @@ you can replace &lt;positions&gt; via 'return &lt;positions&gt;;'
 <h5>2.1-3 PrintListOneItemPerLine</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintListOneItemPerLine</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This operation has transferred from package <strong class="pkg">Gpd</strong>.</p>
-
-<p>Printing lists vertically, rather than horizantally, may be useful when the entries are lengthy.</p>
+<p>This function is being transferred from package <strong class="pkg">Gpd</strong>: to use it you should <code class="code">LoadPackage(Gpd)</code> first. Printing lists vertically, rather than horizantally, may be useful when the entries are lengthy.</p>
 
 
 <div class="example"><pre>
@@ -147,7 +145,7 @@ you can replace &lt;positions&gt; via 'return &lt;positions&gt;;'
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CommonRepresentatives</code>( <var class="Arg">list</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CommonTransversal</code>( <var class="Arg">grp</var>, <var class="Arg">subgrp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCommonTransversal</code>( <var class="Arg">grp</var>, <var class="Arg">subgrp</var>, <var class="Arg">list</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>These functions deal with lists of subsets of <span class="SimpleMath">[1 ... n]</span> and construct systems of distinct and common representatives using simple, non-recursive, combinatorial algorithms.</p>
+<p>These functions are being transferred from package <strong class="pkg">XMod</strong>: to use them you should <code class="code">LoadPackage(XMod)</code> first. They deal with lists of subsets of <span class="SimpleMath">[1 ... n]</span> and construct systems of distinct and common representatives using simple, non-recursive, combinatorial algorithms.</p>
 
 <p>When <span class="SimpleMath">L</span> is a set of <span class="SimpleMath">n</span> subsets of <span class="SimpleMath">[1 ... n]</span> and the Hall condition is satisfied (the union of any <span class="SimpleMath">k</span> subsets has at least <span class="SimpleMath">k</span> elements), a set of <code class="code">DistinctRepresentatives</code> exists.</p>
 
@@ -185,7 +183,7 @@ true
 <h5>2.3-1 BlankFreeString</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlankFreeString</code>( <var class="Arg">obj</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">ResClasses</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">ResClasses</strong>: to use it you should <code class="code">LoadPackage(ResClasses)</code> first.</p>
 
 <p>The result of <code class="code">BlankFreeString( obj );</code> is a composite of the functions <code class="code">String( obj )</code> and <code class="code">RemoveCharacters( obj, " " );</code>.</p>
 
@@ -203,7 +201,7 @@ true
 <h5>2.3-2 StringDotSuffix</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StringDotSuffix</code>( <var class="Arg">str</var>, <var class="Arg">suf</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">AutoDoc</strong>, and was originally named <code class="code">AUTODOC_GetSuffix</code>.</p>
+<p>This function is being transferred from package <strong class="pkg">AutoDoc</strong>, and was originally named <code class="code">AUTODOC_GetSuffix</code>.</p>
 
 <p>When <code class="code">StringDotSuffix</code> is given a string containing a "." it return its extension, i.e. the bit after the last ".".</p>
 

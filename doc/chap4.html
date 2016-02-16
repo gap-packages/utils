@@ -53,9 +53,7 @@
 <h5>4.1-1 IsCommuting</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCommuting</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This operation has transferred from package <strong class="pkg">ResClasses</strong>.</p>
-
-<p>This operation tests whether two group elements commute.</p>
+<p>This function is being transferred from package <strong class="pkg">ResClasses</strong>: to use it you should <code class="code">LoadPackage(ResClasses)</code> first. It tests whether two group elements commute.</p>
 
 
 <div class="example"><pre>
@@ -73,7 +71,7 @@ false
 <h5>4.1-2 ListOfPowers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ListOfPowers</code>( <var class="Arg">g</var>, <var class="Arg">exp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This operation has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>The operation <code class="code">ListOfPowers(g,exp)</code> returns the list <span class="SimpleMath">[g,g^2,...,g^exp]</span> of powers of the element <span class="SimpleMath">g</span>.</p>
 
@@ -90,7 +88,7 @@ false
 <h5>4.1-3 GeneratorsAndInverses</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsAndInverses</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This operation has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>This operation returns a list containing the generators of <span class="SimpleMath">G</span> followed by the inverses of these generators.</p>
 
@@ -109,7 +107,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UpperFittingSeries</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LowerFittingSeries</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FittingLength</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>These operations have transferred from package <strong class="pkg">ResClasses</strong>. Note that these three functions have been removed from version 4.0.1 of <strong class="pkg">ResClasses</strong>, but will not yet be read by <strong class="pkg">Utils</strong>.</p>
+<p>These three functions have been transferred from package <strong class="pkg">ResClasses</strong>.</p>
 
 <p>The upper and lower Fitting series and the Fitting length of a solvable group are described here: <span class="URL"><a href="https://en.wikipedia.org/wiki/Fitting_length">https://en.wikipedia.org/wiki/Fitting_length</a></span>.</p>
 
@@ -135,7 +133,7 @@ false
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReducedWordByOrdersOfGenerators</code>( <var class="Arg">w</var>, <var class="Arg">gensords</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NormalizedRelator</code>( <var class="Arg">w</var>, <var class="Arg">gensords</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>These operations have transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>These functions are being transferred from package <strong class="pkg">RCWA</strong>: to use them you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>Some description needed here.</p>
 
@@ -155,18 +153,24 @@ false
 <h5>4.3-1 EpimorphismByGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGenerators</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>These operations have transferred from package <strong class="pkg">RCWA</strong>.</p>
-
-<p>This function maps the generators of <span class="SimpleMath">G</span> to those of <span class="SimpleMath">H</span>. It is not checked that this map is a group homomorphism!</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use is you should <code class="code">LoadPackage(RCWA)</code> first. It maps the generators of <span class="SimpleMath">G</span> to those of <span class="SimpleMath">H</span>. It is not checked that this map is a group homomorphism!</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=Group((1,2,3),(3,4,5));;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H:=Group((6,7),(8,9));;    </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=EpimorphismByGenerators(G,H);</span>
-[ (1,2,3), (3,4,5) ] -&gt; [ (6,7), (8,9) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGroupHomomorphism(e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group((1,2,3,4),(3,4));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H := Group((6,7),(7,8));;    </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e1 := EpimorphismByGenerators(G,H);</span>
+[ (1,2,3,4), (3,4) ] -&gt; [ (6,7), (7,8) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## note that this is just an abbreviation for: </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e2 := GroupHomomorphismByImages( G, H, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">             GeneratorsOfGroup(G), GeneratorsOfGroup(H) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e1 = e2; </span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## but the following is nonsense: </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e0 := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );</span>
+[ (1,2,3) ] -&gt; [ (8,9) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGroupHomomorphism(e0);</span>
 true
 
 </pre></div>

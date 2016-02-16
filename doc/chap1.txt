@@ -28,10 +28,28 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe current version is 0.26 for [5XGAP[105X 4.8, released on 12th February 2016.[133X
+  [33X[0;0YThe current version is 0.26 for [5XGAP[105X 4.8, released on 15th February 2016.[133X
+  
+  [33X[0;0YFunctions are currently being transferred from the following packages:[133X
+  
+  [30X    [33X[0;6Y[5XAutoDoc[105X (with function names changed);[133X
+  
+  [30X    [33X[0;6Y[5XGpd[105X;[133X
+  
+  [30X    [33X[0;6Y[5XResClasses[105X;[133X
+  
+  [30X    [33X[0;6Y[5XRCWA[105X;[133X
+  
+  [30X    [33X[0;6Y[5XXMod[105X;[133X
+  
+  [33X[0;0YTransfer is complete for functions from the following packages:[133X
+  
+  [30X    [33X[0;6Y(none so far).[133X
   
   [33X[0;0YThe  package  may  be obtained as a compressed tar file [11Xutils-0.26.tar.gz[111X by
   ftp from one of the following sites:[133X
+  
+  [30X    [33X[0;6Ythe package GitHub site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
   
   [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.
         [7Xhttp://www.gap-system.org/Packages/packages.html[107X;[133X
@@ -62,8 +80,9 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YAdditional  information can be found on the [13XComputational Higher-dimensional
-  Discrete Algebra[113X website at [7Xhttp://pages.bangor.ac.uk/~mas023/chda/[107X.[133X
+  [33X[0;0YNote  that  functions  listed  in  this  manual  that  are  currently  being
+  transferred  are  only read from the source package [5XHome[105X, and so can only be
+  used if [5XHome[105X has been previously loaded.[133X
   
   
   [1X1.1 [33X[0;0YThe current transfer procedure[133X[101X
@@ -142,9 +161,10 @@
         established,  it  may  be  possible  to remove the conditional clauses
         mentioned in item 4 above.[133X
   
-  [33X[0;0YA  note  on running the tests. As long as a function being transferred still
-  exists  in  the [5XHome[105X package, the code will not be read from [5XUtils[105X. So, when
-  the  tests  are  run,  it  is necessary to [10XLoadPackage( "home" );[110X before the
-  function  is  called.  The  file [11Xtestall.g[111X makes sure that all the necessary
-  packages are loaded before the individual tests are called.[133X
+  [33X[0;0YA  note  on the procedure for testing these functions. As long as a function
+  being  transferred  still  exists  in the [5XHome[105X package, the code will not be
+  read   from  [5XUtils[105X.  So,  when  the  tests  are  run,  it  is  necessary  to
+  [10XLoadPackage("home")[110X  before  the  function is called. The file [11Xtst/testall.g[111X
+  makes  sure that all the necessary packages are loaded before the individual
+  tests are called.[133X
   

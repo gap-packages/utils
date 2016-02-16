@@ -8,9 +8,9 @@
   
   [29X[2XIsCommuting[102X( [3Xa[103X, [3Xb[103X ) [32X operation
   
-  [33X[0;0YThis operation has transferred from package [5XResClasses[105X.[133X
-  
-  [33X[0;0YThis operation tests whether two group elements commute.[133X
+  [33X[0;0YThis  function  is  being transferred from package [5XResClasses[105X: to use it you
+  should  [10XLoadPackage(ResClasses)[110X  first.  It tests whether two group elements
+  commute.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -26,7 +26,8 @@
   
   [29X[2XListOfPowers[102X( [3Xg[103X, [3Xexp[103X ) [32X operation
   
-  [33X[0;0YThis operation has transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YThe  operation  [10XListOfPowers(g,exp)[110X  returns  the  list [22X[g,g^2,...,g^exp][122X of
   powers of the element [22Xg[122X.[133X
@@ -42,7 +43,8 @@
   
   [29X[2XGeneratorsAndInverses[102X( [3XG[103X ) [32X operation
   
-  [33X[0;0YThis operation has transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YThis operation returns a list containing the generators of [22XG[122X followed by the
   inverses of these generators.[133X
@@ -60,9 +62,7 @@
   [29X[2XLowerFittingSeries[102X( [3XG[103X ) [32X attribute
   [29X[2XFittingLength[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YThese  operations  have transferred from package [5XResClasses[105X. Note that these
-  three functions have been removed from version 4.0.1 of [5XResClasses[105X, but will
-  not yet be read by [5XUtils[105X.[133X
+  [33X[0;0YThese three functions have been transferred from package [5XResClasses[105X.[133X
   
   [33X[0;0YThe  upper  and  lower  Fitting  series and the Fitting length of a solvable
   group are described here: [7Xhttps://en.wikipedia.org/wiki/Fitting_length[107X.[133X
@@ -86,7 +86,8 @@
   [29X[2XReducedWordByOrdersOfGenerators[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
   [29X[2XNormalizedRelator[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
   
-  [33X[0;0YThese operations have transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThese  functions  are  being  transferred from package [5XRCWA[105X: to use them you
+  should [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YSome description needed here.[133X
   
@@ -103,18 +104,25 @@
   
   [29X[2XEpimorphismByGenerators[102X( [3XG[103X, [3XH[103X ) [32X attribute
   
-  [33X[0;0YThese operations have transferred from package [5XRCWA[105X.[133X
-  
-  [33X[0;0YThis function maps the generators of [22XG[122X to those of [22XH[122X. It is not checked that
-  this map is a group homomorphism![133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use is you should
+  [10XLoadPackage(RCWA)[110X  first.  It  maps the generators of [22XG[122X to those of [22XH[122X. It is
+  not checked that this map is a group homomorphism![133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XG:=Group((1,2,3),(3,4,5));;[127X[104X
-    [4X[25Xgap>[125X [27XH:=Group((6,7),(8,9));;    [127X[104X
-    [4X[25Xgap>[125X [27Xe:=EpimorphismByGenerators(G,H);[127X[104X
-    [4X[28X[ (1,2,3), (3,4,5) ] -> [ (6,7), (8,9) ][128X[104X
-    [4X[25Xgap>[125X [27XIsGroupHomomorphism(e);[127X[104X
+    [4X[25Xgap>[125X [27XG := Group((1,2,3,4),(3,4));;[127X[104X
+    [4X[25Xgap>[125X [27XH := Group((6,7),(7,8));;    [127X[104X
+    [4X[25Xgap>[125X [27Xe1 := EpimorphismByGenerators(G,H);[127X[104X
+    [4X[28X[ (1,2,3,4), (3,4) ] -> [ (6,7), (7,8) ][128X[104X
+    [4X[25Xgap>[125X [27X## note that this is just an abbreviation for: [127X[104X
+    [4X[25Xgap>[125X [27Xe2 := GroupHomomorphismByImages( G, H, [127X[104X
+    [4X[25X>[125X [27X             GeneratorsOfGroup(G), GeneratorsOfGroup(H) );;[127X[104X
+    [4X[25Xgap>[125X [27Xe1 = e2; [127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X## but the following is nonsense: [127X[104X
+    [4X[25Xgap>[125X [27Xe0 := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );[127X[104X
+    [4X[28X[ (1,2,3) ] -> [ (8,9) ][128X[104X
+    [4X[25Xgap>[125X [27XIsGroupHomomorphism(e0);[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X

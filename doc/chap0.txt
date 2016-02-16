@@ -9,7 +9,7 @@
                                   Version 0.26
   
   
-                                   12/02/2016
+                                   15/02/2016
   
   
                                Sebastian Gutsche,
@@ -41,7 +41,7 @@
   [33X[0;0YAny  package  author who transfers a function to [5XUtils[105X will become an author
   of [5XUtils[105X.[133X
   
-  [33X[0;0YThe current version is 0.26, released 12th February 2016 for [5XGAP[105X 4.8.[133X
+  [33X[0;0YThe current version is 0.26, released 15th February 2016 for [5XGAP[105X 4.8.[133X
   
   [33X[0;0YThis  package  relies  on  modifications  to  the  library  files oper.g and
   global.g.  It  appears  that  these  modifications  will not appear in a GAP

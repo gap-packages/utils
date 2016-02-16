@@ -8,7 +8,8 @@
   
   [29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3Xmaxn[103X ) [32X function
   
-  [33X[0;0YThis function has transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YThe  function  [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X  returns  a list of all integers
   less than or equal to [3Xmaxn[103X which do not have prime divisors exceeding [3Xmaxp[103X.[133X
@@ -28,11 +29,11 @@
   
   [29X[2XAllProducts[102X( [3XL[103X, [3Xk[103X ) [32X function
   
-  [33X[0;0YThis  function  has  transferred  from  package  [5XRCWA[105X. Note that it has been
-  removed from version 4.0.0 of [5XRCWA[105X but will not yet be read from [5XUtils[105X.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YThe  function [10XAllProducts([3XL[103X[10X,[3Xk[103X[10X)[110X returns the list of all products of [3Xk[103X entries
-  of the list [3XL[103X.[133X
+  [33X[0;0YThe  command  [10XAllProducts([3XL[103X[10X,[3Xk[103X[10X)[110X returns the list of all products of [3Xk[103X entries
+  of  the  list [3XL[103X. Note that every ordering of the entries is used so that, in
+  the commuting case, there are bound to be repetitions.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -43,6 +44,8 @@
     [4X[28X  48, 64 ][128X[104X
     [4X[25Xgap>[125X [27XSet(last);            [127X[104X
     [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 64 ][128X[104X
+    [4X[25Xgap>[125X [27XAllProducts( [(1,2,3),(2,3,4)], 2 );[127X[104X
+    [4X[28X[ (2,4,3), (1,2)(3,4), (1,3)(2,4), (1,3,2) ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
@@ -50,7 +53,8 @@
   
   [29X[2XRestrictedPartitionsWithoutRepetitions[102X( [3XL[103X, [3Xk[103X ) [32X function
   
-  [33X[0;0YThis function has transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YGiven  a  positive integer [3Xn[103X and a set of positive integers [3XS[103X, this function
   returns  a list of all partitions of [3Xn[103X into distinct elements of [3XS[103X. The only
@@ -72,7 +76,8 @@
   
   [29X[2XExponentOfPrime[102X( [3Xn[103X, [3Xp[103X ) [32X function
   
-  [33X[0;0YThis function has transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YThe function [10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X returns the exponent of the prime [3Xp[103X in the
   prime factorization of [3Xn[103X.[133X
@@ -88,7 +93,8 @@
   
   [29X[2XNextProbablyPrimeInt[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YThis function has transferred from package [5XResClasses[105X.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
+  [10XLoadPackage(RCWA)[110X first.[133X
   
   [33X[0;0YThe function [10XNextProbablyPrimeInt([3Xn[103X[10X)[110X does the same as [10XNextPrimeInt([3Xn[103X[10X)[110X except
   that    for   reasons   of   performance   it   tests   numbers   only   for

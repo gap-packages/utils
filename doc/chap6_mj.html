@@ -61,7 +61,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetupCache</code>( <var class="Arg">name</var>, <var class="Arg">size</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PutIntoCache</code>( <var class="Arg">name</var>, <var class="Arg">key</var>, <var class="Arg">value</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FetchFromCache</code>( <var class="Arg">name</var>, <var class="Arg">key</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions have transferred from package <strong class="pkg">ResClasses</strong>.</p>
+<p>These functions are being transferred from package <strong class="pkg">ResClasses</strong>: to use them you should <code class="code">LoadPackage(ResClasses)</code> first.</p>
 
 <p>The function <code class="code">SetupCache</code> creates an empty cache named <code class="code">name</code> for at most <code class="code">size</code> values.</p>
 
@@ -86,7 +86,7 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FindMatchingFiles</code>( <var class="Arg">pkg</var>, <var class="Arg">dirs</var>, <var class="Arg">extns</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CreateDirIfMissing</code>( <var class="Arg">str</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions have transferred from package <strong class="pkg">AutoDoc</strong>.</p>
+<p>These functions are being transferred from package <strong class="pkg">AutoDoc</strong> where they were named <code class="code">AutoDoc_FindMatchingFiles</code> and <code class="code">AutoDoc_CreateDirIfMissing</code>.</p>
 
 <p><code class="code">FindMatchingFiles</code> scans the given (by name) subdirectories of a package directory for files with one of the given extensions, and returns the corresponding filenames, as paths relative to the package directory.</p>
 
@@ -114,7 +114,7 @@ true
 <h5>6.3-1 Log2HTML</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Log2HTML</code>( <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>This function converts the <strong class="pkg">GAP</strong> logfile logfilename to HTML. The extension of the input file must be <var class="Arg">*.log</var>. The name of the output file is the same as the one of the input file except that the extension <var class="Arg">*.log</var> is replaced by <var class="Arg">*.html</var>. There is a sample CSS file in <code class="file">utils/doc/gaplog.css</code>, which you can adjust to your taste.</p>
 
@@ -142,7 +142,7 @@ true
 <h5>6.4-1 IntOrOnfinityToLaTeX</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntOrOnfinityToLaTeX</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">ResClasses</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">ResClasses</strong>: to use it you should <code class="code">LoadPackage(ResClasses)</code> first.</p>
 
 <p><code class="code">IntOrInfinityToLaTeX(n)</code> returns the LaTeX string for <var class="Arg">n</var>.</p>
 
@@ -161,7 +161,7 @@ true
 <h5>6.4-2 LaTeXStringFactorsInt</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LaTeXStringFactorsInt</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function has transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage(RCWA)</code> first.</p>
 
 <p>It returns the prime factorization of the integer <span class="SimpleMath">\(n\)</span> as a string in LaTeX format.</p>
 

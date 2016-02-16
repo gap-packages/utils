@@ -8,23 +8,23 @@ PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
 Version := "0.26",
-Date := "12/02/2016",
+Date := "15/02/2016",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY UTILSVERSION "0.26">
 ##  <!ENTITY UTILSTARFILENAME "utils-0.26.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "12/02/2016">
-##  <!ENTITY UTILSLONGRELEASEDATE "12th February 2016">
+##  <!ENTITY UTILSRELEASEDATE "15/02/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "15th February 2016">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
 ##  <#/GAPDoc>
 
 PackageWWWHome := 
-  "http://pages.bangor.ac.uk/~mas023/chda/utils/",
+  "http://gap-packages.github.io/utils/",
 
-ArchiveURL := "http://pages.bangor.ac.uk/~mas023/chda/utils/utils-0.26", 
-ArchiveFormats := ".tar.gz",
+ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.26" ),
+ArchiveFormats := ".tar.gz .zip",
 
 Persons := [
   rec(
@@ -75,7 +75,7 @@ Status := "deposited",
 ## AcceptDate := "  ",
 
 README_URL := 
-  Concatenation( ~.PackageWWWHome, "README.md" ),
+  Concatenation( ~.PackageWWWHome, "README" ),
 PackageInfoURL := 
   Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
