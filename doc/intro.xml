@@ -68,6 +68,12 @@ the Bangor site:
 The package also has a GitHub repository: 
 <URL>https://github.com/gap-packages/utils</URL>. 
 <P/> 
+
+
+
+
+
+<P/>
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
 The <Code>html</Code> versions, with or without MathJax, 
