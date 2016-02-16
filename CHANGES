@@ -3,9 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.26 for GAP 4.8.1 (15/02/16)
+Version 0.27 for GAP 4.8.1 (16/02/16)
 
- - (15/02/16) Moved PackageWWWHome to GitHub; README.md -> README 
+ - (16/02/16) Moved PackageWWWHome to GitHub; README.md -> README 
               added OKtoReadFromUtilsSpec to deal with fns taken out early 
  - (12/02/16) Added warning to manual about the need to load packages. 
  - (11/02/16) BindInRecordIfMissing -> SetIfMissing (from AutoDoc) 
