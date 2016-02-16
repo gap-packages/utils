@@ -3,7 +3,7 @@
 <!--  pending.xml         Utils documentation                Stefan Kohl -->
 <!--                                                   Sebastian Gutsche -->
 <!--                                                            Max Horn -->
-<!--  version 0.25, 11/02/2016                                           --> 
+<!--  version 0.26, 16/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -15,7 +15,7 @@
    <Func Name="QuotesStripped"
          Arg="str" />
 <Description>
-These functions have transferred from package <Package>ResClasses</Package>. 
+These functions have transferred from package &ResClasses;. 
 <P/>
 The function <C>QuotesStripped(s)</C> removes double-quote characters 
 <C>\"</C> from a string.  It is equivalent to the library call 

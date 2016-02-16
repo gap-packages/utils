@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.25, 11/02/2016 
+##  version 0.26, 16/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -23,6 +23,7 @@ UtilsPackageVersions :=
 ##
 #F  OKtoReadFromUtils( <name> ) . . . tests whether name still contains the 
 ##                                    code to be transferred to Utils 
+#F  OKtoReadFromUtilsSpec( <name>, <oldver> ) . . . special case of above 
 ##
 BIND_GLOBAL( "OKtoReadFromUtils", function( Name ) 
     local  name, ver, ver0, pos, ok; 
@@ -36,6 +37,20 @@ BIND_GLOBAL( "OKtoReadFromUtils", function( Name )
     ver := InstalledPackageVersion( name ); 
     ok := ( ( ver = fail )         ## name is not installed on the system 
             or ( ver > ver0 ) );   ## name still contains the code 
+    return ok; 
+end );
+
+BIND_GLOBAL( "OKtoReadFromUtilsSpec", function( Name, oldver ) 
+    local  name, ver, pos, ok; 
+
+    name := LowercaseString( Name ); 
+    pos := Position( UtilsPackageVersions, name ); 
+    if ( pos = fail ) then 
+        Error( "package 'name' not in the list UtilsPackageVersions" ); 
+    fi; 
+    ver := InstalledPackageVersion( name ); 
+    ok := ( ( ver = fail )           ## name is not installed on the system 
+            or ( ver > oldver ) );   ## name still contains the code 
     return ok; 
 end );
 

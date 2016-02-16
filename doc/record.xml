@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
-<!--  version 0.25, 11Set/02/2016                                           --> 
+<!--  version 0.26, 16/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -23,7 +23,7 @@
    <Func Name="SetIfMissing"
          Arg="rec name val" />
 <Description>
-This function has transferred from package <Package>AutoDoc</Package>, 
+This function has transferred from package &AutoDoc;, 
 where it was called <C>AUTODOC_WriteOnce</C>. 
 It writes into a record provided the position is not yet bound. 
 <P/>
@@ -45,7 +45,7 @@ rec( a := 1, b := 2, c := 3 )
    <Func Name="AssignGlobals"
          Arg="rec" />
 <Description>
-This function has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: to use it you should &LoadRCWA; first.
 <P/>
 This function assigns the record components of <A>rec</A>
 to global variables with the same names.
@@ -56,7 +56,7 @@ to global variables with the same names.
 <![CDATA[
 gap> AssignGlobals( r );
 The following global variables have been assigned:
-[ "b", "c", "a" ]
+[ "a", "b", "c" ]
 gap> [a,b,c];
 [ 1, 2, 3 ]
 ]]>

@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  lists.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.26, 12/02/2016                                           --> 
+<!--  version 0.26, 15/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -27,7 +27,8 @@
    <Func Name="FloatQuotientsList"
          Arg="L" />
 <Description>
-These functions have transferred from package <Package>ResClasses</Package>. 
+These functions are being transferred from package &ResClasses;: 
+to use them you should &LoadResClasses; first. 
 <P/>
 They take a list <M>L</M> of length <M>n</M> and output 
 the lists of length <M>n-1</M> containing all the differences <M>L[i]-L[i-1]</M> 
@@ -57,7 +58,8 @@ gap> QuotientsList( [ 2, 1, 0, -1, -2 ] );
    <Oper Name="SearchCycle"
          Arg="L" />
 <Description>
-This operation has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 A utility function for detecting cycles in lists. 
 But what <E>is</E> the <E>definition</E> of a cycle here? 
@@ -98,8 +100,8 @@ brk> ]]>
    <Oper Name="PrintListOneItemPerLine"
          Arg="L" />
 <Description>
-This operation has transferred from package <Package>Gpd</Package>. 
-<P/>
+This function is being transferred from package &Gpd;: 
+to use it you should &LoadGpd; first. 
 Printing lists vertically, rather than horizantally, may be useful 
 when the entries are lengthy. 
 <P/>
@@ -130,7 +132,9 @@ gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );
    <Oper Name="IsCommonTransversal"
          Arg="grp subgrp list" />
 <Description>
-These functions deal with lists of subsets of <M>[1 \ldots n]</M>
+These functions are being transferred from package &XMod;: 
+to use them you should &LoadXMod; first. 
+They deal with lists of subsets of <M>[1 \ldots n]</M>
 and construct systems of distinct and common representatives using
 simple, non-recursive, combinatorial algorithms.
 <P/>
@@ -183,7 +187,8 @@ true
    <Func Name="BlankFreeString"
          Arg="obj" />
 <Description>
-This function has transferred from package <Package>ResClasses</Package>. 
+This function is being transferred from package &ResClasses;: 
+to use it you should &LoadResClasses; first. 
 <P/>
 The result of <C>BlankFreeString( obj );</C> 
 is a composite of the functions <C>String( obj )</C> and 
@@ -203,7 +208,7 @@ gap> BlankFreeString( D12 );
    <Oper Name="StringDotSuffix"
          Arg="str suf" />
 <Description>
-This function has transferred from package <Package>AutoDoc</Package>, 
+This function is being transferred from package <Package>AutoDoc</Package>, 
 and was originally named <C>AUTODOC_GetSuffix</C>. 
 <P/>
 When <C>StringDotSuffix</C> is given a string containing a "." 

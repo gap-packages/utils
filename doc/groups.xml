@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  version 0.23, 10/02/2016                                           --> 
+<!--  version 0.26, 16/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -24,9 +24,9 @@
    <Oper Name="IsCommuting"
          Arg="a b" />
 <Description>
-This operation has transferred from package <Package>ResClasses</Package>. 
-<P/>
-This operation tests whether two group elements commute. 
+This function is being transferred from package &ResClasses;: 
+to use it you should &LoadResClasses; first. 
+It tests whether two group elements commute. 
 <P/>
 </Description>
 </ManSection>
@@ -44,7 +44,8 @@ false
    <Oper Name="ListOfPowers"
          Arg="g exp" />
 <Description>
-This operation has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 The operation <C>ListOfPowers(g,exp)</C> returns the list 
 <M>[g,g^2,...,g^{exp}]</M> of powers of the element <M>g</M>.
@@ -62,7 +63,8 @@ gap> ListOfPowers( D12.2, 6 );
    <Oper Name="GeneratorsAndInverses"
          Arg="G" />
 <Description>
-This operation has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 This operation returns a list containing the generators of <M>G</M> 
 followed by the inverses of these generators.  
@@ -85,9 +87,7 @@ gap> GeneratorsAndInverses( D12 );
    <Attr Name="FittingLength"
          Arg="G" />
 <Description>
-These operations have transferred from package <Package>ResClasses</Package>. 
-Note that these three functions have been removed from version 4.0.1 of 
-<Package>ResClasses</Package>, but will not yet be read by &Utils;. 
+These three functions have been transferred from package &ResClasses;. 
 <P/>
 The upper and lower Fitting series and the Fitting length of a solvable
 group are described here: 
@@ -119,7 +119,8 @@ gap> FittingLength( D12 );
    <Attr Name="NormalizedRelator"
          Arg="w gensords" />
 <Description>
-These operations have transferred from package <Package>RCWA</Package>. 
+These functions are being transferred from package &RCWA;: 
+to use them you should &LoadRCWA; first. 
 <P/>
 Some description needed here.
 <P/>
@@ -141,20 +142,28 @@ gap> ## some examples needed here
    <Attr Name="EpimorphismByGenerators"
          Arg="G H" />
 <Description>
-These operations have transferred from package <Package>RCWA</Package>. 
-<P/>
-This function maps the generators of <M>G</M> to those of <M>H</M>. 
+This function is being transferred from package &RCWA;: 
+to use is you should &LoadRCWA; first. 
+It maps the generators of <M>G</M> to those of <M>H</M>. 
 It is not checked that this map is a group homomorphism! 
 <P/>
 </Description>
 </ManSection>
 <Example>
 <![CDATA[
-gap> G:=Group((1,2,3),(3,4,5));;
-gap> H:=Group((6,7),(8,9));;    
-gap> e:=EpimorphismByGenerators(G,H);
-[ (1,2,3), (3,4,5) ] -> [ (6,7), (8,9) ]
-gap> IsGroupHomomorphism(e);
+gap> G := Group((1,2,3,4),(3,4));;
+gap> H := Group((6,7),(7,8));;    
+gap> e1 := EpimorphismByGenerators(G,H);
+[ (1,2,3,4), (3,4) ] -> [ (6,7), (7,8) ]
+gap> ## note that this is just an abbreviation for: 
+gap> e2 := GroupHomomorphismByImages( G, H, 
+>              GeneratorsOfGroup(G), GeneratorsOfGroup(H) );;
+gap> e1 = e2; 
+true
+gap> ## but the following is nonsense: 
+gap> e0 := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );
+[ (1,2,3) ] -> [ (8,9) ]
+gap> IsGroupHomomorphism(e0);
 true
 ]]>
 </Example>

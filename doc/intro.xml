@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  version 0.26, 12/02/2016                                           --> 
+<!--  version 0.26, 15/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -51,10 +51,41 @@ gap> LoadPackage( "utils" );
 The current version is &UTILSVERSION; for &GAP; 4.8, 
 released on &UTILSLONGRELEASEDATE;. 
 <P/> 
+Functions are currently being transferred from the following packages: 
+<List>
+<Item>
+&AutoDoc; (with function names changed);
+</Item>
+<Item>
+&Gpd;;
+</Item>
+<Item>
+&ResClasses;;
+</Item>
+<Item>
+&RCWA;;
+</Item>
+<Item>
+&XMod;;
+</Item>
+</List>
+<P/>
+Transfer is complete for functions from the following packages:
+<List>
+<Item>
+(none so far).
+</Item>
+</List>
+<P/>
+
 The package may be obtained as a compressed tar file 
 <File>&UTILSTARFILENAME;</File>
 by ftp from one of the following sites: 
 <List>
+<Item>
+the package GitHub site: 
+<URL>http://gap-packages.github.io/utils/</URL>. 
+</Item>
 <Item>
 any &GAP; archive, e.g. 
 <URL>http://www.gap-system.org/Packages/packages.html</URL>; 
@@ -70,10 +101,6 @@ The package also has a GitHub repository:
 <P/> 
 
 
-
-
-
-<P/>
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
 The <Code>html</Code> versions, with or without MathJax, 
@@ -96,9 +123,11 @@ gap> ReadPackage( "utils", "tst/testall.g" );
 ]]>
 </Example>
 <P/>
-Additional information can be found on the
-<E>Computational Higher-dimensional Discrete Algebra</E> website at
-<URL>http://pages.bangor.ac.uk/~mas023/chda/</URL>. 
+
+Note that functions listed in this manual that are currently being transferred 
+are only read from the source package &Home;, and so can only be used if 
+&Home; has been previously loaded. 
+
 
 
 <Section Label="sect-current-procedure"> 
@@ -200,12 +229,12 @@ it may be possible to remove the conditional clauses mentioned in item 4 above.
 </Enum>  
 
 <P/> 
-A note on running the tests. 
+A note on the procedure for testing these functions. 
 As long as a function being transferred still exists in the &Home; package, 
 the code will not be read from &Utils;. 
-So, when the tests are run, it is necessary to <C>LoadPackage( "home" );</C> 
+So, when the tests are run, it is necessary to <C>LoadPackage("home")</C> 
 before the function is called. 
-The file <File>testall.g</File> makes sure that all the necessary packages 
+The file <File>tst/testall.g</File> makes sure that all the necessary packages 
 are loaded before the individual tests are called. 
 
 </Section> 

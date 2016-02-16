@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  number.xml          Utils documentation                Stefan Kohn -->
 <!--                                                                     -->
-<!--  version 0.23, 10/02/2016                                           --> 
+<!--  version 0.26, 16/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -23,7 +23,8 @@
    <Func Name="AllSmoothIntegers"
          Arg="maxp maxn" />
 <Description>
-This function has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 The function <C>AllSmoothIntegers(<A>maxp</A>,<A>maxn</A>)</C>
 returns a list of all integers less than or equal to <A>maxn</A> which do
@@ -46,12 +47,12 @@ gap> Length(last);
    <Func Name="AllProducts"
          Arg="L, k" />
 <Description>
-This function has transferred from package <Package>RCWA</Package>. 
-Note that it has been removed from version 4.0.0 of <Package>RCWA</Package> 
-but will not yet be read from &Utils;. 
+This function has been transferred from package &RCWA;. 
 <P/>
-The function <C>AllProducts(<A>L</A>,<A>k</A>)</C> returns the list of
+The command <C>AllProducts(<A>L</A>,<A>k</A>)</C> returns the list of
 all products of <A>k</A> entries of the list&nbsp;<A>L</A>. 
+Note that every ordering of the entries is used so that, in the commuting case, 
+there are bound to be repetitions.  
 <P/>
 </Description>
 </ManSection>
@@ -64,6 +65,8 @@ gap> AllProducts([1..4],3);
   48, 64 ]
 gap> Set(last);            
 [ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 64 ]
+gap> AllProducts( [(1,2,3),(2,3,4)], 2 );
+[ (2,4,3), (1,2)(3,4), (1,3)(2,4), (1,3,2) ]
 ]]>
 </Example>
 
@@ -71,7 +74,8 @@ gap> Set(last);
    <Func Name="RestrictedPartitionsWithoutRepetitions"
          Arg="L, k" />
 <Description>
-This function has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 Given a positive integer <A>n</A> and a set of positive integers <A>S</A>, 
 this function returns a list of all partitions of <A>n</A> 
@@ -97,7 +101,8 @@ gap> RestrictedPartitionsWithoutRepetitions( 20, [4..10] );
    <Func Name="ExponentOfPrime"
          Arg="n p" />
 <Description>
-This function has transferred from package <Package>RCWA</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 The function <C>ExponentOfPrime(<A>n</A>,<A>p</A>)</C> 
 returns the exponent of the prime <A>p</A> 
@@ -116,7 +121,8 @@ gap> ExponentOfPrime( 13577531, 11 );
    <Func Name="NextProbablyPrimeInt"
          Arg="n" />
 <Description>
-This function has transferred from package <Package>ResClasses</Package>. 
+This function is being transferred from package &RCWA;: 
+to use it you should &LoadRCWA; first. 
 <P/>
 The function <C>NextProbablyPrimeInt(<A>n</A>)</C> 
 does the same as <C>NextPrimeInt(<A>n</A>)</C> 

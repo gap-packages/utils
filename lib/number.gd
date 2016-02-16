@@ -2,14 +2,14 @@
 ##
 #W  number.gd                    GAP4 package `Utils'             Stefan Kohl 
 ##
-##  version 0.21, 29/01/2016 
+##  version 0.26, 16/02/2016 
 ##
 #Y  Copyright (C) 2016, The GAP Group, 
 
-if OKtoReadFromUtils( "ResClasses" ) then
+if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from ResClasses
+##  this function transferred from RCWA
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
@@ -22,10 +22,6 @@ if OKtoReadFromUtils( "ResClasses" ) then
 ##  For large <n>, this function is much faster than `NextPrimeInt'.
 ##
 DeclareGlobalFunction( "NextProbablyPrimeInt" );
-
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -59,14 +55,6 @@ DeclareGlobalFunction ( "PrimeNumbersIterator" );
 #############################################################################
 ##  this function transferred from RCWA 
 ##
-#O  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
-#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
-##
-DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
-
-#############################################################################
-##  this function transferred from RCWA 
-##
 #F  RestrictedPartitionsWithoutRepetitions( <n>, <S> )
 ##
 ##  Given a positive integer n and a set of positive integers S, this func-
@@ -75,6 +63,18 @@ DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
 ##  allowed.
 ##
 DeclareGlobalFunction( "RestrictedPartitionsWithoutRepetitions" );
+
+fi; 
+
+if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
+
+#############################################################################
+##  this function transferred from RCWA 
+##
+#O  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
+#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
+##
+DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
 
 fi; 
 

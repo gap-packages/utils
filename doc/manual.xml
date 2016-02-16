@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  manual.xml          Utils documentation              Chris Wensley -->
 <!--                                                                     -->
-<!--  version 0.23, 04/02/2016                                           --> 
+<!--  version 0.26, 16/02/2016                                           --> 
 <!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
@@ -16,6 +16,15 @@
   [<!ENTITY Utils "<Package>Utils</Package>"> 
    <#Include Label="PKGVERSIONDATA">,
    <!ENTITY Home "<Package>Home</Package>">
+   <!ENTITY AutoDoc "<Package>AutoDoc</Package>">
+   <!ENTITY Gpd "<Package>Gpd</Package>">
+   <!ENTITY LoadGpd "<C>LoadPackage(Gpd)</C>">
+   <!ENTITY ResClasses "<Package>ResClasses</Package>">
+   <!ENTITY LoadResClasses "<C>LoadPackage(ResClasses)</C>">
+   <!ENTITY RCWA "<Package>RCWA</Package>">
+   <!ENTITY LoadRCWA "<C>LoadPackage(RCWA)</C>">
+   <!ENTITY XMod "<Package>XMod</Package>">
+   <!ENTITY LoadXMod "<C>LoadPackage(XMod)</C>">
   ]> 
 
 <!-- The documentation to the Utils package. -->

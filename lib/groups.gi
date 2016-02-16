@@ -2,7 +2,7 @@
 ##
 #W  groups.gi                 GAP4 package `Utils'                 Stefan Kohl
 ##
-##  version 0.25, 11/02/2016 
+##  version 0.26, 16/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -30,8 +30,7 @@ InstallMethod( IsCommuting,
 
 fi; 
 
-if ( ( InstalledPackageVersion("resclasses") <> fail ) and 
-     ( InstalledPackageVersion("resclasses") > "4.1.0" ) ) then  
+if OKtoReadFromUtilsSpec( "ResClasses", "3.9" ) then 
 
 #############################################################################
 ##  this function transferred from ResClasses 

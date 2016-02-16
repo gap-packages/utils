@@ -2,7 +2,7 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-##  version 0.21, 29/01/2016 
+##  version 0.26, 16/02/2016 
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
@@ -62,13 +62,8 @@ InstallGlobalFunction( ExponentOfPrime,
     return k;
   end );
 
-fi; 
-
-if OKtoReadFromUtils( "ResClasses" ) then
-Print( "reading Resclasses functions from number.gi\n" ); 
-
 #############################################################################
-##  this function transferred from Resclasses 
+##  this function transferred from RCWA
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
@@ -87,21 +82,6 @@ InstallGlobalFunction( NextProbablyPrimeInt,
     od;
     return n;
   end );
-
-fi;
-
-if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from number.gi\n" ); 
-
-#############################################################################
-##  this function transferred from RCWA 
-##
-#M  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
-#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
-##
-InstallMethod( AllProducts,
-               "for lists (RCWA)", ReturnTrue, [ IsList, IsPosInt ], 0,
-               function ( l, k ) return List(Tuples(l,k),Product); end );
 
 #############################################################################
 ##  this function transferred from RCWA 
@@ -239,6 +219,20 @@ InstallGlobalFunction( PrimeNumbersIterator,
       maxdiv         := maxdiv,
       offset         := offset ) );
   end );
+
+fi; 
+
+if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
+
+#############################################################################
+##  this function transferred from RCWA 
+##
+#M  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
+#M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
+##
+InstallMethod( AllProducts,
+               "for lists (RCWA)", ReturnTrue, [ IsList, IsPosInt ], 0,
+               function(l,k) return List(Tuples(l,k),Product); end );
 
 fi; 
 
