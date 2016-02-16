@@ -7,23 +7,23 @@ SetPackageInfo( rec(
 PackageName := "Utils",
 Subtitle := "Utility functions in GAP",
 
-Version := "0.26",
-Date := "15/02/2016",
+Version := "0.27",
+Date := "16/02/2016",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.26">
-##  <!ENTITY UTILSTARFILENAME "utils-0.26.tar.gz">
+##  <!ENTITY UTILSVERSION "0.27">
+##  <!ENTITY UTILSTARFILENAME "utils-0.27.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "15/02/2016">
-##  <!ENTITY UTILSLONGRELEASEDATE "15th February 2016">
+##  <!ENTITY UTILSRELEASEDATE "16/02/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "16th February 2016">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
 ##  <#/GAPDoc>
 
 PackageWWWHome := 
   "http://gap-packages.github.io/utils/",
 
-ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.26" ),
+ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.27" ),
 ArchiveFormats := ".tar.gz .zip",
 
 Persons := [

@@ -28,7 +28,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe current version is 0.26 for [5XGAP[105X 4.8, released on 15th February 2016.[133X
+  [33X[0;0YThe current version is 0.27 for [5XGAP[105X 4.8, released on 16th February 2016.[133X
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
@@ -46,7 +46,7 @@
   
   [30X    [33X[0;6Y(none so far).[133X
   
-  [33X[0;0YThe  package  may  be obtained as a compressed tar file [11Xutils-0.26.tar.gz[111X by
+  [33X[0;0YThe  package  may  be obtained as a compressed tar file [11Xutils-0.27.tar.gz[111X by
   ftp from one of the following sites:[133X
   
   [30X    [33X[0;6Ythe package GitHub site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X

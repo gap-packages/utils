@@ -6,10 +6,10 @@
                             [1XUtility functions in [5XGAP[105X[101X
   
   
-                                  Version 0.26
+                                  Version 0.27
   
   
-                                   15/02/2016
+                                   16/02/2016
   
   
                                Sebastian Gutsche,
@@ -41,12 +41,7 @@
   [33X[0;0YAny  package  author who transfers a function to [5XUtils[105X will become an author
   of [5XUtils[105X.[133X
   
-  [33X[0;0YThe current version is 0.26, released 15th February 2016 for [5XGAP[105X 4.8.[133X
-  
-  [33X[0;0YThis  package  relies  on  modifications  to  the  library  files oper.g and
-  global.g.  It  appears  that  these  modifications  will not appear in a GAP
-  release  until  at  least  version  4.8.3, so development of this package is
-  suspended until further notice.[133X
+  [33X[0;0YThe current version is 0.27, released 16th February 2016 for [5XGAP[105X 4.8.[133X
   
   [33X[0;0YBug  reports,  suggestions  and  comments  are,  of  course, welcome. Please
   contact  the  last  author  at  [7Xmailto:c.d.wensley@bangor.ac.uk[107X or submit an
