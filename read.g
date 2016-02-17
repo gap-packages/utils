@@ -2,8 +2,6 @@
 ##
 #W  read.g                 The Utils package                     Chris Wensley
 ## 
-##  version 0.25, 11/02/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group,  
 ##
 

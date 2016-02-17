@@ -2,8 +2,6 @@
 ##
 #W  number.tst                 Utils Package                       Stefan Kohl
 ##
-##  version 0.23, 10/02/2016   
-##
 #Y  Copyright (C) 2016, The GAP Group
 ##  
 

@@ -2,8 +2,6 @@
 ##
 #W  groups.tst                  Utils Package                    
 ##
-##  version 0.26, 16/02/2016   
-##
 #Y  Copyright (C) 2015-2016, The GAP Group,   
 ##  
 

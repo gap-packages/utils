@@ -3,8 +3,6 @@
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn 
 ##                                                           Stefan Kohl 
-##  version 0.25, 11/02/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################

@@ -2,8 +2,6 @@
 ##
 #W  combinat.gd                 GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.21, 29/01/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 if OKtoReadFromUtils( "XMod" ) then
