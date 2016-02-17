@@ -2,8 +2,6 @@
 ##
 #W  number.gd                    GAP4 package `Utils'             Stefan Kohl 
 ##
-##  version 0.26, 16/02/2016 
-##
 #Y  Copyright (C) 2016, The GAP Group, 
 
 if OKtoReadFromUtils( "RCWA" ) then

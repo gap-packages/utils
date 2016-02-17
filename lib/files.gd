@@ -2,8 +2,6 @@
 ##
 #W  files.gd                    GAP4 package `Utils'         Sebastian Gutsche
 ##                                                                    Max Horn
-##  version 0.21, 01/02/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################

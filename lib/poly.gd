@@ -2,9 +2,7 @@
 ##
 #W  poly.gd                    GAP4 package `Utils'             
 ##
-##  version 0.12, 01/12/2015 
-##
-#Y  Copyright (C) 2015, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group, 
 
 
 

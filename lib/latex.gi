@@ -2,8 +2,6 @@
 ##
 #W  latex.gi                  GAP4 package `Utils'              Chris Wensley
 ##
-##  version 0.21, 03/02/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group,  
 
 if OKtoReadFromUtils( "ResClasses" ) then

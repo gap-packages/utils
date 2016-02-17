@@ -2,8 +2,6 @@
 ##
 #W  pending.gi                GAP4 package `Utils'                Stefan Kohl
 ##
-##  version 0.25, 11/02/2016 
-##
 #Y  Copyright (C) 2016, The GAP Group, 
 
 

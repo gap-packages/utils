@@ -2,8 +2,6 @@
 ##
 #W  cache.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-##  version 0.21, 29/01/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################

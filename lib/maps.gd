@@ -2,8 +2,6 @@
 ##
 #W  maps.gd                     GAP4 package `Utils'             Chris Wensley
 ##
-##  version 0.21, 02/02/2016 
-##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 if OKtoReadFromUtils( "XMod" ) then
