@@ -46,9 +46,6 @@ gap> LoadPackage( "utils" );
 ]]>
 </Example>
 <P/>
-The current version is &UTILSVERSION; for &GAP; 4.8, 
-released on &UTILSLONGRELEASEDATE;. 
-<P/> 
 Functions are currently being transferred from the following packages: 
 <List>
 <Item>
@@ -77,7 +74,7 @@ Transfer is complete for functions from the following packages:
 <P/>
 
 The package may be obtained as a compressed tar file 
-<File>&UTILSTARFILENAME;</File>
+<File>utils-version_number.tar.gz</File>
 by ftp from one of the following sites: 
 <List>
 <Item>
@@ -90,7 +87,7 @@ any &GAP; archive, e.g.
 </Item>
 <Item>
 the Bangor site: 
-<URL>http://www.maths.bangor.ac.uk/chda/&UTILSHTMLFILENAME;</URL>;
+<URL>http://www.maths.bangor.ac.uk/chda/utils/utils.html</URL>;
 </Item>
 </List> 
 <Index>repository</Index> 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<TitlePage>
+  <Title>
+    Utils
+  </Title>
+  <Subtitle>
+    Utility functions in &GAP;
+  </Subtitle>
+  <Version>
+    0.27
+  </Version>
+  <Author>
+    Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Department of Mathematics<Br/>
+University of Kaiserslautern<Br/>
+67653 Kaiserslautern<Br/>
+Germany<Br/>
+</Address>
+<Email>gutsche@mathematik.uni-kl.de</Email>
+<Homepage>http://wwwb.math.rwth-aachen.de/~gutsche/</Homepage>
+
+  </Author>
+  <Author>
+    Stefan Kohl<Alt Only="LaTeX"><Br/></Alt>
+<Email>stefan@mcs.st-and.ac.uk</Email>
+<Homepage>http://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
+
+  </Author>
+  <Author>
+    Christopher D. Wensley<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+Dr. C.D. Wensley<Br/>
+School of Computer Science<Br/>
+Bangor University<Br/>
+Dean Street<Br/>
+Bangor<Br/>
+Gwynedd LL57 1UT<Br/>
+UK<Br/>
+</Address>
+<Email>c.d.wensley@bangor.ac.uk</Email>
+<Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
+
+  </Author>
+  <Author>
+    A. N. Other<Alt Only="LaTeX"><Br/></Alt>
+<Address>
+A. N. Other<Br/>
+i.e. any package author<Br/>
+who transfers functions<Br/>
+to this package.<Br/>
+</Address>
+
+  </Author>
+  <Date>
+    17/02/2016
+  </Date>
+  
+<Abstract>
+The &Utils; package provides a space for utility functions in a variety 
+of &GAP; packages to be collected together into a single package. 
+In this way it is hoped that they will become more visible to package authors. 
+<P/>
+Any package author who transfers a function to &Utils; will become 
+an author of &Utils;. 
+<P/>
+Bug reports, suggestions and comments are, of course, welcome. 
+Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
+or submit an issue at the GitHub repository 
+<URL>http://github.com/gap-packages/utils/issues/</URL>. 
+</Abstract>
+
+<Copyright> 
+<Index>License</Index>
+&copyright; 2015-2016, The &GAP; Group.  
+
+&Utils; is free software; you can redistribute it 
+and/or modify it under the terms of the 
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+as published by the Free Software Foundation; 
+either version 2 of the License, or (at your option) any later version.
+</Copyright>
+
+<Acknowledgements>
+This documentation was prepared with the <Package>GAPDoc</Package> 
+package of Frank L&#xfc;beck and Max Neunh&#xf6;ffer. 
+</Acknowledgements>
+
+</TitlePage>
