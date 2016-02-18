@@ -25,11 +25,8 @@ PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
                                    "/releases/download/v", ~.Version,
                                    "/", ~.Packagename, "-", ~.Version ),
-SupportEmail     := "c.d.wensley@bangor.ac.uk",
-
-
-ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.28" ),
 ArchiveFormats := ".tar.gz .zip",
+SupportEmail     := "c.d.wensley@bangor.ac.uk",
 
 Persons := [
   rec(
@@ -78,11 +75,6 @@ Persons := [
 Status := "deposited",
 ## CommunicatedBy := "  ",
 ## AcceptDate := "  ",
-
-README_URL := 
-  Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := 
-  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
 AbstractHTML :=
  "The <span class=\"pkgname\">Utils</span> package provides a collection \
