@@ -8,8 +8,8 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.27",
-Date := "17/02/2016",
+Version := "0.28",
+Date := "18/02/2016",
 
 ##  Optional:
 ##    - Type and the URL of the source code repository
@@ -28,7 +28,7 @@ ArchiveURL       := Concatenation( ~.SourceRepository.URL,
 SupportEmail     := "c.d.wensley@bangor.ac.uk",
 
 
-ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.27" ),
+ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.28" ),
 ArchiveFormats := ".tar.gz .zip",
 
 Persons := [
@@ -72,17 +72,6 @@ Persons := [
                        "UK"] ),
     Place         := "Bangor",
     Institution   := "Bangor University"
-  ), 
-  rec(
-    LastName      := "Other",
-    FirstNames    := "A. N.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    PostalAddress := Concatenation( [
-                       "A. N. Other\n",
-                       "i.e. any package author\n",
-                       "who transfers functions\n",
-                       "to this package.\n"] ),
   )
 ],
 

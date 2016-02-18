@@ -9,8 +9,9 @@
     Utility functions in &GAP;
   </Subtitle>
   <Version>
-    0.27
+    0.28
   </Version>
+
   <Author>
     Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
 <Address>
@@ -21,14 +22,14 @@ Germany<Br/>
 </Address>
 <Email>gutsche@mathematik.uni-kl.de</Email>
 <Homepage>http://wwwb.math.rwth-aachen.de/~gutsche/</Homepage>
-
   </Author>
+
   <Author>
     Stefan Kohl<Alt Only="LaTeX"><Br/></Alt>
 <Email>stefan@mcs.st-and.ac.uk</Email>
 <Homepage>http://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
-
   </Author>
+
   <Author>
     Christopher D. Wensley<Alt Only="LaTeX"><Br/></Alt>
 <Address>
@@ -42,20 +43,10 @@ UK<Br/>
 </Address>
 <Email>c.d.wensley@bangor.ac.uk</Email>
 <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
-
   </Author>
-  <Author>
-    A. N. Other<Alt Only="LaTeX"><Br/></Alt>
-<Address>
-A. N. Other<Br/>
-i.e. any package author<Br/>
-who transfers functions<Br/>
-to this package.<Br/>
-</Address>
 
-  </Author>
   <Date>
-    17/02/2016
+    18/02/2016
   </Date>
   
 <Abstract>
