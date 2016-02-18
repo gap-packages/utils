@@ -8,7 +8,7 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.28",
+Version := "0.29",
 Date := "18/02/2016",
 
 ##  Optional:
