@@ -4,10 +4,10 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
-if OKtoReadFromUtils( "Gpd" ) then
+if OKtoReadFromUtils( "XMod" ) then
 
 ##############################################################################
-##  this function transferred from Gpd 
+##  this function transferred from XMod 
 ##
 #O  PrintListOneItemPerLine( <L> )
 ##  

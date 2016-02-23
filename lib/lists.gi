@@ -4,8 +4,8 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
-if OKtoReadFromUtils( "Gpd" ) then
-Print( "reading Gpd functions from lists.gi\n" ); 
+if OKtoReadFromUtils( "XMod" ) then
+Print( "reading XMod functions from lists.gi\n" ); 
 
 #############################################################################
 ##  this function transferred from Gpd 
