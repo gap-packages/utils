@@ -18,6 +18,7 @@ In this way it is hoped that they will become more visible
 to other package authors. 
 Any package author who transfers a function to &Utils; will become 
 an author of &Utils;. 
+This package first appeared as part of the &GAP; distribution in version 4.8.2. 
 <P/> 
 A function (or collection of functions) is suitable for transfer 
 from a package &Home; to &Utils; 
