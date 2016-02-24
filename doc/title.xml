@@ -9,8 +9,9 @@
     Utility functions in &GAP;
   </Subtitle>
   <Version>
-    0.31
+    0.33
   </Version>
+<!-- The date needs editing at line 50 --> 
 
   <Author>
     Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
@@ -46,7 +47,7 @@ UK<Br/>
   </Author>
 
   <Date>
-    23/02/2016
+    24/02/2016
   </Date>
   
 <Abstract>

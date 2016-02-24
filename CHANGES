@@ -3,9 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.32 for GAP 4.8.2 (24/02/16)
+Version 0.33 for GAP 4.8.2 (24/02/16)
 
- - (23/02/16) Made new release to GitHub using PackageTools 
+ - (24/02/16) Made new release to GitHub using GitHubPagesForGAP 
  - (17/02/16) Removed date/version information from file headers. 
  - (16/02/16) Moved PackageWWWHome to GitHub; README.md -> README 
               added OKtoReadFromUtilsSpec to deal with fns taken out early 
