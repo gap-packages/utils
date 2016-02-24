@@ -9,7 +9,7 @@
   [29X[2XIsCommuting[102X( [3Xa[103X, [3Xb[103X ) [32X operation
   
   [33X[0;0YThis  function  is  being transferred from package [5XResClasses[105X: to use it you
-  should  [10XLoadPackage(ResClasses)[110X  first.  It tests whether two group elements
+  should  [10XLoadPackage("resclasses")[110X first. It tests whether two group elements
   commute.[133X
   
   [4X[32X  Example  [32X[104X
@@ -27,7 +27,7 @@
   [29X[2XListOfPowers[102X( [3Xg[103X, [3Xexp[103X ) [32X operation
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YThe  operation  [10XListOfPowers(g,exp)[110X  returns  the  list [22X[g,g^2,...,g^exp][122X of
   powers of the element [22Xg[122X.[133X
@@ -44,7 +44,7 @@
   [29X[2XGeneratorsAndInverses[102X( [3XG[103X ) [32X operation
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YThis operation returns a list containing the generators of [22XG[122X followed by the
   inverses of these generators.[133X
@@ -87,7 +87,7 @@
   [29X[2XNormalizedRelator[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
   
   [33X[0;0YThese  functions  are  being  transferred from package [5XRCWA[105X: to use them you
-  should [10XLoadPackage(RCWA)[110X first.[133X
+  should [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YSome description needed here.[133X
   
@@ -105,7 +105,7 @@
   [29X[2XEpimorphismByGenerators[102X( [3XG[103X, [3XH[103X ) [32X attribute
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use is you should
-  [10XLoadPackage(RCWA)[110X  first.  It  maps the generators of [22XG[122X to those of [22XH[122X. It is
+  [10XLoadPackage("rcwa")[110X  first. It maps the generators of [22XG[122X to those of [22XH[122X. It is
   not checked that this map is a group homomorphism![133X
   
   [4X[32X  Example  [32X[104X

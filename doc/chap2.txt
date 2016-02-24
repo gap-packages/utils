@@ -11,7 +11,7 @@
   [29X[2XFloatQuotientsList[102X( [3XL[103X ) [32X function
   
   [33X[0;0YThese  functions  are being transferred from package [5XResClasses[105X: to use them
-  you should [10XLoadPackage(ResClasses)[110X first.[133X
+  you should [10XLoadPackage("resclasses")[110X first.[133X
   
   [33X[0;0YThey take a list [22XL[122X of length [22Xn[122X and output the lists of length [22Xn-1[122X containing
   all  the  differences  [22XL[i]-L[i-1][122X  and  all  the  quotients  [22XL[i]/L[i-1][122X of
@@ -38,7 +38,7 @@
   [29X[2XSearchCycle[102X( [3XL[103X ) [32X operation
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YA utility function for detecting cycles in lists. But what [13Xis[113X the [13Xdefinition[113X
   of a cycle here?[133X
@@ -77,9 +77,9 @@
   
   [29X[2XPrintListOneItemPerLine[102X( [3XL[103X ) [32X operation
   
-  [33X[0;0YThis  function  is  being transferred from package [5XGpd[105X: to use it you should
-  [10XLoadPackage(Gpd)[110X first. Printing lists vertically, rather than horizantally,
-  may be useful when the entries are lengthy.[133X
+  [33X[0;0YThis  function  is being transferred from package [5XXMod[105X: to use it you should
+  [10XLoadPackage("xmod")[110X   first.   Printing   lists   vertically,   rather  than
+  horizantally, may be useful when the entries are lengthy.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -101,9 +101,9 @@
   [29X[2XIsCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X, [3Xlist[103X ) [32X operation
   
   [33X[0;0YThese  functions  are  being  transferred from package [5XXMod[105X: to use them you
-  should [10XLoadPackage(XMod)[110X first. They deal with lists of subsets of [22X[1 ... n][122X
-  and  construct  systems of distinct and common representatives using simple,
-  non-recursive, combinatorial algorithms.[133X
+  should  [10XLoadPackage("xmod")[110X first. They deal with lists of subsets of [22X[1 ...
+  n][122X  and  construct  systems  of  distinct  and  common representatives using
+  simple, non-recursive, combinatorial algorithms.[133X
   
   [33X[0;0YWhen  [22XL[122X  is  a  set  of  [22Xn[122X  subsets  of  [22X[1 ... n][122X and the Hall condition is
   satisfied  (the  union  of  any [22Xk[122X subsets has at least [22Xk[122X elements), a set of
@@ -145,7 +145,7 @@
   [29X[2XBlankFreeString[102X( [3Xobj[103X ) [32X function
   
   [33X[0;0YThis  function  is  being transferred from package [5XResClasses[105X: to use it you
-  should [10XLoadPackage(ResClasses)[110X first.[133X
+  should [10XLoadPackage("resclasses")[110X first.[133X
   
   [33X[0;0YThe  result  of  [10XBlankFreeString(  obj  );[110X  is  a composite of the functions
   [10XString( obj )[110X and [10XRemoveCharacters( obj, " " );[110X.[133X

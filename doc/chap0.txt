@@ -1,36 +1,49 @@
   
   
-                                     [1X[5XUtils[105X[101X
+                                    [1X Utils [101X
   
   
-                            [1XUtility functions in [5XGAP[105X[101X
+                           [1X Utility functions in [5XGAP[105X [101X
   
   
-                                  Version 0.27
+                                      0.31
   
   
-                                   16/02/2016
+                                   23/02/2016
   
   
-                               Sebastian Gutsche,
+                               Sebastian Gutsche
   
-                                  Stefan Kohl,
+                                  Stefan Kohl
   
-                                 Chris Wensley,
-  
-     and any other package author who transfers functions to this package.
+                             Christopher D. Wensley
   
   
   
-  Sebastian Gutsche,
+  Sebastian Gutsche
       Email:    [7Xmailto:gutsche@mathematik.uni-kl.de[107X
       Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~gutsche/[107X
-  Stefan Kohl,
+      Address:  [33X[0;14YDepartment of Mathematics[133X
+                [33X[0;14YUniversity of Kaiserslautern[133X
+                [33X[0;14Y67653 Kaiserslautern[133X
+                [33X[0;14YGermany[133X
+  
+  
+  Stefan Kohl
       Email:    [7Xmailto:stefan@mcs.st-and.ac.uk[107X
       Homepage: [7Xhttp://www.gap-system.org/DevelopersPages/StefanKohl/[107X
-  Chris Wensley,
+  Christopher D. Wensley
       Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
+      Address:  [33X[0;14YDr. C.D. Wensley[133X
+                [33X[0;14YSchool of Computer Science[133X
+                [33X[0;14YBangor University[133X
+                [33X[0;14YDean Street[133X
+                [33X[0;14YBangor[133X
+                [33X[0;14YGwynedd LL57 1UT[133X
+                [33X[0;14YUK[133X
+  
+  
   
   -------------------------------------------------------
   [1XAbstract[101X
@@ -41,8 +54,6 @@
   [33X[0;0YAny  package  author who transfers a function to [5XUtils[105X will become an author
   of [5XUtils[105X.[133X
   
-  [33X[0;0YThe current version is 0.27, released 16th February 2016 for [5XGAP[105X 4.8.[133X
-  
   [33X[0;0YBug  reports,  suggestions  and  comments  are,  of  course, welcome. Please
   contact  the  last  author  at  [7Xmailto:c.d.wensley@bangor.ac.uk[107X or submit an
   issue at the GitHub repository [7Xhttp://github.com/gap-packages/utils/issues/[107X.[133X
@@ -50,7 +61,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y©  2015-2016  The [5XGAP[105X Group. [5XUtils[105X is free software; you can redistribute it
+  [33X[0;0Y©  2015-2016, The [5XGAP[105X Group. [5XUtils[105X is free software; you can redistribute it
   and/or  modify  it  under  the  terms  of  the  GNU  General  Public License
   ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
   Foundation;  either  version 2 of the License, or (at your option) any later

@@ -5,7 +5,8 @@
   [5XGAP[105X  packages to be collected together into a single package. In this way it
   is  hoped  that  they will become more visible to other package authors. Any
   package  author  who  transfers a function to [5XUtils[105X will become an author of
-  [5XUtils[105X.[133X
+  [5XUtils[105X.  This  package  first  appeared  as  part  of the [5XGAP[105X distribution in
+  version 4.8.2.[133X
   
   [33X[0;0YA  function  (or  collection  of  functions) is suitable for transfer from a
   package [5XHome[105X to [5XUtils[105X if the following conditions are satisfied.[133X
@@ -28,8 +29,6 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YThe current version is 0.27 for [5XGAP[105X 4.8, released on 16th February 2016.[133X
-  
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
   [30X    [33X[0;6Y[5XAutoDoc[105X (with function names changed);[133X
@@ -46,15 +45,15 @@
   
   [30X    [33X[0;6Y(none so far).[133X
   
-  [33X[0;0YThe  package  may  be obtained as a compressed tar file [11Xutils-0.27.tar.gz[111X by
-  ftp from one of the following sites:[133X
+  [33X[0;0YThe    package    may    be    obtained    as    a   compressed   tar   file
+  [11Xutils-version_number.tar.gz[111X by ftp from one of the following sites:[133X
   
   [30X    [33X[0;6Ythe package GitHub site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
   
   [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.
         [7Xhttp://www.gap-system.org/Packages/packages.html[107X;[133X
   
-  [30X    [33X[0;6Ythe Bangor site: [7Xhttp://www.maths.bangor.ac.uk/chda/utils.html[107X;[133X
+  [30X    [33X[0;6Ythe Bangor site: [7Xhttp://www.maths.bangor.ac.uk/chda/utils/utils.html[107X;[133X
   
   [33X[0;0YThe       package       also       has       a       GitHub      repository:
   [7Xhttps://github.com/gap-packages/utils[107X.[133X

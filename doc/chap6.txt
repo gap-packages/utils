@@ -11,7 +11,7 @@
   [29X[2XFetchFromCache[102X( [3Xname[103X, [3Xkey[103X ) [32X function
   
   [33X[0;0YThese  functions  are being transferred from package [5XResClasses[105X: to use them
-  you should [10XLoadPackage(ResClasses)[110X first.[133X
+  you should [10XLoadPackage("resclasses")[110X first.[133X
   
   [33X[0;0YThe  function  [10XSetupCache[110X creates an empty cache named [10Xname[110X for at most [10Xsize[110X
   values.[133X
@@ -67,7 +67,7 @@
   [29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YThis function converts the [5XGAP[105X logfile logfilename to HTML. The extension of
   the input file must be [3X*.log[103X. The name of the output file is the same as the
@@ -97,7 +97,7 @@
   [29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YThis  function  is  being transferred from package [5XResClasses[105X: to use it you
-  should [10XLoadPackage(ResClasses)[110X first.[133X
+  should [10XLoadPackage("resclasses")[110X first.[133X
   
   [33X[0;0Y[10XIntOrInfinityToLaTeX(n)[110X returns the LaTeX string for [3Xn[103X.[133X
   
@@ -115,7 +115,7 @@
   [29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YIt  returns  the  prime  factorization of the integer [22Xn[122X as a string in LaTeX
   format.[133X

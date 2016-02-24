@@ -5,26 +5,28 @@
 
 SetPackageInfo( rec(
 PackageName := "Utils",
+Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.27",
-Date := "16/02/2016",
+Version := "0.32",
+Date := "24/02/2016",
 
-##  duplicate these values for inclusion in the manual: 
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.27">
-##  <!ENTITY UTILSTARFILENAME "utils-0.27.tar.gz">
-##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "16/02/2016">
-##  <!ENTITY UTILSLONGRELEASEDATE "16th February 2016">
-##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
-##  <#/GAPDoc>
-
-PackageWWWHome := 
-  "http://gap-packages.github.io/utils/",
-
-ArchiveURL := Concatenation( ~.PackageWWWHome, "utils-0.27" ),
+##  Optional:
+##    - Type and the URL of the source code repository
+##    - URL of the public issue tracker
+##    - Support email address
+SourceRepository := rec( 
+    Type := "git", # must be one of "git", "hg", "svn", "cvs"
+    URL  := "https://github.com/gap-packages/utils" ),
+IssueTrackerURL  := "http://github.com/gap-packages/utils/issues",
+PackageWWWHome   := "https://gap-packages.github.io/utils/", 
+README_URL       := Concatenation( ~.PackageWWWHome, "/README" ), 
+PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
+ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
+                                   "/releases/download/v", ~.Version,
+                                   "/", ~.Packagename, "-", ~.Version ),
 ArchiveFormats := ".tar.gz .zip",
+SupportEmail     := "c.d.wensley@bangor.ac.uk",
 
 Persons := [
   rec(
@@ -73,21 +75,6 @@ Persons := [
 Status := "deposited",
 ## CommunicatedBy := "  ",
 ## AcceptDate := "  ",
-
-README_URL := 
-  Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := 
-  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-
-##  Optional:
-##    - Type and the URL of the source code repository
-##    - URL of the public issue tracker
-##    - Support email address
-SourceRepository :=
-  rec( Type := "git", # must be one of "git", "hg", "svn", "cvs"
-       URL  := "http://github.com/gap-packages/utils"),
-IssueTrackerURL := "http://github.com/gap-packages/utils/issues",
-SupportEmail := "c.d.wensley@bangor.ac.uk",
 
 AbstractHTML :=
  "The <span class=\"pkgname\">Utils</span> package provides a collection \

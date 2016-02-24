@@ -29,7 +29,7 @@
   [29X[2XAssignGlobals[102X( [3Xrec[103X ) [32X function
   
   [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage(RCWA)[110X first.[133X
+  [10XLoadPackage("rcwa")[110X first.[133X
   
   [33X[0;0YThis  function assigns the record components of [3Xrec[103X to global variables with
   the same names.[133X
