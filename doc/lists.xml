@@ -98,8 +98,8 @@ brk> ]]>
    <Oper Name="PrintListOneItemPerLine"
          Arg="L" />
 <Description>
-This function is being transferred from package &Gpd;: 
-to use it you should &LoadGpd; first. 
+This function is being transferred from package &XMod;: 
+to use it you should &LoadXMod; first. 
 Printing lists vertically, rather than horizantally, may be useful 
 when the entries are lengthy. 
 <P/>

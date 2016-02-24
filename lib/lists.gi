@@ -8,7 +8,7 @@ if OKtoReadFromUtils( "XMod" ) then
 Print( "reading XMod functions from lists.gi\n" ); 
 
 #############################################################################
-##  this function transferred from Gpd 
+##  this function transferred from XMod 
 ##
 #M  PrintListOneItemPerLine( <list> )
 ##
