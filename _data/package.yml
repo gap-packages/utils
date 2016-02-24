@@ -1,5 +1,5 @@
 name: Utils
-version: 0.32
+version: 0.33
 date: 24/02/2016
 description: Utility functions in GAP
 
@@ -30,9 +30,9 @@ packageinfo: https://gap-packages.github.io/utils//PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.32/utils-0.32.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.33/utils-0.33.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.32/utils-0.32.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.33/utils-0.33.zip
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 
