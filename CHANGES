@@ -5,7 +5,8 @@ Problems and ToDos:
 #############################################################################
 Version 0.34 for GAP 4.8.2 (25/02/16)
 
- - (24/02/16) Made new release to GitHub using GitHubPagesForGAP 
+ - (25/02/16) New release to GitHub using ReleaseTools (GitHubPagesForGAP) 
+              makedocrel.g renamed makedoc.g 
  - (17/02/16) Removed date/version information from file headers. 
  - (16/02/16) Moved PackageWWWHome to GitHub; README.md -> README 
               added OKtoReadFromUtilsSpec to deal with fns taken out early 
