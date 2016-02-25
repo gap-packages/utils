@@ -33,8 +33,6 @@
   
   [30X    [33X[0;6Y[5XAutoDoc[105X (with function names changed);[133X
   
-  [30X    [33X[0;6YUNKNOWNEntity(Gpd);[133X
-  
   [30X    [33X[0;6Y[5XResClasses[105X;[133X
   
   [30X    [33X[0;6Y[5XRCWA[105X;[133X
