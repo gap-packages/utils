@@ -1,5 +1,5 @@
-##  makedocrel.g for package Utils, version 17/02/16 
-##  This builds the documentation of the XMod package. 
+##  makedoc.g for package Utils, version 25/02/16 
+##  This builds the documentation of the Utils package. 
 ##  Needs: GAPDoc package, latex, pdflatex, mkindex
 ##  
 LoadPackage( "GAPDoc" );
@@ -13,7 +13,7 @@ MakeGAPDocDoc( UtilsDoc,  # path to the directory containing the main file
                           # which must be included in the document
                [ "../PackageInfo.g" ], 
                "Utils",   # the name of the book used by GAP's online help
-    "../../../../gapdev", # optional: relative path to the main GAP root 
+    GAPInfo.RootPaths[3], # optional: relative path to the main GAP root 
                           # directory to produce HTML files with relative 
                           # paths to external books.
                "MathJax"  # optional: use "MathJax", "Tth" and/or "MathML"

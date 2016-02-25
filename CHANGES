@@ -3,7 +3,7 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.33 for GAP 4.8.2 (24/02/16)
+Version 0.34 for GAP 4.8.2 (25/02/16)
 
  - (24/02/16) Made new release to GitHub using GitHubPagesForGAP 
  - (17/02/16) Removed date/version information from file headers. 
