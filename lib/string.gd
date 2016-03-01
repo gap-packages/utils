@@ -1,6 +1,7 @@
 ##############################################################################
 ##
 #W  string.gd                  GAP4 package `Utils'          Sebastian Gutsche
+##                                                                 Stefan Kohl
 ##                                                   
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
