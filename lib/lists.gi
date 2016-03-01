@@ -1,14 +1,14 @@
 #############################################################################
 ##
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
+##                                                              Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
-Print( "reading XMod functions from lists.gi\n" ); 
 
 #############################################################################
-##  this function transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #M  PrintListOneItemPerLine( <list> )
 ##
@@ -37,10 +37,9 @@ end );
 fi; 
 
 if OKtoReadFromUtils( "ResClasses" ) then
-Print( "reading ResClasses functions from lists.gi\n" ); 
 
 #############################################################################
-##  these functions transferred from ResClasses 
+##  these functions have been transferred from ResClasses 
 ##
 #F  DifferencesList( <list> ) . . . . differences of consecutive list entries
 #F  QuotientsList( <list> ) . . . . . . quotients of consecutive list entries
@@ -70,7 +69,7 @@ InstallGlobalFunction( FloatQuotientsList,
     list -> List( QuotientsList( list ), Float ) );
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  RandomCombination( S, k ) . . . . . . . . . . . . . . . .  default method
 ##
@@ -95,10 +94,9 @@ InstallMethod( RandomCombination, "default method",
 fi; 
 
 if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from lists.gi\n" ); 
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  SearchCycle( <list> ) .  a utility function for detecting cycles in lists
 ##

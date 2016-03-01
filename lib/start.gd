@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 DeclareInfoClass( "InfoUtils" );
 

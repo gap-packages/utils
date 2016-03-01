@@ -2,7 +2,7 @@
 ##
 #W  number.tst                 Utils Package                       Stefan Kohl
 ##
-#Y  Copyright (C) 2016, The GAP Group
+#Y  Copyright (C) 2015-2016, The GAP Group
 ##  
 
 ## SubSection 3.1.1 

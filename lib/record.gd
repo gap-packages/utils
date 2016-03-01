@@ -3,11 +3,11 @@
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn 
 ##                                                           Stefan Kohl 
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 #############################################################################
-##  this function transferred from AutoDoc, 
-##  was originally AUTODOC_WriteOnce and then AUTODOC_SetIfMissing  
+##  this function has been transferred from AutoDoc, 
+##  and was originally named AUTODOC_WriteOnce and then AUTODOC_SetIfMissing  
 ##
 #F  SetIfMissing( <rec>, <name>, <val> ) 
 ##
@@ -16,7 +16,7 @@ DeclareGlobalFunction( "SetIfMissing" );
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  AssignGlobals( <record> )
 ##

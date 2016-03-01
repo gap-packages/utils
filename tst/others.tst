@@ -2,7 +2,7 @@
 ##
 #W  others.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
 ## SubSection 6.5.1 

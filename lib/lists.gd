@@ -2,12 +2,12 @@
 ##
 #W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
 
 ##############################################################################
-##  this function transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #O  PrintListOneItemPerLine( <L> )
 ##  
@@ -18,7 +18,7 @@ fi;
 if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
-##  these functions transferred from ResClasses 
+##  these functions have been transferred from ResClasses 
 ##
 #F  DifferencesList( <list> ) . . . . differences of consecutive list entries
 #F  QuotientsList( <list> ) . . . . . . quotients of consecutive list entries
@@ -31,7 +31,7 @@ DeclareGlobalFunction( "FloatQuotientsList" );
 DeclareGlobalFunction( "SumsOfCubes" ); 
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #F  RandomCombination( S, k )
 ##
@@ -44,7 +44,7 @@ fi;
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  SearchCycle( <l> ) . . . a utility function for detecting cycles in lists
 ##

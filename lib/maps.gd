@@ -2,11 +2,12 @@
 ##
 #W  maps.gd                     GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
 
 #############################################################################
+##  these functions have been transferred from XMod 
 ##
 #A  IsomorphismFpInfo( <G> )
 #A  IsomorphismPermInfo( <G> )
@@ -23,6 +24,7 @@ fi;
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
+##  these functions have been transferred from RCWA 
 ##
 #F  EpimorphismByGenerators( <D1>, <D2> ) .epi.: gen's of <D1>->gen's of <D2>
 #O  EpimorphismByGeneratorsNC( <D1>, <D2> ) .  NC version as underlying oper.

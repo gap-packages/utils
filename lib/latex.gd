@@ -2,12 +2,12 @@
 ##
 #W  latex.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #F  IntOrInfinityToLaTeX( n ) . LaTeX string representing integer or infinity
 ##
@@ -18,7 +18,7 @@ fi;
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  LaTeXStringFactorsInt( <n> )
 ##

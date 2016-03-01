@@ -2,12 +2,12 @@
 ##
 #W  string.gd                  GAP4 package `Utils'          Sebastian Gutsche
 ##                                                   
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
-##  these functions transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #F  BlankFreeString( <obj> )  . . . . . . . . . . . . . string without blanks
 ##
@@ -16,8 +16,8 @@ DeclareGlobalFunction( "BlankFreeString" );
 fi; 
 
 #############################################################################
-##  this function transferred from AutoDoc, 
-##  originally AUTODOC_GetSuffix 
+##  this function has been transferred from AutoDoc, 
+##  and was originally named AUTODOC_GetSuffix 
 ##
 #O  StringDotSuffix( <str>, <suf> ) 
 ##

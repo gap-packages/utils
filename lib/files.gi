@@ -2,10 +2,12 @@
 ##
 #W  files.gi                  GAP4 package `Utils'          Sebastian Gutsche
 ##                                                                   Max Horn
+##                                                                Stefan Kohl
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
-##  this function transferred from AutoDoc
+##  this function has been transferred from AutoDoc
+##  
 ##  Check whether the given directory exists, and if not, 
 ##  attempt to create it.
 ##
@@ -27,8 +29,9 @@ function(d)
 end );
 
 #############################################################################
-##  this function transferred from AutoDoc, 
-##  originally named AUTODOC_FindMatchingFiles 
+##  this function has been transferred from AutoDoc, 
+##  it was originally named AUTODOC_FindMatchingFiles 
+##  
 ##  Scan the given (by name) subdirs of a package dir for
 ##  files with one of the given extensions, and return the corresponding
 ##  filenames, as relative paths (relative to the package dir).
@@ -82,7 +85,7 @@ end );
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  Log2HTML ( logfilename ) . . . .  convert GAP logfile to XHTML 1.0 Strict
 ##

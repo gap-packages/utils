@@ -2,13 +2,12 @@
 ##
 #W  groups.gi                 GAP4 package `Utils'                 Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "ResClasses" ) then
-Print( "reading ResClasses functions from groups.gi\n" ); 
 
 #############################################################################
-##  this method transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  Comm( [ <elm1>, <elm2> ] ) . . .  for arguments enclosed in list brackets
 ##
@@ -17,7 +16,7 @@ InstallOtherMethod( Comm,
                     true, [ IsList ], 0, LeftNormedComm );
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  IsCommuting( <a>, <b> ) . . . . . . . . . . . . . . . . . fallback method
 ##
@@ -31,7 +30,7 @@ fi;
 if OKtoReadFromUtilsSpec( "ResClasses", "3.9" ) then 
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  UpperFittingSeries( <G> ) . . . . . . . . . . . . . . . .  default method
 ##
@@ -53,7 +52,7 @@ InstallMethod( UpperFittingSeries, "default method", true, [ IsGroup ], 0,
   end );
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  LowerFittingSeries( <G> ) . . . . . . . . . . . . . . . .  default method
 ##
@@ -73,7 +72,7 @@ InstallMethod( LowerFittingSeries, "default method", true, [ IsGroup ], 0,
   end );
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #M  FittingLength( <G> ) . . . . . . . . . . . . . . . . . . . default method
 ##
@@ -89,10 +88,9 @@ InstallMethod( FittingLength, "default method", true, [ IsGroup ], 0,
 fi; 
 
 if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from groups.gi\n" ); 
 
 #############################################################################
-##  this method transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  ListOfPowers( <g>, <exp> ) . . . . . .  list of powers <g>^1 .. <g>^<exp>
 ##
@@ -108,7 +106,7 @@ InstallGlobalFunction(  ListOfPowers,
   end );
 
 #############################################################################
-##  this method transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #M  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
 #M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
@@ -118,7 +116,7 @@ InstallMethod( GeneratorsAndInverses, "for groups", true, [ IsGroup ], 0,
                   List( GeneratorsOfGroup(G), g->g^-1 ) ) );
 
 #############################################################################
-##  this method transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  ReducedWordByOrdersOfGenerators( <w>, <gensords> )
 ##
@@ -141,7 +139,7 @@ InstallGlobalFunction(  ReducedWordByOrdersOfGenerators,
   end );
 
 #############################################################################
-##  this method transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #M  NormalizedRelator( <w>, <gensords> )
 ##

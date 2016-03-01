@@ -2,10 +2,11 @@
 ##
 #W  files.gd                    GAP4 package `Utils'         Sebastian Gutsche
 ##                                                                    Max Horn
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+##                                                                 Stefan Kohl
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 #############################################################################
-##  these functions transferred from AutoDoc 
+##  these functions have been transferred from AutoDoc 
 ##
 #F  CreateDirIfMissing( <str> )
 #F  FindMatchingFiles( <args> )
@@ -16,7 +17,7 @@ DeclareGlobalFunction( "FindMatchingFiles" );
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this functions transferred from RCWA 
+##  this functions has been transferred from RCWA 
 ##
 #F  Log2HTML ( logfilename )
 ##

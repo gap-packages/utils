@@ -1,14 +1,14 @@
 #############################################################################
 ##
-#W  maps.gi                   GAP4 package `XMod'               Chris Wensley
+#W  maps.gi                  GAP4 package `Utils'                 Stefan Kohl 
+##                                                              Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
-Print( "reading XMod functions from maps.gi\n" ); 
 
 ##############################################################################
-##  this method transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #M  IsomorphismFpInfo( <G> ) . . . . . . . . . . . . isomorphic fp-group for G
 ##
@@ -30,7 +30,7 @@ function( grp )
 end );
 
 ##############################################################################
-##  this method transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #M  IsomorphismPermInfo( <G> ) . . . . . . . . . . isomorphic perm group for G
 ##
@@ -52,7 +52,7 @@ function( grp )
 end );
 
 ##############################################################################
-##  this method transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #M  IsomorphismPcInfo( <G> ) . . . . . . . . . . . . isomorphic pc group for G
 ##
@@ -80,7 +80,7 @@ function( grp )
 end );
 
 ##############################################################################
-##  this method transferred from XMod 
+##  this function has been transferred from XMod 
 ##
 #M  IsomorphismPermOrPcInfo( <G> ) . . . . . isomorphic perm or pc group for G
 ##
@@ -122,10 +122,9 @@ end );
 fi; 
 
 if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from maps.gi\n" ); 
 
 #############################################################################
-##  these methods transferred from RCWA
+##  these functions have been transferred from RCWA
 ##
 #F  EpimorphismByGenerators( <D1>, <D2> ) . epi: gen's of <D1>->gen's of <D2>
 #M  EpimorphismByGeneratorsNC( <D1>, <D2> ) .  NC version as underlying oper.

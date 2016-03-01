@@ -2,12 +2,12 @@
 ##
 #W  groups.gd                  GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #O  IsCommuting( <a>, <b> ) .  checks whether two group elements etc. commute
 ##
@@ -19,7 +19,7 @@ fi;
 if OKtoReadFromUtilsSpec( "ResClasses", "3.9" ) then 
 
 #############################################################################
-##  these functions transferred from ResClasses 
+##  these functions have been transferred from ResClasses 
 ##
 #A  UpperFittingSeries( <G> ) . . . . . . . . . . upper fitting series of <G>
 #A  LowerFittingSeries( <G> ) . . . . . . . . . . lower fitting series of <G>
@@ -40,13 +40,14 @@ fi;
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  ListOfPowers( <g>, <exp> ) . . . . . .  list of powers <g>^1 .. <g>^<exp>
 ##
 DeclareGlobalFunction( "ListOfPowers" );
 
 #############################################################################
+##  these function has been transferred from RCWA 
 ##
 #O  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
 #M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
@@ -54,6 +55,7 @@ DeclareGlobalFunction( "ListOfPowers" );
 DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
 
 #############################################################################
+##  this function has been transferred from RCWA 
 ##
 #F  ReducedWordByOrdersOfGenerators( <w>, <gensords> )
 ##
@@ -64,6 +66,7 @@ DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
 DeclareGlobalFunction( "ReducedWordByOrdersOfGenerators" );
 
 #############################################################################
+##  this function has been transferred from RCWA 
 ##
 #O  NormalizedRelator( <w>, <gensords> )
 ##

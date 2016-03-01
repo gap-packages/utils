@@ -2,7 +2,7 @@
 ##
 #W  cache.gd                    GAP4 package `Utils'               Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 #############################################################################
 ##
@@ -13,7 +13,7 @@
 if OKtoReadFromUtils( "ResClasses" ) then
 
 #############################################################################
-##  these functions transferred from ResClasses 
+##  these functions have been transferred from ResClasses 
 ##
 #F  SetupCache( <name>, <size> )
 #F  PutIntoCache( <name>, <key>, <value> )

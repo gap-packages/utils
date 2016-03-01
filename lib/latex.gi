@@ -1,14 +1,13 @@
 #############################################################################
 ##
-#W  latex.gi                  GAP4 package `Utils'              Chris Wensley
+#W  latex.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group,  
+#Y  Copyright (C) 2015-2016, The GAP Group  
 
 if OKtoReadFromUtils( "ResClasses" ) then
-Print( "reading ResClasses functions from latex.gi\n" ); 
 
 #############################################################################
-##  this function transferred from ResClasses 
+##  this function has been transferred from ResClasses 
 ##
 #F  IntOrInfinityToLaTeX( n ) .  LaTeX string for a given integer or infinity
 ##
@@ -23,9 +22,9 @@ InstallGlobalFunction( IntOrInfinityToLaTeX,
 fi; 
 
 if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from latex.gi\n" ); 
 
 #############################################################################
+##  this function has been transferred from RCWA 
 ##
 #F  LaTeXStringFactorsInt( <n> ) . . . . prime factorization in LaTeX format
 ##

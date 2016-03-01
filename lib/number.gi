@@ -2,13 +2,12 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 
 if OKtoReadFromUtils( "RCWA" ) then
-Print( "reading RCWA functions from number.gi\n" ); 
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  AllSmoothIntegers( <maxp>, <maxn> )
 #F  AllSmoothIntegers( <primes>, <maxn> )
@@ -43,7 +42,7 @@ InstallGlobalFunction( AllSmoothIntegers,
   end );
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  ExponentOfPrime( <n>, <p> )
 ##
@@ -61,7 +60,7 @@ InstallGlobalFunction( ExponentOfPrime,
   end );
 
 #############################################################################
-##  this function transferred from RCWA
+##  this function has been transferred from RCWA
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
@@ -82,7 +81,7 @@ InstallGlobalFunction( NextProbablyPrimeInt,
   end );
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  RestrictedPartitionsWithoutRepetitions( <n>, <S> )
 ##
@@ -128,7 +127,7 @@ InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
 #############################################################################
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  PrimeNumbersIterator(  )
 #F  PrimeNumbersIterator( chunksize )
@@ -223,7 +222,7 @@ fi;
 if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
 
 #############################################################################
-##  this function transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #M  AllProducts( <D>, <k> ) . . all products of <k>-tuples of elements of <D>
 #M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists

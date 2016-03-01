@@ -3,8 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.36 for GAP 4.8.2 (26/02/16)
+Version 0.37 for GAP 4.8.2 (01/03/16)
 
+ - (01/03/16) made cosmetic changes suggested by Stefan
  - (26/02/16) updated README to show the release URL 
  - (25/02/16) New release to GitHub using ReleaseTools (GitHubPagesForGAP) 
               makedocrel.g renamed makedoc.g 

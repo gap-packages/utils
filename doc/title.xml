@@ -9,7 +9,7 @@
     Utility functions in &GAP;
   </Subtitle>
   <Version>
-    0.36
+    0.37
   </Version>
 <!-- The date needs editing at line 50 --> 
 
@@ -47,7 +47,7 @@ UK<Br/>
   </Author>
 
   <Date>
-    26/02/2016
+    01/03/2016
   </Date>
   
 <Abstract>

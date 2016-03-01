@@ -2,7 +2,7 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group, 
+#Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
