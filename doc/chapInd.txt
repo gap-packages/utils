@@ -6,6 +6,7 @@
   [2XAllSmoothIntegers[102X  3.1-1
   [2XAssignGlobals[102X  5.1-2
   [2XBlankFreeString[102X  2.3-1
+  [2XComm[102X  4.1-1
   [2XCommonRepresentatives[102X  2.2-1
   [2XCommonTransversal[102X  2.2-1
   [2XCreateDirIfMissing[102X  6.2-1
@@ -16,23 +17,24 @@
   [2XExponentOfPrime[102X  3.1-4
   [2XFetchFromCache[102X  6.1-1
   [2XFindMatchingFiles[102X  6.2-1
-  [2XFittingLength[102X  4.1-4
+  [2XFittingLength[102X  4.1-5
   [2XFloatQuotientsList[102X  2.1-1
-  [2XGeneratorsAndInverses[102X  4.1-3
+  [2XGeneratorsAndInverses[102X  4.1-4
   [2XIntOrOnfinityToLaTeX[102X  6.4-1
   [2XIsCommonTransversal[102X  2.2-1
-  [2XIsCommuting[102X  4.1-1
+  [2XIsCommuting[102X  4.1-2
   [2XLaTeXStringFactorsInt[102X  6.4-2
   License  .-2
-  [2XListOfPowers[102X  4.1-2
+  [2XListOfPowers[102X  4.1-3
   [2XLog2HTML[102X  6.3-1
-  [2XLowerFittingSeries[102X  4.1-4
+  [2XLowerFittingSeries[102X  4.1-5
   [2XNextProbablyPrimeInt[102X  3.1-5
   [2XNormalizedRelator[102X  4.2-1
   OKtoReadFromUtils  1.1
-  [2XPrintListOneItemPerLine[102X  2.1-3
+  [2XPrintListOneItemPerLine[102X  2.1-4
   [2XPutIntoCache[102X  6.1-1
   [2XQuotientsList[102X  2.1-1
+  [2XRandomCombination[102X  2.1-3
   [2XReducedWordByOrdersOfGenerators[102X  4.2-1
   repository  1.
   [2XRestrictedPartitionsWithoutRepetitions[102X  3.1-3
@@ -40,7 +42,7 @@
   [2XSetIfMissing[102X  5.1-1
   [2XSetupCache[102X  6.1-1
   [2XStringDotSuffix[102X  2.3-2
-  [2XUpperFittingSeries[102X  4.1-4
+  [2XUpperFittingSeries[102X  4.1-5
   [5XUtils[105X  .-4
   
   

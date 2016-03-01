@@ -8,8 +8,8 @@
   
   [29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3Xmaxn[103X ) [32X function
   
-  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage("rcwa")[110X first.[133X
+  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
+  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
   
   [33X[0;0YThe  function  [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X  returns  a list of all integers
   less than or equal to [3Xmaxn[103X which do not have prime divisors exceeding [3Xmaxp[103X.[133X
@@ -51,10 +51,10 @@
   
   [1X3.1-3 RestrictedPartitionsWithoutRepetitions[101X
   
-  [29X[2XRestrictedPartitionsWithoutRepetitions[102X( [3XL[103X, [3Xk[103X ) [32X function
+  [29X[2XRestrictedPartitionsWithoutRepetitions[102X( [3Xn[103X, [3XS[103X ) [32X function
   
-  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage("rcwa")[110X first.[133X
+  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
+  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
   
   [33X[0;0YGiven  a  positive integer [3Xn[103X and a set of positive integers [3XS[103X, this function
   returns  a list of all partitions of [3Xn[103X into distinct elements of [3XS[103X. The only
@@ -76,8 +76,8 @@
   
   [29X[2XExponentOfPrime[102X( [3Xn[103X, [3Xp[103X ) [32X function
   
-  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage("rcwa")[110X first.[133X
+  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
+  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
   
   [33X[0;0YThe function [10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X returns the exponent of the prime [3Xp[103X in the
   prime factorization of [3Xn[103X.[133X
@@ -93,8 +93,8 @@
   
   [29X[2XNextProbablyPrimeInt[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YThis  function  is being transferred from package [5XRCWA[105X: to use it you should
-  [10XLoadPackage("rcwa")[110X first.[133X
+  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
+  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
   
   [33X[0;0YThe function [10XNextProbablyPrimeInt([3Xn[103X[10X)[110X does the same as [10XNextPrimeInt([3Xn[103X[10X)[110X except
   that    for   reasons   of   performance   it   tests   numbers   only   for

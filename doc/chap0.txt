@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.36
+                                      0.37
   
   
-                                   26/02/2016
+                                   01/03/2016
   
   
                                Sebastian Gutsche
@@ -85,7 +85,8 @@
     2.1 [33X[0;0YFunctions for lists[133X
       2.1-1 DifferencesList
       2.1-2 SearchCycle
-      2.1-3 PrintListOneItemPerLine
+      2.1-3 RandomCombination
+      2.1-4 PrintListOneItemPerLine
     2.2 [33X[0;0YDistinct and Common Representatives[133X
       2.2-1 DistinctRepresentatives
     2.3 [33X[0;0YFunctions for strings[133X
@@ -100,10 +101,11 @@
       3.1-5 NextProbablyPrimeInt
   4 [33X[0;0YGroups and homomorphisms[133X
     4.1 [33X[0;0YFunctions for groups[133X
-      4.1-1 IsCommuting
-      4.1-2 ListOfPowers
-      4.1-3 GeneratorsAndInverses
-      4.1-4 UpperFittingSeries
+      4.1-1 Comm
+      4.1-2 IsCommuting
+      4.1-3 ListOfPowers
+      4.1-4 GeneratorsAndInverses
+      4.1-5 UpperFittingSeries
     4.2 [33X[0;0YFunctions for words in finitely presented groups[133X
       4.2-1 ReducedWordByOrdersOfGenerators
     4.3 [33X[0;0YFunctions for group homomorphisms[133X

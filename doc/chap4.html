@@ -25,10 +25,11 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7E21E6D285E6B12C">4.1 <span class="Heading">Functions for groups</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X803A050C7A183CCC">4.1-1 IsCommuting</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87A8F01286548037">4.1-2 ListOfPowers</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X820B71307E41BEE5">4.1-3 GeneratorsAndInverses</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X84CF95227F9D562F">4.1-4 UpperFittingSeries</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80761843831B468E">4.1-1 Comm</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X803A050C7A183CCC">4.1-2 IsCommuting</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87A8F01286548037">4.1-3 ListOfPowers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X820B71307E41BEE5">4.1-4 GeneratorsAndInverses</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X84CF95227F9D562F">4.1-5 UpperFittingSeries</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7ECF4E3A7FC30BD7">4.2 <span class="Heading">Functions for words in finitely presented groups</span></a>
 </span>
@@ -48,12 +49,27 @@
 
 <h4>4.1 <span class="Heading">Functions for groups</span></h4>
 
+<p><a id="X80761843831B468E" name="X80761843831B468E"></a></p>
+
+<h5>4.1-1 Comm</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Comm</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>This method is in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use it. It provides a method for <code class="code">Comm</code> when the argument is a list (enclosed in square brackets), and calls the function <code class="code">LeftNormedComm</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Comm( [ (1,2), (2,3) ] );</span>
+(1,2,3)
+
+</pre></div>
+
 <p><a id="X803A050C7A183CCC" name="X803A050C7A183CCC"></a></p>
 
-<h5>4.1-1 IsCommuting</h5>
+<h5>4.1-2 IsCommuting</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCommuting</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function is being transferred from package <strong class="pkg">ResClasses</strong>: to use it you should <code class="code">LoadPackage("resclasses")</code> first. It tests whether two group elements commute.</p>
+<p>This function is in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use it. It tests whether two elements in a group commute.</p>
 
 
 <div class="example"><pre>
@@ -68,10 +84,10 @@ false
 
 <p><a id="X87A8F01286548037" name="X87A8F01286548037"></a></p>
 
-<h5>4.1-2 ListOfPowers</h5>
+<h5>4.1-3 ListOfPowers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ListOfPowers</code>( <var class="Arg">g</var>, <var class="Arg">exp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage("rcwa")</code> first.</p>
+<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
 
 <p>The operation <code class="code">ListOfPowers(g,exp)</code> returns the list <span class="SimpleMath">[g,g^2,...,g^exp]</span> of powers of the element <span class="SimpleMath">g</span>.</p>
 
@@ -85,10 +101,10 @@ false
 
 <p><a id="X820B71307E41BEE5" name="X820B71307E41BEE5"></a></p>
 
-<h5>4.1-3 GeneratorsAndInverses</h5>
+<h5>4.1-4 GeneratorsAndInverses</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsAndInverses</code>( <var class="Arg">G</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use it you should <code class="code">LoadPackage("rcwa")</code> first.</p>
+<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
 
 <p>This operation returns a list containing the generators of <span class="SimpleMath">G</span> followed by the inverses of these generators.</p>
 
@@ -102,12 +118,12 @@ false
 
 <p><a id="X84CF95227F9D562F" name="X84CF95227F9D562F"></a></p>
 
-<h5>4.1-4 UpperFittingSeries</h5>
+<h5>4.1-5 UpperFittingSeries</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UpperFittingSeries</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LowerFittingSeries</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FittingLength</code>( <var class="Arg">G</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>These three functions have been transferred from package <strong class="pkg">ResClasses</strong>.</p>
+<p>These three functions are in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use them.</p>
 
 <p>The upper and lower Fitting series and the Fitting length of a solvable group are described here: <span class="URL"><a href="https://en.wikipedia.org/wiki/Fitting_length">https://en.wikipedia.org/wiki/Fitting_length</a></span>.</p>
 
@@ -133,7 +149,7 @@ false
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReducedWordByOrdersOfGenerators</code>( <var class="Arg">w</var>, <var class="Arg">gensords</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NormalizedRelator</code>( <var class="Arg">w</var>, <var class="Arg">gensords</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>These functions are being transferred from package <strong class="pkg">RCWA</strong>: to use them you should <code class="code">LoadPackage("rcwa")</code> first.</p>
+<p>These functions are in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use them.</p>
 
 <p>Some description needed here.</p>
 
@@ -153,7 +169,7 @@ false
 <h5>4.3-1 EpimorphismByGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGenerators</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>This function is being transferred from package <strong class="pkg">RCWA</strong>: to use is you should <code class="code">LoadPackage("rcwa")</code> first. It maps the generators of <span class="SimpleMath">G</span> to those of <span class="SimpleMath">H</span>. It is not checked that this map is a group homomorphism!</p>
+<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it. It maps the generators of <span class="SimpleMath">G</span> to those of <span class="SimpleMath">H</span>. It is not checked that this map is a group homomorphism!</p>
 
 
 <div class="example"><pre>
