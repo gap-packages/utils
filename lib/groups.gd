@@ -47,7 +47,7 @@ if OKtoReadFromUtils( "RCWA" ) then
 DeclareGlobalFunction( "ListOfPowers" );
 
 #############################################################################
-##  these function has been transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #O  GeneratorsAndInverses( <D> ) list of generators of <D> and their inverses
 #M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups

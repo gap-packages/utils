@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  lists.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--  Copyright (C) 2015-2016, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -25,8 +25,7 @@
    <Func Name="FloatQuotientsList"
          Arg="L" />
 <Description>
-These functions are being transferred from package &ResClasses;: 
-to use them you should &LoadResClasses; first. 
+These functions are in the process of being transferred from package &ResClasses;: for now you should &LoadResClasses; in order to use them. 
 <P/>
 They take a list <M>L</M> of length <M>n</M> and output 
 the lists of length <M>n-1</M> containing all the differences <M>L[i]-L[i-1]</M> 
@@ -56,8 +55,8 @@ gap> QuotientsList( [ 2, 1, 0, -1, -2 ] );
    <Oper Name="SearchCycle"
          Arg="L" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 A utility function for detecting cycles in lists. 
 But what <E>is</E> the <E>definition</E> of a cycle here? 
@@ -91,15 +90,35 @@ Error, List Elements: <positions> must be a dense list of positive integers in
 <function "SearchCycle">( <arguments> )
  called from read-eval loop at line 23 of *stdin*
 you can replace <positions> via 'return <positions>;'
-brk> ]]>
+brk> 
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="RandomCombination"
+         Arg="S k" />
+<Description>
+This function is in the process of being transferred from package &ResClasses;: 
+for now you should &LoadResClasses; in order to use it. 
+<P/>
+It returns a random unordered <M>k</M>-tuple of distinct elements 
+of a set <M>S</M>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> RandomCombination([31..79],8); 
+[ 33, 45, 60, 63, 65, 69, 71, 77 ]
+]]>
 </Example>
 
 <ManSection>
    <Oper Name="PrintListOneItemPerLine"
          Arg="L" />
 <Description>
-This function is being transferred from package &XMod;: 
-to use it you should &LoadXMod; first. 
+This function is in the process of being transferred from package &XMod;: 
+for now you should &LoadXMod; in order to use it. 
 Printing lists vertically, rather than horizantally, may be useful 
 when the entries are lengthy. 
 <P/>
@@ -130,8 +149,8 @@ gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );
    <Oper Name="IsCommonTransversal"
          Arg="grp subgrp list" />
 <Description>
-These functions are being transferred from package &XMod;: 
-to use them you should &LoadXMod; first. 
+These functions are in the process of being transferred from package &XMod;: 
+for now you should &LoadXMod; in order to use them. 
 They deal with lists of subsets of <M>[1 \ldots n]</M>
 and construct systems of distinct and common representatives using
 simple, non-recursive, combinatorial algorithms.
@@ -185,8 +204,8 @@ true
    <Func Name="BlankFreeString"
          Arg="obj" />
 <Description>
-This function is being transferred from package &ResClasses;: 
-to use it you should &LoadResClasses; first. 
+This function is in the process of being transferred from package &ResClasses;: 
+for now you should &LoadResClasses; in order to use it. 
 <P/>
 The result of <C>BlankFreeString( obj );</C> 
 is a composite of the functions <C>String( obj )</C> and 
@@ -206,7 +225,7 @@ gap> BlankFreeString( D12 );
    <Oper Name="StringDotSuffix"
          Arg="str suf" />
 <Description>
-This function is being transferred from package <Package>AutoDoc</Package>, 
+This function is in the process of being transferred from package &AutoDoc;, 
 and was originally named <C>AUTODOC_GetSuffix</C>. 
 <P/>
 When <C>StringDotSuffix</C> is given a string containing a "." 

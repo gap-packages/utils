@@ -7,9 +7,9 @@
 
 #############################################################################
 ##  this function has been transferred from AutoDoc
+##  it was originally named AUTODOC_CreatreDirIfMissing 
 ##  
-##  Check whether the given directory exists, and if not, 
-##  attempt to create it.
+##  Check whether the given directory exists; if not, attempt to create it.
 ##
 #F  CreateDirIfMissing( <str> ) . . . . . . . . . . . . makes a new directory
 ##

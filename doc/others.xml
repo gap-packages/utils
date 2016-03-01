@@ -3,7 +3,7 @@
 <!--  others.xml          Utils documentation                Stefan Kohl -->
 <!--                                                   Sebastian Gutsche -->
 <!--                                                            Max Horn -->
-<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--  Copyright (C) 2015-2016, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -24,8 +24,8 @@
   <Func Name="FetchFromCache" 
         Arg="name key"/>
 <Description>
-These functions are being transferred from package &ResClasses;: 
-to use them you should &LoadResClasses; first. 
+These functions are in the process of being transferred from package 
+&ResClasses;: for now you should &LoadResClasses; in order to use them. 
 <P/>
 The function <C>SetupCache</C> creates an empty cache named <C>name</C> 
 for at most <C>size</C> values.
@@ -56,7 +56,7 @@ gap> ## examples needed!
   <Func Name="CreateDirIfMissing" 
         Arg="str"/>
 <Description>
-These functions are being transferred from package &AutoDoc; 
+These functions are in the process of being transferred from package &AutoDoc; 
 where they were named <C>AutoDoc_FindMatchingFiles</C> 
 and <C>AutoDoc_CreateDirIfMissing</C>. 
 <P/>
@@ -96,8 +96,8 @@ true
   <Func Name="Log2HTML" 
         Arg="filename"/>
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 This function converts the &GAP; logfile logfilename to HTML. 
 The extension of the input file must be <A>*.log</A>. 
@@ -133,8 +133,8 @@ gap> FindMatchingFiles( "utils", [""], ["html"] );
   <Func Name="IntOrOnfinityToLaTeX" 
         Arg="n"/>
 <Description>
-This function is being transferred from package &ResClasses;: 
-to use it you should &LoadResClasses; first. 
+This function is in the process of being transferred from package &ResClasses;: 
+for now you should &LoadResClasses; in order to use it. 
 <P/>
 <C>IntOrInfinityToLaTeX(n)</C> returns the &LaTeX; string for <A>n</A>. 
 <P/>
@@ -154,8 +154,8 @@ gap> IntOrInfinityToLaTeX( infinity );
   <Func Name="LaTeXStringFactorsInt" 
         Arg="n"/>
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 It returns the prime factorization of the integer <M>n</M> as a string in 
 &LaTeX; format.

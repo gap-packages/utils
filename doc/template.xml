@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  .xml           Utils documentation                        -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--  Copyright (C) 2015-2016, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -21,7 +21,7 @@
    <Func Name="AllSmoothIntegers"
          Arg="maxp maxn" />
 <Description>
-These functions have transferred from package &Home;. 
+These functions are in the process of being transferred from package &Home;. 
 <P/>
 They 
 <P/>

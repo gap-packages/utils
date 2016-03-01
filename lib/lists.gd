@@ -1,6 +1,7 @@
 ##############################################################################
 ##
 #W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
+##                                                               Chris Wensley
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 

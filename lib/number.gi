@@ -121,12 +121,6 @@ InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
   end );
 
 #############################################################################
-##
-#S  Iterator for the prime numbers. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-##
-#############################################################################
-
-#############################################################################
 ##  this function has been transferred from RCWA 
 ##
 #F  PrimeNumbersIterator(  )

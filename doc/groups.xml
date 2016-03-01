@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--  Copyright (C) 2015-2016, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -17,14 +17,31 @@
 <Heading>Functions for groups</Heading>
 
 
+<ManSection>
+   <Oper Name="Comm"
+         Arg="L" />
+<Description>
+This method is in the process of being transferred from package &ResClasses;: 
+for now you should &LoadResClasses; in order to use it. 
+It provides a method for <C>Comm</C> when the argument is a list 
+(enclosed in square brackets), and calls the function <C>LeftNormedComm</C>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> Comm( [ (1,2), (2,3) ] );
+(1,2,3)
+]]>
+</Example>
 
 <ManSection>
    <Oper Name="IsCommuting"
          Arg="a b" />
 <Description>
-This function is being transferred from package &ResClasses;: 
-to use it you should &LoadResClasses; first. 
-It tests whether two group elements commute. 
+This function is in the process of being transferred from package &ResClasses;: 
+for now you should &LoadResClasses; in order to use it. 
+It tests whether two elements in a group commute. 
 <P/>
 </Description>
 </ManSection>
@@ -42,8 +59,8 @@ false
    <Oper Name="ListOfPowers"
          Arg="g exp" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 The operation <C>ListOfPowers(g,exp)</C> returns the list 
 <M>[g,g^2,...,g^{exp}]</M> of powers of the element <M>g</M>.
@@ -61,8 +78,8 @@ gap> ListOfPowers( D12.2, 6 );
    <Oper Name="GeneratorsAndInverses"
          Arg="G" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 This operation returns a list containing the generators of <M>G</M> 
 followed by the inverses of these generators.  
@@ -85,7 +102,8 @@ gap> GeneratorsAndInverses( D12 );
    <Attr Name="FittingLength"
          Arg="G" />
 <Description>
-These three functions have been transferred from package &ResClasses;. 
+These three functions are in the process of being transferred from package 
+&ResClasses;: for now you should &LoadResClasses; in order to use them. 
 <P/>
 The upper and lower Fitting series and the Fitting length of a solvable
 group are described here: 
@@ -117,8 +135,8 @@ gap> FittingLength( D12 );
    <Attr Name="NormalizedRelator"
          Arg="w gensords" />
 <Description>
-These functions are being transferred from package &RCWA;: 
-to use them you should &LoadRCWA; first. 
+These functions are in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use them. 
 <P/>
 Some description needed here.
 <P/>
@@ -140,8 +158,8 @@ gap> ## some examples needed here
    <Attr Name="EpimorphismByGenerators"
          Arg="G H" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use is you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 It maps the generators of <M>G</M> to those of <M>H</M>. 
 It is not checked that this map is a group homomorphism! 
 <P/>

@@ -2,6 +2,9 @@
 
 Problems and ToDos: 
 
+ - (01/03/16) in files.gd, under Log2HTML, there is ref to rcwa/doc/gaplog.css
+              so need to check with Stefan whether this is needed in Utils 
+
 #############################################################################
 Version 0.37 for GAP 4.8.2 (01/03/16)
 

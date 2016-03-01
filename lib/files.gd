@@ -7,6 +7,8 @@
 
 #############################################################################
 ##  these functions have been transferred from AutoDoc 
+##  they were originally named AUTODOC_CreatreDirIfMissing 
+##  and AUTODOC_FindMatchingFiles
 ##
 #F  CreateDirIfMissing( <str> )
 #F  FindMatchingFiles( <args> )
@@ -17,7 +19,7 @@ DeclareGlobalFunction( "FindMatchingFiles" );
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  this functions has been transferred from RCWA 
+##  this function has been transferred from RCWA 
 ##
 #F  Log2HTML ( logfilename )
 ##

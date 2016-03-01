@@ -23,8 +23,8 @@
    <Func Name="AllSmoothIntegers"
          Arg="maxp maxn" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 The function <C>AllSmoothIntegers(<A>maxp</A>,<A>maxn</A>)</C>
 returns a list of all integers less than or equal to <A>maxn</A> which do
@@ -72,10 +72,10 @@ gap> AllProducts( [(1,2,3),(2,3,4)], 2 );
 
 <ManSection>
    <Func Name="RestrictedPartitionsWithoutRepetitions"
-         Arg="L, k" />
+         Arg="n,S" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 Given a positive integer <A>n</A> and a set of positive integers <A>S</A>, 
 this function returns a list of all partitions of <A>n</A> 
@@ -101,8 +101,8 @@ gap> RestrictedPartitionsWithoutRepetitions( 20, [4..10] );
    <Func Name="ExponentOfPrime"
          Arg="n p" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 The function <C>ExponentOfPrime(<A>n</A>,<A>p</A>)</C> 
 returns the exponent of the prime <A>p</A> 
@@ -121,8 +121,8 @@ gap> ExponentOfPrime( 13577531, 11 );
    <Func Name="NextProbablyPrimeInt"
          Arg="n" />
 <Description>
-This function is being transferred from package &RCWA;: 
-to use it you should &LoadRCWA; first. 
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
 <P/>
 The function <C>NextProbablyPrimeInt(<A>n</A>)</C> 
 does the same as <C>NextPrimeInt(<A>n</A>)</C> 
