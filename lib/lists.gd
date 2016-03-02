@@ -29,8 +29,6 @@ DeclareGlobalFunction( "DifferencesList" );
 DeclareGlobalFunction( "QuotientsList" );
 DeclareGlobalFunction( "FloatQuotientsList" );
 
-DeclareGlobalFunction( "SumsOfCubes" ); 
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##

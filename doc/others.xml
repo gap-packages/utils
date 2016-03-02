@@ -13,40 +13,6 @@
 <Heading>Various other functions</Heading>
 
 
-<Section Label="sec:cache">
-<Heading>A simple caching facility</Heading>
-
-<ManSection>
-  <Func Name="SetupCache" 
-        Arg="name size"/>
-  <Func Name="PutIntoCache" 
-        Arg="name key value"/>
-  <Func Name="FetchFromCache" 
-        Arg="name key"/>
-<Description>
-These functions are in the process of being transferred from package 
-&ResClasses;: for now you should &LoadResClasses; in order to use them. 
-<P/>
-The function <C>SetupCache</C> creates an empty cache named <C>name</C> 
-for at most <C>size</C> values.
-<P/>
-The function <C>PutIntoCache</C> puts the entry <C>value</C> 
-with key <C>key</C> into the cache named <C>name</C>.
-<P/>
-The function <C>FetchFromCache</C> picks the entry with key <C>key</C> 
-from the cache named <C>name</C>, and returns fail if no such entry exists. 
-</Description>
-</ManSection>
-<P/>
-<Example>
-<![CDATA[
-gap> ## examples needed! 
-]]>
-</Example>
-
-</Section>
-
-
 <Section Label="sec:folder-ops">
 <Heading>Operations on folders</Heading>
 
@@ -77,9 +43,9 @@ In either case <C>true</C> is returned.
 <P/>
 <Example>
 <![CDATA[
-gap> FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "log" ] );
-[ "/PackageInfo.g", "/feb1.log", "/init.g", "/makedocrel.g", "/read.g", 
-  "/start.g", "/test.log", "tst/testall.g" ]
+gap> FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );
+[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", 
+  "tst/testall.g" ]
 gap> CreateDirIfMissing( "/Applications/gap/temp/" );
 true
 ]]>
@@ -111,15 +77,13 @@ which you can adjust to your taste.
 <P/>
 <Example>
 <![CDATA[
-gap> LogTo("feb1.log");
+gap> LogTo("mar2.log");
 gap> FindMatchingFiles( "utils", [""], ["g"] ); 
-[ "/PackageInfo.g", "/init.g", "/makedocrel.g", "/read.g", "/start.g" ]
+[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ]
 gap> LogTo();
-gap> FindMatchingFiles( "utils", [""], ["log"] );
-[ "/feb1.log", "/test.log" ]
-gap> Log2HTML( "feb1.log" );
-gap> FindMatchingFiles( "utils", [""], ["html"] );
-[ "/feb1.html" ]
+gap> Log2HTML( "mar2.log" );
+gap> FindMatchingFiles( "utils", [""], ["html", "log"] );
+[ "/mar2.html", "/mar2.log" ]
 ]]>
 </Example>
 

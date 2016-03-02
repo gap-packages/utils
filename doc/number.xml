@@ -1,9 +1,7 @@
 <!-- ------------------------------------------------------------------- -->
 <!--                                                                     -->
-<!--  number.xml          Utils documentation                Stefan Kohn -->
+<!--  number.xml          Utils documentation                Stefan Kohl -->
 <!--                                                                     -->
-<!--  version 0.26, 16/02/2016                                           --> 
-<!--                                                                     --> 
 <!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
@@ -149,6 +147,33 @@ gap> time;
 12346
 ]]>
 </Example>
+
+<ManSection>
+   <Func Name="PrimeNumbersIterator"
+         Arg="[chunksize]" />
+<Description>
+This function is in the process of being transferred from package &RCWA;: 
+for now you should &LoadRCWA; in order to use it. 
+<P/>
+This function returns an iterator which runs over the prime numbers 
+n ascending order; it takes an optional argument <C>chunksize</C> 
+which specifies the length of the interval which is sieved in one go 
+(the default is <M>10^7</M>), 
+and which can be used to balance runtime vs. memory consumption. 
+It is assumed that <C>chunksize</C> is larger than any gap between two 
+consecutive primes within the range one intends to run the iterator over. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> iter := PrimeNumbersIterator();
+<iterator>
+gap> NextIterator( iter ); 
+2
+]]>
+</Example>
+
 
 </Section>
 

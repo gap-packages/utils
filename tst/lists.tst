@@ -2,8 +2,6 @@
 ##
 #W  lists.tst                   Utils Package                    
 ##
-##  version 0.21, 29/01/2016   
-##
 #Y  Copyright (C) 2015-2016, The GAP Group
 ##  
 
@@ -22,6 +20,16 @@ gap> DifferencesList( L );
 gap> L := [ ];;           
 gap> DifferencesList( L );
 [  ]
+
+## SubSection 2.1.2 
+gap> L := [1..20];;  L[1]:=13;;                                              
+gap> for i in [1..19] do                                                     
+>        if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;
+>    od;                                                                  
+gap> L;                                                                      
+[ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ]
+gap> SearchCycle( L );                                                       
+[ 1, 4, 2 ]
 
 ## SubSection 2.2.1 
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;

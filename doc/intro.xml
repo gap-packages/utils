@@ -20,25 +20,6 @@ Any package author who transfers a function to &Utils; will become
 an author of &Utils;. 
 This package first appeared as part of the &GAP; distribution in version 4.8.2. 
 <P/> 
-A function (or collection of functions) is suitable for transfer 
-from a package &Home; to &Utils; 
-if the following conditions are satisfied. 
-<List>
-<Item>
-The function does not depend on the remaining functions in &Home; 
-</Item>
-<Item>
-The function does not do what can already be done with a &GAP; library function. 
-</Item>
-<Item>
-Documentation of the function and test examples are available. 
-</Item>
-<Item>
-The function is sufficiently non-specialised so that it might ber of use 
-to other authors.
-</Item>
-</List> 
-<P/>
 
 The package is loaded with the command
 <Example>
@@ -58,38 +39,31 @@ Functions are currently being transferred from the following packages:
 <Item>
 &RCWA;;
 </Item>
-<Item>
-&XMod;;
-</Item>
 </List>
 <P/>
-Transfer is complete for functions from the following packages:
+Transfer is complete (for now) for functions from the following packages:
 <List>
 <Item>
-(none so far).
+&XMod;.
 </Item>
 </List>
 <P/>
 
-The package may be obtained as a compressed tar file 
+The package may be obtained as a compressed tar file or a .zip file 
 <File>utils-version_number.tar.gz</File>
 by ftp from one of the following sites: 
 <List>
 <Item>
-the package GitHub site: 
+the &Utils; GitHub release site: 
 <URL>http://gap-packages.github.io/utils/</URL>. 
 </Item>
 <Item>
 any &GAP; archive, e.g. 
 <URL>http://www.gap-system.org/Packages/packages.html</URL>; 
 </Item>
-<Item>
-the Bangor site: 
-<URL>http://www.maths.bangor.ac.uk/chda/utils/utils.html</URL>;
-</Item>
 </List> 
 <Index>repository</Index> 
-The package also has a GitHub repository: 
+The package also has a GitHub repository at: 
 <URL>https://github.com/gap-packages/utils</URL>. 
 <P/> 
 
@@ -121,6 +95,54 @@ Note that functions listed in this manual that are currently being transferred
 are only read from the source package &Home;, and so can only be used if 
 &Home; has been previously loaded. 
 
+
+
+<Section Label="sect-author-info"> 
+<Heading>Information for package authors</Heading> 
+
+A function (or collection of functions) is suitable for transfer 
+from a package &Home; to &Utils; 
+if the following conditions are satisfied. 
+<List>
+<Item>
+The function does not depend on the remaining functions in &Home; 
+</Item>
+<Item>
+The function does not do what can already be done with a &GAP; library function. 
+</Item>
+<Item>
+Documentation of the function and test examples are available. 
+</Item>
+<Item>
+The function is sufficiently non-specialised so that it might be of use 
+to other authors.
+</Item>
+</List> 
+<P/>
+
+Authors of packages may be reluctant to let go of their utility functions. 
+The following principles may help to reassure them. 
+(Suggestions for more items here are welcome.) 
+
+<List>
+<Item> 
+A function that has been transferred to &Utils; will not be changed 
+without the approval of the original author. 
+</Item>
+<Item>
+The current package maintainer has every intention of continuing 
+to maintain &Utils;. 
+In the event that this proves impossible, the &GAP; development team 
+will surely find someone to take over. 
+</Item>
+<Item>
+Function names will not be changed unless they contain the name of 
+the &Home; package. 
+</Item>
+</List>
+
+
+</Section> 
 
 
 <Section Label="sect-current-procedure"> 
@@ -178,7 +200,7 @@ UtilsPackageVersions :=
 </Item>
 <Item>
 (&Utils;:)
-Include the function declaration and implentation sections 
+Include the function declaration and implementation sections 
 in suitable files, enclosed within a conditional clause of the form: 
 <Example>
 <![CDATA[

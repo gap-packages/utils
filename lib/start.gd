@@ -11,8 +11,8 @@ DeclareInfoClass( "InfoUtils" );
 
 UtilsPackageVersions := 
   [ "autodoc",     "2016.01.31", 
-    "resclasses",  "4.1.9",         ## latest is 4.1.2, 10/02/16 
-    "rcwa",        "4.0.9",         ## latest is 4.0.1, 23/02/16 
+    "resclasses",  "4.2.5",         ## latest is 4.2.0, 02/03/16 
+    "rcwa",        "4.1.5",         ## latest is 4.1.0, 02/03/16 
     "xmod",        "2.55" 
   ];
 

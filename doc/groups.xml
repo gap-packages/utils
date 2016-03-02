@@ -126,31 +126,6 @@ gap> FittingLength( D12 );
 
 
 
-<Section Label="sec-words">
-<Heading>Functions for words in finitely presented groups</Heading>
-
-<ManSection>
-   <Attr Name="ReducedWordByOrdersOfGenerators"
-         Arg="w, gensords" />
-   <Attr Name="NormalizedRelator"
-         Arg="w gensords" />
-<Description>
-These functions are in the process of being transferred from package &RCWA;: 
-for now you should &LoadRCWA; in order to use them. 
-<P/>
-Some description needed here.
-<P/>
-</Description>
-</ManSection>
-<Example>
-<![CDATA[
-gap> ## some examples needed here 
-]]>
-</Example>
-
-</Section>
-
-
 <Section Label="sec-homomorphisms">
 <Heading>Functions for group homomorphisms</Heading>
 

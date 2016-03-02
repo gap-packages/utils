@@ -58,39 +58,25 @@ gap> QuotientsList( [ 2, 1, 0, -1, -2 ] );
 This function is in the process of being transferred from package &RCWA;: 
 for now you should &LoadRCWA; in order to use it. 
 <P/>
-A utility function for detecting cycles in lists. 
-But what <E>is</E> the <E>definition</E> of a cycle here? 
+<C>SearchCycle</C> is a tool to find likely cycles in lists. 
+What, precisely, a <E>cycle</E> is, is deliberately fuzzy here, 
+and may possibly even change. 
+The idea is that the beginning of the list may be anything, 
+following that the same pattern needs to be repeated several times 
+in order to be recognized as a cycle. 
 <P/>
 </Description>
 </ManSection>
 <Example>
 <![CDATA[
-gap> L := [1,2,3,4,2,3,4,5];
-[ 1, 2, 3, 4, 2, 3, 4, 5 ]
-gap> SearchCycle(L);        
-fail
-gap> L := [7,7,7];
-[ 7, 7, 7 ]
-gap> SearchCycle(L);
-[ 7 ]
-gap> L := [8,9,8,9];    
-[ 8, 9, 8, 9 ]
-gap> SearchCycle(L);
-fail
-gap> L := [8,9,8,9,8,9];
-[ 8, 9, 8, 9, 8, 9 ]
-gap> SearchCycle(L);    
-[ 8, 9 ]
-gap> L := [7,7];    
-[ 7, 7 ]
-gap> SearchCycle(L);
-Error, List Elements: <positions> must be a dense list of positive integers in
-  mainpart := list{[ Int( n / 3 ) .. n ]}
- ; at /Applications/gap/my-dev/pkg/utils/lib/lists.gi:115 called from 
-<function "SearchCycle">( <arguments> )
- called from read-eval loop at line 23 of *stdin*
-you can replace <positions> via 'return <positions>;'
-brk> 
+gap> L := [1..20];;  L[1]:=13;;                                              
+gap> for i in [1..19] do                                                     
+>        if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;
+>    od;                                                                  
+gap> L;                                                                      
+[ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ]
+gap> SearchCycle( L );                                                       
+[ 1, 4, 2 ]
 ]]>
 </Example>
 

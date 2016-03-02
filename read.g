@@ -7,17 +7,12 @@
 
 ## read the actual code 
 
-#ReadPackage( "utils", "lib/bitmap.gi" );
-ReadPackage( "utils", "lib/cache.gi" );
 ReadPackage( "utils", "lib/combinat.gi" );
-#ReadPackage( "utils", "lib/email.gi" );
 ReadPackage( "utils", "lib/files.gi" );
 ReadPackage( "utils", "lib/groups.gi" );
 ReadPackage( "utils", "lib/latex.gi" );
 ReadPackage( "utils", "lib/lists.gi" );
-#ReadPackage( "utils", "lib/log2html.gi" );
 ReadPackage( "utils", "lib/maps.gi" );
 ReadPackage( "utils", "lib/number.gi" );
-#ReadPackage( "utils", "lib/poly.gi" );
 ReadPackage( "utils", "lib/record.gi" );
 ReadPackage( "utils", "lib/string.gi" );
