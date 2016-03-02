@@ -138,8 +138,8 @@
           [4X[28X[128X[104X
         [4X[32X[104X
   
-  [31X4[131X   [33X[0;6Y([5XUtils[105X:) Include the function declaration and implentation sections in
-        suitable files, enclosed within a conditional clause of the form:[133X
+  [31X4[131X   [33X[0;6Y([5XUtils[105X:)  Include the function declaration and implementation sections
+        in suitable files, enclosed within a conditional clause of the form:[133X
   
   [4X      [32X  Example  [32X[104X
           [4X[28X[128X[104X
