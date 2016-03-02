@@ -97,28 +97,9 @@
   [4X[32X[104X
   
   
-  [1X4.2 [33X[0;0YFunctions for words in finitely presented groups[133X[101X
+  [1X4.2 [33X[0;0YFunctions for group homomorphisms[133X[101X
   
-  [1X4.2-1 ReducedWordByOrdersOfGenerators[101X
-  
-  [29X[2XReducedWordByOrdersOfGenerators[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
-  [29X[2XNormalizedRelator[102X( [3Xw[103X, [3Xgensords[103X ) [32X attribute
-  
-  [33X[0;0YThese  functions  are in the process of being transferred from package [5XRCWA[105X:
-  for now you should [10XLoadPackage("rcwa")[110X in order to use them.[133X
-  
-  [33X[0;0YSome description needed here.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27X## some examples needed here [127X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X4.3 [33X[0;0YFunctions for group homomorphisms[133X[101X
-  
-  [1X4.3-1 EpimorphismByGenerators[101X
+  [1X4.2-1 EpimorphismByGenerators[101X
   
   [29X[2XEpimorphismByGenerators[102X( [3XG[103X, [3XH[103X ) [32X attribute
   

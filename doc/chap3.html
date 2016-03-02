@@ -30,6 +30,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X845F46E579CEA43F">3.1-3 RestrictedPartitionsWithoutRepetitions</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C1AF2467FB55D79">3.1-4 ExponentOfPrime</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X81708BF4858505E8">3.1-5 NextProbablyPrimeInt</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8021EEE5787FCA37">3.1-6 PrimeNumbersIterator</a></span>
 </div></div>
 </div>
 
@@ -147,6 +148,25 @@
 3618502788666131106986593281521497120414687020801267626233049500247285301313
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">time;             </span>
 12346
+
+</pre></div>
+
+<p><a id="X8021EEE5787FCA37" name="X8021EEE5787FCA37"></a></p>
+
+<h5>3.1-6 PrimeNumbersIterator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimeNumbersIterator</code>( [<var class="Arg">chunksize</var>] )</td><td class="tdright">( function )</td></tr></table></div>
+<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+
+<p>This function returns an iterator which runs over the prime numbers n ascending order; it takes an optional argument <code class="code">chunksize</code> which specifies the length of the interval which is sieved in one go (the default is <span class="SimpleMath">10^7</span>), and which can be used to balance runtime vs. memory consumption. It is assumed that <code class="code">chunksize</code> is larger than any gap between two consecutive primes within the range one intends to run the iterator over.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iter := PrimeNumbersIterator();</span>
+&lt;iterator&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextIterator( iter ); </span>
+2
 
 </pre></div>
 

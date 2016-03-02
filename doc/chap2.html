@@ -84,37 +84,19 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SearchCycle</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
 
-<p>A utility function for detecting cycles in lists. But what <em>is</em> the <em>definition</em> of a cycle here?</p>
+<p><code class="code">SearchCycle</code> is a tool to find likely cycles in lists. What, precisely, a <em>cycle</em> is, is deliberately fuzzy here, and may possibly even change. The idea is that the beginning of the list may be anything, following that the same pattern needs to be repeated several times in order to be recognized as a cycle.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [1,2,3,4,2,3,4,5];</span>
-[ 1, 2, 3, 4, 2, 3, 4, 5 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle(L);        </span>
-fail
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [7,7,7];</span>
-[ 7, 7, 7 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle(L);</span>
-[ 7 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [8,9,8,9];    </span>
-[ 8, 9, 8, 9 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle(L);</span>
-fail
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [8,9,8,9,8,9];</span>
-[ 8, 9, 8, 9, 8, 9 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle(L);    </span>
-[ 8, 9 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [7,7];    </span>
-[ 7, 7 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle(L);</span>
-Error, List Elements: &lt;positions&gt; must be a dense list of positive integers in
-  mainpart := list{[ Int( n / 3 ) .. n ]}
- ; at /Applications/gap/my-dev/pkg/utils/lib/lists.gi:115 called from 
-&lt;function "SearchCycle"&gt;( &lt;arguments&gt; )
- called from read-eval loop at line 23 of *stdin*
-you can replace &lt;positions&gt; via 'return &lt;positions&gt;;'
-<span class="GAPbrkprompt">brk&gt;</span> <span class="GAPinput"></span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [1..20];;  L[1]:=13;;                                              </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in [1..19] do                                                     </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">       if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   od;                                                                  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L;                                                                      </span>
+[ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle( L );                                                       </span>
+[ 1, 4, 2 ]
 
 </pre></div>
 

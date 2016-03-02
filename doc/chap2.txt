@@ -41,37 +41,22 @@
   [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
   now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
   
-  [33X[0;0YA utility function for detecting cycles in lists. But what [13Xis[113X the [13Xdefinition[113X
-  of a cycle here?[133X
+  [33X[0;0Y[10XSearchCycle[110X  is  a  tool  to find likely cycles in lists. What, precisely, a
+  [13Xcycle[113X is, is deliberately fuzzy here, and may possibly even change. The idea
+  is  that  the beginning of the list may be anything, following that the same
+  pattern  needs  to  be repeated several times in order to be recognized as a
+  cycle.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XL := [1,2,3,4,2,3,4,5];[127X[104X
-    [4X[28X[ 1, 2, 3, 4, 2, 3, 4, 5 ][128X[104X
-    [4X[25Xgap>[125X [27XSearchCycle(L);        [127X[104X
-    [4X[28Xfail[128X[104X
-    [4X[25Xgap>[125X [27XL := [7,7,7];[127X[104X
-    [4X[28X[ 7, 7, 7 ][128X[104X
-    [4X[25Xgap>[125X [27XSearchCycle(L);[127X[104X
-    [4X[28X[ 7 ][128X[104X
-    [4X[25Xgap>[125X [27XL := [8,9,8,9];    [127X[104X
-    [4X[28X[ 8, 9, 8, 9 ][128X[104X
-    [4X[25Xgap>[125X [27XSearchCycle(L);[127X[104X
-    [4X[28Xfail[128X[104X
-    [4X[25Xgap>[125X [27XL := [8,9,8,9,8,9];[127X[104X
-    [4X[28X[ 8, 9, 8, 9, 8, 9 ][128X[104X
-    [4X[25Xgap>[125X [27XSearchCycle(L);    [127X[104X
-    [4X[28X[ 8, 9 ][128X[104X
-    [4X[25Xgap>[125X [27XL := [7,7];    [127X[104X
-    [4X[28X[ 7, 7 ][128X[104X
-    [4X[25Xgap>[125X [27XSearchCycle(L);[127X[104X
-    [4X[28XError, List Elements: <positions> must be a dense list of positive integers in[128X[104X
-    [4X[28X  mainpart := list{[ Int( n / 3 ) .. n ]}[128X[104X
-    [4X[28X ; at /Applications/gap/my-dev/pkg/utils/lib/lists.gi:115 called from [128X[104X
-    [4X[28X<function "SearchCycle">( <arguments> )[128X[104X
-    [4X[28X called from read-eval loop at line 23 of *stdin*[128X[104X
-    [4X[28Xyou can replace <positions> via 'return <positions>;'[128X[104X
-    [4X[26Xbrk>[126X [27X[127X[104X
+    [4X[25Xgap>[125X [27XL := [1..20];;  L[1]:=13;;                                              [127X[104X
+    [4X[25Xgap>[125X [27Xfor i in [1..19] do                                                     [127X[104X
+    [4X[25X>[125X [27X       if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;[127X[104X
+    [4X[25X>[125X [27X   od;                                                                  [127X[104X
+    [4X[25Xgap>[125X [27XL;                                                                      [127X[104X
+    [4X[28X[ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XSearchCycle( L );                                                       [127X[104X
+    [4X[28X[ 1, 4, 2 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

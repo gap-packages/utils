@@ -8,19 +8,6 @@
   [5XUtils[105X.  This  package  first  appeared  as  part  of the [5XGAP[105X distribution in
   version 4.8.2.[133X
   
-  [33X[0;0YA  function  (or  collection  of  functions) is suitable for transfer from a
-  package [5XHome[105X to [5XUtils[105X if the following conditions are satisfied.[133X
-  
-  [30X    [33X[0;6YThe function does not depend on the remaining functions in [5XHome[105X[133X
-  
-  [30X    [33X[0;6YThe  function  does not do what can already be done with a [5XGAP[105X library
-        function.[133X
-  
-  [30X    [33X[0;6YDocumentation of the function and test examples are available.[133X
-  
-  [30X    [33X[0;6YThe  function  is sufficiently non-specialised so that it might ber of
-        use to other authors.[133X
-  
   [33X[0;0YThe package is loaded with the command[133X
   
   [4X[32X  Example  [32X[104X
@@ -37,23 +24,19 @@
   
   [30X    [33X[0;6Y[5XRCWA[105X;[133X
   
-  [30X    [33X[0;6Y[5XXMod[105X;[133X
+  [33X[0;0YTransfer is complete (for now) for functions from the following packages:[133X
   
-  [33X[0;0YTransfer is complete for functions from the following packages:[133X
+  [30X    [33X[0;6Y[5XXMod[105X.[133X
   
-  [30X    [33X[0;6Y(none so far).[133X
-  
-  [33X[0;0YThe    package    may    be    obtained    as    a   compressed   tar   file
+  [33X[0;0YThe  package  may  be  obtained  as  a  compressed  tar  file or a .zip file
   [11Xutils-version_number.tar.gz[111X by ftp from one of the following sites:[133X
   
-  [30X    [33X[0;6Ythe package GitHub site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
+  [30X    [33X[0;6Ythe [5XUtils[105X GitHub release site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
   
   [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.
         [7Xhttp://www.gap-system.org/Packages/packages.html[107X;[133X
   
-  [30X    [33X[0;6Ythe Bangor site: [7Xhttp://www.maths.bangor.ac.uk/chda/utils/utils.html[107X;[133X
-  
-  [33X[0;0YThe       package       also       has       a       GitHub      repository:
+  [33X[0;0YThe      package      also      has      a     GitHub     repository     at:
   [7Xhttps://github.com/gap-packages/utils[107X.[133X
   
   [33X[0;0YOnce  the  package  is loaded, the manual [10Xdoc/manual.pdf[110X can be found in the
@@ -82,7 +65,37 @@
   used if [5XHome[105X has been previously loaded.[133X
   
   
-  [1X1.1 [33X[0;0YThe current transfer procedure[133X[101X
+  [1X1.1 [33X[0;0YInformation for package authors[133X[101X
+  
+  [33X[0;0YA  function  (or  collection  of  functions) is suitable for transfer from a
+  package [5XHome[105X to [5XUtils[105X if the following conditions are satisfied.[133X
+  
+  [30X    [33X[0;6YThe function does not depend on the remaining functions in [5XHome[105X[133X
+  
+  [30X    [33X[0;6YThe  function  does not do what can already be done with a [5XGAP[105X library
+        function.[133X
+  
+  [30X    [33X[0;6YDocumentation of the function and test examples are available.[133X
+  
+  [30X    [33X[0;6YThe  function  is  sufficiently non-specialised so that it might be of
+        use to other authors.[133X
+  
+  [33X[0;0YAuthors  of  packages may be reluctant to let go of their utility functions.
+  The  following  principles  may help to reassure them. (Suggestions for more
+  items here are welcome.)[133X
+  
+  [30X    [33X[0;6YA  function  that  has  been  transferred to [5XUtils[105X will not be changed
+        without the approval of the original author.[133X
+  
+  [30X    [33X[0;6YThe  current  package  maintainer has every intention of continuing to
+        maintain  [5XUtils[105X.  In  the  event  that this proves impossible, the [5XGAP[105X
+        development team will surely find someone to take over.[133X
+  
+  [30X    [33X[0;6YFunction names will not be changed unless they contain the name of the
+        [5XHome[105X package.[133X
+  
+  
+  [1X1.2 [33X[0;0YThe current transfer procedure[133X[101X
   
   [33X[0;0YWe  consider  here  the  process  for transferring utility functions from an
   existing package (the [5XHome[105X package, say) to [5XUtils[105X.[133X

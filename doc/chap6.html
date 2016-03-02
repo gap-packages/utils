@@ -22,64 +22,33 @@
 <p id="mathjaxlink" class="pcenter"><a href="chap6_mj.html">[MathJax on]</a></p>
 <p><a id="X83EFC3178180D918" name="X83EFC3178180D918"></a></p>
 <div class="ChapSects"><a href="chap6.html#X83EFC3178180D918">6 <span class="Heading">Various other functions</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X840A069D87506078">6.1 <span class="Heading">A simple caching facility</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7CC93AD18473B735">6.1 <span class="Heading">Operations on folders</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8049726581FED930">6.1-1 SetupCache</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87ACF0197B180DAB">6.1-1 FindMatchingFiles</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7CC93AD18473B735">6.2 <span class="Heading">Operations on folders</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X81A0A4FF842B039B">6.2 <span class="Heading">File operations</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87ACF0197B180DAB">6.2-1 FindMatchingFiles</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7B7ECADF85F748BE">6.2-1 Log2HTML</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X81A0A4FF842B039B">6.3 <span class="Heading">File operations</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X84D2922D87EDE9E9">6.3 <span class="Heading">LaTeX strings</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7B7ECADF85F748BE">6.3-1 Log2HTML</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X84D2922D87EDE9E9">6.4 <span class="Heading">LaTeX strings</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87DEB2B58266F858">6.4-1 IntOrOnfinityToLaTeX</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7DC642B97CD02F4E">6.4-2 LaTeXStringFactorsInt</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87DEB2B58266F858">6.3-1 IntOrOnfinityToLaTeX</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7DC642B97CD02F4E">6.3-2 LaTeXStringFactorsInt</a></span>
 </div></div>
 </div>
 
 <h3>6 <span class="Heading">Various other functions</span></h3>
 
-<p><a id="X840A069D87506078" name="X840A069D87506078"></a></p>
-
-<h4>6.1 <span class="Heading">A simple caching facility</span></h4>
-
-<p><a id="X8049726581FED930" name="X8049726581FED930"></a></p>
-
-<h5>6.1-1 SetupCache</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetupCache</code>( <var class="Arg">name</var>, <var class="Arg">size</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PutIntoCache</code>( <var class="Arg">name</var>, <var class="Arg">key</var>, <var class="Arg">value</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FetchFromCache</code>( <var class="Arg">name</var>, <var class="Arg">key</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions are in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use them.</p>
-
-<p>The function <code class="code">SetupCache</code> creates an empty cache named <code class="code">name</code> for at most <code class="code">size</code> values.</p>
-
-<p>The function <code class="code">PutIntoCache</code> puts the entry <code class="code">value</code> with key <code class="code">key</code> into the cache named <code class="code">name</code>.</p>
-
-<p>The function <code class="code">FetchFromCache</code> picks the entry with key <code class="code">key</code> from the cache named <code class="code">name</code>, and returns fail if no such entry exists.</p>
-
-
-<div class="example"><pre>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## examples needed! </span>
-
-</pre></div>
-
 <p><a id="X7CC93AD18473B735" name="X7CC93AD18473B735"></a></p>
 
-<h4>6.2 <span class="Heading">Operations on folders</span></h4>
+<h4>6.1 <span class="Heading">Operations on folders</span></h4>
 
 <p><a id="X87ACF0197B180DAB" name="X87ACF0197B180DAB"></a></p>
 
-<h5>6.2-1 FindMatchingFiles</h5>
+<h5>6.1-1 FindMatchingFiles</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FindMatchingFiles</code>( <var class="Arg">pkg</var>, <var class="Arg">dirs</var>, <var class="Arg">extns</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CreateDirIfMissing</code>( <var class="Arg">str</var> )</td><td class="tdright">( function )</td></tr></table></div>
@@ -94,9 +63,9 @@
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "log" ] );</span>
-[ "/PackageInfo.g", "/feb1.log", "/init.g", "/makedocrel.g", "/read.g", 
-  "/start.g", "/test.log", "tst/testall.g" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );</span>
+[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", 
+  "tst/testall.g" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CreateDirIfMissing( "/Applications/gap/temp/" );</span>
 true
 
@@ -104,11 +73,11 @@ true
 
 <p><a id="X81A0A4FF842B039B" name="X81A0A4FF842B039B"></a></p>
 
-<h4>6.3 <span class="Heading">File operations</span></h4>
+<h4>6.2 <span class="Heading">File operations</span></h4>
 
 <p><a id="X7B7ECADF85F748BE" name="X7B7ECADF85F748BE"></a></p>
 
-<h5>6.3-1 Log2HTML</h5>
+<h5>6.2-1 Log2HTML</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Log2HTML</code>( <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
@@ -118,25 +87,23 @@ true
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo("feb1.log");</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo("mar2.log");</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["g"] ); </span>
-[ "/PackageInfo.g", "/init.g", "/makedocrel.g", "/read.g", "/start.g" ]
+[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo();</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["log"] );</span>
-[ "/feb1.log", "/test.log" ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Log2HTML( "feb1.log" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["html"] );</span>
-[ "/feb1.html" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Log2HTML( "mar2.log" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["html", "log"] );</span>
+[ "/mar2.html", "/mar2.log" ]
 
 </pre></div>
 
 <p><a id="X84D2922D87EDE9E9" name="X84D2922D87EDE9E9"></a></p>
 
-<h4>6.4 <span class="Heading">LaTeX strings</span></h4>
+<h4>6.3 <span class="Heading">LaTeX strings</span></h4>
 
 <p><a id="X87DEB2B58266F858" name="X87DEB2B58266F858"></a></p>
 
-<h5>6.4-1 IntOrOnfinityToLaTeX</h5>
+<h5>6.3-1 IntOrOnfinityToLaTeX</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntOrOnfinityToLaTeX</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function is in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use it.</p>
@@ -155,7 +122,7 @@ true
 
 <p><a id="X7DC642B97CD02F4E" name="X7DC642B97CD02F4E"></a></p>
 
-<h5>6.4-2 LaTeXStringFactorsInt</h5>
+<h5>6.3-2 LaTeXStringFactorsInt</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LaTeXStringFactorsInt</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>

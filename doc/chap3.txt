@@ -118,3 +118,26 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  [1X3.1-6 PrimeNumbersIterator[101X
+  
+  [29X[2XPrimeNumbersIterator[102X( [[3Xchunksize[103X] ) [32X function
+  
+  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
+  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
+  
+  [33X[0;0YThis  function  returns  an  iterator  which  runs  over the prime numbers n
+  ascending order; it takes an optional argument [10Xchunksize[110X which specifies the
+  length  of the interval which is sieved in one go (the default is [22X10^7[122X), and
+  which  can  be used to balance runtime vs. memory consumption. It is assumed
+  that  [10Xchunksize[110X is larger than any gap between two consecutive primes within
+  the range one intends to run the iterator over.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xiter := PrimeNumbersIterator();[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27XNextIterator( iter ); [127X[104X
+    [4X[28X2[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

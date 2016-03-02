@@ -2,37 +2,9 @@
   [1X6 [33X[0;0YVarious other functions[133X[101X
   
   
-  [1X6.1 [33X[0;0YA simple caching facility[133X[101X
+  [1X6.1 [33X[0;0YOperations on folders[133X[101X
   
-  [1X6.1-1 SetupCache[101X
-  
-  [29X[2XSetupCache[102X( [3Xname[103X, [3Xsize[103X ) [32X function
-  [29X[2XPutIntoCache[102X( [3Xname[103X, [3Xkey[103X, [3Xvalue[103X ) [32X function
-  [29X[2XFetchFromCache[102X( [3Xname[103X, [3Xkey[103X ) [32X function
-  
-  [33X[0;0YThese  functions  are  in  the  process  of  being  transferred from package
-  [5XResClasses[105X:  for  now  you  should [10XLoadPackage("resclasses")[110X in order to use
-  them.[133X
-  
-  [33X[0;0YThe  function  [10XSetupCache[110X creates an empty cache named [10Xname[110X for at most [10Xsize[110X
-  values.[133X
-  
-  [33X[0;0YThe  function  [10XPutIntoCache[110X puts the entry [10Xvalue[110X with key [10Xkey[110X into the cache
-  named [10Xname[110X.[133X
-  
-  [33X[0;0YThe  function  [10XFetchFromCache[110X  picks  the  entry with key [10Xkey[110X from the cache
-  named [10Xname[110X, and returns fail if no such entry exists.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27X## examples needed! [127X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X6.2 [33X[0;0YOperations on folders[133X[101X
-  
-  [1X6.2-1 FindMatchingFiles[101X
+  [1X6.1-1 FindMatchingFiles[101X
   
   [29X[2XFindMatchingFiles[102X( [3Xpkg[103X, [3Xdirs[103X, [3Xextns[103X ) [32X function
   [29X[2XCreateDirIfMissing[102X( [3Xstr[103X ) [32X function
@@ -53,18 +25,18 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "log" ] );[127X[104X
-    [4X[28X[ "/PackageInfo.g", "/feb1.log", "/init.g", "/makedocrel.g", "/read.g", [128X[104X
-    [4X[28X  "/start.g", "/test.log", "tst/testall.g" ][128X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );[127X[104X
+    [4X[28X[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", [128X[104X
+    [4X[28X  "tst/testall.g" ][128X[104X
     [4X[25Xgap>[125X [27XCreateDirIfMissing( "/Applications/gap/temp/" );[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X6.3 [33X[0;0YFile operations[133X[101X
+  [1X6.2 [33X[0;0YFile operations[133X[101X
   
-  [1X6.3-1 Log2HTML[101X
+  [1X6.2-1 Log2HTML[101X
   
   [29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function
   
@@ -79,22 +51,20 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XLogTo("feb1.log");[127X[104X
+    [4X[25Xgap>[125X [27XLogTo("mar2.log");[127X[104X
     [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["g"] ); [127X[104X
-    [4X[28X[ "/PackageInfo.g", "/init.g", "/makedocrel.g", "/read.g", "/start.g" ][128X[104X
+    [4X[28X[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ][128X[104X
     [4X[25Xgap>[125X [27XLogTo();[127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["log"] );[127X[104X
-    [4X[28X[ "/feb1.log", "/test.log" ][128X[104X
-    [4X[25Xgap>[125X [27XLog2HTML( "feb1.log" );[127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["html"] );[127X[104X
-    [4X[28X[ "/feb1.html" ][128X[104X
+    [4X[25Xgap>[125X [27XLog2HTML( "mar2.log" );[127X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["html", "log"] );[127X[104X
+    [4X[28X[ "/mar2.html", "/mar2.log" ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X6.4 [33X[0;0YLaTeX strings[133X[101X
+  [1X6.3 [33X[0;0YLaTeX strings[133X[101X
   
-  [1X6.4-1 IntOrOnfinityToLaTeX[101X
+  [1X6.3-1 IntOrOnfinityToLaTeX[101X
   
   [29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function
   
@@ -112,7 +82,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X6.4-2 LaTeXStringFactorsInt[101X
+  [1X6.3-2 LaTeXStringFactorsInt[101X
   
   [29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function
   

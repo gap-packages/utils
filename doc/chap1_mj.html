@@ -25,7 +25,10 @@
 <p id="mathjaxlink" class="pcenter"><a href="chap1.html">[MathJax off]</a></p>
 <p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
 <div class="ChapSects"><a href="chap1_mj.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7806D2388165CF6E">1.1 <span class="Heading">The current transfer procedure</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X8508AD637B79CEE8">1.1 <span class="Heading">Information for package authors</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7806D2388165CF6E">1.2 <span class="Heading">The current transfer procedure</span></a>
 </span>
 </div>
 </div>
@@ -34,23 +37,6 @@
 
 <p>The <strong class="pkg">Utils</strong> package provides a space for utility functions from a variety of <strong class="pkg">GAP</strong> packages to be collected together into a single package. In this way it is hoped that they will become more visible to other package authors. Any package author who transfers a function to <strong class="pkg">Utils</strong> will become an author of <strong class="pkg">Utils</strong>. This package first appeared as part of the <strong class="pkg">GAP</strong> distribution in version 4.8.2.</p>
 
-<p>A function (or collection of functions) is suitable for transfer from a package <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong> if the following conditions are satisfied.</p>
-
-
-<ul>
-<li><p>The function does not depend on the remaining functions in <strong class="pkg">Home</strong></p>
-
-</li>
-<li><p>The function does not do what can already be done with a <strong class="pkg">GAP</strong> library function.</p>
-
-</li>
-<li><p>Documentation of the function and test examples are available.</p>
-
-</li>
-<li><p>The function is sufficiently non-specialised so that it might ber of use to other authors.</p>
-
-</li>
-</ul>
 <p>The package is loaded with the command</p>
 
 
@@ -73,33 +59,27 @@
 <li><p><strong class="pkg">RCWA</strong>;</p>
 
 </li>
-<li><p><strong class="pkg">XMod</strong>;</p>
-
-</li>
 </ul>
-<p>Transfer is complete for functions from the following packages:</p>
+<p>Transfer is complete (for now) for functions from the following packages:</p>
 
 
 <ul>
-<li><p>(none so far).</p>
+<li><p><strong class="pkg">XMod</strong>.</p>
 
 </li>
 </ul>
-<p>The package may be obtained as a compressed tar file <code class="file">utils-version_number.tar.gz</code> by ftp from one of the following sites:</p>
+<p>The package may be obtained as a compressed tar file or a .zip file <code class="file">utils-version_number.tar.gz</code> by ftp from one of the following sites:</p>
 
 
 <ul>
-<li><p>the package GitHub site: <span class="URL"><a href="http://gap-packages.github.io/utils/">http://gap-packages.github.io/utils/</a></span>.</p>
+<li><p>the <strong class="pkg">Utils</strong> GitHub release site: <span class="URL"><a href="http://gap-packages.github.io/utils/">http://gap-packages.github.io/utils/</a></span>.</p>
 
 </li>
 <li><p>any <strong class="pkg">GAP</strong> archive, e.g. <span class="URL"><a href="http://www.gap-system.org/Packages/packages.html">http://www.gap-system.org/Packages/packages.html</a></span>;</p>
 
 </li>
-<li><p>the Bangor site: <span class="URL"><a href="http://www.maths.bangor.ac.uk/chda/utils/utils.html">http://www.maths.bangor.ac.uk/chda/utils/utils.html</a></span>;</p>
-
-</li>
 </ul>
-<p>The package also has a GitHub repository: <span class="URL"><a href="https://github.com/gap-packages/utils">https://github.com/gap-packages/utils</a></span>.</p>
+<p>The package also has a GitHub repository at: <span class="URL"><a href="https://github.com/gap-packages/utils">https://github.com/gap-packages/utils</a></span>.</p>
 
 <p>Once the package is loaded, the manual <code class="code">doc/manual.pdf</code> can be found in the documentation folder. The <code class="code">html</code> versions, with or without MathJax, may be rebuilt as follows:</p>
 
@@ -123,9 +103,44 @@
 
 <p>Note that functions listed in this manual that are currently being transferred are only read from the source package <strong class="pkg">Home</strong>, and so can only be used if <strong class="pkg">Home</strong> has been previously loaded.</p>
 
+<p><a id="X8508AD637B79CEE8" name="X8508AD637B79CEE8"></a></p>
+
+<h4>1.1 <span class="Heading">Information for package authors</span></h4>
+
+<p>A function (or collection of functions) is suitable for transfer from a package <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong> if the following conditions are satisfied.</p>
+
+
+<ul>
+<li><p>The function does not depend on the remaining functions in <strong class="pkg">Home</strong></p>
+
+</li>
+<li><p>The function does not do what can already be done with a <strong class="pkg">GAP</strong> library function.</p>
+
+</li>
+<li><p>Documentation of the function and test examples are available.</p>
+
+</li>
+<li><p>The function is sufficiently non-specialised so that it might be of use to other authors.</p>
+
+</li>
+</ul>
+<p>Authors of packages may be reluctant to let go of their utility functions. The following principles may help to reassure them. (Suggestions for more items here are welcome.)</p>
+
+
+<ul>
+<li><p>A function that has been transferred to <strong class="pkg">Utils</strong> will not be changed without the approval of the original author.</p>
+
+</li>
+<li><p>The current package maintainer has every intention of continuing to maintain <strong class="pkg">Utils</strong>. In the event that this proves impossible, the <strong class="pkg">GAP</strong> development team will surely find someone to take over.</p>
+
+</li>
+<li><p>Function names will not be changed unless they contain the name of the <strong class="pkg">Home</strong> package.</p>
+
+</li>
+</ul>
 <p><a id="X7806D2388165CF6E" name="X7806D2388165CF6E"></a></p>
 
-<h4>1.1 <span class="Heading">The current transfer procedure</span></h4>
+<h4>1.2 <span class="Heading">The current transfer procedure</span></h4>
 
 <p>We consider here the process for transferring utility functions from an existing package (the <strong class="pkg">Home</strong> package, say) to <strong class="pkg">Utils</strong>.</p>
 
