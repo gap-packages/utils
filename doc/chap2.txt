@@ -80,10 +80,9 @@
   
   [29X[2XPrintListOneItemPerLine[102X( [3XL[103X ) [32X operation
   
-  [33X[0;0YThis  function is in the process of being transferred from package [5XXMod[105X: for
-  now  you  should  [10XLoadPackage("xmod")[110X  in  order  to  use it. Printing lists
-  vertically,  rather  than  horizantally,  may be useful when the entries are
-  lengthy.[133X
+  [33X[0;0YThis  function  has  been  transferred  from  package  [5XXMod[105X.  Printing lists
+  vertically, rather than in the usual horizontal form, may be useful when the
+  entries are lengthy.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -104,8 +103,7 @@
   [29X[2XCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X ) [32X operation
   [29X[2XIsCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X, [3Xlist[103X ) [32X operation
   
-  [33X[0;0YThese  functions  are in the process of being transferred from package [5XXMod[105X:
-  for  now you should [10XLoadPackage("xmod")[110X in order to use them. They deal with
+  [33X[0;0YThese  functions  have  been  transferred  from package [5XXMod[105X. They deal with
   lists  of  subsets of [22X[1 ... n][122X and construct systems of distinct and common
   representatives using simple, non-recursive, combinatorial algorithms.[133X
   
@@ -166,8 +164,8 @@
   
   [29X[2XStringDotSuffix[102X( [3Xstr[103X, [3Xsuf[103X ) [32X operation
   
-  [33X[0;0YThis  function  is in the process of being transferred from package [5XAutoDoc[105X,
-  and was originally named [10XAUTODOC_GetSuffix[110X.[133X
+  [33X[0;0YThis  function has been transferred from package [5XAutoDoc[105X, and was originally
+  named [10XAUTODOC_GetSuffix[110X.[133X
   
   [33X[0;0YWhen  [10XStringDotSuffix[110X  is  given  a  string  containing  a "." it return its
   extension, i.e. the bit after the last ".".[133X

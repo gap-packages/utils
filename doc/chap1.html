@@ -32,7 +32,7 @@
 
 <h3>1 <span class="Heading">Introduction</span></h3>
 
-<p>The <strong class="pkg">Utils</strong> package provides a space for utility functions from a variety of <strong class="pkg">GAP</strong> packages to be collected together into a single package. In this way it is hoped that they will become more visible to other package authors. Any package author who transfers a function to <strong class="pkg">Utils</strong> will become an author of <strong class="pkg">Utils</strong>. This package first appeared as part of the <strong class="pkg">GAP</strong> distribution in version 4.8.2.</p>
+<p>The <strong class="pkg">Utils</strong> package provides a space for utility functions from a variety of <strong class="pkg">GAP</strong> packages to be collected together into a single package. In this way it is hoped that they will become more visible to other package authors. This package was first distributed as part of the <strong class="pkg">GAP</strong> 4.8.2 distribution.</p>
 
 <p>The package is loaded with the command</p>
 
@@ -47,9 +47,6 @@
 
 
 <ul>
-<li><p><strong class="pkg">AutoDoc</strong> (with function names changed);</p>
-
-</li>
 <li><p><strong class="pkg">ResClasses</strong>;</p>
 
 </li>
@@ -61,6 +58,9 @@
 
 
 <ul>
+<li><p><strong class="pkg">AutoDoc</strong> (with function names changed);</p>
+
+</li>
 <li><p><strong class="pkg">XMod</strong>.</p>
 
 </li>
@@ -95,10 +95,11 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReadPackage( "utils", "tst/testall.g" );</span>
 #I  Testing .../pkg/utils/tst/lists.tst 
 ... 
+#I  No errors detected while testing package utils
 
 </pre></div>
 
-<p>Note that functions listed in this manual that are currently being transferred are only read from the source package <strong class="pkg">Home</strong>, and so can only be used if <strong class="pkg">Home</strong> has been previously loaded.</p>
+<p>Note that functions listed in this manual that are currently being transferred are only read from the source package <strong class="pkg">Home</strong> (say), and so can only be used if <strong class="pkg">Home</strong> has been previously loaded.</p>
 
 <p><a id="X8508AD637B79CEE8" name="X8508AD637B79CEE8"></a></p>
 
@@ -108,6 +109,9 @@
 
 
 <ul>
+<li><p>The function is sufficiently non-specialised so that it might be of use to other authors.</p>
+
+</li>
 <li><p>The function does not depend on the remaining functions in <strong class="pkg">Home</strong></p>
 
 </li>
@@ -115,9 +119,6 @@
 
 </li>
 <li><p>Documentation of the function and test examples are available.</p>
-
-</li>
-<li><p>The function is sufficiently non-specialised so that it might be of use to other authors.</p>
 
 </li>
 </ul>
@@ -131,7 +132,13 @@
 <li><p>The current package maintainer has every intention of continuing to maintain <strong class="pkg">Utils</strong>. In the event that this proves impossible, the <strong class="pkg">GAP</strong> development team will surely find someone to take over.</p>
 
 </li>
-<li><p>Function names will not be changed unless they contain the name of the <strong class="pkg">Home</strong> package.</p>
+<li><p>Function names will not be changed unless specifically requested by <strong class="pkg">Home</strong>'s author(s) or unless they have the form <code class="code">HOME_FunctionName</code>.</p>
+
+</li>
+<li><p>In order to speed up the transfer process, only functions from one package will be in transition at any given time. Hopefully a week or two will suffice for most packages.</p>
+
+</li>
+<li><p>Any package author who transfers a function to <strong class="pkg">Utils</strong> will become an author of <strong class="pkg">Utils</strong>.</p>
 
 </li>
 </ul>
@@ -139,19 +146,19 @@
 
 <h4>1.2 <span class="Heading">The current transfer procedure</span></h4>
 
-<p>We consider here the process for transferring utility functions from an existing package (the <strong class="pkg">Home</strong> package, say) to <strong class="pkg">Utils</strong>.</p>
+<p>We consider here the process for transferring utility functions from a package <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong> which has to avoid the potential problem of duplicate declarations of a function causing loading problems in <strong class="pkg">GAP</strong>.</p>
 
 <p>If the functions in <strong class="pkg">Home</strong> all have names of the form <code class="code">HOME_FunctionName</code> then, in <strong class="pkg">Utils</strong>, these functions are likely to be renamed as <code class="code">FunctionName</code> or something similar. In this case the problem of duplicate declarations does not arise. This is what has happened with transfers from the <strong class="pkg">AutoDoc</strong> package.</p>
 
 <p>The case where the function names are unchanged is more complicated. Initially we tried out a process which allowed repeated declarations and installations of the functions being transferred. This involved additions to the main library files <code class="file">global.g</code> and <code class="file">oper.g</code>. Since there were misgivings about interfering in this way with basic operations such as <code class="code">BIND_GLOBAL</code>, a simpler (but slightly less convenient) process has been adopted.</p>
 
-<p>Using an alternative procedure, the following steps are proposed when making transfers from <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong>.</p>
+<p>Using this alternative procedure, the following steps will be followed when making transfers from <strong class="pkg">Home</strong> to <strong class="pkg">Utils</strong>.</p>
 
 <ol>
-<li><p>(<strong class="pkg">Home</strong>:) Offer functions for inclusion. This may be simply done by emailing a list of functions. More usefully, email the declaration, implementation, test and documentation files, e.g.: <code class="file">home.gd</code>, <code class="file">home.gi</code>, <code class="file">home.tst</code> and <code class="file">home.xml</code>,</p>
+<li><p>(<strong class="pkg">Home</strong>:) Offer functions for inclusion. This may be simply done by emailing a list of functions. More usefully, email the declaration, implementation, test and documentation files, e.g.: <code class="file">home.gd</code>, <code class="file">home.gi</code>, <code class="file">home.tst</code> and <code class="file">home.xml</code>.</p>
 
 </li>
-<li><p>(<strong class="pkg">Home</strong>:) Declare that <strong class="button">m.n</strong> is the last version of <strong class="pkg">Home</strong> to contain these functions.</p>
+<li><p>(<strong class="pkg">Home</strong>:) Declare that <strong class="button">m.n</strong> is the last version of <strong class="pkg">Home</strong> to contain these functions, so that <strong class="button">m.n+1</strong> (or similar) will be the first version of <strong class="pkg">Home</strong> to have all these functions removed, and to specify <strong class="pkg">Utils</strong> as a required package.</p>
 
 </li>
 <li><p>(<strong class="pkg">Utils</strong>:) Add strings <var class="Arg">"home"</var> and <var class="Arg">"m.n"</var> to the list <code class="code">UtilsPackageVersions</code> in the file <code class="file">utils/lib/start.gd</code>.</p>
@@ -161,12 +168,14 @@
 
 UtilsPackageVersions := 
   [ "autodoc",     "2016.01.31", 
-    "resclasses",  "4.1.9", 
+    "resclasses",  "4.2.5", 
     "home",        "m.n",
     ...,           ... 
   ];
 
 </pre></div>
+
+<p>While the transfers are being made, it is essential that any new versions of <strong class="pkg">Home</strong> should be tested with the latest version of <strong class="pkg">Utils</strong> before they are released, so as to avoid loading failures.</p>
 
 </li>
 <li><p>(<strong class="pkg">Utils</strong>:) Include the function declaration and implementation sections in suitable files, enclosed within a conditional clause of the form:</p>
@@ -182,23 +191,23 @@ fi;
 
 </pre></div>
 
-<p>The function <code class="code">OKtoReadFromUtils</code> returns <code class="code">true</code> only if there is an installed version of <strong class="pkg">Home</strong> and this version is greater than <strong class="button">m.n</strong>. So, at this stage, <em>the copied code will not be read</em>.</p>
+<p>The function <code class="code">OKtoReadFromUtils</code> returns <code class="code">true</code> only if there is an installed version of <strong class="pkg">Home</strong> and if this version is greater than <strong class="button">m.n</strong>. So, at this stage, <em>the copied code will not be read</em>.</p>
 
 </li>
 <li><p>(<strong class="pkg">Utils</strong>:) Add the test and documentation material to the appropriate files. The copied code can be tested by temporarily moving <strong class="pkg">Home</strong> away from <strong class="pkg">GAP</strong>'s package directory.</p>
 
 </li>
-<li><p>(<strong class="pkg">Utils</strong>:) Release a new version of <strong class="pkg">Utils</strong>.</p>
+<li><p>(<strong class="pkg">Utils</strong>:) Release a new version of <strong class="pkg">Utils</strong> containing all the transferred material.</p>
 
 </li>
-<li><p>(<strong class="pkg">Home</strong>:) Edit out the declarations and implementations of all the transferred functions. Edit or remove references to them in the manual and tests, and add a note to the manual that these functions have been transferred. Add <strong class="pkg">Utils</strong> to the list of <strong class="pkg">Home</strong>'s required packages in <code class="file">PackageInfo.g</code>. Release a new version of <strong class="pkg">Home</strong>.</p>
+<li><p>(<strong class="pkg">Home</strong>:) Edit out the declarations and implementations of all the transferred functions, and remove references to them in the manual and tests. Possibly add a note to the manual that these functions have been transferred. Add <strong class="pkg">Utils</strong> to the list of <strong class="pkg">Home</strong>'s required packages in <code class="file">PackageInfo.g</code>. Release a new version of <strong class="pkg">Home</strong>.</p>
 
 </li>
-<li><p>(<strong class="pkg">Utils</strong>:) In due course, when the new version(s) of <strong class="pkg">Home</strong> are well established, it may be possible to remove the conditional clauses mentioned in item 4 above.</p>
+<li><p>(<strong class="pkg">Utils</strong>:) In due course, when the new version(s) of <strong class="pkg">Home</strong> are well established, it may be safe to remove the conditional clauses mentioned in item 4 above. The entry for <strong class="pkg">Home</strong> in <code class="code">UtilsPackageLists</code> may then be removed.</p>
 
 </li>
 </ol>
-<p>A note on the procedure for testing these functions. As long as a function being transferred still exists in the <strong class="pkg">Home</strong> package, the code will not be read from <strong class="pkg">Utils</strong>. So, when the tests are run, it is necessary to <code class="code">LoadPackage("home")</code> before the function is called. The file <code class="file">tst/testall.g</code> makes sure that all the necessary packages are loaded before the individual tests are called.</p>
+<p>Finally, a note on the procedure for testing these functions. As long as a function being transferred still exists in the <strong class="pkg">Home</strong> package, the code will not be read from <strong class="pkg">Utils</strong>. So, when the tests are run, it is necessary to <code class="code">LoadPackage("home")</code> before the function is called. The file <code class="file">utils/tst/testall.g</code> makes sure that all the necessary packages are loaded before the individual tests are called.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>

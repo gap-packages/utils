@@ -78,9 +78,7 @@
   [29X[2XLowerFittingSeries[102X( [3XG[103X ) [32X attribute
   [29X[2XFittingLength[102X( [3XG[103X ) [32X attribute
   
-  [33X[0;0YThese  three  functions are in the process of being transferred from package
-  [5XResClasses[105X:  for  now  you  should [10XLoadPackage("resclasses")[110X in order to use
-  them.[133X
+  [33X[0;0YThese three functions have been transferred from package [5XResClasses[105X.[133X
   
   [33X[0;0YThe  upper  and  lower  Fitting  series and the Fitting length of a solvable
   group are described here: [7Xhttps://en.wikipedia.org/wiki/Fitting_length[107X.[133X

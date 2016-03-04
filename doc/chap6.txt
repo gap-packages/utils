@@ -9,9 +9,8 @@
   [29X[2XFindMatchingFiles[102X( [3Xpkg[103X, [3Xdirs[103X, [3Xextns[103X ) [32X function
   [29X[2XCreateDirIfMissing[102X( [3Xstr[103X ) [32X function
   
-  [33X[0;0YThese functions are in the process of being transferred from package [5XAutoDoc[105X
-  where      they      were      named      [10XAutoDoc_FindMatchingFiles[110X      and
-  [10XAutoDoc_CreateDirIfMissing[110X.[133X
+  [33X[0;0YThese  functions  have been transferred from package [5XAutoDoc[105X where they were
+  named [10XAutoDoc_FindMatchingFiles[110X and [10XAutoDoc_CreateDirIfMissing[110X.[133X
   
   [33X[0;0Y[10XFindMatchingFiles[110X  scans  the  given  (by  name) subdirectories of a package
   directory  for  files  with  one  of  the  given extensions, and returns the
