@@ -8,8 +8,8 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.38",
-Date := "02/03/2016",
+Version := "0.39",
+Date := "04/03/2016",
 
 ##  Optional:
 ##    - Type and the URL of the source code repository
@@ -19,7 +19,7 @@ SourceRepository := rec(
     Type := "git", # must be one of "git", "hg", "svn", "cvs"
     URL  := "https://github.com/gap-packages/utils" ),
 IssueTrackerURL  := "http://github.com/gap-packages/utils/issues",
-PackageWWWHome   := "https://gap-packages.github.io/utils/", 
+PackageWWWHome   := "https://gap-packages.github.io/utils", 
 README_URL       := Concatenation( ~.PackageWWWHome, "/README" ), 
 PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
 ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
