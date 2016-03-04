@@ -16,7 +16,7 @@ DeclareOperation( "IsCommuting", [ IsMultiplicativeElement,
 
 fi;
 
-if OKtoReadFromUtilsSpec( "ResClasses", "3.9" ) then 
+if OKtoReadFromUtilsSpec( "ResClasses", "4.0.0" ) then
 
 #############################################################################
 ##  these functions have been transferred from ResClasses 

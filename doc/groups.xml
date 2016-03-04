@@ -102,8 +102,7 @@ gap> GeneratorsAndInverses( D12 );
    <Attr Name="FittingLength"
          Arg="G" />
 <Description>
-These three functions are in the process of being transferred from package 
-&ResClasses;: for now you should &LoadResClasses; in order to use them. 
+These three functions have been transferred from package &ResClasses;. 
 <P/>
 The upper and lower Fitting series and the Fitting length of a solvable
 group are described here: 

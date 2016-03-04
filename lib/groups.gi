@@ -27,7 +27,7 @@ InstallMethod( IsCommuting,
 
 fi; 
 
-if OKtoReadFromUtilsSpec( "ResClasses", "3.9" ) then 
+if OKtoReadFromUtilsSpec( "ResClasses", "4.0.0" ) then
 
 #############################################################################
 ##  this function has been transferred from ResClasses 

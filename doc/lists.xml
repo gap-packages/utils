@@ -103,10 +103,9 @@ gap> RandomCombination([31..79],8);
    <Oper Name="PrintListOneItemPerLine"
          Arg="L" />
 <Description>
-This function is in the process of being transferred from package &XMod;: 
-for now you should &LoadXMod; in order to use it. 
-Printing lists vertically, rather than horizantally, may be useful 
-when the entries are lengthy. 
+This function has been transferred from package &XMod;. 
+Printing lists vertically, rather than in the usual horizontal form, 
+may be useful when the entries are lengthy. 
 <P/>
 </Description>
 </ManSection>
@@ -135,8 +134,7 @@ gap> PrintListOneItemPerLine( KnownPropertiesOfObject(L) );
    <Oper Name="IsCommonTransversal"
          Arg="grp subgrp list" />
 <Description>
-These functions are in the process of being transferred from package &XMod;: 
-for now you should &LoadXMod; in order to use them. 
+These functions have been transferred from package &XMod;. 
 They deal with lists of subsets of <M>[1 \ldots n]</M>
 and construct systems of distinct and common representatives using
 simple, non-recursive, combinatorial algorithms.
@@ -211,7 +209,7 @@ gap> BlankFreeString( D12 );
    <Oper Name="StringDotSuffix"
          Arg="str suf" />
 <Description>
-This function is in the process of being transferred from package &AutoDoc;, 
+This function has been transferred from package &AutoDoc;, 
 and was originally named <C>AUTODOC_GetSuffix</C>. 
 <P/>
 When <C>StringDotSuffix</C> is given a string containing a "." 

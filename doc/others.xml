@@ -22,7 +22,7 @@
   <Func Name="CreateDirIfMissing" 
         Arg="str"/>
 <Description>
-These functions are in the process of being transferred from package &AutoDoc; 
+These functions have been transferred from package &AutoDoc; 
 where they were named <C>AutoDoc_FindMatchingFiles</C> 
 and <C>AutoDoc_CreateDirIfMissing</C>. 
 <P/>

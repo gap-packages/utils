@@ -6,9 +6,10 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
-Version 0.38 for GAP 4.8.2 (02/03/16)
+Version 0.39 for GAP 4.8.2 (04/03/16)
 
- - (02/03/16) updated transfers from RCWA and ResClasses (Stefan's input) 
+ - (04/03/16) corrected repeated "//" in PackageInfo.g 
+ - (03/03/16) updated transfers from RCWA and ResClasses (Stefan's input) 
  - (26/02/16) updated README to show the release URL 
  - (25/02/16) New release to GitHub using ReleaseTools (GitHubPagesForGAP) 
               makedocrel.g renamed makedoc.g 
