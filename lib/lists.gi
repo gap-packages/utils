@@ -56,7 +56,7 @@ InstallGlobalFunction( QuotientsList,
     len := Length( list ); 
     quot := ListWithIdenticalEntries( len-1, 0 ); 
     for pos in [1..len-1] do 
-        if ( list[pos] = 0 ) then 
+        if IsZero( list[pos] ) then 
             quot[pos] := fail; 
         else 
             quot[pos] := list[pos+1]/list[pos]; 
