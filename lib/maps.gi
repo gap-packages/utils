@@ -16,15 +16,15 @@ if OKtoReadFromUtils( "RCWA" ) then
 InstallMethod( EpimorphismByGeneratorsNC, "for groups", ReturnTrue, 
     [ IsGroup, IsGroup ], 0,
 
-    function ( G, H )
-    return GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),
-                                           GeneratorsOfGroup(H));
-    end );
+function( G, H )
+    return GroupHomomorphismByImagesNC( G, H, GeneratorsOfGroup(G),
+                                              GeneratorsOfGroup(H) );
+end );
 
 InstallGlobalFunction( EpimorphismByGenerators,
-  function ( D1, D2 )
+function ( D1, D2 )
     return EpimorphismByGeneratorsNC( D1, D2 );
-  end );
+end );
 
 fi; 
 

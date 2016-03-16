@@ -29,10 +29,7 @@ gap> LoadPackage( "utils" );
 Functions are currently being transferred from the following packages: 
 <List>
 <Item>
-&ResClasses;;
-</Item>
-<Item>
-&RCWA;;
+none at present. 
 </Item>
 </List>
 <P/>
@@ -40,6 +37,12 @@ Transfer is complete (for now) for functions from the following packages:
 <List>
 <Item>
 &AutoDoc; (with function names changed);
+</Item>
+<Item>
+&ResClasses;;
+</Item>
+<Item>
+&RCWA;;
 </Item>
 <Item>
 &XMod;.
@@ -60,7 +63,7 @@ any &GAP; archive, e.g.
 <URL>http://www.gap-system.org/Packages/packages.html</URL>; 
 </Item>
 </List> 
-<Index>repository</Index> 
+<Index>GitHub repository</Index> 
 The package also has a GitHub repository at: 
 <URL>https://github.com/gap-packages/utils</URL>. 
 <P/> 
@@ -73,7 +76,7 @@ may be rebuilt as follows:
 <P/>
 <Example>
 <![CDATA[
-gap> ReadPackage( "utils", "makedocrel.g" ); 
+gap> ReadPackage( "utils", "makedoc.g" ); 
 ]]>
 </Example>
 <P/>

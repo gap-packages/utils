@@ -15,8 +15,6 @@ gap> IntOrInfinityToLaTeX( infinity );
 gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
 
-
-
 #############################################################################
 ##
 #E  others.tst  . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

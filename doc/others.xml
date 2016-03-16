@@ -62,13 +62,12 @@ true
   <Func Name="Log2HTML" 
         Arg="filename"/>
 <Description>
-This function is in the process of being transferred from package &RCWA;: 
-for now you should &LoadRCWA; in order to use it. 
+This function has been transferred from package &RCWA;. 
 <P/>
 This function converts the &GAP; logfile logfilename to HTML. 
-The extension of the input file must be <A>*.log</A>. 
+The extension of the input file must be <File>*.log</File>. 
 The name of the output file is the same as the one of the input file 
-except that the extension <A>*.log</A> is replaced by <A>*.html</A>. 
+except that the extension <File>*.log</File> is replaced by <File>*.html</File>. 
 There is a sample CSS file in <File>utils/doc/gaplog.css</File>, 
 which you can adjust to your taste. 
 <P/>
@@ -97,8 +96,7 @@ gap> FindMatchingFiles( "utils", [""], ["html", "log"] );
   <Func Name="IntOrOnfinityToLaTeX" 
         Arg="n"/>
 <Description>
-This function is in the process of being transferred from package &ResClasses;: 
-for now you should &LoadResClasses; in order to use it. 
+This function has been transferred from package &ResClasses;. 
 <P/>
 <C>IntOrInfinityToLaTeX(n)</C> returns the &LaTeX; string for <A>n</A>. 
 <P/>
@@ -118,8 +116,7 @@ gap> IntOrInfinityToLaTeX( infinity );
   <Func Name="LaTeXStringFactorsInt" 
         Arg="n"/>
 <Description>
-This function is in the process of being transferred from package &RCWA;: 
-for now you should &LoadRCWA; in order to use it. 
+This function has been transferred from package &RCWA;. 
 <P/>
 It returns the prime factorization of the integer <M>n</M> as a string in 
 &LaTeX; format.

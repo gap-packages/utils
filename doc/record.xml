@@ -1,4 +1,4 @@
-<!-- ------------------------------------------------------------------- -->
+has been<!-- ------------------------------------------------------------------- -->
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
@@ -21,7 +21,7 @@
    <Func Name="SetIfMissing"
          Arg="rec name val" />
 <Description>
-This function is in the process of being transferred from package &AutoDoc;, 
+This function has been transferred from package &AutoDoc;, 
 where it was called <C>AUTODOC_WriteOnce</C>. 
 It writes into a record provided the position is not yet bound. 
 <P/>
@@ -43,10 +43,9 @@ rec( a := 1, b := 2, c := 3 )
    <Func Name="AssignGlobals"
          Arg="rec" />
 <Description>
-This function is in the process of being transferred from package &RCWA;: 
-for now you should &LoadRCWA; in order to use it.
+This function has been transferred from package &RCWA;.
 <P/>
-This function assigns the record components of <A>rec</A>
+It assigns the record components of <A>rec</A>
 to global variables with the same names.
 <P/>
 </Description>

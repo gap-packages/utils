@@ -6,6 +6,12 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
+Version 0.40 for GAP 4.8.3 (16/03/16)
+
+ - (15/03/16) added fix to QuotientList requested by Stefan 
+              added many manual examples supplied by Stefan 
+
+#############################################################################
 Version 0.39 for GAP 4.8.2 (04/03/16)
 
  - (04/03/16) corrected repeated "//" in PackageInfo.g 
