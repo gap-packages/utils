@@ -18,7 +18,7 @@
 <body class="chap2"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -29,9 +29,10 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78B7C92681D2F13C">2.1-1 DifferencesList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86096E73858CFABD">2.1-2 SearchCycle</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EF06CAD7F35245D">2.1-3 RandomCombination</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X80D711F78325FCE5">2.1-4 PrintListOneItemPerLine</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7975371E865B89BC">2.1-2 QuotientsList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86096E73858CFABD">2.1-3 SearchCycle</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EF06CAD7F35245D">2.1-4 RandomCombination</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X80D711F78325FCE5">2.1-5 PrintListOneItemPerLine</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X82F443FF84B8FCE3">2.2 <span class="Heading">Distinct and Common Representatives</span></a>
 </span>
@@ -57,35 +58,61 @@
 <h5>2.1-1 DifferencesList</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferencesList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FloatQuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions are in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use them.</p>
+<p>This function has been transferred from package <strong class="pkg">ResClasses</strong>.</p>
 
-<p>They take a list <span class="SimpleMath">\(L\)</span> of length <span class="SimpleMath">\(n\)</span> and output the lists of length <span class="SimpleMath">\(n-1\)</span> containing all the differences <span class="SimpleMath">\(L[i]-L[i-1]\)</span> and all the quotients <span class="SimpleMath">\(L[i]/L[i-1]\)</span> of consecutive entries in <span class="SimpleMath">\(L\)</span>.</p>
-
-<p>In the quotient functions an error is returned if an entry is zero.</p>
+<p>It takes a list <span class="SimpleMath">\(L\)</span> of length <span class="SimpleMath">\(n\)</span> and outputs the list of length <span class="SimpleMath">\(n-1\)</span> containing all the differences <span class="SimpleMath">\(L[i]-L[i-1]\)</span>.</p>
 
 
 <div class="example"><pre>
 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..12], n-&gt;n^3 );</span>
+[ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferencesList( last );</span>
+[ 7, 19, 37, 61, 91, 127, 169, 217, 271, 331, 397 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferencesList( last );</span>
+[ 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferencesList( last );</span>
+[ 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+
+</pre></div>
+
+<p><a id="X7975371E865B89BC" name="X7975371E865B89BC"></a></p>
+
+<h5>2.1-2 QuotientsList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FloatQuotientsList</code>( <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>These functions have been transferred from package <strong class="pkg">ResClasses</strong>.</p>
+
+<p>They take a list <span class="SimpleMath">\(L\)</span> of length <span class="SimpleMath">\(n\)</span> and output the quotients <span class="SimpleMath">\(L[i]/L[i-1]\)</span> of consecutive entries in <span class="SimpleMath">\(L\)</span>. An error is returned if an entry is zero.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [0..10], n -&gt; Factorial(n) );</span>
+[ 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">QuotientsList( last );</span>
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := [ 1, 3, 5, -1, -3, -5 ];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferencesList( L );        </span>
-[ 2, 2, -6, -2, -2 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">QuotientsList( L );</span>
 [ 3, 5/3, -1/5, 3, 5/3 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FloatQuotientsList( L );</span>
 [ 3., 1.66667, -0.2, 3., 1.66667 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">QuotientsList( [ 2, 1, 0, -1, -2 ] );</span>
 [ 1/2, 0, fail, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FloatQuotientsList( [1..10] );</span>
+[ 2., 1.5, 1.33333, 1.25, 1.2, 1.16667, 1.14286, 1.125, 1.11111 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Product( last );</span>
+10. 
 
 </pre></div>
 
 <p><a id="X86096E73858CFABD" name="X86096E73858CFABD"></a></p>
 
-<h5>2.1-2 SearchCycle</h5>
+<h5>2.1-3 SearchCycle</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SearchCycle</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
 <p><code class="code">SearchCycle</code> is a tool to find likely cycles in lists. What, precisely, a <em>cycle</em> is, is deliberately fuzzy here, and may possibly even change. The idea is that the beginning of the list may be anything, following that the same pattern needs to be repeated several times in order to be recognized as a cycle.</p>
 
@@ -100,39 +127,63 @@
 [ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SearchCycle( L );                                                       </span>
 [ 1, 4, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n := 1;;  L := [n];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in [1..100] do  n:=(n^2+1) mod 1093;  Add(L,n);  od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L; </span>
+[ 1, 2, 5, 26, 677, 363, 610, 481, 739, 715, 795, 272, 754, 157, 604, 848, 
+  1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, 271, 
+  211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, 271, 211, 802, 521, 
+  378, 795, 272, 754, 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, 
+  754, 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 
+  848, 1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, 
+  271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C := SearchCycle( L );</span>
+[ 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, 754 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">P := Positions( L, 157 );</span>
+[ 14, 26, 38, 50, 62, 74, 86, 98 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( C );  DifferencesList( P );</span>
+12
+[ 12, 12, 12, 12, 12, 12, 12 ]
 
 </pre></div>
 
 <p><a id="X7EF06CAD7F35245D" name="X7EF06CAD7F35245D"></a></p>
 
-<h5>2.1-3 RandomCombination</h5>
+<h5>2.1-4 RandomCombination</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomCombination</code>( <var class="Arg">S</var>, <var class="Arg">k</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">ResClasses</strong>.</p>
 
 <p>It returns a random unordered <span class="SimpleMath">\(k\)</span>-tuple of distinct elements of a set <span class="SimpleMath">\(S\)</span>.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCombination([31..79],8); </span>
-[ 33, 45, 60, 63, 65, 69, 71, 77 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## "6 aus 49" is a common lottery in Germany</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomCombination( [1..49], 6 ); </span>
+[ 2, 16, 24, 26, 37, 47 ]
 
 </pre></div>
 
 <p><a id="X80D711F78325FCE5" name="X80D711F78325FCE5"></a></p>
 
-<h5>2.1-4 PrintListOneItemPerLine</h5>
+<h5>2.1-5 PrintListOneItemPerLine</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintListOneItemPerLine</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function has been transferred from package <strong class="pkg">XMod</strong>. Printing lists vertically, rather than in the usual horizontal form, may be useful when the entries are lengthy.</p>
+<p>This function has been transferred from package <strong class="pkg">XMod</strong>.</p>
+
+<p>Printing lists vertically, rather than horizontally, may be useful when the entries are lengthy.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintListOneItemPerLine( KnownPropertiesOfObject(L) );  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := KnownPropertiesOfObject( GeneratorsOfGroup( SymmetricGroup(5) ) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintListOneItemPerLine( L );</span>
 [ IsFinite,
-  IsSmallList
+  IsSmallList,
+  IsGeneratorsOfMagmaWithInverses,
+  IsGeneratorsOfSemigroup,
+  IsSubsetLocallyFiniteGroup
   ]
 
 </pre></div>
@@ -149,7 +200,9 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CommonRepresentatives</code>( <var class="Arg">list</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CommonTransversal</code>( <var class="Arg">grp</var>, <var class="Arg">subgrp</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCommonTransversal</code>( <var class="Arg">grp</var>, <var class="Arg">subgrp</var>, <var class="Arg">list</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>These functions have been transferred from package <strong class="pkg">XMod</strong>. They deal with lists of subsets of <span class="SimpleMath">\([1 \ldots n]\)</span> and construct systems of distinct and common representatives using simple, non-recursive, combinatorial algorithms.</p>
+<p>These functions have been transferred from package <strong class="pkg">XMod</strong>.</p>
+
+<p>They deal with lists of subsets of <span class="SimpleMath">\([1 \ldots n]\)</span> and construct systems of distinct and common representatives using simple, non-recursive, combinatorial algorithms.</p>
 
 <p>When <span class="SimpleMath">\(L\)</span> is a set of <span class="SimpleMath">\(n\)</span> subsets of <span class="SimpleMath">\([1 \ldots n]\)</span> and the Hall condition is satisfied (the union of any <span class="SimpleMath">\(k\)</span> subsets has at least <span class="SimpleMath">\(k\)</span> elements), a set of <code class="code">DistinctRepresentatives</code> exists.</p>
 
@@ -187,16 +240,19 @@ true
 <h5>2.3-1 BlankFreeString</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlankFreeString</code>( <var class="Arg">obj</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">ResClasses</strong>: for now you should <code class="code">LoadPackage("resclasses")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">ResClasses</strong>.</p>
 
 <p>The result of <code class="code">BlankFreeString( obj );</code> is a composite of the functions <code class="code">String( obj )</code> and <code class="code">RemoveCharacters( obj, " " );</code>.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D12 := DihedralGroup( 12 );; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlankFreeString( D12 );</span>
-"Group([f1,f2,f3])"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := GeneratorsOfGroup( DihedralGroup(12) );</span>
+[ f1, f2, f3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">String( gens );                                </span>
+"[ f1, f2, f3 ]"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlankFreeString( gens );                       </span>
+"[f1,f2,f3]"
 
 </pre></div>
 
@@ -205,7 +261,7 @@ true
 <h5>2.3-2 StringDotSuffix</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StringDotSuffix</code>( <var class="Arg">str</var>, <var class="Arg">suf</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>This function has been transferred from package <strong class="pkg">AutoDoc</strong>, and was originally named <code class="code">AUTODOC_GetSuffix</code>.</p>
+<p>This function has been transferred from package <strong class="pkg">AutoDoc</strong>, where it was originally named <code class="code">AUTODOC_GetSuffix</code>.</p>
 
 <p>When <code class="code">StringDotSuffix</code> is given a string containing a "." it return its extension, i.e. the bit after the last ".".</p>
 
@@ -227,7 +283,7 @@ fail
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

@@ -8,9 +8,9 @@
   
   [29X[2XSetIfMissing[102X( [3Xrec[103X, [3Xname[103X, [3Xval[103X ) [32X function
   
-  [33X[0;0YThis  function  is in the process of being transferred from package [5XAutoDoc[105X,
-  where  it was called [10XAUTODOC_WriteOnce[110X. It writes into a record provided the
-  position is not yet bound.[133X
+  [33X[0;0YThis function has been transferred from package [5XAutoDoc[105X, where it was called
+  [10XAUTODOC_WriteOnce[110X.  It writes into a record provided the position is not yet
+  bound.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -28,11 +28,10 @@
   
   [29X[2XAssignGlobals[102X( [3Xrec[103X ) [32X function
   
-  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
-  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YThis  function assigns the record components of [3Xrec[103X to global variables with
-  the same names.[133X
+  [33X[0;0YIt  assigns  the  record components of [3Xrec[103X to global variables with the same
+  names.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X

@@ -18,7 +18,7 @@
 <body class="chap3"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -48,19 +48,27 @@
 <h5>3.1-1 AllSmoothIntegers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllSmoothIntegers</code>( <var class="Arg">maxp</var>, <var class="Arg">maxn</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllSmoothIntegers</code>( <var class="Arg">maxp</var>, <var class="Arg">L</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>The function <code class="code">AllSmoothIntegers(<var class="Arg">maxp</var>,<var class="Arg">maxn</var>)</code> returns a list of all integers less than or equal to <var class="Arg">maxn</var> which do not have prime divisors exceeding <var class="Arg">maxp</var>.</p>
+<p>The function <code class="code">AllSmoothIntegers(<var class="Arg">maxp</var>,<var class="Arg">maxn</var>)</code> returns the list of all positive integers less than or equal to <var class="Arg">maxn</var> whose prime factors are all in the list <span class="SimpleMath">\(L = \{p ~|~ p \leqslant maxp, p~\mbox{prime} \}\)</span>.</p>
+
+<p>In the alternative form, when <span class="SimpleMath">\(L\)</span> is a list of primes, the function returns the list of all positive integers whose prime factors lie in <span class="SimpleMath">\(L\)</span>.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllSmoothIntegers( 7, 100 );</span>
-[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 24, 25, 27, 28, 
-  30, 32, 35, 36, 40, 42, 45, 48, 49, 50, 54, 56, 60, 63, 64, 70, 72, 75, 80, 
-  81, 84, 90, 96, 98, 100 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(last);</span>
-46
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllSmoothIntegers( 3, 1000 );</span>
+[ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 54, 64, 72, 81, 96, 
+  108, 128, 144, 162, 192, 216, 243, 256, 288, 324, 384, 432, 486, 512, 576, 
+  648, 729, 768, 864, 972 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllSmoothIntegers( [5,11,17], 1000 );</span>
+[ 1, 5, 11, 17, 25, 55, 85, 121, 125, 187, 275, 289, 425, 605, 625, 935 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( last );</span>
+16
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [3..20], n -&gt; Length( AllSmoothIntegers( [5,11,17], 10^n ) ) );</span>
+[ 16, 29, 50, 78, 114, 155, 212, 282, 359, 452, 565, 691, 831, 992, 1173, 
+  1374, 1595, 1843 ]
 
 </pre></div>
 
@@ -93,9 +101,9 @@
 <h5>3.1-3 RestrictedPartitionsWithoutRepetitions</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RestrictedPartitionsWithoutRepetitions</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>Given a positive integer <var class="Arg">n</var> and a set of positive integers <var class="Arg">S</var>, this function returns a list of all partitions of <var class="Arg">n</var> into distinct elements of <var class="Arg">S</var>. The only difference to <code class="code">RestrictedPartitions</code> is that no repetitions are allowed.</p>
+<p>For a positive integer <var class="Arg">n</var> and a set of positive integers <var class="Arg">S</var>, this function returns the list of partitions of <var class="Arg">n</var> into distinct elements of <var class="Arg">S</var>. Unlike <code class="code">RestrictedPartitions</code>, no repetitions are allowed.</p>
 
 
 <div class="example"><pre>
@@ -107,6 +115,8 @@
   [ 10, 10 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RestrictedPartitionsWithoutRepetitions( 20, [4..10] );</span>
 [ [ 10, 6, 4 ], [ 9, 7, 4 ], [ 9, 6, 5 ], [ 8, 7, 5 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RestrictedPartitionsWithoutRepetitions( 10^2, List([1..10], n-&gt;n^2 ) );</span>
+[ [ 100 ], [ 64, 36 ], [ 49, 25, 16, 9, 1 ] ]
 
 </pre></div>
 
@@ -115,15 +125,21 @@
 <h5>3.1-4 ExponentOfPrime</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ExponentOfPrime</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>The function <code class="code">ExponentOfPrime(<var class="Arg">n</var>,<var class="Arg">p</var>)</code> returns the exponent of the prime <var class="Arg">p</var> in the prime factorization of <var class="Arg">n</var>.</p>
+<p><code class="code">ExponentOfPrime(<var class="Arg">n</var>,<var class="Arg">p</var>)</code> returns the exponent of the prime <var class="Arg">p</var> in the prime factorization of <var class="Arg">n</var>.</p>
 
 
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ExponentOfPrime( 13577531, 11 ); </span>
 3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; ExponentOfPrime( 3^n-1, 2 ) );</span>
+[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, 
+  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; ExponentOfPrime( n^2-1, 2 ) );</span>
+[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, 
+  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ]
 
 </pre></div>
 
@@ -132,7 +148,7 @@
 <h5>3.1-5 NextProbablyPrimeInt</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextProbablyPrimeInt</code>( <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
 <p>The function <code class="code">NextProbablyPrimeInt(<var class="Arg">n</var>)</code> does the same as <code class="code">NextPrimeInt(<var class="Arg">n</var>)</code> except that for reasons of performance it tests numbers only for <code class="code">IsProbablyPrimeInt(<var class="Arg">n</var>)</code> instead of <code class="code">IsPrimeInt(<var class="Arg">n</var>)</code>. For large <var class="Arg">n</var>, this function is much faster than <code class="code">NextPrimeInt(<var class="Arg">n</var>)</code></p>
 
@@ -159,17 +175,25 @@
 <h5>3.1-6 PrimeNumbersIterator</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimeNumbersIterator</code>( [<var class="Arg">chunksize</var>] )</td><td class="tdright">( function )</td></tr></table></div>
-<p>This function is in the process of being transferred from package <strong class="pkg">RCWA</strong>: for now you should <code class="code">LoadPackage("rcwa")</code> in order to use it.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
 <p>This function returns an iterator which runs over the prime numbers n ascending order; it takes an optional argument <code class="code">chunksize</code> which specifies the length of the interval which is sieved in one go (the default is <span class="SimpleMath">\(10^7\)</span>), and which can be used to balance runtime vs. memory consumption. It is assumed that <code class="code">chunksize</code> is larger than any gap between two consecutive primes within the range one intends to run the iterator over.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iter := PrimeNumbersIterator();</span>
-&lt;iterator&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextIterator( iter ); </span>
-2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iter := PrimeNumbersIterator();;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in [1..100] do  p := NextIterator(iter);  od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p;</span>
+541
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sum := 0;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## "prime number race" 1 vs. 3 mod 4</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for p in PrimeNumbersIterator() do </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      if p &lt;&gt; 2 then sum := sum + E(4)^(p-1); fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">      if sum &gt; 0 then break; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">   od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p;</span>
+26861
 
 </pre></div>
 
@@ -177,7 +201,7 @@
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

@@ -39,12 +39,11 @@
   
   [29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function
   
-  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
-  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
   [33X[0;0YThis function converts the [5XGAP[105X logfile logfilename to HTML. The extension of
-  the input file must be [3X*.log[103X. The name of the output file is the same as the
-  one of the input file except that the extension [3X*.log[103X is replaced by [3X*.html[103X.
+  the input file must be [11X*.log[111X. The name of the output file is the same as the
+  one of the input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X.
   There  is a sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to
   your taste.[133X
   
@@ -67,8 +66,7 @@
   
   [29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YThis   function  is  in  the  process  of  being  transferred  from  package
-  [5XResClasses[105X: for now you should [10XLoadPackage("resclasses")[110X in order to use it.[133X
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
   
   [33X[0;0Y[10XIntOrInfinityToLaTeX(n)[110X returns the LaTeX string for [3Xn[103X.[133X
   
@@ -85,8 +83,7 @@
   
   [29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function
   
-  [33X[0;0YThis  function is in the process of being transferred from package [5XRCWA[105X: for
-  now you should [10XLoadPackage("rcwa")[110X in order to use it.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
   [33X[0;0YIt  returns  the  prime  factorization of the integer [22Xn[122X as a string in LaTeX
   format.[133X
