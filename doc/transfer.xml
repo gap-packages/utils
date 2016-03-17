@@ -1,0 +1,127 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  transfer.xml           Utils documentation          Chris Wensley  -->
+<!--                                                                     -->
+<!--  Copyright (C) 2015-2016, The GAP Group                             --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<Chapter Label="chap-transfer">
+
+<Heading>The transfer procedure</Heading>
+
+We consider here the process for transferring utility functions 
+from a package &Home; to &Utils; which has to avoid the potential problem 
+of duplicate declarations of a function causing loading problems in &GAP;. 
+<P/>
+If the functions in &Home; all have names of the form 
+<C>HOME_FunctionName</C> then, in &Utils;, these functions 
+are likely to be renamed as <C>FunctionName</C> or something similar. 
+In this case the problem of duplicate declarations does not arise. 
+This is what has happened with transfers from the <Package>AutoDoc</Package> 
+package. 
+<P/>
+The case where the function names are unchanged is more complicated. 
+Initially we tried out a process which allowed repeated declarations and 
+installations of the functions being transferred. 
+This involved additions to the main library files <File>global.g</File> 
+and <File>oper.g</File>. 
+Since there were misgivings about interfering in this way 
+with basic operations such as <C>BIND_GLOBAL</C>, 
+a simpler (but slightly less convenient) process has been adopted. 
+<P/> 
+Using this alternative procedure, the following steps will be followed 
+when making transfers from &Home; to &Utils;. 
+
+<Enum>
+<Item>
+(&Home;:)
+Offer functions for inclusion. 
+This may be simply done by emailing a list of functions. 
+More usefully, email the declaration, implementation, test and 
+documentation files, e.g.: <File>home.gd</File>, 
+<File>home.gi</File>, <File>home.tst</File> and <File>home.xml</File>. 
+</Item>
+<Item>
+(&Home;:)
+Declare that <B>m.n</B> is the last version of &Home; 
+to contain these functions, so that <B>m.n+1</B> (or similar) 
+will be the first version of &Home; to have all these functions 
+removed, and to specify &Utils; as a required package. 
+</Item>
+<Item>
+(&Utils;:)
+Add strings <A>"home"</A> and <A>"m.n"</A> to the list 
+<C>UtilsPackageVersions</C> in the file <File>utils/lib/start.gd</File>. 
+<Example>
+<![CDATA[
+UtilsPackageVersions := 
+  [ "autodoc",     "2016.01.31", 
+    "resclasses",  "4.2.5", 
+    "home",        "m.n",
+    ...,           ... 
+  ];
+]]>
+</Example>
+While the transfers are being made, it is essential that any new versions 
+of &Home; should be tested with the latest version of &Utils; 
+before they are released, so as to avoid loading failures.  
+</Item>
+<Item>
+(&Utils;:)
+Include the function declaration and implementation sections 
+in suitable files, enclosed within a conditional clause of the form: 
+<Example>
+<![CDATA[
+if OKtoReadFromUtils( "Home" ) then
+. . . . . . 
+ <the code> 
+. . . . . . 
+fi;
+]]>
+</Example> 
+<Index>OKtoReadFromUtils</Index>
+The function <C>OKtoReadFromUtils</C> returns <C>true</C> 
+only if there is an installed version of &Home; 
+and if this version is greater than <B>m.n</B>. 
+So, at this stage, <E>the copied code will not be read</E>. 
+</Item>
+<Item>
+(&Utils;:)
+Add the test and documentation material to the appropriate files. 
+The copied code can be tested by temporarily moving &Home; away from 
+&GAP;'s package directory. 
+</Item>
+<Item>
+(&Utils;:)
+Release a new version of &Utils; containing all the transferred material. 
+</Item>
+<Item>
+(&Home;:)
+Edit out the declarations and implementations of all the transferred functions, 
+and remove references to them in the manual and tests. 
+Possibly add a note to the manual that these functions have been transferred. 
+Add  &Utils; to the list of &Home;'s required packages 
+in <File>PackageInfo.g</File>. 
+Release a new version of &Home;. 
+</Item>
+<Item>
+(&Utils;:) 
+In due course, when the new version(s) of &Home; are well established, 
+it may be safe to remove the conditional clauses mentioned in item 4 above. 
+The entry for &Home; in <C>UtilsPackageLists</C> may then be removed. 
+</Item>
+</Enum>  
+
+<P/> 
+Finally, a note on the procedure for testing these functions. 
+As long as a function being transferred still exists in the &Home; package, 
+the code will not be read from &Utils;. 
+So, when the tests are run, it is necessary to <C>LoadPackage("home")</C> 
+before the function is called. 
+The file <File>utils/tst/testall.g</File> makes sure that all the necessary 
+packages are loaded before the individual tests are called. 
+
+</Chapter>

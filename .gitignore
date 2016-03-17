@@ -1,3 +1,5 @@
+/archive/
+
 /doc/*.html
 /doc/*.txt
 /doc/*.css
@@ -20,5 +22,7 @@
 /doc/*.toc
 
 /gh-pages/
+
+/not-used/
 
 /tmp/

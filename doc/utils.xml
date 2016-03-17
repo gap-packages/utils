@@ -28,6 +28,7 @@
 <#Include SYSTEM "groups.xml">
 <#Include SYSTEM "record.xml">
 <#Include SYSTEM "others.xml">
+<#Include SYSTEM "transfer.xml">
 </Body>
 
 <Bibliography Databases="manual"/>

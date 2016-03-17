@@ -13,7 +13,7 @@
 <Heading>Various other functions</Heading>
 
 
-<Section Label="sec:folder-ops">
+<Section Label="sec-folder-ops">
 <Heading>Operations on folders</Heading>
 
 <ManSection>
@@ -55,7 +55,7 @@ true
 </Section>
 
 
-<Section Label="sec:log2html">
+<Section Label="sec-log2html">
 <Heading>File operations</Heading>
 
 <ManSection>
@@ -89,7 +89,7 @@ gap> FindMatchingFiles( "utils", [""], ["html", "log"] );
 </Section>
 
 
-<Section Label="sec:latex">
+<Section Label="sec-latex">
 <Heading>&LaTeX; strings</Heading>
 
 <ManSection>
