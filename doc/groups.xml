@@ -153,16 +153,21 @@ gap> FittingLength( S4);
 <Heading>Functions for group homomorphisms</Heading>
 
 <ManSection>
-   <Attr Name="EpimorphismByGenerators"
+   <Oper Name="EpimorphismByGenerators"
+         Arg="G H" />
+   <Func Name="EpimorphismByGeneratorsNC" 
          Arg="G H" />
 <Description>
-This function has been transferred from package &RCWA;. 
+These functions have been transferred from package &RCWA;. 
 <P/>
-It maps the generators of <M>G</M> to those of <M>H</M>, and so is just 
-an abbreviation for: 
+They are intended to produce a group homomorphism which maps 
+the generators of <M>G</M> to those of <M>H</M>: 
+<C>EpimorphismByGenerators(G,H)</C> just calls 
+<C>EpimorphismByGeneratorsNC(G,H)</C> which calls 
 <C>
-GroupHomomorphismByImages(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H));</C>. 
-<B>Warning:</B> it is not yet checked that this map is a group homomorphism! 
+GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</C>,
+so no checks are made!  
+<B>Warning:</B> use these functions with great care. 
 <P/>
 </Description>
 </ManSection>
@@ -177,9 +182,9 @@ gap> a := G.1;; b := G.2;; c := G.3;; d := G.4;;
 gap> d*c*b*a;
 (1,2,3,4,5,6,7,8,9)
 gap> ## note that it is easy to produce nonsense: 
-gap> e0 := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );
+gap> epi := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );
 [ (1,2,3) ] -> [ (8,9) ]
-gap> IsGroupHomomorphism(e0);
+gap> IsGroupHomomorphism( epi );
 true
 ]]>
 </Example>
