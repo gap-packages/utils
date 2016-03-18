@@ -6,6 +6,11 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
+Version 0.41 for GAP 4.8.3 (17/03/16)
+
+ - (17/03/16) added function PrintApplicableMethod 
+
+#############################################################################
 Version 0.40 for GAP 4.8.3 (17/03/16)
 
  - (17/03/16) moved transfer procedure to a new chapter in the manual 

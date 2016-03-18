@@ -16,5 +16,6 @@ ReadPackage( "utils", "lib/latex.gd" );
 ReadPackage( "utils", "lib/lists.gd" );
 ReadPackage( "utils", "lib/maps.gd" );
 ReadPackage( "utils", "lib/number.gd" );
+ReadPackage( "utils", "lib/others.gd" );
 ReadPackage( "utils", "lib/record.gd" );
 ReadPackage( "utils", "lib/string.gd" );

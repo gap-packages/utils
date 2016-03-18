@@ -14,5 +14,6 @@ ReadPackage( "utils", "lib/latex.gi" );
 ReadPackage( "utils", "lib/lists.gi" );
 ReadPackage( "utils", "lib/maps.gi" );
 ReadPackage( "utils", "lib/number.gi" );
+ReadPackage( "utils", "lib/others.gi" );
 ReadPackage( "utils", "lib/record.gi" );
 ReadPackage( "utils", "lib/string.gi" );

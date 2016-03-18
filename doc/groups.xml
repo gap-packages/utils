@@ -160,14 +160,13 @@ gap> FittingLength( S4);
 <Description>
 These functions have been transferred from package &RCWA;. 
 <P/>
-They are intended to produce a group homomorphism which maps 
-the generators of <M>G</M> to those of <M>H</M>: 
-<C>EpimorphismByGenerators(G,H)</C> just calls 
+They construct a group homomorphism which maps 
+the generators of <M>G</M> to those of <M>H</M>. 
+Note that <C>EpimorphismByGenerators(G,H)</C> calls 
 <C>EpimorphismByGeneratorsNC(G,H)</C> which calls 
 <C>
-GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</C>,
-so no checks are made!  
-<B>Warning:</B> use these functions with great care. 
+GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</C>.
+Anything may happen if the resulting map is not a homomorphism! 
 <P/>
 </Description>
 </ManSection>
