@@ -8,8 +8,8 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.41",
-Date := "18/03/2016",
+Version := "0.42",
+Date := "13/10/2016",
 
 ##  Optional:
 ##    - Type and the URL of the source code repository
@@ -26,7 +26,7 @@ ArchiveURL       := Concatenation( ~.SourceRepository.URL,
                                    "/releases/download/v", ~.Version,
                                    "/", ~.Packagename, "-", ~.Version ),
 ArchiveFormats := ".tar.gz .zip",
-SupportEmail     := "c.d.wensley@bangor.ac.uk",
+SupportEmail     := "cdwensley.maths@btinternet.com",
 
 Persons := [
   rec(
@@ -57,16 +57,16 @@ Persons := [
     FirstNames    := "Christopher D.",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "c.d.wensley@bangor.ac.uk",
+    Email         := "cdwensley.maths@btinternet.com",
     WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
-    PostalAddress := Concatenation( [
-                       "Dr. C.D. Wensley\n",
-                       "School of Computer Science\n",
-                       "Bangor University\n",
-                       "Dean Street\n",
-                       "Bangor\n",
-                       "Gwynedd LL57 1UT\n",
-                       "UK"] ),
+    ## PostalAddress := Concatenation( [
+    ##                    "Dr. C.D. Wensley\n",
+    ##                    "School of Computer Science\n",
+    ##                    "Bangor University\n",
+    ##                    "Dean Street\n",
+    ##                    "Bangor\n",
+    ##                    "Gwynedd LL57 1UT\n",
+    ##                    "UK"] ),
     Place         := "Bangor",
     Institution   := "Bangor University"
   )

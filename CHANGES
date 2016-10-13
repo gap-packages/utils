@@ -6,8 +6,14 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
-Version 0.41 for GAP 4.8.3 (17/03/16)
+Version 0.42 for GAP 4.8.5 (13/10/16) 
 
+ - (13/10/16) changed email address for Chris Wensley
+
+#############################################################################
+Version 0.41 for GAP 4.8.3 (25/05/16) 
+
+ - (25/05/16) fixed issue #8 : git rm doc/appendix.xml 
  - (17/03/16) added function PrintApplicableMethod 
 
 #############################################################################
