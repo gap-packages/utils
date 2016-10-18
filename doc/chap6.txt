@@ -95,3 +95,57 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  
+  [1X6.4 [33X[0;0YApplicable methods[133X[101X
+  
+  [1X6.4-1 PrintApplicableMethod[101X
+  
+  [29X[2XPrintApplicableMethod[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThis    function   combines   calls   to   [10XApplicableMethod[110X,   [10XFilenameFunc[110X,
+  [10XStartlineFunc[110X and [10XEndlineFunc[110X and prints the location of the file containing
+  the  method  found, and a listing of that method. In its simplest form it is
+  called  as  [10XPrintApplicableMethod(f,L)[110X  for  a  function  [10Xf[110X  and  a  list of
+  parameters  [10XL[110X. Alternatively, it is called as [10XPrintApplicableMethod(f,L,0,n)[110X
+  and then prints the method returned by [10XApplicableMethod(f,L,0,n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );[127X[104X
+    [4X[28Xthis method is contained in lines [30,36] of file:[128X[104X
+    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
+    [4X[28Xfunction ( G )[128X[104X
+    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1  then[128X[104X
+    [4X[28X        return true;[128X[104X
+    [4X[28X    else[128X[104X
+    [4X[28X        return TRY_NEXT_METHOD;[128X[104X
+    [4X[28X    fi;[128X[104X
+    [4X[28X    return;[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );[127X[104X
+    [4X[28Xthis method is contained in lines [41,63] of file:[128X[104X
+    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
+    [4X[28Xfunction ( G )[128X[104X
+    [4X[28X    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1[128X[104X
+    [4X[28X         then[128X[104X
+    [4X[28X        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );[128X[104X
+    [4X[28X        return true;[128X[104X
+    [4X[28X    elif not IsCommutative( G )  then[128X[104X
+    [4X[28X        return false;[128X[104X
+    [4X[28X    elif IsFinite( G )  then[128X[104X
+    [4X[28X        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )[128X[104X
+    [4X[28X                return [128X[104X
+    [4X[28X                 Index( G, [128X[104X
+    [4X[28X                     SubgroupNC( G, [128X[104X
+    [4X[28X                       List( GeneratorsOfGroup( G ), function ( g )[128X[104X
+    [4X[28X                              return g ^ p;[128X[104X
+    [4X[28X                          end ) ) ) = p;[128X[104X
+    [4X[28X            end );[128X[104X
+    [4X[28X    else[128X[104X
+    [4X[28X        return AbelianInvariants( G ) = [ 0 ];[128X[104X
+    [4X[28X    fi;[128X[104X
+    [4X[28X    return;[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

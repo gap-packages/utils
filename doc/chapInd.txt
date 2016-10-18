@@ -34,6 +34,7 @@
   [2XNextProbablyPrimeInt[102X  3.1-5
   OKtoReadFromUtils  7.
   [2XPrimeNumbersIterator[102X  3.1-6
+  [2XPrintApplicableMethod[102X  6.4-1
   [2XPrintListOneItemPerLine[102X  2.1-5
   [2XQuotientsList[102X  2.1-2
   [2XRandomCombination[102X  2.1-4

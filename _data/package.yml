@@ -1,6 +1,6 @@
 name: Utils
-version: 0.40
-date: 17/03/2016
+version: 0.42
+date: 18/10/2016
 description: Utility functions in GAP
 
 authors:
@@ -17,7 +17,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8.2"
+GAP: ">=4.8.5"
 
 needed-pkgs:
     - name: "GAPDoc"
@@ -30,9 +30,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.40/utils-0.40.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.42/utils-0.42.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.40/utils-0.40.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.42/utils-0.42.zip
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 

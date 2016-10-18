@@ -178,7 +178,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGeneratorsNC</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>These functions have been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>They are intended to produce a group homomorphism which maps the generators of <span class="SimpleMath">\(G\)</span> to those of <span class="SimpleMath">\(H\)</span>: <code class="code">EpimorphismByGenerators(G,H)</code> just calls <code class="code">EpimorphismByGeneratorsNC(G,H)</code> which calls <code class="code"> GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</code>, so no checks are made! <strong class="button">Warning:</strong> use these functions with great care.</p>
+<p>They construct a group homomorphism which maps the generators of <span class="SimpleMath">\(G\)</span> to those of <span class="SimpleMath">\(H\)</span>. Note that <code class="code">EpimorphismByGenerators(G,H)</code> calls <code class="code">EpimorphismByGeneratorsNC(G,H)</code> which calls <code class="code"> GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</code>. Anything may happen if the resulting map is not a homomorphism!</p>
 
 
 <div class="example"><pre>

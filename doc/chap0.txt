@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.40
+                                      0.42
   
   
-                                   17/03/2016
+                                   18/10/2016
   
   
                                Sebastian Gutsche
@@ -33,17 +33,8 @@
       Email:    [7Xmailto:stefan@mcs.st-and.ac.uk[107X
       Homepage: [7Xhttp://www.gap-system.org/DevelopersPages/StefanKohl/[107X
   Christopher D. Wensley
-      Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
+      Email:    [7Xmailto:cdwensley.maths@btinternet.com[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
-      Address:  [33X[0;14YDr. C.D. Wensley[133X
-                [33X[0;14YSchool of Computer Science[133X
-                [33X[0;14YBangor University[133X
-                [33X[0;14YDean Street[133X
-                [33X[0;14YBangor[133X
-                [33X[0;14YGwynedd LL57 1UT[133X
-                [33X[0;14YUK[133X
-  
-  
   
   -------------------------------------------------------
   [1XAbstract[101X
@@ -55,8 +46,9 @@
   of [5XUtils[105X.[133X
   
   [33X[0;0YBug  reports,  suggestions  and  comments  are,  of  course, welcome. Please
-  contact  the  last  author  at  [7Xmailto:c.d.wensley@bangor.ac.uk[107X or submit an
-  issue at the GitHub repository [7Xhttp://github.com/gap-packages/utils/issues/[107X.[133X
+  contact  the  last author at [7Xmailto:cdwensley.maths@btinternet.com[107X or submit
+  an          issue          at          the         GitHub         repository
+  [7Xhttp://github.com/gap-packages/utils/issues/[107X.[133X
   
   
   -------------------------------------------------------
@@ -70,8 +62,11 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YThis  documentation was prepared with the [5XGAPDoc[105X package of Frank Lübeck and
-  Max Neunhöffer.[133X
+  [33X[0;0YThis  documentation  was  prepared  with  the [5XGAPDoc[105X package [LN12] of Frank
+  Lübeck and Max Neunhöffer.[133X
+  
+  [33X[0;0YThe  procedure  used  to  mount  new  releases  on  GitHub uses the packages
+  [5XGitHubPagesForGAP[105X [Hor14] and [5XReleaseTools[105X of Max Horn.[133X
   
   
   -------------------------------------------------------
@@ -122,6 +117,8 @@
     6.3 [33X[0;0YLaTeX strings[133X
       6.3-1 IntOrOnfinityToLaTeX
       6.3-2 LaTeXStringFactorsInt
+    6.4 [33X[0;0YApplicable methods[133X
+      6.4-1 PrintApplicableMethod
   7 [33X[0;0YThe transfer procedure[133X
   
   

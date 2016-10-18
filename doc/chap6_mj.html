@@ -41,6 +41,11 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87DEB2B58266F858">6.3-1 IntOrOnfinityToLaTeX</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DC642B97CD02F4E">6.3-2 LaTeXStringFactorsInt</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X78B7D1A982BE9866">6.4 <span class="Heading">Applicable methods</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B4D0CA279476088">6.4-1 PrintApplicableMethod</a></span>
+</div></div>
 </div>
 
 <h3>6 <span class="Heading">Various other functions</span></h3>
@@ -137,6 +142,58 @@ true
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LaTeXStringFactorsInt( Factorial(12) );</span>
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
+
+</pre></div>
+
+<p><a id="X78B7D1A982BE9866" name="X78B7D1A982BE9866"></a></p>
+
+<h4>6.4 <span class="Heading">Applicable methods</span></h4>
+
+<p><a id="X7B4D0CA279476088" name="X7B4D0CA279476088"></a></p>
+
+<h5>6.4-1 PrintApplicableMethod</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintApplicableMethod</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>This function combines calls to <code class="code">ApplicableMethod</code>, <code class="code">FilenameFunc</code>, <code class="code">StartlineFunc</code> and <code class="code">EndlineFunc</code> and prints the location of the file containing the method found, and a listing of that method. In its simplest form it is called as <code class="code">PrintApplicableMethod(f,L)</code> for a function <code class="code">f</code> and a list of parameters <code class="code">L</code>. Alternatively, it is called as <code class="code">PrintApplicableMethod(f,L,0,n)</code> and then prints the method returned by <code class="code">ApplicableMethod(f,L,0,n)</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );</span>
+this method is contained in lines [30,36] of file:
+    /Applications/gap/gapdev/lib/grp.gi
+function ( G )
+    if Length( GeneratorsOfGroup( G ) ) = 1  then
+        return true;
+    else
+        return TRY_NEXT_METHOD;
+    fi;
+    return;
+end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );</span>
+this method is contained in lines [41,63] of file:
+    /Applications/gap/gapdev/lib/grp.gi
+function ( G )
+    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1
+         then
+        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );
+        return true;
+    elif not IsCommutative( G )  then
+        return false;
+    elif IsFinite( G )  then
+        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )
+                return 
+                 Index( G, 
+                     SubgroupNC( G, 
+                       List( GeneratorsOfGroup( G ), function ( g )
+                              return g ^ p;
+                          end ) ) ) = p;
+            end );
+    else
+        return AbelianInvariants( G ) = [ 0 ];
+    fi;
+    return;
+end
 
 </pre></div>
 

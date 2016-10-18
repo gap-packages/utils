@@ -20,13 +20,13 @@
   
   [33X[0;0YTransfer is complete (for now) for functions from the following packages:[133X
   
-  [30X    [33X[0;6Y[5XAutoDoc[105X (with function names changed);[133X
+  [30X    [33X[0;6Y[5XAutoDoc[105X [GH16] (with function names changed);[133X
   
-  [30X    [33X[0;6Y[5XResClasses[105X;[133X
+  [30X    [33X[0;6Y[5XResClasses[105X [Koh16b];[133X
   
-  [30X    [33X[0;6Y[5XRCWA[105X;[133X
+  [30X    [33X[0;6Y[5XRCWA[105X [Koh16a];[133X
   
-  [30X    [33X[0;6Y[5XXMod[105X.[133X
+  [30X    [33X[0;6Y[5XXMod[105X [WAOU16].[133X
   
   [33X[0;0YThe  package  may  be  obtained  as  a  compressed  tar  file or a .zip file
   [11Xutils-version_number.tar.gz[111X by ftp from one of the following sites:[133X

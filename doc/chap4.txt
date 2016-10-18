@@ -127,11 +127,11 @@
   
   [33X[0;0YThese functions have been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YThey  are intended to produce a group homomorphism which maps the generators
-  of    [22XG[122X   to   those   of   [22XH[122X:   [10XEpimorphismByGenerators(G,H)[110X   just   calls
+  [33X[0;0YThey  construct a group homomorphism which maps the generators of [22XG[122X to those
+  of       [22XH[122X.      Note      that      [10XEpimorphismByGenerators(G,H)[110X      calls
   [10XEpimorphismByGeneratorsNC(G,H)[110X            which            calls            [10X
-  GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))[110X,
-  so no checks are made! [12XWarning:[112X use these functions with great care.[133X
+  GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))[110X.
+  Anything may happen if the resulting map is not a homomorphism![133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
