@@ -10,7 +10,7 @@
   <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.03.08)</C></title>
   <year>2016</year>
   <other type="note">
-    GAP package, <URL>https://gap-packages.github.io/AutoDoc</URL>
+    GAP package, <URL>https://github.com/gap-packages/AutoDoc</URL>
   </other>
 </manual></entry>
 
@@ -59,7 +59,7 @@
   <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.57)</C></title>
   <year>2016</year>
   <other type="note">
-    GAP package, <URL>https://gap-packages.github.io/xmod</URL>
+    GAP package, <URL>https://github.com/gap-packages/xmod</URL>
   </other>
 </manual></entry>
 
