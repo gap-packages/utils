@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd">
+<file>
+
+<entry id="AutoDoc"><manual>
+  <author>
+    <name><first>Sebastian</first><last>Gutsche</last></name>
+    <name><first>Max</first><last>Horn</last></name>
+  </author>
+  <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.03.08)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>https://gap-packages.github.io/AutoDoc</URL>
+  </other>
+</manual></entry>
+
+<entry id="GAPDoc"><manual>
+  <author>
+    <name><first>Frank</first><last>Lübeck</last></name>
+    <name><first>Max</first><last>Neunhöffer</last></name>
+  </author>
+  <title><C>GAPDoc (Version 1.5.1)</C></title>
+  <organization>RWTH Aachen</organization>
+  <year>2012</year>
+  <other type="note">
+    GAP package, <URL>http://www.gap-system.org/Packages/gapdoc.html</URL>
+  </other>
+</manual></entry>
+
+<entry id="RCWA"><manual>
+  <author>
+    <name><first>Stefan</first><last>Kohl</last></name>
+  </author>
+  <title><C>RCWA - Residue-Class-Wise Affine Groups (Version 4.4.1)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>http://www.gap-system.org/DevelopersPages/StefanKohl/rcwa.html</URL>
+  </other>
+</manual></entry>
+
+<entry id="ResClasses"><manual>
+  <author>
+    <name><first>Stefan</first><last>Kohl</last></name>
+  </author>
+  <title><C>ResClasses - Set-Theoretic Computations with Residue Classes (Version 4.5.0)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>http://www.gap-system.org/DevelopersPages/StefanKohl/resclasses.html</URL>
+  </other>
+</manual></entry>
+
+<entry id="XMod"><manual>
+  <author>
+    <name><first>Chris</first><last>Wensley</last></name>
+    <name><first>Murat</first><last>Alp</last></name>
+    <name><first>Alper</first><last>Odabas</last></name>
+    <name><first>Enver Onder</first><last>Uslu</last></name>
+  </author>
+  <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.57)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>https://gap-packages.github.io/xmod</URL>
+  </other>
+</manual></entry>
+
+</file>

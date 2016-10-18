@@ -36,16 +36,16 @@ none at present.
 Transfer is complete (for now) for functions from the following packages:
 <List>
 <Item>
-&AutoDoc; (with function names changed);
+&AutoDoc; <Cite Key="AutoDoc" /> (with function names changed);
 </Item>
 <Item>
-&ResClasses;;
+&ResClasses; <Cite Key="ResClasses" />;
 </Item>
 <Item>
-&RCWA;;
+&RCWA; <Cite Key="RCWA" />;
 </Item>
 <Item>
-&XMod;.
+&XMod; <Cite Key="XMod" />.
 </Item>
 </List>
 <P/>

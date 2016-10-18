@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This is an automatically generated file. -->
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
 [
 <!ENTITY see '<Alt Only="LaTeX">$	o$</Alt><Alt Not="LaTeX">--&gt;</Alt>'>
@@ -31,7 +30,7 @@
 <#Include SYSTEM "transfer.xml">
 </Body>
 
-<Bibliography Databases="manual"/>
+<Bibliography Databases="bib.xml"/>
 
 <TheIndex/>
 

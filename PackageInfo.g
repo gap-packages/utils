@@ -9,7 +9,7 @@ Packagename := "utils",
 Subtitle := "Utility functions in GAP",
 
 Version := "0.42",
-Date := "13/10/2016",
+Date := "18/10/2016",
 
 ##  Optional:
 ##    - Type and the URL of the source code repository
@@ -91,7 +91,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.2",
+  GAP := ">=4.8.5",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
