@@ -11,6 +11,16 @@ Subtitle := "Utility functions in GAP",
 Version := "0.42",
 Date := "18/10/2016",
 
+##  duplicate these values for inclusion in the manual: 
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY UTILSVERSION "0.42">
+##  <!ENTITY UTILSTARFILENAME "utils-0.42.tar.gz">
+##  <!ENTITY UTILSHTMLFILENAME "utils.html">
+##  <!ENTITY UTILSRELEASEDATE "18/10/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "18th October 2016">
+##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
+##  <#/GAPDoc>
+
 ##  Optional:
 ##    - Type and the URL of the source code repository
 ##    - URL of the public issue tracker
