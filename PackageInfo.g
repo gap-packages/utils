@@ -8,16 +8,16 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.42",
-Date := "18/10/2016",
+Version := "0.43",
+Date := "20/10/2016",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.42">
-##  <!ENTITY UTILSTARFILENAME "utils-0.42.tar.gz">
+##  <!ENTITY UTILSVERSION "0.43">
+##  <!ENTITY UTILSTARFILENAME "utils-0.43.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "18/10/2016">
-##  <!ENTITY UTILSLONGRELEASEDATE "18th October 2016">
+##  <!ENTITY UTILSRELEASEDATE "20/10/2016">
+##  <!ENTITY UTILSLONGRELEASEDATE "20th October 2016">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2016">
 ##  <#/GAPDoc>
 
@@ -36,7 +36,7 @@ ArchiveURL       := Concatenation( ~.SourceRepository.URL,
                                    "/releases/download/v", ~.Version,
                                    "/", ~.Packagename, "-", ~.Version ),
 ArchiveFormats := ".tar.gz .zip",
-SupportEmail     := "cdwensley.maths@btinternet.com",
+SupportEmail     := "c.d.wensley@bangor.ac.uk",
 
 Persons := [
   rec(
@@ -67,16 +67,16 @@ Persons := [
     FirstNames    := "Christopher D.",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "cdwensley.maths@btinternet.com",
+    Email         := "c.d.wensley@bangor.ac.uk",
     WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
-    ## PostalAddress := Concatenation( [
-    ##                    "Dr. C.D. Wensley\n",
-    ##                    "School of Computer Science\n",
-    ##                    "Bangor University\n",
-    ##                    "Dean Street\n",
-    ##                    "Bangor\n",
-    ##                    "Gwynedd LL57 1UT\n",
-    ##                    "UK"] ),
+    PostalAddress := Concatenation( [
+                       "Dr. C.D. Wensley\n",
+                       "School of Computer Science\n",
+                       "Bangor University\n",
+                       "Dean Street\n",
+                       "Bangor\n",
+                       "Gwynedd LL57 1UT\n",
+                       "UK"] ),
     Place         := "Bangor",
     Institution   := "Bangor University"
   )
