@@ -32,16 +32,16 @@
 
   <Author>
     Christopher D. Wensley<Alt Only="LaTeX"><Br/></Alt>
-<!-- <Address>                        -->
-<!-- Dr. C.D. Wensley<Br/>            -->
-<!-- School of Computer Science<Br/>. -->
-<!-- Bangor University<Br/>           -->
-<!-- Dean Street<Br/>                 -->
-<!-- Bangor<Br/>                      -->
-<!-- Gwynedd LL57 1UT<Br/>            -->
-<!-- UK<Br/>                          -->
-<!-- </Address>                       -->
-    <Email>cdwensley.maths@btinternet.com</Email>
+    <Address> 
+      Dr. C.D. Wensley<Br/> 
+      School of Computer Science<Br/> 
+      Bangor University<Br/> 
+      Dean Street<Br/> 
+      Bangor<Br/> 
+      Gwynedd LL57 1UT<Br/> 
+      UK<Br/> 
+    </Address> 
+    <Email>c.d.wensley@bangor.ac.uk</Email>
     <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
   </Author>
 
@@ -58,7 +58,7 @@ Any package author who transfers a function to &Utils; will become
 an author of &Utils;. 
 <P/>
 Bug reports, suggestions and comments are, of course, welcome. 
-Please contact the last author at <Email>cdwensley.maths@btinternet.com</Email> 
+Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
 or submit an issue at the GitHub repository 
 <URL>http://github.com/gap-packages/utils/issues/</URL>. 
 </Abstract>

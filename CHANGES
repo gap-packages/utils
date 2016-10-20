@@ -6,10 +6,9 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
-Version 0.42 for GAP 4.8.5 (18/10/16) 
+Version 0.43 for GAP 4.8.5 (20/10/16) 
 
  - (18/10/16) now using bibliography file bib.xml of type "bibxmlext.dtd"
- - (13/10/16) changed email address for Chris Wensley
 
 #############################################################################
 Version 0.41 for GAP 4.8.3 (25/05/16) 
