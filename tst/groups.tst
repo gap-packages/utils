@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 4.1.1 
 gap> Comm( [ (1,2), (2,3) ] );
 (1,2,3)
@@ -63,10 +66,15 @@ gap> a := G.1;; b := G.2;; c := G.3;; d := G.4;;
 gap> d*c*b*a;
 (1,2,3,4,5,6,7,8,9)
 gap> ## note that it is easy to produce nonsense: 
-gap> e0 := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );
+gap> epi := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );
+Warning: calling GroupHomomorphismByImagesNC without checks
 [ (1,2,3) ] -> [ (8,9) ]
-gap> IsGroupHomomorphism(e0);
+gap> IsGroupHomomorphism( epi );
 true
+gap> Image(epi,(1,2,3));                                            
+()
+gap> Image(epi,(1,3,2));
+(8,9)
 
 #############################################################################
 ##

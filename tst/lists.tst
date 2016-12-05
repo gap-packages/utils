@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 2.1.1 
 gap> List( [1..12], n->n^3 );
 [ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728 ]
@@ -64,6 +67,25 @@ gap> P := Positions( L, 157 );
 gap> Length( C );  DifferencesList( P );
 12
 [ 12, 12, 12, 12, 12, 12, 12 ]
+
+## SubSection 2.1.5 
+gap> PrintListOneItemPerLine( [4,5,6] );
+[ 4,
+  5,
+  6
+  ]
+
+## Subsection 2.1.6
+gap> PositionsNonzero([0,1,0,2,0]);
+[ 2, 4 ]
+gap> PositionsNonzero([0,0,0]);    
+[  ]
+gap> PositionsNonzero([7,8,9]);            
+[ 1, 2, 3 ]
+
+## Subsection 2.1.7 
+gap> NullList( 5, Rationals );
+[ 0, 0, 0, 0, 0 ]
 
 ## SubSection 2.2.1 
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;

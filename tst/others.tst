@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 6.5.1 
 gap> IntOrInfinityToLaTeX( 10^3 );
 "1000"

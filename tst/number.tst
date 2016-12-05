@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 3.1.1 
 gap> AllSmoothIntegers( 3, 1000 );
 [ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 54, 64, 72, 81, 96, 

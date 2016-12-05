@@ -7,23 +7,23 @@
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  these functions have been transferred from RCWA
+##  these three functions were in RCWA and were initially transferred
+##  to simplify the situation, just EpimorphismByGenerators has been retained 
 ##
 #F  EpimorphismByGenerators( <D1>, <D2> ) . epi: gen's of <D1>->gen's of <D2>
 #M  EpimorphismByGeneratorsNC( <D1>, <D2> ) .  NC version as underlying oper.
 #M  EpimorphismByGeneratorsNC( <G>, <H> ) . . . . . . . . . . . .  for groups
 ##
-InstallMethod( EpimorphismByGeneratorsNC, "for groups", ReturnTrue, 
-    [ IsGroup, IsGroup ], 0,
+InstallMethod( EpimorphismByGenerators, "for groups", ReturnTrue, 
+    [ IsGroup, IsGroup ], 0, 
 
 function( G, H )
-    return GroupHomomorphismByImagesNC( G, H, GeneratorsOfGroup(G),
+    if not ( IsFreeGroup( G ) ) then 
+      Print( "Warning: calling GroupHomomorphismByImagesNC without checks\n" );
+    fi; 
+    
+return GroupHomomorphismByImagesNC( G, H, GeneratorsOfGroup(G),
                                               GeneratorsOfGroup(H) );
-end );
-
-InstallGlobalFunction( EpimorphismByGenerators,
-function ( D1, D2 )
-    return EpimorphismByGeneratorsNC( D1, D2 );
 end );
 
 fi; 

@@ -6,6 +6,13 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
+Version 0.44 for GAP 4.8.6 (05/12/16) 
+
+ - (05/12/16) added PositionsNonzero and NullList from QPA 
+ - (05/12/16) added tst/loadall.g and adjusted tst/testall.g, tst/*.tst 
+ - (14/11/16) issue #2 reopened by Max: EpimorphismByGeneratorsNC removed 
+
+#############################################################################
 Version 0.43 for GAP 4.8.5 (20/10/16) 
 
  - (18/10/16) now using bibliography file bib.xml of type "bibxmlext.dtd"

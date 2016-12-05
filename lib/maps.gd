@@ -7,14 +7,14 @@
 if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
-##  these functions have been transferred from RCWA 
+##  these three functions were in RCWA and were initially transferred
+##  to simplify the situation, just EpimorphismByGenerators has been retained 
 ##
-#F  EpimorphismByGenerators( <D1>, <D2> ) .epi.: gen's of <D1>->gen's of <D2>
-#O  EpimorphismByGeneratorsNC( <D1>, <D2> ) .  NC version as underlying oper.
+#O  EpimorphismByGenerators( <D1>, <D2> ) . epi: gen's of <D1>->gen's of <D2>
+#O  EpimorphismByGeneratorsNC( <D1>, <D2> ) . . NC version as underlying oper
 #M  EpimorphismByGeneratorsNC( <G>, <H> ) . . . . . . . . . . . .  for groups
 ##
-DeclareOperation( "EpimorphismByGeneratorsNC", [ IsDomain, IsDomain ] );
-DeclareGlobalFunction( "EpimorphismByGenerators" );
+DeclareOperation( "EpimorphismByGenerators", [ IsDomain, IsDomain ] );
 
 fi; 
 

@@ -51,6 +51,19 @@ DeclareGlobalFunction( "SearchCycle" );
 
 fi; 
 
+if OKtoReadFromUtils( "QPA" ) then
+
+#############################################################################
+##  these functions have been transferred from QPA 
+##
+#O  PositionsNonzero( <l> ) . . . . .  positions of nonzero entries in a list
+#O  NullList( <l>, <f> ) . . . . . . . . . . . . . . .  creates an empty list 
+##
+DeclareOperation( "PositionsNonzero", [ IsList ] );
+DeclareOperation( "NullList", [ IsPosInt, IsField ] );
+
+fi; 
+
 #############################################################################
 ##
 #E  lists.gd  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

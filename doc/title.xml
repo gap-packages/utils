@@ -14,12 +14,6 @@
 
   <Author>
     Sebastian Gutsche<Alt Only="LaTeX"><Br/></Alt>
-    <Address>
-      Department of Mathematics<Br/>
-      University of Kaiserslautern<Br/>
-      67653 Kaiserslautern<Br/>
-      Germany<Br/>
-    </Address>
     <Email>gutsche@mathematik.uni-kl.de</Email>
     <Homepage>http://wwwb.math.rwth-aachen.de/~gutsche/</Homepage>
   </Author>
@@ -31,16 +25,13 @@
   </Author>
 
   <Author>
+    Øystein Skartsæterhagen<Alt Only="LaTeX"><Br/></Alt> 
+      <Email>oysteini@math.ntnu.no</Email>
+      <Homepage>https://www.math.ntnu.no/~oysteini/</Homepage>
+  </Author>
+
+  <Author>
     Christopher D. Wensley<Alt Only="LaTeX"><Br/></Alt>
-    <Address> 
-      Dr. C.D. Wensley<Br/> 
-      School of Computer Science<Br/> 
-      Bangor University<Br/> 
-      Dean Street<Br/> 
-      Bangor<Br/> 
-      Gwynedd LL57 1UT<Br/> 
-      UK<Br/> 
-    </Address> 
     <Email>c.d.wensley@bangor.ac.uk</Email>
     <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
   </Author>

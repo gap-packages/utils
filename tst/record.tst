@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 2.1.1 
 
 gap> r := rec( a := 1, b := 2 );                                      

@@ -86,7 +86,9 @@ fi;
 The function <C>OKtoReadFromUtils</C> returns <C>true</C> 
 only if there is an installed version of &Home; 
 and if this version is greater than <B>m.n</B>. 
-So, at this stage, <E>the copied code will not be read</E>. 
+So, at this stage, <E>the copied code will not be read</E>, 
+and the transferred functions can only be called if <Package>Home</Package> 
+has been installed. 
 </Item>
 <Item>
 (&Utils;:)

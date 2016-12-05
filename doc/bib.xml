@@ -7,7 +7,7 @@
     <name><first>Sebastian</first><last>Gutsche</last></name>
     <name><first>Max</first><last>Horn</last></name>
   </author>
-  <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.03.08)</C></title>
+  <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.11.26)</C></title>
   <year>2016</year>
   <other type="note">
     GAP package, <URL>https://github.com/gap-packages/AutoDoc</URL>
@@ -36,6 +36,17 @@
   <year>2014</year>
   <other type="note">
     GAP package, <URL>https://github.com/fingolfin/GitHubPagesForGAP/</URL>
+  </other>
+</manual></entry>
+
+<entry id="QPA"><manual>
+  <author>
+    <name><first></first><last>The QPA-team</last></name>
+  </author>
+  <title><C>QPA - Quivers and Path Algebras (Version 1.25)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>https://www.math.ntnu.no/~oyvinso/QPA/</URL>
   </other>
 </manual></entry>
 
@@ -68,7 +79,7 @@
     <name><first>Alper</first><last>Odabas</last></name>
     <name><first>Enver Onder</first><last>Uslu</last></name>
   </author>
-  <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.57)</C></title>
+  <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.58)</C></title>
   <year>2016</year>
   <other type="note">
     GAP package, <URL>https://github.com/gap-packages/xmod</URL>

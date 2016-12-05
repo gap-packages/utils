@@ -166,6 +166,46 @@ gap> PrintListOneItemPerLine( L );
 ]]>
 </Example>
 
+<ManSection>
+   <Oper Name="PositionsNonzero"
+         Arg="L" />
+<Description>
+This function has been transferred from package &QPA;. 
+<P/>
+It applies the operation <C>PositionsProperty</C> to a list 
+using the property <C>not(IsZero)</C>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> PositionsNonzero( [0,1,0,2,0]; 
+[ 2, 4 ]
+gap> PositionsNonzero( [0,0,0] ); 
+[  ]
+gap> PositionsNonzero( [7,8,9] ); 
+[ 1, 2, 3 ]
+]]>
+</Example>
+
+<ManSection>
+   <Oper Name="NullList"
+         Arg="n,F" />
+<Description>
+This function has been transferred from package &QPA;. 
+<P/>
+A call of <C>NullList( n, F )</C> returns a list of length <M>n</M> 
+whose entries are the zeroes in the field <M>F</M>. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> NullList( 5, Rationals ); 
+[ 0, 0, 0, 0, 0 ]
+]]>
+</Example>
+
 </Section>
 
 
@@ -279,7 +319,6 @@ gap> StringDotSuffix( "Hello" );
 fail
 ]]>
 </Example>
-
 
 </Section>
 

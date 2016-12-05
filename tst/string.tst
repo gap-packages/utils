@@ -5,6 +5,9 @@
 #Y  Copyright (C) 2015-2016, The GAP Group 
 ##  
 
+gap> UtilsLoadingComplete;
+true
+
 ## SubSection 2.3.1 
 
 gap> D12 := DihedralGroup( 12 ); 

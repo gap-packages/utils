@@ -29,7 +29,7 @@ gap> LoadPackage( "utils" );
 Functions are currently being transferred from the following packages: 
 <List>
 <Item>
-none at present. 
+&QPA; <Cite Key="QPA" />;
 </Item>
 </List>
 <P/>

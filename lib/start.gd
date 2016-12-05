@@ -13,8 +13,14 @@ UtilsPackageVersions :=
   [ "autodoc",     "2016.01.31", 
     "resclasses",  "4.2.5",         ## latest is 4.2.0, 02/03/16 
     "rcwa",        "4.1.5",         ## latest is 4.1.0, 02/03/16 
+    "qpa",         "1.25",
     "xmod",        "2.55" 
   ];
+
+##  functions being transferred cannot be used until the Home packages have  
+##  been loaded: when this has been done the following variable is set true 
+
+UtilsLoadingComplete := false; 
 
 #############################################################################
 ##

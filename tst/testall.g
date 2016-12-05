@@ -10,6 +10,10 @@ LoadPackage( "utils" );
 ##  first make sure that, if the transferred code has not been read, 
 ##  then the appropriate packages are loaded. 
 
+if not UtilsLoadingComplete then 
+    ReadPackage( "utils", "tst/loadall.g" ); 
+fi; 
+
 len := Length( UtilsPackageVersions ); 
 j := 0; 
 while ( j < len ) do 
