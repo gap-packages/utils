@@ -164,10 +164,10 @@ function( list )
                end );
 end );
 
-InstallMethod( NullList, "for a positive integer and a field",
-    [ IsPosInt, IsField ],
-function( length, field )
-    return NullMat( 1, length, field )[ 1 ];
+InstallMethod( NullList, "for a positive integer and a ring",
+    [ IsPosInt, IsRing ],
+function( length, ring )
+    return NullMat( 1, length, ring )[ 1 ];
 end );
 
 fi; 

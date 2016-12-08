@@ -80,8 +80,8 @@ gap> PositionsNonzero([0,1,0,2,0]);
 [ 2, 4 ]
 gap> PositionsNonzero([0,0,0]);    
 [  ]
-gap> PositionsNonzero([7,8,9]);            
-[ 1, 2, 3 ]
+gap> PositionsNonzero( [-5..5] );
+[ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ]
 
 ## Subsection 2.1.7 
 gap> NullList( 5, Rationals );
