@@ -3,7 +3,7 @@
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##                                                              Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2017, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
 

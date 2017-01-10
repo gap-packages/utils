@@ -3,7 +3,7 @@
 #W  lists.gd                    GAP4 package `Utils'               Stefan Kohl
 ##                                                               Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2017, The GAP Group 
 
 if OKtoReadFromUtils( "XMod" ) then
 
@@ -57,7 +57,7 @@ if OKtoReadFromUtils( "QPA" ) then
 ##  these functions have been transferred from QPA 
 ##
 #O  PositionsNonzero( <l> ) . . . . .  positions of nonzero entries in a list
-#O  NullList( <l>, <f> ) . . . . . . . . . . . . .  creates an list of zeroes 
+#O  NullList( <l>, <f> ) . . . . . . . . . . . . . . creates a list of zeroes 
 ##
 DeclareOperation( "PositionsNonzero", [ IsList ] );
 DeclareOperation( "NullList", [ IsPosInt, IsRing ] );

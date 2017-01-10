@@ -48,6 +48,8 @@ In this way it is hoped that they will become more visible to package authors.
 Any package author who transfers a function to &Utils; will become 
 an author of &Utils;. 
 <P/>
+If deemed appropriate, functions may also be transferred from the main library.
+<P/>
 Bug reports, suggestions and comments are, of course, welcome. 
 Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
 or submit an issue at the GitHub repository 

@@ -6,7 +6,7 @@ Problems and ToDos:
               so need to check with Stefan whether this is needed in Utils 
 
 #############################################################################
-Version 0.44 for GAP 4.8.6 (08/12/16) 
+Version 0.44 for GAP 4.8.6 (10/01/17) 
 
  - (08/12/16) added PositionsNonzero and NullList from QPA 
  - (05/12/16) added tst/loadall.g and adjusted tst/testall.g, tst/*.tst 
