@@ -1,3 +1,11 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  title.xml               Utils documentation                        -->
+<!--                                                                     -->
+<!--  Copyright (C) 2015-2017, The GAP Group                             --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- This is an automatically generated file. -->
@@ -22,12 +30,6 @@
     Stefan Kohl<Alt Only="LaTeX"><Br/></Alt>
       <Email>stefan@mcs.st-and.ac.uk</Email>
       <Homepage>http://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
-  </Author>
-
-  <Author>
-    Øystein Skartsæterhagen<Alt Only="LaTeX"><Br/></Alt> 
-      <Email>oysteini@math.ntnu.no</Email>
-      <Homepage>https://www.math.ntnu.no/~oysteini/</Homepage>
   </Author>
 
   <Author>

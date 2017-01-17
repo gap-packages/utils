@@ -28,9 +28,6 @@ gap> LoadPackage( "utils" );
 <P/>
 Functions are currently being transferred from the following packages: 
 <List>
-<Item>
-&QPA; <Cite Key="QPA" />;
-</Item>
 </List>
 <P/>
 Transfer is complete (for now) for functions from the following packages:
@@ -119,6 +116,10 @@ The function does not do what can already be done with a &GAP; library function.
 </Item>
 <Item>
 Documentation of the function and test examples are available. 
+</Item>
+<Item>
+When there is more than one active author of Home, they should all be aware 
+(and content) that the transfer is taking place. 
 </Item>
 </List> 
 <P/>
