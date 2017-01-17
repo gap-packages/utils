@@ -15,7 +15,6 @@
   distinct and common representatives  2.2
   [2XDistinctRepresentatives[102X  2.2-1
   [2XEpimorphismByGenerators[102X  4.2-1
-  [2XEpimorphismByGeneratorsNC[102X  4.2-1
   [2XExponentOfPrime[102X  3.1-4
   [2XFindMatchingFiles[102X  6.1-1
   Fitting series  4.1-5

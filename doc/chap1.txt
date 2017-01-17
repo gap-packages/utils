@@ -16,8 +16,6 @@
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
-  [30X    [33X[0;6Ynone at present.[133X
-  
   [33X[0;0YTransfer is complete (for now) for functions from the following packages:[133X
   
   [30X    [33X[0;6Y[5XAutoDoc[105X [GH16] (with function names changed);[133X
@@ -28,8 +26,8 @@
   
   [30X    [33X[0;6Y[5XXMod[105X [WAOU16].[133X
   
-  [33X[0;0YThe  package  may  be  obtained  as  a  compressed  tar  file or a .zip file
-  [11Xutils-version_number.tar.gz[111X by ftp from one of the following sites:[133X
+  [33X[0;0YThe  package  may  be obtained either as a compressed [10X.tar[110X file or as a [10X.zip[110X
+  file, [11Xutils-version_number.tar.gz[111X, by ftp from one of the following sites:[133X
   
   [30X    [33X[0;6Ythe [5XUtils[105X GitHub release site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
   
@@ -61,9 +59,9 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YNote  that  functions  listed  in  this  manual  that  are  currently  being
-  transferred  are  only  read  from the source package [5XHome[105X (say), and so can
-  only be used if [5XHome[105X has been previously loaded.[133X
+  [33X[0;0YNote  that functions listed in this manual that are currently in the process
+  of  being  transferred are only read from the source package [5XHome[105X (say), and
+  so can only be used if [5XHome[105X has already been loaded.[133X
   
   
   [1X1.1 [33X[0;0YInformation for package authors[133X[101X
@@ -80,6 +78,9 @@
         function.[133X
   
   [30X    [33X[0;6YDocumentation of the function and test examples are available.[133X
+  
+  [30X    [33X[0;6YWhen  there is more than one active author of Home, they should all be
+        aware (and content) that the transfer is taking place.[133X
   
   [33X[0;0YAuthors  of  packages may be reluctant to let go of their utility functions.
   The  following  principles  may help to reassure them. (Suggestions for more

@@ -175,10 +175,9 @@ false
 <h5>4.2-1 EpimorphismByGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGenerators</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGeneratorsNC</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>These functions have been transferred from package <strong class="pkg">RCWA</strong>.</p>
+<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>They construct a group homomorphism which maps the generators of <span class="SimpleMath">\(G\)</span> to those of <span class="SimpleMath">\(H\)</span>. Note that <code class="code">EpimorphismByGenerators(G,H)</code> calls <code class="code">EpimorphismByGeneratorsNC(G,H)</code> which calls <code class="code"> GroupHomomorphismByImagesNC(G,H,GeneratorsOfGroup(G),GeneratorsOfGroup(H))</code>. Anything may happen if the resulting map is not a homomorphism!</p>
+<p>It constructs a group homomorphism which maps the generators of <span class="SimpleMath">\(G\)</span> to those of <span class="SimpleMath">\(H\)</span>. Its intended use is when <span class="SimpleMath">\(G\)</span> is a free group, and a warning is printed when this is not the case. Note that anything may happen if the resulting map is not a homomorphism!</p>
 
 
 <div class="example"><pre>
@@ -193,9 +192,14 @@ d*c*b*a
 (1,2,3,4,5,6,7,8,9)
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## note that it is easy to produce nonsense: </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">epi := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );</span>
+Warning: calling GroupHomomorphismByImagesNC without checks
 [ (1,2,3) ] -&gt; [ (8,9) ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGroupHomomorphism( epi );</span>
 true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Image( epi, (1,2,3) );                                            </span>
+()
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Image( epi, (1,3,2) );</span>
+(8,9)
 
 </pre></div>
 

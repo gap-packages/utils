@@ -24,7 +24,7 @@
   [31X1[131X   [33X[0;6Y([5XHome[105X:)  Offer  functions  for  inclusion.  This may be simply done by
         emailing  a  list  of functions. More usefully, email the declaration,
         implementation,  test and documentation files, e.g.: [11Xhome.gd[111X, [11Xhome.gi[111X,
-        [11Xhome.tst[111X and [11Xhome.xml[111X.[133X
+        [11Xhome.tst[111X and [11Xhome.xml[111X. (All active authors should be involved.)[133X
   
   [31X2[131X   [33X[0;6Y([5XHome[105X:)  Declare that [12Xm.n[112X is the last version of [5XHome[105X to contain these
         functions,  so  that  [12Xm.n+1[112X  (or similar) will be the first version of
@@ -64,7 +64,8 @@
   
         [33X[0;6YThe  function  [10XOKtoReadFromUtils[110X  returns  [10Xtrue[110X  only  if  there is an
         installed version of [5XHome[105X and if this version is greater than [12Xm.n[112X. So,
-        at this stage, [13Xthe copied code will not be read[113X.[133X
+        at  this  stage, [13Xthe copied code will not be read[113X, and the transferred
+        functions can only be called if [5XHome[105X has been installed.[133X
   
   [31X5[131X   [33X[0;6Y([5XUtils[105X:)  Add  the  test and documentation material to the appropriate
         files.  The  copied code can be tested by temporarily moving [5XHome[105X away
