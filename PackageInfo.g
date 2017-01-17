@@ -8,13 +8,13 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.44",
+Version := "0.45",
 Date := "17/01/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.44">
-##  <!ENTITY UTILSTARFILENAME "utils-0.44.tar.gz">
+##  <!ENTITY UTILSVERSION "0.45">
+##  <!ENTITY UTILSTARFILENAME "utils-0.45.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
 ##  <!ENTITY UTILSRELEASEDATE "17/01/2017">
 ##  <!ENTITY UTILSLONGRELEASEDATE "17th January 2017">
@@ -57,14 +57,6 @@ Persons := [
     Email         := "stefan@mcs.st-and.ac.uk",
     WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
   ), 
-  rec( 
-    LastName      := "Skartsæterhagen",
-    FirstNames    := "Øystein",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    Email         := "oysteini@math.ntnu.no",
-    WWWHome       := "https://www.math.ntnu.no/~oysteini/"
-  ), 
   rec(
     LastName      := "Wensley",
     FirstNames    := "Christopher D.",
@@ -96,7 +88,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.5",
+  GAP := ">=4.8.6",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]

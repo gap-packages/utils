@@ -28,6 +28,10 @@ gap> LoadPackage( "utils" );
 <P/>
 Functions are currently being transferred from the following packages: 
 <List>
+<Item>
+Conversion of a &GAP; group to a Magma output string, taken from various 
+sources including <File>other.gi</File> in the main library. 
+</Item>
 </List>
 <P/>
 Transfer is complete (for now) for functions from the following packages:
