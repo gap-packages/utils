@@ -64,6 +64,18 @@ http://magma.maths.usyd.edu.au/magma/
 </manual>
 </entry> 
 
+
+<entry id="QPA"><manual>
+  <author>
+    <name><first></first><last>The QPA-team</last></name>
+  </author>
+  <title><C>QPA - Quivers and Path Algebras (Version 1.25)</C></title>
+  <year>2016</year>
+  <other type="note">
+    GAP package, <URL>https://www.math.ntnu.no/~oyvinso/QPA/</URL>
+  </other>
+</manual></entry>
+
 <entry id="RCWA"><manual>
   <author>
     <name><first>Stefan</first><last>Kohl</last></name>

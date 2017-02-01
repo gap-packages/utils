@@ -8,7 +8,6 @@
 #############################################################################
 ##
 #F  ConvertToMagmaInputString( <obj> )  . . output a string readable by Magma 
-#F  ConvertFromMagmaOutputString( <obj> ) . input Magma string readable by GAP
 ##
 InstallGlobalFunction( ConvertToMagmaInputString,
 

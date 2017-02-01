@@ -27,13 +27,37 @@
   </Author>
 
   <Author>
+    Max Horn<Alt Only="LaTeX"><Br/></Alt>
+      <Email>max.horn@math.uni-giessen.de</Email>
+      <Homepage>http://www.quendi.de/math</Homepage>
+  </Author>
+
+  <Author>
+    Alexander Hulpke<Alt Only="LaTeX"><Br/></Alt>
+      <Email>hulpke@math.colostate.edu</Email>
+      <Homepage>http://www.math.colostate.edu/~hulpke</Homepage>
+  </Author>
+
+  <Author>
     Stefan Kohl<Alt Only="LaTeX"><Br/></Alt>
       <Email>stefan@mcs.st-and.ac.uk</Email>
       <Homepage>http://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
   </Author>
 
   <Author>
-    Christopher D. Wensley<Alt Only="LaTeX"><Br/></Alt>
+    Frank Lübeck<Alt Only="LaTeX"><Br/></Alt>
+      <Email>Frank.Luebeck@Math.RWTH-Aachen.De</Email>
+      <Homepage>http://www.math.rwth-aachen.de:8001/~Frank.Luebeck</Homepage>
+  </Author>
+
+  <Author>
+    Øystein Skartsæterhagen<Alt Only="LaTeX"><Br/></Alt> 
+      <Email>oysteini@math.ntnu.no</Email>
+      <Homepage>https://www.math.ntnu.no/~oysteini/</Homepage>
+  </Author>
+
+  <Author>
+    Chris Wensley<Alt Only="LaTeX"><Br/></Alt>
     <Email>c.d.wensley@bangor.ac.uk</Email>
     <Homepage>http://pages.bangor.ac.uk/~mas023/</Homepage>
   </Author>

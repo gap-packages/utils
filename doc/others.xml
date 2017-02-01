@@ -201,8 +201,6 @@ end
 <ManSection>
   <Func Name="ConvertToMagmaInputString" 
         Arg="arg"/>
-  <Func Name="ConvertFromMagmaOutputString" 
-        Arg="arg"/>
 <Description>
 The function <C>ConvertToMagmaInputString( obj [, str] )</C> 
 attempts to output a string <C>s</C> which can be read into 
@@ -218,8 +216,6 @@ When <C>obj</C> is a pc-group, the operation
 <C>PcGroupToMagmaFormat(obj)</C> is called. 
 This function was private code of Max Horn. 
 Hopefully code for other types of group will be added in due course. 
-<P/>
-As yet there is no implementation of <C>ConvertFromMagmaOutputString</C>. 
 <P/>
 </Description>
 </ManSection>
