@@ -46,6 +46,11 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B4D0CA279476088">6.4-1 PrintApplicableMethod</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7C258B9783E700F2">6.5 <span class="Heading">Conversion to <strong class="pkg">MAGMA</strong> string</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8768D7707B4CBBD4">6.5-1 ConvertToMagmaInputString</a></span>
+</div></div>
 </div>
 
 <h3>6 <span class="Heading">Various other functions</span></h3>
@@ -90,7 +95,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Log2HTML</code>( <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>This function converts the <strong class="pkg">GAP</strong> logfile logfilename to HTML. The extension of the input file must be <code class="file">*.log</code>. The name of the output file is the same as the one of the input file except that the extension <code class="file">*.log</code> is replaced by <code class="file">*.html</code>. There is a sample CSS file in <code class="file">utils/doc/gaplog.css</code>, which you can adjust to your taste.</p>
+<p>This function converts the <strong class="pkg">GAP</strong> logfile <code class="file">filename</code> to HTML. The extension of the input file must be <code class="file">*.log</code>. The name of the output file is the same as the one of the input file except that the extension <code class="file">*.log</code> is replaced by <code class="file">*.html</code>. There is a sample CSS file in <code class="file">utils/doc/gaplog.css</code>, which you can adjust to your taste.</p>
 
 
 <div class="example"><pre>
@@ -194,6 +199,63 @@ function ( G )
     fi;
     return;
 end
+
+</pre></div>
+
+<p><a id="X7C258B9783E700F2" name="X7C258B9783E700F2"></a></p>
+
+<h4>6.5 <span class="Heading">Conversion to <strong class="pkg">MAGMA</strong> string</span></h4>
+
+<p><a id="X8768D7707B4CBBD4" name="X8768D7707B4CBBD4"></a></p>
+
+<h5>6.5-1 ConvertToMagmaInputString</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConvertToMagmaInputString</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>The function <code class="code">ConvertToMagmaInputString( obj [, str] )</code> attempts to output a string <code class="code">s</code> which can be read into <strong class="pkg">MAGMA</strong> <a href="chapBib_mj.html#biBMAGMA">[BCP97]</a> so as to produce the same group in that computer algebra system. In the second form the user specifies the name of the resulting object, so that the output string has the form <code class="code">"str := ..."</code>. When <code class="code">obj</code> is a permutation group, the operation <code class="code">PermGroupToMagmaFormat(obj)</code> is called. This function has been taken from <code class="file">other.gi</code> in the main library where it was called <code class="code">MagmaInputString</code>. When <code class="code">obj</code> is a pc-group, the operation <code class="code">PcGroupToMagmaFormat(obj)</code> is called. This function was private code of Max Horn. When <code class="code">obj</code> is a matrix group over a finite field, the operation <code class="code">MatrixGroupToMagmaFormat(obj)</code> is called. This function is a modification of private code of Frank Lübeck.</p>
+
+<p>Hopefully code for other types of group will be added in due course.</p>
+
+<p>These functions should be considered <em>experimental</em>, and more testing is desirable.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );</span>
+"PermutationGroup&lt;5|(1,2,3,4,5),\n(3,4,5)&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        </span>
+"c5:=PermutationGroup&lt;5|(1,2,3,4,5)&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( SmallGroup( 24, 12 ) );      </span>
+"PolycyclicGroup&lt; f1,f2,f3,f4 |\nf1^2,\nf2^3,\nf3^2,\nf4^2,\nf2^f1 = f2^2,\nf3\
+^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );</span>
+"c7:=PolycyclicGroup&lt; f1 |\nf1^7\n&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := GL(2,5);;  Size(M); </span>
+480
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := ConvertToMagmaInputString( M );</span>
+"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub&lt;P |\
+ gens&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( s1 );</span>
+F := GF(5);
+P := GL(2,F);
+gens := [
+P![2,0,0,1],
+P![4,1,4,0]
+];
+sub&lt;P | gens&gt;;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N := Group( n1, n2 );;  Size( N );</span>
+5760
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := ConvertToMagmaInputString( N, "gpN" );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( s2 );</span>
+F := GF(3^2);
+P := GL(2,F);
+w := PrimitiveElement(F);
+gens := [
+P![ 1, 1, 1,w^1],
+P![ 1,w^3, 2,w^2]
+];
+gpN := sub&lt;P | gens&gt;;
 
 </pre></div>
 

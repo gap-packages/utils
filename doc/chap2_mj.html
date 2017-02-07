@@ -33,6 +33,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86096E73858CFABD">2.1-3 SearchCycle</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EF06CAD7F35245D">2.1-4 RandomCombination</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X80D711F78325FCE5">2.1-5 PrintListOneItemPerLine</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A47B5BF7CA13563">2.1-6 PositionsNonzero</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78732E897F4A7FDE">2.1-7 NullList</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X82F443FF84B8FCE3">2.2 <span class="Heading">Distinct and Common Representatives</span></a>
 </span>
@@ -185,6 +187,44 @@
   IsGeneratorsOfSemigroup,
   IsSubsetLocallyFiniteGroup
   ]
+
+</pre></div>
+
+<p><a id="X7A47B5BF7CA13563" name="X7A47B5BF7CA13563"></a></p>
+
+<h5>2.1-6 PositionsNonzero</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PositionsNonzero</code>( <var class="Arg">L</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>This function is being transferred from package <strong class="pkg">QPA</strong>.</p>
+
+<p>It returns the list of positions of all nonzero elements in a list by applying the operation <code class="code">PositionsProperty</code> using the property <code class="code">not(IsZero)</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PositionsNonzero( [0,1,0,2,0]; </span>
+[ 2, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PositionsNonzero( [0,0,0] ); </span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PositionsNonzero( [-5..5] ); </span>
+[ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ]
+
+</pre></div>
+
+<p><a id="X78732E897F4A7FDE" name="X78732E897F4A7FDE"></a></p>
+
+<h5>2.1-7 NullList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NullList</code>( <var class="Arg">n</var>, <var class="Arg">F</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>This function is being transferred from package <strong class="pkg">QPA</strong>.</p>
+
+<p>A call of <code class="code">NullList(n,F)</code> returns a list of length <span class="SimpleMath">\(n\)</span> whose entries are the zero in the field <span class="SimpleMath">\(F\)</span>. (Once the transfer is complete, the restriction that <span class="SimpleMath">\(F\)</span> should be a field will be relaxed.)</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NullList( 5, Rationals ); </span>
+[ 0, 0, 0, 0, 0 ]
 
 </pre></div>
 

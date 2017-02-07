@@ -16,6 +16,11 @@
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
+  [30X    [33X[0;6Y[5XQPA[105X [TQ16];[133X
+  
+  [30X    [33X[0;6YConversion of a [5XGAP[105X group to a Magma output string, taken from various
+        sources including [11Xother.gi[111X in the main library.[133X
+  
   [33X[0;0YTransfer is complete (for now) for functions from the following packages:[133X
   
   [30X    [33X[0;6Y[5XAutoDoc[105X [GH16] (with function names changed);[133X
@@ -101,7 +106,8 @@
         two will suffice for most packages.[133X
   
   [30X    [33X[0;6YAny  package  author  who transfers a function to [5XUtils[105X will become an
-        author of [5XUtils[105X.[133X
+        author  of [5XUtils[105X. (In truth, [5XUtils[105X does not have [13Xauthors[113X, just a large
+        number of [13Xcontributors[113X.)[133X
   
   [33X[0;0YThe  process  for  transferring  utility  functions  from  [5XHome[105X  to [5XUtils[105X is
   described in Chapter [14X7[114X.[133X

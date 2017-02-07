@@ -1,25 +1,29 @@
 name: Utils
-version: 0.44
-date: 17/01/2017
+version: 0.45
+date: 07/02/2017
 description: Utility functions in GAP
 
 authors:
     - name: Sebastian Gutsche
       url: http://wwwb.math.rwth-aachen.de/~gutsche/
+    - name: Max Horn
+      url: http://www.quendi.de/math
+    - name: Alexander Hulpke
+      url: http://www.math.colostate.edu/~hulpke
     - name: Stefan Kohl
       url: http://www.gap-system.org/DevelopersPages/StefanKohl/
+    - name: Frank Lübeck
+      url: http://www.math.rwth-aachen.de:8001/~Frank.Luebeck
     - name: Øystein Skartsæterhagen
       url: https://www.math.ntnu.no/~oysteini/
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
 maintainers:
-    - name: Sebastian Gutsche
-      url: http://wwwb.math.rwth-aachen.de/~gutsche/
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8.5"
+GAP: ">=4.8.6"
 
 needed-pkgs:
     - name: "GAPDoc"
@@ -32,9 +36,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.44/utils-0.44.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.45/utils-0.45.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.44/utils-0.44.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.45/utils-0.45.zip
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 

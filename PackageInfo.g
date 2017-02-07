@@ -8,16 +8,16 @@ PackageName := "Utils",
 Packagename := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.44",
-Date := "17/01/2017",
+Version := "0.45",
+Date := "07/02/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.44">
-##  <!ENTITY UTILSTARFILENAME "utils-0.44.tar.gz">
+##  <!ENTITY UTILSVERSION "0.45">
+##  <!ENTITY UTILSTARFILENAME "utils-0.45.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "17/01/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "17th January 2017">
+##  <!ENTITY UTILSRELEASEDATE "07/02/2017">
+##  <!ENTITY UTILSLONGRELEASEDATE "7th February 2017">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
 ##  <#/GAPDoc>
 
@@ -43,11 +43,27 @@ Persons := [
     LastName      := "Gutsche",
     FirstNames    := "Sebastian",
     IsAuthor      := true,
-    IsMaintainer  := true,
+    IsMaintainer  := false,
     Email         := "gutsche@mathematik.uni-kl.de",
     WWWHome       := "http://wwwb.math.rwth-aachen.de/~gutsche/",
     Place         := "Kaiserslautern",
     Institution   := "University of Kaiserslautern"
+  ),
+  rec(
+    LastName      := "Horn",
+    FirstNames    := "Max",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    Email         := "max.horn@math.uni-giessen.de",
+    WWWHome       := "http://www.quendi.de/math",
+  ),
+  rec(
+    LastName      := "Hulpke",
+    FirstNames    := "Alexander",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    Email         := "hulpke@math.colostate.edu",
+    WWWHome       := "http://www.math.colostate.edu/~hulpke",
   ),
   rec( 
     LastName      := "Kohl",
@@ -57,6 +73,14 @@ Persons := [
     Email         := "stefan@mcs.st-and.ac.uk",
     WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
   ), 
+  rec(
+    LastName      := "Lübeck",
+    FirstNames    := "Frank",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    Email         := "Frank.Luebeck@Math.RWTH-Aachen.De",
+    WWWHome       := "http://www.math.rwth-aachen.de:8001/~Frank.Luebeck",
+  ),
   rec( 
     LastName      := "Skartsæterhagen",
     FirstNames    := "Øystein",
@@ -96,7 +120,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.5",
+  GAP := ">=4.8.6",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
