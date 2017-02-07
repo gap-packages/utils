@@ -8,7 +8,6 @@ packages in order to make them more widely visible to other package authors.
 
 Distribution
 -------------
-The ``Utils'' package first became a deposited GAP package on 11/02/2016 with version 0.25. 
 The GitHub package repository is at https://github.com/gap-packages/utils/ 
 and the latest release is available at http://gap-packages.github.io/utils/
 

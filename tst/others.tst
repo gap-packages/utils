@@ -29,6 +29,33 @@ gap> ConvertToMagmaInputString( SmallGroup( 24, 12 ) );
 ^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n>;\n"
 gap> ConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );
 "c7:=PolycyclicGroup< f1 |\nf1^7\n>;\n"
+gap> M := GL(2,5);;  Size(M); 
+480
+gap> s1 := ConvertToMagmaInputString( M );
+"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub<P |\
+ gens>;\n"
+gap> Print( s1 );
+F := GF(5);
+P := GL(2,F);
+gens := [
+P![2,0,0,1],
+P![4,1,4,0]
+];
+sub<P | gens>;
+gap> n1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;
+gap> n2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;
+gap> N := Group( n1, n2 );;  Size( N );
+5760
+gap> s2 := ConvertToMagmaInputString( N, "gpN" );;
+gap> Print( s2 );
+F := GF(3^2);
+P := GL(2,F);
+w := PrimitiveElement(F);
+gens := [
+P![ 1, 1, 1,w^1],
+P![ 1,w^3, 2,w^2]
+];
+gpN := sub<P | gens>;
 
 #############################################################################
 ##

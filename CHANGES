@@ -2,18 +2,16 @@
 
 Problems and ToDos: 
 
- - (01/03/16) in files.gd, under Log2HTML, there is ref to rcwa/doc/gaplog.css
-              so need to check with Stefan whether this is needed in Utils 
-
 #############################################################################
-Version 0.45 for GAP 4.8.6 (17/01/17) 
+Version 0.45 for GAP 4.8.6 (07/02/17) 
 
- - (17/01/17) as a test, added files for converting groups to Magma strings 
+ - (07/02/17) added code for converting matrix groups to Magma strings 
+ - (03/02/17) added code for converting perm- and pc-groups to Magma strings 
+ - (02/02/17) copied gaplog.css to utils/doc/ from RCWA archive 
 
 #############################################################################
 Version 0.44 for GAP 4.8.6 (17/01/17) 
 
- - (17/01/17) removed (temporarily?) PositionsNonzero and NullList 
  - (08/12/16) added PositionsNonzero and NullList from QPA 
  - (05/12/16) added tst/loadall.g and adjusted tst/testall.g, tst/*.tst 
  - (14/11/16) issue #2 reopened by Max: EpimorphismByGeneratorsNC removed 

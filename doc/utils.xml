@@ -22,7 +22,9 @@
 <!ENTITY LoadRCWA '<C>LoadPackage("rcwa")</C>'>
 <!ENTITY XMod '<Package>XMod</Package>'>
 <!ENTITY LoadXMod '<C>LoadPackage("xmod")</C>'>
-   <#Include Label="PKGVERSIONDATA"> 
+<!ENTITY Magma '<Package>MAGMA</Package>'>
+   
+<#Include Label="PKGVERSIONDATA"> 
 ]
 >
 <Book Name="Utils">

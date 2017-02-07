@@ -64,7 +64,7 @@ true
 <Description>
 This function has been transferred from package &RCWA;. 
 <P/>
-This function converts the &GAP; logfile logfilename to HTML. 
+This function converts the &GAP; logfile <File>filename</File> to HTML. 
 The extension of the input file must be <File>*.log</File>. 
 The name of the output file is the same as the one of the input file 
 except that the extension <File>*.log</File> is replaced by <File>*.html</File>. 
@@ -196,7 +196,7 @@ end
 </Section>
 
 <Section Label="sec-magma">
-<Heading>Conversion to Magma string</Heading>
+<Heading>Conversion to &Magma; string</Heading>
 
 <ManSection>
   <Func Name="ConvertToMagmaInputString" 
@@ -204,7 +204,7 @@ end
 <Description>
 The function <C>ConvertToMagmaInputString( obj [, str] )</C> 
 attempts to output a string <C>s</C> which can be read into 
-MAGMA <Cite Key="MAGMA" />
+&Magma; <Cite Key="MAGMA" />
 so as to produce the same group in that computer algebra system. 
 In the second form the user specifies the name of the resulting object, 
 so that the output string has the form <C>"str := ..."</C>. 
@@ -215,7 +215,14 @@ where it was called <C>MagmaInputString</C>.
 When <C>obj</C> is a pc-group, the operation 
 <C>PcGroupToMagmaFormat(obj)</C> is called. 
 This function was private code of Max Horn. 
+When <C>obj</C> is a matrix group over a finite field, 
+the operation <C>MatrixGroupToMagmaFormat(obj)</C> is called. 
+This function is a modification of private code of Frank L&#xfc;beck. 
+<P/>
 Hopefully code for other types of group will be added in due course. 
+<P/>
+These functions should be considered <E>experimental</E>, 
+and more testing is desirable. 
 <P/>
 </Description>
 </ManSection>
@@ -231,6 +238,33 @@ gap> ConvertToMagmaInputString( SmallGroup( 24, 12 ) );
 ^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n>;\n"
 gap> ConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );
 "c7:=PolycyclicGroup< f1 |\nf1^7\n>;\n"
+gap> M := GL(2,5);;  Size(M); 
+480
+gap> s1 := ConvertToMagmaInputString( M );
+"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub<P |\
+ gens>;\n"
+gap> Print( s1 );
+F := GF(5);
+P := GL(2,F);
+gens := [
+P![2,0,0,1],
+P![4,1,4,0]
+];
+sub<P | gens>;
+gap> n1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;
+gap> n2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;
+gap> N := Group( n1, n2 );;  Size( N );
+5760
+gap> s2 := ConvertToMagmaInputString( N, "gpN" );;
+gap> Print( s2 );
+F := GF(3^2);
+P := GL(2,F);
+w := PrimitiveElement(F);
+gens := [
+P![ 1, 1, 1,w^1],
+P![ 1,w^3, 2,w^2]
+];
+gpN := sub<P | gens>;
 ]]>
 </Example>
 

@@ -159,6 +159,8 @@ Hopefully a week or two will suffice for most packages.
 <Item>
 Any package author who transfers a function to &Utils; will become 
 an author of &Utils;. 
+(In truth, &Utils; does not have <E>authors</E>, 
+just a large number of <E>contributors</E>.) 
 </Item>
 </List>
 <P/>

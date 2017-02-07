@@ -2,7 +2,7 @@
 ##
 #W  number.tst                 Utils Package                       Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group
+#Y  Copyright (C) 2015-2017, The GAP Group
 ##  
 
 gap> UtilsLoadingComplete;
@@ -70,15 +70,17 @@ gap> for p in PrimeNumbersIterator() do
 >       if sum > 0 then break; fi;
 >    od;
 gap> p;
-26861
-gap> sum := 0;;
-gap> ## "prime number race" 1 vs. 5 mod 8
-gap> for p in PrimeNumbersIterator() do 
->       if p mod 8 in [1,5] then sum := sum + E(4)^((p-1)/2); fi;
->       if sum > 0 then break; fi;
->    od;
-gap> p;
-588067889
+26861 
+
+## this final example takes quite a while: use examples/number.g 
+## gap> sum := 0;;
+## gap> ## "prime number race" 1 vs. 5 mod 8
+## gap> for p in PrimeNumbersIterator() do 
+## >       if p mod 8 in [1,5] then sum := sum + E(4)^((p-1)/2); fi;
+## >       if sum > 0 then break; fi;
+## >    od;
+## gap> p;
+## 588067889
 
 #############################################################################
 ##

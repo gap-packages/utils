@@ -30,5 +30,12 @@ DeclareOperation( "PermGroupToMagmaFormat", [ IsPermGroup ] );
 DeclareOperation( "PcGroupToMagmaFormat", [ IsPcGroup ] ); 
 
 #############################################################################
+##  this function was private code of Frank Lübeck 
+## 
+#O  MatrixGroupToMagmaFormat( <G> ) 
+##
+DeclareOperation( "MatrixGroupToMagmaFormat", [ IsMatrixGroup ] ); 
+
+#############################################################################
 ##
 #E  magma.gd  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
