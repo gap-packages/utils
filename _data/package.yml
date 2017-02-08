@@ -1,6 +1,6 @@
 name: Utils
-version: 0.45
-date: 07/02/2017
+version: 0.46
+date: 08/02/2017
 description: Utility functions in GAP
 
 authors:
@@ -29,6 +29,9 @@ needed-pkgs:
     - name: "GAPDoc"
       version: ">= 1.5.1"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
+    - name: "Polycyclic"
+      version: ">= 2.11"
+      url: "http://www.icm.tu-bs.de/ag_algebra/software/polycyclic/"
 
 www: https://gap-packages.github.io/utils
 readme: https://gap-packages.github.io/utils/README
@@ -36,9 +39,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.45/utils-0.45.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.46/utils-0.46.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.45/utils-0.45.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.46/utils-0.46.zip
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 
