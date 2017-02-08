@@ -3,8 +3,9 @@
 Problems and ToDos: 
 
 #############################################################################
-Version 0.45 for GAP 4.8.6 (07/02/17) 
+Version 0.46 for GAP 4.8.6 (08/02/17) 
 
+ - (08/02/17) added Polycyclic as a needed package 
  - (07/02/17) added code for converting matrix groups to Magma strings 
  - (03/02/17) added code for converting perm- and pc-groups to Magma strings 
  - (02/02/17) copied gaplog.css to utils/doc/ from RCWA archive 
