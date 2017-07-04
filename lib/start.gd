@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2017, The GAP Group 
 
 DeclareInfoClass( "InfoUtils" );
 
@@ -11,8 +11,8 @@ DeclareInfoClass( "InfoUtils" );
 
 UtilsPackageVersions := 
   [ "autodoc",     "2016.01.31", 
-    "resclasses",  "4.2.5",         ## latest is 4.2.0, 02/03/16 
-    "rcwa",        "4.1.5",         ## latest is 4.1.0, 02/03/16 
+    "resclasses",  "4.2.5",         ## latest is 4.6.0, 12/02/17 
+    "rcwa",        "4.1.5",         ## latest is 4.5.0, 12/02/17 
     "qpa",         "1.25",
     "xmod",        "2.55" 
   ];

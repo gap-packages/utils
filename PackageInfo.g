@@ -4,20 +4,20 @@
 ##
 
 SetPackageInfo( rec(
-PackageName := "Utils",
 Packagename := "utils", 
+PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.46",
-Date := "08/02/2017",
+Version := "0.47",
+Date := "04/07/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.46">
-##  <!ENTITY UTILSTARFILENAME "utils-0.46.tar.gz">
+##  <!ENTITY UTILSVERSION "0.47">
+##  <!ENTITY UTILSTARFILENAME "utils-0.47.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "08/02/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "8th February 2017">
+##  <!ENTITY UTILSRELEASEDATE "04/07/2017">
+##  <!ENTITY UTILSLONGRELEASEDATE "4th July 2017">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
 ##  <#/GAPDoc>
 
@@ -28,7 +28,7 @@ Date := "08/02/2017",
 SourceRepository := rec( 
     Type := "git", # must be one of "git", "hg", "svn", "cvs"
     URL  := "https://github.com/gap-packages/utils" ),
-IssueTrackerURL  := "http://github.com/gap-packages/utils/issues",
+IssueTrackerURL  := "https://github.com/gap-packages/utils/issues",
 PackageWWWHome   := "https://gap-packages.github.io/utils", 
 README_URL       := Concatenation( ~.PackageWWWHome, "/README" ), 
 PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
@@ -120,7 +120,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.6",
+  GAP := ">=4.8.7",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], ["Polycyclic", ">= 2.11" ] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
