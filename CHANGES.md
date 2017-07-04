@@ -1,6 +1,4 @@
-# CHANGES log for the Utils package
-
-## Problems and ToDos: 
+# CHANGES log for the 'Utils' package
 
 ## Version 0.47 for GAP 4.8.7 (04/07/17) 
 
