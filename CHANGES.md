@@ -1,4 +1,4 @@
-# The GAP 4 package Utils 
+# CHANGES log for the Utils package
 
 ## Problems and ToDos: 
 
@@ -65,7 +65,6 @@
 
 ## Version 0.15 for GAP 4.8.0 (18/12/15)
 
- * (18/12/15) packed up version 0.14 
  * (17/12/15) added more documentation to `global.g` and `oper.g` 
 
 ## Version 0.14 for GAP 4.8.0 (16/12/15)
