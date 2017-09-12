@@ -1,6 +1,6 @@
-name: Utils
-version: 0.46
-date: 08/02/2017
+name: utils
+version: 0.47
+date: 12/09/2017
 description: Utility functions in GAP
 
 authors:
@@ -11,9 +11,9 @@ authors:
     - name: Alexander Hulpke
       url: http://www.math.colostate.edu/~hulpke
     - name: Stefan Kohl
-      url: http://www.gap-system.org/DevelopersPages/StefanKohl/
+      url: https://www.gap-system.org/DevelopersPages/StefanKohl/
     - name: Frank Lübeck
-      url: http://www.math.rwth-aachen.de:8001/~Frank.Luebeck
+      url: http://www.math.rwth-aachen.de/~Frank.Luebeck
     - name: Øystein Skartsæterhagen
       url: https://www.math.ntnu.no/~oysteini/
     - name: Christopher D. Wensley
@@ -23,7 +23,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8.6"
+GAP: ">=4.8.7"
 
 needed-pkgs:
     - name: "GAPDoc"
@@ -34,14 +34,14 @@ needed-pkgs:
       url: "http://www.icm.tu-bs.de/ag_algebra/software/polycyclic/"
 
 www: https://gap-packages.github.io/utils
-readme: https://gap-packages.github.io/utils/README
+readme: https://gap-packages.github.io/utils/README.md
 packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.46/utils-0.46.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.47/utils-0.47.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.46/utils-0.46.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.47/utils-0.47.zip
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 

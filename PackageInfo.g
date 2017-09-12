@@ -4,20 +4,20 @@
 ##
 
 SetPackageInfo( rec(
-PackageName := "Utils",
 Packagename := "utils", 
+PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.46",
-Date := "08/02/2017",
+Version := "0.47",
+Date := "12/09/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.46">
-##  <!ENTITY UTILSTARFILENAME "utils-0.46.tar.gz">
+##  <!ENTITY UTILSVERSION "0.47">
+##  <!ENTITY UTILSTARFILENAME "utils-0.47.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "08/02/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "8th February 2017">
+##  <!ENTITY UTILSRELEASEDATE "12/09/2017">
+##  <!ENTITY UTILSLONGRELEASEDATE "12th September 2017">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
 ##  <#/GAPDoc>
 
@@ -28,9 +28,9 @@ Date := "08/02/2017",
 SourceRepository := rec( 
     Type := "git", # must be one of "git", "hg", "svn", "cvs"
     URL  := "https://github.com/gap-packages/utils" ),
-IssueTrackerURL  := "http://github.com/gap-packages/utils/issues",
+IssueTrackerURL  := "https://github.com/gap-packages/utils/issues",
 PackageWWWHome   := "https://gap-packages.github.io/utils", 
-README_URL       := Concatenation( ~.PackageWWWHome, "/README" ), 
+README_URL       := Concatenation( ~.PackageWWWHome, "/README.md" ), 
 PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
 ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
                                    "/releases/download/v", ~.Version,
@@ -71,7 +71,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "stefan@mcs.st-and.ac.uk",
-    WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
+    WWWHome       := "https://www.gap-system.org/DevelopersPages/StefanKohl/"
   ), 
   rec(
     LastName      := "Lübeck",
@@ -79,7 +79,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "Frank.Luebeck@Math.RWTH-Aachen.De",
-    WWWHome       := "http://www.math.rwth-aachen.de:8001/~Frank.Luebeck",
+    WWWHome       := "http://www.math.rwth-aachen.de/~Frank.Luebeck",
   ),
   rec( 
     LastName      := "Skartsæterhagen",
@@ -120,7 +120,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.6",
+  GAP := ">=4.8.7",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], ["Polycyclic", ">= 2.11" ] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]

@@ -16,7 +16,7 @@
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
-  [30X    [33X[0;6Y[5XQPA[105X [TQ16];[133X
+  [30X    [33X[0;6Y[5XQPA[105X [Qt16];[133X
   
   [30X    [33X[0;6YConversion of a [5XGAP[105X group to a Magma output string, taken from various
         sources including [11Xother.gi[111X in the main library.[133X
@@ -34,10 +34,10 @@
   [33X[0;0YThe  package  may  be obtained either as a compressed [10X.tar[110X file or as a [10X.zip[110X
   file, [11Xutils-version_number.tar.gz[111X, by ftp from one of the following sites:[133X
   
-  [30X    [33X[0;6Ythe [5XUtils[105X GitHub release site: [7Xhttp://gap-packages.github.io/utils/[107X.[133X
+  [30X    [33X[0;6Ythe [5XUtils[105X GitHub release site: [7Xhttps://gap-packages.github.io/utils/[107X.[133X
   
   [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.
-        [7Xhttp://www.gap-system.org/Packages/packages.html[107X;[133X
+        [7Xhttps://www.gap-system.org/Packages/packages.html[107X;[133X
   
   [33X[0;0YThe      package      also      has      a     GitHub     repository     at:
   [7Xhttps://github.com/gap-packages/utils[107X.[133X
@@ -57,10 +57,11 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XReadPackage( "utils", "tst/testall.g" );[127X[104X
-    [4X[28X#I  Testing .../pkg/utils/tst/lists.tst [128X[104X
+    [4X[25Xgap>[125X [27XReadPackage( "utils", "tst/testing.g" );[127X[104X
+    [4X[28X#I  Test output starts here[128X[104X
     [4X[28X... [128X[104X
     [4X[28X#I  No errors detected while testing package utils[128X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
