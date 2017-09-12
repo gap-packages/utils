@@ -41,13 +41,13 @@
   <Author>
     Stefan Kohl<Alt Only="LaTeX"><Br/></Alt>
       <Email>stefan@mcs.st-and.ac.uk</Email>
-      <Homepage>http://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
+      <Homepage>https://www.gap-system.org/DevelopersPages/StefanKohl/</Homepage>
   </Author>
 
   <Author>
     Frank L&#xfc;beck<Alt Only="LaTeX"><Br/></Alt>
       <Email>Frank.Luebeck@Math.RWTH-Aachen.De</Email>
-      <Homepage>http://www.math.rwth-aachen.de:8001/~Frank.Luebeck</Homepage>
+      <Homepage>http://www.math.rwth-aachen.de/~Frank.Luebeck</Homepage>
   </Author>
 
   <Author>
@@ -79,7 +79,7 @@ If deemed appropriate, functions may also be transferred from the main library.
 Bug reports, suggestions and comments are, of course, welcome. 
 Please contact the last author at <Email>c.d.wensley@bangor.ac.uk</Email> 
 or submit an issue at the GitHub repository 
-<URL>http://github.com/gap-packages/utils/issues/</URL>. 
+<URL>https://github.com/gap-packages/utils/issues/</URL>. 
 </Abstract>
 
 <Copyright> 

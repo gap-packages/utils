@@ -60,11 +60,11 @@ by ftp from one of the following sites:
 <List>
 <Item>
 the &Utils; GitHub release site: 
-<URL>http://gap-packages.github.io/utils/</URL>. 
+<URL>https://gap-packages.github.io/utils/</URL>. 
 </Item>
 <Item>
 any &GAP; archive, e.g. 
-<URL>http://www.gap-system.org/Packages/packages.html</URL>; 
+<URL>https://www.gap-system.org/Packages/packages.html</URL>; 
 </Item>
 </List> 
 <Index>GitHub repository</Index> 

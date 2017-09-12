@@ -9,15 +9,15 @@ PackageName := "utils",
 Subtitle := "Utility functions in GAP",
 
 Version := "0.47",
-Date := "04/07/2017",
+Date := "12/09/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY UTILSVERSION "0.47">
 ##  <!ENTITY UTILSTARFILENAME "utils-0.47.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "04/07/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "4th July 2017">
+##  <!ENTITY UTILSRELEASEDATE "12/09/2017">
+##  <!ENTITY UTILSLONGRELEASEDATE "12th September 2017">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
 ##  <#/GAPDoc>
 
@@ -30,7 +30,7 @@ SourceRepository := rec(
     URL  := "https://github.com/gap-packages/utils" ),
 IssueTrackerURL  := "https://github.com/gap-packages/utils/issues",
 PackageWWWHome   := "https://gap-packages.github.io/utils", 
-README_URL       := Concatenation( ~.PackageWWWHome, "/README" ), 
+README_URL       := Concatenation( ~.PackageWWWHome, "/README.md" ), 
 PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
 ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
                                    "/releases/download/v", ~.Version,
@@ -71,7 +71,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "stefan@mcs.st-and.ac.uk",
-    WWWHome       := "http://www.gap-system.org/DevelopersPages/StefanKohl/"
+    WWWHome       := "https://www.gap-system.org/DevelopersPages/StefanKohl/"
   ), 
   rec(
     LastName      := "Lübeck",
@@ -79,7 +79,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "Frank.Luebeck@Math.RWTH-Aachen.De",
-    WWWHome       := "http://www.math.rwth-aachen.de:8001/~Frank.Luebeck",
+    WWWHome       := "http://www.math.rwth-aachen.de/~Frank.Luebeck",
   ),
   rec( 
     LastName      := "Skartsæterhagen",

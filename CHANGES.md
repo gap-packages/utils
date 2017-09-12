@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.47 for GAP 4.8.7 (04/07/17) 
+## Version 0.47 for GAP 4.8.7 (12/09/17) 
 
  * (04/07/17) README and CHANGES converted to README.md and CHANGES.md 
 

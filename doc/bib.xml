@@ -83,7 +83,7 @@ http://magma.maths.usyd.edu.au/magma/
   <title><C>RCWA - Residue-Class-Wise Affine Groups (Version 4.4.1)</C></title>
   <year>2016</year>
   <other type="note">
-    GAP package, <URL>http://www.gap-system.org/DevelopersPages/StefanKohl/rcwa.html</URL>
+    GAP package, <URL>https://www.gap-system.org/DevelopersPages/StefanKohl/rcwa.html</URL>
   </other>
 </manual></entry>
 
@@ -94,7 +94,7 @@ http://magma.maths.usyd.edu.au/magma/
   <title><C>ResClasses - Set-Theoretic Computations with Residue Classes (Version 4.5.0)</C></title>
   <year>2016</year>
   <other type="note">
-    GAP package, <URL>http://www.gap-system.org/DevelopersPages/StefanKohl/resclasses.html</URL>
+    GAP package, <URL>https://www.gap-system.org/DevelopersPages/StefanKohl/resclasses.html</URL>
   </other>
 </manual></entry>
 

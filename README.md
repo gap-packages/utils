@@ -12,7 +12,7 @@ Other generally useful functions, which are not deemed suitable for the main lib
  * The GitHub package repository is at 
    <https://github.com/gap-packages/utils/> 
  * and the latest release is available at 
-   <http://gap-packages.github.io/utils/>
+   <https://gap-packages.github.io/utils/>
 
 ## Copyright
 
