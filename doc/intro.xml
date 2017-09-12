@@ -89,10 +89,11 @@ by running the test files:
 <P/>
 <Example>
 <![CDATA[
-gap> ReadPackage( "utils", "tst/testall.g" );
-#I  Testing .../pkg/utils/tst/lists.tst 
+gap> ReadPackage( "utils", "tst/testing.g" );
+#I  Test output starts here
 ... 
 #I  No errors detected while testing package utils
+true
 ]]>
 </Example>
 <P/>
