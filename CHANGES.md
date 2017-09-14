@@ -1,7 +1,9 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.47 for GAP 4.8.7 (12/09/17) 
+## Version 0.48 for GAP 4.8.8 (14/09/17) 
 
+ * (14/09/17) fixes to the gh-pages folder so that README.md is displayed 
+ * (12/09/17) corrected web addresses for Stefan and Frank
  * (04/07/17) README and CHANGES converted to README.md and CHANGES.md 
 
 ## Version 0.46 for GAP 4.8.6 (08/02/17) 
