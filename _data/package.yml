@@ -1,7 +1,8 @@
 name: utils
-version: 0.47
-date: 12/09/2017
-description: Utility functions in GAP
+version: 0.48
+date: 14/09/2017
+description: |
+    Utility functions in GAP
 
 authors:
     - name: Sebastian Gutsche
@@ -23,7 +24,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8.7"
+GAP: ">=4.8.8"
 
 needed-pkgs:
     - name: "GAPDoc"
@@ -34,22 +35,18 @@ needed-pkgs:
       url: "http://www.icm.tu-bs.de/ag_algebra/software/polycyclic/"
 
 www: https://gap-packages.github.io/utils
-readme: https://gap-packages.github.io/utils/README.md
+readme: README.md
 packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.47/utils-0.47.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.48/utils-0.48.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.47/utils-0.47.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.48/utils-0.48.zip
 
-abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
+abstract: |
+    The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 
-www: https://gap-system.github.io/GitHubPagesForGAP/
-readme: README.md
-packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/gap-system/GitHubPagesForGAP
- 
 status: deposited
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
