@@ -45,6 +45,11 @@ downloads:
 
 abstract: The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
 
+www: https://gap-system.github.io/GitHubPagesForGAP/
+readme: README.md
+packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
+github: https://github.com/gap-system/GitHubPagesForGAP
+ 
 status: deposited
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
