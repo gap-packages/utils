@@ -136,43 +136,6 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X2.1-6 PositionsNonzero[101X
-  
-  [29X[2XPositionsNonzero[102X( [3XL[103X ) [32X operation
-  
-  [33X[0;0YThis function is being transferred from package [5XQPA[105X.[133X
-  
-  [33X[0;0YIt  returns  the  list  of  positions  of  all nonzero elements in a list by
-  applying the operation [10XPositionsProperty[110X using the property [10Xnot(IsZero)[110X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XPositionsNonzero( [0,1,0,2,0]; [127X[104X
-    [4X[28X[ 2, 4 ][128X[104X
-    [4X[25Xgap>[125X [27XPositionsNonzero( [0,0,0] ); [127X[104X
-    [4X[28X[  ][128X[104X
-    [4X[25Xgap>[125X [27XPositionsNonzero( [-5..5] ); [127X[104X
-    [4X[28X[ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  [1X2.1-7 NullList[101X
-  
-  [29X[2XNullList[102X( [3Xn[103X, [3XF[103X ) [32X operation
-  
-  [33X[0;0YThis function is being transferred from package [5XQPA[105X.[133X
-  
-  [33X[0;0YA  call  of  [10XNullList(n,F)[110X  returns a list of length [22Xn[122X whose entries are the
-  zero  in the field [22XF[122X. (Once the transfer is complete, the restriction that [22XF[122X
-  should be a field will be relaxed.)[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XNullList( 5, Rationals ); [127X[104X
-    [4X[28X[ 0, 0, 0, 0, 0 ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
   
   [1X2.2 [33X[0;0YDistinct and Common Representatives[133X[101X
   

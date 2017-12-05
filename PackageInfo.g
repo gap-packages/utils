@@ -8,16 +8,16 @@ Packagename := "utils",
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 
-Version := "0.48",
-Date := "14/09/2017",
+Version := "0.49",
+Date := "05/12/2017",
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.48">
-##  <!ENTITY UTILSTARFILENAME "utils-0.48.tar.gz">
+##  <!ENTITY UTILSVERSION "0.49">
+##  <!ENTITY UTILSTARFILENAME "utils-0.49.tar.gz">
 ##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "14/09/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "14th September 2017">
+##  <!ENTITY UTILSRELEASEDATE "05/12/2017">
+##  <!ENTITY UTILSLONGRELEASEDATE "5th December 2017">
 ##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
 ##  <#/GAPDoc>
 
@@ -81,14 +81,6 @@ Persons := [
     Email         := "Frank.Luebeck@Math.RWTH-Aachen.De",
     WWWHome       := "http://www.math.rwth-aachen.de/~Frank.Luebeck",
   ),
-  rec( 
-    LastName      := "Skartsæterhagen",
-    FirstNames    := "Øystein",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    Email         := "oysteini@math.ntnu.no",
-    WWWHome       := "https://www.math.ntnu.no/~oysteini/"
-  ), 
   rec(
     LastName      := "Wensley",
     FirstNames    := "Christopher D.",

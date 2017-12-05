@@ -16,8 +16,6 @@
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
-  [30X    [33X[0;6Y[5XQPA[105X [Qt16];[133X
-  
   [30X    [33X[0;6YConversion of a [5XGAP[105X group to a Magma output string, taken from various
         sources including [11Xother.gi[111X in the main library.[133X
   
@@ -25,11 +23,11 @@
   
   [30X    [33X[0;6Y[5XAutoDoc[105X [GH16] (with function names changed);[133X
   
-  [30X    [33X[0;6Y[5XResClasses[105X [Koh16b];[133X
+  [30X    [33X[0;6Y[5XResClasses[105X [Koh17b];[133X
   
-  [30X    [33X[0;6Y[5XRCWA[105X [Koh16a];[133X
+  [30X    [33X[0;6Y[5XRCWA[105X [Koh17a];[133X
   
-  [30X    [33X[0;6Y[5XXMod[105X [WAOU16].[133X
+  [30X    [33X[0;6Y[5XXMod[105X [WAOU17].[133X
   
   [33X[0;0YThe  package  may  be obtained either as a compressed [10X.tar[110X file or as a [10X.zip[110X
   file, [11Xutils-version_number.tar.gz[111X, by ftp from one of the following sites:[133X

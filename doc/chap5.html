@@ -48,8 +48,9 @@
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := rec( a := 1, b := 2 );;                                      </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetIfMissing( r, "c", 3 );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RecNames( r );</span>
-[ "b", "c", "a" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">names := RecNames( r );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Set( names );</span>
+[ "a", "b", "c" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetIfMissing( r, "c", 4 );</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r;</span>
 rec( a := 1, b := 2, c := 3 )

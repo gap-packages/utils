@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.48
+                                      0.49
   
   
-                                   14/09/2017
+                                   05/12/2017
   
   
                                Sebastian Gutsche
@@ -21,8 +21,6 @@
                                   Stefan Kohl
   
                                   Frank Lübeck
-  
-                            Øystein Skartsæterhagen
   
                                  Chris Wensley
   
@@ -43,9 +41,6 @@
   Frank Lübeck
       Email:    [7Xmailto:Frank.Luebeck@Math.RWTH-Aachen.De[107X
       Homepage: [7Xhttp://www.math.rwth-aachen.de/~Frank.Luebeck[107X
-  Øystein Skartsæterhagen
-      Email:    [7Xmailto:oysteini@math.ntnu.no[107X
-      Homepage: [7Xhttps://www.math.ntnu.no/~oysteini/[107X
   Chris Wensley
       Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
@@ -79,11 +74,11 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YThis  documentation  was  prepared  with  the [5XGAPDoc[105X package [LN12] of Frank
+  [33X[0;0YThis  documentation  was  prepared  with  the [5XGAPDoc[105X package [LN17] of Frank
   Lübeck and Max Neunhöffer.[133X
   
   [33X[0;0YThe  procedure  used  to  mount  new  releases  on  GitHub uses the packages
-  [5XGitHubPagesForGAP[105X [Hor14] and [5XReleaseTools[105X of Max Horn.[133X
+  [5XGitHubPagesForGAP[105X [Hor17] and [5XReleaseTools[105X of Max Horn.[133X
   
   
   -------------------------------------------------------
@@ -100,8 +95,6 @@
       2.1-3 SearchCycle
       2.1-4 RandomCombination
       2.1-5 PrintListOneItemPerLine
-      2.1-6 PositionsNonzero
-      2.1-7 NullList
     2.2 [33X[0;0YDistinct and Common Representatives[133X
       2.2-1 DistinctRepresentatives
     2.3 [33X[0;0YFunctions for strings[133X
