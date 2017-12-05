@@ -2,7 +2,7 @@
 ##
 #W  lists.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group
+#Y  Copyright (C) 2015-2017, The GAP Group
 ##  
 
 gap> UtilsLoadingComplete;
@@ -74,18 +74,6 @@ gap> PrintListOneItemPerLine( [4,5,6] );
   5,
   6
   ]
-
-## Subsection 2.1.6
-gap> PositionsNonzero([0,1,0,2,0]);
-[ 2, 4 ]
-gap> PositionsNonzero([0,0,0]);    
-[  ]
-gap> PositionsNonzero( [-5..5] );
-[ 1, 2, 3, 4, 5, 7, 8, 9, 10, 11 ]
-
-## Subsection 2.1.7 
-gap> NullList( 5, Rationals );
-[ 0, 0, 0, 0, 0 ]
 
 ## SubSection 2.2.1 
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;

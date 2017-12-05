@@ -1,5 +1,10 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.49 for GAP 4.8.8 (05/12/17) 
+
+ * (05/12/17) removed QPA functions PositionsNonzero and NullList 
+ * (21/11/17) changed record.tst so that 4r8 and dev give the same result 
+
 ## Version 0.48 for GAP 4.8.8 (14/09/17) 
 
  * (14/09/17) fixes to the gh-pages folder so that README.md is displayed 

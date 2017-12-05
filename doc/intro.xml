@@ -29,9 +29,6 @@ gap> LoadPackage( "utils" );
 Functions are currently being transferred from the following packages: 
 <List>
 <Item>
-&QPA; <Cite Key="QPA" />;
-</Item>
-<Item>
 Conversion of a &GAP; group to a Magma output string, taken from various 
 sources including <File>other.gi</File> in the main library. 
 </Item>

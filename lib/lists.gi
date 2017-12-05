@@ -149,29 +149,6 @@ InstallGlobalFunction( SearchCycle,
 
 fi;
 
-if OKtoReadFromUtils( "QPA" ) then
-
-#############################################################################
-##  these functions have been transferred from QPA 
-##
-#M  PositionsNonzero( <list> )
-##
-InstallMethod( PositionsNonzero, "for a list", [ IsList ],
-function( list )
-    return PositionsProperty( list, 
-               function( x ) 
-                   return not IsZero( x ); 
-               end );
-end );
-
-InstallMethod( NullList, "for a positive integer and a ring",
-    [ IsPosInt, IsRing ],
-function( length, ring )
-    return NullMat( 1, length, ring )[ 1 ];
-end );
-
-fi; 
-
 #############################################################################
 ##
 #E  lists.gi  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

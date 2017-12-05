@@ -7,7 +7,7 @@
     <name><first>Sebastian</first><last>Gutsche</last></name>
     <name><first>Max</first><last>Horn</last></name>
   </author>
-  <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.11.26)</C></title>
+  <title><C>AutoDoc - Generate documentation from GAP source code (Version 2016.12.04)</C></title>
   <year>2016</year>
   <other type="note">
     GAP package, <URL>https://github.com/gap-packages/AutoDoc</URL>
@@ -19,9 +19,9 @@
     <name><first>Frank</first><last>Lübeck</last></name>
     <name><first>Max</first><last>Neunhöffer</last></name>
   </author>
-  <title><C>GAPDoc (Version 1.5.1)</C></title>
+  <title><C>GAPDoc (Version 1.6)</C></title>
   <organization>RWTH Aachen</organization>
-  <year>2012</year>
+  <year>2017</year>
   <other type="note">
     GAP package, 
     <URL>http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html</URL>
@@ -32,10 +32,10 @@
   <author>
     <name><first>Max</first><last>Horn</last></name>
   </author>
-  <title><C>GitHubPagesForGAP - Template for easily using GitHub Pages within GAP packages (Version 0.1)</C></title>
-  <year>2014</year>
+  <title><C>GitHubPagesForGAP - Template for easily using GitHub Pages within GAP packages (Version 0.2)</C></title>
+  <year>2017</year>
   <other type="note">
-    GAP package, <URL>https://github.com/fingolfin/GitHubPagesForGAP/</URL>
+    GAP package, <URL>https://gap-system.github.io/GitHubPagesForGAP/</URL>
   </other>
 </manual></entry>
 
@@ -65,25 +65,14 @@ http://magma.maths.usyd.edu.au/magma/
 </entry> 
 
 
-<entry id="QPA"><manual>
-  <author>
-    <name><first></first><last>The QPA-team</last></name>
-  </author>
-  <title><C>QPA - Quivers and Path Algebras (Version 1.25)</C></title>
-  <year>2016</year>
-  <other type="note">
-    GAP package, <URL>https://www.math.ntnu.no/~oyvinso/QPA/</URL>
-  </other>
-</manual></entry>
-
 <entry id="RCWA"><manual>
   <author>
     <name><first>Stefan</first><last>Kohl</last></name>
   </author>
-  <title><C>RCWA - Residue-Class-Wise Affine Groups (Version 4.4.1)</C></title>
-  <year>2016</year>
+  <title><C>RCWA - Residue-Class-Wise Affine Groups (Version 4.5.1)</C></title>
+  <year>2017</year>
   <other type="note">
-    GAP package, <URL>https://www.gap-system.org/DevelopersPages/StefanKohl/rcwa.html</URL>
+    GAP package, <URL>https://stefan-kohl.github.io/rcwa.html</URL>
   </other>
 </manual></entry>
 
@@ -91,22 +80,22 @@ http://magma.maths.usyd.edu.au/magma/
   <author>
     <name><first>Stefan</first><last>Kohl</last></name>
   </author>
-  <title><C>ResClasses - Set-Theoretic Computations with Residue Classes (Version 4.5.0)</C></title>
-  <year>2016</year>
+  <title><C>ResClasses - Set-Theoretic Computations with Residue Classes (Version 4.6.0)</C></title>
+  <year>2017</year>
   <other type="note">
-    GAP package, <URL>https://www.gap-system.org/DevelopersPages/StefanKohl/resclasses.html</URL>
+    GAP package, <URL>https://stefan-kohl.github.io/resclasses.html</URL>
   </other>
 </manual></entry>
 
 <entry id="XMod"><manual>
   <author>
-    <name><first>Chris</first><last>Wensley</last></name>
+    <name><first>Chris D.</first><last>Wensley</last></name>
     <name><first>Murat</first><last>Alp</last></name>
     <name><first>Alper</first><last>Odabas</last></name>
     <name><first>Enver Onder</first><last>Uslu</last></name>
   </author>
-  <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.58)</C></title>
-  <year>2016</year>
+  <title><C>XMod - Crossed Modules and Cat1-groups in GAP (Version 2.64)</C></title>
+  <year>2017</year>
   <other type="note">
     GAP package, <URL>https://github.com/gap-packages/xmod</URL>
   </other>

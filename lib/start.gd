@@ -10,11 +10,11 @@ DeclareInfoClass( "InfoUtils" );
 ##  containing the code which is to be transferred 
 
 UtilsPackageVersions := 
-  [ "autodoc",     "2016.01.31", 
+  [ "autodoc",     "2016.01.31",    ## latest is 2017.09.08
     "resclasses",  "4.2.5",         ## latest is 4.6.0, 12/02/17 
     "rcwa",        "4.1.5",         ## latest is 4.5.0, 12/02/17 
-    "qpa",         "1.25",
-    "xmod",        "2.55" 
+    "qpa",         "1.26",
+    "xmod",        "2.55"           ## latest is 2.63,  26/09/17
   ];
 
 ##  functions being transferred cannot be used until the Home packages have  
