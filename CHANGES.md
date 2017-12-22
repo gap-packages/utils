@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.51 for GAP 4.8.9 (22/12/17) 
+
+ * (22/12/17) removed examples/ folder
+
 ## Version 0.49 for GAP 4.8.8 (05/12/17) 
 
  * (05/12/17) removed QPA functions PositionsNonzero and NullList 
