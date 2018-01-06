@@ -1,29 +1,32 @@
-##  makedoc.g for package Utils, version 25/02/16 
+##  makedoc.g for the package Utils 
 ##  This builds the documentation of the Utils package. 
 ##  Needs: GAPDoc package, latex, pdflatex, mkindex
+##  call this with GAP from within the package root directory 
 ##  
 LoadPackage( "GAPDoc" );
 
-UtilsDoc := Filename( DirectoriesPackageLibrary( "Utils", "doc" ), "" );
+if fail = LoadPackage("AutoDoc", ">= 2017.09.08") then
+    Error("AutoDoc is required: version at least 2017.09.08");
+fi;
 
-MakeGAPDocDoc( UtilsDoc,  # path to the directory containing the main file
-               "utils",   # the name of the main file (without extension)
-                          # list of (probably source code) files relative 
-                          # to path which contain pieces of documentation 
-                          # which must be included in the document
-               [ "../PackageInfo.g" ], 
-               "Utils",   # the name of the book used by GAP's online help
-    GAPInfo.RootPaths[3], # optional: relative path to the main GAP root 
-                          # directory to produce HTML files with relative 
-                          # paths to external books.
-               "MathJax"  # optional: use "MathJax", "Tth" and/or "MathML"
-                          # to produce additional variants of HTML files
-               );; 
+AutoDoc( rec( 
+    scaffold := rec(
+        ## MainPage := false, 
+        includes := [ "intro.xml", "lists.xml", "number.xml", "groups.xml", 
+                      "record.xml", "others.xml", "transfer.xml" ],
+        entities := rec( 
+            AutoDoc := "<Package>AutoDoc</Package>",
+            ResClasses := "<Package>ResClasses</Package>",
+            RCWA := "<Package>RCWA</Package>",
+            XMod := "<Package>XMod</Package>",
+            Home := "<Package>Home</Package>",
+            Magma := "<M>{\\sf Magma}</M>",
+            MathJax := "<M>{\\sf MathJax}</M>"
+        )
+    )
+));
 
-# Copy the *.css and *.js files from the styles directory of the GAPDoc 
-# package into the directory containing the package manual.
-CopyHTMLStyleFiles( UtilsDoc );
+# Create VERSION file for "make towww"
+PrintTo( "VERSION", GAPInfo.PackageInfoCurrent.Version );
 
-# Create the manual.lab file which is needed if the main manuals or another 
-# package is referring to your package
-GAPDocManualLab( "Utils" );; 
+QUIT;

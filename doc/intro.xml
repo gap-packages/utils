@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2017, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -29,7 +29,7 @@ gap> LoadPackage( "utils" );
 Functions are currently being transferred from the following packages: 
 <List>
 <Item>
-Conversion of a &GAP; group to a Magma output string, taken from various 
+Conversion of a &GAP; group to a &Magma; output string, taken from various 
 sources including <File>other.gi</File> in the main library. 
 </Item>
 </List>
@@ -72,7 +72,7 @@ The package also has a GitHub repository at:
 
 Once the package is loaded, the manual <Code>doc/manual.pdf</Code> 
 can be found in the documentation folder. 
-The <Code>html</Code> versions, with or without MathJax, 
+The <Code>html</Code> versions, with or without &MathJax;, 
 may be rebuilt as follows: 
 <P/>
 <Example>
@@ -123,7 +123,7 @@ The function does not do what can already be done with a &GAP; library function.
 Documentation of the function and test examples are available. 
 </Item>
 <Item>
-When there is more than one active author of Home, they should all be aware 
+When there is more than one active author of &Home;, they should all be aware 
 (and content) that the transfer is taking place. 
 </Item>
 </List> 

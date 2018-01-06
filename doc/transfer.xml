@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  transfer.xml           Utils documentation          Chris Wensley  -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2017, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -20,8 +20,7 @@ If the functions in &Home; all have names of the form
 <C>HOME_FunctionName</C> then, in &Utils;, these functions 
 are likely to be renamed as <C>FunctionName</C> or something similar. 
 In this case the problem of duplicate declarations does not arise. 
-This is what has happened with transfers from the <Package>AutoDoc</Package> 
-package. 
+This is what has happened with transfers from the &AutoDoc; package. 
 <P/>
 The case where the function names are unchanged is more complicated. 
 Initially we tried out a process which allowed repeated declarations and 
@@ -88,7 +87,7 @@ The function <C>OKtoReadFromUtils</C> returns <C>true</C>
 only if there is an installed version of &Home; 
 and if this version is greater than <B>m.n</B>. 
 So, at this stage, <E>the copied code will not be read</E>, 
-and the transferred functions can only be called if <Package>Home</Package> 
+and the transferred functions can only be called if &Home; 
 has been installed. 
 </Item>
 <Item>

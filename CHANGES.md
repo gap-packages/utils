@@ -1,7 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.51 for GAP 4.8.9 (22/12/17) 
+## Version 0.51 for GAP 4.8.9 (06/01/18) 
 
+ * (06/01/18) rebuilt the manual using the AutoDoc package 
  * (22/12/17) removed examples/ folder
 
 ## Version 0.49 for GAP 4.8.8 (05/12/17) 
