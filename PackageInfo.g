@@ -5,10 +5,11 @@
 
 SetPackageInfo( rec(
 
+Packagename := "utils", 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 Version := "0.49dev",
-Date := "06/01/2018",
+Date := "12/01/2018",
 
 Persons := [
   rec(
@@ -81,6 +82,11 @@ SourceRepository := rec(
                                        "/", ~.PackageName, "-", ~.Version ),
 ArchiveFormats := ".tar.gz .zip", 
 
+
+AbstractHTML :=
+ "The <span class=\"pkgname\">Utils</span> package provides a collection \
+  of utility functions gleaned from many packages.",
+
 PackageDoc := rec(
   BookName  := "Utils",
   ArchiveURLSubset := ["doc", "htm"],
@@ -95,7 +101,7 @@ Dependencies := rec(
   GAP := ">=4.8.8",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], 
                            ["Polycyclic", ">= 2.11" ] ], 
-  SuggestedOtherPackages := [ ],
+  SuggestedOtherPackages := [ [ "AutoDoc", ">= 2017.09.15" ] ],
   ExternalConditions := [ ]
 ),
 
@@ -142,12 +148,12 @@ AutoDoc := rec(
             ), 
         Acknowledgements := Concatenation( 
             "This documentation was prepared with the ", 
-            "<Package>GAPDoc</Package> package <Cite Key='GAPDoc' /> ", 
-            "of Frank L&#xfc;beck and Max Neunh&#xf6;ffer.<P/>", 
+            "&GAPDoc; <Cite Key='GAPDoc'/> and ", 
+            "&AutoDoc; <Cite Key='AutoDoc'/> packages.<P/>\n", 
             "The procedure used to produce new releases uses the package ", 
             "<Package>GitHubPagesForGAP</Package> ", 
             "<Cite Key='GitHubPagesForGAP' /> ", 
-            "and the package <Package>ReleaseTools</Package> of Max Horn.<P/>" 
+            "and the package <Package>ReleaseTools</Package>.<P/>" 
             ),
     ) 
 ),
