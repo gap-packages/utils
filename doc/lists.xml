@@ -142,30 +142,6 @@ gap> RandomCombination( [1..49], 6 );
 ]]>
 </Log>
 
-<ManSection>
-   <Oper Name="PrintListOneItemPerLine"
-         Arg="L" />
-<Description>
-This function has been transferred from package &XMod;. 
-<P/>
-Printing lists vertically, rather than horizontally, 
-may be useful when the entries are lengthy. 
-<P/>
-</Description>
-</ManSection>
-<Example>
-<![CDATA[
-gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( SymmetricGroup(5) ) );;
-gap> PrintListOneItemPerLine( L );
-[ IsFinite,
-  IsSmallList,
-  IsGeneratorsOfMagmaWithInverses,
-  IsGeneratorsOfSemigroup,
-  IsSubsetLocallyFiniteGroup
-  ]
-]]>
-</Example>
-
 </Section>
 
 

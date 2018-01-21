@@ -1,0 +1,112 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  print.xml           Utils documentation                            -->
+<!--                                                                     -->
+<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-print">
+<Heading>Printing Lists and Iterators</Heading>
+
+
+<Section Label="sec-print-select">
+<Heading>Printing selected items</Heading>
+
+The functions described here print lists or objects with an iterator 
+with one item per line, either the whole list/iterator or certain subsets:
+<List>
+<Item>
+by giving a list of positions of items to be printed, or 
+</Item>
+<Item>
+by specifying a first item and then a regular step. 
+</Item>
+</List>
+
+<ManSection>
+   <Func Name="PrintOneItemPerLine"
+         Arg="obj" />
+<Description>
+This function calls operations <C>PrintListOneItemPerLine</C> 
+(which has been transferred from package &XMod;) 
+or <C>PrintIteratorOneItemPerLine</C>. 
+<P/>
+Printing lists vertically, rather than horizontally, 
+may be useful when the entries are lengthy. 
+This function does this for lists, iterators, 
+and objects which have an iterator.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> s3 := SymmetricGroup( 3 );; 
+gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;
+gap> PrintOneItemPerLine( L );
+[ IsFinite,
+  IsSmallList,
+  IsGeneratorsOfMagmaWithInverses,
+  IsGeneratorsOfSemigroup,
+  IsSubsetLocallyFiniteGroup
+  ]
+gap> PrintOneItemPerLine( s3 ); 
+()
+(2,3)
+(1,3)
+(1,3,2)
+(1,2,3)
+(1,2)
+]]>
+</Example>
+
+<ManSection>
+   <Func Name="PrintSelection"
+         Arg="obj first step" />
+   <Func Name="PrintSelection"
+         Arg="obj list" />
+<Description>
+This function, given three pararmeters, calls operations 
+<C>PrintSelectionFromList</C> or <C>PrintSelectionFromIterator</C> 
+which prints the <E>first</E> item specified, 
+and them the item at every <E>step</E> 
+<P/>
+Alternatively, given two parameters, 
+with the second parameter a list <C>L</C> of positive integers, 
+only the items at positions in <C>L</C> are printed. 
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> L := List( [1..20], n -> n^5 );; 
+gap> PrintSelection( L, 1, 8 );
+1 : 1
+9 : 59049
+17 : 1419857
+gap> PrintSelection( L, [9..11] );
+9 : 59049
+10 : 100000
+11 : 161051
+gap> s5 := SymmetricGroup( 5 );; 
+gap> PrintSelection( s5, 12, 30 );
+12 : (2,5)(3,4)
+42 : (1,5,2,3,4)
+72 : (1,2,4,3)
+102 : (1,4,3,5)
+gap> PrintSelection( s5, [118..122] );
+118 : (1,4,3,2,5)
+119 : (1,4,2,5,3)
+120 : (1,4,3)(2,5)
+]]>
+</Example>
+
+</Section>
+
+
+
+
+</Chapter>
+

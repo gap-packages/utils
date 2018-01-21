@@ -2,7 +2,7 @@
 ##
 #W  testing.g                   Utils Package                    Chris Wensley
 ##
-#Y  Copyright (C) 2015-2017, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
@@ -32,7 +32,8 @@ TestMyPackage := function( pkgname )
 
     # Arrange chapters as required
     testfiles := 
-        [ "lists.tst", 
+        [ "print.tst", 
+          "lists.tst", 
           "string.tst", 
           "number.tst", 
           "groups.tst", 

@@ -2,13 +2,13 @@
 ##
 #W  lists.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2017, The GAP Group
+#Y  Copyright (C) 2015-2018, The GAP Group
 ##  
 
 gap> UtilsLoadingComplete;
 true
 
-## SubSection 2.1.1 
+## SubSection 3.1.1 
 gap> List( [1..12], n->n^3 );
 [ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728 ]
 gap> DifferencesList( last );
@@ -24,7 +24,7 @@ gap> L := [ ];;
 gap> DifferencesList( L );
 [  ]
 
-## SubSection 2.1.2 
+## SubSection 3.1.2 
 gap> List( [0..10], n -> Factorial(n) );
 [ 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800 ]
 gap> QuotientsList( last );
@@ -41,7 +41,7 @@ gap> FloatQuotientsList( [1..10] );
 gap> Product( last );
 10.
 
-## SubSection 2.1.3 
+## SubSection 3.1.3 
 gap> L := [1..20];;  L[1]:=13;;                                              
 gap> for i in [1..19] do                                                     
 >        if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;
@@ -68,14 +68,7 @@ gap> Length( C );  DifferencesList( P );
 12
 [ 12, 12, 12, 12, 12, 12, 12 ]
 
-## SubSection 2.1.5 
-gap> PrintListOneItemPerLine( [4,5,6] );
-[ 4,
-  5,
-  6
-  ]
-
-## SubSection 2.2.1 
+## SubSection 3.2.1 
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;
 gap> DistinctRepresentatives( J );
 [ 1, 3, 4, 2 ]
@@ -94,7 +87,7 @@ gap> trans := CommonTransversal( d16, c4 );
 gap> IsCommonTransversal( d16, c4, trans );
 true
 
-## SubSection 2.3.1 
+## SubSection 3.3.1 
 gap> gens := GeneratorsOfGroup( DihedralGroup(12) );
 [ f1, f2, f3 ]
 gap> String( gens );                                
@@ -102,7 +95,7 @@ gap> String( gens );
 gap> BlankFreeString( gens );                       
 "[f1,f2,f3]"
 
-## SubSection 2.3.2 
+## SubSection 3.3.2 
 gap> StringDotSuffix( "file.ext" );
 "ext"
 gap> StringDotSuffix( "file.ext.bak" );

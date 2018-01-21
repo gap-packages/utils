@@ -4,12 +4,14 @@
 ##  call this with GAP from within the package root directory 
 ##  
 LoadPackage( "GAPDoc" );
+LoadPackage( "AutoDoc" ); 
 
 AutoDoc( rec( 
     scaffold := rec(
         ## MainPage := false, 
-        includes := [ "intro.xml", "lists.xml", "number.xml", "groups.xml", 
-                      "record.xml", "others.xml", "transfer.xml" ],
+        includes := [ "intro.xml",  "print.xml",   "lists.xml", 
+                      "number.xml", "groups.xml",  "record.xml", 
+                      "others.xml", "transfer.xml" ],
         bib := "bib.xml", 
         entities := rec( 
             AutoDoc := "<Package>AutoDoc</Package>",
@@ -22,8 +24,5 @@ AutoDoc( rec(
         )
     )
 ));
-
-# Create VERSION file for "make towww"
-PrintTo( "VERSION", GAPInfo.PackageInfoCurrent.Version );
 
 QUIT;
