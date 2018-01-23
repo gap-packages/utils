@@ -8,7 +8,7 @@ SetPackageInfo( rec(
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 Version := "0.49.dev",
-Date := "21/01/2018",
+Date := "23/01/2018",
 
 Persons := [
   rec(

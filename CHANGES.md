@@ -1,8 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.51 for GAP 4.8.10 (21/01/18) 
+## Version 0.49dev for GAP 4.8.10 (23/01/18) 
 
- * (21/01/18) PrintOneItemPerLine plus alternative method for iterators 
+ * (22/01/18) PrintOneItemPerLine plus alternative method for iterators 
               added function PrintSelection(L,first,step) for lists/iterators
  * (06/01/18) rebuilt the manual using the AutoDoc package 
  * (22/12/17) removed examples/ folder

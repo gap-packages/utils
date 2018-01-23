@@ -2,7 +2,7 @@
 ##
 #W  read.g                 The Utils package                     Chris Wensley
 ## 
-#Y  Copyright (C) 2015-2017, The GAP Group,  
+#Y  Copyright (C) 2015-2018, The GAP Group,  
 ##
 
 ## read the actual code 
@@ -16,5 +16,6 @@ ReadPackage( "utils", "lib/magma.gi" );
 ReadPackage( "utils", "lib/maps.gi" );
 ReadPackage( "utils", "lib/number.gi" );
 ReadPackage( "utils", "lib/others.gi" );
+ReadPackage( "utils", "lib/print.gi" );
 ReadPackage( "utils", "lib/record.gi" );
 ReadPackage( "utils", "lib/string.gi" );
