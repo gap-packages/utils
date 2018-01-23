@@ -11,7 +11,11 @@ true
 ## SubSection 2.1.1 
 gap> s3 := SymmetricGroup( 3 );; 
 gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;
-gap> PrintOneItemPerLine( L );
+gap> L0 := [ "IsFinite", "IsSmallList", "IsGeneratorsOfMagmaWithInverses", 
+>            "IsGeneratorsOfSemigroup", "IsSubsetLocallyFiniteGroup" ];; 
+gap> ForAll( L0, x -> x in L );
+true
+gap> PrintOneItemPerLine( L0 );
 [ IsFinite,
   IsSmallList,
   IsGeneratorsOfMagmaWithInverses,
