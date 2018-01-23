@@ -1,46 +1,156 @@
   
-  [1X5 [33X[0;0YRecords[133X[101X
+  [1X5 [33X[0;0YGroups and homomorphisms[133X[101X
   
   
-  [1X5.1 [33X[0;0YFunctions for records[133X[101X
+  [1X5.1 [33X[0;0YFunctions for groups[133X[101X
   
-  [1X5.1-1 SetIfMissing[101X
+  [1X5.1-1 Comm[101X
   
-  [29X[2XSetIfMissing[102X( [3Xrec[103X, [3Xname[103X, [3Xval[103X ) [32X function
+  [33X[1;0Y[29X[2XComm[102X( [3XL[103X ) [32X operation[133X
   
-  [33X[0;0YThis function has been transferred from package [5XAutoDoc[105X, where it was called
-  [10XAUTODOC_WriteOnce[110X.  It writes into a record provided the position is not yet
-  bound.[133X
+  [33X[0;0YThis method has been transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0YIt  provides  a  method  for  [10XComm[110X  when the argument is a list (enclosed in
+  square brackets), and calls the function [10XLeftNormedComm[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xr := rec( a := 1, b := 2 );;                                      [127X[104X
-    [4X[25Xgap>[125X [27XSetIfMissing( r, "c", 3 );[127X[104X
-    [4X[25Xgap>[125X [27Xnames := RecNames( r );;[127X[104X
-    [4X[25Xgap>[125X [27XSet( names );[127X[104X
-    [4X[28X[ "a", "b", "c" ][128X[104X
-    [4X[25Xgap>[125X [27XSetIfMissing( r, "c", 4 );[127X[104X
-    [4X[25Xgap>[125X [27Xr;[127X[104X
-    [4X[28Xrec( a := 1, b := 2, c := 3 )[128X[104X
+    [4X[25Xgap>[125X [27XComm( [ (1,2), (2,3) ] );[127X[104X
+    [4X[28X(1,2,3)[128X[104X
+    [4X[25Xgap>[125X [27XComm( [(1,2),(2,3),(3,4),(4,5),(5,6)] );[127X[104X
+    [4X[28X(1,5,6)[128X[104X
+    [4X[25Xgap>[125X [27XComm(Comm(Comm(Comm((1,2),(2,3)),(3,4)),(4,5)),(5,6));  ## the same[127X[104X
+    [4X[28X(1,5,6)[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.1-2 AssignGlobals[101X
+  [1X5.1-2 IsCommuting[101X
   
-  [29X[2XAssignGlobals[102X( [3Xrec[103X ) [32X function
+  [33X[1;0Y[29X[2XIsCommuting[102X( [3Xa[103X, [3Xb[103X ) [32X operation[133X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
   
-  [33X[0;0YIt  assigns  the  record components of [3Xrec[103X to global variables with the same
-  names.[133X
+  [33X[0;0YIt tests whether two elements in a group commute.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XAssignGlobals( r );[127X[104X
-    [4X[28XThe following global variables have been assigned:[128X[104X
-    [4X[28X[ "a", "b", "c" ][128X[104X
-    [4X[25Xgap>[125X [27X[a,b,c];[127X[104X
-    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XD12 := DihedralGroup( 12 );[127X[104X
+    [4X[28X<pc group of size 12 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSetName( D12, "D12" ); [127X[104X
+    [4X[25Xgap>[125X [27Xa := D12.1;;  b := D12.2;;  [127X[104X
+    [4X[25Xgap>[125X [27XIsCommuting( a, b );[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-3 ListOfPowers[101X
+  
+  [33X[1;0Y[29X[2XListOfPowers[102X( [3Xg[103X, [3Xexp[103X ) [32X operation[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YThe  operation  [10XListOfPowers(g,exp)[110X  returns  the  list [22X[g,g^2,...,g^exp][122X of
+  powers of the element [22Xg[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XListOfPowers( 2, 20 );[127X[104X
+    [4X[28X[ 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384,[128X[104X
+    [4X[28X 32768, 65536, 131072, 262144, 524288, 1048576 ][128X[104X
+    [4X[25Xgap>[125X [27XListOfPowers( (1,2,3)(4,5), 12 );[127X[104X
+    [4X[28X[ (1,2,3)(4,5), (1,3,2), (4,5), (1,2,3), (1,3,2)(4,5), (),[128X[104X
+    [4X[28X (1,2,3)(4,5), (1,3,2), (4,5), (1,2,3), (1,3,2)(4,5), () ][128X[104X
+    [4X[25Xgap>[125X [27XListOfPowers( D12.2, 6 );[127X[104X
+    [4X[28X[ f2, f3, f2*f3, f3^2, f2*f3^2, <identity> of ... ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-4 GeneratorsAndInverses[101X
+  
+  [33X[1;0Y[29X[2XGeneratorsAndInverses[102X( [3XG[103X ) [32X operation[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YThis operation returns a list containing the generators of [22XG[122X followed by the
+  inverses of these generators.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsAndInverses( D12 );[127X[104X
+    [4X[28X[ f1, f2, f3, f1, f2*f3^2, f3^2 ][128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsAndInverses( SymmetricGroup(5) );     [127X[104X
+    [4X[28X[ (1,2,3,4,5), (1,2), (1,5,4,3,2), (1,2) ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-5 UpperFittingSeries[101X
+  
+  [33X[1;0Y[29X[2XUpperFittingSeries[102X( [3XG[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XLowerFittingSeries[102X( [3XG[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XFittingLength[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YThese three functions have been transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0YThe  upper  and  lower  Fitting  series and the Fitting length of a solvable
+  group are described here: [7Xhttps://en.wikipedia.org/wiki/Fitting_length[107X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XUpperFittingSeries( D12 );  LowerFittingSeries( D12 );[127X[104X
+    [4X[28X[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ][128X[104X
+    [4X[28X[ D12, Group([ f3 ]), Group([  ]) ][128X[104X
+    [4X[25Xgap>[125X [27XFittingLength( D12 );[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XS4 := SymmetricGroup( 4 );;[127X[104X
+    [4X[25Xgap>[125X [27XUpperFittingSeries( S4 );[127X[104X
+    [4X[28X[ Group(()), Group([ (1,2)(3,4), (1,4)(2,3) ]), Group([ (1,2)(3,4), (1,4)[128X[104X
+    [4X[28X  (2,3), (2,4,3) ]), Group([ (3,4), (2,3,4), (1,2)(3,4) ]) ][128X[104X
+    [4X[25Xgap>[125X [27XList( last, StructureDescription );[127X[104X
+    [4X[28X[ "1", "C2 x C2", "A4", "S4" ][128X[104X
+    [4X[25Xgap>[125X [27XLowerFittingSeries( S4 );[127X[104X
+    [4X[28X[ Sym( [ 1 .. 4 ] ), Alt( [ 1 .. 4 ] ), Group([ (1,4)(2,3), (1,3)[128X[104X
+    [4X[28X (2,4) ]), Group(()) ][128X[104X
+    [4X[25Xgap>[125X [27XList( last, StructureDescription );[127X[104X
+    [4X[28X[ "S4", "A4", "C2 x C2", "1" ][128X[104X
+    [4X[25Xgap>[125X [27XFittingLength( S4);[127X[104X
+    [4X[28X3[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.2 [33X[0;0YFunctions for group homomorphisms[133X[101X
+  
+  [1X5.2-1 EpimorphismByGenerators[101X
+  
+  [33X[1;0Y[29X[2XEpimorphismByGenerators[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YIt  constructs  a group homomorphism which maps the generators of [22XG[122X to those
+  of  [22XH[122X.  Its intended use is when [22XG[122X is a free group, and a warning is printed
+  when  this  is  not the case. Note that anything may happen if the resulting
+  map is not a homomorphism![133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XG := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;[127X[104X
+    [4X[25Xgap>[125X [27Xphi := EpimorphismByGenerators( FreeGroup("a","b","c","d"), G );[127X[104X
+    [4X[28X[ a, b, c, d ] -> [ (1,2,3), (3,4,5), (5,6,7), (7,8,9) ][128X[104X
+    [4X[25Xgap>[125X [27XPreImagesRepresentative( phi, (1,2,3,4,5,6,7,8,9) );[127X[104X
+    [4X[28Xd*c*b*a[128X[104X
+    [4X[25Xgap>[125X [27Xa := G.1;; b := G.2;; c := G.3;; d := G.4;;[127X[104X
+    [4X[25Xgap>[125X [27Xd*c*b*a;[127X[104X
+    [4X[28X(1,2,3,4,5,6,7,8,9)[128X[104X
+    [4X[25Xgap>[125X [27X## note that it is easy to produce nonsense: [127X[104X
+    [4X[25Xgap>[125X [27Xepi := EpimorphismByGenerators( Group((1,2,3)), Group((8,9)) );[127X[104X
+    [4X[28XWarning: calling GroupHomomorphismByImagesNC without checks[128X[104X
+    [4X[28X[ (1,2,3) ] -> [ (8,9) ][128X[104X
+    [4X[25Xgap>[125X [27XIsGroupHomomorphism( epi );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XImage( epi, (1,2,3) );                                            [127X[104X
+    [4X[28X()[128X[104X
+    [4X[25Xgap>[125X [27XImage( epi, (1,3,2) );[127X[104X
+    [4X[28X(8,9)[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

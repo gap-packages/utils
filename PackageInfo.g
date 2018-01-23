@@ -4,39 +4,11 @@
 ##
 
 SetPackageInfo( rec(
-Packagename := "utils", 
+
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-
-Version := "0.49",
-Date := "05/12/2017",
-
-##  duplicate these values for inclusion in the manual: 
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY UTILSVERSION "0.49">
-##  <!ENTITY UTILSTARFILENAME "utils-0.49.tar.gz">
-##  <!ENTITY UTILSHTMLFILENAME "utils.html">
-##  <!ENTITY UTILSRELEASEDATE "05/12/2017">
-##  <!ENTITY UTILSLONGRELEASEDATE "5th December 2017">
-##  <!ENTITY UTILSCOPYRIGHTYEARS "2015-2017">
-##  <#/GAPDoc>
-
-##  Optional:
-##    - Type and the URL of the source code repository
-##    - URL of the public issue tracker
-##    - Support email address
-SourceRepository := rec( 
-    Type := "git", # must be one of "git", "hg", "svn", "cvs"
-    URL  := "https://github.com/gap-packages/utils" ),
-IssueTrackerURL  := "https://github.com/gap-packages/utils/issues",
-PackageWWWHome   := "https://gap-packages.github.io/utils", 
-README_URL       := Concatenation( ~.PackageWWWHome, "/README.md" ), 
-PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
-ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
-                                   "/releases/download/v", ~.Version,
-                                   "/", ~.Packagename, "-", ~.Version ),
-ArchiveFormats := ".tar.gz .zip",
-SupportEmail     := "c.d.wensley@bangor.ac.uk",
+Version := "0.52",
+Date := "23/01/2018",
 
 Persons := [
   rec(
@@ -97,6 +69,19 @@ Status := "deposited",
 ## CommunicatedBy := "  ",
 ## AcceptDate := "  ",
 
+SourceRepository := rec( 
+    Type             := "git", 
+    URL              := "https://github.com/gap-packages/utils" ),
+    IssueTrackerURL  := "https://github.com/gap-packages/utils/issues",
+    PackageWWWHome   := "https://gap-packages.github.io/utils", 
+    README_URL       := Concatenation( ~.PackageWWWHome, "/README.md" ), 
+    PackageInfoURL   := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ), 
+    ArchiveURL       := Concatenation( ~.SourceRepository.URL, 
+                                       "/releases/download/v", ~.Version,
+                                       "/", ~.PackageName, "-", ~.Version ),
+ArchiveFormats := ".tar.gz .zip", 
+
+
 AbstractHTML :=
  "The <span class=\"pkgname\">Utils</span> package provides a collection \
   of utility functions gleaned from many packages.",
@@ -113,20 +98,63 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.8.8",
-  NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], ["Polycyclic", ">= 2.11" ] ], 
+  NeededOtherPackages := [ ["GAPDoc", ">= 1.5.1"], 
+                           ["Polycyclic", ">= 2.11" ] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
 ),
 
 AvailabilityTest := ReturnTrue,
 
+Autoload := false, 
+
+Keywords := [ ], 
+
 BannerString := Concatenation( 
-  "Loading Utils ", String( ~.Version ), " for GAP 4.8", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.8", 
   " - a collection of utility functions.\n"
 ),
 
 TestFile := "tst/testall.g",
 
-Keywords := [ ]
+AutoDoc := rec(
+    TitlePage := rec(
+        Copyright := Concatenation(
+            "&copyright; 2015-2018, The GAP Group. <P/>\n", 
+            "The &Utils; package is free software; you can redistribute it ", 
+            "and/or modify it under the terms of the GNU General ", 
+            "Public License as published by the Free Software Foundation; ", 
+            "either version 2 of the License, or (at your option) ", 
+            "any later version.\n"
+            ),
+        Abstract := Concatenation( 
+            "The &Utils; package provides a space for utility functions ", 
+            "in a variety of &GAP; packages to be collected together ", 
+            "into a single package.  In this way it is hoped that they will ", 
+            "become more visible to package authors.\n", 
+            "<P/>\n", 
+            "Any package author who transfers a function to &Utils; ", 
+            "will become an author of &Utils;.\n",    
+            "<P/>\n", 
+            "If deemed appropriate, functions may also be transferred ", 
+            "from the main library.\n", 
+            "<P/>\n", 
+            "Bug reports, suggestions and comments are, of course, welcome.\n", 
+            "Please contact the last author at ", 
+            "<Email>c.d.wensley@bangor.ac.uk</Email> ", 
+            "or submit an issue at the GitHub repository ",
+            "<URL>https://github.com/gap-packages/utils/issues/</URL>.\n" 
+            ), 
+        Acknowledgements := Concatenation( 
+            "This documentation was prepared with the ", 
+            "&GAPDoc; <Cite Key='GAPDoc'/> and ", 
+            "&AutoDoc; <Cite Key='AutoDoc'/> packages.<P/>\n", 
+            "The procedure used to produce new releases uses the package ", 
+            "<Package>GitHubPagesForGAP</Package> ", 
+            "<Cite Key='GitHubPagesForGAP' /> ", 
+            "and the package <Package>ReleaseTools</Package>.<P/>" 
+            ),
+    ) 
+),
 
 ));

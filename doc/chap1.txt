@@ -16,7 +16,7 @@
   
   [33X[0;0YFunctions are currently being transferred from the following packages:[133X
   
-  [30X    [33X[0;6YConversion of a [5XGAP[105X group to a Magma output string, taken from various
+  [30X    [33X[0;6YConversion of a [5XGAP[105X group to a [22XMagma[122X output string, taken from various
         sources including [11Xother.gi[111X in the main library.[133X
   
   [33X[0;0YTransfer is complete (for now) for functions from the following packages:[133X
@@ -41,7 +41,7 @@
   [7Xhttps://github.com/gap-packages/utils[107X.[133X
   
   [33X[0;0YOnce  the  package  is loaded, the manual [10Xdoc/manual.pdf[110X can be found in the
-  documentation  folder.  The  [10Xhtml[110X  versions, with or without MathJax, may be
+  documentation  folder.  The  [10Xhtml[110X  versions, with or without [22XMathJax[122X, may be
   rebuilt as follows:[133X
   
   [4X[32X  Example  [32X[104X
@@ -83,7 +83,7 @@
   
   [30X    [33X[0;6YDocumentation of the function and test examples are available.[133X
   
-  [30X    [33X[0;6YWhen  there is more than one active author of Home, they should all be
+  [30X    [33X[0;6YWhen  there is more than one active author of [5XHome[105X, they should all be
         aware (and content) that the transfer is taking place.[133X
   
   [33X[0;0YAuthors  of  packages may be reluctant to let go of their utility functions.
@@ -109,5 +109,5 @@
         number of [13Xcontributors[113X.)[133X
   
   [33X[0;0YThe  process  for  transferring  utility  functions  from  [5XHome[105X  to [5XUtils[105X is
-  described in Chapter [14X7[114X.[133X
+  described in Chapter [14X8[114X.[133X
   

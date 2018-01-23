@@ -1,94 +1,216 @@
   
-  [1X7 [33X[0;0YThe transfer procedure[133X[101X
+  [1X7 [33X[0;0YVarious other functions[133X[101X
   
-  [33X[0;0YWe  consider  here  the  process  for  transferring utility functions from a
-  package  [5XHome[105X to [5XUtils[105X which has to avoid the potential problem of duplicate
-  declarations of a function causing loading problems in [5XGAP[105X.[133X
   
-  [33X[0;0YIf  the functions in [5XHome[105X all have names of the form [10XHOME_FunctionName[110X then,
-  in  [5XUtils[105X,  these  functions  are  likely  to  be renamed as [10XFunctionName[110X or
-  something  similar.  In this case the problem of duplicate declarations does
-  not  arise.  This  is  what  has  happened  with  transfers from the [5XAutoDoc[105X
-  package.[133X
+  [1X7.1 [33X[0;0YOperations on folders[133X[101X
   
-  [33X[0;0YThe  case  where  the  function  names  are  unchanged  is more complicated.
-  Initially  we  tried  out  a process which allowed repeated declarations and
-  installations of the functions being transferred. This involved additions to
-  the  main  library  files  [11Xglobal.g[111X  and [11Xoper.g[111X. Since there were misgivings
-  about  interfering  in this way with basic operations such as [10XBIND_GLOBAL[110X, a
-  simpler (but slightly less convenient) process has been adopted.[133X
+  [1X7.1-1 FindMatchingFiles[101X
   
-  [33X[0;0YUsing  this alternative procedure, the following steps will be followed when
-  making transfers from [5XHome[105X to [5XUtils[105X.[133X
+  [33X[1;0Y[29X[2XFindMatchingFiles[102X( [3Xpkg[103X, [3Xdirs[103X, [3Xextns[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XCreateDirIfMissing[102X( [3Xstr[103X ) [32X function[133X
   
-  [31X1[131X   [33X[0;6Y([5XHome[105X:)  Offer  functions  for  inclusion.  This may be simply done by
-        emailing  a  list  of functions. More usefully, email the declaration,
-        implementation,  test and documentation files, e.g.: [11Xhome.gd[111X, [11Xhome.gi[111X,
-        [11Xhome.tst[111X and [11Xhome.xml[111X. (All active authors should be involved.)[133X
+  [33X[0;0YThese  functions  have been transferred from package [5XAutoDoc[105X where they were
+  named [10XAutoDoc_FindMatchingFiles[110X and [10XAutoDoc_CreateDirIfMissing[110X.[133X
   
-  [31X2[131X   [33X[0;6Y([5XHome[105X:)  Declare that [12Xm.n[112X is the last version of [5XHome[105X to contain these
-        functions,  so  that  [12Xm.n+1[112X  (or similar) will be the first version of
-        [5XHome[105X  to  have  all these functions removed, and to specify [5XUtils[105X as a
-        required package.[133X
+  [33X[0;0Y[10XFindMatchingFiles[110X  scans  the  given  (by  name) subdirectories of a package
+  directory  for  files  with  one  of  the  given extensions, and returns the
+  corresponding filenames, as paths relative to the package directory.[133X
   
-  [31X3[131X   [33X[0;6Y([5XUtils[105X:) Add strings [3X"home"[103X and [3X"m.n"[103X to the list [10XUtilsPackageVersions[110X
-        in the file [11Xutils/lib/start.gd[111X.[133X
+  [33X[0;0Y[10XCreateDirIfMissing[110X  checks  whether  the given directory exists and, if not,
+  attempts to create it. In either case [10Xtrue[110X is returned.[133X
   
-  [4X      [32X  Example  [32X[104X
-          [4X[28X[128X[104X
-          [4X[28XUtilsPackageVersions := [128X[104X
-          [4X[28X  [ "autodoc",     "2016.01.31", [128X[104X
-          [4X[28X    "resclasses",  "4.2.5", [128X[104X
-          [4X[28X    "home",        "m.n",[128X[104X
-          [4X[28X    ...,           ... [128X[104X
-          [4X[28X  ];[128X[104X
-          [4X[28X[128X[104X
-        [4X[32X[104X
+  [33X[0;0Y[13XWarning:[113X   this   function  relies  on  the  undocumented  library  function
+  [10XCreateDir[110X, so use it with caution.[133X
   
-        [33X[0;6YWhile  the  transfers  are  being  made,  it is essential that any new
-        versions  of  [5XHome[105X  should  be tested with the latest version of [5XUtils[105X
-        before they are released, so as to avoid loading failures.[133X
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );[127X[104X
+    [4X[28X[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", [128X[104X
+    [4X[28X  "tst/testall.g" ][128X[104X
+    [4X[25Xgap>[125X [27XCreateDirIfMissing( "/Applications/gap/temp/" );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   
-  [31X4[131X   [33X[0;6Y([5XUtils[105X:)  Include the function declaration and implementation sections
-        in suitable files, enclosed within a conditional clause of the form:[133X
   
-  [4X      [32X  Example  [32X[104X
-          [4X[28X[128X[104X
-          [4X[28Xif OKtoReadFromUtils( "Home" ) then[128X[104X
-          [4X[28X. . . . . . [128X[104X
-          [4X[28X <the code> [128X[104X
-          [4X[28X. . . . . . [128X[104X
-          [4X[28Xfi;[128X[104X
-          [4X[28X[128X[104X
-        [4X[32X[104X
+  [1X7.2 [33X[0;0YFile operations[133X[101X
   
-        [33X[0;6YThe  function  [10XOKtoReadFromUtils[110X  returns  [10Xtrue[110X  only  if  there is an
-        installed version of [5XHome[105X and if this version is greater than [12Xm.n[112X. So,
-        at  this  stage, [13Xthe copied code will not be read[113X, and the transferred
-        functions can only be called if [5XHome[105X has been installed.[133X
+  [1X7.2-1 Log2HTML[101X
   
-  [31X5[131X   [33X[0;6Y([5XUtils[105X:)  Add  the  test and documentation material to the appropriate
-        files.  The  copied code can be tested by temporarily moving [5XHome[105X away
-        from [5XGAP[105X's package directory.[133X
+  [33X[1;0Y[29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function[133X
   
-  [31X6[131X   [33X[0;6Y([5XUtils[105X:) Release a new version of [5XUtils[105X containing all the transferred
-        material.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [31X7[131X   [33X[0;6Y([5XHome[105X:)  Edit  out  the  declarations  and  implementations of all the
-        transferred functions, and remove references to them in the manual and
-        tests.  Possibly  add  a  note to the manual that these functions have
-        been transferred. Add [5XUtils[105X to the list of [5XHome[105X's required packages in
-        [11XPackageInfo.g[111X. Release a new version of [5XHome[105X.[133X
+  [33X[0;0YThis  function  converts  the [5XGAP[105X logfile [11Xfilename[111X to HTML. The extension of
+  the input file must be [11X*.log[111X. The name of the output file is the same as the
+  one of the input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X.
+  There  is a sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to
+  your taste.[133X
   
-  [31X8[131X   [33X[0;6Y([5XUtils[105X:)  In  due  course,  when  the  new version(s) of [5XHome[105X are well
-        established,  it  may  be  safe  to  remove  the  conditional  clauses
-        mentioned in item 4 above. The entry for [5XHome[105X in [10XUtilsPackageLists[110X may
-        then be removed.[133X
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLogTo("mar2.log");[127X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["g"] ); [127X[104X
+    [4X[28X[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ][128X[104X
+    [4X[25Xgap>[125X [27XLogTo();[127X[104X
+    [4X[25Xgap>[125X [27XLog2HTML( "mar2.log" );[127X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["html", "log"] );[127X[104X
+    [4X[28X[ "/mar2.html", "/mar2.log" ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   
-  [33X[0;0YFinally,  a  note on the procedure for testing these functions. As long as a
-  function  being  transferred still exists in the [5XHome[105X package, the code will
-  not  be  read  from  [5XUtils[105X.  So,  when the tests are run, it is necessary to
-  [10XLoadPackage("home")[110X    before    the    function   is   called.   The   file
-  [11Xutils/tst/testall.g[111X  makes  sure  that all the necessary packages are loaded
-  before the individual tests are called.[133X
+  
+  [1X7.3 [33X[0;0YLaTeX strings[133X[101X
+  
+  [1X7.3-1 IntOrOnfinityToLaTeX[101X
+  
+  [33X[1;0Y[29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0Y[10XIntOrInfinityToLaTeX(n)[110X returns the LaTeX string for [3Xn[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( 10^3 );[127X[104X
+    [4X[28X"1000"[128X[104X
+    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( infinity );[127X[104X
+    [4X[28X"\\infty"[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X7.3-2 LaTeXStringFactorsInt[101X
+  
+  [33X[1;0Y[29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YIt  returns  the  prime  factorization of the integer [22Xn[122X as a string in LaTeX
+  format.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLaTeXStringFactorsInt( Factorial(12) );[127X[104X
+    [4X[28X"2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X7.4 [33X[0;0YApplicable methods[133X[101X
+  
+  [1X7.4-1 PrintApplicableMethod[101X
+  
+  [33X[1;0Y[29X[2XPrintApplicableMethod[102X( [3Xarg[103X ) [32X function[133X
+  
+  [33X[0;0YThis    function   combines   calls   to   [10XApplicableMethod[110X,   [10XFilenameFunc[110X,
+  [10XStartlineFunc[110X and [10XEndlineFunc[110X and prints the location of the file containing
+  the  method  found, and a listing of that method. In its simplest form it is
+  called  as  [10XPrintApplicableMethod(f,L)[110X  for  a  function  [10Xf[110X  and  a  list of
+  parameters  [10XL[110X. Alternatively, it is called as [10XPrintApplicableMethod(f,L,0,n)[110X
+  and then prints the method returned by [10XApplicableMethod(f,L,0,n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );[127X[104X
+    [4X[28Xthis method is contained in lines [30,36] of file:[128X[104X
+    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
+    [4X[28Xfunction ( G )[128X[104X
+    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1  then[128X[104X
+    [4X[28X        return true;[128X[104X
+    [4X[28X    else[128X[104X
+    [4X[28X        return TRY_NEXT_METHOD;[128X[104X
+    [4X[28X    fi;[128X[104X
+    [4X[28X    return;[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );[127X[104X
+    [4X[28Xthis method is contained in lines [41,63] of file:[128X[104X
+    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
+    [4X[28Xfunction ( G )[128X[104X
+    [4X[28X    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1[128X[104X
+    [4X[28X         then[128X[104X
+    [4X[28X        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );[128X[104X
+    [4X[28X        return true;[128X[104X
+    [4X[28X    elif not IsCommutative( G )  then[128X[104X
+    [4X[28X        return false;[128X[104X
+    [4X[28X    elif IsFinite( G )  then[128X[104X
+    [4X[28X        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )[128X[104X
+    [4X[28X                return [128X[104X
+    [4X[28X                 Index( G, [128X[104X
+    [4X[28X                     SubgroupNC( G, [128X[104X
+    [4X[28X                       List( GeneratorsOfGroup( G ), function ( g )[128X[104X
+    [4X[28X                              return g ^ p;[128X[104X
+    [4X[28X                          end ) ) ) = p;[128X[104X
+    [4X[28X            end );[128X[104X
+    [4X[28X    else[128X[104X
+    [4X[28X        return AbelianInvariants( G ) = [ 0 ];[128X[104X
+    [4X[28X    fi;[128X[104X
+    [4X[28X    return;[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X7.5 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
+  
+  [1X7.5-1 ConvertToMagmaInputString[101X
+  
+  [33X[1;0Y[29X[2XConvertToMagmaInputString[102X( [3Xarg[103X ) [32X function[133X
+  
+  [33X[0;0YThe  function  [10XConvertToMagmaInputString( obj [, str] )[110X attempts to output a
+  string  [10Xs[110X  which  can  be  read into [22XMagma[122X [BCP97] so as to produce the same
+  group in that computer algebra system. In the second form the user specifies
+  the  name  of  the  resulting object, so that the output string has the form
+  [10X"str   :=   ..."[110X.   When   [10Xobj[110X   is   a  permutation  group,  the  operation
+  [10XPermGroupToMagmaFormat(obj)[110X  is  called.  This  function has been taken from
+  [11Xother.gi[111X  in the main library where it was called [10XMagmaInputString[110X. When [10Xobj[110X
+  is  a  pc-group,  the  operation  [10XPcGroupToMagmaFormat(obj)[110X  is called. This
+  function  was  private  code  of Max Horn. When [10Xobj[110X is a matrix group over a
+  finite  field,  the  operation [10XMatrixGroupToMagmaFormat(obj)[110X is called. This
+  function is a modification of private code of Frank Lübeck.[133X
+  
+  [33X[0;0YHopefully code for other types of group will be added in due course.[133X
+  
+  [33X[0;0YThese  functions  should  be  considered  [13Xexperimental[113X,  and more testing is
+  desirable.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );[127X[104X
+    [4X[28X"PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        [127X[104X
+    [4X[28X"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( SmallGroup( 24, 12 ) );      [127X[104X
+    [4X[28X"PolycyclicGroup< f1,f2,f3,f4 |\nf1^2,\nf2^3,\nf3^2,\nf4^2,\nf2^f1 = f2^2,\nf3\[128X[104X
+    [4X[28X^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );[127X[104X
+    [4X[28X"c7:=PolycyclicGroup< f1 |\nf1^7\n>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XM := GL(2,5);;  Size(M); [127X[104X
+    [4X[28X480[128X[104X
+    [4X[25Xgap>[125X [27Xs1 := ConvertToMagmaInputString( M );[127X[104X
+    [4X[28X"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub<P |\[128X[104X
+    [4X[28X gens>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XPrint( s1 );[127X[104X
+    [4X[28XF := GF(5);[128X[104X
+    [4X[28XP := GL(2,F);[128X[104X
+    [4X[28Xgens := [[128X[104X
+    [4X[28XP![2,0,0,1],[128X[104X
+    [4X[28XP![4,1,4,0][128X[104X
+    [4X[28X];[128X[104X
+    [4X[28Xsub<P | gens>;[128X[104X
+    [4X[25Xgap>[125X [27Xn1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xn2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XN := Group( n1, n2 );;  Size( N );[127X[104X
+    [4X[28X5760[128X[104X
+    [4X[25Xgap>[125X [27Xs2 := ConvertToMagmaInputString( N, "gpN" );;[127X[104X
+    [4X[25Xgap>[125X [27XPrint( s2 );[127X[104X
+    [4X[28XF := GF(3^2);[128X[104X
+    [4X[28XP := GL(2,F);[128X[104X
+    [4X[28Xw := PrimitiveElement(F);[128X[104X
+    [4X[28Xgens := [[128X[104X
+    [4X[28XP![ 1, 1, 1,w^1],[128X[104X
+    [4X[28XP![ 1,w^3, 2,w^2][128X[104X
+    [4X[28X];[128X[104X
+    [4X[28XgpN := sub<P | gens>;[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   

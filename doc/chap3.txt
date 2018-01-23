@@ -1,164 +1,212 @@
   
-  [1X3 [33X[0;0YNumber-theoretic functions[133X[101X
+  [1X3 [33X[0;0YLists, Sets and Strings[133X[101X
   
   
-  [1X3.1 [33X[0;0YFunctions for integers[133X[101X
+  [1X3.1 [33X[0;0YFunctions for lists[133X[101X
   
-  [1X3.1-1 AllSmoothIntegers[101X
+  [1X3.1-1 DifferencesList[101X
   
-  [29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3Xmaxn[103X ) [32X function
-  [29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XDifferencesList[102X( [3XL[103X ) [32X function[133X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
   
-  [33X[0;0YThe  function  [10XAllSmoothIntegers([3Xmaxp[103X[10X,[3Xmaxn[103X[10X)[110X returns the list of all positive
-  integers  less than or equal to [3Xmaxn[103X whose prime factors are all in the list
-  [22XL = {p ~|~ p leqslant maxp, p~mboxprime }[122X.[133X
-  
-  [33X[0;0YIn  the  alternative  form, when [22XL[122X is a list of primes, the function returns
-  the list of all positive integers whose prime factors lie in [22XL[122X.[133X
+  [33X[0;0YIt  takes a list [22XL[122X of length [22Xn[122X and outputs the list of length [22Xn-1[122X containing
+  all the differences [22XL[i]-L[i-1][122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XAllSmoothIntegers( 3, 1000 );[127X[104X
-    [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 54, 64, 72, 81, 96, [128X[104X
-    [4X[28X  108, 128, 144, 162, 192, 216, 243, 256, 288, 324, 384, 432, 486, 512, 576, [128X[104X
-    [4X[28X  648, 729, 768, 864, 972 ][128X[104X
-    [4X[25Xgap>[125X [27XAllSmoothIntegers( [5,11,17], 1000 );[127X[104X
-    [4X[28X[ 1, 5, 11, 17, 25, 55, 85, 121, 125, 187, 275, 289, 425, 605, 625, 935 ][128X[104X
-    [4X[25Xgap>[125X [27XLength( last );[127X[104X
-    [4X[28X16[128X[104X
-    [4X[25Xgap>[125X [27XList( [3..20], n -> Length( AllSmoothIntegers( [5,11,17], 10^n ) ) );[127X[104X
-    [4X[28X[ 16, 29, 50, 78, 114, 155, 212, 282, 359, 452, 565, 691, 831, 992, 1173, [128X[104X
-    [4X[28X  1374, 1595, 1843 ][128X[104X
+    [4X[25Xgap>[125X [27XList( [1..12], n->n^3 );[127X[104X
+    [4X[28X[ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728 ][128X[104X
+    [4X[25Xgap>[125X [27XDifferencesList( last );[127X[104X
+    [4X[28X[ 7, 19, 37, 61, 91, 127, 169, 217, 271, 331, 397 ][128X[104X
+    [4X[25Xgap>[125X [27XDifferencesList( last );[127X[104X
+    [4X[28X[ 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ][128X[104X
+    [4X[25Xgap>[125X [27XDifferencesList( last );[127X[104X
+    [4X[28X[ 6, 6, 6, 6, 6, 6, 6, 6, 6 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.1-2 AllProducts[101X
+  [1X3.1-2 QuotientsList[101X
   
-  [29X[2XAllProducts[102X( [3XL[103X, [3Xk[103X ) [32X function
+  [33X[1;0Y[29X[2XQuotientsList[102X( [3XL[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XFloatQuotientsList[102X( [3XL[103X ) [32X function[133X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThese functions have been transferred from package [5XResClasses[105X.[133X
   
-  [33X[0;0YThe  command  [10XAllProducts([3XL[103X[10X,[3Xk[103X[10X)[110X returns the list of all products of [3Xk[103X entries
-  of  the  list [3XL[103X. Note that every ordering of the entries is used so that, in
-  the commuting case, there are bound to be repetitions.[133X
+  [33X[0;0YThey  take  a  list  [22XL[122X  of  length [22Xn[122X and output the quotients [22XL[i]/L[i-1][122X of
+  consecutive entries in [22XL[122X. An error is returned if an entry is zero.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XAllProducts([1..4],3); [127X[104X
-    [4X[28X[ 1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16, 2, 4, 6, 8, 4, 8, 12, [128X[104X
-    [4X[28X  16, 6, 12, 18, 24, 8, 16, 24, 32, 3, 6, 9, 12, 6, 12, 18, 24, 9, 18, 27, [128X[104X
-    [4X[28X  36, 12, 24, 36, 48, 4, 8, 12, 16, 8, 16, 24, 32, 12, 24, 36, 48, 16, 32, [128X[104X
-    [4X[28X  48, 64 ][128X[104X
-    [4X[25Xgap>[125X [27XSet(last);            [127X[104X
-    [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 27, 32, 36, 48, 64 ][128X[104X
-    [4X[25Xgap>[125X [27XAllProducts( [(1,2,3),(2,3,4)], 2 );[127X[104X
-    [4X[28X[ (2,4,3), (1,2)(3,4), (1,3)(2,4), (1,3,2) ][128X[104X
+    [4X[25Xgap>[125X [27XList( [0..10], n -> Factorial(n) );[127X[104X
+    [4X[28X[ 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800 ][128X[104X
+    [4X[25Xgap>[125X [27XQuotientsList( last );[127X[104X
+    [4X[28X[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ][128X[104X
+    [4X[25Xgap>[125X [27XL := [ 1, 3, 5, -1, -3, -5 ];;[127X[104X
+    [4X[25Xgap>[125X [27XQuotientsList( L );[127X[104X
+    [4X[28X[ 3, 5/3, -1/5, 3, 5/3 ][128X[104X
+    [4X[25Xgap>[125X [27XFloatQuotientsList( L );[127X[104X
+    [4X[28X[ 3., 1.66667, -0.2, 3., 1.66667 ][128X[104X
+    [4X[25Xgap>[125X [27XQuotientsList( [ 2, 1, 0, -1, -2 ] );[127X[104X
+    [4X[28X[ 1/2, 0, fail, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XFloatQuotientsList( [1..10] );[127X[104X
+    [4X[28X[ 2., 1.5, 1.33333, 1.25, 1.2, 1.16667, 1.14286, 1.125, 1.11111 ][128X[104X
+    [4X[25Xgap>[125X [27XProduct( last );[127X[104X
+    [4X[28X10. [128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.1-3 RestrictedPartitionsWithoutRepetitions[101X
+  [1X3.1-3 SearchCycle[101X
   
-  [29X[2XRestrictedPartitionsWithoutRepetitions[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XSearchCycle[102X( [3XL[103X ) [32X operation[133X
   
   [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YFor  a  positive  integer  [3Xn[103X and a set of positive integers [3XS[103X, this function
-  returns  the  list  of  partitions  of [3Xn[103X into distinct elements of [3XS[103X. Unlike
-  [10XRestrictedPartitions[110X, no repetitions are allowed.[133X
+  [33X[0;0Y[10XSearchCycle[110X  is  a  tool  to find likely cycles in lists. What, precisely, a
+  [13Xcycle[113X is, is deliberately fuzzy here, and may possibly even change. The idea
+  is  that  the beginning of the list may be anything, following that the same
+  pattern  needs  to  be repeated several times in order to be recognized as a
+  cycle.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XRestrictedPartitions( 20, [4..10] );[127X[104X
-    [4X[28X[ [ 4, 4, 4, 4, 4 ], [ 5, 5, 5, 5 ], [ 6, 5, 5, 4 ], [ 6, 6, 4, 4 ], [128X[104X
-    [4X[28X  [ 7, 5, 4, 4 ], [ 7, 7, 6 ], [ 8, 4, 4, 4 ], [ 8, 6, 6 ], [ 8, 7, 5 ], [128X[104X
-    [4X[28X  [ 8, 8, 4 ], [ 9, 6, 5 ], [ 9, 7, 4 ], [ 10, 5, 5 ], [ 10, 6, 4 ], [128X[104X
-    [4X[28X  [ 10, 10 ] ][128X[104X
-    [4X[25Xgap>[125X [27XRestrictedPartitionsWithoutRepetitions( 20, [4..10] );[127X[104X
-    [4X[28X[ [ 10, 6, 4 ], [ 9, 7, 4 ], [ 9, 6, 5 ], [ 8, 7, 5 ] ][128X[104X
-    [4X[25Xgap>[125X [27XRestrictedPartitionsWithoutRepetitions( 10^2, List([1..10], n->n^2 ) );[127X[104X
-    [4X[28X[ [ 100 ], [ 64, 36 ], [ 49, 25, 16, 9, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XL := [1..20];;  L[1]:=13;;                                              [127X[104X
+    [4X[25Xgap>[125X [27Xfor i in [1..19] do                                                     [127X[104X
+    [4X[25X>[125X [27X       if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;[127X[104X
+    [4X[25X>[125X [27X   od;                                                                  [127X[104X
+    [4X[25Xgap>[125X [27XL;                                                                      [127X[104X
+    [4X[28X[ 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XSearchCycle( L );                                                       [127X[104X
+    [4X[28X[ 1, 4, 2 ][128X[104X
+    [4X[25Xgap>[125X [27Xn := 1;;  L := [n];;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in [1..100] do  n:=(n^2+1) mod 1093;  Add(L,n);  od;[127X[104X
+    [4X[25Xgap>[125X [27XL; [127X[104X
+    [4X[28X[ 1, 2, 5, 26, 677, 363, 610, 481, 739, 715, 795, 272, 754, 157, 604, 848, [128X[104X
+    [4X[28X  1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, 271, [128X[104X
+    [4X[28X  211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, 271, 211, 802, 521, [128X[104X
+    [4X[28X  378, 795, 272, 754, 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, [128X[104X
+    [4X[28X  754, 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, [128X[104X
+    [4X[28X  848, 1004, 271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004, [128X[104X
+    [4X[28X  271, 211, 802, 521, 378, 795, 272, 754, 157, 604, 848, 1004 ][128X[104X
+    [4X[25Xgap>[125X [27XC := SearchCycle( L );[127X[104X
+    [4X[28X[ 157, 604, 848, 1004, 271, 211, 802, 521, 378, 795, 272, 754 ][128X[104X
+    [4X[25Xgap>[125X [27XP := Positions( L, 157 );[127X[104X
+    [4X[28X[ 14, 26, 38, 50, 62, 74, 86, 98 ][128X[104X
+    [4X[25Xgap>[125X [27XLength( C );  DifferencesList( P );[127X[104X
+    [4X[28X12[128X[104X
+    [4X[28X[ 12, 12, 12, 12, 12, 12, 12 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.1-4 ExponentOfPrime[101X
+  [1X3.1-4 RandomCombination[101X
   
-  [29X[2XExponentOfPrime[102X( [3Xn[103X, [3Xp[103X ) [32X function
+  [33X[1;0Y[29X[2XRandomCombination[102X( [3XS[103X, [3Xk[103X ) [32X operation[133X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
   
-  [33X[0;0Y[10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X  returns  the  exponent  of  the  prime  [3Xp[103X in the prime
-  factorization of [3Xn[103X.[133X
+  [33X[0;0YIt returns a random unordered [22Xk[122X-tuple of distinct elements of a set [22XS[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XExponentOfPrime( 13577531, 11 ); [127X[104X
-    [4X[28X3[128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> ExponentOfPrime( 3^n-1, 2 ) );[127X[104X
-    [4X[28X[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, [128X[104X
-    [4X[28X  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ][128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> ExponentOfPrime( n^2-1, 2 ) );[127X[104X
-    [4X[28X[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, [128X[104X
-    [4X[28X  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ][128X[104X
+    [4X[25Xgap>[125X [27X## "6 aus 49" is a common lottery in Germany[127X[104X
+    [4X[25Xgap>[125X [27XRandomCombination( [1..49], 6 ); [127X[104X
+    [4X[28X[ 2, 16, 24, 26, 37, 47 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.1-5 NextProbablyPrimeInt[101X
   
-  [29X[2XNextProbablyPrimeInt[102X( [3Xn[103X ) [32X function
+  [1X3.2 [33X[0;0YDistinct and Common Representatives[133X[101X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [1X3.2-1 DistinctRepresentatives[101X
   
-  [33X[0;0YThe function [10XNextProbablyPrimeInt([3Xn[103X[10X)[110X does the same as [10XNextPrimeInt([3Xn[103X[10X)[110X except
-  that    for   reasons   of   performance   it   tests   numbers   only   for
-  [10XIsProbablyPrimeInt([3Xn[103X[10X)[110X  instead  of [10XIsPrimeInt([3Xn[103X[10X)[110X. For large [3Xn[103X, this function
-  is much faster than [10XNextPrimeInt([3Xn[103X[10X)[110X[133X
+  [33X[1;0Y[29X[2XDistinctRepresentatives[102X( [3Xlist[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XCommonRepresentatives[102X( [3Xlist[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X, [3Xlist[103X ) [32X operation[133X
+  
+  [33X[0;0YThese functions have been transferred from package [5XXMod[105X.[133X
+  
+  [33X[0;0YThey  deal  with  lists  of  subsets  of  [22X[1 ... n][122X and construct systems of
+  distinct   and   common   representatives   using   simple,   non-recursive,
+  combinatorial algorithms.[133X
+  
+  [33X[0;0YWhen  [22XL[122X  is  a  set  of  [22Xn[122X  subsets  of  [22X[1 ... n][122X and the Hall condition is
+  satisfied  (the  union  of  any [22Xk[122X subsets has at least [22Xk[122X elements), a set of
+  [10XDistinctRepresentatives[110X exists.[133X
+  
+  [33X[0;0YWhen  [22XJ,K[122X  are  both  lists  of  [22Xn[122X  sets, the function [10XCommonRepresentatives[110X
+  returns  two  lists:  the  set  of representatives, and a permutation of the
+  subsets  of  the  second  list.  It  may  also  be  used to provide a common
+  transversal  for sets of left and right cosets of a subgroup [22XH[122X of a group [22XG[122X,
+  although a greedy algorithm is usually quicker.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xn := 2^251;[127X[104X
-    [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301248[128X[104X
-    [4X[25Xgap>[125X [27Xtime;      [127X[104X
-    [4X[28X0[128X[104X
-    [4X[25Xgap>[125X [27XNextProbablyPrimeInt( n );[127X[104X
-    [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301313[128X[104X
-    [4X[25Xgap>[125X [27Xtime;                     [127X[104X
-    [4X[28X1[128X[104X
-    [4X[25Xgap>[125X [27XNextPrimeInt( n );        [127X[104X
-    [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301313[128X[104X
-    [4X[25Xgap>[125X [27Xtime;             [127X[104X
-    [4X[28X12346[128X[104X
+    [4X[25Xgap>[125X [27XJ := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;[127X[104X
+    [4X[25Xgap>[125X [27XDistinctRepresentatives( J );[127X[104X
+    [4X[28X[ 1, 3, 4, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XK := [ [3,4], [1,2], [2,3], [2,3,4] ];;[127X[104X
+    [4X[25Xgap>[125X [27XCommonRepresentatives( J, K );[127X[104X
+    [4X[28X[ [ 3, 3, 3, 1 ], [ 1, 3, 4, 2 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xd16 := DihedralGroup( IsPermGroup, 16 ); [127X[104X
+    [4X[28XGroup([ (1,2,3,4,5,6,7,8), (2,8)(3,7)(4,6) ])[128X[104X
+    [4X[25Xgap>[125X [27XSetName( d16, "d16" );[127X[104X
+    [4X[25Xgap>[125X [27Xc4 := Subgroup( d16, [ d16.1^2 ] ); [127X[104X
+    [4X[28XGroup([ (1,3,5,7)(2,4,6,8) ])[128X[104X
+    [4X[25Xgap>[125X [27XSetName( c4, "c4" );[127X[104X
+    [4X[25Xgap>[125X [27XRightCosets( d16, c4 );[127X[104X
+    [4X[28X[ RightCoset(c4,()), RightCoset(c4,(2,8)(3,7)(4,6)), RightCoset(c4,(1,8,7,6,5,[128X[104X
+    [4X[28X   4,3,2)), RightCoset(c4,(1,8)(2,7)(3,6)(4,5)) ][128X[104X
+    [4X[25Xgap>[125X [27Xtrans := CommonTransversal( d16, c4 );[127X[104X
+    [4X[28X[ (), (2,8)(3,7)(4,6), (1,2,3,4,5,6,7,8), (1,2)(3,8)(4,7)(5,6) ][128X[104X
+    [4X[25Xgap>[125X [27XIsCommonTransversal( d16, c4, trans );[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.1-6 PrimeNumbersIterator[101X
   
-  [29X[2XPrimeNumbersIterator[102X( [[3Xchunksize[103X] ) [32X function
+  [1X3.3 [33X[0;0YFunctions for strings[133X[101X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [1X3.3-1 BlankFreeString[101X
   
-  [33X[0;0YThis  function  returns  an  iterator  which  runs  over the prime numbers n
-  ascending order; it takes an optional argument [10Xchunksize[110X which specifies the
-  length  of the interval which is sieved in one go (the default is [22X10^7[122X), and
-  which  can  be used to balance runtime vs. memory consumption. It is assumed
-  that  [10Xchunksize[110X is larger than any gap between two consecutive primes within
-  the range one intends to run the iterator over.[133X
+  [33X[1;0Y[29X[2XBlankFreeString[102X( [3Xobj[103X ) [32X function[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0YThe  result  of  [10XBlankFreeString(  obj  );[110X  is  a composite of the functions
+  [10XString( obj )[110X and [10XRemoveCharacters( obj, " " );[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xiter := PrimeNumbersIterator();;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in [1..100] do  p := NextIterator(iter);  od;[127X[104X
-    [4X[25Xgap>[125X [27Xp;[127X[104X
-    [4X[28X541[128X[104X
-    [4X[25Xgap>[125X [27Xsum := 0;;[127X[104X
-    [4X[25Xgap>[125X [27X## "prime number race" 1 vs. 3 mod 4[127X[104X
-    [4X[25Xgap>[125X [27Xfor p in PrimeNumbersIterator() do [127X[104X
-    [4X[25X>[125X [27X      if p <> 2 then sum := sum + E(4)^(p-1); fi;[127X[104X
-    [4X[25X>[125X [27X      if sum > 0 then break; fi;[127X[104X
-    [4X[25X>[125X [27X   od;[127X[104X
-    [4X[25Xgap>[125X [27Xp;[127X[104X
-    [4X[28X26861[128X[104X
+    [4X[25Xgap>[125X [27Xgens := GeneratorsOfGroup( DihedralGroup(12) );[127X[104X
+    [4X[28X[ f1, f2, f3 ][128X[104X
+    [4X[25Xgap>[125X [27XString( gens );                                [127X[104X
+    [4X[28X"[ f1, f2, f3 ]"[128X[104X
+    [4X[25Xgap>[125X [27XBlankFreeString( gens );                       [127X[104X
+    [4X[28X"[f1,f2,f3]"[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X3.3-2 StringDotSuffix[101X
+  
+  [33X[1;0Y[29X[2XStringDotSuffix[102X( [3Xstr[103X, [3Xsuf[103X ) [32X operation[133X
+  
+  [33X[0;0YThis  function  has  been  transferred  from  package  [5XAutoDoc[105X, where it was
+  originally named [10XAUTODOC_GetSuffix[110X.[133X
+  
+  [33X[0;0YWhen  [10XStringDotSuffix[110X  is  given  a  string  containing  a "." it return its
+  extension, i.e. the bit after the last ".".[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XStringDotSuffix( "file.ext" );[127X[104X
+    [4X[28X"ext"[128X[104X
+    [4X[25Xgap>[125X [27XStringDotSuffix( "file.ext.bak" );[127X[104X
+    [4X[28X"bak"[128X[104X
+    [4X[25Xgap>[125X [27XStringDotSuffix( "file." );[127X[104X
+    [4X[28X""[128X[104X
+    [4X[25Xgap>[125X [27XStringDotSuffix( "Hello" );   [127X[104X
+    [4X[28Xfail[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

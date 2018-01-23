@@ -1,15 +1,15 @@
   
   
-                                    [1X Utils [101X
+                                    [1X utils [101X
   
   
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.49
+                                      0.52
   
   
-                                   05/12/2017
+                                23 January 2018
   
   
                                Sebastian Gutsche
@@ -22,7 +22,7 @@
   
                                   Frank Lübeck
   
-                                 Chris Wensley
+                             Christopher D. Wensley
   
   
   
@@ -41,7 +41,7 @@
   Frank Lübeck
       Email:    [7Xmailto:Frank.Luebeck@Math.RWTH-Aachen.De[107X
       Homepage: [7Xhttp://www.math.rwth-aachen.de/~Frank.Luebeck[107X
-  Chris Wensley
+  Christopher D. Wensley
       Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
   
@@ -65,20 +65,21 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y©  2015-2017, The [5XGAP[105X Group. [5XUtils[105X is free software; you can redistribute it
-  and/or  modify  it  under  the  terms  of  the  GNU  General  Public License
-  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
-  Foundation;  either  version 2 of the License, or (at your option) any later
-  version.[133X
+  [33X[0;0Y© 2015-2018, The GAP Group.[133X
+  
+  [33X[0;0YThe [5XUtils[105X package is free software; you can redistribute it and/or modify it
+  under  the  terms of the GNU General Public License as published by the Free
+  Software  Foundation;  either  version 2 of the License, or (at your option)
+  any later version.[133X
   
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YThis  documentation  was  prepared  with  the [5XGAPDoc[105X package [LN17] of Frank
-  Lübeck and Max Neunhöffer.[133X
+  [33X[0;0YThis  documentation  was  prepared with the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH16]
+  packages.[133X
   
-  [33X[0;0YThe  procedure  used  to  mount  new  releases  on  GitHub uses the packages
-  [5XGitHubPagesForGAP[105X [Hor17] and [5XReleaseTools[105X of Max Horn.[133X
+  [33X[0;0YThe   procedure   used   to   produce   new   releases   uses   the  package
+  [5XGitHubPagesForGAP[105X [Hor17] and the package [5XReleaseTools[105X.[133X
   
   
   -------------------------------------------------------
@@ -88,52 +89,55 @@
   
   1 [33X[0;0YIntroduction[133X
     1.1 [33X[0;0YInformation for package authors[133X
-  2 [33X[0;0YLists, Sets and Strings[133X
-    2.1 [33X[0;0YFunctions for lists[133X
-      2.1-1 DifferencesList
-      2.1-2 QuotientsList
-      2.1-3 SearchCycle
-      2.1-4 RandomCombination
-      2.1-5 PrintListOneItemPerLine
-    2.2 [33X[0;0YDistinct and Common Representatives[133X
-      2.2-1 DistinctRepresentatives
-    2.3 [33X[0;0YFunctions for strings[133X
-      2.3-1 BlankFreeString
-      2.3-2 StringDotSuffix
-  3 [33X[0;0YNumber-theoretic functions[133X
-    3.1 [33X[0;0YFunctions for integers[133X
-      3.1-1 AllSmoothIntegers
-      3.1-2 AllProducts
-      3.1-3 RestrictedPartitionsWithoutRepetitions
-      3.1-4 ExponentOfPrime
-      3.1-5 NextProbablyPrimeInt
-      3.1-6 PrimeNumbersIterator
-  4 [33X[0;0YGroups and homomorphisms[133X
-    4.1 [33X[0;0YFunctions for groups[133X
-      4.1-1 Comm
-      4.1-2 IsCommuting
-      4.1-3 ListOfPowers
-      4.1-4 GeneratorsAndInverses
-      4.1-5 UpperFittingSeries
-    4.2 [33X[0;0YFunctions for group homomorphisms[133X
-      4.2-1 EpimorphismByGenerators
-  5 [33X[0;0YRecords[133X
-    5.1 [33X[0;0YFunctions for records[133X
-      5.1-1 SetIfMissing
-      5.1-2 AssignGlobals
-  6 [33X[0;0YVarious other functions[133X
-    6.1 [33X[0;0YOperations on folders[133X
-      6.1-1 FindMatchingFiles
-    6.2 [33X[0;0YFile operations[133X
-      6.2-1 Log2HTML
-    6.3 [33X[0;0YLaTeX strings[133X
-      6.3-1 IntOrOnfinityToLaTeX
-      6.3-2 LaTeXStringFactorsInt
-    6.4 [33X[0;0YApplicable methods[133X
-      6.4-1 PrintApplicableMethod
-    6.5 [33X[0;0YConversion to [5XMAGMA[105X string[133X
-      6.5-1 ConvertToMagmaInputString
-  7 [33X[0;0YThe transfer procedure[133X
+  2 [33X[0;0YPrinting Lists and Iterators[133X
+    2.1 [33X[0;0YPrinting selected items[133X
+      2.1-1 PrintOneItemPerLine
+      2.1-2 PrintSelection
+  3 [33X[0;0YLists, Sets and Strings[133X
+    3.1 [33X[0;0YFunctions for lists[133X
+      3.1-1 DifferencesList
+      3.1-2 QuotientsList
+      3.1-3 SearchCycle
+      3.1-4 RandomCombination
+    3.2 [33X[0;0YDistinct and Common Representatives[133X
+      3.2-1 DistinctRepresentatives
+    3.3 [33X[0;0YFunctions for strings[133X
+      3.3-1 BlankFreeString
+      3.3-2 StringDotSuffix
+  4 [33X[0;0YNumber-theoretic functions[133X
+    4.1 [33X[0;0YFunctions for integers[133X
+      4.1-1 AllSmoothIntegers
+      4.1-2 AllProducts
+      4.1-3 RestrictedPartitionsWithoutRepetitions
+      4.1-4 ExponentOfPrime
+      4.1-5 NextProbablyPrimeInt
+      4.1-6 PrimeNumbersIterator
+  5 [33X[0;0YGroups and homomorphisms[133X
+    5.1 [33X[0;0YFunctions for groups[133X
+      5.1-1 Comm
+      5.1-2 IsCommuting
+      5.1-3 ListOfPowers
+      5.1-4 GeneratorsAndInverses
+      5.1-5 UpperFittingSeries
+    5.2 [33X[0;0YFunctions for group homomorphisms[133X
+      5.2-1 EpimorphismByGenerators
+  6 [33X[0;0YRecords[133X
+    6.1 [33X[0;0YFunctions for records[133X
+      6.1-1 SetIfMissing
+      6.1-2 AssignGlobals
+  7 [33X[0;0YVarious other functions[133X
+    7.1 [33X[0;0YOperations on folders[133X
+      7.1-1 FindMatchingFiles
+    7.2 [33X[0;0YFile operations[133X
+      7.2-1 Log2HTML
+    7.3 [33X[0;0YLaTeX strings[133X
+      7.3-1 IntOrOnfinityToLaTeX
+      7.3-2 LaTeXStringFactorsInt
+    7.4 [33X[0;0YApplicable methods[133X
+      7.4-1 PrintApplicableMethod
+    7.5 [33X[0;0YConversion to [22XMagma[122X string[133X
+      7.5-1 ConvertToMagmaInputString
+  8 [33X[0;0YThe transfer procedure[133X
   
   
   [32X
