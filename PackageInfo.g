@@ -88,7 +88,7 @@ AbstractHTML :=
 
 PackageDoc := rec(
   BookName  := "Utils",
-  ArchiveURLSubset := ["doc", "htm"],
+  ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
