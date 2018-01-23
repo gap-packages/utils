@@ -64,14 +64,15 @@ gap> PrintOneItemPerLine( s3 );
 
 <ManSection>
    <Func Name="PrintSelection"
-         Arg="obj first step" />
+         Arg="obj first step [last]" />
    <Func Name="PrintSelection"
          Arg="obj list" />
 <Description>
-This function, given three pararmeters, calls operations 
+This function, given three (or four) parameters, calls operations 
 <C>PrintSelectionFromList</C> or <C>PrintSelectionFromIterator</C> 
 which prints the <E>first</E> item specified, 
-and them the item at every <E>step</E> 
+and then the item at every <E>step</E>. 
+The fourth parameter is essential when the object being printed is infinite. 
 <P/>
 Alternatively, given two parameters, 
 with the second parameter a list <C>L</C> of positive integers, 
@@ -100,6 +101,19 @@ gap> PrintSelection( s5, [118..122] );
 118 : (1,4,3,2,5)
 119 : (1,4,2,5,3)
 120 : (1,4,3)(2,5)
+gap> f2 := FreeGroup( 2 );; 
+gap> PrintSelection( f2, 20, 20, 100 ); 
+20 : f2*f1^2
+40 : f2*f1*f2
+60 : f1*f2*f1^2
+80 : (f2*f1)^2
+100 : f1*f2^2*f1^-1
+gap> PrintSelection( f2, [11..15] );
+11 : f2^-1*f1^-1
+12 : f1*f2
+13 : f1^-1*f2
+14 : f1*f2^-1
+15 : f1^-1*f2^-1
 ]]>
 </Example>
 
