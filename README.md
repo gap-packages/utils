@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/gap-packages/utils.svg?branch=master)](https://travis-ci.org/gap-packages/utils)
+[![Code Coverage](https://codecov.io/github/gap-packages/utils/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/utils)
+
 # The GAP 4 package 'Utils' 
 
 ## Introduction 
