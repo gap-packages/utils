@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.53dev",
-Date := "07/02/2018",
+Version := "0.54",
+Date := "12/02/2018",
 
 Persons := [
   rec(
@@ -111,7 +111,7 @@ Autoload := false,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.8", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.9", 
   " - a collection of utility functions.\n"
 ),
 

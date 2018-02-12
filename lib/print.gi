@@ -29,7 +29,7 @@ function( L )
                 Print( "," );
             fi;
         od;
-        Print( L[len], "\n  ]\n" );
+        Print( L[len], " ]\n" );
     fi;
 end );
 

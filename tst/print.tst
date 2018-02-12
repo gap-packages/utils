@@ -20,8 +20,7 @@ gap> PrintOneItemPerLine( L0 );
   IsSmallList,
   IsGeneratorsOfMagmaWithInverses,
   IsGeneratorsOfSemigroup,
-  IsSubsetLocallyFiniteGroup
-  ]
+  IsSubsetLocallyFiniteGroup ]
 gap> PrintOneItemPerLine( s3 ); 
 ()
 (2,3)
