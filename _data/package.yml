@@ -1,6 +1,6 @@
 name: utils
 version: 0.54
-date: 12/02/2018
+date: 2018-02-12
 description: |
     Utility functions in GAP
 
@@ -30,7 +30,7 @@ needed-pkgs:
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
     - name: "Polycyclic"
       version: ">= 2.11"
-      url: "http://www.icm.tu-bs.de/ag_algebra/software/polycyclic/"
+      url: "https://gap-packages.github.io/polycyclic/"
 
 www: https://gap-packages.github.io/utils
 readme: README.md
