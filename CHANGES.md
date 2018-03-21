@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.54dev for GAP 4.9.0 (20/02/18) 
+
+ * (22/01/18)
+
 ## Version 0.54 for GAP 4.9.0 (12/02/18) 
 
  * (22/01/18) PrintOneItemPerLine plus alternative method for iterators; added 
