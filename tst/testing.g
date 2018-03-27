@@ -25,37 +25,22 @@ while ( j < len ) do
     j := j+1;
 od; 
 
-TestMyPackage := function( pkgname )
-    local  pkgdir, testfiles, testresult, ff, fn;
-    LoadPackage( pkgname );
-    pkgdir := DirectoriesPackageLibrary( pkgname, "tst" );
-
-    # Arrange chapters as required
-    testfiles := 
-        [ "print.tst", 
-          "lists.tst", 
-          "string.tst", 
-          "number.tst", 
-          "groups.tst", 
-          "record.tst", 
-          "others.tst" ];
-
-    testresult:=true;
-    for ff in testfiles do
-        fn := Filename( pkgdir, ff );
-        Print( "#I  Testing ", fn, "\n" );
-        if not Test( fn, rec(compareFunction := "uptowhitespace") ) then
-            testresult:=false;
-        fi;
-    od;
-    if testresult then
-        Print("#I  No errors detected while testing package ", pkgname, "\n");
-    else
-        Print("#I  Errors detected while testing package ", pkgname, "\n");
+pkgname := "utils";
+pkgdir := DirectoriesPackageLibrary( pkgname, "tst" );
+testfiles := 
+        [ "print.tst",    "lists.tst",     "string.tst",    "number.tst", 
+          "groups.tst",   "record.tst",    "others.tst" ];
+testresult:=true;
+for ff in testfiles do
+    fn := Filename( pkgdir, ff );
+    Print( "#I  Testing ", fn, "\n" );
+    if not Test( fn, rec(compareFunction := "uptowhitespace", 
+                            showProgress := true ) ) then
+        testresult:=false;
     fi;
-end;
-
-Print( "\n#I  Test output starts here" ); 
-Print( "\n#I  =======================\n" );
-##  Set the name of the package here
-TestMyPackage( "utils" );
+od;
+if testresult then
+    Print("#I  No errors detected while testing package ", pkgname, "\n");
+else
+    Print("#I  Errors detected while testing package ", pkgname, "\n");
+fi;
