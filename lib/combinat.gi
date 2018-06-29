@@ -166,8 +166,8 @@ end );
 ##
 #M  CommonTransversal
 ##
-InstallMethod( CommonTransversal, "for a group and a subgroup", true,
-    [ IsGroup, IsGroup ], 0,
+InstallMethod( CommonTransversal, "for left and right cosets of a subgroup", 
+    true, [ IsGroup, IsGroup ], 0,
 function( G, H )
 
     local  R, ER, EL, T;

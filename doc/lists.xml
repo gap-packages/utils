@@ -158,7 +158,7 @@ gap> RandomCombination( [1..49], 6 );
    <Oper Name="IsCommonTransversal"
          Arg="grp subgrp list" />
 <Description>
-These functions have been transferred from package &XMod;. 
+These operations have been transferred from package &XMod;. 
 <P/>
 They deal with lists of subsets of <M>[1 \ldots n]</M>
 and construct systems of distinct and common representatives using
@@ -170,11 +170,13 @@ and the Hall condition is satisfied
 a set of <C>DistinctRepresentatives</C> exists.
 <P/>
 When <M>J,K</M> are both lists of <M>n</M> sets, 
-the function <C>CommonRepresentatives</C> returns two lists: 
+the operation <C>CommonRepresentatives</C> returns two lists: 
 the set of representatives, 
 and a permutation of the subsets of the second list.
-It may also be used to provide a common transversal
-for sets of left and right cosets of a subgroup <M>H</M> of a group <M>G</M>,
+<P/>
+The operation <C>CommonTransversal</C> may be used to provide a 
+common transversal for the sets of left and right cosets 
+of a subgroup <M>H</M> of a group <M>G</M>,
 although a greedy algorithm is usually quicker.
 </Description>
 </ManSection>
