@@ -5,6 +5,7 @@
 #Y  Copyright (C) 2015-2018, The GAP Group 
 ##  
 
+gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
 

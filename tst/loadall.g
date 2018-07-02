@@ -19,5 +19,5 @@ if not UtilsLoadingComplete then
         fi; 
         j := j+1;
     od; 
+    UtilsLoadingComplete := true; 
 fi;
-UtilsLoadingComplete := true; 

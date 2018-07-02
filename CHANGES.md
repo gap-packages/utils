@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.56 for GAP 4.9.1 (02/06/18) 
+## Version 0.57 for GAP 4.9.1 (02/06/18) 
 
  * (02/06/18) new PrintSelection example due to diff with all packages loaded
               removed XMod from list of packages to be loaded 

@@ -2,7 +2,7 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-#Y  Copyright (C) 2015-2017, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
@@ -13,17 +13,6 @@ LoadPackage( "utils" );
 if not UtilsLoadingComplete then 
     ReadPackage( "utils", "tst/loadall.g" ); 
 fi; 
-
-len := Length( UtilsPackageVersions ); 
-j := 0; 
-while ( j < len ) do 
-    j := j+1; 
-    name := UtilsPackageVersions[j]; 
-    if not OKtoReadFromUtils( name ) then 
-        LoadPackage( name ); 
-    fi; 
-    j := j+1;
-od; 
 
 dir := DirectoriesPackageLibrary("utils","tst");
 TestDirectory(dir, rec(exitGAP := true,
