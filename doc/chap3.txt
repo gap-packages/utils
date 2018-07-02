@@ -124,7 +124,7 @@
   [33X[1;0Y[29X[2XCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIsCommonTransversal[102X( [3Xgrp[103X, [3Xsubgrp[103X, [3Xlist[103X ) [32X operation[133X
   
-  [33X[0;0YThese functions have been transferred from package [5XXMod[105X.[133X
+  [33X[0;0YThese operations have been transferred from package [5XXMod[105X.[133X
   
   [33X[0;0YThey  deal  with  lists  of  subsets  of  [22X[1 ... n][122X and construct systems of
   distinct   and   common   representatives   using   simple,   non-recursive,
@@ -134,11 +134,13 @@
   satisfied  (the  union  of  any [22Xk[122X subsets has at least [22Xk[122X elements), a set of
   [10XDistinctRepresentatives[110X exists.[133X
   
-  [33X[0;0YWhen  [22XJ,K[122X  are  both  lists  of  [22Xn[122X  sets, the function [10XCommonRepresentatives[110X
+  [33X[0;0YWhen  [22XJ,K[122X  are  both  lists  of  [22Xn[122X sets, the operation [10XCommonRepresentatives[110X
   returns  two  lists:  the  set  of representatives, and a permutation of the
-  subsets  of  the  second  list.  It  may  also  be  used to provide a common
-  transversal  for sets of left and right cosets of a subgroup [22XH[122X of a group [22XG[122X,
-  although a greedy algorithm is usually quicker.[133X
+  subsets of the second list.[133X
+  
+  [33X[0;0YThe  operation [10XCommonTransversal[110X may be used to provide a common transversal
+  for the sets of left and right cosets of a subgroup [22XH[122X of a group [22XG[122X, although
+  a greedy algorithm is usually quicker.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X

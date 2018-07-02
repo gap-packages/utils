@@ -14,7 +14,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YFunctions are currently being transferred from the following packages:[133X
+  [33X[0;0YFunctions have been transferred from the following packages:[133X
   
   [30X    [33X[0;6YConversion of a [5XGAP[105X group to a [22XMagma[122X output string, taken from various
         sources including [11Xother.gi[111X in the main library.[133X
@@ -51,15 +51,15 @@
   [4X[32X[104X
   
   [33X[0;0YIt  is  possible  to  check that the package has been installed correctly by
-  running the test files:[133X
+  running the test files (which terminates the [5XGAP[105X session):[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XReadPackage( "utils", "tst/testing.g" );[127X[104X
-    [4X[28X#I  Test output starts here[128X[104X
-    [4X[28X... [128X[104X
-    [4X[28X#I  No errors detected while testing package utils[128X[104X
-    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XReadPackage( "utils", "tst/testall.g" );[127X[104X
+    [4X[28XArchitecture: . . . . . [128X[104X
+    [4X[28Xtesting: . . . . . [128X[104X
+    [4X[28X. . . [128X[104X
+    [4X[28X#I  No errors detected while testing[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

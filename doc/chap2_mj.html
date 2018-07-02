@@ -93,38 +93,36 @@
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := List( [1..20], n -&gt; n^5 );; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( L, 1, 8 );</span>
-1 : 1
-9 : 59049
-17 : 1419857
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( L, [9..11] );</span>
-9 : 59049
-10 : 100000
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := List( [1..20], n -&gt; n^5 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( L, [18..20] );</span>
+18 : 1889568
+19 : 2476099
+20 : 3200000
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( L, 2, 9 );       </span>
+2 : 32
 11 : 161051
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s5 := SymmetricGroup( 5 );; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( s5, 12, 30 );</span>
-12 : (2,5)(3,4)
+20 : 3200000
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( L, 2, 3, 11 );</span>
+2 : 32
+5 : 3125
+8 : 32768
+11 : 161051
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s5 := SymmetricGroup( 5 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( s5, [30,31,100,101] );</span>
+30 : (1,5)(3,4)
+31 : (1,5,2)
+100 : (1,4,3)
+101 : (1,4)(3,5)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( s5, 1, 30 );</span>
+1 : ()
+31 : (1,5,2)
+61 : (1,2,3)
+91 : (1,3,5,2,4)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( s5, 9, 11, 43 );</span>
+9 : (2,5,3)
+20 : (2,4)
+31 : (1,5,2)
 42 : (1,5,2,3,4)
-72 : (1,2,4,3)
-102 : (1,4,3,5)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( s5, [118..122] );</span>
-118 : (1,4,3,2,5)
-119 : (1,4,2,5,3)
-120 : (1,4,3)(2,5)
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := FreeGroup( 2 );; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( f2, 20, 20, 100 ); </span>
-20 : f2*f1^2
-40 : f2*f1*f2
-60 : f1*f2*f1^2
-80 : (f2*f1)^2
-100 : f1*f2^2*f1^-1
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSelection( f2, [11..15] );</span>
-11 : f2^-1*f1^-1
-12 : f1*f2
-13 : f1^-1*f2
-14 : f1*f2^-1
-15 : f1^-1*f2^-1
 
 </pre></div>
 
