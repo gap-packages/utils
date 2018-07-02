@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "XMod" ) then
-
 #############################################################################
 ##  these functions have been have been transferred from XMod 
 ##
@@ -18,8 +16,6 @@ DeclareOperation( "DistinctRepresentatives", [ IsList ] );
 DeclareOperation( "CommonRepresentatives", [ IsList, IsList ] );
 DeclareOperation( "CommonTransversal", [ IsGroup, IsGroup ] );
 DeclareOperation( "IsCommonTransversal", [ IsGroup, IsGroup, IsList ] );
-
-fi; 
 
 #############################################################################
 ##

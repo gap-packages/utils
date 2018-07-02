@@ -4,16 +4,12 @@
 ##
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
-if OKtoReadFromUtils( "XMod" ) then
-
 ##############################################################################
 ##  this function has been transferred from XMod 
 ##
 #O  PrintListOneItemPerLine( <L> )
 ##  
 DeclareOperation( "PrintListOneItemPerLine", [ IsList ] );
-
-fi; 
 
 ##############################################################################
 ##  added global function and method for iterators to complement the above 

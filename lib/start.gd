@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2017, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 
 DeclareInfoClass( "InfoUtils" );
 
@@ -13,10 +13,9 @@ UtilsPackageVersions :=
   [ "autodoc",     "2016.01.31",    ## latest is 2017.09.08
     "resclasses",  "4.2.5",         ## latest is 4.6.0, 12/02/17 
     "rcwa",        "4.1.5",         ## latest is 4.5.0, 12/02/17 
-    "qpa",         "1.26",
-    "xmod",        "2.55"           ## latest is 2.63,  26/09/17
+    "qpa",         "1.26" 
   ];
-
+##  (02/06/18) removed xmod from this list 
 ##  functions being transferred cannot be used until the Home packages have  
 ##  been loaded: when this has been done the following variable is set true 
 
