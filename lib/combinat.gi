@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "XMod" ) then
-
 ##############################################################################
 ##  this function has been transferred from XMod 
 ##
@@ -227,8 +225,6 @@ function( G, H, T )
     od;
     return true;
 end );
-
-fi; 
 
 #############################################################################
 ##
