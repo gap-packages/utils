@@ -26,7 +26,7 @@ gap> LoadPackage( "utils" );
 ]]>
 </Example>
 <P/>
-Functions are currently being transferred from the following packages: 
+Functions have been transferred from the following packages: 
 <List>
 <Item>
 Conversion of a &GAP; group to a &Magma; output string, taken from various 
@@ -82,15 +82,15 @@ gap> ReadPackage( "utils", "makedoc.g" );
 </Example>
 <P/>
 It is possible to check that the package has been installed correctly
-by running the test files: 
+by running the test files (which terminates the &GAP; session): 
 <P/>
 <Example>
 <![CDATA[
-gap> ReadPackage( "utils", "tst/testing.g" );
-#I  Test output starts here
-... 
-#I  No errors detected while testing package utils
-true
+gap> ReadPackage( "utils", "tst/testall.g" );
+Architecture: . . . . . 
+testing: . . . . . 
+. . . 
+#I  No errors detected while testing
 ]]>
 </Example>
 <P/>
