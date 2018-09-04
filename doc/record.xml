@@ -22,7 +22,8 @@
          Arg="rec name val" />
 <Description>
 This function has been transferred from package &AutoDoc;, 
-where it was called <C>AUTODOC_WriteOnce</C>. 
+where it was called <C>AUTODOC_WriteOnce</C> 
+(the original will continue to exist). 
 It writes into a record provided the position is not yet bound. 
 <P/>
 </Description>

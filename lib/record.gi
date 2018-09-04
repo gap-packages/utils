@@ -19,8 +19,6 @@ InstallGlobalFunction( SetIfMissing,
     fi;
 end );
 
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA
 ##
@@ -55,8 +53,6 @@ InstallGlobalFunction( AssignGlobals,
     Print("The following global variables have been assigned:\n",
           Set(names),"\n");
   end );
-
-fi; 
 
 #############################################################################
 ##

@@ -13,8 +13,6 @@
 ##
 DeclareGlobalFunction( "SetIfMissing" );
 
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA
 ##
@@ -24,8 +22,6 @@ if OKtoReadFromUtils( "RCWA" ) then
 ##  global variables with the same names.
 ##
 DeclareGlobalFunction( "AssignGlobals" );
-
-fi; 
 
 #############################################################################
 ##

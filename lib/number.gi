@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
@@ -211,10 +209,6 @@ InstallGlobalFunction( PrimeNumbersIterator,
       offset         := offset ) );
   end );
 
-fi; 
-
-if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
@@ -224,8 +218,6 @@ if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
 InstallMethod( AllProducts,
                "for lists (RCWA)", ReturnTrue, [ IsList, IsPosInt ], 0,
                function(l,k) return List(Tuples(l,k),Product); end );
-
-fi; 
 
 #############################################################################
 ##

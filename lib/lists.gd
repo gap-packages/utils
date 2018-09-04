@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  these functions have been transferred from ResClasses 
 ##
@@ -26,18 +24,12 @@ DeclareGlobalFunction( "FloatQuotientsList" );
 ##
 DeclareOperation( "RandomCombination", [ IsListOrCollection, IsPosInt ] );
 
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
 #F  SearchCycle( <l> ) . . . a utility function for detecting cycles in lists
 ##
 DeclareGlobalFunction( "SearchCycle" );
-
-fi; 
 
 #############################################################################
 ##

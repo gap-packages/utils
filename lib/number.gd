@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA
 ##
@@ -62,10 +60,6 @@ DeclareGlobalFunction ( "PrimeNumbersIterator" );
 ##
 DeclareGlobalFunction( "RestrictedPartitionsWithoutRepetitions" );
 
-fi; 
-
-if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
@@ -73,8 +67,6 @@ if OKtoReadFromUtilsSpec( "RCWA", "3.9" ) then
 #M  AllProducts( <l>, <k> ) . . . . . . . . . . . . . . . . . . . . for lists
 ##
 DeclareOperation( "AllProducts", [ IsListOrCollection, IsPosInt ] );
-
-fi; 
 
 #############################################################################
 ##

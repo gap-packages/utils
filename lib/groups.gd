@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
@@ -13,10 +11,6 @@ if OKtoReadFromUtils( "ResClasses" ) then
 ##
 DeclareOperation( "IsCommuting", [ IsMultiplicativeElement,
                                    IsMultiplicativeElement ] ); 
-
-fi;
-
-if OKtoReadFromUtilsSpec( "ResClasses", "4.0.0" ) then
 
 #############################################################################
 ##  these functions have been transferred from ResClasses 
@@ -35,10 +29,6 @@ if not IsBound( LowerFittingSeries ) then
 if not IsBound( FittingLength ) then 
     DeclareAttribute( "FittingLength", IsGroup ); fi;
 
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
@@ -53,8 +43,6 @@ DeclareGlobalFunction( "ListOfPowers" );
 #M  GeneratorsAndInverses( <G> ) . . . . . . . . . . . . . . . . . for groups
 ##
 DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
-
-fi; 
 
 #############################################################################
 ##

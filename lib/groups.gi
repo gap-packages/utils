@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
@@ -24,10 +22,6 @@ InstallMethod( IsCommuting,
                "fallback method (ResClasses)", IsIdenticalObj,
                [ IsMultiplicativeElement, IsMultiplicativeElement ], 0,
                function ( a, b ) return a*b = b*a; end ); 
-
-fi; 
-
-if OKtoReadFromUtilsSpec( "ResClasses", "4.0.0" ) then
 
 #############################################################################
 ##  this function has been transferred from ResClasses 
@@ -85,10 +79,6 @@ InstallMethod( FittingLength, "default method", true, [ IsGroup ], 0,
     else return Length(LowerFittingSeries(G)) - 1; fi;
   end );
 
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA
 ##
@@ -114,8 +104,6 @@ InstallGlobalFunction(  ListOfPowers,
 InstallMethod( GeneratorsAndInverses, "for groups", true, [ IsGroup ], 0, 
     G -> Concatenation( GeneratorsOfGroup(G),
                   List( GeneratorsOfGroup(G), g->g^-1 ) ) );
-
-fi; 
 
 #############################################################################
 ##

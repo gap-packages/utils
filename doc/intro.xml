@@ -99,7 +99,7 @@ Note that functions listed in this manual that are currently
 in the process of being transferred 
 are only read from the source package &Home; (say), 
 and so can only be used if &Home; has already been loaded. 
-
+There are no such functions in transition at present.
 
 
 <Section Label="sect-author-info"> 
