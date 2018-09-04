@@ -5,8 +5,6 @@
 ##                                                   
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
@@ -14,16 +12,15 @@ if OKtoReadFromUtils( "ResClasses" ) then
 ##
 DeclareGlobalFunction( "BlankFreeString" );
 
-fi; 
-
 #############################################################################
-##  this function has been transferred from AutoDoc, 
+##  this function has been copied from AutoDoc, 
 ##  and was originally named AUTODOC_GetSuffix 
+##  the original still exists: AutoDoc is used by most packages, 
+##  so it is unreasonable for it to make Utils a required package.
 ##
 #O  StringDotSuffix( <str>, <suf> ) 
 ##
 DeclareOperation( "StringDotSuffix", [ IsString ] ); 
-
 
 #############################################################################
 ##

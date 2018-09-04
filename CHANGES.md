@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.58 for GAP 4.9.2 (04/09/18) 
+
+ * (04/09/18) removed all "if OKtoReadFomUtils( "RCWA" / "ResClasses" )"
+
 ## Version 0.57 for GAP 4.9.1 (02/06/18) 
 
  * (02/06/18) new PrintSelection example due to diff with all packages loaded

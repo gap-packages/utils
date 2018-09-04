@@ -6,7 +6,7 @@
 #Y  Copyright (C) 2015-2016, The GAP Group, 
 
 #############################################################################
-##  this function has been transferred from AutoDoc
+##  this function has been copieded from AutoDoc
 ##  it was originally named AUTODOC_CreatreDirIfMissing 
 ##  
 ##  Check whether the given directory exists; if not, attempt to create it.
@@ -29,7 +29,7 @@ function(d)
 end );
 
 #############################################################################
-##  this function has been transferred from AutoDoc, 
+##  this function has been copieded from AutoDoc, 
 ##  it was originally named AUTODOC_FindMatchingFiles 
 ##  
 ##  Scan the given (by name) subdirs of a package dir for
@@ -81,8 +81,6 @@ function (pkg, subdirs, extensions)
     od;
     return result;
 end );
-
-if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function has been transferred from RCWA
@@ -144,8 +142,6 @@ InstallGlobalFunction( Log2HTML,
     else outputname := Concatenation(logfilename,".html"); fi;
     FileString(outputname,s2);
   end );
-
-fi; 
 
 #############################################################################
 ##

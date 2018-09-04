@@ -6,17 +6,17 @@
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
 #############################################################################
-##  these functions have been transferred from AutoDoc 
-##  they were originally named AUTODOC_CreatreDirIfMissing 
+##  these functions have been copied from AutoDoc  
+##  they were originally named AUTODOC_CreateDirIfMissing 
 ##  and AUTODOC_FindMatchingFiles
+##  the originals still exist: AutoDoc is used by most packages, 
+##  so it is unreasonable for it to make Utils a required package.
 ##
 #F  CreateDirIfMissing( <str> )
 #F  FindMatchingFiles( <args> )
 ##
 DeclareGlobalFunction( "CreateDirIfMissing" );
 DeclareGlobalFunction( "FindMatchingFiles" );
-
-if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -34,8 +34,6 @@ if OKtoReadFromUtils( "RCWA" ) then
 ##  - Adapt the style file rcwa/doc/gaplog.css to your taste.
 ##
 DeclareGlobalFunction( "Log2HTML" );
-
-fi;
 
 #############################################################################
 ##

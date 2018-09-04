@@ -24,7 +24,8 @@
 <Description>
 These functions have been transferred from package &AutoDoc; 
 where they were named <C>AutoDoc_FindMatchingFiles</C> 
-and <C>AutoDoc_CreateDirIfMissing</C>. 
+and <C>AutoDoc_CreateDirIfMissing</C>  
+(the originals will continue to exist). 
 <P/>
 <C>FindMatchingFiles</C> scans the given (by name) subdirectories 
 of a package directory for files with one of the given extensions, 
@@ -210,13 +211,16 @@ In the second form the user specifies the name of the resulting object,
 so that the output string has the form <C>"str := ..."</C>. 
 When <C>obj</C> is a permutation group, the operation 
 <C>PermGroupToMagmaFormat(obj)</C> is called. 
+<Index>PermGroupToMagmaFormat</Index> 
 This function has been taken from <File>other.gi</File> in the main library 
 where it was called <C>MagmaInputString</C>. 
 When <C>obj</C> is a pc-group, the operation 
 <C>PcGroupToMagmaFormat(obj)</C> is called. 
+<Index>PcGroupToMagmaFormat</Index> 
 This function was private code of Max Horn. 
 When <C>obj</C> is a matrix group over a finite field, 
 the operation <C>MatrixGroupToMagmaFormat(obj)</C> is called. 
+<Index>MatrixGroupToMagmaFormat</Index> 
 This function is a modification of private code of Frank L&#xfc;beck. 
 <P/>
 Hopefully code for other types of group will be added in due course. 

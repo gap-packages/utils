@@ -5,8 +5,6 @@
 ##                                                          
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
@@ -23,10 +21,8 @@ InstallGlobalFunction( BlankFreeString,
     return str;
   end );
 
-fi; 
-
 #############################################################################
-##  this function has been transferred from AutoDoc 
+##  this function has been copied from AutoDoc 
 ##  and was originally named AUTODOC_GetSuffix 
 ##
 #O  StringDotSuffix( <str> ), but originally 

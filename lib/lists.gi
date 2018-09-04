@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  these functions have been transferred from ResClasses 
 ##
@@ -59,10 +57,6 @@ InstallMethod( RandomCombination, "default method",
     return Set(c);
   end );
 
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
-
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
@@ -114,8 +108,6 @@ InstallGlobalFunction( SearchCycle,
       return [preperiod,cycle];
     fi;
   end );
-
-fi;
 
 #############################################################################
 ##

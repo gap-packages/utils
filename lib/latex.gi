@@ -4,8 +4,6 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group  
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
@@ -18,10 +16,6 @@ InstallGlobalFunction( IntOrInfinityToLaTeX,
     elif IsInfinity(n) then return "\\infty";
     else return fail; fi;
   end );
-
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -53,8 +47,6 @@ InstallGlobalFunction( LaTeXStringFactorsInt,
     od;
     return str;
   end );
-
-fi; 
 
 #############################################################################
 ##

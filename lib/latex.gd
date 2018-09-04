@@ -4,18 +4,12 @@
 ##
 #Y  Copyright (C) 2015-2016, The GAP Group 
 
-if OKtoReadFromUtils( "ResClasses" ) then
-
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
 #F  IntOrInfinityToLaTeX( n ) . LaTeX string representing integer or infinity
 ##
 DeclareGlobalFunction( "IntOrInfinityToLaTeX" );
-
-fi; 
-
-if OKtoReadFromUtils( "RCWA" ) then
 
 #############################################################################
 ##  this function has been transferred from RCWA
@@ -26,8 +20,6 @@ if OKtoReadFromUtils( "RCWA" ) then
 ##  format.
 ##
 DeclareGlobalFunction( "LaTeXStringFactorsInt" );
-
-fi; 
 
 #############################################################################
 ##
