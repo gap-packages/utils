@@ -10,23 +10,19 @@ gap> UtilsLoadingComplete;
 true
 
 ## SubSection 7.1.1 
-gap> dir := DirectoriesPackageLibrary( "example", "tst" );
-[ dir("/Applications/gap/gap4r9/pkg/Example-4.1.1/tst/") ]
+gap> dir := DirectoriesPackageLibrary( "example", "tst" );;
 gap> FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            
 [ "hello.tst", "recipe.tst", "testall.g" ]
-gap> dir := DirectoriesPackageLibrary( "utils" );         
-[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ]
+gap> dir := DirectoriesPackageLibrary( "utils" );;         
 gap> FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); 
 [ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
   "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
   "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
   "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
-gap> dirname := Filename( dir[1], "tmp/" );
-"/Applications/gap/my-dev/pkg/utils/lib/tmp/"
+gap> dirname := Filename( dir[1], "tmp/" );;
 gap> CreateDirIfMissing( dirname );
 true
-gap> filename := Concatenation( dirname, "hello.log" );
-"/Applications/gap/my-dev/pkg/utils/lib/tmp/hello.log"
+gap> filename := Concatenation( dirname, "hello.log" );;
 gap> LogTo( filename );
 gap> Print( "hello\n" );
 hello
