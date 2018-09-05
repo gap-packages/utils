@@ -9,7 +9,6 @@
 
 ReadPackage( "utils", "lib/start.gd" );
 
-ReadPackage( "utils", "lib/combinat.gd" );
 ReadPackage( "utils", "lib/files.gd" );
 ReadPackage( "utils", "lib/groups.gd" );
 ReadPackage( "utils", "lib/latex.gd" );
