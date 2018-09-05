@@ -3,7 +3,7 @@
 #W  files.gd                    GAP4 package `Utils'         Sebastian Gutsche
 ##                                                                    Max Horn
 ##                                                                 Stefan Kohl
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
 ##  these functions have been copied from AutoDoc  

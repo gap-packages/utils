@@ -32,5 +32,18 @@ DeclareOperation( "RandomCombination", [ IsListOrCollection, IsPosInt ] );
 DeclareGlobalFunction( "SearchCycle" );
 
 #############################################################################
+##  these functions have been have been transferred from XMod 
+##
+#O  DistinctRepresentatives( <L> )
+#O  CommonRepresentatives( <J>, <K> )
+#O  CommonTransversal( <G>, <H> )
+#O  IsCommonTransversal( <G>, <H>, <T> )
+##
+DeclareOperation( "DistinctRepresentatives", [ IsList ] );
+DeclareOperation( "CommonRepresentatives", [ IsList, IsList ] );
+DeclareOperation( "CommonTransversal", [ IsGroup, IsGroup ] );
+DeclareOperation( "IsCommonTransversal", [ IsGroup, IsGroup, IsList ] );
+
+#############################################################################
 ##
 #E  lists.gd  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

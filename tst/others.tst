@@ -9,6 +9,27 @@ gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
 
+## SubSection 7.1.1 
+gap> dir := DirectoriesPackageLibrary( "example", "tst" );;
+gap> FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            
+[ "hello.tst", "recipe.tst", "testall.g" ]
+gap> dir := DirectoriesPackageLibrary( "utils" );;         
+gap> FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); 
+[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
+  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
+  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
+  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
+gap> dirname := Filename( dir[1], "tmp/" );;
+gap> CreateDirIfMissing( dirname );
+true
+gap> filename := Concatenation( dirname, "hello.log" );;
+gap> LogTo( filename );
+gap> Print( "hello\n" );
+hello
+gap> LogTo();                                    
+gap> FindMatchingFiles( dir, [ "tmp" ], [ "log" ] );
+[ "tmp/hello.log" ]
+
 ## SubSection 7.3.1 
 gap> IntOrInfinityToLaTeX( 10^3 );
 "1000"
@@ -25,11 +46,8 @@ gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        
 "c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"
-gap> ConvertToMagmaInputString( SmallGroup( 24, 12 ) );      
-"PolycyclicGroup< f1,f2,f3,f4 |\nf1^2,\nf2^3,\nf3^2,\nf4^2,\nf2^f1 = f2^2,\nf3\
-^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n>;\n"
-gap> ConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );
-"c7:=PolycyclicGroup< f1 |\nf1^7\n>;\n"
+gap> ConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );
+"PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"
 gap> M := GL(2,5);;  Size(M); 
 480
 gap> s1 := ConvertToMagmaInputString( M );
