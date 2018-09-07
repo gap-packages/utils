@@ -1,7 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.58 for GAP 4.9.2 (05/09/18) 
+## Version 0.58 for GAP 4.9.2 (00/09/18) 
 
+ * (07/09/18) marked ExponentOfPrime as obsolete: use PValuation 
  * (05/09/18) transferred code in combinat.g{d,i} to end of lists.g{d,i}
  * (04/09/18) removed all "if OKtoReadFomUtils( "RCWA" / "ResClasses" )"
 
