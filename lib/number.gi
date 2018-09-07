@@ -2,7 +2,7 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -42,19 +42,24 @@ InstallGlobalFunction( AllSmoothIntegers,
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
+##  (07/09/18) this does the same as PValuation in GAP; so is obsolete 
+##
 #F  ExponentOfPrime( <n>, <p> )
 ##
 InstallGlobalFunction( ExponentOfPrime,
 
   function ( n, p )
 
-    local  k;
+##    local k;
+##
+##    if IsZero(p) then return fail; fi;
+##    if IsZero(n) then return infinity; fi;
+##    k := 0;
+##    while IsZero(n mod p) do n := n/p; k := k + 1; od;
+##    return k;
 
-    if IsZero(p) then return fail; fi;
-    if IsZero(n) then return infinity; fi;
-    k := 0;
-    while IsZero(n mod p) do n := n/p; k := k + 1; od;
-    return k;
+  Info( InfoWarning, 2, "ExponentOfPrime obsolete: use PValuation instead." ); 
+  return PValuation( n, p );
   end );
 
 #############################################################################

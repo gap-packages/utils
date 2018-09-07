@@ -2,7 +2,7 @@
 ##
 #W  number.gd                    GAP4 package `Utils'             Stefan Kohl 
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA
@@ -34,7 +34,9 @@ DeclareGlobalFunction( "AllSmoothIntegers" );
 ##
 #F  ExponentOfPrime( <n>, <p> )
 ##
-##  The exponent of the prime <p> in the prime factorization of <n>.
+##  The exponent of the prime <p> in the prime factorization of <n>. 
+##
+##  (07/09/18) this does the same as PValuation in GAP; so is obsolete 
 ##
 DeclareGlobalFunction( "ExponentOfPrime" );
 

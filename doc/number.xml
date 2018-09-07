@@ -116,6 +116,10 @@ This function has been transferred from package &RCWA;.
 <C>ExponentOfPrime(<A>n</A>,<A>p</A>)</C> returns the exponent 
 of the prime <A>p</A> in the prime factorization of <A>n</A>. 
 <P/>
+It has been pointed out (07/09/2018) that the &GAP; function <C>PValuation</C> 
+produces the same results, and does so more quickly. 
+So this function should be considered obsolete, 
+and will be removed in due course. 
 </Description>
 </ManSection>
 <Example>
