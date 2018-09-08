@@ -6,6 +6,7 @@
 
 ##############################################################################
 ##  this function has been transferred from XMod 
+##  (08/09/18) the function is obsolete, better to use: Perform(L,Display)
 ##
 #O  PrintListOneItemPerLine( <L> )
 ##  
@@ -13,6 +14,7 @@ DeclareOperation( "PrintListOneItemPerLine", [ IsList ] );
 
 ##############################################################################
 ##  added global function and method for iterators to complement the above 
+##  (08/09/18) functions are obsolete, better to use: Perform(L,Display)
 ##  
 #F  PrintOneItemPerLine( <args> ) 
 #O  PrintIteratorOneItemPerLine( <iter> ) 

@@ -30,14 +30,13 @@ by specifying a first item and then a regular step.
    <Func Name="PrintOneItemPerLine"
          Arg="obj" />
 <Description>
-This function calls operations <C>PrintListOneItemPerLine</C> 
-(which has been transferred from package &XMod;) 
-or <C>PrintIteratorOneItemPerLine</C>. 
-<P/>
-Printing lists vertically, rather than horizontally, 
+This function prints lists, or objects which have an iterator, 
+vertically, rather than horizontally, 
 may be useful when the entries are lengthy. 
-This function does this for lists, iterators, 
-and objects which have an iterator.
+Since a very similar result may be achieved using the &GAP; library functions 
+<C>Perform</C> and <C>Display</C>, 
+<E>this function should be considered obsolete 
+and liable to removal in due course</E>. 
 <P/>
 </Description>
 </ManSection>
@@ -45,13 +44,13 @@ and objects which have an iterator.
 <![CDATA[
 gap> s3 := SymmetricGroup( 3 );; 
 gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;
-gap> PrintOneItemPerLine( L );
-[ IsFinite,
-  IsSmallList,
-  IsGeneratorsOfMagmaWithInverses,
-  IsGeneratorsOfSemigroup,
-  IsSubsetLocallyFiniteGroup ]
-gap> PrintOneItemPerLine( s3 ); 
+gap> Perform( L, Display );
+IsFinite
+IsSmallList
+IsGeneratorsOfMagmaWithInverses
+IsGeneratorsOfSemigroup
+IsSubsetLocallyFiniteGroup
+gap> Perform( s3, Display ); 
 ()
 (2,3)
 (1,3)
