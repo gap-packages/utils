@@ -6,6 +6,7 @@
 
 #############################################################################
 ##  this function has been transferred from XMod 
+##  (08/09/18) the function is obsolete, better to use: Perform(L,Display)
 ##
 #M  PrintListOneItemPerLine( <list> )
 ##
@@ -13,26 +14,29 @@ InstallMethod( PrintListOneItemPerLine, "generic method for lists",
     true, [ IsList ], 0,
 function( L )
 
-    local  len, i;
+##    local  len, i;
+##
+##    len := Length( L );
+##    if ( len < 2 ) then
+##        Print( L, "\n" );
+##    else
+##        Print( "[ " );
+##        for i in [1..len-1] do
+##            if IsBound( L[i] ) then
+##                Print( L[i], ",\n  " );
+##            else
+##                Print( "," );
+##            fi;
+##        od;
+##        Print( L[len], " ]\n" );
+##    fi;
 
-    len := Length( L );
-    if ( len < 2 ) then
-        Print( L, "\n" );
-    else
-        Print( "[ " );
-        for i in [1..len-1] do
-            if IsBound( L[i] ) then
-                Print( L[i], ",\n  " );
-            else
-                Print( "," );
-            fi;
-        od;
-        Print( L[len], " ]\n" );
-    fi;
+    Perform( L, Display );
 end );
 
 #############################################################################
 ##  this function has been transferred from XMod and renamed 
+##  (08/09/18) functions are obsolete, better to use: Perform(L,Display)
 ##
 #M  PrintOneItemPerLine( <arg> )
 #M  PrintIteratorOneItemPerLine( <iterator> )
@@ -57,12 +61,14 @@ InstallMethod( PrintIteratorOneItemPerLine, "generic method for iterators",
     true, [ IsIterator ], 0,
 function( iter )
 
-    local  it, x;
+##    local  it, x;
+##
+##    it := ShallowCopy( iter );
+##    for x in it do 
+##        Print( x, "\n" ); 
+##    od;
 
-    it := ShallowCopy( iter );
-    for x in it do 
-        Print( x, "\n" ); 
-    od;
+    Perform( iter, Display ); 
 end );
 
 #############################################################################

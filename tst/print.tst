@@ -16,13 +16,13 @@ gap> L0 := [ "IsFinite", "IsSmallList", "IsGeneratorsOfMagmaWithInverses",
 >            "IsGeneratorsOfSemigroup", "IsSubsetLocallyFiniteGroup" ];; 
 gap> ForAll( L0, x -> x in L );
 true
-gap> PrintOneItemPerLine( L0 );
-[ IsFinite,
-  IsSmallList,
-  IsGeneratorsOfMagmaWithInverses,
-  IsGeneratorsOfSemigroup,
-  IsSubsetLocallyFiniteGroup ]
-gap> PrintOneItemPerLine( s3 ); 
+gap> Perform( L0, Display );
+IsFinite
+IsSmallList
+IsGeneratorsOfMagmaWithInverses
+IsGeneratorsOfSemigroup
+IsSubsetLocallyFiniteGroup
+gap> Perform( s3, Display ); 
 ()
 (2,3)
 (1,3)
