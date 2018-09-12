@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.58 for GAP 4.9.2 (00/09/18) 
+## Version 0.58 for GAP 4.9.3 (12/09/18) 
 
  * (08/09/18) marked PrintOneItemPerLine as obsolete: use Perform(L,Display);
  * (07/09/18) marked ExponentOfPrime as obsolete: use PValuation 
