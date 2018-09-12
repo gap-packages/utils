@@ -55,22 +55,20 @@
 <h5>2.1-1 PrintOneItemPerLine</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintOneItemPerLine</code>( <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>This function calls operations <code class="code">PrintListOneItemPerLine</code> (which has been transferred from package <strong class="pkg">XMod</strong>) or <code class="code">PrintIteratorOneItemPerLine</code>.</p>
-
-<p>Printing lists vertically, rather than horizontally, may be useful when the entries are lengthy. This function does this for lists, iterators, and objects which have an iterator.</p>
+<p>This function prints lists, or objects which have an iterator, vertically, rather than horizontally, may be useful when the entries are lengthy. Since a very similar result may be achieved using the <strong class="pkg">GAP</strong> library functions <code class="code">Perform</code> and <code class="code">Display</code>, <em>this function should be considered obsolete and liable to removal in due course</em>.</p>
 
 
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3 := SymmetricGroup( 3 );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintOneItemPerLine( L );</span>
-[ IsFinite,
-  IsSmallList,
-  IsGeneratorsOfMagmaWithInverses,
-  IsGeneratorsOfSemigroup,
-  IsSubsetLocallyFiniteGroup ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintOneItemPerLine( s3 ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Perform( L, Display );</span>
+IsFinite
+IsSmallList
+IsGeneratorsOfMagmaWithInverses
+IsGeneratorsOfSemigroup
+IsSubsetLocallyFiniteGroup
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Perform( s3, Display ); </span>
 ()
 (2,3)
 (1,3)

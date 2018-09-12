@@ -9,8 +9,9 @@
   [33X[1;0Y[29X[2XFindMatchingFiles[102X( [3Xpkg[103X, [3Xdirs[103X, [3Xextns[103X ) [32X function[133X
   [33X[1;0Y[29X[2XCreateDirIfMissing[102X( [3Xstr[103X ) [32X function[133X
   
-  [33X[0;0YThese  functions  have been transferred from package [5XAutoDoc[105X where they were
-  named [10XAutoDoc_FindMatchingFiles[110X and [10XAutoDoc_CreateDirIfMissing[110X.[133X
+  [33X[0;0YThese  functions have been copied from package [5XAutoDoc[105X where they were named
+  [10XAutoDoc_FindMatchingFiles[110X and [10XAutoDoc_CreateDirIfMissing[110X (the originals will
+  continue to exist).[133X
   
   [33X[0;0Y[10XFindMatchingFiles[110X  scans  the  given  (by  name) subdirectories of a package
   directory  for  files  with  one  of  the  given extensions, and returns the
@@ -24,11 +25,29 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );[127X[104X
-    [4X[28X[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", [128X[104X
-    [4X[28X  "tst/testall.g" ][128X[104X
-    [4X[25Xgap>[125X [27XCreateDirIfMissing( "/Applications/gap/temp/" );[127X[104X
+    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "example", "tst" );[127X[104X
+    [4X[28X[ dir("/Applications/gap/gap4r9/pkg/Example-4.1.1/tst/") ][128X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            [127X[104X
+    [4X[28X[ "hello.tst", "recipe.tst", "testall.g" ][128X[104X
+    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "utils" );         [127X[104X
+    [4X[28X[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ][128X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); [127X[104X
+    [4X[28X[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", [128X[104X
+    [4X[28X  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", [128X[104X
+    [4X[28X  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", [128X[104X
+    [4X[28X  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ][128X[104X
+    [4X[25Xgap>[125X [27Xdirname := Filename( dir[1], "tmp/" );[127X[104X
+    [4X[28X"/Applications/gap/my-dev/pkg/utils/lib/tmp/"[128X[104X
+    [4X[25Xgap>[125X [27XCreateDirIfMissing( dirname );[127X[104X
     [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xfilename := Concatenation( dirname, "hello.log" );[127X[104X
+    [4X[28X"/Applications/gap/my-dev/pkg/utils/lib/tmp/hello.log"[128X[104X
+    [4X[25Xgap>[125X [27XLogTo( filename );[127X[104X
+    [4X[25Xgap>[125X [27XPrint( "hello\n" );[127X[104X
+    [4X[28Xhello[128X[104X
+    [4X[25Xgap>[125X [27XLogTo();                                    [127X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "tmp" ], [ "log" ] );[127X[104X
+    [4X[28X[ "tmp/hello.log" ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
@@ -41,21 +60,21 @@
   
   [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YThis  function  converts  the [5XGAP[105X logfile [11Xfilename[111X to HTML. The extension of
-  the input file must be [11X*.log[111X. The name of the output file is the same as the
-  one of the input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X.
-  There  is a sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to
-  your taste.[133X
+  [33X[0;0YThis function converts the [5XGAP[105X logfile [11Xfilename[111X to HTML. It appears that the
+  logfile should be in your current directory. The extension of the input file
+  must  be  [11X*.log[111X.  The  name of the output file is the same as the one of the
+  input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X. There is a
+  sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to your taste.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XLogTo("mar2.log");[127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["g"] ); [127X[104X
-    [4X[28X[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ][128X[104X
-    [4X[25Xgap>[125X [27XLogTo();[127X[104X
-    [4X[25Xgap>[125X [27XLog2HTML( "mar2.log" );[127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( "utils", [""], ["html", "log"] );[127X[104X
-    [4X[28X[ "/mar2.html", "/mar2.log" ][128X[104X
+    [4X[25Xgap>[125X [27XLogTo( "log2html.log" );[127X[104X
+    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "utils", "tst" );;[127X[104X
+    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "tst" ] );[127X[104X
+    [4X[28X[ "groups.tst", "lists.tst", "number.tst", "others.tst", "print.tst", [128X[104X
+    [4X[28X  "record.tst", "string.tst" ][128X[104X
+    [4X[25Xgap>[125X [27XLogTo(); [127X[104X
+    [4X[25Xgap>[125X [27XLog2HTML( "log2html.log" );     [127X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
@@ -179,11 +198,8 @@
     [4X[28X"PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"[128X[104X
     [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        [127X[104X
     [4X[28X"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XConvertToMagmaInputString( SmallGroup( 24, 12 ) );      [127X[104X
-    [4X[28X"PolycyclicGroup< f1,f2,f3,f4 |\nf1^2,\nf2^3,\nf3^2,\nf4^2,\nf2^f1 = f2^2,\nf3\[128X[104X
-    [4X[28X^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );[127X[104X
-    [4X[28X"c7:=PolycyclicGroup< f1 |\nf1^7\n>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );[127X[104X
+    [4X[28X"PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"[128X[104X
     [4X[25Xgap>[125X [27XM := GL(2,5);;  Size(M); [127X[104X
     [4X[28X480[128X[104X
     [4X[25Xgap>[125X [27Xs1 := ConvertToMagmaInputString( M );[127X[104X

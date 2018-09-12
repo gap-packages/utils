@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.57",
-Date := "02/06/2018",
+Version := "0.58",
+Date := "12/09/2018",
 
 Persons := [
   rec(
@@ -97,10 +97,10 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.9.0",
+  GAP := ">=4.9.2",
   NeededOtherPackages := [ ["GAPDoc", ">= 1.6.1"], 
-                           ["Polycyclic", ">= 2.11" ] ], 
-  SuggestedOtherPackages := [ ],
+                           ["Polycyclic", ">= 2.14"] ], 
+  SuggestedOtherPackages := [ [ "AutoDoc", ">= 2018.02.14" ] ],
   ExternalConditions := [ ]
 ),
 

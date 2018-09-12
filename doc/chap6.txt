@@ -9,8 +9,8 @@
   [33X[1;0Y[29X[2XSetIfMissing[102X( [3Xrec[103X, [3Xname[103X, [3Xval[103X ) [32X function[133X
   
   [33X[0;0YThis function has been transferred from package [5XAutoDoc[105X, where it was called
-  [10XAUTODOC_WriteOnce[110X.  It writes into a record provided the position is not yet
-  bound.[133X
+  [10XAUTODOC_WriteOnce[110X  (the  original  will continue to exist). It writes into a
+  record provided the position is not yet bound.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X

@@ -65,7 +65,7 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FindMatchingFiles</code>( <var class="Arg">pkg</var>, <var class="Arg">dirs</var>, <var class="Arg">extns</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CreateDirIfMissing</code>( <var class="Arg">str</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>These functions have been transferred from package <strong class="pkg">AutoDoc</strong> where they were named <code class="code">AutoDoc_FindMatchingFiles</code> and <code class="code">AutoDoc_CreateDirIfMissing</code>.</p>
+<p>These functions have been copied from package <strong class="pkg">AutoDoc</strong> where they were named <code class="code">AutoDoc_FindMatchingFiles</code> and <code class="code">AutoDoc_CreateDirIfMissing</code> (the originals will continue to exist).</p>
 
 <p><code class="code">FindMatchingFiles</code> scans the given (by name) subdirectories of a package directory for files with one of the given extensions, and returns the corresponding filenames, as paths relative to the package directory.</p>
 
@@ -76,11 +76,29 @@
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [ "/", "tst" ], [ "g", "txt" ] );</span>
-[ "/LICENSE.txt", "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g", 
-  "tst/testall.g" ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CreateDirIfMissing( "/Applications/gap/temp/" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dir := DirectoriesPackageLibrary( "example", "tst" );</span>
+[ dir("/Applications/gap/gap4r9/pkg/Example-4.1.1/tst/") ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            </span>
+[ "hello.tst", "recipe.tst", "testall.g" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dir := DirectoriesPackageLibrary( "utils" );         </span>
+[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); </span>
+[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
+  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
+  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
+  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dirname := Filename( dir[1], "tmp/" );</span>
+"/Applications/gap/my-dev/pkg/utils/lib/tmp/"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CreateDirIfMissing( dirname );</span>
 true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">filename := Concatenation( dirname, "hello.log" );</span>
+"/Applications/gap/my-dev/pkg/utils/lib/tmp/hello.log"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo( filename );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( "hello\n" );</span>
+hello
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo();                                    </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( dir, [ "tmp" ], [ "log" ] );</span>
+[ "tmp/hello.log" ]
 
 </pre></div>
 
@@ -95,18 +113,18 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Log2HTML</code>( <var class="Arg">filename</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
-<p>This function converts the <strong class="pkg">GAP</strong> logfile <code class="file">filename</code> to HTML. The extension of the input file must be <code class="file">*.log</code>. The name of the output file is the same as the one of the input file except that the extension <code class="file">*.log</code> is replaced by <code class="file">*.html</code>. There is a sample CSS file in <code class="file">utils/doc/gaplog.css</code>, which you can adjust to your taste.</p>
+<p>This function converts the <strong class="pkg">GAP</strong> logfile <code class="file">filename</code> to HTML. It appears that the logfile should be in your current directory. The extension of the input file must be <code class="file">*.log</code>. The name of the output file is the same as the one of the input file except that the extension <code class="file">*.log</code> is replaced by <code class="file">*.html</code>. There is a sample CSS file in <code class="file">utils/doc/gaplog.css</code>, which you can adjust to your taste.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo("mar2.log");</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["g"] ); </span>
-[ "/PackageInfo.g", "/init.g", "/makedoc.g", "/read.g" ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo();</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Log2HTML( "mar2.log" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( "utils", [""], ["html", "log"] );</span>
-[ "/mar2.html", "/mar2.log" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo( "log2html.log" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dir := DirectoriesPackageLibrary( "utils", "tst" );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( dir, [ "" ], [ "tst" ] );</span>
+[ "groups.tst", "lists.tst", "number.tst", "others.tst", "print.tst", 
+  "record.tst", "string.tst" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LogTo(); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Log2HTML( "log2html.log" );     </span>
 
 </pre></div>
 
@@ -224,11 +242,8 @@ end
 "PermutationGroup&lt;5|(1,2,3,4,5),\n(3,4,5)&gt;;\n"
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        </span>
 "c5:=PermutationGroup&lt;5|(1,2,3,4,5)&gt;;\n"
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( SmallGroup( 24, 12 ) );      </span>
-"PolycyclicGroup&lt; f1,f2,f3,f4 |\nf1^2,\nf2^3,\nf3^2,\nf4^2,\nf2^f1 = f2^2,\nf3\
-^f1 = f4,\nf3^f2 = f4,\nf4^f1 = f3,\nf4^f2 = f3*f4\n&gt;;\n"
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( CyclicGroup( IsPcGroup, 7 ), "c7" );</span>
-"c7:=PolycyclicGroup&lt; f1 |\nf1^7\n&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );</span>
+"PolycyclicGroup&lt; f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n&gt;;\n"
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := GL(2,5);;  Size(M); </span>
 480
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := ConvertToMagmaInputString( M );</span>

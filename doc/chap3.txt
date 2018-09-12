@@ -193,8 +193,8 @@
   
   [33X[1;0Y[29X[2XStringDotSuffix[102X( [3Xstr[103X, [3Xsuf[103X ) [32X operation[133X
   
-  [33X[0;0YThis  function  has  been  transferred  from  package  [5XAutoDoc[105X, where it was
-  originally named [10XAUTODOC_GetSuffix[110X.[133X
+  [33X[0;0YThis  function has been copied from package [5XAutoDoc[105X, where it was originally
+  named [10XAUTODOC_GetSuffix[110X (the original will continue to exist).[133X
   
   [33X[0;0YWhen  [10XStringDotSuffix[110X  is  given  a  string  containing  a "." it return its
   extension, i.e. the bit after the last ".".[133X

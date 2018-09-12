@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.57
+                                      0.58
   
   
-                                  2 June 2018
+                               12 September 2018
   
   
                                Sebastian Gutsche

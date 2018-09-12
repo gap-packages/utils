@@ -65,7 +65,8 @@
   
   [33X[0;0YNote  that functions listed in this manual that are currently in the process
   of  being  transferred are only read from the source package [5XHome[105X (say), and
-  so can only be used if [5XHome[105X has already been loaded.[133X
+  so  can  only  be  used  if  [5XHome[105X has already been loaded. There are no such
+  functions in transition at present.[133X
   
   
   [1X1.1 [33X[0;0YInformation for package authors[133X[101X
