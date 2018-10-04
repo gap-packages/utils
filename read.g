@@ -7,7 +7,6 @@
 
 ## read the actual code 
 
-ReadPackage( "utils", "lib/app-meth.gi" );
 ReadPackage( "utils", "lib/files.gi" );
 ReadPackage( "utils", "lib/groups.gi" );
 ReadPackage( "utils", "lib/latex.gi" );

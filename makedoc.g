@@ -11,7 +11,7 @@ AutoDoc( rec(
         ## MainPage := false, 
         includes := [ "intro.xml",   "print.xml",    "lists.xml", 
                       "number.xml",  "groups.xml",   "record.xml", 
-                      "others.xml",  "app-meth.xml", "transfer.xml" ],
+                      "others.xml",  "transfer.xml" ],
         bib := "bib.xml", 
         entities := rec( 
             AutoDoc := "<Package>AutoDoc</Package>",

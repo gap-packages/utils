@@ -151,9 +151,45 @@ gap> LaTeXStringFactorsInt( Factorial(12) );
 ]]>
 </Example>
 
-
 </Section>
 
+
+<Section Label="sec-app-meth">
+<Heading>Applicable Methods</Heading>
+
+The function <Index>PrintApplicableMethod</Index> <C>PrintApplicableMethod</C>, 
+which was included in versions from 0.41 to 0.58, 
+has been removed since it was considered superfluous. 
+The example shows how to print out a function. 
+<P/> 
+<Example>
+<![CDATA[
+gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );
+#I  Searching Method for IsCyclic with 1 arguments:
+#I  Total: 7 entries
+#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: 
+36
+function( G ) ... end
+gap> Print( last );
+function ( G )
+    if Length( GeneratorsOfGroup( G ) ) = 1 then
+        return true;
+    else
+        TryNextMethod();
+    fi;
+    return;
+end
+gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );
+function( <1 unnamed arguments> ) ... end
+gap> Print( last );                                               
+function ( <<arg-1>> )
+    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>
+end
+]]>
+</Example>
+
+
+</Section>
 
 <Section Label="sec-magma">
 <Heading>Conversion to &Magma; string</Heading>
@@ -230,3 +266,4 @@ gpN := sub<P | gens>;
 
 </Section>
 
+</Chapter> 

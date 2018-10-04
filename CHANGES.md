@@ -2,7 +2,7 @@
 
 ## Version 0.59 for GAP 4.9.3 (04/10/18) 
 
- * (04/10/18) added experimental (Print)ApplicableMethod***Utils operations 
+ * (04/10/18) removed PrintApplicableMethod 
 
 ## Version 0.58 for GAP 4.9.3 (12/09/18) 
 
