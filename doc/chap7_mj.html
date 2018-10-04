@@ -41,11 +41,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X87DEB2B58266F858">7.3-1 IntOrOnfinityToLaTeX</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7DC642B97CD02F4E">7.3-2 LaTeXStringFactorsInt</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X78B7D1A982BE9866">7.4 <span class="Heading">Applicable methods</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X78B7D1A982BE9866">7.4 <span class="Heading">Applicable Methods</span></a>
 </span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7B4D0CA279476088">7.4-1 PrintApplicableMethod</a></span>
-</div></div>
+</div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X7BDFFBC379DE83E6">7.5 <span class="Heading">Conversion to <span class="SimpleMath">\({\sf Magma}\)</span> string</span></a>
 </span>
 <div class="ContSSBlock">
@@ -83,10 +81,10 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dir := DirectoriesPackageLibrary( "utils" );         </span>
 [ dir("/Applications/gap/my-dev/pkg/utils/lib/") ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); </span>
-[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
-  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
-  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
-  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
+[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", 
+  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", 
+  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", 
+  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dirname := Filename( dir[1], "tmp/" );</span>
 "/Applications/gap/my-dev/pkg/utils/lib/tmp/"
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CreateDirIfMissing( dirname );</span>
@@ -170,52 +168,33 @@ hello
 
 <p><a id="X78B7D1A982BE9866" name="X78B7D1A982BE9866"></a></p>
 
-<h4>7.4 <span class="Heading">Applicable methods</span></h4>
+<h4>7.4 <span class="Heading">Applicable Methods</span></h4>
 
-<p><a id="X7B4D0CA279476088" name="X7B4D0CA279476088"></a></p>
-
-<h5>7.4-1 PrintApplicableMethod</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintApplicableMethod</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>This function combines calls to <code class="code">ApplicableMethod</code>, <code class="code">FilenameFunc</code>, <code class="code">StartlineFunc</code> and <code class="code">EndlineFunc</code> and prints the location of the file containing the method found, and a listing of that method. In its simplest form it is called as <code class="code">PrintApplicableMethod(f,L)</code> for a function <code class="code">f</code> and a list of parameters <code class="code">L</code>. Alternatively, it is called as <code class="code">PrintApplicableMethod(f,L,0,n)</code> and then prints the method returned by <code class="code">ApplicableMethod(f,L,0,n)</code>.</p>
+<p>The function <code class="code">PrintApplicableMethod</code>, which was included in versions from 0.41 to 0.58, has been removed since it was considered superfluous. The example shows how to print out a function.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );</span>
-this method is contained in lines [30,36] of file:
-    /Applications/gap/gapdev/lib/grp.gi
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );</span>
+#I  Searching Method for IsCyclic with 1 arguments:
+#I  Total: 7 entries
+#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: 
+36
+function( G ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( last );</span>
 function ( G )
-    if Length( GeneratorsOfGroup( G ) ) = 1  then
+    if Length( GeneratorsOfGroup( G ) ) = 1 then
         return true;
     else
-        return TRY_NEXT_METHOD;
+        TryNextMethod();
     fi;
     return;
 end
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );</span>
-this method is contained in lines [41,63] of file:
-    /Applications/gap/gapdev/lib/grp.gi
-function ( G )
-    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1
-         then
-        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );
-        return true;
-    elif not IsCommutative( G )  then
-        return false;
-    elif IsFinite( G )  then
-        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )
-                return 
-                 Index( G, 
-                     SubgroupNC( G, 
-                       List( GeneratorsOfGroup( G ), function ( g )
-                              return g ^ p;
-                          end ) ) ) = p;
-            end );
-    else
-        return AbelianInvariants( G ) = [ 0 ];
-    fi;
-    return;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );</span>
+function( &lt;1 unnamed arguments&gt; ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( last );                                               </span>
+function ( &lt;&lt;arg-1&gt;&gt; )
+    &lt;&lt;compiled GAP code from GAPROOT/lib/oper1.g:578&gt;&gt;
 end
 
 </pre></div>

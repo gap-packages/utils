@@ -1,6 +1,6 @@
 name: utils
-version: 0.58
-date: 2018-09-12
+version: 0.59
+date: 2018-10-04
 description: |
     Utility functions in GAP
 
@@ -22,9 +22,12 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.9.2"
+GAP: ">=4.9.3"
 
 needed-pkgs:
+    - name: "AutoDoc"
+      version: ">= 2018.02.14"
+      url: "https://gap-packages.github.io/AutoDoc"
     - name: "GAPDoc"
       version: ">= 1.6.1"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
@@ -32,20 +35,15 @@ needed-pkgs:
       version: ">= 2.14"
       url: "https://gap-packages.github.io/polycyclic/"
 
-suggested-pkgs:
-    - name: "AutoDoc"
-      version: ">= 2018.02.14"
-      url: "https://gap-packages.github.io/AutoDoc"
-
 www: https://gap-packages.github.io/utils
 readme: README.md
 packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.58/utils-0.58.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.59/utils-0.59.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.58/utils-0.58.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.59/utils-0.59.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.

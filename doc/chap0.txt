@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.58
+                                      0.59
   
   
-                               12 September 2018
+                                 4 October 2018
   
   
                                Sebastian Gutsche
@@ -133,8 +133,7 @@
     7.3 [33X[0;0YLaTeX strings[133X
       7.3-1 IntOrOnfinityToLaTeX
       7.3-2 LaTeXStringFactorsInt
-    7.4 [33X[0;0YApplicable methods[133X
-      7.4-1 PrintApplicableMethod
+    7.4 [33X[0;0YApplicable Methods[133X
     7.5 [33X[0;0YConversion to [22XMagma[122X string[133X
       7.5-1 ConvertToMagmaInputString
   8 [33X[0;0YThe transfer procedure[133X

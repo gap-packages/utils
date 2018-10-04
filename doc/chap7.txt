@@ -32,10 +32,10 @@
     [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "utils" );         [127X[104X
     [4X[28X[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ][128X[104X
     [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); [127X[104X
-    [4X[28X[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", [128X[104X
-    [4X[28X  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", [128X[104X
-    [4X[28X  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", [128X[104X
-    [4X[28X  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ][128X[104X
+    [4X[28X[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", [128X[104X
+    [4X[28X  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", [128X[104X
+    [4X[28X  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", [128X[104X
+    [4X[28X  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ][128X[104X
     [4X[25Xgap>[125X [27Xdirname := Filename( dir[1], "tmp/" );[127X[104X
     [4X[28X"/Applications/gap/my-dev/pkg/utils/lib/tmp/"[128X[104X
     [4X[25Xgap>[125X [27XCreateDirIfMissing( dirname );[127X[104X
@@ -115,55 +115,34 @@
   [4X[32X[104X
   
   
-  [1X7.4 [33X[0;0YApplicable methods[133X[101X
+  [1X7.4 [33X[0;0YApplicable Methods[133X[101X
   
-  [1X7.4-1 PrintApplicableMethod[101X
-  
-  [33X[1;0Y[29X[2XPrintApplicableMethod[102X( [3Xarg[103X ) [32X function[133X
-  
-  [33X[0;0YThis    function   combines   calls   to   [10XApplicableMethod[110X,   [10XFilenameFunc[110X,
-  [10XStartlineFunc[110X and [10XEndlineFunc[110X and prints the location of the file containing
-  the  method  found, and a listing of that method. In its simplest form it is
-  called  as  [10XPrintApplicableMethod(f,L)[110X  for  a  function  [10Xf[110X  and  a  list of
-  parameters  [10XL[110X. Alternatively, it is called as [10XPrintApplicableMethod(f,L,0,n)[110X
-  and then prints the method returned by [10XApplicableMethod(f,L,0,n)[110X.[133X
+  [33X[0;0YThe function [10XPrintApplicableMethod[110X, which was included in versions from 0.41
+  to  0.58,  has been removed since it was considered superfluous. The example
+  shows how to print out a function.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );[127X[104X
-    [4X[28Xthis method is contained in lines [30,36] of file:[128X[104X
-    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
+    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );[127X[104X
+    [4X[28X#I  Searching Method for IsCyclic with 1 arguments:[128X[104X
+    [4X[28X#I  Total: 7 entries[128X[104X
+    [4X[28X#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: [128X[104X
+    [4X[28X36[128X[104X
+    [4X[28Xfunction( G ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XPrint( last );[127X[104X
     [4X[28Xfunction ( G )[128X[104X
-    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1  then[128X[104X
+    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1 then[128X[104X
     [4X[28X        return true;[128X[104X
     [4X[28X    else[128X[104X
-    [4X[28X        return TRY_NEXT_METHOD;[128X[104X
+    [4X[28X        TryNextMethod();[128X[104X
     [4X[28X    fi;[128X[104X
     [4X[28X    return;[128X[104X
     [4X[28Xend[128X[104X
-    [4X[25Xgap>[125X [27XPrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );[127X[104X
-    [4X[28Xthis method is contained in lines [41,63] of file:[128X[104X
-    [4X[28X    /Applications/gap/gapdev/lib/grp.gi[128X[104X
-    [4X[28Xfunction ( G )[128X[104X
-    [4X[28X    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1[128X[104X
-    [4X[28X         then[128X[104X
-    [4X[28X        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );[128X[104X
-    [4X[28X        return true;[128X[104X
-    [4X[28X    elif not IsCommutative( G )  then[128X[104X
-    [4X[28X        return false;[128X[104X
-    [4X[28X    elif IsFinite( G )  then[128X[104X
-    [4X[28X        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )[128X[104X
-    [4X[28X                return [128X[104X
-    [4X[28X                 Index( G, [128X[104X
-    [4X[28X                     SubgroupNC( G, [128X[104X
-    [4X[28X                       List( GeneratorsOfGroup( G ), function ( g )[128X[104X
-    [4X[28X                              return g ^ p;[128X[104X
-    [4X[28X                          end ) ) ) = p;[128X[104X
-    [4X[28X            end );[128X[104X
-    [4X[28X    else[128X[104X
-    [4X[28X        return AbelianInvariants( G ) = [ 0 ];[128X[104X
-    [4X[28X    fi;[128X[104X
-    [4X[28X    return;[128X[104X
+    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );[127X[104X
+    [4X[28Xfunction( <1 unnamed arguments> ) ... end[128X[104X
+    [4X[25Xgap>[125X [27XPrint( last );                                               [127X[104X
+    [4X[28Xfunction ( <<arg-1>> )[128X[104X
+    [4X[28X    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>[128X[104X
     [4X[28Xend[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X

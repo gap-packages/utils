@@ -35,7 +35,7 @@
   PcGroupToMagmaFormat 7.5-1 
   PermGroupToMagmaFormat 7.5-1 
   [2XPrimeNumbersIterator[102X 4.1-6 
-  [2XPrintApplicableMethod[102X 7.4-1 
+  PrintApplicableMethod 7.4 
   [2XPrintOneItemPerLine[102X 2.1-1 
   [2XPrintSelection[102X 2.1-2  2.1-2 
   [2XQuotientsList[102X 3.1-2 
