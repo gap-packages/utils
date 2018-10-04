@@ -15,10 +15,10 @@ gap> FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );
 [ "hello.tst", "recipe.tst", "testall.g" ]
 gap> dir := DirectoriesPackageLibrary( "utils" );;         
 gap> FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); 
-[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
-  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
-  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
-  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
+[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", 
+  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", 
+  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", 
+  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
 gap> dirname := Filename( dir[1], "tmp/" );;
 gap> CreateDirIfMissing( dirname );
 true
@@ -40,7 +40,7 @@ gap> IntOrInfinityToLaTeX( infinity );
 gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
 
-## SubSection 7.5.1 
+## SubSection 7.4.1 
 
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"

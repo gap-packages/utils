@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.59 for GAP 4.9.3 (04/10/18) 
+
+ * (04/10/18) added experimental (Print)ApplicableMethod***Utils operations 
+
 ## Version 0.58 for GAP 4.9.3 (12/09/18) 
 
  * (08/09/18) marked PrintOneItemPerLine as obsolete: use Perform(L,Display);

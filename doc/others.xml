@@ -51,10 +51,10 @@ gap> FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );
 gap> dir := DirectoriesPackageLibrary( "utils" );         
 [ dir("/Applications/gap/my-dev/pkg/utils/lib/") ]
 gap> FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); 
-[ "files.gd", "files.gi", "groups.gd", "groups.gi", "latex.gd", "latex.gi", 
-  "lists.gd", "lists.gi", "magma.gd", "magma.gi", "maps.gd", "maps.gi", 
-  "number.gd", "number.gi", "others.gd", "others.gi", "print.gd", "print.gi", 
-  "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
+[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", 
+  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", 
+  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", 
+  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
 gap> dirname := Filename( dir[1], "tmp/" );
 "/Applications/gap/my-dev/pkg/utils/lib/tmp/"
 gap> CreateDirIfMissing( dirname );
@@ -155,66 +155,6 @@ gap> LaTeXStringFactorsInt( Factorial(12) );
 </Section>
 
 
-<Section Label="sec-methods">
-<Heading>Applicable methods</Heading>
-
-<ManSection>
-  <Func Name="PrintApplicableMethod" 
-        Arg="arg"/>
-<Description>
-This function combines calls to <C>ApplicableMethod</C>, <C>FilenameFunc</C>, 
-<C>StartlineFunc</C> and <C>EndlineFunc</C> and prints the location of the file 
-containing the method found, and a listing of that method. 
-In its simplest form it is called as <C>PrintApplicableMethod(f,L)</C> 
-for a function <C>f</C> and a list of parameters <C>L</C>. 
-Alternatively, it is called as <C>PrintApplicableMethod(f,L,0,n)</C> 
-and then prints the method returned by <C>ApplicableMethod(f,L,0,n)</C>. 
-<P/>
-</Description>
-</ManSection>
-<P/>
-<Example>
-<![CDATA[
-gap> PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ] );
-this method is contained in lines [30,36] of file:
-    /Applications/gap/gapdev/lib/grp.gi
-function ( G )
-    if Length( GeneratorsOfGroup( G ) ) = 1  then
-        return true;
-    else
-        return TRY_NEXT_METHOD;
-    fi;
-    return;
-end
-gap> PrintApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 2 );
-this method is contained in lines [41,63] of file:
-    /Applications/gap/gapdev/lib/grp.gi
-function ( G )
-    if HasGeneratorsOfGroup( G ) and Length( GeneratorsOfGroup( G ) ) = 1
-         then
-        SetMinimalGeneratingSet( G, GeneratorsOfGroup( G ) );
-        return true;
-    elif not IsCommutative( G )  then
-        return false;
-    elif IsFinite( G )  then
-        return ForAll( Set( FactorsInt( Size( G ) ) ), function ( p )
-                return 
-                 Index( G, 
-                     SubgroupNC( G, 
-                       List( GeneratorsOfGroup( G ), function ( g )
-                              return g ^ p;
-                          end ) ) ) = p;
-            end );
-    else
-        return AbelianInvariants( G ) = [ 0 ];
-    fi;
-    return;
-end
-]]>
-</Example>
-
-</Section>
-
 <Section Label="sec-magma">
 <Heading>Conversion to &Magma; string</Heading>
 
@@ -289,8 +229,4 @@ gpN := sub<P | gens>;
 </Example>
 
 </Section>
-
-
-
-</Chapter>
 

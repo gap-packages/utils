@@ -9,9 +9,9 @@ LoadPackage( "AutoDoc" );
 AutoDoc( rec( 
     scaffold := rec(
         ## MainPage := false, 
-        includes := [ "intro.xml",  "print.xml",   "lists.xml", 
-                      "number.xml", "groups.xml",  "record.xml", 
-                      "others.xml", "transfer.xml" ],
+        includes := [ "intro.xml",   "print.xml",    "lists.xml", 
+                      "number.xml",  "groups.xml",   "record.xml", 
+                      "others.xml",  "app-meth.xml", "transfer.xml" ],
         bib := "bib.xml", 
         entities := rec( 
             AutoDoc := "<Package>AutoDoc</Package>",
