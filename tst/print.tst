@@ -10,27 +10,6 @@ gap> UtilsLoadingComplete;
 true
 
 ## SubSection 2.1.1 
-gap> s3 := SymmetricGroup( 3 );; 
-gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;
-gap> L0 := [ "IsFinite", "IsSmallList", "IsGeneratorsOfMagmaWithInverses", 
->            "IsGeneratorsOfSemigroup", "IsSubsetLocallyFiniteGroup" ];; 
-gap> ForAll( L0, x -> x in L );
-true
-gap> Perform( L0, Display );
-IsFinite
-IsSmallList
-IsGeneratorsOfMagmaWithInverses
-IsGeneratorsOfSemigroup
-IsSubsetLocallyFiniteGroup
-gap> Perform( s3, Display ); 
-()
-(2,3)
-(1,3)
-(1,3,2)
-(1,2,3)
-(1,2)
-
-## SubSection 2.1.2 
 gap> L := List( [1..20], n -> n^5 );;
 gap> PrintSelection( L, [18..20] );
 18 : 1889568
@@ -64,4 +43,4 @@ gap> PrintSelection( s5, 9, 11, 43 );
 
 #############################################################################
 ##
-#E  lists.tst . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
+#E  print.tst . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

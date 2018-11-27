@@ -236,31 +236,6 @@ gap> BlankFreeString( gens );
 ]]>
 </Example>
 
-<ManSection>
-   <Oper Name="StringDotSuffix"
-         Arg="str suf" />
-<Description>
-This function has been copied from package &AutoDoc;, 
-where it was originally named <C>AUTODOC_GetSuffix</C> 
-(the original will continue to exist). 
-<P/>
-When <C>StringDotSuffix</C> is given a string containing a "." 
-it return its extension, i.e. the bit after the last ".". 
-</Description>
-</ManSection>
-<Example>
-<![CDATA[
-gap> StringDotSuffix( "file.ext" );
-"ext"
-gap> StringDotSuffix( "file.ext.bak" );
-"bak"
-gap> StringDotSuffix( "file." );
-""
-gap> StringDotSuffix( "Hello" );   
-fail
-]]>
-</Example>
-
 </Section>
 
 

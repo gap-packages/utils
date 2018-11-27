@@ -1,8 +1,9 @@
 ##############################################################################
 ##
 #W  maps.gd                     GAP4 package `Utils'               Stefan Kohl
+##                                                               Chris Wensley
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
 ##  these three functions were in RCWA and were initially transferred but, 
@@ -13,6 +14,14 @@
 #M  EpimorphismByGeneratorsNC( <G>, <H> ) . . . . . . . . . . . .  for groups
 ##
 DeclareOperation( "EpimorphismByGenerators", [ IsDomain, IsDomain ] );
+
+#############################################################################
+## 
+#O  Pullback( <nu>, <mu> ) 
+#A  PullbackInfo( <pb> ) 
+## 
+DeclareOperation( "Pullback", [ IsGroupHomomorphism, IsGroupHomomorphism ] ); 
+DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 
 #############################################################################
 ##

@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  number.xml          Utils documentation                Stefan Kohl -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2016, The GAP Group,                            --> 
+<!--  Copyright (C) 2015-2018, The GAP Group,                            --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -21,7 +21,7 @@
    <Func Name="AllSmoothIntegers"
          Arg="maxp maxn" />
    <Func Name="AllSmoothIntegers"
-         Arg="maxp L" />
+         Arg="L maxp" />
 <Description>
 This function has been transferred from package &RCWA;. 
 <P/>
@@ -162,8 +162,6 @@ For large <A>n</A>, this function is much faster than
 <![CDATA[
 gap> n := 2^251;
 3618502788666131106986593281521497120414687020801267626233049500247285301248
-gap> time;      
-0
 gap> NextProbablyPrimeInt( n );
 3618502788666131106986593281521497120414687020801267626233049500247285301313
 gap> time;                     
@@ -171,7 +169,7 @@ gap> time;
 gap> NextPrimeInt( n );        
 3618502788666131106986593281521497120414687020801267626233049500247285301313
 gap> time;             
-12346
+213
 ]]>
 </Example>
 

@@ -5,36 +5,6 @@
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
-##  this function has been transferred from XMod 
-##  (08/09/18) the function is obsolete, better to use: Perform(L,Display)
-##
-#M  PrintListOneItemPerLine( <list> )
-##
-InstallMethod( PrintListOneItemPerLine, "generic method for lists", 
-    true, [ IsList ], 0,
-function( L )
-
-##    local  len, i;
-##
-##    len := Length( L );
-##    if ( len < 2 ) then
-##        Print( L, "\n" );
-##    else
-##        Print( "[ " );
-##        for i in [1..len-1] do
-##            if IsBound( L[i] ) then
-##                Print( L[i], ",\n  " );
-##            else
-##                Print( "," );
-##            fi;
-##        od;
-##        Print( L[len], " ]\n" );
-##    fi;
-
-    Perform( L, Display );
-end );
-
-#############################################################################
 ##  this function has been transferred from XMod and renamed 
 ##  (08/09/18) functions are obsolete, better to use: Perform(L,Display)
 ##

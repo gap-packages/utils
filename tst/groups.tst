@@ -77,6 +77,32 @@ gap> Image(epi,(1,2,3));
 gap> Image(epi,(1,3,2));
 (8,9)
 
+## SubSection 5.3.1
+gap> s4 := Group( (1,2),(2,3),(3,4) );;
+gap> s3 := Group( (5,6),(6,7) );;
+gap> c3 := Subgroup( s3, [ (5,6,7) ] );;
+gap> f := GroupHomomorphismByImages( s4, s3, 
+>             [(1,2),(2,3),(3,4)], [(5,6),(6,7),(5,6)] );; 
+gap> i := GroupHomomorphismByImages( c3, s3, [(5,6,7)], [(5,6,7)] );; 
+gap> Pfi := Pullback( f, i );
+Group([ (2,3,4)(5,7,6), (1,2)(3,4) ])
+gap> StructureDescription( Pfi );
+"A4"
+gap> info := PullbackInfo( Pfi );
+rec( directProduct := Group([ (1,2), (2,3), (3,4), (5,6,7) ]), 
+  projections := [ [ (2,3,4)(5,7,6), (1,2)(3,4) ] -> [ (2,3,4), (1,2)(3,4) ], 
+      [ (2,3,4)(5,7,6), (1,2)(3,4) ] -> [ (5,7,6), () ] ] )
+gap> g := (1,2,3)(5,6,7);; 
+gap> ImageElm( info!.projections[1], g );
+(1,2,3)
+gap> ImageElm( info!.projections[2], g );
+(5,6,7) 
+gap> dp := info!.directProduct;; 
+gap> a := ImageElm( Embedding( dp, 1 ), (1,4,3) );; 
+gap> b := ImageElm( Embedding( dp, 2 ), (5,7,6) );; 
+gap> a*b in Pfi;
+true
+
 #############################################################################
 ##
 #E  groups.tst  . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

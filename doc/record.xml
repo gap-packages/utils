@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2017, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -11,35 +11,8 @@
 <Chapter Label="chap-record">
 <Heading>Records</Heading>
 
-
-
 <Section Label="sec-records">
 <Heading>Functions for records</Heading>
-
-
-<ManSection>
-   <Func Name="SetIfMissing"
-         Arg="rec name val" />
-<Description>
-This function has been transferred from package &AutoDoc;, 
-where it was called <C>AUTODOC_WriteOnce</C> 
-(the original will continue to exist). 
-It writes into a record provided the position is not yet bound. 
-<P/>
-</Description>
-</ManSection>
-<Example>
-<![CDATA[
-gap> r := rec( a := 1, b := 2 );;                                      
-gap> SetIfMissing( r, "c", 3 );
-gap> names := RecNames( r );;
-gap> Set( names );
-[ "a", "b", "c" ]
-gap> SetIfMissing( r, "c", 4 );
-gap> r;
-rec( a := 1, b := 2, c := 3 )
-]]>
-</Example>
 
 <ManSection>
    <Func Name="AssignGlobals"
@@ -54,6 +27,7 @@ to global variables with the same names.
 </ManSection>
 <Example>
 <![CDATA[
+gap> r := rec( a := 1, b := 2, c := 3 );;                                      
 gap> AssignGlobals( r );
 The following global variables have been assigned:
 [ "a", "b", "c" ]

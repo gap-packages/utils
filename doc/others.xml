@@ -13,67 +13,6 @@
 <Heading>Various other functions</Heading>
 
 
-<Section Label="sec-folder-ops">
-<Heading>Operations on folders</Heading>
-
-<ManSection>
-  <Func Name="FindMatchingFiles" 
-        Arg="pkg dirs extns"/>
-  <Func Name="CreateDirIfMissing" 
-        Arg="str"/>
-<Description>
-These functions have been copied from package &AutoDoc; 
-where they were named <C>AutoDoc_FindMatchingFiles</C> 
-and <C>AutoDoc_CreateDirIfMissing</C>  
-(the originals will continue to exist). 
-<P/>
-<C>FindMatchingFiles</C> scans the given (by name) subdirectories 
-of a package directory for files with one of the given extensions, 
-and returns the corresponding filenames, 
-as paths relative to the package directory.
-<P/>
-<C>CreateDirIfMissing</C> checks whether the given directory exists 
-and, if not, attempts to create it. 
-In either case <C>true</C> is returned. 
-<P/>
-<E>Warning:</E> this function relies on the undocumented library function 
-<C>CreateDir</C>, so use it with caution. 
-<P/>
-</Description>
-</ManSection>
-<P/>
-<Example>
-<![CDATA[
-gap> dir := DirectoriesPackageLibrary( "example", "tst" );
-[ dir("/Applications/gap/gap4r9/pkg/Example-4.1.1/tst/") ]
-gap> FindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            
-[ "hello.tst", "recipe.tst", "testall.g" ]
-gap> dir := DirectoriesPackageLibrary( "utils" );         
-[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ]
-gap> FindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); 
-[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", 
-  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", 
-  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", 
-  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ]
-gap> dirname := Filename( dir[1], "tmp/" );
-"/Applications/gap/my-dev/pkg/utils/lib/tmp/"
-gap> CreateDirIfMissing( dirname );
-true
-gap> filename := Concatenation( dirname, "hello.log" );
-"/Applications/gap/my-dev/pkg/utils/lib/tmp/hello.log"
-gap> LogTo( filename );
-gap> Print( "hello\n" );
-hello
-gap> LogTo();                                    
-gap> FindMatchingFiles( dir, [ "tmp" ], [ "log" ] );
-[ "tmp/hello.log" ]
-]]>
-</Example>
-
-
-</Section>
-
-
 <Section Label="sec-log2html">
 <Heading>File operations</Heading>
 
@@ -96,13 +35,11 @@ which you can adjust to your taste.
 <P/>
 <Example>
 <![CDATA[
-gap> LogTo( "log2html.log" );
-gap> dir := DirectoriesPackageLibrary( "utils", "tst" );;
-gap> FindMatchingFiles( dir, [ "" ], [ "tst" ] );
-[ "groups.tst", "lists.tst", "number.tst", "others.tst", "print.tst", 
-  "record.tst", "string.tst" ]
+gap> LogTo( "triv.log" );
+gap> a := 33^5;
+39135393
 gap> LogTo(); 
-gap> Log2HTML( "log2html.log" );     
+gap> Log2HTML( "triv.log" );     
 ]]>
 </Example>
 
@@ -153,43 +90,6 @@ gap> LaTeXStringFactorsInt( Factorial(12) );
 
 </Section>
 
-
-<Section Label="sec-app-meth">
-<Heading>Applicable Methods</Heading>
-
-The function <Index>PrintApplicableMethod</Index> <C>PrintApplicableMethod</C>, 
-which was included in versions from 0.41 to 0.58, 
-has been removed since it was considered superfluous. 
-The example shows how to print out a function. 
-<P/> 
-<Example>
-<![CDATA[
-gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );
-#I  Searching Method for IsCyclic with 1 arguments:
-#I  Total: 7 entries
-#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: 
-36
-function( G ) ... end
-gap> Print( last );
-function ( G )
-    if Length( GeneratorsOfGroup( G ) ) = 1 then
-        return true;
-    else
-        TryNextMethod();
-    fi;
-    return;
-end
-gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );
-function( <1 unnamed arguments> ) ... end
-gap> Print( last );                                               
-function ( <<arg-1>> )
-    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>
-end
-]]>
-</Example>
-
-
-</Section>
 
 <Section Label="sec-magma">
 <Heading>Conversion to &Magma; string</Heading>

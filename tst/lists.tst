@@ -69,6 +69,12 @@ gap> Length( C );  DifferencesList( P );
 12
 [ 12, 12, 12, 12, 12, 12, 12 ]
 
+## SubSection 3.1.4 
+## this manual example not tested as answers vary from run to run 
+## gap> RandomCombination( [1..49], 6 );
+## [ 3, 5, 21, 24, 27, 31 ]
+
+
 ## SubSection 3.2.1 
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;
 gap> DistinctRepresentatives( J );
@@ -95,16 +101,6 @@ gap> String( gens );
 "[ f1, f2, f3 ]"
 gap> BlankFreeString( gens );                       
 "[f1,f2,f3]"
-
-## SubSection 3.3.2 
-gap> StringDotSuffix( "file.ext" );
-"ext"
-gap> StringDotSuffix( "file.ext.bak" );
-"bak"
-gap> StringDotSuffix( "file." );
-""
-gap> StringDotSuffix( "Hello" );   
-fail
 
 #############################################################################
 ##
