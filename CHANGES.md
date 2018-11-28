@@ -1,8 +1,14 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.61 for GAP 4.10.0 (28/11/18) 
+
+ * (28/11/18) made ExponentOfPrime obsolete
+ * (27/11/18) made several AutoDoc functions obsolete (they remain in AutoDoc): 
+           FindMatchingFiles; CreateDirIfMissing; StringDotSuffix; SetIfMissing
+
 ## Version 0.59 for GAP 4.9.3 (04/10/18) 
 
- * (04/10/18) removed PrintApplicableMethod 
+ * (04/10/18) made PrintApplicableMethod obsolete 
 
 ## Version 0.58 for GAP 4.9.3 (12/09/18) 
 

@@ -32,17 +32,6 @@ DeclareGlobalFunction( "AllSmoothIntegers" );
 #############################################################################
 ##  this function has been transferred from RCWA 
 ##
-#F  ExponentOfPrime( <n>, <p> )
-##
-##  The exponent of the prime <p> in the prime factorization of <n>. 
-##
-##  (07/09/18) this does the same as PValuation in GAP; so is obsolete 
-##
-DeclareGlobalFunction( "ExponentOfPrime" );
-
-#############################################################################
-##  this function has been transferred from RCWA 
-##
 #F  PrimeNumbersIterator(  )
 #F  PrimeNumbersIterator( chunksize )
 ##

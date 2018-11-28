@@ -5,16 +5,6 @@
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
 ##############################################################################
-##  added global function and method for iterators to complement the above 
-##  (08/09/18) functions are obsolete, better to use: Perform(L,Display)
-##  
-#F  PrintOneItemPerLine( <args> ) 
-#O  PrintIteratorOneItemPerLine( <iter> ) 
-##  
-DeclareGlobalFunction( "PrintOneItemPerLine" );
-DeclareOperation( "PrintIteratorOneItemPerLine", [ IsIterator ] );
-
-##############################################################################
 ##  added global function and methods to print subsets of lists/iterators  
 ##  
 DeclareGlobalFunction( "PrintSelection" ); 

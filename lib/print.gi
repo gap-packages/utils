@@ -5,43 +5,6 @@
 #Y  Copyright (C) 2015-2018, The GAP Group 
 
 #############################################################################
-##  this function has been transferred from XMod and renamed 
-##  (08/09/18) functions are obsolete, better to use: Perform(L,Display)
-##
-#M  PrintOneItemPerLine( <arg> )
-#M  PrintIteratorOneItemPerLine( <iterator> )
-##
-InstallGlobalFunction( PrintOneItemPerLine, 
-
-function( arg )
-
-    local obj;
-
-    obj := arg[1]; 
-    if IsList( obj ) then 
-        PrintListOneItemPerLine( obj ); 
-    elif IsIterator( obj ) then 
-        PrintIteratorOneItemPerLine( obj ); 
-    else 
-        PrintIteratorOneItemPerLine( Iterator( obj ) ); 
-    fi;
-end );
-
-InstallMethod( PrintIteratorOneItemPerLine, "generic method for iterators", 
-    true, [ IsIterator ], 0,
-function( iter )
-
-##    local  it, x;
-##
-##    it := ShallowCopy( iter );
-##    for x in it do 
-##        Print( x, "\n" ); 
-##    od;
-
-    Perform( iter, Display ); 
-end );
-
-#############################################################################
 ##  these operations have not been transferred from any other package  
 ##
 #M  PrintSelection( <args> )

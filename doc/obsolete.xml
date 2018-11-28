@@ -1,0 +1,127 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  obsolete.xml              Utils documentation                      -->
+<!--                                                                     -->
+<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-obsolete">
+<Heading>Obsolete functions</Heading>
+
+
+<Section Label="sec-obs-folders">
+<Heading>Operations from AutoDoc</Heading>
+
+The file functions <C>FindMatchingFiles</C> <Index>FindMatchingFiles</Index> 
+and <C>CreateDirIfMissing</C> <Index>CreateDirIfMissing</Index> 
+were copied from package <Package>AutoDoc</Package> 
+where they are named <C>AutoDoc_FindMatchingFiles</C> 
+and <C>AutoDoc_CreateDirIfMissing</C>. 
+<P/>
+The string function <C>StringDotSuffix</C> <Index>StringDotSuffix</Index> 
+was also copied from package <Package>AutoDoc</Package>, 
+where it is named <C>AUTODOC_GetSuffix</C>. <Index>GetSuffix</Index> 
+<P/>
+The function <C>SetIfMissing</C> <Index>SetIfMissing</Index> 
+was also transferred from package <Package>AutoDoc</Package>, 
+where it is called <C>AUTODOC_SetIfMissing</C>. 
+It writes into a record provided the position is not yet bound. 
+<P/>
+As from version 0.61, all these functions became obsolete in 
+<Package>Utils</Package>, 
+but continue to be defined in <Package>AutoDoc</Package>. 
+</Section>
+
+
+
+<Section Label="sec-obs-print">
+<Heading>Functions for printing</Heading>
+
+The function <C>PrintOneItemPerLine</C> <Index>PrintOneItemPerLine</Index> 
+was used to prints lists vertically, rather than horizontally. 
+Since a very similar result may be achieved using the &GAP; 
+library functions <C>Perform</C> and <C>Display</C>, 
+this function became obsolete in version 0.61. 
+<P/>
+<Example>
+<![CDATA[
+gap> s3 := SymmetricGroup( 3 );; 
+gap> L := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;
+gap> Perform( L, Display );
+IsFinite
+IsSmallList
+IsGeneratorsOfMagmaWithInverses
+IsGeneratorsOfSemigroup
+IsSubsetLocallyFiniteGroup
+gap> Perform( s3, Display ); 
+()
+(2,3)
+(1,3)
+(1,3,2)
+(1,2,3)
+(1,2)
+]]>
+</Example>
+
+</Section>
+
+<Section Label="sec-obs-others">
+<Heading>Other obsolete functions</Heading>
+
+<Subsection Label="subsec-app-meth">
+<Heading>Applicable Methods</Heading>
+
+The function <Index>PrintApplicableMethod</Index> <C>PrintApplicableMethod</C>, 
+which was included in versions from 0.41 to 0.58, 
+has been removed since it was considered superfluous. 
+The example shows how to print out a function. 
+<P/> 
+<Example>
+<![CDATA[
+gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );
+#I  Searching Method for IsCyclic with 1 arguments:
+#I  Total: 7 entries
+#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: 
+36
+function( G ) ... end
+gap> Print( last );
+function ( G )
+    if Length( GeneratorsOfGroup( G ) ) = 1 then
+        return true;
+    else
+        TryNextMethod();
+    fi;
+    return;
+end
+gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );
+function( <1 unnamed arguments> ) ... end
+gap> Print( last );                                               
+function ( <<arg-1>> )
+    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>
+end
+]]>
+</Example>
+
+</Subsection>
+
+
+<Subsection Label="subsec-exponent">
+<Heading>ExponentOfPrime</Heading>
+
+The function <C>ExponentOfPrime</C> <Index>ExponentOfPrime</Index> 
+was originally transferred from package &RCWA;. 
+The command <C>ExponentOfPrime(<A>n</A>,<A>p</A>)</C> returned the exponent 
+of the prime <A>p</A> in the prime factorization of <A>n</A>. 
+<P/>
+Since the &GAP; function <C>PValuation</C> 
+produces the same results, and does so more quickly, 
+this function has been made obsolete. 
+
+</Subsection>
+
+</Section>
+
+</Chapter>

@@ -40,29 +40,6 @@ InstallGlobalFunction( AllSmoothIntegers,
   end );
 
 #############################################################################
-##  this function has been transferred from RCWA 
-##
-##  (07/09/18) this does the same as PValuation in GAP; so is obsolete 
-##
-#F  ExponentOfPrime( <n>, <p> )
-##
-InstallGlobalFunction( ExponentOfPrime,
-
-  function ( n, p )
-
-##    local k;
-##
-##    if IsZero(p) then return fail; fi;
-##    if IsZero(n) then return infinity; fi;
-##    k := 0;
-##    while IsZero(n mod p) do n := n/p; k := k + 1; od;
-##    return k;
-
-  Info( InfoWarning, 2, "ExponentOfPrime obsolete: use PValuation instead." ); 
-  return PValuation( n, p );
-  end );
-
-#############################################################################
 ##  this function has been transferred from RCWA
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
