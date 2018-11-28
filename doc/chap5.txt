@@ -154,3 +154,50 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  
+  [1X5.3 [33X[0;0YPullback of group homomorphisms[133X[101X
+  
+  [1X5.3-1 Pullback[101X
+  
+  [33X[1;0Y[29X[2XPullback[102X( [3Xhom1[103X, [3Xhom2[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XPullbackInfo[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YIf  [22Xϕ_1  :  G_1 -> H[122X and [22Xϕ_2 : G_2 -> H[122X are two group homomorphisms with the
+  same  range,  then their [13Xpullback[113X is the subgroup of [22XG_1 × G_2[122X consisting of
+  those elements [22X(g_1,g_2)[122X such that [22Xϕ_1 g_1 = ϕ_2 g_2[122X.[133X
+  
+  [33X[0;0YThe   attribute   [10XPullbackInfo[110X   of   a  pullback  group  [10XP[110X  is  similar  to
+  [10XDirectProductInfo[110X for a direct product of groups. It is a record with fields
+  [10XP!.directProduct[110X,  the  direct product [22XG_1 × G_2[122X; and [10XP!.projections[110X, a list
+  with  the  two projections onto [22XG_1[122X and [22XG_2[122X. There are no embeddings in this
+  record, but it is possible to use the embeddings into the direct product.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xs4 := Group( (1,2),(2,3),(3,4) );;[127X[104X
+    [4X[25Xgap>[125X [27Xs3 := Group( (5,6),(6,7) );;[127X[104X
+    [4X[25Xgap>[125X [27Xc3 := Subgroup( s3, [ (5,6,7) ] );;[127X[104X
+    [4X[25Xgap>[125X [27Xf := GroupHomomorphismByImages( s4, s3, [127X[104X
+    [4X[25X>[125X [27X            [(1,2),(2,3),(3,4)], [(5,6),(6,7),(5,6)] );; [127X[104X
+    [4X[25Xgap>[125X [27Xi := GroupHomomorphismByImages( c3, s3, [(5,6,7)], [(5,6,7)] );; [127X[104X
+    [4X[25Xgap>[125X [27XPfi := Pullback( f, i );[127X[104X
+    [4X[28XGroup([ (2,3,4)(5,7,6), (1,2)(3,4) ])[128X[104X
+    [4X[25Xgap>[125X [27XStructureDescription( Pfi );[127X[104X
+    [4X[28X"A4"[128X[104X
+    [4X[25Xgap>[125X [27Xinfo := PullbackInfo( Pfi );[127X[104X
+    [4X[28Xrec( directProduct := Group([ (1,2), (2,3), (3,4), (5,6,7) ]), [128X[104X
+    [4X[28X  projections := [ [ (2,3,4)(5,7,6), (1,2)(3,4) ] -> [ (2,3,4), (1,2)(3,4) ], [128X[104X
+    [4X[28X      [ (2,3,4)(5,7,6), (1,2)(3,4) ] -> [ (5,7,6), () ] ] )[128X[104X
+    [4X[25Xgap>[125X [27Xg := (1,2,3)(5,6,7);; [127X[104X
+    [4X[25Xgap>[125X [27XImageElm( info!.projections[1], g );[127X[104X
+    [4X[28X(1,2,3)[128X[104X
+    [4X[25Xgap>[125X [27XImageElm( info!.projections[2], g );[127X[104X
+    [4X[28X(5,6,7) [128X[104X
+    [4X[25Xgap>[125X [27Xdp := info!.directProduct;; [127X[104X
+    [4X[25Xgap>[125X [27Xa := ImageElm( Embedding( dp, 1 ), (1,4,3) );; [127X[104X
+    [4X[25Xgap>[125X [27Xb := ImageElm( Embedding( dp, 2 ), (5,7,6) );; [127X[104X
+    [4X[25Xgap>[125X [27Xa*b in Pfi;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

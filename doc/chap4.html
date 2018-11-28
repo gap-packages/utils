@@ -15,7 +15,7 @@
 <body class="chap4"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -28,9 +28,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X802064F37D50F46A">4.1-1 AllSmoothIntegers</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X78BE6B8B878D250D">4.1-2 AllProducts</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X845F46E579CEA43F">4.1-3 RestrictedPartitionsWithoutRepetitions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C1AF2467FB55D79">4.1-4 ExponentOfPrime</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81708BF4858505E8">4.1-5 NextProbablyPrimeInt</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8021EEE5787FCA37">4.1-6 PrimeNumbersIterator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81708BF4858505E8">4.1-4 NextProbablyPrimeInt</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8021EEE5787FCA37">4.1-5 PrimeNumbersIterator</a></span>
 </div></div>
 </div>
 
@@ -45,7 +44,7 @@
 <h5>4.1-1 AllSmoothIntegers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllSmoothIntegers</code>( <var class="Arg">maxp</var>, <var class="Arg">maxn</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllSmoothIntegers</code>( <var class="Arg">maxp</var>, <var class="Arg">L</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllSmoothIntegers</code>( <var class="Arg">L</var>, <var class="Arg">maxp</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
 
 <p>The function <code class="code">AllSmoothIntegers(<var class="Arg">maxp</var>,<var class="Arg">maxn</var>)</code> returns the list of all positive integers less than or equal to <var class="Arg">maxn</var> whose prime factors are all in the list <span class="SimpleMath">L = {p ~|~ p leqslant maxp, p~mboxprime }</span>.</p>
@@ -117,42 +116,9 @@
 
 </pre></div>
 
-<p><a id="X7C1AF2467FB55D79" name="X7C1AF2467FB55D79"></a></p>
-
-<h5>4.1-4 ExponentOfPrime</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ExponentOfPrime</code>( <var class="Arg">n</var>, <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
-
-<p><code class="code">ExponentOfPrime(<var class="Arg">n</var>,<var class="Arg">p</var>)</code> returns the exponent of the prime <var class="Arg">p</var> in the prime factorization of <var class="Arg">n</var>.</p>
-
-<p>It has been pointed out (07/09/2018) that the <strong class="pkg">GAP</strong> function <code class="code">PValuation</code> produces the same results, and does so more quickly. <em>So this function should be considered obsolete, and liable to removal in due course.</em></p>
-
-
-<div class="example"><pre>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ExponentOfPrime( 13577531, 11 ); </span>
-3
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PValuation( 13577531, 11 ); </span>
-3
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; ExponentOfPrime( 3^n-1, 2 ) );</span>
-[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, 
-  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; PValuation( 3^n-1, 2 ) );</span>
-[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, 
-  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; ExponentOfPrime( n^2-1, 2 ) );</span>
-[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, 
-  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List( [1..40], n -&gt; PValuation( n^2-1, 2 ) );</span>
-[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, 
-  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ]
-
-</pre></div>
-
 <p><a id="X81708BF4858505E8" name="X81708BF4858505E8"></a></p>
 
-<h5>4.1-5 NextProbablyPrimeInt</h5>
+<h5>4.1-4 NextProbablyPrimeInt</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextProbablyPrimeInt</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
@@ -164,8 +130,6 @@
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n := 2^251;</span>
 3618502788666131106986593281521497120414687020801267626233049500247285301248
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">time;      </span>
-0
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextProbablyPrimeInt( n );</span>
 3618502788666131106986593281521497120414687020801267626233049500247285301313
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">time;                     </span>
@@ -173,13 +137,13 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextPrimeInt( n );        </span>
 3618502788666131106986593281521497120414687020801267626233049500247285301313
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">time;             </span>
-12346
+213
 
 </pre></div>
 
 <p><a id="X8021EEE5787FCA37" name="X8021EEE5787FCA37"></a></p>
 
-<h5>4.1-6 PrimeNumbersIterator</h5>
+<h5>4.1-5 PrimeNumbersIterator</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimeNumbersIterator</code>( [<var class="Arg">chunksize</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
@@ -208,7 +172,7 @@
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

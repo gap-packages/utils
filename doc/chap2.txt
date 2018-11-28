@@ -11,37 +11,7 @@
   
   [30X    [33X[0;6Yby specifying a first item and then a regular step.[133X
   
-  [1X2.1-1 PrintOneItemPerLine[101X
-  
-  [33X[1;0Y[29X[2XPrintOneItemPerLine[102X( [3Xobj[103X ) [32X function[133X
-  
-  [33X[0;0YThis  function  prints lists, or objects which have an iterator, vertically,
-  rather  than horizontally, may be useful when the entries are lengthy. Since
-  a  very  similar  result  may  be  achieved  using the [5XGAP[105X library functions
-  [10XPerform[110X  and [10XDisplay[110X, [13Xthis function should be considered obsolete and liable
-  to removal in due course[113X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xs3 := SymmetricGroup( 3 );; [127X[104X
-    [4X[25Xgap>[125X [27XL := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;[127X[104X
-    [4X[25Xgap>[125X [27XPerform( L, Display );[127X[104X
-    [4X[28XIsFinite[128X[104X
-    [4X[28XIsSmallList[128X[104X
-    [4X[28XIsGeneratorsOfMagmaWithInverses[128X[104X
-    [4X[28XIsGeneratorsOfSemigroup[128X[104X
-    [4X[28XIsSubsetLocallyFiniteGroup[128X[104X
-    [4X[25Xgap>[125X [27XPerform( s3, Display ); [127X[104X
-    [4X[28X()[128X[104X
-    [4X[28X(2,3)[128X[104X
-    [4X[28X(1,3)[128X[104X
-    [4X[28X(1,3,2)[128X[104X
-    [4X[28X(1,2,3)[128X[104X
-    [4X[28X(1,2)[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  [1X2.1-2 PrintSelection[101X
+  [1X2.1-1 PrintSelection[101X
   
   [33X[1;0Y[29X[2XPrintSelection[102X( [3Xobj[103X, [3Xfirst[103X, [3Xstep[103X[, [3Xlast[103X] ) [32X function[133X
   [33X[1;0Y[29X[2XPrintSelection[102X( [3Xobj[103X, [3Xlist[103X ) [32X function[133X

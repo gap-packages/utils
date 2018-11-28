@@ -7,7 +7,7 @@
   [1X4.1-1 AllSmoothIntegers[101X
   
   [33X[1;0Y[29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3Xmaxn[103X ) [32X function[133X
-  [33X[1;0Y[29X[2XAllSmoothIntegers[102X( [3Xmaxp[103X, [3XL[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAllSmoothIntegers[102X( [3XL[103X, [3Xmaxp[103X ) [32X function[133X
   
   [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
@@ -82,41 +82,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X4.1-4 ExponentOfPrime[101X
-  
-  [33X[1;0Y[29X[2XExponentOfPrime[102X( [3Xn[103X, [3Xp[103X ) [32X function[133X
-  
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
-  
-  [33X[0;0Y[10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X  returns  the  exponent  of  the  prime  [3Xp[103X in the prime
-  factorization of [3Xn[103X.[133X
-  
-  [33X[0;0YIt  has  been  pointed  out  (07/09/2018)  that  the [5XGAP[105X function [10XPValuation[110X
-  produces the same results, and does so more quickly. [13XSo this function should
-  be considered obsolete, and liable to removal in due course.[113X[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XExponentOfPrime( 13577531, 11 ); [127X[104X
-    [4X[28X3[128X[104X
-    [4X[25Xgap>[125X [27XPValuation( 13577531, 11 ); [127X[104X
-    [4X[28X3[128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> ExponentOfPrime( 3^n-1, 2 ) );[127X[104X
-    [4X[28X[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, [128X[104X
-    [4X[28X  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ][128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> PValuation( 3^n-1, 2 ) );[127X[104X
-    [4X[28X[ 1, 3, 1, 4, 1, 3, 1, 5, 1, 3, 1, 4, 1, 3, 1, 6, 1, 3, 1, 4, 1, 3, 1, 5, 1, [128X[104X
-    [4X[28X  3, 1, 4, 1, 3, 1, 7, 1, 3, 1, 4, 1, 3, 1, 5 ][128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> ExponentOfPrime( n^2-1, 2 ) );[127X[104X
-    [4X[28X[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, [128X[104X
-    [4X[28X  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ][128X[104X
-    [4X[25Xgap>[125X [27XList( [1..40], n -> PValuation( n^2-1, 2 ) );[127X[104X
-    [4X[28X[ infinity, 0, 3, 0, 3, 0, 4, 0, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 3, 0, 3, 0, 4, [128X[104X
-    [4X[28X  0, 4, 0, 3, 0, 3, 0, 6, 0, 6, 0, 3, 0, 3, 0, 4, 0 ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  [1X4.1-5 NextProbablyPrimeInt[101X
+  [1X4.1-4 NextProbablyPrimeInt[101X
   
   [33X[1;0Y[29X[2XNextProbablyPrimeInt[102X( [3Xn[103X ) [32X function[133X
   
@@ -131,8 +97,6 @@
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27Xn := 2^251;[127X[104X
     [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301248[128X[104X
-    [4X[25Xgap>[125X [27Xtime;      [127X[104X
-    [4X[28X0[128X[104X
     [4X[25Xgap>[125X [27XNextProbablyPrimeInt( n );[127X[104X
     [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301313[128X[104X
     [4X[25Xgap>[125X [27Xtime;                     [127X[104X
@@ -140,11 +104,11 @@
     [4X[25Xgap>[125X [27XNextPrimeInt( n );        [127X[104X
     [4X[28X3618502788666131106986593281521497120414687020801267626233049500247285301313[128X[104X
     [4X[25Xgap>[125X [27Xtime;             [127X[104X
-    [4X[28X12346[128X[104X
+    [4X[28X213[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X4.1-6 PrimeNumbersIterator[101X
+  [1X4.1-5 PrimeNumbersIterator[101X
   
   [33X[1;0Y[29X[2XPrimeNumbersIterator[102X( [[3Xchunksize[103X] ) [32X function[133X
   

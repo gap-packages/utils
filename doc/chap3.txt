@@ -189,26 +189,3 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X3.3-2 StringDotSuffix[101X
-  
-  [33X[1;0Y[29X[2XStringDotSuffix[102X( [3Xstr[103X, [3Xsuf[103X ) [32X operation[133X
-  
-  [33X[0;0YThis  function has been copied from package [5XAutoDoc[105X, where it was originally
-  named [10XAUTODOC_GetSuffix[110X (the original will continue to exist).[133X
-  
-  [33X[0;0YWhen  [10XStringDotSuffix[110X  is  given  a  string  containing  a "." it return its
-  extension, i.e. the bit after the last ".".[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XStringDotSuffix( "file.ext" );[127X[104X
-    [4X[28X"ext"[128X[104X
-    [4X[25Xgap>[125X [27XStringDotSuffix( "file.ext.bak" );[127X[104X
-    [4X[28X"bak"[128X[104X
-    [4X[25Xgap>[125X [27XStringDotSuffix( "file." );[127X[104X
-    [4X[28X""[128X[104X
-    [4X[25Xgap>[125X [27XStringDotSuffix( "Hello" );   [127X[104X
-    [4X[28Xfail[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  

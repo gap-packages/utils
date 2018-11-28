@@ -15,7 +15,7 @@
 <body class="chap5"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -35,6 +35,11 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X80C9A0B583FEA7B9">5.2-1 EpimorphismByGenerators</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X823DC2987AACB3FF">5.3 <span class="Heading">Pullback of group homomorphisms</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C705F2A79F8E43C">5.3-1 Pullback</a></span>
 </div></div>
 </div>
 
@@ -200,11 +205,55 @@ true
 
 </pre></div>
 
+<p><a id="X823DC2987AACB3FF" name="X823DC2987AACB3FF"></a></p>
+
+<h4>5.3 <span class="Heading">Pullback of group homomorphisms</span></h4>
+
+<p><a id="X7C705F2A79F8E43C" name="X7C705F2A79F8E43C"></a></p>
+
+<h5>5.3-1 Pullback</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pullback</code>( <var class="Arg">hom1</var>, <var class="Arg">hom2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PullbackInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>If <span class="SimpleMath">ϕ_1 : G_1 -&gt; H</span> and <span class="SimpleMath">ϕ_2 : G_2 -&gt; H</span> are two group homomorphisms with the same range, then their <em>pullback</em> is the subgroup of <span class="SimpleMath">G_1 × G_2</span> consisting of those elements <span class="SimpleMath">(g_1,g_2)</span> such that <span class="SimpleMath">ϕ_1 g_1 = ϕ_2 g_2</span>.</p>
+
+<p>The attribute <code class="code">PullbackInfo</code> of a pullback group <code class="code">P</code> is similar to <code class="code">DirectProductInfo</code> for a direct product of groups. It is a record with fields <code class="code">P!.directProduct</code>, the direct product <span class="SimpleMath">G_1 × G_2</span>; and <code class="code">P!.projections</code>, a list with the two projections onto <span class="SimpleMath">G_1</span> and <span class="SimpleMath">G_2</span>. There are no embeddings in this record, but it is possible to use the embeddings into the direct product.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s4 := Group( (1,2),(2,3),(3,4) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3 := Group( (5,6),(6,7) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c3 := Subgroup( s3, [ (5,6,7) ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := GroupHomomorphismByImages( s4, s3, </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">            [(1,2),(2,3),(3,4)], [(5,6),(6,7),(5,6)] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := GroupHomomorphismByImages( c3, s3, [(5,6,7)], [(5,6,7)] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Pfi := Pullback( f, i );</span>
+Group([ (2,3,4)(5,7,6), (1,2)(3,4) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription( Pfi );</span>
+"A4"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">info := PullbackInfo( Pfi );</span>
+rec( directProduct := Group([ (1,2), (2,3), (3,4), (5,6,7) ]), 
+  projections := [ [ (2,3,4)(5,7,6), (1,2)(3,4) ] -&gt; [ (2,3,4), (1,2)(3,4) ], 
+      [ (2,3,4)(5,7,6), (1,2)(3,4) ] -&gt; [ (5,7,6), () ] ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := (1,2,3)(5,6,7);; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( info!.projections[1], g );</span>
+(1,2,3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( info!.projections[2], g );</span>
+(5,6,7) 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dp := info!.directProduct;; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := ImageElm( Embedding( dp, 1 ), (1,4,3) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b := ImageElm( Embedding( dp, 2 ), (5,7,6) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a*b in Pfi;</span>
+true
+
+</pre></div>
+
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

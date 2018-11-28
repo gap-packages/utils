@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.59
+                                      0.61
   
   
-                                 4 October 2018
+                                28 November 2018
   
   
                                Sebastian Gutsche
@@ -91,8 +91,7 @@
     1.1 [33X[0;0YInformation for package authors[133X
   2 [33X[0;0YPrinting Lists and Iterators[133X
     2.1 [33X[0;0YPrinting selected items[133X
-      2.1-1 PrintOneItemPerLine
-      2.1-2 PrintSelection
+      2.1-1 PrintSelection
   3 [33X[0;0YLists, Sets and Strings[133X
     3.1 [33X[0;0YFunctions for lists[133X
       3.1-1 DifferencesList
@@ -103,15 +102,13 @@
       3.2-1 DistinctRepresentatives
     3.3 [33X[0;0YFunctions for strings[133X
       3.3-1 BlankFreeString
-      3.3-2 StringDotSuffix
   4 [33X[0;0YNumber-theoretic functions[133X
     4.1 [33X[0;0YFunctions for integers[133X
       4.1-1 AllSmoothIntegers
       4.1-2 AllProducts
       4.1-3 RestrictedPartitionsWithoutRepetitions
-      4.1-4 ExponentOfPrime
-      4.1-5 NextProbablyPrimeInt
-      4.1-6 PrimeNumbersIterator
+      4.1-4 NextProbablyPrimeInt
+      4.1-5 PrimeNumbersIterator
   5 [33X[0;0YGroups and homomorphisms[133X
     5.1 [33X[0;0YFunctions for groups[133X
       5.1-1 Comm
@@ -121,22 +118,26 @@
       5.1-5 UpperFittingSeries
     5.2 [33X[0;0YFunctions for group homomorphisms[133X
       5.2-1 EpimorphismByGenerators
+    5.3 [33X[0;0YPullback of group homomorphisms[133X
+      5.3-1 Pullback
   6 [33X[0;0YRecords[133X
     6.1 [33X[0;0YFunctions for records[133X
-      6.1-1 SetIfMissing
-      6.1-2 AssignGlobals
+      6.1-1 AssignGlobals
   7 [33X[0;0YVarious other functions[133X
-    7.1 [33X[0;0YOperations on folders[133X
-      7.1-1 FindMatchingFiles
-    7.2 [33X[0;0YFile operations[133X
-      7.2-1 Log2HTML
-    7.3 [33X[0;0YLaTeX strings[133X
-      7.3-1 IntOrOnfinityToLaTeX
-      7.3-2 LaTeXStringFactorsInt
-    7.4 [33X[0;0YApplicable Methods[133X
-    7.5 [33X[0;0YConversion to [22XMagma[122X string[133X
-      7.5-1 ConvertToMagmaInputString
-  8 [33X[0;0YThe transfer procedure[133X
+    7.1 [33X[0;0YFile operations[133X
+      7.1-1 Log2HTML
+    7.2 [33X[0;0YLaTeX strings[133X
+      7.2-1 IntOrOnfinityToLaTeX
+      7.2-2 LaTeXStringFactorsInt
+    7.3 [33X[0;0YConversion to [22XMagma[122X string[133X
+      7.3-1 ConvertToMagmaInputString
+  8 [33X[0;0YObsolete functions[133X
+    8.1 [33X[0;0YOperations from AutoDoc[133X
+    8.2 [33X[0;0YFunctions for printing[133X
+    8.3 [33X[0;0YOther obsolete functions[133X
+      8.3-1 [33X[0;0YApplicable Methods[133X
+      8.3-2 [33X[0;0YExponentOfPrime[133X
+  9 [33X[0;0YThe transfer procedure[133X
   
   
   [32X

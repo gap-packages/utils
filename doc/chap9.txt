@@ -1,0 +1,96 @@
+  
+  [1X9 [33X[0;0YThe transfer procedure[133X[101X
+  
+  [33X[0;0YWe  consider  here  the  process  for  transferring utility functions from a
+  package  [5XHome[105X to [5XUtils[105X which has to avoid the potential problem of duplicate
+  declarations of a function causing loading problems in [5XGAP[105X.[133X
+  
+  [33X[0;0YIf  the functions in [5XHome[105X all have names of the form [10XHOME_FunctionName[110X then,
+  in  [5XUtils[105X,  these  functions  are  likely  to  be renamed as [10XFunctionName[110X or
+  something  similar.  In this case the problem of duplicate declarations does
+  not  arise.  This  is  what  has  happened  with  transfers from the [5XAutoDoc[105X
+  package.[133X
+  
+  [33X[0;0YThe  case  where  the  function  names  are  unchanged  is more complicated.
+  Initially  we  tried  out  a process which allowed repeated declarations and
+  installations of the functions being transferred. This involved additions to
+  the  main  library  files  [11Xglobal.g[111X  and [11Xoper.g[111X. Since there were misgivings
+  about  interfering  in this way with basic operations such as [10XBIND_GLOBAL[110X, a
+  simpler (but slightly less convenient) process has been adopted.[133X
+  
+  [33X[0;0YUsing  this alternative procedure, the following steps will be followed when
+  making transfers from [5XHome[105X to [5XUtils[105X.[133X
+  
+  [31X1[131X   [33X[0;6Y([5XHome[105X:)  Offer  functions  for  inclusion.  This may be simply done by
+        emailing  a  list  of functions. More usefully, email the declaration,
+        implementation,  test and documentation files, e.g.: [11Xhome.gd[111X, [11Xhome.gi[111X,
+        [11Xhome.tst[111X and [11Xhome.xml[111X. (All active authors should be involved.)[133X
+  
+  [31X2[131X   [33X[0;6Y([5XHome[105X:)  Declare that [12Xm.n[112X is the last version of [5XHome[105X to contain these
+        functions,  so  that  [12Xm.n+1[112X  (or similar) will be the first version of
+        [5XHome[105X  to  have  all these functions removed, and to specify [5XUtils[105X as a
+        required package.[133X
+  
+  [31X3[131X   [33X[0;6Y([5XUtils[105X:) Add strings [3X"home"[103X and [3X"m.n"[103X to the list [10XUtilsPackageVersions[110X
+        in the file [11Xutils/lib/start.gd[111X.[133X
+  
+  [4X      [32X  Example  [32X[104X
+          [4X[28X[128X[104X
+          [4X[28XUtilsPackageVersions := [128X[104X
+          [4X[28X  [ "autodoc",     "2016.01.31", [128X[104X
+          [4X[28X    "resclasses",  "4.2.5", [128X[104X
+          [4X[28X    "home",        "m.n",[128X[104X
+          [4X[28X    ...,           ... [128X[104X
+          [4X[28X  ];[128X[104X
+          [4X[28X[128X[104X
+        [4X[32X[104X
+  
+        [33X[0;6YWhile  the  transfers  are  being  made,  it is essential that any new
+        versions  of  [5XHome[105X  should  be tested with the latest version of [5XUtils[105X
+        before they are released, so as to avoid loading failures.[133X
+  
+  [31X4[131X   [33X[0;6Y([5XUtils[105X:)  Include the function declaration and implementation sections
+        in suitable files, enclosed within a conditional clause of the form:[133X
+  
+  [4X      [32X  Example  [32X[104X
+          [4X[28X[128X[104X
+          [4X[28Xif OKtoReadFromUtils( "Home" ) then[128X[104X
+          [4X[28X. . . . . . [128X[104X
+          [4X[28X <the code> [128X[104X
+          [4X[28X. . . . . . [128X[104X
+          [4X[28Xfi;[128X[104X
+          [4X[28X[128X[104X
+        [4X[32X[104X
+  
+        [33X[0;6YThe  function  [10XOKtoReadFromUtils[110X  returns  [10Xtrue[110X  only  if  there is an
+        installed version of [5XHome[105X and if this version is greater than [12Xm.n[112X. So,
+        at  this  stage, [13Xthe copied code will not be read[113X, and the transferred
+        functions can only be called if [5XHome[105X has been installed.[133X
+  
+  [31X5[131X   [33X[0;6Y([5XUtils[105X:)  Add  the  test and documentation material to the appropriate
+        files.  The  copied code can be tested by temporarily moving [5XHome[105X away
+        from [5XGAP[105X's package directory.[133X
+  
+  [31X6[131X   [33X[0;6Y([5XUtils[105X:) Release a new version of [5XUtils[105X containing all the transferred
+        material.[133X
+  
+  [31X7[131X   [33X[0;6Y([5XHome[105X:)  Edit  out  the  declarations  and  implementations of all the
+        transferred functions, and remove references to them in the manual and
+        tests.  Possibly  add  a  note to the manual that these functions have
+        been transferred. Add [5XUtils[105X to the list of [5XHome[105X's required packages in
+        [11XPackageInfo.g[111X. Release a new version of [5XHome[105X.[133X
+  
+  [31X8[131X   [33X[0;6Y([5XUtils[105X:)  In  due  course,  when  the  new version(s) of [5XHome[105X are well
+        established,  it  may  be  safe  to  remove  the  conditional  clauses
+        mentioned in item 4 above. The entry for [5XHome[105X in [10XUtilsPackageLists[110X may
+        then be removed.[133X
+  
+  [33X[0;0YFinally,  a  note on the procedure for testing these functions. As long as a
+  function  being  transferred still exists in the [5XHome[105X package, the code will
+  not  be  read  from  [5XUtils[105X.  So,  when the tests are run, it is necessary to
+  [10XLoadPackage("home")[110X    before    the    function   is   called.   The   file
+  [11Xutils/tst/testall.g[111X  makes  sure  that all the necessary packages are loaded
+  before the individual tests are called.[133X
+  
+  [33X[0;0Y [133X
+  

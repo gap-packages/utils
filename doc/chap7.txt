@@ -2,59 +2,9 @@
   [1X7 [33X[0;0YVarious other functions[133X[101X
   
   
-  [1X7.1 [33X[0;0YOperations on folders[133X[101X
+  [1X7.1 [33X[0;0YFile operations[133X[101X
   
-  [1X7.1-1 FindMatchingFiles[101X
-  
-  [33X[1;0Y[29X[2XFindMatchingFiles[102X( [3Xpkg[103X, [3Xdirs[103X, [3Xextns[103X ) [32X function[133X
-  [33X[1;0Y[29X[2XCreateDirIfMissing[102X( [3Xstr[103X ) [32X function[133X
-  
-  [33X[0;0YThese  functions have been copied from package [5XAutoDoc[105X where they were named
-  [10XAutoDoc_FindMatchingFiles[110X and [10XAutoDoc_CreateDirIfMissing[110X (the originals will
-  continue to exist).[133X
-  
-  [33X[0;0Y[10XFindMatchingFiles[110X  scans  the  given  (by  name) subdirectories of a package
-  directory  for  files  with  one  of  the  given extensions, and returns the
-  corresponding filenames, as paths relative to the package directory.[133X
-  
-  [33X[0;0Y[10XCreateDirIfMissing[110X  checks  whether  the given directory exists and, if not,
-  attempts to create it. In either case [10Xtrue[110X is returned.[133X
-  
-  [33X[0;0Y[13XWarning:[113X   this   function  relies  on  the  undocumented  library  function
-  [10XCreateDir[110X, so use it with caution.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "example", "tst" );[127X[104X
-    [4X[28X[ dir("/Applications/gap/gap4r9/pkg/Example-4.1.1/tst/") ][128X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "g", "tst" ] );            [127X[104X
-    [4X[28X[ "hello.tst", "recipe.tst", "testall.g" ][128X[104X
-    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "utils" );         [127X[104X
-    [4X[28X[ dir("/Applications/gap/my-dev/pkg/utils/lib/") ][128X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "gd", "gi" ] ); [127X[104X
-    [4X[28X[ "app-meth.gd", "app-meth.gi", "files.gd", "files.gi", "groups.gd", [128X[104X
-    [4X[28X  "groups.gi", "latex.gd", "latex.gi", "lists.gd", "lists.gi", "magma.gd", [128X[104X
-    [4X[28X  "magma.gi", "maps.gd", "maps.gi", "number.gd", "number.gi", "print.gd", [128X[104X
-    [4X[28X  "print.gi", "record.gd", "record.gi", "start.gd", "string.gd", "string.gi" ][128X[104X
-    [4X[25Xgap>[125X [27Xdirname := Filename( dir[1], "tmp/" );[127X[104X
-    [4X[28X"/Applications/gap/my-dev/pkg/utils/lib/tmp/"[128X[104X
-    [4X[25Xgap>[125X [27XCreateDirIfMissing( dirname );[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xfilename := Concatenation( dirname, "hello.log" );[127X[104X
-    [4X[28X"/Applications/gap/my-dev/pkg/utils/lib/tmp/hello.log"[128X[104X
-    [4X[25Xgap>[125X [27XLogTo( filename );[127X[104X
-    [4X[25Xgap>[125X [27XPrint( "hello\n" );[127X[104X
-    [4X[28Xhello[128X[104X
-    [4X[25Xgap>[125X [27XLogTo();                                    [127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "tmp" ], [ "log" ] );[127X[104X
-    [4X[28X[ "tmp/hello.log" ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X7.2 [33X[0;0YFile operations[133X[101X
-  
-  [1X7.2-1 Log2HTML[101X
+  [1X7.1-1 Log2HTML[101X
   
   [33X[1;0Y[29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function[133X
   
@@ -68,20 +18,18 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XLogTo( "log2html.log" );[127X[104X
-    [4X[25Xgap>[125X [27Xdir := DirectoriesPackageLibrary( "utils", "tst" );;[127X[104X
-    [4X[25Xgap>[125X [27XFindMatchingFiles( dir, [ "" ], [ "tst" ] );[127X[104X
-    [4X[28X[ "groups.tst", "lists.tst", "number.tst", "others.tst", "print.tst", [128X[104X
-    [4X[28X  "record.tst", "string.tst" ][128X[104X
+    [4X[25Xgap>[125X [27XLogTo( "triv.log" );[127X[104X
+    [4X[25Xgap>[125X [27Xa := 33^5;[127X[104X
+    [4X[28X39135393[128X[104X
     [4X[25Xgap>[125X [27XLogTo(); [127X[104X
-    [4X[25Xgap>[125X [27XLog2HTML( "log2html.log" );     [127X[104X
+    [4X[25Xgap>[125X [27XLog2HTML( "triv.log" );     [127X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X7.3 [33X[0;0YLaTeX strings[133X[101X
+  [1X7.2 [33X[0;0YLaTeX strings[133X[101X
   
-  [1X7.3-1 IntOrOnfinityToLaTeX[101X
+  [1X7.2-1 IntOrOnfinityToLaTeX[101X
   
   [33X[1;0Y[29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function[133X
   
@@ -98,7 +46,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X7.3-2 LaTeXStringFactorsInt[101X
+  [1X7.2-2 LaTeXStringFactorsInt[101X
   
   [33X[1;0Y[29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function[133X
   
@@ -115,42 +63,9 @@
   [4X[32X[104X
   
   
-  [1X7.4 [33X[0;0YApplicable Methods[133X[101X
+  [1X7.3 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
   
-  [33X[0;0YThe function [10XPrintApplicableMethod[110X, which was included in versions from 0.41
-  to  0.58,  has been removed since it was considered superfluous. The example
-  shows how to print out a function.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );[127X[104X
-    [4X[28X#I  Searching Method for IsCyclic with 1 arguments:[128X[104X
-    [4X[28X#I  Total: 7 entries[128X[104X
-    [4X[28X#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: [128X[104X
-    [4X[28X36[128X[104X
-    [4X[28Xfunction( G ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XPrint( last );[127X[104X
-    [4X[28Xfunction ( G )[128X[104X
-    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1 then[128X[104X
-    [4X[28X        return true;[128X[104X
-    [4X[28X    else[128X[104X
-    [4X[28X        TryNextMethod();[128X[104X
-    [4X[28X    fi;[128X[104X
-    [4X[28X    return;[128X[104X
-    [4X[28Xend[128X[104X
-    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );[127X[104X
-    [4X[28Xfunction( <1 unnamed arguments> ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XPrint( last );                                               [127X[104X
-    [4X[28Xfunction ( <<arg-1>> )[128X[104X
-    [4X[28X    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>[128X[104X
-    [4X[28Xend[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X7.5 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
-  
-  [1X7.5-1 ConvertToMagmaInputString[101X
+  [1X7.3-1 ConvertToMagmaInputString[101X
   
   [33X[1;0Y[29X[2XConvertToMagmaInputString[102X( [3Xarg[103X ) [32X function[133X
   
