@@ -28,7 +28,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
+    WWWHome       := "https://www.quendi.de/math",
   ),
   rec(
     LastName      := "Hulpke",
