@@ -8,7 +8,8 @@ SetPackageInfo( rec(
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 Version := "0.61",
-Date := "28/11/2018",
+Date := "28/11/2018", # dd/mm/yyyy format
+License := "GPL-2.0-or-later",
 
 Persons := [
   rec(
@@ -27,7 +28,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
+    WWWHome       := "https://www.quendi.de/math",
   ),
   rec(
     LastName      := "Hulpke",
