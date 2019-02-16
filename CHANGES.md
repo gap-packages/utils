@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.61dev for GAP 4.10.0 (16/02/19) 
+
+ * (16/02/19) added License field in PackageInfo.g 
+
 ## Version 0.61 for GAP 4.10.0 (28/11/18) 
 
  * (28/11/18) made ExponentOfPrime obsolete
