@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.61dev",
-Date := "16/02/2019", # dd/mm/yyyy format
+Version := "0.62",
+Date := "17/05/2019", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -98,7 +98,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.10.0",
+  GAP := ">=4.10.1",
   NeededOtherPackages := [ [ "AutoDoc", ">= 2018.09.20" ], 
                            [ "GAPDoc", ">= 1.6.2" ], 
                            [ "polycyclic", ">= 2.14" ] ], 
@@ -122,7 +122,7 @@ TestFile := "tst/testall.g",
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2015-2018, The GAP Group. <P/>\n", 
+            "&copyright; 2015-2019, The GAP Group. <P/>\n", 
             "The &Utils; package is free software; you can redistribute it ", 
             "and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 
@@ -148,7 +148,7 @@ AutoDoc := rec(
             "<URL>https://github.com/gap-packages/utils/issues/</URL>.\n" 
             ), 
         Acknowledgements := Concatenation( 
-            "This documentation was prepared with the ", 
+            "This documentation was prepared using the ", 
             "&GAPDoc; <Cite Key='GAPDoc'/> and ", 
             "&AutoDoc; <Cite Key='AutoDoc'/> packages.<P/>\n", 
             "The procedure used to produce new releases uses the package ", 

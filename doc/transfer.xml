@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  transfer.xml           Utils documentation          Chris Wensley  -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2019, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -83,7 +83,7 @@ fi;
 ]]>
 </Example> 
 <Index>OKtoReadFromUtils</Index>
-The function <C>OKtoReadFromUtils</C> returns <C>true</C> 
+The function <C>OKtoReadFromUtils</C> returns <K>true</K> 
 only if there is an installed version of &Home; 
 and if this version is greater than <B>m.n</B>. 
 So, at this stage, <E>the copied code will not be read</E>, 
