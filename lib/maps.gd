@@ -2,8 +2,7 @@
 ##
 #W  maps.gd                     GAP4 package `Utils'               Stefan Kohl
 ##                                                               Chris Wensley
-##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2019, The GAP Group 
 
 #############################################################################
 ##  these three functions were in RCWA and were initially transferred but, 
@@ -24,5 +23,17 @@ DeclareOperation( "Pullback", [ IsGroupHomomorphism, IsGroupHomomorphism ] );
 DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 
 #############################################################################
-##
-#E  maps.gd . . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
+##  These functions complement AllHomomorphisms, AllEndomorphisms, and 
+##  AllAutomorphisms in the main library. 
+##  The code gives an example of an iterator preferrred to a list. 
+## 
+#O  AllIsomorphismsIterator( <[G,H]> ) 
+#O  AllIsomorphismsNumber( <G>, <H> ) 
+#O  AllIsomorphisms( <G>, <H> ) 
+## 
+DeclareOperation( "AllIsomorphismsIterator", [ IsList ] );
+DeclareOperation( "AllIsomorphismsIterator", [ IsGroup, IsGroup ] );
+DeclareOperation( "AllIsomorphismsNumber", [ IsGroup, IsGroup ] );
+DeclareOperation( "AllIsomorphismsNumber", [ IsList ] );
+DeclareOperation( "AllIsomorphisms", [ IsGroup, IsGroup ] );
+DeclareOperation( "AllIsomorphisms", [ IsList ] );

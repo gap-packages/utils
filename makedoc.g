@@ -24,5 +24,3 @@ AutoDoc( rec(
         )
     )
 ));
-
-QUIT;
