@@ -1,7 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.62 for GAP 4.10.1 (17/05/19) 
+## Version 0.62 for GAP 4.10.1 (29/05/19) 
 
+ * (28/05/19) added functions for idempotent endomorphisms (with chosen image)
  * (17/05/19) + AllIsomorphismsIterator, AllIsomorphismsNumber, AllIsomorphisms
  * (16/02/19) added License field in PackageInfo.g 
 

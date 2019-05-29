@@ -88,13 +88,11 @@ BindGlobal( "ShallowCopy_AllIsomorphisms",
     iter -> rec( firstiso := iter!.firstiso, 
              autoIterator := ShallowCopy( iter!.autoIterator ) ) ); 
 
-BindGlobal( "DoAllIsomorphismsIterator", 
-function( arg )
+InstallGlobalFunction( "DoAllIsomorphismsIterator", 
+function( G, H )
 
-    local G, H, iso, autoiter, iter;
+    local iso, autoiter, iter;
 
-    G := arg[1][1]; 
-    H := arg[1][2];
     if not IsGroup( G ) and IsGroup( H ) then 
        return fail; 
     fi; 
@@ -112,13 +110,10 @@ function( arg )
     return iter;
 end );
 
-InstallMethod( AllIsomorphismsIterator, "for a list of a pair of groups", 
-    [ IsList ], 0, arg -> DoAllIsomorphismsIterator( arg ) ); 
-
 InstallMethod( AllIsomorphismsIterator, "for a pair of groups", 
     [ IsGroup, IsGroup ], 0, 
-function( G, H ); 
-    return AllIsomorphismsIterator( [G,H] ); 
+function( G, H )
+    return DoAllIsomorphismsIterator( G, H ); 
 end );  
 
 InstallMethod( AllIsomorphisms, "for a pair of groups", 
@@ -127,7 +122,7 @@ function( G, H )
 
     local iter, L, iso; 
 
-    iter := AllIsomorphismsIterator( [G,H] );
+    iter := AllIsomorphismsIterator( G, H );
     if ( iter = fail ) then 
         return [ ];
     fi;    
@@ -138,22 +133,13 @@ function( G, H )
     return L; 
 end ); 
 
-InstallMethod( AllIsomorphisms, "for a list of a pair of groups", 
-    [ IsList ], 0, 
-function( L ) 
-    if not ( Length( L ) = 2 ) then 
-        return fail; 
-    fi; 
-    return AllIsomorphisms( L[1], L[2] ); 
-end ); 
-
 InstallMethod( AllIsomorphismsNumber, "for a pair of groups", 
     [ IsGroup, IsGroup ], 0, 
 function( G, H ) 
 
     local iter, n, iso; 
 
-    iter := AllIsomorphismsIterator( [G,H] );
+    iter := AllIsomorphismsIterator( G, H );
     if ( iter = fail ) then 
         return 0;
     fi;    
@@ -164,11 +150,72 @@ function( G, H )
     return n; 
 end ); 
 
-InstallMethod( AllIsomorphismsNumber, "for a list of a pair of groups", 
-    [ IsList ], 0, 
-function( L ) 
-    if not ( Length(L) = 2 ) then 
-        return fail; 
+##############################################################################
+##
+#M  IdempotentEndomorphisms  . . . . . . . . . . . . . . . . . . . for a group  
+#M  IdempotentEndomorphismsData  . . . . . . . . . . . . . . . . . for a group  
+#M  IdempotentEndomorphismsWithImage . . . . .  for a group and a chosen image 
+##
+InstallMethod( IdempotentEndomorphismsWithImage, 
+    "for a list of group generators and a chosen image", 
+    [ IsList, IsGroup ], 0, 
+function( genG, R ) 
+
+    local G, numG, r, q, norm, n, reps, i, j, rc;
+
+    G := Group( genG );
+    if not IsSubgroup( G, R ) then 
+        Error( "R should be a subgroup of G" ); 
     fi; 
-    return AllIsomorphismsNumber( L[1], L[2] ); 
+    numG := Length( genG );
+    r := Size( R ); 
+    q := Size( G )/r;     
+    norm := Filtered( NormalSubgroups( G ), N -> ( Size( N ) = q ) and 
+                          IsTrivial( Intersection( N, R ) ) ); 
+    n := Length( norm );
+    reps := [ ]; 
+    for i in [1..n] do 
+        Add( reps, [ ] );
+        for j in [1..numG] do 
+            rc := norm[i]*genG[j]; 
+            Add( reps[i], First( rc, g -> g in R ) );   
+        od;
+    od;
+    return reps; 
 end );
+
+InstallMethod( IdempotentEndomorphismsData, "for a group", [ IsGroup ], 0, 
+function( G ) 
+
+    local genG, R, data, images; 
+
+    genG := SmallGeneratingSet( G ); 
+    images := [ ]; 
+    for R in AllSubgroups( G ) do 
+        data := IdempotentEndomorphismsWithImage( genG, R ); 
+        if ( data <> [ ] ) then 
+            Add( images, data ); 
+        fi; 
+    od;
+    return rec( gens := genG, images := images );
+end );
+
+InstallMethod( IdempotentEndomorphisms, "for a group", [ IsGroup ], 0, 
+function( G ) 
+
+    local data, genG, images, len, L, i, im; 
+
+    data := IdempotentEndomorphismsData( G ); 
+    genG := data!.gens;
+    G := Group( genG );  
+    images := data!.images; 
+    len := Length( images ); 
+    L := [ ]; 
+    for i in [1..len] do 
+        for im in images[i] do 
+            Add( L, GroupHomomorphismByImages( G, G, genG, im ) ); 
+        od;  
+    od;  
+    return L;
+end );
+
