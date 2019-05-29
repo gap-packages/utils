@@ -27,13 +27,22 @@ DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 ##  AllAutomorphisms in the main library. 
 ##  The code gives an example of an iterator preferrred to a list. 
 ## 
-#O  AllIsomorphismsIterator( <[G,H]> ) 
+#O  AllIsomorphismsIterator( <G>, <H> ) 
 #O  AllIsomorphismsNumber( <G>, <H> ) 
 #O  AllIsomorphisms( <G>, <H> ) 
 ## 
-DeclareOperation( "AllIsomorphismsIterator", [ IsList ] );
+DeclareGlobalFunction( "DoAllIsomorphismsIterator" ); 
 DeclareOperation( "AllIsomorphismsIterator", [ IsGroup, IsGroup ] );
 DeclareOperation( "AllIsomorphismsNumber", [ IsGroup, IsGroup ] );
-DeclareOperation( "AllIsomorphismsNumber", [ IsList ] );
 DeclareOperation( "AllIsomorphisms", [ IsGroup, IsGroup ] );
-DeclareOperation( "AllIsomorphisms", [ IsList ] );
+
+#############################################################################
+##  these functions compute idempotent endomorphisms on G with image R 
+## 
+#O  IdempotentEndomorphisms( <G> ) 
+#A  IdempotentEndomorphismsWithImage( <genG>, <R> ) 
+#A  IdempotentEndomorphismsData( <G> ) 
+## 
+DeclareOperation( "IdempotentEndomorphisms", [ IsGroup ] );
+DeclareOperation( "IdempotentEndomorphismsWithImage", [ IsList, IsGroup ] );
+DeclareAttribute( "IdempotentEndomorphismsData", IsGroup );
