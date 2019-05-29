@@ -1,6 +1,6 @@
 name: utils
-version: 0.61
-date: 2018-11-28
+version: 0.63
+date: 2019-05-29
 description: |
     Utility functions in GAP
 
@@ -8,7 +8,7 @@ authors:
     - name: Sebastian Gutsche
       url: http://wwwb.math.rwth-aachen.de/~gutsche/
     - name: Max Horn
-      url: http://www.quendi.de/math
+      url: https://www.quendi.de/math
     - name: Alexander Hulpke
       url: http://www.math.colostate.edu/~hulpke
     - name: Stefan Kohl
@@ -22,7 +22,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.10.0"
+GAP: ">=4.10.1"
 
 needed-pkgs:
     - name: "AutoDoc"
@@ -41,9 +41,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.61/utils-0.61.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.63/utils-0.63.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.61/utils-0.61.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.63/utils-0.63.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.

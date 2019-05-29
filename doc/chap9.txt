@@ -62,7 +62,7 @@
           [4X[28X[128X[104X
         [4X[32X[104X
   
-        [33X[0;6YThe  function  [10XOKtoReadFromUtils[110X  returns  [10Xtrue[110X  only  if  there is an
+        [33X[0;6YThe  function  [10XOKtoReadFromUtils[110X  returns  [9Xtrue[109X  only  if  there is an
         installed version of [5XHome[105X and if this version is greater than [12Xm.n[112X. So,
         at  this  stage, [13Xthe copied code will not be read[113X, and the transferred
         functions can only be called if [5XHome[105X has been installed.[133X

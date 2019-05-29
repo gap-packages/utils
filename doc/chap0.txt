@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.61
+                                      0.63
   
   
-                                28 November 2018
+                                  29 May 2019
   
   
                                Sebastian Gutsche
@@ -31,7 +31,7 @@
       Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~gutsche/[107X
   Max Horn
       Email:    [7Xmailto:max.horn@math.uni-giessen.de[107X
-      Homepage: [7Xhttp://www.quendi.de/math[107X
+      Homepage: [7Xhttps://www.quendi.de/math[107X
   Alexander Hulpke
       Email:    [7Xmailto:hulpke@math.colostate.edu[107X
       Homepage: [7Xhttp://www.math.colostate.edu/~hulpke[107X
@@ -65,7 +65,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2015-2018, The GAP Group.[133X
+  [33X[0;0Y© 2015-2019, The GAP Group.[133X
   
   [33X[0;0YThe [5XUtils[105X package is free software; you can redistribute it and/or modify it
   under  the  terms of the GNU General Public License as published by the Free
@@ -75,7 +75,7 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YThis  documentation  was  prepared with the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH16]
+  [33X[0;0YThis  documentation  was prepared using the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH16]
   packages.[133X
   
   [33X[0;0YThe   procedure   used   to   produce   new   releases   uses   the  package
@@ -120,6 +120,10 @@
       5.2-1 EpimorphismByGenerators
     5.3 [33X[0;0YPullback of group homomorphisms[133X
       5.3-1 Pullback
+    5.4 [33X[0;0YIterator for isomorphisms[133X
+      5.4-1 AllIsomorphismsIterator
+    5.5 [33X[0;0YIdempotentEndomorphisms[133X
+      5.5-1 IdempotentEndomorphismsData
   6 [33X[0;0YRecords[133X
     6.1 [33X[0;0YFunctions for records[133X
       6.1-1 AssignGlobals

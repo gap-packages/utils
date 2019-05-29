@@ -2,6 +2,9 @@
   
   [1XIndex[101X
   
+  [2XAllIsomorphisms[102X 5.4-1 
+  [2XAllIsomorphismsIterator[102X 5.4-1 
+  [2XAllIsomorphismsNumber[102X 5.4-1 
   [2XAllProducts[102X 4.1-2 
   [2XAllSmoothIntegers[102X 4.1-1  4.1-1 
   [2XAssignGlobals[102X 6.1-1 
@@ -23,6 +26,9 @@
   [2XGeneratorsAndInverses[102X 5.1-4 
   GetSuffix 8.1 
   GitHub repository 1. 
+  [2XIdempotentEndomorphisms[102X 5.5-1 
+  [2XIdempotentEndomorphismsData[102X 5.5-1 
+  [2XIdempotentEndomorphismsWithImage[102X 5.5-1 
   [2XIntOrOnfinityToLaTeX[102X 7.2-1 
   [2XIsCommonTransversal[102X 3.2-1 
   [2XIsCommuting[102X 5.1-2 
