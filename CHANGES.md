@@ -2,7 +2,7 @@
 
 ## Version 0.62 for GAP 4.10.1 (29/05/19) 
 
- * (28/05/19) added functions for idempotent endomorphisms (with chosen image)
+ * (28/05/19) added IdempotentEndomorphisms, IdempotentEndomorphismsData
  * (17/05/19) + AllIsomorphismsIterator, AllIsomorphismsNumber, AllIsomorphisms
  * (16/02/19) added License field in PackageInfo.g 
 
