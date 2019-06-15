@@ -104,25 +104,6 @@ gap> a*b in Pfi;
 true
 
 ## SubSection 5.4.1
-gap> G := SmallGroup( 6,1);; 
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> NextIterator( iter );
-[ f1, f2 ] -> [ (6,7), (5,6,7) ]
-gap> n := AllIsomorphismsNumber( G, s3 );
-6
-gap> AllIsomorphisms( G, s3 );
-[ [ f1, f2 ] -> [ (6,7), (5,6,7) ], [ f1, f2 ] -> [ (5,7), (5,6,7) ], 
-  [ f1, f2 ] -> [ (5,6), (5,7,6) ], [ f1, f2 ] -> [ (6,7), (5,7,6) ], 
-  [ f1, f2 ] -> [ (5,7), (5,7,6) ], [ f1, f2 ] -> [ (5,6), (5,6,7) ] ]
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
-true, false, false, true, false, false,
-gap> n := AllIsomorphismsNumber( s3, s4 );
-0
-gap> AllIsomorphisms( s3, s4 );
-[ ]
-
-## SubSection 5.5.1
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
@@ -150,6 +131,3 @@ gap> IdempotentEndomorphisms( d8 );
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,4)(2,3), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ] ]
 
-#############################################################################
-##
-#E  groups.tst  . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
