@@ -23,20 +23,6 @@ DeclareOperation( "Pullback", [ IsGroupHomomorphism, IsGroupHomomorphism ] );
 DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 
 #############################################################################
-##  These functions complement AllHomomorphisms, AllEndomorphisms, and 
-##  AllAutomorphisms in the main library. 
-##  The code gives an example of an iterator preferrred to a list. 
-## 
-#O  AllIsomorphismsIterator( <G>, <H> ) 
-#O  AllIsomorphismsNumber( <G>, <H> ) 
-#O  AllIsomorphisms( <G>, <H> ) 
-## 
-DeclareGlobalFunction( "DoAllIsomorphismsIterator" ); 
-DeclareOperation( "AllIsomorphismsIterator", [ IsGroup, IsGroup ] );
-DeclareOperation( "AllIsomorphismsNumber", [ IsGroup, IsGroup ] );
-DeclareOperation( "AllIsomorphisms", [ IsGroup, IsGroup ] );
-
-#############################################################################
 ##  these functions compute idempotent endomorphisms on G with image R 
 ## 
 #O  IdempotentEndomorphisms( <G> ) 

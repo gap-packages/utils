@@ -68,90 +68,6 @@ end );
 
 ##############################################################################
 ##
-#M  AllIsomorphismsIterator . . . . . . for a list containing a pair of groups  
-#M  AllIsomorphismsNumber . . . . . . . . . . . . . . . . for a pair of groups  
-#M  AllIsomorphisms . . . . . . . . . . . . . . . . . . . for a pair of groups  
-##
-BindGlobal( "NextIterator_AllIsomorphisms", function ( iter ) 
-    local a; 
-    if not IsDoneIterator( iter ) then 
-        a := NextIterator( iter!.autoIterator ); 
-        return CompositionMapping( iter!.firstiso, a ); 
-    fi;
-    Error( "iterator is exhausted" );
-end ); 
-
-BindGlobal( "IsDoneIterator_AllIsomorphisms", 
-    iter -> IsDoneIterator( iter!.autoIterator ) ); 
-
-BindGlobal( "ShallowCopy_AllIsomorphisms", 
-    iter -> rec( firstiso := iter!.firstiso, 
-             autoIterator := ShallowCopy( iter!.autoIterator ) ) ); 
-
-InstallGlobalFunction( "DoAllIsomorphismsIterator", 
-function( G, H )
-
-    local iso, autoiter, iter;
-
-    if not IsGroup( G ) and IsGroup( H ) then 
-       return fail; 
-    fi; 
-    iso := IsomorphismGroups( G, H ); 
-    if ( iso = fail ) then 
-        return fail; 
-    fi;
-    autoiter := Iterator( AutomorphismGroup( G ) ); 
-    iter := IteratorByFunctions( 
-        rec(  firstiso := iso,
-          autoIterator := ShallowCopy( autoiter ), 
-          NextIterator := NextIterator_AllIsomorphisms, 
-        IsDoneIterator := IsDoneIterator_AllIsomorphisms, 
-           ShallowCopy := ShallowCopy_AllIsomorphisms ) ); 
-    return iter;
-end );
-
-InstallMethod( AllIsomorphismsIterator, "for a pair of groups", 
-    [ IsGroup, IsGroup ], 0, 
-function( G, H )
-    return DoAllIsomorphismsIterator( G, H ); 
-end );  
-
-InstallMethod( AllIsomorphisms, "for a pair of groups", 
-    [ IsGroup, IsGroup ], 0, 
-function( G, H ) 
-
-    local iter, L, iso; 
-
-    iter := AllIsomorphismsIterator( G, H );
-    if ( iter = fail ) then 
-        return [ ];
-    fi;    
-    L := [ ];
-    for iso in iter do 
-       Add( L, iso ); 
-    od;
-    return L; 
-end ); 
-
-InstallMethod( AllIsomorphismsNumber, "for a pair of groups", 
-    [ IsGroup, IsGroup ], 0, 
-function( G, H ) 
-
-    local iter, n, iso; 
-
-    iter := AllIsomorphismsIterator( G, H );
-    if ( iter = fail ) then 
-        return 0;
-    fi;    
-    n := 0;
-    for iso in iter do 
-        n := n+1; 
-    od;
-    return n; 
-end ); 
-
-##############################################################################
-##
 #M  IdempotentEndomorphisms  . . . . . . . . . . . . . . . . . . . for a group  
 #M  IdempotentEndomorphismsData  . . . . . . . . . . . . . . . . . for a group  
 #M  IdempotentEndomorphismsWithImage . . . . .  for a group and a chosen image 
@@ -218,4 +134,3 @@ function( G )
     od;  
     return L;
 end );
-

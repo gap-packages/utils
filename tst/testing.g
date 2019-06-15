@@ -2,7 +2,7 @@
 ##
 #W  testing.g                   Utils Package                    Chris Wensley
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2019, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
@@ -28,8 +28,8 @@ od;
 pkgname := "utils";
 pkgdir := DirectoriesPackageLibrary( pkgname, "tst" );
 testfiles := 
-        [ "print.tst",    "lists.tst",     "string.tst",    "number.tst", 
-          "groups.tst",   "record.tst",    "others.tst" ];
+        [ "print.tst",    "lists.tst",   "number.tst", "groups.tst", 
+          "iterator.tst", "record.tst",  "others.tst" ];
 testresult:=true;
 for ff in testfiles do
     fn := Filename( pkgdir, ff );

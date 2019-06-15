@@ -9,7 +9,7 @@ gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
 
-## SubSection 7.1.1 
+## SubSection 8.1.1 
 ## this manual example is not tested to avoid creating files triv.* 
 ## gap> LogTo( "triv.log" );
 ## gap> a := 33^5;
@@ -17,17 +17,17 @@ true
 ## gap> LogTo(); 
 ## gap> Log2HTML( "triv.log" );     
 
-## SubSection 7.2.1 
+## SubSection 8.2.1 
 gap> IntOrInfinityToLaTeX( 10^3 );
 "1000"
 gap> IntOrInfinityToLaTeX( infinity );
 "\\infty"
 
-## SubSection 7.2.2 
+## SubSection 8.2.2 
 gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
 
-## SubSection 7.3.1 
+## SubSection 8.3.1 
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        

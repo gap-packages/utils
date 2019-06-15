@@ -249,60 +249,6 @@ true
 </Section>
 
 
-<Section Label="sec-allisos">
-<Heading>Iterator for isomorphisms</Heading>
-
-<ManSection>
-   <Oper Name="AllIsomorphismsIterator"
-         Arg="G H" />
-   <Oper Name="AllIsomorphismsNumber"
-         Arg="G H" />
-   <Oper Name="AllIsomorphisms"
-         Arg="G H" />
-<Description>
-The main &GAP; library contains functions producing complete lists of 
-group homomorphisms such as <C>AllHomomorphisms</C>; <C>AllEndomorphisms</C> 
-and <C>AllAutomorphisms</C>. 
-Here we add the missing <C>AllIsomorphisms(G,H)</C> for a list of isomorphisms 
-from <M>G</M> to <M>H</M>. 
-The method is simple -- find one isomorphism <M>G \to H</M> and compose this 
-with all the automorphisms of <M>G</M>. 
-In all these cases it may not be desirable to construct a list of 
-homomorphisms, but just implement an iterator, and that is what is done here. 
-The operation <C>AllIsomorphismsNumber</C> returns the number of isomorphisms 
-iterated over (this is, of course, just the order of the automorphisms group). 
-The operation <C>AllIsomorphisms</C> produces the list or isomorphisms.
-<P/> 
-The motivation for adding these operations is partly to give a simple example 
-of an iterator for a list that does not yet exist, and need not be created.
-<P/>
-</Description>
-</ManSection>
-<Example>
-<![CDATA[
-gap> G := SmallGroup( 6,1);; 
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> NextIterator( iter );
-[ f1, f2 ] -> [ (6,7), (5,6,7) ]
-gap> n := AllIsomorphismsNumber( G, s3 );
-6
-gap> AllIsomorphisms( G, s3 );
-[ [ f1, f2 ] -> [ (6,7), (5,6,7) ], [ f1, f2 ] -> [ (5,7), (5,6,7) ], 
-  [ f1, f2 ] -> [ (5,6), (5,7,6) ], [ f1, f2 ] -> [ (6,7), (5,7,6) ], 
-  [ f1, f2 ] -> [ (5,7), (5,7,6) ], [ f1, f2 ] -> [ (5,6), (5,6,7) ] ]
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
-true, false, false, true, false, false,
-gap> n := AllIsomorphismsNumber( s3, s4 );
-0
-gap> AllIsomorphisms( s3, s4 );
-[ ]
-]]>
-</Example>
-
-</Section> 
-
-
 <Section Label="sec-idem-endos">
 <Heading>IdempotentEndomorphisms</Heading>
 
@@ -314,11 +260,11 @@ gap> AllIsomorphisms( s3, s4 );
    <Oper Name="IdempotentEndomorphisms"
          Arg="G" />
 <Description>
-An idempotent <M>f : G \to G</M> is idempotent if <M>f^2=f</M>. 
+An endomorphism <M>f : G \to G</M> is idempotent if <M>f^2=f</M>. 
 It has an image <M>R \leqslant G</M>; 
 is the identity map when restricted to <M>R</M>; 
-has a kernel <M>N</M> which has trivial intersection with <M>R</M> 
-and size <M>|G|/|R|</M>. 
+and has a kernel <M>N</M> which has trivial intersection with <M>R</M> 
+and has size <M>|G|/|R|</M>. 
 <P/> 
 The operation <C>IdempotentEndomorphismsWithImage(genG,R)</C>
 returns a list of the images of the generating set <C>genG</C> 
@@ -364,6 +310,18 @@ gap> IdempotentEndomorphisms( d8 );
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,4)(2,3), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ] ]
+]]>
+</Example>
+
+The quaternion group <C>q8</C> is an example of a group with a tail: 
+there is only one subgroup in the lattice which covers the identity subgroup. 
+The only idempotent isomorphisms of such groups are the identity mapping 
+and the zero mapping because the only pairs <M>N,R</M> are the whole group and the identity subgroup. 
+<Example>
+<![CDATA[
+gap> q8 := QuaternionGroup( 8 );;
+gap> IdempotentEndomorphisms( q8 );
+[ [ x, y ] -> [ <identity> of ..., <identity> of ... ], [ x, y ] -> [ x, y ] ]
 ]]>
 </Example>
 

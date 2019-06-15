@@ -104,52 +104,43 @@ gap> a*b in Pfi;
 true
 
 ## SubSection 5.4.1
-gap> G := SmallGroup( 6,1);; 
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> NextIterator( iter );
-[ f1, f2 ] -> [ (6,7), (5,6,7) ]
-gap> n := AllIsomorphismsNumber( G, s3 );
-6
-gap> AllIsomorphisms( G, s3 );
-[ [ f1, f2 ] -> [ (6,7), (5,6,7) ], [ f1, f2 ] -> [ (5,7), (5,6,7) ], 
-  [ f1, f2 ] -> [ (5,6), (5,7,6) ], [ f1, f2 ] -> [ (6,7), (5,7,6) ], 
-  [ f1, f2 ] -> [ (5,7), (5,7,6) ], [ f1, f2 ] -> [ (5,6), (5,6,7) ] ]
-gap> iter := AllIsomorphismsIterator( G, s3 );;
-gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
-true, false, false, true, false, false,
-gap> n := AllIsomorphismsNumber( s3, s4 );
-0
-gap> AllIsomorphisms( s3, s4 );
-[ ]
-
-## SubSection 5.5.1
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
 gap> c2 := Subgroup( d8, [ (2,4) ] );;
-gap> IdempotentEndomorphismsWithImage( gens, c2 );
+gap> idemc2 := IdempotentEndomorphismsWithImage( gens, c2 );;
+gap> Sort( idemc2 );
+gap> idemc2;
 [ [ (), (2,4) ], [ (2,4), () ] ]
-gap> IdempotentEndomorphismsData( d8 );
-rec( gens := [ (1,2,3,4), (1,2)(3,4) ], 
-  images := [ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ], 
-      [ [ (), (1,3) ], [ (1,3), () ] ], 
-      [ [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ] ], 
-      [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
-      [ [ (1,2,3,4), (1,2)(3,4) ] ] ] )
-gap> List( last.images, L -> Length(L) );
+gap> data := IdempotentEndomorphismsData( d8 );;
+gap> data!.gens;
+[ (1,2,3,4), (1,2)(3,4) ]
+gap> images := data!.images;; 
+gap> len := Length( images );; 
+gap> imcopy := [1..len];;
+gap> for i in [1..len] do 
+>      L := ShallowCopy( images[i] ); 
+>      Sort( L ); 
+>      imcopy[i] := L; 
+>    od; 
+gap> imcopy; 
+[ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ], 
+  [ [ (), (1,3) ], [ (1,3), () ] ], 
+  [ [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ] ], 
+  [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
+  [ [ (1,2,3,4), (1,2)(3,4) ] ] ]
+gap> List( imcopy, L -> Length(L) );
 [ 1, 2, 2, 2, 2, 1 ]
-gap> IdempotentEndomorphisms( d8 );               
+gap> idem := IdempotentEndomorphisms( d8 );;
+gap> Sort( idem ); 
+gap> idem;
 [ [ (1,2,3,4), (1,2)(3,4) ] -> [ (), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (2,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (2,4), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,3) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,3), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,2)(3,4) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2)(3,4), (1,2)(3,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,4)(2,3), (1,4)(2,3) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ] ]
-
-#############################################################################
-##
-#E  groups.tst  . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (2,4), () ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (2,4) ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,2)(3,4) ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,3), () ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,3) ], 
+  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,4)(2,3) ] ]
