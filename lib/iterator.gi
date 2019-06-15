@@ -33,11 +33,12 @@ function( G, H )
     local iso, autoiter, iter;
 
     if not IsGroup( G ) and IsGroup( H ) then 
-       return fail; 
+       Error( "G,H should be groups" ); 
     fi; 
     iso := IsomorphismGroups( G, H ); 
     if ( iso = fail ) then 
-        return fail; 
+        ## there are no isomorphisms so return an empty iterator 
+        return IteratorList( [ ] ); 
     fi;
     autoiter := Iterator( AutomorphismGroup( G ) ); 
     iter := IteratorByFunctions( 
@@ -62,7 +63,7 @@ function( G, H )
     local iter, L, iso; 
 
     iter := AllIsomorphismsIterator( G, H );
-    if ( iter = fail ) then 
+    if IsDoneIterator( iter ) then 
         return [ ];
     fi;    
     L := [ ];
@@ -79,7 +80,7 @@ function( G, H )
     local iter, n, iso; 
 
     iter := AllIsomorphismsIterator( G, H );
-    if ( iter = fail ) then 
+    if IsDoneIterator( iter ) then 
         return 0;
     fi;    
     n := 0;
@@ -175,6 +176,9 @@ function( iter1, iter2 )
 
     local iter;
 
+    if IsDoneIterator( iter1 ) or IsDoneIterator( iter2 ) then 
+        return IteratorList( [ ] ); 
+    fi;
     iter := IteratorByFunctions( 
         rec(         first := 0, 
                  Iterator1 := ShallowCopy( iter1 ), 
@@ -232,6 +236,9 @@ function( iter0 )
 
     local iter;
 
+    if IsDoneIterator( iter0 ) then 
+        return IteratorList( [ ] ); 
+    fi;
     iter := IteratorByFunctions( 
         rec(          pos1 := 0, 
                       pos2 := 0,

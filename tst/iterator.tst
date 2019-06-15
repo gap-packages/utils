@@ -11,6 +11,7 @@ true
 
 ## SubSection 6.1.1 
 gap> G := SmallGroup( 6,1);; 
+gap> s3 := Group( (5,6), (6,7) );; 
 gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> NextIterator( iter );
 [ f1, f2 ] -> [ (6,7), (5,6,7) ]
@@ -23,7 +24,8 @@ gap> AllIsomorphisms( G, s3 );
 gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
 true, false, false, true, false, false,
-gap> n := AllIsomorphismsNumber( s3, s4 );
+gap> s4 := Group( (1,2),(2,3),(3,4) );;
+gap> AllIsomorphismsNumber( s3, s4 );
 0
 gap> AllIsomorphisms( s3, s4 );
 [ ]
@@ -59,12 +61,24 @@ gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
 [ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6) ] ) ]
 [ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (7,8,9) ] ) ]
 [ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6), (7,8,9) ] ) ]
+gap> ## try some trivial cases 
+gap> iter0 := IteratorList( [ ] );;
+gap> iter4 := IteratorList( [ 4 ] );; 
+gap> cart := CartesianIterator( iter0, iter0 );;
+gap> IsDoneIterator( cart );
+true
+gap> cart := CartesianIterator( iter0, iter4 );;
+gap> IsDoneIterator( cart );
+true
+gap> cart := CartesianIterator( iter4, iter0 );;
+gap> IsDoneIterator( cart );
+true
 
 ## Subsection 6.2.2 
 gap> L := [6,7,8,9];;
-gap> itL := IteratorList( L );; 
-gap> iter := UnorderedPairsIterator( itL );;                              
-gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
+gap> iterL := IteratorList( L );; 
+gap> pairsL := UnorderedPairsIterator( iterL );;                              
+gap> while not IsDoneIterator(pairsL) do Print(NextIterator(pairsL),"\n"); od;
 [ 6, 6 ]
 [ 6, 7 ]
 [ 7, 7 ]
@@ -75,3 +89,14 @@ gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
 [ 7, 9 ]
 [ 8, 9 ]
 [ 9, 9 ]
+gap> iter4 := IteratorList( [ 4 ] );
+<iterator>
+gap> pairs4 := UnorderedPairsIterator(iter4);
+<iterator>
+gap> NextIterator( pairs4 );
+[ 4, 4 ]
+gap> IsDoneIterator( pairs4 );
+true
+gap> pairs0 := UnorderedPairsIterator( iter0 );;
+gap> IsDoneIterator( pairs0 );
+true

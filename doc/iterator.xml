@@ -148,9 +148,9 @@ In the case <M>L = [1,2,3,\ldots]</M> the pairs are ordered as
 <Example>
 <![CDATA[
 gap> L := [6,7,8,9];;
-gap> itL := IteratorList( L );; 
-gap> iter := UnorderedPairsIterator( itL );;                              
-gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
+gap> iterL := IteratorList( L );; 
+gap> pairsL := UnorderedPairsIterator( iterL );;                              
+gap> while not IsDoneIterator(pairsL) do Print(NextIterator(pairsL),"\n"); od;
 [ 6, 6 ]
 [ 6, 7 ]
 [ 7, 7 ]
@@ -161,6 +161,14 @@ gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
 [ 7, 9 ]
 [ 8, 9 ]
 [ 9, 9 ]
+gap> iter4 := IteratorList( [ 4 ] );
+<iterator>
+gap> pairs4 := UnorderedPairsIterator(iter4);
+<iterator>
+gap> NextIterator( pairs4 );
+[ 4, 4 ]
+gap> IsDoneIterator( pairs4 );
+true
 ]]>
 </Example>
 

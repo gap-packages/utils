@@ -313,6 +313,18 @@ gap> IdempotentEndomorphisms( d8 );
 ]]>
 </Example>
 
+The quaternion group <C>q8</C> is an example of a group with a tail: 
+there is only one subgroup in the lattice which covers the identity subgroup. 
+The only idempotent isomorphisms of such groups are the identity mapping 
+and the zero mapping because the only pairs <M>N,R</M> are the whole group and the identity subgroup. 
+<Example>
+<![CDATA[
+gap> q8 := QuaternionGroup( 8 );;
+gap> IdempotentEndomorphisms( q8 );
+[ [ x, y ] -> [ <identity> of ..., <identity> of ... ], [ x, y ] -> [ x, y ] ]
+]]>
+</Example>
+
 </Section> 
 
 </Chapter>
