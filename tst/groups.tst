@@ -109,38 +109,33 @@ gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
 gap> c2 := Subgroup( d8, [ (2,4) ] );;
 gap> idemc2 := IdempotentEndomorphismsWithImage( gens, c2 );;
+gap> idcopy := [ [ (), (2,4) ], [ (2,4), () ] ];; 
 gap> Sort( idemc2 );
-gap> idemc2;
-[ [ (), (2,4) ], [ (2,4), () ] ]
+gap> Sort( idcopy );
+gap> idemc2 = idcopy;
+true
+gap> ## depending on packages loaded, the order of images can vary 
+gap> ## so we introduce a convoluted way of checking the images 
 gap> data := IdempotentEndomorphismsData( d8 );;
 gap> data!.gens;
 [ (1,2,3,4), (1,2)(3,4) ]
 gap> images := data!.images;; 
-gap> len := Length( images );; 
-gap> imcopy := [1..len];;
-gap> for i in [1..len] do 
->      L := ShallowCopy( images[i] ); 
->      Sort( L ); 
->      imcopy[i] := L; 
->    od; 
-gap> imcopy; 
-[ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ], 
-  [ [ (), (1,3) ], [ (1,3), () ] ], 
-  [ [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ] ], 
-  [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
-  [ [ (1,2,3,4), (1,2)(3,4) ] ] ]
-gap> List( imcopy, L -> Length(L) );
+gap> len := Length( images );
+6 
+gap> image2 := [ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ], 
+>  [ [ (), (1,3) ], [ (1,3), () ] ], 
+>  [ [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ] ], 
+>  [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
+>  [ [ (1,2,3,4), (1,2)(3,4) ] ] ];;
+gap> ForAll( images, im -> ( im in image2 ) ); 
+true
+gap> List( images, L -> Length(L) );
 [ 1, 2, 2, 2, 2, 1 ]
 gap> idem := IdempotentEndomorphisms( d8 );;
-gap> Sort( idem ); 
-gap> idem;
-[ [ (1,2,3,4), (1,2)(3,4) ] -> [ (), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2)(3,4), (1,2)(3,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,4)(2,3), (1,4)(2,3) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (2,4), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (2,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,2)(3,4) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,3), () ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,3) ], 
-  [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,4)(2,3) ] ]
+gap> idemim := List( idem, m -> MappingGeneratorsImages(m)[2] );; 
+gap> idemim2 := 
+> [ [ (), () ], [ (), (2,4) ], [ (2,4), () ], [ (), (1,3) ], [ (1,3), () ], 
+>   [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ], [ (), (1,4)(2,3) ], 
+>   [ (1,4)(2,3), (1,4)(2,3) ], [ (1,2,3,4), (1,2)(3,4) ] ];; 
+gap> ForAll( idemim, m -> ( m in idemim2 ) ); 
+true
