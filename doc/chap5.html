@@ -15,7 +15,7 @@
 <body class="chap5"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -41,15 +41,10 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C705F2A79F8E43C">5.3-1 Pullback</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7F2C3C777CCFD90C">5.4 <span class="Heading">Iterator for isomorphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X801038CB808FC956">5.4 <span class="Heading">IdempotentEndomorphisms</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F8B54D1806C762D">5.4-1 AllIsomorphismsIterator</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X801038CB808FC956">5.5 <span class="Heading">IdempotentEndomorphisms</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X825C0E35839384A0">5.5-1 IdempotentEndomorphismsData</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X825C0E35839384A0">5.4-1 IdempotentEndomorphismsData</a></span>
 </div></div>
 </div>
 
@@ -259,56 +254,18 @@ true
 
 </pre></div>
 
-<p><a id="X7F2C3C777CCFD90C" name="X7F2C3C777CCFD90C"></a></p>
-
-<h4>5.4 <span class="Heading">Iterator for isomorphisms</span></h4>
-
-<p><a id="X7F8B54D1806C762D" name="X7F8B54D1806C762D"></a></p>
-
-<h5>5.4-1 AllIsomorphismsIterator</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllIsomorphismsIterator</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllIsomorphismsNumber</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllIsomorphisms</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>The main <strong class="pkg">GAP</strong> library contains functions producing complete lists of group homomorphisms such as <code class="code">AllHomomorphisms</code>; <code class="code">AllEndomorphisms</code> and <code class="code">AllAutomorphisms</code>. Here we add the missing <code class="code">AllIsomorphisms(G,H)</code> for a list of isomorphisms from <span class="SimpleMath">G</span> to <span class="SimpleMath">H</span>. The method is simple -- find one isomorphism <span class="SimpleMath">G -&gt; H</span> and compose this with all the automorphisms of <span class="SimpleMath">G</span>. In all these cases it may not be desirable to construct a list of homomorphisms, but just implement an iterator, and that is what is done here. The operation <code class="code">AllIsomorphismsNumber</code> returns the number of isomorphisms iterated over (this is, of course, just the order of the automorphisms group). The operation <code class="code">AllIsomorphisms</code> produces the list or isomorphisms.</p>
-
-<p>The motivation for adding these operations is partly to give a simple example of an iterator for a list that does not yet exist, and need not be created.</p>
-
-
-<div class="example"><pre>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := SmallGroup( 6,1);; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iter := AllIsomorphismsIterator( G, s3 );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NextIterator( iter );</span>
-[ f1, f2 ] -&gt; [ (6,7), (5,6,7) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n := AllIsomorphismsNumber( G, s3 );</span>
-6
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllIsomorphisms( G, s3 );</span>
-[ [ f1, f2 ] -&gt; [ (6,7), (5,6,7) ], [ f1, f2 ] -&gt; [ (5,7), (5,6,7) ], 
-  [ f1, f2 ] -&gt; [ (5,6), (5,7,6) ], [ f1, f2 ] -&gt; [ (6,7), (5,7,6) ], 
-  [ f1, f2 ] -&gt; [ (5,7), (5,7,6) ], [ f1, f2 ] -&gt; [ (5,6), (5,6,7) ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iter := AllIsomorphismsIterator( G, s3 );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;</span>
-true, false, false, true, false, false,
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">n := AllIsomorphismsNumber( s3, s4 );</span>
-0
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllIsomorphisms( s3, s4 );</span>
-[ ]
-
-</pre></div>
-
 <p><a id="X801038CB808FC956" name="X801038CB808FC956"></a></p>
 
-<h4>5.5 <span class="Heading">IdempotentEndomorphisms</span></h4>
+<h4>5.4 <span class="Heading">IdempotentEndomorphisms</span></h4>
 
 <p><a id="X825C0E35839384A0" name="X825C0E35839384A0"></a></p>
 
-<h5>5.5-1 IdempotentEndomorphismsData</h5>
+<h5>5.4-1 IdempotentEndomorphismsData</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsData</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsWithImage</code>( <var class="Arg">genG</var>, <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphisms</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>An idempotent <span class="SimpleMath">f : G -&gt; G</span> is idempotent if <span class="SimpleMath">f^2=f</span>. It has an image <span class="SimpleMath">R leqslant G</span>; is the identity map when restricted to <span class="SimpleMath">R</span>; has a kernel <span class="SimpleMath">N</span> which has trivial intersection with <span class="SimpleMath">R</span> and size <span class="SimpleMath">|G|/|R|</span>.</p>
+<p>An endomorphism <span class="SimpleMath">f : G -&gt; G</span> is idempotent if <span class="SimpleMath">f^2=f</span>. It has an image <span class="SimpleMath">R leqslant G</span>; is the identity map when restricted to <span class="SimpleMath">R</span>; and has a kernel <span class="SimpleMath">N</span> which has trivial intersection with <span class="SimpleMath">R</span> and has size <span class="SimpleMath">|G|/|R|</span>.</p>
 
 <p>The operation <code class="code">IdempotentEndomorphismsWithImage(genG,R)</code> returns a list of the images of the generating set <code class="code">genG</code> of a group <span class="SimpleMath">G</span> under the idempotent endomorphisms with image <span class="SimpleMath">R</span>.</p>
 
@@ -348,11 +305,22 @@ rec( gens := [ (1,2,3,4), (1,2)(3,4) ],
 
 </pre></div>
 
+<p>The quaternion group <code class="code">q8</code> is an example of a group with a tail: there is only one subgroup in the lattice which covers the identity subgroup. The only idempotent isomorphisms of such groups are the identity mapping and the zero mapping because the only pairs <span class="SimpleMath">N,R</span> are the whole group and the identity subgroup.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := QuaternionGroup( 8 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdempotentEndomorphisms( q8 );</span>
+[ [ x, y ] -&gt; [ &lt;identity&gt; of ..., &lt;identity&gt; of ... ], [ x, y ] -&gt; [ x, y ] ]
+
+</pre></div>
+
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

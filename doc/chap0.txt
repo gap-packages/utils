@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.63
+                                      0.64
   
   
-                                  29 May 2019
+                                  17 June 2019
   
   
                                Sebastian Gutsche
@@ -120,28 +120,33 @@
       5.2-1 EpimorphismByGenerators
     5.3 [33X[0;0YPullback of group homomorphisms[133X
       5.3-1 Pullback
-    5.4 [33X[0;0YIterator for isomorphisms[133X
-      5.4-1 AllIsomorphismsIterator
-    5.5 [33X[0;0YIdempotentEndomorphisms[133X
-      5.5-1 IdempotentEndomorphismsData
-  6 [33X[0;0YRecords[133X
-    6.1 [33X[0;0YFunctions for records[133X
-      6.1-1 AssignGlobals
-  7 [33X[0;0YVarious other functions[133X
-    7.1 [33X[0;0YFile operations[133X
-      7.1-1 Log2HTML
-    7.2 [33X[0;0YLaTeX strings[133X
-      7.2-1 IntOrOnfinityToLaTeX
-      7.2-2 LaTeXStringFactorsInt
-    7.3 [33X[0;0YConversion to [22XMagma[122X string[133X
-      7.3-1 ConvertToMagmaInputString
-  8 [33X[0;0YObsolete functions[133X
-    8.1 [33X[0;0YOperations from AutoDoc[133X
-    8.2 [33X[0;0YFunctions for printing[133X
-    8.3 [33X[0;0YOther obsolete functions[133X
-      8.3-1 [33X[0;0YApplicable Methods[133X
-      8.3-2 [33X[0;0YExponentOfPrime[133X
-  9 [33X[0;0YThe transfer procedure[133X
+    5.4 [33X[0;0YIdempotentEndomorphisms[133X
+      5.4-1 IdempotentEndomorphismsData
+  6 [33X[0;0YIterators[133X
+    6.1 [33X[0;0YSome iterators for groups and their isomorphisms[133X
+      6.1-1 AllIsomorphismsIterator
+      6.1-2 AllSubgroupsIterator
+    6.2 [33X[0;0YOperations on iterators[133X
+      6.2-1 CartesiansIterator
+      6.2-2 UnorderedPairsIterator
+  7 [33X[0;0YRecords[133X
+    7.1 [33X[0;0YFunctions for records[133X
+      7.1-1 AssignGlobals
+  8 [33X[0;0YVarious other functions[133X
+    8.1 [33X[0;0YFile operations[133X
+      8.1-1 Log2HTML
+    8.2 [33X[0;0YLaTeX strings[133X
+      8.2-1 IntOrOnfinityToLaTeX
+      8.2-2 LaTeXStringFactorsInt
+    8.3 [33X[0;0YConversion to [22XMagma[122X string[133X
+      8.3-1 ConvertToMagmaInputString
+  9 [33X[0;0YObsolete functions[133X
+    9.1 [33X[0;0YOperations from AutoDoc[133X
+    9.2 [33X[0;0YFunctions for printing[133X
+    9.3 [33X[0;0YOther obsolete functions[133X
+      9.3-1 [33X[0;0YApplicable Methods[133X
+      9.3-2 [33X[0;0YExponentOfPrime[133X
+  10 [33X[0;0YThe transfer procedure[133X
   
   
   [32X

@@ -1,26 +1,145 @@
   
-  [1X6 [33X[0;0YRecords[133X[101X
+  [1X6 [33X[0;0YIterators[133X[101X
   
   
-  [1X6.1 [33X[0;0YFunctions for records[133X[101X
+  [1X6.1 [33X[0;0YSome iterators for groups and their isomorphisms[133X[101X
   
-  [1X6.1-1 AssignGlobals[101X
+  [33X[0;0YThe  motivation  for  adding  these  operations  is  partly to give a simple
+  example  of  an iterator for a list that does not yet exist, and need not be
+  created.[133X
   
-  [33X[1;0Y[29X[2XAssignGlobals[102X( [3Xrec[103X ) [32X function[133X
+  [1X6.1-1 AllIsomorphismsIterator[101X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[1;0Y[29X[2XAllIsomorphismsIterator[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XAllIsomorphismsNumber[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XAllIsomorphisms[102X( [3XG[103X, [3XH[103X ) [32X operation[133X
   
-  [33X[0;0YIt  assigns  the  record components of [3Xrec[103X to global variables with the same
-  names.[133X
+  [33X[0;0YThe  main  [5XGAP[105X  library contains functions producing complete lists of group
+  homomorphisms     such    as    [10XAllHomomorphisms[110X;    [10XAllEndomorphisms[110X    and
+  [10XAllAutomorphisms[110X. Here we add the missing [10XAllIsomorphisms(G,H)[110X for a list of
+  isomorphisms  from [22XG[122X to [22XH[122X. The method is simple -- find one isomorphism [22XG ->
+  H[122X  and  compose  this with all the automorphisms of [22XG[122X. In all these cases it
+  may  not  be  desirable  to  construct  a  list  of  homomorphisms, but just
+  implement  an  iterator,  and  that  is  what  is  done  here. The operation
+  [10XAllIsomorphismsNumber[110X returns the number of isomorphisms iterated over (this
+  is,  of  course,  just  the order of the automorphisms group). The operation
+  [10XAllIsomorphisms[110X produces the list or isomorphisms.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xr := rec( a := 1, b := 2, c := 3 );;                                      [127X[104X
-    [4X[25Xgap>[125X [27XAssignGlobals( r );[127X[104X
-    [4X[28XThe following global variables have been assigned:[128X[104X
-    [4X[28X[ "a", "b", "c" ][128X[104X
-    [4X[25Xgap>[125X [27X[a,b,c];[127X[104X
-    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XG := SmallGroup( 6,1);; [127X[104X
+    [4X[25Xgap>[125X [27Xiter := AllIsomorphismsIterator( G, s3 );;[127X[104X
+    [4X[25Xgap>[125X [27XNextIterator( iter );[127X[104X
+    [4X[28X[ f1, f2 ] -> [ (6,7), (5,6,7) ][128X[104X
+    [4X[25Xgap>[125X [27Xn := AllIsomorphismsNumber( G, s3 );[127X[104X
+    [4X[28X6[128X[104X
+    [4X[25Xgap>[125X [27XAllIsomorphisms( G, s3 );[127X[104X
+    [4X[28X[ [ f1, f2 ] -> [ (6,7), (5,6,7) ], [ f1, f2 ] -> [ (5,7), (5,6,7) ], [128X[104X
+    [4X[28X  [ f1, f2 ] -> [ (5,6), (5,7,6) ], [ f1, f2 ] -> [ (6,7), (5,7,6) ], [128X[104X
+    [4X[28X  [ f1, f2 ] -> [ (5,7), (5,7,6) ], [ f1, f2 ] -> [ (5,6), (5,6,7) ] ][128X[104X
+    [4X[25Xgap>[125X [27Xiter := AllIsomorphismsIterator( G, s3 );;[127X[104X
+    [4X[25Xgap>[125X [27Xfor h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;[127X[104X
+    [4X[28Xtrue, false, false, true, false, false,[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X6.1-2 AllSubgroupsIterator[101X
+  
+  [33X[1;0Y[29X[2XAllSubgroupsIterator[102X( [3XG[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  manual  entry  for  the  operation  [10XAllSubgroups[110X states that it is only
+  intended  to  be  used on small examples in a classroom situation. Access to
+  all  subgroups  was  required  by  the  [5XXMod[105X  package,  so this iterator was
+  introduced   here.   It   used   the   operations   [10XLatticeSubgroups(G)[110X  and
+  [10XConjugacyClassesSubgroups(lat)[110X,  and then iterates over the entries in these
+  classes.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xc3c3 := Group( (1,2,3), (4,5,6) );; [127X[104X
+    [4X[25Xgap>[125X [27Xiter := AllSubgroupsIterator( c3c3 );[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27Xwhile not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;[127X[104X
+    [4X[28XGroup( () )[128X[104X
+    [4X[28XGroup( [ (4,5,6) ] )[128X[104X
+    [4X[28XGroup( [ (1,2,3) ] )[128X[104X
+    [4X[28XGroup( [ (1,2,3)(4,5,6) ] )[128X[104X
+    [4X[28XGroup( [ (1,3,2)(4,5,6) ] )[128X[104X
+    [4X[28XGroup( [ (4,5,6), (1,2,3) ] )[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.2 [33X[0;0YOperations on iterators[133X[101X
+  
+  [33X[0;0YThis  section  considers  ways  of  producing  an  iterator from one or more
+  iterators.  It  may  be  that  operations  equivalent to these are available
+  elsewhere  in  the  library  --  if  so, the ones here can be removed in due
+  course.[133X
+  
+  [1X6.2-1 CartesiansIterator[101X
+  
+  [33X[1;0Y[29X[2XCartesiansIterator[102X( [3Xiter1[103X, [3Xiter2[103X ) [32X operation[133X
+  
+  [33X[0;0YThis  iterator  returns  all  pairs  [22X[x,y][122X  where [22Xx[122X is the output of a first
+  iterator and [22Xy[122X is the output of a second iterator.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xc4 := Group( (1,2,3,4) );;[127X[104X
+    [4X[25Xgap>[125X [27Xitc4 := AllSubgroupsIterator( c4 );;[127X[104X
+    [4X[25Xgap>[125X [27Xc6 := Group( (5,6), (7,8,9) );;[127X[104X
+    [4X[25Xgap>[125X [27Xitc6 := AllSubgroupsIterator( c6 );;[127X[104X
+    [4X[25Xgap>[125X [27Xiter := CartesianIterator( itc4, itc6 );;[127X[104X
+    [4X[25Xgap>[125X [27Xwhile not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;[127X[104X
+    [4X[28X[ Group( () ), Group( () ) ][128X[104X
+    [4X[28X[ Group( () ), Group( [ (5,6) ] ) ][128X[104X
+    [4X[28X[ Group( () ), Group( [ (7,8,9) ] ) ][128X[104X
+    [4X[28X[ Group( () ), Group( [ (5,6), (7,8,9) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4) ] ), Group( () ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4) ] ), Group( [ (5,6) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4) ] ), Group( [ (7,8,9) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4) ] ), Group( [ (5,6), (7,8,9) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( () ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (7,8,9) ] ) ][128X[104X
+    [4X[28X[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6), (7,8,9) ] ) ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-2 UnorderedPairsIterator[101X
+  
+  [33X[1;0Y[29X[2XUnorderedPairsIterator[102X( [3XG[103X ) [32X operation[133X
+  
+  [33X[0;0YThis  operation  returns  pairs  [22X[x,y][122X  where  [22Xx,y[122X  are  output from a given
+  iterator   [10Xiter[110X.   Unlike   the  output  from  [10XCartesianIterator(iter,iter)[110X,
+  unordered  pairs  are  returned.  In  the case [22XL = [1,2,3,...][122X the pairs are
+  ordered as [22X[1,1],[1,2],[2,2],[1,3],[2,3],[3,3],...[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XL := [6,7,8,9];;[127X[104X
+    [4X[25Xgap>[125X [27XiterL := IteratorList( L );; [127X[104X
+    [4X[25Xgap>[125X [27XpairsL := UnorderedPairsIterator( iterL );;                              [127X[104X
+    [4X[25Xgap>[125X [27Xwhile not IsDoneIterator(pairsL) do Print(NextIterator(pairsL),"\n"); od;[127X[104X
+    [4X[28X[ 6, 6 ][128X[104X
+    [4X[28X[ 6, 7 ][128X[104X
+    [4X[28X[ 7, 7 ][128X[104X
+    [4X[28X[ 6, 8 ][128X[104X
+    [4X[28X[ 7, 8 ][128X[104X
+    [4X[28X[ 8, 8 ][128X[104X
+    [4X[28X[ 6, 9 ][128X[104X
+    [4X[28X[ 7, 9 ][128X[104X
+    [4X[28X[ 8, 9 ][128X[104X
+    [4X[28X[ 9, 9 ][128X[104X
+    [4X[25Xgap>[125X [27Xiter4 := IteratorList( [ 4 ] );[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27Xpairs4 := UnorderedPairsIterator(iter4);[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27XNextIterator( pairs4 );[127X[104X
+    [4X[28X[ 4, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XIsDoneIterator( pairs4 );[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
