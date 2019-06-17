@@ -1,8 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.64 for GAP 4.10.1 (14/06/19) 
+## Version 0.64 for GAP 4.10.1 (17/06/19) 
 
- * (14/06/19) added Iterators chapter 
+ * (14/06/19) added Iterators chapter: {Cartesian/UnorderedPairs}Iterator
 
 ## Version 0.63 for GAP 4.10.1 (29/05/19) 
 
