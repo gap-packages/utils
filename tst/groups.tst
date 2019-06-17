@@ -131,7 +131,7 @@ gap> ok := true;;
 gap> for i in [1..len] do
 >        imi := images[i]; 
 >        im2 := image2[i]; 
->        if not ForAll( imi, im -> ( im in im2 ) ) then 
+>        if not ForAll( imi, im -> ( im in im2 ) ) then  
 >            ok := false; 
 >        fi; 
 >    od;
