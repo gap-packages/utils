@@ -127,7 +127,15 @@ gap> image2 := [ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ],
 >  [ [ (), (1,2)(3,4) ], [ (1,2)(3,4), (1,2)(3,4) ] ], 
 >  [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
 >  [ [ (1,2,3,4), (1,2)(3,4) ] ] ];;
-gap> ForAll( images, im -> ( im in image2 ) ); 
+gap> ok := true;;
+gap> for i in [1..len] do
+>        imi := images[i]; 
+>        im2 := image2[i]; 
+>        if not ForAll( imi, im -> ( im in im2 ) ) then 
+>            ok := false; 
+>        fi; 
+>    od;
+gap> ok; 
 true
 gap> List( images, L -> Length(L) );
 [ 1, 2, 2, 2, 2, 1 ]
