@@ -1,8 +1,13 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.65 for GAP 4.10.2 (11/07/19) 
+
+ * (11/07/19) groups.tst fails in gapdev - temporary(?) fix 
+
 ## Version 0.64 for GAP 4.10.1 (17/06/19) 
 
- * (14/06/19) added Iterators chapter: {Cartesian/UnorderedPairs}Iterator
+ * (14/06/19) added Iterators chapter: AllSubgroupsIterator
+              CartesianIterator, UnorderedPairsIterator
 
 ## Version 0.63 for GAP 4.10.1 (29/05/19) 
 
