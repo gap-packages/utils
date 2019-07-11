@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.64
+                                      0.65
   
   
-                                  17 June 2019
+                                  11 July 2019
   
   
                                Sebastian Gutsche
@@ -30,7 +30,7 @@
       Email:    [7Xmailto:gutsche@mathematik.uni-kl.de[107X
       Homepage: [7Xhttp://wwwb.math.rwth-aachen.de/~gutsche/[107X
   Max Horn
-      Email:    [7Xmailto:max.horn@math.uni-giessen.de[107X
+      Email:    [7Xmailto:max.horn@uni-siegen.de[107X
       Homepage: [7Xhttps://www.quendi.de/math[107X
   Alexander Hulpke
       Email:    [7Xmailto:hulpke@math.colostate.edu[107X
