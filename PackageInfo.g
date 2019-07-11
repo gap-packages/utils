@@ -27,7 +27,7 @@ Persons := [
     FirstNames    := "Max",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Email         := "max.horn@math.uni-giessen.de",
+    Email         := "max.horn@uni-siegen.de",
     WWWHome       := "https://www.quendi.de/math",
   ),
   rec(
