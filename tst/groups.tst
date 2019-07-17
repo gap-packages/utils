@@ -128,7 +128,8 @@ gap> image2 := [ [ [ (), () ] ], [ [ (), (2,4) ], [ (2,4), () ] ],
 >  [ [ (), (1,4)(2,3) ], [ (1,4)(2,3), (1,4)(2,3) ] ], 
 >  [ [ (1,2,3,4), (1,2)(3,4) ] ] ];;
 gap> ok := true;;
-gap> imi := [ ];; 
+gap> ## new in gapdev - the test 'im in im2' is parsed before the for loop 
+gap> ## so that im2 is an 'unbound global variable' if not declared first 
 gap> im2 := [ ];;
 gap> for i in [1..len] do
 >        imi := images[i]; 

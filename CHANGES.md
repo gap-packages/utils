@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.65dev for GAP 4.10.2 (00/07/19) 
+
+ *
+
 ## Version 0.65 for GAP 4.10.2 (11/07/19) 
 
  * (11/07/19) groups.tst fails in gapdev - temporary(?) fix 
