@@ -111,11 +111,9 @@ of a first iterator and <M>y</M> is the output of a second iterator.
 </ManSection>
 <Example>
 <![CDATA[
-gap> c4 := Group( (1,2,3,4) );;
-gap> itc4 := AllSubgroupsIterator( c4 );;
-gap> c6 := Group( (5,6), (7,8,9) );;
-gap> itc6 := AllSubgroupsIterator( c6 );;
-gap> iter := CartesianIterator( itc4, itc6 );;
+gap> it1 := Iterator( [ 1, 2, 3 ] );;
+gap> it2 := Iterator( [ 4, 5, 6 ] );;
+gap> iter := CartesianIterator( it1, it2 );;
 gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
 [ Group( () ), Group( () ) ]
 [ Group( () ), Group( [ (5,6) ] ) ]
