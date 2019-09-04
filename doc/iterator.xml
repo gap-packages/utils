@@ -101,7 +101,7 @@ It may be that operations equivalent to these are available elsewhere
 in the library -- if so, the ones here can be removed in due course. 
 
 <ManSection>
-   <Oper Name="CartesiansIterator"
+   <Oper Name="CartesianIterator"
          Arg="iter1 iter2" />
 <Description> 
 This iterator returns all pairs <M>[x,y]</M> where <M>x</M> is the output 
@@ -134,7 +134,7 @@ gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
 
 <ManSection>
    <Oper Name="UnorderedPairsIterator"
-         Arg="G" />
+         Arg="iter" />
 <Description> 
 This operation returns pairs <M>[x,y]</M> where <M>x,y</M> are output 
 from a given iterator <C>iter</C>.  
