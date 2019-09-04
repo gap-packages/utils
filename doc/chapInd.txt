@@ -10,7 +10,7 @@
   [2XAllSubgroupsIterator[102X 6.1-2 
   [2XAssignGlobals[102X 7.1-1 
   [2XBlankFreeString[102X 3.3-1 
-  [2XCartesiansIterator[102X 6.2-1 
+  [2XCartesianIterator[102X 6.2-1 
   [2XComm[102X 5.1-1 
   [2XCommonRepresentatives[102X 3.2-1 
   [2XCommonTransversal[102X 3.2-1 

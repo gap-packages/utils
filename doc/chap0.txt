@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.65
+                                      0.67
   
   
-                                  11 July 2019
+                                4 September 2019
   
   
                                Sebastian Gutsche
@@ -127,7 +127,7 @@
       6.1-1 AllIsomorphismsIterator
       6.1-2 AllSubgroupsIterator
     6.2 [33X[0;0YOperations on iterators[133X
-      6.2-1 CartesiansIterator
+      6.2-1 CartesianIterator
       6.2-2 UnorderedPairsIterator
   7 [33X[0;0YRecords[133X
     7.1 [33X[0;0YFunctions for records[133X
