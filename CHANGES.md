@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.66 for GAP 4.10.2 (04/09/19) 
+## Version 0.67 for GAP 4.10.2 (04/09/19) 
 
  * (04/09/19) accepted PR34 - changed example in 6.2.1 
  * (25/08/19) fixed typos with UnorderedPairsIterator in manual 
