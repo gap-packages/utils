@@ -43,24 +43,19 @@ Group( [ (1,3,2)(4,5,6) ] )
 Group( [ (4,5,6), (1,2,3) ] )
 
 ## Subsection 6.2.1 
-gap> c4 := Group( (1,2,3,4) );;
-gap> itc4 := AllSubgroupsIterator( c4 );;
-gap> c6 := Group( (5,6), (7,8,9) );;
-gap> itc6 := AllSubgroupsIterator( c6 );;
-gap> iter := CartesianIterator( itc4, itc6 );;
+gap> it1 := Iterator( [ 1, 2, 3 ] );;
+gap> it2 := Iterator( [ 4, 5, 6 ] );;
+gap> iter := CartesianIterator( it1, it2 );;
 gap> while not IsDoneIterator(iter) do Print(NextIterator(iter),"\n"); od;
-[ Group( () ), Group( () ) ]
-[ Group( () ), Group( [ (5,6) ] ) ]
-[ Group( () ), Group( [ (7,8,9) ] ) ]
-[ Group( () ), Group( [ (5,6), (7,8,9) ] ) ]
-[ Group( [ (1,3)(2,4) ] ), Group( () ) ]
-[ Group( [ (1,3)(2,4) ] ), Group( [ (5,6) ] ) ]
-[ Group( [ (1,3)(2,4) ] ), Group( [ (7,8,9) ] ) ]
-[ Group( [ (1,3)(2,4) ] ), Group( [ (5,6), (7,8,9) ] ) ]
-[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( () ) ]
-[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6) ] ) ]
-[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (7,8,9) ] ) ]
-[ Group( [ (1,3)(2,4), (1,2,3,4) ] ), Group( [ (5,6), (7,8,9) ] ) ]
+[ 1, 4 ]
+[ 1, 5 ]
+[ 1, 6 ]
+[ 2, 4 ]
+[ 2, 5 ]
+[ 2, 6 ]
+[ 3, 4 ]
+[ 3, 5 ]
+[ 3, 6 ]
 gap> ## try some trivial cases 
 gap> iter0 := IteratorList( [ ] );;
 gap> iter4 := IteratorList( [ 4 ] );; 
