@@ -45,5 +45,15 @@ DeclareGlobalFunction( "ListOfPowers" );
 DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
 
 #############################################################################
+##  this function has been copied from main library gprd.gd and renamed 
+##
+#O  SubdirectProductWithEmbeddings(<G>, <H>, <Ghom>, <Hhom> )
+##
+DeclareGlobalFunction("SubdirectProductWithEmbeddings");
+DeclareOperation( "SubdirectProductWithEmbeddingsOp",
+    [ IsGroup, IsGroup, IsGroupHomomorphism, IsGroupHomomorphism ] );
+DeclareAttribute( "SubdirectProductWithEmbeddingsInfo", IsGroup, "mutable" );
+
+#############################################################################
 ##
 #E  groups.gd  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
