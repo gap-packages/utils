@@ -2,7 +2,7 @@
 
 ## Version 0.67dev for GAP 4.10.2 (19/11/19) 
 
- * (19/11/19) added DirectProductOfFunctions 
+ * (19/11/19) added DirectProductOfFunctions (fixed output of groups.tst)
 
 ## Version 0.67 for GAP 4.10.2 (04/09/19) 
 

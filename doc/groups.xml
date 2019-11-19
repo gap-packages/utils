@@ -125,7 +125,7 @@ group are described here:
 <Example>
 <![CDATA[
 gap> UpperFittingSeries( D12 );  LowerFittingSeries( D12 );
-[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
+[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f1, f3, f2*f3 ]) ]
 [ D12, Group([ f3 ]), Group([  ]) ]
 gap> FittingLength( D12 );
 2

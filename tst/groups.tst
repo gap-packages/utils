@@ -42,8 +42,12 @@ gap> GeneratorsAndInverses( SymmetricGroup(5) );
 [ (1,2,3,4,5), (1,2), (1,5,4,3,2), (1,2) ]
 
 ## SubSection 5.1.5 
-gap> UpperFittingSeries( D12 );  LowerFittingSeries( D12 );
-[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
+gap> UFS := UpperFittingSeries( D12 );;
+gap> Set( GeneratorsOfGroup( UFS[2] ) );  
+[ f3, f2*f3 ]
+gap> Set( GeneratorsOfGroup( UFS[3] ) );  
+[ f1, f3, f2*f3 ]
+gap>  LowerFittingSeries( D12 ); 
 [ D12, Group([ f3 ]), Group([  ]) ]
 gap> FittingLength( D12 );
 2
