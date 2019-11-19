@@ -32,3 +32,10 @@ DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 DeclareOperation( "IdempotentEndomorphisms", [ IsGroup ] );
 DeclareOperation( "IdempotentEndomorphismsWithImage", [ IsList, IsGroup ] );
 DeclareAttribute( "IdempotentEndomorphismsData", IsGroup );
+
+#############################################################################
+## 
+#O  DirectProductOfFunctions( <G>, <H>, <f1>, <f2> ) 
+##
+DeclareOperation( "DirectProductOfFunctions", 
+    [ IsGroup, IsGroup, IsGroupHomomorphism, IsGroupHomomorphism ] );
