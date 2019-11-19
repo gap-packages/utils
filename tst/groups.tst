@@ -77,7 +77,7 @@ gap> Image(epi,(1,2,3));
 gap> Image(epi,(1,3,2));
 (8,9)
 
-## SubSection 5.3.1
+## SubSection 5.2.2
 gap> s4 := Group( (1,2),(2,3),(3,4) );;
 gap> s3 := Group( (5,6),(6,7) );;
 gap> c3 := Subgroup( s3, [ (5,6,7) ] );;
@@ -103,7 +103,7 @@ gap> b := ImageElm( Embedding( dp, 2 ), (5,7,6) );;
 gap> a*b in Pfi;
 true
 
-## SubSection 5.4.1
+## SubSection 5.2.3
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
@@ -150,3 +150,19 @@ gap> idemim2 :=
 >   [ (1,4)(2,3), (1,4)(2,3) ], [ (1,2,3,4), (1,2)(3,4) ] ];; 
 gap> ForAll( idemim, m -> ( m in idemim2 ) ); 
 true
+
+## SubSection 5.2.4
+gap> c4 := Group( (1,2,3,4) );; 
+gap> c2 := Group( (5,6) );; 
+gap> f1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;
+gap> c3 := Group( (1,2,3) );; 
+gap> c6 := Group( (1,2,3,4,5,6) );; 
+gap> f2 := GroupHomomorphismByImages( c3, c6, [(1,2,3)], [(1,3,5)(2,4,6)] );; 
+gap> c4c3 := DirectProduct( c4, c3 ); 
+Group([ (1,2,3,4), (5,6,7) ])
+gap> c2c6 := DirectProduct( c2, c6 ); 
+Group([ (1,2), (3,4,5,6,7,8) ])
+gap> f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 ); 
+[ (1,2,3,4), (5,6,7) ] -> [ (1,2), (3,5,7)(4,6,8) ]
+gap> ImageElm( f, (1,4,3,2)(5,7,6) ); 
+(1,2)(3,7,5)(4,8,6)

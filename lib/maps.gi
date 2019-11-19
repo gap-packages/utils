@@ -134,3 +134,45 @@ function( G )
     od;  
     return L;
 end );
+
+##############################################################################
+##
+#M  DirectProductOfFunctions . . . . . . for two groups and two homomorphisms  
+##
+InstallMethod( DirectProductOfFunctions, "for two groups and two homs", 
+    [ IsGroup, IsGroup, IsGroupHomomorphism, IsGroupHomomorphism ], 0, 
+function( G, H, f1, f2 ) 
+
+    local infoG, gpsG, G1, G2, infoH, gpsH, H1, H2, eG1, eG2, eH1, eH2, 
+          mgi1, mgi2, genG, imH1, imH2, imH;
+
+    if not HasDirectProductInfo( G ) and HasDirectProductInfo( H ) then 
+        Error( "first two parameters should be direct products" ); 
+    fi; 
+    infoG := DirectProductInfo( G ); 
+    gpsG := infoG!.groups; 
+    G1 := gpsG[1]; 
+    G2 := gpsG[2]; 
+    if not ( ( G1 = Source( f1 ) ) and ( G2 = Source( f2 ) ) ) then 
+        Error( "f1,f2 should have source G1,G2" ); 
+    fi; 
+    eG1 := Embedding( G, 1 ); 
+    eG2 := Embedding( G, 2 ); 
+    mgi1 := MappingGeneratorsImages( f1 ); 
+    mgi2 := MappingGeneratorsImages( f2 ); 
+    infoH := DirectProductInfo( H ); 
+    gpsH := infoH!.groups; 
+    H1 := gpsH[1]; 
+    H2 := gpsH[2]; 
+    if not ( ( H1 = Range( f1 ) ) and ( H2 = Range( f2 ) ) ) then 
+        Error( "f1,f2 should have range H1,H2" ); 
+    fi; 
+    eH1 := Embedding( H, 1 ); 
+    eH2 := Embedding( H, 2 ); 
+    genG := Concatenation( List( mgi1[1], g -> ImageElm( eG1, g ) ),
+                           List( mgi2[1], g -> ImageElm( eG2, g ) ) ); 
+    imH1 := List( mgi1[2], h -> ImageElm( eH1, h ) ); 
+    imH2 := List( mgi2[2], h -> ImageElm( eH2, h ) ); 
+    imH := Concatenation( imH1, imH2 );
+    return GroupHomomorphismByImages( G, H, genG, imH ); 
+end );
