@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.67
+                                      0.68
   
   
-                                4 September 2019
+                                22 November 2019
   
   
                                Sebastian Gutsche
@@ -22,7 +22,7 @@
   
                                   Frank Lübeck
   
-                             Christopher D. Wensley
+                                 Chris Wensley
   
   
   
@@ -41,7 +41,7 @@
   Frank Lübeck
       Email:    [7Xmailto:Frank.Luebeck@Math.RWTH-Aachen.De[107X
       Homepage: [7Xhttp://www.math.rwth-aachen.de/~Frank.Luebeck[107X
-  Christopher D. Wensley
+  Chris Wensley
       Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
   
@@ -118,10 +118,10 @@
       5.1-5 UpperFittingSeries
     5.2 [33X[0;0YFunctions for group homomorphisms[133X
       5.2-1 EpimorphismByGenerators
-    5.3 [33X[0;0YPullback of group homomorphisms[133X
-      5.3-1 Pullback
-    5.4 [33X[0;0YIdempotentEndomorphisms[133X
-      5.4-1 IdempotentEndomorphismsData
+      5.2-2 Pullback
+      5.2-3 IdempotentEndomorphisms
+      5.2-4 DirectProductOfFunctions
+      5.2-5 DirectProductOfAutomorphismGroups
   6 [33X[0;0YIterators[133X
     6.1 [33X[0;0YSome iterators for groups and their isomorphisms[133X
       6.1-1 AllIsomorphismsIterator

@@ -97,7 +97,7 @@
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XUpperFittingSeries( D12 );  LowerFittingSeries( D12 );[127X[104X
-    [4X[28X[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ][128X[104X
+    [4X[28X[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f1, f3, f2*f3 ]) ][128X[104X
     [4X[28X[ D12, Group([ f3 ]), Group([  ]) ][128X[104X
     [4X[25Xgap>[125X [27XFittingLength( D12 );[127X[104X
     [4X[28X2[128X[104X
@@ -154,10 +154,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  
-  [1X5.3 [33X[0;0YPullback of group homomorphisms[133X[101X
-  
-  [1X5.3-1 Pullback[101X
+  [1X5.2-2 Pullback[101X
   
   [33X[1;0Y[29X[2XPullback[102X( [3Xhom1[103X, [3Xhom2[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XPullbackInfo[102X( [3XG[103X ) [32X attribute[133X
@@ -201,14 +198,11 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  [1X5.2-3 IdempotentEndomorphisms[101X
   
-  [1X5.4 [33X[0;0YIdempotentEndomorphisms[133X[101X
-  
-  [1X5.4-1 IdempotentEndomorphismsData[101X
-  
+  [33X[1;0Y[29X[2XIdempotentEndomorphisms[102X( [3XG[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIdempotentEndomorphismsData[102X( [3XG[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIdempotentEndomorphismsWithImage[102X( [3XgenG[103X, [3XR[103X ) [32X operation[133X
-  [33X[1;0Y[29X[2XIdempotentEndomorphisms[102X( [3XG[103X ) [32X operation[133X
   
   [33X[0;0YAn  endomorphism  [22Xf  :  G  ->  G[122X  is  idempotent if [22Xf^2=f[122X. It has an image [22XR
   leqslant  G[122X;  is  the  identity map when restricted to [22XR[122X; and has a kernel [22XN[122X
@@ -269,6 +263,61 @@
     [4X[25Xgap>[125X [27Xq8 := QuaternionGroup( 8 );;[127X[104X
     [4X[25Xgap>[125X [27XIdempotentEndomorphisms( q8 );[127X[104X
     [4X[28X[ [ x, y ] -> [ <identity> of ..., <identity> of ... ], [ x, y ] -> [ x, y ] ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-4 DirectProductOfFunctions[101X
+  
+  [33X[1;0Y[29X[2XDirectProductOfFunctions[102X( [3XG[103X, [3XH[103X, [3Xf1[103X, [3Xf2[103X ) [32X operation[133X
+  
+  [33X[0;0YGiven  group  homomorphisms  [22Xf_1  :  G_1  ->  G_2[122X and [22Xf_2 : H_1 -> H_2[122X, this
+  operation  return  the  product  homomorphism [22Xf_1 × f_2 : G_1 × G_2 -> H_1 ×
+  H_2[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xc4 := Group( (1,2,3,4) );; [127X[104X
+    [4X[25Xgap>[125X [27Xc2 := Group( (5,6) );; [127X[104X
+    [4X[25Xgap>[125X [27Xf1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;[127X[104X
+    [4X[25Xgap>[125X [27Xc3 := Group( (1,2,3) );; [127X[104X
+    [4X[25Xgap>[125X [27Xc6 := Group( (1,2,3,4,5,6) );; [127X[104X
+    [4X[25Xgap>[125X [27Xf2 := GroupHomomorphismByImages( c3, c6, [(1,2,3)], [(1,3,5)(2,4,6)] );; [127X[104X
+    [4X[25Xgap>[125X [27Xc4c3 := DirectProduct( c4, c3 ); [127X[104X
+    [4X[28XGroup([ (1,2,3,4), (5,6,7) ])[128X[104X
+    [4X[25Xgap>[125X [27Xc2c6 := DirectProduct( c2, c6 ); [127X[104X
+    [4X[28XGroup([ (1,2), (3,4,5,6,7,8) ])[128X[104X
+    [4X[25Xgap>[125X [27Xf := DirectProductOfFunctions( c4c3, c2c6, f1, f2 ); [127X[104X
+    [4X[28X[ (1,2,3,4), (5,6,7) ] -> [ (1,2), (3,5,7)(4,6,8) ][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( f, (1,4,3,2)(5,7,6) ); [127X[104X
+    [4X[28X(1,2)(3,7,5)(4,8,6)[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-5 DirectProductOfAutomorphismGroups[101X
+  
+  [33X[1;0Y[29X[2XDirectProductOfAutomorphismGroups[102X( [3XA1[103X, [3XA2[103X ) [32X operation[133X
+  
+  [33X[0;0YLet  [22XA_1,A_2[122X  be  groups of automorphism of groups [22XG_1,G_2[122X respectively. The
+  output of this function is a group [22XA_1 × A_2[122X of automorphisms of [22XG_1 × G_2[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xc9 := Group( (1,2,3,4,5,6,7,8,9) );; [127X[104X
+    [4X[25Xgap>[125X [27Xac9 := AutomorphismGroup( c9 );; [127X[104X
+    [4X[25Xgap>[125X [27Xq8 := QuaternionGroup( IsPermGroup, 8 );;[127X[104X
+    [4X[25Xgap>[125X [27Xaq8 := AutomorphismGroup( q8 );;[127X[104X
+    [4X[25Xgap>[125X [27XA := DirectProductOfAutomorphismGroups( ac9, aq8 );[127X[104X
+    [4X[28X<group with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27XgenA := GeneratorsOfGroup( A );;[127X[104X
+    [4X[25Xgap>[125X [27XG := Source( genA[1] );[127X[104X
+    [4X[28XGroup([ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)[128X[104X
+    [4X[28X(14,15,16,17) ])[128X[104X
+    [4X[25Xgap>[125X [27Xa := genA[1]*genA[5];  [127X[104X
+    [4X[28X[ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)(14,15,16,17) [128X[104X
+    [4X[28X ] -> [ (1,3,5,7,9,2,4,6,8), (10,16,12,14)(11,15,13,17), [128X[104X
+    [4X[28X  (10,11,12,13)(14,15,16,17) ][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( a, (1,9,8,7,6,5,4,3,2)(10,14,12,16)(11,17,13,15) );[127X[104X
+    [4X[28X(1,8,6,4,2,9,7,5,3)(10,16,12,14)(11,15,13,17)[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

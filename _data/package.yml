@@ -1,6 +1,6 @@
 name: utils
-version: 0.67
-date: 2019-09-04
+version: 0.68
+date: 2019-11-22
 description: |
     Utility functions in GAP
 
@@ -15,11 +15,11 @@ authors:
       url: https://www.gap-system.org/DevelopersPages/StefanKohl/
     - name: Frank Lübeck
       url: http://www.math.rwth-aachen.de/~Frank.Luebeck
-    - name: Christopher D. Wensley
+    - name: Chris Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
 maintainers:
-    - name: Christopher D. Wensley
+    - name: Chris Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
 GAP: ">=4.10.1"
@@ -41,9 +41,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.67/utils-0.67.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.68/utils-0.68.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.67/utils-0.67.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.68/utils-0.68.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.

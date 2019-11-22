@@ -38,16 +38,10 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X80C9A0B583FEA7B9">5.2-1 EpimorphismByGenerators</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X823DC2987AACB3FF">5.3 <span class="Heading">Pullback of group homomorphisms</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C705F2A79F8E43C">5.3-1 Pullback</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X801038CB808FC956">5.4 <span class="Heading">IdempotentEndomorphisms</span></a>
-</span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X825C0E35839384A0">5.4-1 IdempotentEndomorphismsData</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C705F2A79F8E43C">5.2-2 Pullback</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X801038CB808FC956">5.2-3 IdempotentEndomorphisms</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X81FA9E6C7F3B9238">5.2-4 DirectProductOfFunctions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7CB2D5F27F4182AF">5.2-5 DirectProductOfAutomorphismGroups</a></span>
 </div></div>
 </div>
 
@@ -156,7 +150,7 @@ false
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">UpperFittingSeries( D12 );  LowerFittingSeries( D12 );</span>
-[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
+[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f1, f3, f2*f3 ]) ]
 [ D12, Group([ f3 ]), Group([  ]) ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FittingLength( D12 );</span>
 2
@@ -213,13 +207,9 @@ true
 
 </pre></div>
 
-<p><a id="X823DC2987AACB3FF" name="X823DC2987AACB3FF"></a></p>
-
-<h4>5.3 <span class="Heading">Pullback of group homomorphisms</span></h4>
-
 <p><a id="X7C705F2A79F8E43C" name="X7C705F2A79F8E43C"></a></p>
 
-<h5>5.3-1 Pullback</h5>
+<h5>5.2-2 Pullback</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pullback</code>( <var class="Arg">hom1</var>, <var class="Arg">hom2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PullbackInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -259,15 +249,11 @@ true
 
 <p><a id="X801038CB808FC956" name="X801038CB808FC956"></a></p>
 
-<h4>5.4 <span class="Heading">IdempotentEndomorphisms</span></h4>
+<h5>5.2-3 IdempotentEndomorphisms</h5>
 
-<p><a id="X825C0E35839384A0" name="X825C0E35839384A0"></a></p>
-
-<h5>5.4-1 IdempotentEndomorphismsData</h5>
-
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphisms</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsData</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsWithImage</code>( <var class="Arg">genG</var>, <var class="Arg">R</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphisms</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>An endomorphism <span class="SimpleMath">\(f : G \to G\)</span> is idempotent if <span class="SimpleMath">\(f^2=f\)</span>. It has an image <span class="SimpleMath">\(R \leqslant G\)</span>; is the identity map when restricted to <span class="SimpleMath">\(R\)</span>; and has a kernel <span class="SimpleMath">\(N\)</span> which has trivial intersection with <span class="SimpleMath">\(R\)</span> and has size <span class="SimpleMath">\(|G|/|R|\)</span>.</p>
 
 <p>The operation <code class="code">IdempotentEndomorphismsWithImage(genG,R)</code> returns a list of the images of the generating set <code class="code">genG</code> of a group <span class="SimpleMath">\(G\)</span> under the idempotent endomorphisms with image <span class="SimpleMath">\(R\)</span>.</p>
@@ -316,6 +302,62 @@ rec( gens := [ (1,2,3,4), (1,2)(3,4) ],
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := QuaternionGroup( 8 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdempotentEndomorphisms( q8 );</span>
 [ [ x, y ] -&gt; [ &lt;identity&gt; of ..., &lt;identity&gt; of ... ], [ x, y ] -&gt; [ x, y ] ]
+
+</pre></div>
+
+<p><a id="X81FA9E6C7F3B9238" name="X81FA9E6C7F3B9238"></a></p>
+
+<h5>5.2-4 DirectProductOfFunctions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfFunctions</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">f1</var>, <var class="Arg">f2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Given group homomorphisms <span class="SimpleMath">\(f_1 : G_1 \to G_2\)</span> and <span class="SimpleMath">\(f_2 : H_1 \to H_2\)</span>, this operation return the product homomorphism <span class="SimpleMath">\(f_1 \times f_2 : G_1 \times G_2 \to H_1 \times H_2\)</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c4 := Group( (1,2,3,4) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c2 := Group( (5,6) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c3 := Group( (1,2,3) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c6 := Group( (1,2,3,4,5,6) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := GroupHomomorphismByImages( c3, c6, [(1,2,3)], [(1,3,5)(2,4,6)] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c4c3 := DirectProduct( c4, c3 ); </span>
+Group([ (1,2,3,4), (5,6,7) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c2c6 := DirectProduct( c2, c6 ); </span>
+Group([ (1,2), (3,4,5,6,7,8) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 ); </span>
+[ (1,2,3,4), (5,6,7) ] -&gt; [ (1,2), (3,5,7)(4,6,8) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( f, (1,4,3,2)(5,7,6) ); </span>
+(1,2)(3,7,5)(4,8,6)
+
+</pre></div>
+
+<p><a id="X7CB2D5F27F4182AF" name="X7CB2D5F27F4182AF"></a></p>
+
+<h5>5.2-5 DirectProductOfAutomorphismGroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfAutomorphismGroups</code>( <var class="Arg">A1</var>, <var class="Arg">A2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Let <span class="SimpleMath">\(A_1,A_2\)</span> be groups of automorphism of groups <span class="SimpleMath">\(G_1,G_2\)</span> respectively. The output of this function is a group <span class="SimpleMath">\(A_1 \times A_2\)</span> of automorphisms of <span class="SimpleMath">\(G_1 \times G_2\)</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c9 := Group( (1,2,3,4,5,6,7,8,9) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ac9 := AutomorphismGroup( c9 );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := QuaternionGroup( IsPermGroup, 8 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">aq8 := AutomorphismGroup( q8 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := DirectProductOfAutomorphismGroups( ac9, aq8 );</span>
+&lt;group with 5 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">genA := GeneratorsOfGroup( A );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Source( genA[1] );</span>
+Group([ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)
+(14,15,16,17) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := genA[1]*genA[5];  </span>
+[ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)(14,15,16,17) 
+ ] -&gt; [ (1,3,5,7,9,2,4,6,8), (10,16,12,14)(11,15,13,17), 
+  (10,11,12,13)(14,15,16,17) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( a, (1,9,8,7,6,5,4,3,2)(10,14,12,16)(11,17,13,15) );</span>
+(1,8,6,4,2,9,7,5,3)(10,16,12,14)(11,15,13,17)
 
 </pre></div>
 

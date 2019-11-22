@@ -17,6 +17,8 @@
   [2XConvertToMagmaInputString[102X 8.3-1 
   CreateDirIfMissing 9.1 
   [2XDifferencesList[102X 3.1-1 
+  [2XDirectProductOfAutomorphismGroups[102X 5.2-5 
+  [2XDirectProductOfFunctions[102X 5.2-4 
   distinct and common representatives 3.2 
   [2XDistinctRepresentatives[102X 3.2-1 
   [2XEpimorphismByGenerators[102X 5.2-1 
@@ -28,9 +30,9 @@
   [2XGeneratorsAndInverses[102X 5.1-4 
   GetSuffix 9.1 
   GitHub repository 1. 
-  [2XIdempotentEndomorphisms[102X 5.4-1 
-  [2XIdempotentEndomorphismsData[102X 5.4-1 
-  [2XIdempotentEndomorphismsWithImage[102X 5.4-1 
+  [2XIdempotentEndomorphisms[102X 5.2-3 
+  [2XIdempotentEndomorphismsData[102X 5.2-3 
+  [2XIdempotentEndomorphismsWithImage[102X 5.2-3 
   [2XIntOrOnfinityToLaTeX[102X 8.2-1 
   [2XIsCommonTransversal[102X 3.2-1 
   [2XIsCommuting[102X 5.1-2 
@@ -48,8 +50,8 @@
   PrintApplicableMethod 9.3-1 
   PrintOneItemPerLine 9.2 
   [2XPrintSelection[102X 2.1-1  2.1-1 
-  [2XPullback[102X 5.3-1 
-  [2XPullbackInfo[102X 5.3-1 
+  [2XPullback[102X 5.2-2 
+  [2XPullbackInfo[102X 5.2-2 
   [2XQuotientsList[102X 3.1-2 
   [2XRandomCombination[102X 3.1-4 
   [2XRestrictedPartitionsWithoutRepetitions[102X 4.1-3 
