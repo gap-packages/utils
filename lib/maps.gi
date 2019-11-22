@@ -176,3 +176,31 @@ function( G, H, f1, f2 )
     imH := Concatenation( imH1, imH2 );
     return GroupHomomorphismByImages( G, H, genG, imH ); 
 end );
+
+##############################################################################
+##
+#M  DirectProductOfAutomorphismGroups . . . . . . for two automorphism groups   
+##
+InstallMethod( DirectProductOfAutomorphismGroups, "for two groups", 
+    [ IsGroup, IsGroup ], 0, 
+function( A1, A2 ) 
+
+    local gen1, gen2, G1, G2, id1, id2, dp, dp1, dp2; 
+
+    if not ( IsGroupOfAutomorphisms(A1) and IsGroupOfAutomorphisms(A2) ) then 
+        Error( "A1,A2 should be automorphism groups" ); 
+    fi;
+    gen1 := GeneratorsOfGroup( A1 ); 
+    gen2 := GeneratorsOfGroup( A2 ); 
+    G1 := Source( gen1[1] ); 
+    G2 := Source( gen2[1] ); 
+    if not ( IsGroup( G1 ) and IsGroup( G2 ) ) then 
+        Error( "A1,A2 should be automorphism groups of groups G1,G2" ); 
+    fi; 
+    id1 := IdentityMapping( G1 ); 
+    id2 := IdentityMapping( G2 ); 
+    dp := DirectProduct( G1, G2 ); 
+    dp1 := List( gen1, g -> DirectProductOfFunctions( dp, dp, g, id2 ) ); 
+    dp2 := List( gen2, g -> DirectProductOfFunctions( dp, dp, id1, g ) ); 
+    return Group( Concatenation( dp1, dp2 ) ); 
+end ); 

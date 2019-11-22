@@ -36,6 +36,8 @@ DeclareAttribute( "IdempotentEndomorphismsData", IsGroup );
 #############################################################################
 ## 
 #O  DirectProductOfFunctions( <G>, <H>, <f1>, <f2> ) 
+#O  DirectProductOfAutomorphismGroups( <A1>, <A2> ) 
 ##
 DeclareOperation( "DirectProductOfFunctions", 
     [ IsGroup, IsGroup, IsGroupHomomorphism, IsGroupHomomorphism ] );
+DeclareOperation( "DirectProductOfAutomorphismGroups", [ IsGroup, IsGroup ] );
