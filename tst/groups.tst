@@ -170,3 +170,21 @@ gap> f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 );
 [ (1,2,3,4), (5,6,7) ] -> [ (1,2), (3,5,7)(4,6,8) ]
 gap> ImageElm( f, (1,4,3,2)(5,7,6) ); 
 (1,2)(3,7,5)(4,8,6)
+
+## SubSection 5.2.5
+gap> c9 := Group( (1,2,3,4,5,6,7,8,9) );; 
+gap> ac9 := AutomorphismGroup( c9 );; 
+gap> q8 := QuaternionGroup( IsPermGroup, 8 );;
+gap> aq8 := AutomorphismGroup( q8 );;
+gap> A := DirectProductOfAutomorphismGroups( ac9, aq8 );
+<group with 5 generators>
+gap> genA := GeneratorsOfGroup( A );;
+gap> G := Source( genA[1] );
+Group([ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)
+(14,15,16,17) ])
+gap> a := genA[1]*genA[5];  
+[ (1,2,3,4,5,6,7,8,9), (10,14,12,16)(11,17,13,15), (10,11,12,13)(14,15,16,17) 
+ ] -> [ (1,3,5,7,9,2,4,6,8), (10,16,12,14)(11,15,13,17), 
+  (10,11,12,13)(14,15,16,17) ]
+gap> ImageElm( a, (1,9,8,7,6,5,4,3,2)(10,14,12,16)(11,17,13,15) );
+(1,8,6,4,2,9,7,5,3)(10,16,12,14)(11,15,13,17)
