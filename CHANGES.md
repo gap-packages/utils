@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.68 for GAP 4.10.2 (22/11/19) 
+## Version 0.69 for GAP 4.10.2 (29/11/19) 
 
  * (22/11/19) added DirectProductOfAutomorphismGroups 
  * (19/11/19) added DirectProductOfFunctions 
