@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/gap-packages/utils.svg?branch=master)](https://travis-ci.com/gap-packages/utils)
+[![Build Status](https://github.com/gap-packages/utils/workflows/CI/badge.svg?branch=master)](https://github.com/gap-packages/utils/actions?query=workflow%3ACI+branch%3Amaster)
 [![Code Coverage](https://codecov.io/github/gap-packages/utils/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/utils)
 
 # The GAP 4 package 'Utils' 
