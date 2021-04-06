@@ -1,5 +1,7 @@
 # CHANGES log for the 'Utils' package
 
+ * (06/04/21) Switch CI to use GitHub Actions: PR#37
+
 ## Version 0.69 for GAP 4.10.2 (29/11/19) 
 
  * (22/11/19) added DirectProductOfAutomorphismGroups 

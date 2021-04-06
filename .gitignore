@@ -21,6 +21,12 @@
 /doc/*.tex
 /doc/*.toc
 
+/doc/_AutoDocMainFile.xml 
+/doc/_Chunks.xml
+/doc/bib.xml.bib
+/doc/title.xml
+/doc/utils.xml
+
 /gh-pages/
 
 /not-used/
