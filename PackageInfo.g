@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.69",
-Date := "29/11/2019", # dd/mm/yyyy format
+Version := "0.71",
+Date := "15/11/2021", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -27,7 +27,7 @@ Persons := [
     FirstNames    := "Max",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Email         := "max.horn@uni-siegen.de",
+    Email         := "horn@mathematik.uni-kl.de",
     WWWHome       := "https://www.quendi.de/math",
   ),
   rec(
@@ -60,7 +60,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := true,
     Email         := "c.d.wensley@bangor.ac.uk",
-    WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
+    WWWHome       := "https://github.com/cdwensley",
     Place         := "Bangor",
     Institution   := "Bangor University"
   )
@@ -98,10 +98,10 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.10.1",
-  NeededOtherPackages := [ [ "AutoDoc", ">= 2018.09.20" ], 
-                           [ "GAPDoc", ">= 1.6.2" ], 
-                           [ "polycyclic", ">= 2.14" ] ], 
+  GAP := ">=4.11.1",
+  NeededOtherPackages := [ [ "AutoDoc", ">= 2020.08.11" ], 
+                           [ "GAPDoc", ">= 1.6.4" ], 
+                           [ "polycyclic", ">= 2.16" ] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
 ),
@@ -113,7 +113,7 @@ Autoload := false,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.10", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.11", 
   " - a collection of utility functions.\n"
 ),
 
@@ -122,7 +122,7 @@ TestFile := "tst/testall.g",
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2015-2019, The GAP Group. <P/>\n", 
+            "&copyright; 2015-2021, The GAP Group. <P/>\n", 
             "The &Utils; package is free software; you can redistribute it ", 
             "and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 

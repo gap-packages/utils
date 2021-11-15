@@ -1,6 +1,6 @@
 name: utils
-version: 0.69
-date: 2019-11-29
+version: 0.71
+date: 2021-11-15
 description: |
     Utility functions in GAP
 
@@ -16,23 +16,23 @@ authors:
     - name: Frank Lübeck
       url: http://www.math.rwth-aachen.de/~Frank.Luebeck
     - name: Chris Wensley
-      url: http://pages.bangor.ac.uk/~mas023/
+      url: https://github.com/cdwensley
 
 maintainers:
     - name: Chris Wensley
-      url: http://pages.bangor.ac.uk/~mas023/
+      url: https://github.com/cdwensley
 
-GAP: ">=4.10.1"
+GAP: ">=4.11.1"
 
 needed-pkgs:
     - name: "AutoDoc"
-      version: ">= 2018.09.20"
+      version: ">= 2020.08.11"
       url: "https://gap-packages.github.io/AutoDoc"
     - name: "GAPDoc"
-      version: ">= 1.6.2"
+      version: ">= 1.6.4"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
     - name: "polycyclic"
-      version: ">= 2.14"
+      version: ">= 2.16"
       url: "https://gap-packages.github.io/polycyclic/"
 
 www: https://gap-packages.github.io/utils
@@ -41,9 +41,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.69/utils-0.69.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.71/utils-0.71.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.69/utils-0.69.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.71/utils-0.71.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
