@@ -18,12 +18,12 @@ jobs:
         gap-branch:
           - master
           - stable-4.11
-          - stable-4.10
 
     steps:
       - uses: actions/checkout@v2
       - uses: gap-actions/setup-gap-for-packages@v1
         with:
+          GAP_PKGS_TO_BUILD: "io nq profiling"
           GAPBRANCH: ${{ matrix.gap-branch }}
       - uses: gap-actions/run-test-for-packages@v1
 
@@ -37,6 +37,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: gap-actions/setup-gap-for-packages@v1
+        with:
+          GAP_PKGS_TO_BUILD: "io nq profiling"
       - uses: gap-actions/compile-documentation-for-packages@v1
         with:
           use-latex: 'true'
