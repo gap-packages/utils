@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.71 for GAP 4.11.1 (15/11/21) 
+## Version 0.72 for GAP 4.10.1 (16/11/21) 
 
  * (06/04/21) Switch CI to use GitHub Actions: PR#37
 
