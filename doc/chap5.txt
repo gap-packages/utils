@@ -211,7 +211,7 @@
   [33X[1;0Y[29X[2XCentralProductInfo[102X( [3XG[103X ) [32X attribute[133X
   
   [33X[0;0YThis  function was added by Thomas Breuer, following discussions with Hongyi
-  Zhao.[133X
+  Zhao (see [7Xhttps://github.com/gap-packages/hap/issues/73[107X).[133X
   
   [33X[0;0YLet  [3XG1[103X  and [3XG2[103X be two groups, [3XZ1[103X be a central subgroup of [3XG1[103X, and [3XPhi[103X be an
   isomorphism from [3XZ1[103X to a central subgroup of [3XG2[103X. The [13Xcentral product[113X defined
