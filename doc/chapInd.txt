@@ -11,14 +11,16 @@
   [2XAssignGlobals[102X 7.1-1 
   [2XBlankFreeString[102X 3.3-1 
   [2XCartesianIterator[102X 6.2-1 
+  [2XCentralProduct[102X 5.2-3 
+  [2XCentralProductInfo[102X 5.2-3 
   [2XComm[102X 5.1-1 
   [2XCommonRepresentatives[102X 3.2-1 
   [2XCommonTransversal[102X 3.2-1 
   [2XConvertToMagmaInputString[102X 8.3-1 
   CreateDirIfMissing 9.1 
   [2XDifferencesList[102X 3.1-1 
-  [2XDirectProductOfAutomorphismGroups[102X 5.2-5 
-  [2XDirectProductOfFunctions[102X 5.2-4 
+  [2XDirectProductOfAutomorphismGroups[102X 5.2-6 
+  [2XDirectProductOfFunctions[102X 5.2-5 
   distinct and common representatives 3.2 
   [2XDistinctRepresentatives[102X 3.2-1 
   [2XEpimorphismByGenerators[102X 5.2-1 
@@ -30,9 +32,9 @@
   [2XGeneratorsAndInverses[102X 5.1-4 
   GetSuffix 9.1 
   GitHub repository 1. 
-  [2XIdempotentEndomorphisms[102X 5.2-3 
-  [2XIdempotentEndomorphismsData[102X 5.2-3 
-  [2XIdempotentEndomorphismsWithImage[102X 5.2-3 
+  [2XIdempotentEndomorphisms[102X 5.2-4 
+  [2XIdempotentEndomorphismsData[102X 5.2-4 
+  [2XIdempotentEndomorphismsWithImage[102X 5.2-4 
   [2XIntOrOnfinityToLaTeX[102X 8.2-1 
   [2XIsCommonTransversal[102X 3.2-1 
   [2XIsCommuting[102X 5.1-2 

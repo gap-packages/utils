@@ -7,20 +7,30 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.72",
-Date := "16/11/2021", # dd/mm/yyyy format
+Version := "0.73",
+Date := "05/07/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
+  rec(
+    LastName      := "Breuer",
+    FirstNames    := "Thomas",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    Email         := "sam@math.rwth-aachen.de",
+    WWWHome       := "https://www.math.rwth-aachen.de/~Thomas.Breuer",
+    Place         := "Aachen",
+    Institution   := "Lehrstuhl für Algebra und Zahlentheorie, RWTH Aachen" 
+  ),
   rec(
     LastName      := "Gutsche",
     FirstNames    := "Sebastian",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Email         := "gutsche@mathematik.uni-kl.de",
-    WWWHome       := "http://wwwb.math.rwth-aachen.de/~gutsche/",
-    Place         := "Kaiserslautern",
-    Institution   := "University of Kaiserslautern"
+    Email         := "gutsche@mathematik.uni-seigen.de",
+    WWWHome       := "https://sebasguts.github.io/",
+    Place         := "Seigen",
+    Institution   := "University of Seigen"
   ),
   rec(
     LastName      := "Horn",
@@ -28,7 +38,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "horn@mathematik.uni-kl.de",
-    WWWHome       := "https://www.quendi.de/math",
+    WWWHome       := "https://github.com/mhorn",
   ),
   rec(
     LastName      := "Hulpke",
@@ -36,7 +46,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "hulpke@math.colostate.edu",
-    WWWHome       := "http://www.math.colostate.edu/~hulpke",
+    WWWHome       := "https://www.math.colostate.edu/~hulpke",
   ),
   rec( 
     LastName      := "Kohl",
@@ -52,7 +62,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "Frank.Luebeck@Math.RWTH-Aachen.De",
-    WWWHome       := "http://www.math.rwth-aachen.de/~Frank.Luebeck",
+    WWWHome       := "https://www.math.rwth-aachen.de/~Frank.Luebeck",
   ),
   rec(
     LastName      := "Wensley",
@@ -90,7 +100,7 @@ AbstractHTML :=
 PackageDoc := rec(
   BookName  := "Utils",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "Utility functions in GAP",
@@ -99,9 +109,9 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.10.1",
-  NeededOtherPackages := [ [ "AutoDoc", ">= 2018.09.20" ], 
-                           [ "GAPDoc", ">= 1.6.2" ], 
-                           [ "polycyclic", ">= 2.14" ] ], 
+  NeededOtherPackages := [ [ "AutoDoc", ">= 2020.08.11" ], 
+                           [ "GAPDoc", ">= 1.6.4" ], 
+                           [ "polycyclic", ">= 2.16" ] ], 
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ]
 ),
@@ -113,7 +123,7 @@ Autoload := false,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.10", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.11", 
   " - a collection of utility functions.\n"
 ),
 
@@ -122,7 +132,7 @@ TestFile := "tst/testall.g",
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2015-2021, The GAP Group. <P/>\n", 
+            "&copyright; 2015-2022, The GAP Group. <P/>\n", 
             "The &Utils; package is free software; you can redistribute it ", 
             "and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 

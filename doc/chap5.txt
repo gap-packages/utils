@@ -164,10 +164,17 @@
   those elements [22X(g_1,g_2)[122X such that [22Xϕ_1 g_1 = ϕ_2 g_2[122X.[133X
   
   [33X[0;0YThe   attribute   [10XPullbackInfo[110X   of   a  pullback  group  [10XP[110X  is  similar  to
-  [10XDirectProductInfo[110X for a direct product of groups. It is a record with fields
-  [10XP!.directProduct[110X,  the  direct product [22XG_1 × G_2[122X; and [10XP!.projections[110X, a list
-  with  the  two projections onto [22XG_1[122X and [22XG_2[122X. There are no embeddings in this
-  record, but it is possible to use the embeddings into the direct product.[133X
+  [10XDirectProductInfo[110X for a direct product of groups. Its value is a record with
+  the following components:[133X
+  
+  [8X[10XdirectProduct[110X[8X[108X
+        [33X[0;6Ythe direct product [22XG_1 × G_2[122X, and[133X
+  
+  [8X[10Xprojections[110X[8X[108X
+        [33X[0;6Ya list with the two projections onto [22XG_1[122X and [22XG_2[122X.[133X
+  
+  [33X[0;0YThere  are  no  embeddings  in  this  record,  but it is possible to use the
+  embeddings into the direct product, see [2XEmbedding[102X ([14XReference: Embedding[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -198,7 +205,58 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.2-3 IdempotentEndomorphisms[101X
+  [1X5.2-3 CentralProduct[101X
+  
+  [33X[1;0Y[29X[2XCentralProduct[102X( [3XG1[103X, [3XG2[103X, [3XZ1[103X, [3XPhi[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XCentralProductInfo[102X( [3XG[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis  function was added by Thomas Breuer, following discussions with Hongyi
+  Zhao.[133X
+  
+  [33X[0;0YLet  [3XG1[103X  and [3XG2[103X be two groups, [3XZ1[103X be a central subgroup of [3XG1[103X, and [3XPhi[103X be an
+  isomorphism from [3XZ1[103X to a central subgroup of [3XG2[103X. The [13Xcentral product[113X defined
+  by these arguments is the factor group of the direct product of [3XG1[103X and [3XG2[103X by
+  the central subgroup [22X{ (z, ([3XPhi[103X(z))^-1) : z ∈ [3XZ1[103X }[122X.[133X
+  
+  [33X[0;0YThe  attribute  [2XCentralProductInfo[102X  of  a  group  [22XG[122X that has been created by
+  [2XCentralProduct[102X  is  similar to [2XPullbackInfo[102X ([14X5.2-2[114X) for pullback groups. Its
+  value is a record with the following components.[133X
+  
+  [8X[10Xprojection[110X[8X[108X
+        [33X[0;6Ythe epimorphism from the direct product of [3XG1[103X and [3XG2[103X to [22XG[122X, and[133X
+  
+  [8X[10Xphi[110X[8X[108X
+        [33X[0;6Ythe map [3XPhi[103X.[133X
+  
+  [33X[0;0YNote  that  one  can  access  the  direct  product as the [2XSource[102X ([14XReference:
+  Source[114X) value of the [10Xprojection[110X map, and one can access [3XG1[103X and [3XG2[103X as the two
+  embeddings of this direct product, see [2XEmbedding[102X ([14XReference: Embedding[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg1 := DihedralGroup( 8 );[127X[104X
+    [4X[28X<pc group of size 8 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xc1 := Centre( g1 );[127X[104X
+    [4X[28XGroup([ f3 ])[128X[104X
+    [4X[25Xgap>[125X [27Xcp1 := CentralProduct( g1, g1, c1, IdentityMapping( c1 ) );[127X[104X
+    [4X[28XGroup([ f1, f2, f5, f3, f4, f5 ])[128X[104X
+    [4X[25Xgap>[125X [27XIdGroup( cp1 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xg2 := QuaternionGroup( 8 );[127X[104X
+    [4X[28X<pc group of size 8 with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xc2 := Centre( g2 );[127X[104X
+    [4X[28XGroup([ y2 ])[128X[104X
+    [4X[25Xgap>[125X [27Xcp2 := CentralProduct( g2, g2, c2, IdentityMapping( c2 ) );[127X[104X
+    [4X[28XGroup([ f1, f2, f5, f3, f4, f5 ])[128X[104X
+    [4X[25Xgap>[125X [27XIdGroup( cp2 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xinfo2 := CentralProductInfo( cp2 );[127X[104X
+    [4X[28Xrec( phi := IdentityMapping( Group([ y2 ]) ), [128X[104X
+    [4X[28X  projection := [ f1, f2, f3, f4, f5, f6 ] -> [ f1, f2, f5, f3, f4, f5 ] )[128X[104X
+    [4X[25Xgap>[125X [27XSource( Embedding( Source( info2.projection ), 1 ) ) = g2;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-4 IdempotentEndomorphisms[101X
   
   [33X[1;0Y[29X[2XIdempotentEndomorphisms[102X( [3XG[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIdempotentEndomorphismsData[102X( [3XG[103X ) [32X attribute[133X
@@ -266,7 +324,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.2-4 DirectProductOfFunctions[101X
+  [1X5.2-5 DirectProductOfFunctions[101X
   
   [33X[1;0Y[29X[2XDirectProductOfFunctions[102X( [3XG[103X, [3XH[103X, [3Xf1[103X, [3Xf2[103X ) [32X operation[133X
   
@@ -293,7 +351,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.2-5 DirectProductOfAutomorphismGroups[101X
+  [1X5.2-6 DirectProductOfAutomorphismGroups[101X
   
   [33X[1;0Y[29X[2XDirectProductOfAutomorphismGroups[102X( [3XA1[103X, [3XA2[103X ) [32X operation[133X
   

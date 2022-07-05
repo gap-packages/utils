@@ -36,9 +36,10 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X80C9A0B583FEA7B9">5.2-1 EpimorphismByGenerators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C705F2A79F8E43C">5.2-2 Pullback</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X801038CB808FC956">5.2-3 IdempotentEndomorphisms</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X81FA9E6C7F3B9238">5.2-4 DirectProductOfFunctions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7CB2D5F27F4182AF">5.2-5 DirectProductOfAutomorphismGroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X78DD2C617B992BE2">5.2-3 CentralProduct</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X801038CB808FC956">5.2-4 IdempotentEndomorphisms</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X81FA9E6C7F3B9238">5.2-5 DirectProductOfFunctions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7CB2D5F27F4182AF">5.2-6 DirectProductOfAutomorphismGroups</a></span>
 </div></div>
 </div>
 
@@ -212,7 +213,20 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PullbackInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>If <span class="SimpleMath">ϕ_1 : G_1 -&gt; H</span> and <span class="SimpleMath">ϕ_2 : G_2 -&gt; H</span> are two group homomorphisms with the same range, then their <em>pullback</em> is the subgroup of <span class="SimpleMath">G_1 × G_2</span> consisting of those elements <span class="SimpleMath">(g_1,g_2)</span> such that <span class="SimpleMath">ϕ_1 g_1 = ϕ_2 g_2</span>.</p>
 
-<p>The attribute <code class="code">PullbackInfo</code> of a pullback group <code class="code">P</code> is similar to <code class="code">DirectProductInfo</code> for a direct product of groups. It is a record with fields <code class="code">P!.directProduct</code>, the direct product <span class="SimpleMath">G_1 × G_2</span>; and <code class="code">P!.projections</code>, a list with the two projections onto <span class="SimpleMath">G_1</span> and <span class="SimpleMath">G_2</span>. There are no embeddings in this record, but it is possible to use the embeddings into the direct product.</p>
+<p>The attribute <code class="code">PullbackInfo</code> of a pullback group <code class="code">P</code> is similar to <code class="code">DirectProductInfo</code> for a direct product of groups. Its value is a record with the following components:</p>
+
+
+<dl>
+<dt><strong class="Mark"><code class="code">directProduct</code></strong></dt>
+<dd><p>the direct product <span class="SimpleMath">G_1 × G_2</span>, and</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">projections</code></strong></dt>
+<dd><p>a list with the two projections onto <span class="SimpleMath">G_1</span> and <span class="SimpleMath">G_2</span>.</p>
+
+</dd>
+</dl>
+<p>There are no embeddings in this record, but it is possible to use the embeddings into the direct product, see <code class="func">Embedding</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap32.html#X86452F8587CBAEA0"><span class="RefLink">Reference: Embedding</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -244,9 +258,59 @@ true
 
 </pre></div>
 
+<p><a id="X78DD2C617B992BE2" name="X78DD2C617B992BE2"></a></p>
+
+<h5>5.2-3 CentralProduct</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CentralProduct</code>( <var class="Arg">G1</var>, <var class="Arg">G2</var>, <var class="Arg">Z1</var>, <var class="Arg">Phi</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CentralProductInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>This function was added by Thomas Breuer, following discussions with Hongyi Zhao.</p>
+
+<p>Let <var class="Arg">G1</var> and <var class="Arg">G2</var> be two groups, <var class="Arg">Z1</var> be a central subgroup of <var class="Arg">G1</var>, and <var class="Arg">Phi</var> be an isomorphism from <var class="Arg">Z1</var> to a central subgroup of <var class="Arg">G2</var>. The <em>central product</em> defined by these arguments is the factor group of the direct product of <var class="Arg">G1</var> and <var class="Arg">G2</var> by the central subgroup <span class="SimpleMath">{ (z, (<var class="Arg">Phi</var>(z))^-1) : z ∈ <var class="Arg">Z1</var> }</span>.</p>
+
+<p>The attribute <code class="func">CentralProductInfo</code> of a group <span class="SimpleMath">G</span> that has been created by <code class="func">CentralProduct</code> is similar to <code class="func">PullbackInfo</code> (<a href="chap5.html#X7C705F2A79F8E43C"><span class="RefLink">5.2-2</span></a>) for pullback groups. Its value is a record with the following components.</p>
+
+
+<dl>
+<dt><strong class="Mark"><code class="code">projection</code></strong></dt>
+<dd><p>the epimorphism from the direct product of <var class="Arg">G1</var> and <var class="Arg">G2</var> to <span class="SimpleMath">G</span>, and</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">phi</code></strong></dt>
+<dd><p>the map <var class="Arg">Phi</var>.</p>
+
+</dd>
+</dl>
+<p>Note that one can access the direct product as the <code class="func">Source</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap32.html#X7DE8173F80E07AB1"><span class="RefLink">Reference: Source</span></a>) value of the <code class="code">projection</code> map, and one can access <var class="Arg">G1</var> and <var class="Arg">G2</var> as the two embeddings of this direct product, see <code class="func">Embedding</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap32.html#X86452F8587CBAEA0"><span class="RefLink">Reference: Embedding</span></a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g1 := DihedralGroup( 8 );</span>
+&lt;pc group of size 8 with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c1 := Centre( g1 );</span>
+Group([ f3 ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cp1 := CentralProduct( g1, g1, c1, IdentityMapping( c1 ) );</span>
+Group([ f1, f2, f5, f3, f4, f5 ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup( cp1 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g2 := QuaternionGroup( 8 );</span>
+&lt;pc group of size 8 with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c2 := Centre( g2 );</span>
+Group([ y2 ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cp2 := CentralProduct( g2, g2, c2, IdentityMapping( c2 ) );</span>
+Group([ f1, f2, f5, f3, f4, f5 ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdGroup( cp2 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">info2 := CentralProductInfo( cp2 );</span>
+rec( phi := IdentityMapping( Group([ y2 ]) ), 
+  projection := [ f1, f2, f3, f4, f5, f6 ] -&gt; [ f1, f2, f5, f3, f4, f5 ] )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Source( Embedding( Source( info2.projection ), 1 ) ) = g2;</span>
+true
+</pre></div>
+
 <p><a id="X801038CB808FC956" name="X801038CB808FC956"></a></p>
 
-<h5>5.2-3 IdempotentEndomorphisms</h5>
+<h5>5.2-4 IdempotentEndomorphisms</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphisms</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsData</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -304,7 +368,7 @@ rec( gens := [ (1,2,3,4), (1,2)(3,4) ],
 
 <p><a id="X81FA9E6C7F3B9238" name="X81FA9E6C7F3B9238"></a></p>
 
-<h5>5.2-4 DirectProductOfFunctions</h5>
+<h5>5.2-5 DirectProductOfFunctions</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfFunctions</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">f1</var>, <var class="Arg">f2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given group homomorphisms <span class="SimpleMath">f_1 : G_1 -&gt; G_2</span> and <span class="SimpleMath">f_2 : H_1 -&gt; H_2</span>, this operation return the product homomorphism <span class="SimpleMath">f_1 × f_2 : G_1 × G_2 -&gt; H_1 × H_2</span>.</p>
@@ -331,7 +395,7 @@ Group([ (1,2), (3,4,5,6,7,8) ])
 
 <p><a id="X7CB2D5F27F4182AF" name="X7CB2D5F27F4182AF"></a></p>
 
-<h5>5.2-5 DirectProductOfAutomorphismGroups</h5>
+<h5>5.2-6 DirectProductOfAutomorphismGroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfAutomorphismGroups</code>( <var class="Arg">A1</var>, <var class="Arg">A2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Let <span class="SimpleMath">A_1,A_2</span> be groups of automorphism of groups <span class="SimpleMath">G_1,G_2</span> respectively. The output of this function is a group <span class="SimpleMath">A_1 × A_2</span> of automorphisms of <span class="SimpleMath">G_1 × G_2</span>.</p>
