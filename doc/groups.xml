@@ -257,7 +257,8 @@ true
 
 <Description> 
 This function was added by Thomas Breuer, 
-following discussions with Hongyi Zhao. 
+following discussions with Hongyi Zhao 
+(see <URL>https://github.com/gap-packages/hap/issues/73</URL>). 
 <P/>
 Let <A>G1</A> and <A>G2</A> be two groups,
 <A>Z1</A> be a central subgroup of <A>G1</A>,
