@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2019, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2022, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -203,12 +203,21 @@ is the subgroup of <M>G_1 \times G_2</M> consisting of those elements
 <P/>
 The attribute <C>PullbackInfo</C> of a pullback group <C>P</C> 
 is similar to <C>DirectProductInfo</C> for a direct product of groups. 
-It is a record with fields <C>P!.directProduct</C>, 
-the direct product <M>G_1 \times G_2</M>; 
-and <C>P!.projections</C>, a list with the two projections 
-onto <M>G_1</M> and <M>G_2</M>. 
+Its value is a record with the following components: 
+<P/>
+<List>
+<Mark><C>directProduct</C></Mark>
+<Item>
+  the direct product <M>G_1 \times G_2</M>, and
+</Item>
+<Mark><C>projections</C></Mark>
+<Item>
+  a list with the two projections onto <M>G_1</M> and <M>G_2</M>.
+</Item>
+</List>
 There are no embeddings in this record, 
-but it is possible to use the embeddings into the direct product. 
+but it is possible to use the embeddings into the direct product, 
+see <Ref Oper="Embedding" BookName="ref"/>. 
 <P/>
 </Description>
 </ManSection>
@@ -253,7 +262,7 @@ and <A>Phi</A> be an isomorphism from <A>Z1</A> to a central subgroup of
 <A>G2</A>.
 The <E>central product</E> defined by these arguments is the factor group of
 the direct product of <A>G1</A> and <A>G2</A> by the central subgroup
-<M>\{ (z, <A>Phi</A>(z)^{-1}); z \in <A>Z1</A> \}</M>.
+<M>\{ (z, (<A>Phi</A>(z))^{-1}) : z \in <A>Z1</A> \}</M>.
 <P/>
 The attribute <Ref Attr="CentralProductInfo"/> of a group <M>G</M>
 that has been created by <Ref Oper="CentralProduct"/>
@@ -278,26 +287,26 @@ and one can access <A>G1</A> and <A>G2</A> as the two embeddings of this
 direct product, see <Ref Oper="Embedding" BookName="ref"/>.
 
 <Example><![CDATA[
-gap> g:= DihedralGroup( 8 );
+gap> g1 := DihedralGroup( 8 );
 <pc group of size 8 with 3 generators>
-gap> c:= Centre( g );
+gap> c1 := Centre( g1 );
 Group([ f3 ])
-gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+gap> cp1 := CentralProduct( g1, g1, c1, IdentityMapping( c1 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IdGroup( cp1 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
 true
-gap> g:= QuaternionGroup( 8 );
+gap> g2 := QuaternionGroup( 8 );
 <pc group of size 8 with 3 generators>
-gap> c:= Centre( g );
+gap> c2 := Centre( g2 );
 Group([ y2 ])
-gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+gap> cp2 := CentralProduct( g2, g2, c2, IdentityMapping( c2 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IdGroup( cp2 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
 true
-gap> info:= CentralProductInfo( cp );
+gap> info2 := CentralProductInfo( cp2 );
 rec( phi := IdentityMapping( Group([ y2 ]) ), 
   projection := [ f1, f2, f3, f4, f5, f6 ] -> [ f1, f2, f5, f3, f4, f5 ] )
-gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+gap> Source( Embedding( Source( info2.projection ), 1 ) ) = g2;
 true
 ]]></Example>
 </Description>
