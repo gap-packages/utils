@@ -243,6 +243,68 @@ true
 
 
 <ManSection>
+<Oper Name="CentralProduct" Arg="G1, G2, Z1, Phi" />
+<Attr Name="CentralProductInfo" Arg="G"/>
+
+<Description>
+Let <A>G1</A> and <A>G2</A> be two groups,
+<A>Z1</A> be a central subgroup of <A>G1</A>,
+and <A>Phi</A> be an isomorphism from <A>Z1</A> to a central subgroup of
+<A>G2</A>.
+The <E>central product</E> defined by these arguments is the factor group of
+the direct product of <A>G1</A> and <A>G2</A> by the central subgroup
+<M>\{ (z, <A>Phi</A>(z)^{-1}); z \in <A>Z1</A> \}</M>.
+<P/>
+The attribute <Ref Attr="CentralProductInfo"/> of a group <M>G</M>
+that has been created by <Ref Oper="CentralProduct"/>
+is similar to <Ref Attr="PullbackInfo"/> for pullback groups.
+Its value is a record with the following components.
+<P/>
+<List>
+<Mark><C>projection</C></Mark>
+<Item>
+  the epimorphism from the direct product of <A>G1</A> and <A>G2</A>
+  to <M>G</M>, and
+</Item>
+<Mark><C>phi</C></Mark>
+<Item>
+  the map <A>Phi</A>.
+</Item>
+</List>
+
+Note that one can access the direct product as the
+<Ref Attr="Source" BookName="ref"/> value of the <C>projection</C> map,
+and one can access <A>G1</A> and <A>G2</A> as the two embeddings of this
+direct product, see <Ref Oper="Embedding" BookName="ref"/>.
+
+<Example><![CDATA[
+gap> g:= DihedralGroup( 8 );
+<pc group of size 8 with 3 generators>
+gap> c:= Centre( g );
+Group([ f3 ])
+gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+Group([ f1, f2, f5, f3, f4, f5 ])
+gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+true
+gap> g:= QuaternionGroup( 8 );
+<pc group of size 8 with 3 generators>
+gap> c:= Centre( g );
+Group([ y2 ])
+gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+Group([ f1, f2, f5, f3, f4, f5 ])
+gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+true
+gap> info:= CentralProductInfo( cp );
+rec( phi := IdentityMapping( Group([ y2 ]) ), 
+  projection := [ f1, f2, f3, f4, f5, f6 ] -> [ f1, f2, f5, f3, f4, f5 ] )
+gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+true
+]]></Example>
+</Description>
+</ManSection>
+
+
+<ManSection>
    <Oper Name="IdempotentEndomorphisms"
          Arg="G" />
    <Attr Name="IdempotentEndomorphismsData"
