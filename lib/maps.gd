@@ -23,6 +23,15 @@ DeclareOperation( "Pullback", [ IsGroupHomomorphism, IsGroupHomomorphism ] );
 DeclareAttribute( "PullbackInfo", IsGroup, "mutable" );
 
 #############################################################################
+##
+#O  CentralProduct( <G1>, <G2>, <Z1>, <Phi> )
+#A  CentralProductInfo( <cp> )
+##
+DeclareOperation( "CentralProduct",
+    [ IsGroup, IsGroup, IsGroup, IsGroupHomomorphism ] );
+DeclareAttribute( "CentralProductInfo", IsGroup, "mutable" );
+
+#############################################################################
 ##  these functions compute idempotent endomorphisms on G with image R 
 ## 
 #O  IdempotentEndomorphisms( <G> ) 

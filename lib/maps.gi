@@ -66,6 +66,37 @@ function( nu, mu )
     return L;
 end ); 
 
+#############################################################################
+##
+#M  CentralProduct( <G1>, <G2>, <Z1>, <Phi> )
+##
+InstallMethod( CentralProduct,
+    [ "IsGroup", "IsGroup", "IsGroup", "IsGroupHomomorphism" ],
+    function( G1, G2, Z1, Phi )
+    local gens, imgs, dp, emb1, emb2, N, proj, G;
+
+    if not ( IsSubset( G1, Z1 ) and IsCentral( G1, Z1 ) ) then
+      Error( "<Z1> must be a central subgroup of <G1>" );
+    fi;
+    gens:= GeneratorsOfGroup( Z1 );
+    imgs:= List( gens, x -> (x^-1)^Phi );
+    if not ( IsSubset( G2, imgs ) and
+             ForAll( imgs, x -> IsCentral( G2, x ) ) ) then
+      Error( "<Phi> must map <Z1> to a central subgroup of <G2>" );
+    fi;
+
+    dp:= DirectProduct( G1, G2 );
+    emb1:= Embedding( dp, 1 );
+    emb2:= Embedding( dp, 2 );
+    N:= SubgroupNC( dp,
+            List( [ 1 .. Length( gens ) ], i -> gens[i]^emb1 * imgs[i]^emb2 ) );
+    proj:= NaturalHomomorphismByNormalSubgroup( dp, N );
+    G:= Image( proj );
+    SetCentralProductInfo( G, rec( projection:= proj, phi:= Phi ) );
+
+    return G;
+end );
+
 ##############################################################################
 ##
 #M  IdempotentEndomorphisms  . . . . . . . . . . . . . . . . . . . for a group  

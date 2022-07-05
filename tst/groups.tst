@@ -108,6 +108,40 @@ gap> a*b in Pfi;
 true
 
 ## SubSection 5.2.3
+gap> g:= DihedralGroup( 8 );
+<pc group of size 8 with 3 generators>
+gap> c:= Centre( g );
+Group([ f3 ])
+gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+Group([ f1, f2, f5, f3, f4, f5 ])
+gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+true
+gap> g:= QuaternionGroup( 8 );
+<pc group of size 8 with 3 generators>
+gap> c:= Centre( g );
+Group([ y2 ])
+gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+Group([ f1, f2, f5, f3, f4, f5 ])
+gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+true
+gap> info:= CentralProductInfo( cp );
+rec( phi := IdentityMapping( Group([ y2 ]) ), 
+  projection := [ f1, f2, f3, f4, f5, f6 ] -> [ f1, f2, f5, f3, f4, f5 ] )
+gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+true
+gap> g:= SymmetricGroup( 3 );
+Sym( [ 1 .. 3 ] )
+gap> c:= TrivialSubgroup( g );
+Group(())
+gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+Group([ (1,2,3), (1,2), (4,5,6), (4,5) ])
+gap> info:= CentralProductInfo( cp );
+rec( phi := IdentityMapping( Group(()) ), 
+  projection := IdentityMapping( Group([ (1,2,3), (1,2), (4,5,6), (4,5) ]) ) )
+gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+true
+
+## SubSection 5.2.4
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
@@ -155,7 +189,7 @@ gap> idemim2 :=
 gap> ForAll( idemim, m -> ( m in idemim2 ) ); 
 true
 
-## SubSection 5.2.4
+## SubSection 5.2.5
 gap> c4 := Group( (1,2,3,4) );; 
 gap> c2 := Group( (5,6) );; 
 gap> f1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;
@@ -171,7 +205,7 @@ gap> f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 );
 gap> ImageElm( f, (1,4,3,2)(5,7,6) ); 
 (1,2)(3,7,5)(4,8,6)
 
-## SubSection 5.2.5
+## SubSection 5.2.6
 gap> c9 := Group( (1,2,3,4,5,6,7,8,9) );; 
 gap> ac9 := AutomorphismGroup( c9 );; 
 gap> q8 := QuaternionGroup( IsPermGroup, 8 );;
