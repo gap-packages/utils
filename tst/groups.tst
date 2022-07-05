@@ -108,37 +108,37 @@ gap> a*b in Pfi;
 true
 
 ## SubSection 5.2.3
-gap> g:= DihedralGroup( 8 );
+gap> g1 := DihedralGroup( 8 );
 <pc group of size 8 with 3 generators>
-gap> c:= Centre( g );
+gap> c1 := Centre( g1 );
 Group([ f3 ])
-gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+gap> cp1 := CentralProduct( g1, g1, c1, IdentityMapping( c1 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IdGroup( cp1 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
 true
-gap> g:= QuaternionGroup( 8 );
+gap> g2 := QuaternionGroup( 8 );
 <pc group of size 8 with 3 generators>
-gap> c:= Centre( g );
+gap> c2 := Centre( g2 );
 Group([ y2 ])
-gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+gap> cp2 := CentralProduct( g2, g2, c2, IdentityMapping( c2 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IdGroup( cp2 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
 true
-gap> info:= CentralProductInfo( cp );
+gap> info2 := CentralProductInfo( cp2 );
 rec( phi := IdentityMapping( Group([ y2 ]) ), 
   projection := [ f1, f2, f3, f4, f5, f6 ] -> [ f1, f2, f5, f3, f4, f5 ] )
-gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+gap> Source( Embedding( Source( info2.projection ), 1 ) ) = g2;
 true
-gap> g:= SymmetricGroup( 3 );
+gap> g3 := SymmetricGroup( 3 );
 Sym( [ 1 .. 3 ] )
-gap> c:= TrivialSubgroup( g );
+gap> c3 := TrivialSubgroup( g3 );
 Group(())
-gap> cp:= CentralProduct( g, g, c, IdentityMapping( c ) );
+gap> cp3 := CentralProduct( g3, g3, c3, IdentityMapping( c3 ) );
 Group([ (1,2,3), (1,2), (4,5,6), (4,5) ])
-gap> info:= CentralProductInfo( cp );
+gap> info3 := CentralProductInfo( cp3 );
 rec( phi := IdentityMapping( Group(()) ), 
   projection := IdentityMapping( Group([ (1,2,3), (1,2), (4,5,6), (4,5) ]) ) )
-gap> Source( Embedding( Source( info.projection ), 1 ) ) = g;
+gap> Source( Embedding( Source( info3.projection ), 1 ) ) = g3;
 true
 
 ## SubSection 5.2.4

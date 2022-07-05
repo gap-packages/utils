@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.73 for GAP 4.13.1 (05/07/22) 
+
+ * (05/07/22) CentralProduct added by Thomas Breuer 
+
 ## Version 0.72 for GAP 4.10.1 (16/11/21) 
 
  * (06/04/21) Switch CI to use GitHub Actions: PR#37
