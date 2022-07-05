@@ -255,7 +255,10 @@ true
 <Oper Name="CentralProduct" Arg="G1, G2, Z1, Phi" />
 <Attr Name="CentralProductInfo" Arg="G"/>
 
-<Description>
+<Description> 
+This function was added by Thomas Breuer, 
+following discussions with Hongyi Zhao. 
+<P/>
 Let <A>G1</A> and <A>G2</A> be two groups,
 <A>Z1</A> be a central subgroup of <A>G1</A>,
 and <A>Phi</A> be an isomorphism from <A>Z1</A> to a central subgroup of
