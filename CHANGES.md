@@ -1,7 +1,8 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.73 for GAP 4.13.1 (05/07/22) 
+## Version 0.73 for GAP 4.13.1 (07/07/22) 
 
+ * (07/07/22) Max Horn replaced BIND_GLOBAL with BindGlobal (transfer process) 
  * (05/07/22) CentralProduct added by Thomas Breuer 
 
 ## Version 0.72 for GAP 4.10.1 (16/11/21) 
