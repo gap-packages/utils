@@ -27,7 +27,7 @@ UtilsLoadingComplete := false;
 ##                                    code to be transferred to Utils 
 #F  OKtoReadFromUtilsSpec( <name>, <oldver> ) . . . special case of above 
 ##
-BIND_GLOBAL( "OKtoReadFromUtils", function( Name ) 
+BindGlobal( "OKtoReadFromUtils", function( Name ) 
     local  name, ver, ver0, pos, ok; 
 
     name := LowercaseString( Name ); 
@@ -42,7 +42,7 @@ BIND_GLOBAL( "OKtoReadFromUtils", function( Name )
     return ok; 
 end );
 
-BIND_GLOBAL( "OKtoReadFromUtilsSpec", function( Name, oldver ) 
+BindGlobal( "OKtoReadFromUtilsSpec", function( Name, oldver ) 
     local  name, ver, pos, ok; 
 
     name := LowercaseString( Name ); 
