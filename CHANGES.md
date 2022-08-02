@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.75 for GAP 4.11.1 (22/07/22) 
+## Version 0.75 for GAP 4.12.0 (02/08/22) 
  * (15/07/22) added LeftCoset operations 
 
 ## Version 0.74 for GAP 4.11.1 (09/07/22) 
