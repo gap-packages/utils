@@ -81,6 +81,7 @@ end);
 InstallMethod( \in, "element and LeftCoset", true,
     [ IsMultiplicativeElementWithInverse, IsLeftCoset ], 100,
 function( g, lc )
+    Print( "Hey, hey!  The method for \in in lcset.gi is being called!\n" ); 
     return g^-1 in AssociatedRightCoset( lc );
 end);
 

@@ -214,6 +214,21 @@ gap> Intersection( lc2, lc3 );
 ]]>
 </Example>
 
+<Subsection Label="subsec-warning">
+<Heading>Warning: \in does not work correctly</Heading> 
+For some reason the method supplied for <C>\in</C>, 
+even when given a high priority, is not used, 
+and <C>false</C> is always returned. 
+The following example is obviously incorrect. 
+<Example>
+<![CDATA[
+gap> (1,4) in lc3;
+false
+]]>
+</Example>
+</Subsection>
+
+
 </Section> 
 
 

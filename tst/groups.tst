@@ -86,6 +86,10 @@ LeftCoset((1,4),Group([ (1,2), (2,3) ]))
 gap> Intersection( lc2, lc3 );
 [ (1,4,2,3), (1,4)(2,3) ]
 
+## SubSection 5.2.3 
+gap> (1,4) in lc3;
+false
+
 
 ## SubSection 5.3.1 
 gap> G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;

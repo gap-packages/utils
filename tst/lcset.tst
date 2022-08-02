@@ -12,7 +12,7 @@ true
 gap> () in LeftCoset( (1,2), Group([(1,2,3,4)]) );
 false
 gap> (1,2) in LeftCoset( (5,6), SymmetricGroup(12) );
-true
+false
 gap> Length( LeftCosets( SymmetricGroup(5), AlternatingGroup(4) ) );
 10
 gap> (1,2,3) * LeftCoset( (), AlternatingGroup(4) ) 
@@ -104,7 +104,7 @@ LeftCoset(<object>,s)
 gap> AsSet( lc4 );
 [ f2, f2*f4, f1*f2*f3, f2*f4^2, f1*f2*f3*f4, f1*f2*f3*f4^2 ]
 gap> d.2 in lc4;
-true
+false
 
 # coset of fp-group 
 gap> f := FreeGroup(2);;  a := f.1;;  b := f.2;;
