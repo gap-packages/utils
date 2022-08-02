@@ -1,8 +1,8 @@
 #############################################################################
 ##
-#W  read.g                 The Utils package                     Chris Wensley
+#W  read.g                 The Utils package                    Chris Wensley
 ## 
-#Y  Copyright (C) 2015-2019, The GAP Group,  
+#Y  Copyright (C) 2015-2022, The GAP Group,  
 ##
 
 ## read the actual code 
@@ -11,6 +11,7 @@ ReadPackage( "utils", "lib/files.gi" );
 ReadPackage( "utils", "lib/groups.gi" );
 ReadPackage( "utils", "lib/iterator.gi" );
 ReadPackage( "utils", "lib/latex.gi" );
+ReadPackage( "utils", "lib/lcset.gi" );
 ReadPackage( "utils", "lib/lists.gi" );
 ReadPackage( "utils", "lib/magma.gi" );
 ReadPackage( "utils", "lib/maps.gi" );

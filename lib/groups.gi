@@ -2,7 +2,7 @@
 ##
 #W  groups.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from ResClasses 
@@ -251,7 +251,7 @@ end );
 #R  IsProjectionSubdirectProductWithEmbeddingsPermGroup( <hom> )  .  projection onto factor
 ##
 DeclareRepresentation( "IsProjectionSubdirectProductWithEmbeddingsPermGroup",
-      IsAttributeStoringRep and
+      IsAttributeStoringRep and IsComponentObjectRep and
       IsGroupHomomorphism and IsSurjective and
       IsSPGeneralMapping, [ "component" ] );
 

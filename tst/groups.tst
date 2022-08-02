@@ -2,7 +2,7 @@
 ##
 #W  groups.tst                  Utils Package                    
 ##
-#Y  Copyright (C) 2015-2019, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;
@@ -61,7 +61,37 @@ gap> List( lfs, StructureDescription );
 gap> FittingLength( S4);
 3
 
+
 ## SubSection 5.2.1 
+gap> lc1 := LeftCoset( (1,2,3), Group( [ (1,2), (3,4) ] ) ); 
+LeftCoset((1,2,3),Group([ (1,2), (3,4) ]))
+gap> Representative( lc1 );
+(1,2,3)
+gap> ActingDomain( lc1 );
+Group([ (1,2), (3,4) ])
+gap> AsSet( lc1 );
+[ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ]
+gap> lc2 := (1,4) * lc1;   
+LeftCoset((1,4,2,3),Group([ (1,2), (3,4) ]))
+gap> lc1 = lc2;            
+false
+
+## SubSection 5.2.2 
+gap> rc1 := AssociatedRightCoset( lc1 ); 
+RightCoset(Group([ (1,2), (3,4) ]),(1,3,2))
+gap> rc3 := RightCoset( Group( (1,2), (2,3) ), (1,4) ); 
+RightCoset(Group([ (1,2), (2,3) ]),(1,4))
+gap> lc3 := AssociatedLeftCoset( rc3 );
+LeftCoset((1,4),Group([ (1,2), (2,3) ]))
+gap> Intersection( lc2, lc3 );
+[ (1,4,2,3), (1,4)(2,3) ]
+
+## SubSection 5.2.3 
+gap> (1,4) in lc3;
+false
+
+
+## SubSection 5.3.1 
 gap> G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;
 gap> phi := EpimorphismByGenerators( FreeGroup("a","b","c","d"), G );
 [ a, b, c, d ] -> [ (1,2,3), (3,4,5), (5,6,7), (7,8,9) ]
