@@ -34,15 +34,23 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X820B71307E41BEE5">5.1-4 GeneratorsAndInverses</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X84CF95227F9D562F">5.1-5 UpperFittingSeries</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X80A512877F515DE7">5.2 <span class="Heading">Functions for group homomorphisms</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X7FE4848B7DE6B3FD">5.2 <span class="Heading">Left Cosets for Groups</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X80C9A0B583FEA7B9">5.2-1 EpimorphismByGenerators</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C705F2A79F8E43C">5.2-2 Pullback</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X78DD2C617B992BE2">5.2-3 CentralProduct</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X801038CB808FC956">5.2-4 IdempotentEndomorphisms</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X81FA9E6C7F3B9238">5.2-5 DirectProductOfFunctions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7CB2D5F27F4182AF">5.2-6 DirectProductOfAutomorphismGroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X8340B4537F17DCD3">5.2-1 LeftCoset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X86641D7A81A08364">5.2-2 AssociatedRightCoset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X8712BCB67A00BC36">5.2-3 <span class="Heading">Warning: \in does not work correctly</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X80A512877F515DE7">5.3 <span class="Heading">Functions for group homomorphisms</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X80C9A0B583FEA7B9">5.3-1 EpimorphismByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C705F2A79F8E43C">5.3-2 Pullback</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X78DD2C617B992BE2">5.3-3 CentralProduct</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X801038CB808FC956">5.3-4 IdempotentEndomorphisms</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X81FA9E6C7F3B9238">5.3-5 DirectProductOfFunctions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7CB2D5F27F4182AF">5.3-6 DirectProductOfAutomorphismGroups</a></span>
 </div></div>
 </div>
 
@@ -171,13 +179,80 @@ false
 
 </pre></div>
 
+<p><a id="X7FE4848B7DE6B3FD" name="X7FE4848B7DE6B3FD"></a></p>
+
+<h4>5.2 <span class="Heading">Left Cosets for Groups</span></h4>
+
+<p><a id="X8340B4537F17DCD3" name="X8340B4537F17DCD3"></a></p>
+
+<h5>5.2-1 LeftCoset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCoset</code>( <var class="Arg">g</var>, <var class="Arg">U</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Since <strong class="pkg">GAP</strong> uses right actions by default, the operation <code class="code">RightCoset(U,g)</code> has been provided for constructing the right coset <span class="SimpleMath">\(Ug\)</span> of a subgroup <span class="SimpleMath">\(U \leq G\)</span> and an element <span class="SimpleMath">\(g \in G\)</span>. It has been noted in the reference manual that, by inverting all the elements in <span class="SimpleMath">\(Ug\)</span>, the left coset <span class="SimpleMath">\(g^{-1}U\)</span> is obtained.</p>
+
+<p>Just for the sake of completeness, from July 2022 this package provides the operation <code class="code">LeftCoset(g,U)</code> for constructing the left coset <span class="SimpleMath">\(gU\)</span>. Users are recommended to continue to use <code class="code">RightCoset</code> for all serious calculations. The methods for left cosets work by converting <span class="SimpleMath">\(gU\)</span> to <span class="SimpleMath">\(Ug^{-1\)</span>; applying the equivalent method for right cosets; and, if necessary, converting back again to left cosets.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lc1 := LeftCoset( (1,2,3), Group( [ (1,2), (3,4) ] ) ); </span>
+LeftCoset((1,2,3),Group([ (1,2), (3,4) ]))
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Representative( lc1 );</span>
+(1,2,3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ActingDomain( lc1 );</span>
+Group([ (1,2), (3,4) ])
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsSet( lc1 );</span>
+[ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lc2 := (1,4) * lc1;   </span>
+LeftCoset((1,4,2,3),Group([ (1,2), (3,4) ]))
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lc1 = lc2;            </span>
+false
+
+</pre></div>
+
+<p><a id="X86641D7A81A08364" name="X86641D7A81A08364"></a></p>
+
+<h5>5.2-2 AssociatedRightCoset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AssociatedRightCoset</code>( <var class="Arg">lc</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AssociatedLeftCoset</code>( <var class="Arg">rc</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>These attributes implement the interchange <span class="SimpleMath">\(gU \sim Ug^{-1}\)</span> described above.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rc1 := AssociatedRightCoset( lc1 ); </span>
+RightCoset(Group([ (1,2), (3,4) ]),(1,3,2))
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rc3 := RightCoset( Group( (1,2), (2,3) ), (1,4) ); </span>
+RightCoset(Group([ (1,2), (2,3) ]),(1,4))
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">lc3 := AssociatedLeftCoset( rc3 );</span>
+LeftCoset((1,4),Group([ (1,2), (2,3) ]))
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Intersection( lc2, lc3 );</span>
+[ (1,4,2,3), (1,4)(2,3) ]
+
+</pre></div>
+
+<p><a id="X8712BCB67A00BC36" name="X8712BCB67A00BC36"></a></p>
+
+<h5>5.2-3 <span class="Heading">Warning: \in does not work correctly</span></h5>
+
+<p>For some reason the method supplied for <code class="code">\in</code>, even when given a high priority, is not used, and <code class="code">false</code> is always returned. The following example is obviously incorrect.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">(1,4) in lc3;</span>
+false
+
+</pre></div>
+
 <p><a id="X80A512877F515DE7" name="X80A512877F515DE7"></a></p>
 
-<h4>5.2 <span class="Heading">Functions for group homomorphisms</span></h4>
+<h4>5.3 <span class="Heading">Functions for group homomorphisms</span></h4>
 
 <p><a id="X80C9A0B583FEA7B9" name="X80C9A0B583FEA7B9"></a></p>
 
-<h5>5.2-1 EpimorphismByGenerators</h5>
+<h5>5.3-1 EpimorphismByGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EpimorphismByGenerators</code>( <var class="Arg">G</var>, <var class="Arg">H</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>This function has been transferred from package <strong class="pkg">RCWA</strong>.</p>
@@ -210,7 +285,7 @@ true
 
 <p><a id="X7C705F2A79F8E43C" name="X7C705F2A79F8E43C"></a></p>
 
-<h5>5.2-2 Pullback</h5>
+<h5>5.3-2 Pullback</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pullback</code>( <var class="Arg">hom1</var>, <var class="Arg">hom2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PullbackInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -263,7 +338,7 @@ true
 
 <p><a id="X78DD2C617B992BE2" name="X78DD2C617B992BE2"></a></p>
 
-<h5>5.2-3 CentralProduct</h5>
+<h5>5.3-3 CentralProduct</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CentralProduct</code>( <var class="Arg">G1</var>, <var class="Arg">G2</var>, <var class="Arg">Z1</var>, <var class="Arg">Phi</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CentralProductInfo</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -271,7 +346,7 @@ true
 
 <p>Let <var class="Arg">G1</var> and <var class="Arg">G2</var> be two groups, <var class="Arg">Z1</var> be a central subgroup of <var class="Arg">G1</var>, and <var class="Arg">Phi</var> be an isomorphism from <var class="Arg">Z1</var> to a central subgroup of <var class="Arg">G2</var>. The <em>central product</em> defined by these arguments is the factor group of the direct product of <var class="Arg">G1</var> and <var class="Arg">G2</var> by the central subgroup <span class="SimpleMath">\(\{ (z, (\textit{Phi}(z))^{-1}) : z \in \textit{Z1} \}\)</span>.</p>
 
-<p>The attribute <code class="func">CentralProductInfo</code> of a group <span class="SimpleMath">\(G\)</span> that has been created by <code class="func">CentralProduct</code> is similar to <code class="func">PullbackInfo</code> (<a href="chap5_mj.html#X7C705F2A79F8E43C"><span class="RefLink">5.2-2</span></a>) for pullback groups. Its value is a record with the following components.</p>
+<p>The attribute <code class="func">CentralProductInfo</code> of a group <span class="SimpleMath">\(G\)</span> that has been created by <code class="func">CentralProduct</code> is similar to <code class="func">PullbackInfo</code> (<a href="chap5_mj.html#X7C705F2A79F8E43C"><span class="RefLink">5.3-2</span></a>) for pullback groups. Its value is a record with the following components.</p>
 
 
 <dl>
@@ -313,7 +388,7 @@ true
 
 <p><a id="X801038CB808FC956" name="X801038CB808FC956"></a></p>
 
-<h5>5.2-4 IdempotentEndomorphisms</h5>
+<h5>5.3-4 IdempotentEndomorphisms</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphisms</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdempotentEndomorphismsData</code>( <var class="Arg">G</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -371,7 +446,7 @@ rec( gens := [ (1,2,3,4), (1,2)(3,4) ],
 
 <p><a id="X81FA9E6C7F3B9238" name="X81FA9E6C7F3B9238"></a></p>
 
-<h5>5.2-5 DirectProductOfFunctions</h5>
+<h5>5.3-5 DirectProductOfFunctions</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfFunctions</code>( <var class="Arg">G</var>, <var class="Arg">H</var>, <var class="Arg">f1</var>, <var class="Arg">f2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Given group homomorphisms <span class="SimpleMath">\(f_1 : G_1 \to G_2\)</span> and <span class="SimpleMath">\(f_2 : H_1 \to H_2\)</span>, this operation return the product homomorphism <span class="SimpleMath">\(f_1 \times f_2 : G_1 \times G_2 \to H_1 \times H_2\)</span>.</p>
@@ -398,7 +473,7 @@ Group([ (1,2), (3,4,5,6,7,8) ])
 
 <p><a id="X7CB2D5F27F4182AF" name="X7CB2D5F27F4182AF"></a></p>
 
-<h5>5.2-6 DirectProductOfAutomorphismGroups</h5>
+<h5>5.3-6 DirectProductOfAutomorphismGroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOfAutomorphismGroups</code>( <var class="Arg">A1</var>, <var class="Arg">A2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Let <span class="SimpleMath">\(A_1,A_2\)</span> be groups of automorphism of groups <span class="SimpleMath">\(G_1,G_2\)</span> respectively. The output of this function is a group <span class="SimpleMath">\(A_1 \times A_2\)</span> of automorphisms of <span class="SimpleMath">\(G_1 \times G_2\)</span>.</p>
