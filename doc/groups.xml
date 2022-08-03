@@ -167,7 +167,7 @@ Just for the sake of completeness, from July 2022 this package provides
 the operation <C>LeftCoset(g,U)</C> for constructing the left coset <M>gU</M>. 
 Users are recommended to continue to use <C>RightCoset</C> 
 for all serious calculations. 
-The methods for left cosets work by converting <M>gU</M> to <M>Ug^{-1</M>; 
+The methods for left cosets work by converting <M>gU</M> to <M>Ug^{-1}</M>;
 applying the equivalent method for right cosets; and, if necessary, 
 converting back again to left cosets. 
 <P/>
