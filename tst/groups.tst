@@ -71,25 +71,23 @@ gap> ActingDomain( lc1 );
 Group([ (1,2), (3,4) ])
 gap> AsSet( lc1 );
 [ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ]
-gap> lc2 := (1,4) * lc1;   
-LeftCoset((1,4,2,3),Group([ (1,2), (3,4) ]))
-gap> lc1 = lc2;            
-false
+gap> (1,2,3) in lc1;
+true
+gap> lc2 := (2,4,3) * lc1;   
+LeftCoset((1,2,4),Group([ (1,2), (3,4) ]))
+gap> lc3 := lc1^(2,3,4);;
+gap> lc2 = lc3;            
+true
 
 ## SubSection 5.2.2 
-gap> rc1 := AssociatedRightCoset( lc1 ); 
+gap> rc1 := Inverse( lc1 ); 
 RightCoset(Group([ (1,2), (3,4) ]),(1,3,2))
-gap> rc3 := RightCoset( Group( (1,2), (2,3) ), (1,4) ); 
-RightCoset(Group([ (1,2), (2,3) ]),(1,4))
-gap> lc3 := AssociatedLeftCoset( rc3 );
-LeftCoset((1,4),Group([ (1,2), (2,3) ]))
-gap> Intersection( lc2, lc3 );
-[ (1,4,2,3), (1,4)(2,3) ]
-
-## SubSection 5.2.3 
-gap> (1,4) in lc3;
-false
-
+gap> rc4 := RightCoset( Group( (1,2), (2,3) ), (3,4) ); 
+RightCoset(Group([ (1,2), (2,3) ]),(3,4))
+gap> lc4 := Inverse( rc4 );
+LeftCoset((3,4),Group([ (1,2), (2,3) ]))
+gap> Intersection( lc2, lc4 );
+[ (2,3,4), (1,2,3,4) ]
 
 ## SubSection 5.3.1 
 gap> G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;
@@ -111,7 +109,7 @@ gap> Image(epi,(1,2,3));
 gap> Image(epi,(1,3,2));
 (8,9)
 
-## SubSection 5.2.2
+## SubSection 5.3.2
 gap> s4 := Group( (1,2),(2,3),(3,4) );;
 gap> s3 := Group( (5,6),(6,7) );;
 gap> c3 := Subgroup( s3, [ (5,6,7) ] );;
@@ -137,7 +135,7 @@ gap> b := ImageElm( Embedding( dp, 2 ), (5,7,6) );;
 gap> a*b in Pfi;
 true
 
-## SubSection 5.2.3
+## SubSection 5.3.3
 gap> g1 := DihedralGroup( 8 );
 <pc group of size 8 with 3 generators>
 gap> c1 := Centre( g1 );
@@ -171,7 +169,7 @@ rec( phi := IdentityMapping( Group(()) ),
 gap> Source( Embedding( Source( info3.projection ), 1 ) ) = g3;
 true
 
-## SubSection 5.2.4
+## SubSection 5.3.4
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
@@ -219,7 +217,7 @@ gap> idemim2 :=
 gap> ForAll( idemim, m -> ( m in idemim2 ) ); 
 true
 
-## SubSection 5.2.5
+## SubSection 5.3.5
 gap> c4 := Group( (1,2,3,4) );; 
 gap> c2 := Group( (5,6) );; 
 gap> f1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;
@@ -235,7 +233,7 @@ gap> f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 );
 gap> ImageElm( f, (1,4,3,2)(5,7,6) ); 
 (1,2)(3,7,5)(4,8,6)
 
-## SubSection 5.2.6
+## SubSection 5.3.6
 gap> c9 := Group( (1,2,3,4,5,6,7,8,9) );; 
 gap> ac9 := AutomorphismGroup( c9 );; 
 gap> q8 := QuaternionGroup( IsPermGroup, 8 );;

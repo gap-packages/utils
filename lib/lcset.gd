@@ -6,29 +6,19 @@
 
 #############################################################################
 ##
-#C  IsLeftCosetObj( <obj> ) . . . . . . . . . . . . . . coset of the form gU
+#C  IsLeftCoset( <obj> ) . . . . . . . . . . . . . . coset of the form gU
 #R  IsLeftCosetDefaultRep
 #V  IsLeftCosetFamily 
 #T  IsLeftCosetType 
-#P  IsLeftCoset 
 ##
-DeclareCategory( "IsLeftCosetObj", IsDomain and IsExternalOrbit ); 
+DeclareCategory( "IsLeftCoset", IsDomain and IsExternalOrbit ); 
 DeclareRepresentation( "IsLeftCosetDefaultRep",
-    IsComponentObjectRep and IsAttributeStoringRep and IsLeftCosetObj, 
+    IsComponentObjectRep and IsAttributeStoringRep and IsLeftCoset, 
     [ "Representative", "ActingDomain" ] ); 
 BindGlobal( "IsLeftCosetFamily", NewFamily( "IsLeftCosetFamily", 
             IsMultiplicativeElementWithInverse ) ); 
 BindGlobal( "IsLeftCosetType", 
             NewType( IsLeftCosetFamily, IsLeftCosetDefaultRep ) ); 
-DeclareProperty( "IsLeftCoset", IsLeftCosetObj ); 
-
-#############################################################################
-##
-#A  AssociatedLeftCoset( <rc> ) . . . . . . . . . . . . . . . . gU <--> Ug^-1
-#A  AssociatedRightCoset( <lc> ) . . . . . . . . . . . . . . .  gU <--> Ug^-1
-##
-DeclareAttribute( "AssociatedLeftCoset", IsRightCoset );
-DeclareAttribute( "AssociatedRightCoset", IsLeftCoset );
 
 #############################################################################
 ##
@@ -43,9 +33,3 @@ DeclareOperation( "LeftCoset", [ IsObject, IsGroup ] );
 ##
 DeclareGlobalFunction( "LeftCosets" ); 
 DeclareOperation( "LeftCosetsNC", [ IsGroup, IsGroup ] ); 
-
-#############################################################################
-##
-
-##
-
