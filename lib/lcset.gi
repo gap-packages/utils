@@ -11,78 +11,88 @@
 InstallMethod( LeftCoset, "generic method for left cosets", true, 
     [ IsObject, IsGroup ], 0,
 function( g, U )
-    local lc;
+    local lc, fam;
 
+    fam := FamilyObj( U );
+    if not IsBound( fam!.leftCosetsDefaultType ) then
+        fam!.leftCosetsDefaultType := 
+            NewType( fam, IsLeftCosetDefaultRep and HasActingDomain 
+                     and HasFunctionAction and HasRepresentative );
+    fi;
     lc := rec();
-    ObjectifyWithAttributes( lc, IsLeftCosetType,
+    ObjectifyWithAttributes( lc, fam!.leftCosetsDefaultType,
         Representative, g,
         ActingDomain, U, 
-        IsLeftCoset, true );
+        FunctionAction, OnLeftInverse, 
+        IsLeftCoset, true ); 
+    if HasSize( U ) then 
+        SetSize( lc, Size( U ) ); 
+    fi; 
     return lc;
 end);
 
 #############################################################################
 ##
-#A  AsociatedRightCoset( <lc> ) . . . . . forms a right coset of U by g \in G 
-#A  AsociatedLeftCoset( <lc> ) . . . . . . forms a left coset of U by g \in G 
+#A  Inverse( <lc> ) . . . . . forms the right coset Ug^-1 corresponding to gU
+#A  Inverse( <rc> ) . . . . . forms the left coset g^-1U corresponding to Ug 
 ##
-InstallMethod( AssociatedRightCoset, "generic method for left cosets", true, 
+InstallOtherMethod( Inverse, "generic method for left cosets", true, 
     [ IsLeftCoset ], 0,
 function( lc )
     local g, U, rc; 
     g := Representative( lc ); 
     U := ActingDomain( lc ); 
     rc := RightCoset( U, g^-1 ); 
-    SetAssociatedLeftCoset( rc, lc ); 
+    SetInverse( rc, lc ); 
     return rc;
 end); 
 
-InstallMethod( AssociatedLeftCoset, "generic method for right cosets", true, 
+InstallOtherMethod( Inverse, "generic method for right cosets", true, 
     [ IsRightCoset ], 0,
 function( rc )
     local g, U, lc; 
     g := Representative( rc ); 
     U := ActingDomain( rc ); 
     lc := LeftCoset( g^-1, U ); 
-    SetAssociatedRightCoset( lc, rc ); 
+    SetInverse( lc, rc ); 
     return lc;
 end); 
 
-InstallMethod( PrintString, "for a left coset", true, [ IsLeftCosetObj ], 0,
+InstallMethod( PrintString, "for a left coset", true, [ IsLeftCoset ], 0,
 function( d )
     return STRINGIFY( "LeftCoset(\<",
                       PrintString( Representative(d) ), ",\>",
                       PrintString( ActingDomain(d) ), ")" );
 end);
 
-InstallMethod( PrintObj, "for a left coset", true, [ IsLeftCosetObj ], 0,
+InstallMethod( PrintObj, "for a left coset", true, [ IsLeftCoset ], 0,
 function( d )
     Print( PrintString( d ) );
 end);
 
-InstallMethod( ViewString, "for a left coset", true, [ IsLeftCosetObj ], 0,
+InstallMethod( ViewString, "for a left coset", true, [ IsLeftCoset ], 0,
 function( d )
     return STRINGIFY( "LeftCoset(\<",
                       ViewString( Representative(d) ), ",\>",
                       ViewString( ActingDomain(d) ), ")" );
 end);
 
-InstallMethod( ViewObj, "for a left coset", true, [ IsLeftCosetObj ], 0,
+InstallMethod( ViewObj, "for a left coset", true, [ IsLeftCoset ], 0,
 function( d )
     Print( ViewString( d ) );
 end);
 
 InstallMethod( \=, "for two left cosets", IsIdenticalObj,
     [ IsLeftCoset, IsLeftCoset ], 0,
-function( lc1, lc2 ) 
-    return AssociatedRightCoset( lc1 ) = AssociatedRightCoset( lc2 ); 
+function( lc1, lc2 )  
+    return ( ActingDomain( lc1 ) = ActingDomain( lc2 ) ) and 
+           ( Representative(lc1)/Representative(lc2) in ActingDomain( lc1 ) );
 end);
 
 InstallMethod( \in, "element and LeftCoset", true,
     [ IsMultiplicativeElementWithInverse, IsLeftCoset ], 100,
 function( g, lc )
-    Print( "Hey, hey!  The method for \in in lcset.gi is being called!\n" ); 
-    return g^-1 in AssociatedRightCoset( lc );
+    return ( Representative(lc)^-1 * g ) in ActingDomain( lc );
 end);
 
 InstallOtherMethod( \*, "element and LeftCoset", true,
@@ -91,20 +101,26 @@ function( g, lc )
     return LeftCoset( g * Representative( lc ), ActingDomain( lc ) );
 end);
 
+InstallOtherMethod( \^, "LeftCoset and element", true,
+    [ IsLeftCoset, IsMultiplicativeElementWithInverse ], 0,
+function( lc, g ) 
+    return g^-1 * lc; 
+end);
+
 InstallMethod( Size, "for a left coset", true, [ IsLeftCoset ], 0,
 function( lc ) 
-    return Size( AssociatedRightCoset( lc ) ); 
+    return Size( ActingDomain( lc ) ); 
 end);
 
 InstallOtherMethod( IsBiCoset, "for a left coset", true, [ IsLeftCoset ], 0,
 function( lc ) 
-    return IsBiCoset( AssociatedRightCoset( lc ) ); 
+    return IsBiCoset( Inverse( lc ) ); 
 end);
 
 InstallOtherMethod( AsSet, "for a left coset", true, [ IsLeftCoset ], 0,
 function( lc ) 
     local L; 
-    L := AsSet( AssociatedRightCoset( lc ) ); 
+    L := AsSet( Inverse( lc ) ); 
     return Set( L, g -> g^-1 ); 
 end);
 
@@ -112,9 +128,9 @@ InstallOtherMethod( Intersection2, "for two left cosets", true,
     [ IsLeftCoset, IsLeftCoset ], 0,
 function( lc1, lc2 ) 
     local L; 
-    L := Intersection2( AssociatedRightCoset( lc1 ),
-                        AssociatedRightCoset( lc2 ) ); 
+    L := Intersection2( Inverse( lc1 ), Inverse( lc2 ) ); 
     return Set( L, g -> g^-1 ); 
+##    return Inverse( L );        to be used once 4r12 is out 
 end);
 
 #############################################################################
@@ -133,7 +149,7 @@ InstallMethod( LeftCosetsNC, "generic", IsIdenticalObj, [ IsGroup, IsGroup ], 0,
 function( G, U )
     local L; 
     L := RightCosetsNC( G, U ); 
-    return List( L, rc -> AssociatedLeftCoset( rc ) ); 
+    return List( L, rc -> Inverse( rc ) ); 
 end);
 
 
