@@ -9,8 +9,6 @@
   [2XAllSmoothIntegers[102X 4.1-1  4.1-1 
   [2XAllSubgroupsIterator[102X 6.1-2 
   [2XAssignGlobals[102X 7.1-1 
-  [2XAssociatedLeftCoset[102X 5.2-2 
-  [2XAssociatedRightCoset[102X 5.2-2 
   [2XBlankFreeString[102X 3.3-1 
   [2XCartesianIterator[102X 6.2-1 
   [2XCentralProduct[102X 5.3-3 

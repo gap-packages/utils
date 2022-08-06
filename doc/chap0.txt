@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.75
+                                      0.76
   
   
-                                 2 August 2022
+                                 6 August 2022
   
   
                                  Thomas Breuer
@@ -123,8 +123,7 @@
       5.1-5 UpperFittingSeries
     5.2 [33X[0;0YLeft Cosets for Groups[133X
       5.2-1 LeftCoset
-      5.2-2 AssociatedRightCoset
-      5.2-3 [33X[0;0YWarning: \in does not work correctly[133X
+      5.2-2 [33X[0;0YInverse[133X
     5.3 [33X[0;0YFunctions for group homomorphisms[133X
       5.3-1 EpimorphismByGenerators
       5.3-2 Pullback

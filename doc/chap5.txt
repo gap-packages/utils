@@ -124,17 +124,22 @@
   
   [33X[1;0Y[29X[2XLeftCoset[102X( [3Xg[103X, [3XU[103X ) [32X operation[133X
   
-  [33X[0;0YSince  [5XGAP[105X  uses right actions by default, the operation [10XRightCoset(U,g)[110X has
-  been provided for constructing the right coset [22XUg[122X of a subgroup [22XU ≤ G[122X and an
-  element  [22Xg ∈ G[122X. It has been noted in the reference manual that, by inverting
-  all the elements in [22XUg[122X, the left coset [22Xg^-1U[122X is obtained.[133X
+  [33X[0;0YSince  [5XGAP[105X uses right actions by default, the library contains the operation
+  [10XRightCoset(U,g)[110X  for constructing the right coset [22XUg[122X of a subgroup [22XU ≤ G[122X and
+  an  element  [22Xg  ∈  G[122X.  It  has  been  noted in the reference manual that, by
+  inverting all the elements in [22XUg[122X, the left coset [22Xg^-1U[122X is obtained.[133X
   
-  [33X[0;0YJust  for the sake of completeness, from July 2022 this package provides the
-  operation  [10XLeftCoset(g,U)[110X  for  constructing  the  left  coset [22XgU[122X. Users are
-  recommended  to continue to use [10XRightCoset[110X for all serious calculations. The
-  methods  for  left  cosets  work  by  converting  [22XgU[122X  to [22XUg^-1[122X; applying the
-  equivalent method for right cosets; and, if necessary, converting back again
-  to left cosets.[133X
+  [33X[0;0YJust  for  the  sake of completeness, from August 2022 this package provides
+  the  operation  [10XLeftCoset(g,U)[110X for constructing the left coset [22XgU[122X. Users are
+  strongly   recommended  to  continue  to  use  [10XRightCoset[110X  for  all  serious
+  calculations,  since  left  cosets have a much simpler implementation and do
+  not behave exactly like right cosets.[133X
+  
+  [33X[0;0YThe  methods for left cosets which are provided generally work by converting
+  [22XgU[122X  to  [22XUg^-1[122X;  applying  the  equivalent  method  for right cosets; and, if
+  necessary, converting back again to left cosets.[133X
+  
+  [33X[0;0Y[22XG[122X acts on [22XgU[122X by [10XOnLeftInverse[110X: [22X(gU)^g_0 = g_0^-1*(gU) = (g_0^-1g)U[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -146,44 +151,33 @@
     [4X[28XGroup([ (1,2), (3,4) ])[128X[104X
     [4X[25Xgap>[125X [27XAsSet( lc1 );[127X[104X
     [4X[28X[ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ][128X[104X
-    [4X[25Xgap>[125X [27Xlc2 := (1,4) * lc1;   [127X[104X
-    [4X[28XLeftCoset((1,4,2,3),Group([ (1,2), (3,4) ]))[128X[104X
-    [4X[25Xgap>[125X [27Xlc1 = lc2;            [127X[104X
-    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X(1,2,3) in lc1;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xlc2 := (2,4,3) * lc1;   [127X[104X
+    [4X[28XLeftCoset((1,2,4),Group([ (1,2), (3,4) ]))[128X[104X
+    [4X[25Xgap>[125X [27Xlc3 := lc1^(2,3,4);;[127X[104X
+    [4X[25Xgap>[125X [27Xlc2 = lc3;            [127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.2-2 AssociatedRightCoset[101X
   
-  [33X[1;0Y[29X[2XAssociatedRightCoset[102X( [3Xlc[103X ) [32X attribute[133X
-  [33X[1;0Y[29X[2XAssociatedLeftCoset[102X( [3Xrc[103X ) [32X attribute[133X
+  [1X5.2-2 [33X[0;0YInverse[133X[101X
   
-  [33X[0;0YThese attributes implement the interchange [22XgU ∼ Ug^-1[122X described above.[133X
+  [33X[0;0YThe  inverse  of the left coset [22XgU[122X is the right coset [22XUg^-1[122X, and conversely.
+  This  is  an abuse of the attribute [10XInverse[110X, since the standard requirement,
+  that [22Xx*x^-1[122X is an identity, does not hold.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xrc1 := AssociatedRightCoset( lc1 ); [127X[104X
+    [4X[25Xgap>[125X [27Xrc1 := Inverse( lc1 ); [127X[104X
     [4X[28XRightCoset(Group([ (1,2), (3,4) ]),(1,3,2))[128X[104X
-    [4X[25Xgap>[125X [27Xrc3 := RightCoset( Group( (1,2), (2,3) ), (1,4) ); [127X[104X
-    [4X[28XRightCoset(Group([ (1,2), (2,3) ]),(1,4))[128X[104X
-    [4X[25Xgap>[125X [27Xlc3 := AssociatedLeftCoset( rc3 );[127X[104X
-    [4X[28XLeftCoset((1,4),Group([ (1,2), (2,3) ]))[128X[104X
-    [4X[25Xgap>[125X [27XIntersection( lc2, lc3 );[127X[104X
-    [4X[28X[ (1,4,2,3), (1,4)(2,3) ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X5.2-3 [33X[0;0YWarning: \in does not work correctly[133X[101X
-  
-  [33X[0;0YFor  some  reason  the  method  supplied  for  [10X\in[110X,  even  when given a high
-  priority,  is  not used, and [10Xfalse[110X is always returned. The following example
-  is obviously incorrect.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27X(1,4) in lc3;[127X[104X
-    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xrc4 := RightCoset( Group( (1,2), (2,3) ), (3,4) ); [127X[104X
+    [4X[28XRightCoset(Group([ (1,2), (2,3) ]),(3,4))[128X[104X
+    [4X[25Xgap>[125X [27Xlc4 := Inverse( rc4 );[127X[104X
+    [4X[28XLeftCoset((3,4),Group([ (1,2), (2,3) ]))[128X[104X
+    [4X[25Xgap>[125X [27XIntersection( lc2, lc4 );[127X[104X
+    [4X[28X[ (2,3,4), (1,2,3,4) ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
