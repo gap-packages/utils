@@ -37,7 +37,7 @@ the returned record does not have a <C>result</C> component in this case.
 <P/>
 <Example>
 <![CDATA[
-gap> url:= "https://github.com/gap-packages/utils/README.md";;
+gap> url:= "https://www.gap-system.org/Packages/utils.html";;
 gap> res:= Download( url );;
 gap> res.success;
 true
