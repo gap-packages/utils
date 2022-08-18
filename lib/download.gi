@@ -41,7 +41,7 @@ Add( Download_Methods, rec(
   download:= function( url, target )
     local res;
 
-    res:= ValueGlobal( "DownloadURL" )( url );
+    res:= ValueGlobal( "DownloadURL" )( url, rec( verifyCert:= false ) );
     if target <> fail then
       FileString( target, res.result );
       Unbind( res.result );
@@ -124,9 +124,9 @@ Add( Download_Methods, rec(
     outstream:= OutputTextString( res, true );
     exec:= Filename( DirectoriesSystemPrograms(), "curl" );
     if target = fail then
-      args:= [ "--silent", "-L", "--fail", "--output", "-", url ];
+      args:= [ "--silent", "-L", "--fail", "-k", "--output", "-", url ];
     else
-      args:= [ "--silent", "-L", "--fail", "--output", target, url ];
+      args:= [ "--silent", "-L", "--fail", "-k", "--output", target, url ];
     fi;
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
