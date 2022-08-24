@@ -74,9 +74,9 @@ Add( Download_Methods, rec(
       return rec( success:= false,
                   error:= Concatenation( "HTTP error code ", res.statuscode ) );
     elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
-      return rec( success:= true );
-    else
       return rec( success:= true, result:= res.body );
+    else
+      return rec( success:= true );
     fi;
   end ) );
 

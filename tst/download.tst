@@ -36,7 +36,7 @@ gap> urls:= urls{ [ 2, 3 ] };;
 gap> for pair in urls do
 >      url:= pair[1];
 >      expected:= pair[2];
->      res1:= List( meths, r -> [ r.download( url, fail ), r.position ] );;
+>      res1:= List( meths, r -> [ r.download( url, rec() ), r.position ] );;
 >      good1:= Filtered( res1, r -> r[1].success = true );;
 >      if expected = false and Length( good1 ) > 0 then
 >        Print( "success for url ", url, "?\n" );
@@ -47,7 +47,8 @@ gap> for pair in urls do
 >      fi;
 >      file:= Filename( DirectoryTemporary(), "test" );
 >      res2:= List( meths,
->               r -> [ r.download( url, Concatenation( file, r.position ) ),
+>               r -> [ r.download( url,
+>                          rec( target:= Concatenation( file, r.position ) ) ),
 >                      r.position ] );;
 >      good2:= Filtered( res2, r -> r[1].success = true );;
 >      if expected = false and Length( good2 ) > 0 then
@@ -74,6 +75,9 @@ true
 gap> IsBound( res.result ) and IsString( res.result );
 true
 gap> res:= Download( Concatenation( url, "xxx" ) );;
+
+##  The following holds only if the curlInterface package is not loaded.
+##  (This inconsistency must be fixed, but how?)
 gap> res.success;
 false
 gap> IsBound( res.error ) and IsString( res.error );
