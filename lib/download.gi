@@ -36,23 +36,23 @@
 BindGlobal( "Download_Methods", [] );
 
 Add( Download_Methods, rec(
-  name:= "via CurlInterface",
+  name:= "via DownloadURL (from the CurlInterface package)",
   isAvailable:= {} -> IsBoundGlobal( "DownloadURL" ),
-  download:= function( url, target )
+  download:= function( url, opt )
     local res;
 
-    res:= ValueGlobal( "DownloadURL" )( url, rec( verifyCert:= false ) );
-    if target <> fail then
-      FileString( target, res.result );
+    res:= ValueGlobal( "DownloadURL" )( url, opt );
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      FileString( opt.target, res.result );
       Unbind( res.result );
     fi;
     return res;
   end ) );
 
 Add( Download_Methods, rec(
-  name:= "via SingleHTTPRequest",
+  name:= "via SingleHTTPRequest (from the IO package)",
   isAvailable:= {} -> IsBoundGlobal( "SingleHTTPRequest" ),
-  download:= function( url, target )
+  download:= function( url, opt )
     local rurl, pos, domain, uri, res;
 
     if not StartsWith( url, "http://" ) then
@@ -63,15 +63,17 @@ Add( Download_Methods, rec(
     pos:= Position( rurl, '/' );
     domain:= rurl{ [ 1 .. pos-1 ] };
     uri:= rurl{ [ pos .. Length( rurl ) ] };
-    if target = fail then
-      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri, rec(), false, false );
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri,
+                rec(), false, opt.target );
     else
-      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri, rec(), false, target );
+      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri,
+                rec(), false, false );
     fi;
     if res.statuscode >= 400 then
       return rec( success:= false,
                   error:= Concatenation( "HTTP error code ", res.statuscode ) );
-    elif target <> fail then
+    elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
       return rec( success:= true );
     else
       return rec( success:= true, result:= res.body );
@@ -86,23 +88,23 @@ Add( Download_Methods, rec(
     exec:= Filename( DirectoriesSystemPrograms(), "wget" );
     return exec <> fail and IsExecutableFile( exec );
   end,
-  download:= function( url, target )
+  download:= function( url, opt )
     local res, outstream, exec, args, code;
 
     res:= "";
     outstream:= OutputTextString( res, true );
     exec:= Filename( DirectoriesSystemPrograms(), "wget" );
-    if target = fail then
-      args:= [ "--quiet", "-O", "-", url ];
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      args:= [ "--quiet", "-O", opt.target, url ];
     else
-      args:= [ "--quiet", "-O", target, url ];
+      args:= [ "--quiet", "-O", "-", url ];
     fi;
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
     if code <> 0 then
       return rec( success:= false,
                   error:= Concatenation( "Process returned ", String( code ) ) );
-    elif target = fail then
+    elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
       return rec( success:= true, result:= res );
     else
       return rec( success:= true );
@@ -117,23 +119,29 @@ Add( Download_Methods, rec(
     exec:= Filename( DirectoriesSystemPrograms(), "curl" );
     return exec <> fail and IsExecutableFile( exec );
   end,
-  download:= function( url, target )
+  download:= function( url, opt )
     local res, outstream, exec, args, code;
 
     res:= "";
     outstream:= OutputTextString( res, true );
     exec:= Filename( DirectoriesSystemPrograms(), "curl" );
-    if target = fail then
-      args:= [ "--silent", "-L", "--fail", "-k", "--output", "-", url ];
-    else
-      args:= [ "--silent", "-L", "--fail", "-k", "--output", target, url ];
+    args:= [ "--silent", "-L", "--fail" ];
+    if IsBound( opt.verifyCert ) and opt.verifyCert = false then
+      Add( args, "-k" );
     fi;
+    Add( args, "--output" );
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      Add( args, opt.target );
+    else
+      Add( args, "-" );
+    fi;
+    Add( args, url );
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
     if code <> 0 then
       return rec( success:= false,
                   error:= Concatenation( "Process returned ", String( code ) ) );
-    elif target = fail then
+    elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
       return rec( success:= true, result:= res );
     else
       return rec( success:= true );
@@ -157,28 +165,34 @@ InstallMethod( Download,
 InstallMethod( Download,
     [ "IsString", "IsRecord" ],
     function( url, opt )
-    local target, r, res;
-
-    if IsBound( opt.target ) and IsString( opt.target ) then
-      target:= opt.target;
-    else
-      target:= fail;
-    fi;
+    local none_available, r, res;
 
     # Run over the methods.
+    none_available:= true;
     for r in Download_Methods do
       if r.isAvailable() then
         Info( InfoUtils, 2, "try Download method ", r.name );
-        res:= r.download( url, target );
+        res:= r.download( url, opt );
         if res.success = true then
           return res;
         fi;
         Info( InfoUtils, 2, "Download method ", r.name, " failed with\n",
               "#I    ", res.error );
+        none_available:= false;
       else
         Info( InfoUtils, 2, "Download method ", r.name, " is not available" );
       fi;
     od;
+
+    # No method was successful.
+    if none_available then
+      # If no method was available then inform the user
+      # that it is recommended to load or install some download tool.
+      Info( InfoWarning, 1,
+            "No 'Download' method is available.\n",
+            "#I  Please consider to install one of the tools, ",
+            "see '?Download'" );
+    fi;
 
     return rec( success:= false, error:= "no method was applicable" );
     end );

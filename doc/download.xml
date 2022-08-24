@@ -29,11 +29,33 @@ whose value is a string that contains the contents of the downloaded file.
 In the latter case, the component <C>error</C> is bound,
 whose value is a string that describes the problem.
 <P/>
+The function calls the methods stored in the global list
+<C>Download_Methods</C> until one of them is successful.
+Currently there are methods based on the &GAP; functions
+<Ref Func="DownloadURL" BookName="curl"/> and
+<Ref Func="SingleHTTPRequest" BookName="io"/>,
+and methods based on the external programs <C>wget</C> and <C>curl</C>.
+<P/>
 An optional record <A>opt</A> can be given.
-If the component <C>target</C> is bound in <A>opt</A> then
-its value must be a string that is a local filename,
-and the function writes the downloaded contents to this file;
-the returned record does not have a <C>result</C> component in this case.
+The following components are supported.
+<P/>
+<List>
+<Mark><C>target</C></Mark>
+<Item>
+  If this component is bound then its value must be a string
+  that is a local filename,
+  and the function writes the downloaded contents to this file;
+  the returned record does not have a <C>result</C> component in this case.
+</Item>
+<Mark><C>verifyCert</C></Mark>
+<Item>
+  If this component is bound and has the value <K>false</K>
+  then those download methods that are based on <C>curl</C> will
+  omit the check of the server's certificate,
+  by calling <C>curl</C> with the <C>-k</C> option or setting the
+  <C>libcurl</C> option <C>CURLOPT_SSL_VERIFYPEER</C> to <C>0</C>.
+</Item>
+</List>
 <P/>
 <Example>
 <![CDATA[
