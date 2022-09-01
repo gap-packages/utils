@@ -20,14 +20,6 @@
 ##  Note that currently the methods are *NOT* consistent in the case of
 ##  failures:
 ##
-##  - The function 'DownloadURL' does not admit specifying that error codes
-##    >= 400 are regarded as failures.
-##    ('CURLOPT_FAILONERROR' cannot be set via the GAP interface.)
-##    If one asks for a nonexisting file then the "via CurlInterface" method
-##    returns a record in which 'success' is set to 'true',
-##    and 'result' explains the problem.
-##    The other methods set 'success' to 'false'.
-##
 ##  - The function 'SingleHTTPRequest' does not regard the error code 301
 ##    as failure.
 ##    This happens for example if one asks for the file at
@@ -42,6 +34,21 @@ Add( Download_Methods, rec(
     local res;
 
     res:= ValueGlobal( "DownloadURL" )( url, opt );
+
+    if res.success = false then
+      return res;
+    elif PositionSublist( res.result, "<title>404 Not Found</title>" ) <> fail then
+      # Catch the case that the file was not found.
+      # Note that the function 'DownloadURL' does not admit specifying
+      # that error codes >= 400 are regarded as failures.
+      # ('CURLOPT_FAILONERROR' cannot be set via the GAP interface.)
+      # If one asks for a nonexisting file then 'DownloadURL'
+      # returns a record in which 'success' is set to 'true',
+      # and 'result' explains the problem.
+      # We set 'success' to 'false' in this case.
+      return rec( success:= false,
+                  error:= "the requested URL was not found on this server" );
+    fi;
     if IsBound( opt.target ) and IsString( opt.target ) then
       FileString( opt.target, res.result );
       Unbind( res.result );
@@ -165,10 +172,10 @@ InstallMethod( Download,
 InstallMethod( Download,
     [ "IsString", "IsRecord" ],
     function( url, opt )
-    local none_available, r, res;
+    local errors, r, res;
 
     # Run over the methods.
-    none_available:= true;
+    errors:= [];
     for r in Download_Methods do
       if r.isAvailable() then
         Info( InfoUtils, 2, "try Download method ", r.name );
@@ -178,21 +185,24 @@ InstallMethod( Download,
         fi;
         Info( InfoUtils, 2, "Download method ", r.name, " failed with\n",
               "#I    ", res.error );
-        none_available:= false;
+        Add( errors, Concatenation( r.name, ": ", res.error ) );
       else
         Info( InfoUtils, 2, "Download method ", r.name, " is not available" );
       fi;
     od;
 
     # No method was successful.
-    if none_available then
-      # If no method was available then inform the user
+    if Length( errors ) = 0 then
+      # No method was available, inform the user
       # that it is recommended to load or install some download tool.
       Info( InfoWarning, 1,
             "No 'Download' method is available.\n",
             "#I  Please consider to install one of the tools, ",
             "see '?Download'" );
+      return rec( success:= false, error:= "no method was available" );
+    else
+      # At least one method was tried but without success.
+      return rec( success:= false,
+                  error:= JoinStringsWithSeparator( errors, "; " ) );
     fi;
-
-    return rec( success:= false, error:= "no method was applicable" );
     end );

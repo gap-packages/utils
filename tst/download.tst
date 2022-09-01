@@ -75,9 +75,6 @@ true
 gap> IsBound( res.result ) and IsString( res.result );
 true
 gap> res:= Download( Concatenation( url, "xxx" ) );;
-
-##  The following holds only if the curlInterface package is not loaded.
-##  (This inconsistency must be fixed, but how?)
 gap> res.success;
 false
 gap> IsBound( res.error ) and IsString( res.error );
