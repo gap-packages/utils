@@ -29,7 +29,7 @@ BindGlobal( "Download_Methods", [] );
 
 Add( Download_Methods, rec(
   name:= "via DownloadURL (from the CurlInterface package)",
-  isAvailable:= {} -> IsBoundGlobal( "DownloadURL" ),
+  isAvailable:= {} -> IsPackageLoaded( "CurlInterface" ),
   download:= function( url, opt )
     local res;
 
