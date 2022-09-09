@@ -28,28 +28,19 @@
 BindGlobal( "Download_Methods", [] );
 
 Add( Download_Methods, rec(
-  name:= "via DownloadURL (from the CurlInterface package)",
-  isAvailable:= {} -> IsPackageLoaded( "CurlInterface" ),
+  name:= "via DownloadURL (from the curlInterface package)",
+  isAvailable:= {} -> IsPackageLoaded( "curlInterface" ),
   download:= function( url, opt )
     local res;
 
+    opt:= ShallowCopy( opt );
+    if not IsBound( opt.failOnError ) then
+      opt.failOnError:= true;
+    fi;
     res:= ValueGlobal( "DownloadURL" )( url, opt );
 
-    if res.success = false then
-      return res;
-    elif PositionSublist( res.result, "<title>404 Not Found</title>" ) <> fail then
-      # Catch the case that the file was not found.
-      # Note that the function 'DownloadURL' does not admit specifying
-      # that error codes >= 400 are regarded as failures.
-      # ('CURLOPT_FAILONERROR' cannot be set via the GAP interface.)
-      # If one asks for a nonexisting file then 'DownloadURL'
-      # returns a record in which 'success' is set to 'true',
-      # and 'result' explains the problem.
-      # We set 'success' to 'false' in this case.
-      return rec( success:= false,
-                  error:= "the requested URL was not found on this server" );
-    fi;
-    if IsBound( opt.target ) and IsString( opt.target ) then
+    if res.success = true and
+       IsBound( opt.target ) and IsString( opt.target ) then
       FileString( opt.target, res.result );
       Unbind( res.result );
     fi;
@@ -77,7 +68,10 @@ Add( Download_Methods, rec(
       res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri,
                 rec(), false, false );
     fi;
-    if res.statuscode >= 400 then
+    if res.statuscode = 0 then
+      return rec( success:= false,
+                  error:= res.status );
+    elif res.statuscode >= 400 then
       return rec( success:= false,
                   error:= Concatenation( "HTTP error code ", res.statuscode ) );
     elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
