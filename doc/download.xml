@@ -50,10 +50,8 @@ The following components are supported.
 <Mark><C>verifyCert</C></Mark>
 <Item>
   If this component is bound and has the value <K>false</K>
-  then those download methods that are based on <C>curl</C> will
-  omit the check of the server's certificate,
-  by calling <C>curl</C> with the <C>-k</C> option or setting the
-  <C>libcurl</C> option <C>CURLOPT_SSL_VERIFYPEER</C> to <C>0</C>.
+  then those download methods that are based on <C>curl</C> or <C>wget</C>
+  will omit the check of the server's certificate.
 </Item>
 </List>
 <P/>

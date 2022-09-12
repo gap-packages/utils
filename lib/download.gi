@@ -29,7 +29,10 @@ BindGlobal( "Download_Methods", [] );
 
 Add( Download_Methods, rec(
   name:= "via DownloadURL (from the curlInterface package)",
-  isAvailable:= {} -> IsPackageLoaded( "curlInterface" ),
+  isAvailable:= {} -> IsPackageLoaded( "curlInterface" ) and
+                      CompareVersionNumbers(
+                          InstalledPackageVersion( "curlInterface" ),
+                          "2.3.0" ),
   download:= function( url, opt )
     local res;
 
@@ -99,6 +102,9 @@ Add( Download_Methods, rec(
       args:= [ "--quiet", "-O", opt.target, url ];
     else
       args:= [ "--quiet", "-O", "-", url ];
+    fi;
+    if IsBound( opt.verifyCert ) and opt.verifyCert = false then
+      Add( args, "--no-check-certificate" );
     fi;
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );

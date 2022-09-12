@@ -7,7 +7,7 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.76",
+Version := "0.77",
 Date := "06/08/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
@@ -112,7 +112,7 @@ Dependencies := rec(
   NeededOtherPackages := [ [ "AutoDoc", ">= 2020.08.11" ], 
                            [ "GAPDoc", ">= 1.6.4" ], 
                            [ "polycyclic", ">= 2.16" ] ], 
-  SuggestedOtherPackages := [ ],
+  SuggestedOtherPackages := [ [ "curlInterface", ">= 2.3.0" ] ],
   ExternalConditions := [ ]
 ),
 
