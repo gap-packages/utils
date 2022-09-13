@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res;
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r;
 ##############################################################################
 ##
 #W  download.tst               Utils Package                     Thomas Breuer
@@ -69,15 +69,15 @@ gap> for pair in urls do
 
 ##  the example from the manual
 gap> url:= "https://www.gap-system.org/Packages/utils.html";;
-gap> res:= Download( url );;
-gap> res.success;
+gap> res1:= Download( url );;
+gap> res1.success;
 true
-gap> IsBound( res.result ) and IsString( res.result );
+gap> IsBound( res1.result ) and IsString( res1.result );
 true
-gap> res:= Download( Concatenation( url, "xxx" ) );;
-gap> res.success;
+gap> res2:= Download( Concatenation( url, "xxx" ) );;
+gap> res2.success;
 false
-gap> IsBound( res.error ) and IsString( res.error );
+gap> IsBound( res2.error ) and IsString( res2.error );
 true
 
 #############################################################################
