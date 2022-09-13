@@ -109,6 +109,11 @@ Add( Download_Methods, rec(
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
     if code <> 0 then
+      # wget may have created the target file; try to remove it
+      if IsBound( opt.target ) and IsString( opt.target ) and
+         IsExistingFile( opt.target ) and RemoveFile( opt.target ) <> true then
+        Error( "Download cannot remove unwanted file ", opt.target );
+      fi;
       return rec( success:= false,
                   error:= Concatenation( "Process returned ", String( code ) ) );
     elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
