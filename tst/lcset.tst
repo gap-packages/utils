@@ -1,3 +1,5 @@
+#@local  a, b, d, f, g, h, H1, H2, H3, K1, K2, K3, lc1, lc4, M, matcyc, rc5, s; 
+
 #############################################################################
 ##  adapted from gapdev/tst/tstinstall/cset.tst for left cosets 
 ## 

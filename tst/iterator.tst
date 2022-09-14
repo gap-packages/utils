@@ -1,8 +1,10 @@
+#@local  c3c3, cart, G, h, it1, it2, iter, iter0, iter4, iterL, L, n, pairs0, pairs4, pairsL, s3, s4; 
+
 ##############################################################################
 ##
 #W  iterator.tst                  Utils Package                    
 ##
-#Y  Copyright (C) 2015-2019, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;
