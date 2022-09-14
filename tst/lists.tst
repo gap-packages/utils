@@ -1,8 +1,10 @@
+#@local  C, c4, d16, gens, i, J, K, L, n, P, trans; 
+
 ##############################################################################
 ##
 #W  lists.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group
+#Y  Copyright (C) 2015-2022, The GAP Group
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;

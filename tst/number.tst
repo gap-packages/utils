@@ -1,8 +1,10 @@
+#@local  i, iter, n, p, sum; 
+
 ##############################################################################
 ##
 #W  number.tst                 Utils Package                       Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group
+#Y  Copyright (C) 2015-2022, The GAP Group
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;

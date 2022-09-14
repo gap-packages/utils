@@ -1,8 +1,10 @@
+#@local  L, s5; 
+
 ##############################################################################
 ##
 #W  print.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group
+#Y  Copyright (C) 2015-2022, The GAP Group
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;

@@ -1,3 +1,5 @@
+#@local  A, a, ac9, aq8, b, c, c1, c2, c2c6, c3, c4, c4c3, c6, c9, cp1, cp2, cp3, d, D12, d8, data, dp, epi, f, f1, f2, G, g, g1, g2, g3, genA, gens, i, idcopy, idem, idemc2, idemim, idemim2, im2, image2, images, imi, info, info2, info3, lc1, lc2, lc3, lc4, len, lfs, ok, Pfi, phi, q8, rc1, rc4, s3, S4, s4, UFS, ufs; 
+
 ##############################################################################
 ##
 #W  groups.tst                  Utils Package                    
