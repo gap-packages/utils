@@ -1,3 +1,4 @@
+#@local M, s1, n1, n2, N, s2;
 ##############################################################################
 ##
 #W  others.tst                   Utils Package                    
@@ -31,7 +32,7 @@ gap> LaTeXStringFactorsInt( Factorial(12) );
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        
-"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"
+"c5 := PermutationGroup<5|(1,2,3,4,5)>;\n"
 gap> ConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );
 "PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"
 gap> M := GL(2,5);;  Size(M); 
