@@ -1,4 +1,5 @@
-#@local  c3c3, cart, G, h, it1, it2, iter, iter0, iter4, iterL, L, n, pairs0, pairs4, pairsL, s3, s4; 
+#@local  c3c3, cart, G, h, it1, it2, iter, iter0, iter4, iterL
+#@local  L, n, pairs0, pairs4, pairsL, s3, s4
 
 ##############################################################################
 ##
