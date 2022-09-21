@@ -52,6 +52,11 @@ The following components are supported.
   If this component is bound and has the value <K>false</K>
   then those download methods that are based on <C>curl</C> or <C>wget</C>
   will omit the check of the server's certificate.
+
+  The same effect is achieved for all <Ref Func="Download"/> calls
+  by setting the user preference <C>DownloadVerifyCertificate</C>
+  (see <Ref Subsect="subsec-DownloadVerifyCertificate"/>) to <K>false</K>
+  and omitting the <C>verifyCert</C> component from <A>opt</A>.
 </Item>
 </List>
 <P/>
@@ -72,6 +77,26 @@ true
 </Example>
 </Description>
 </ManSection>
+
+<Subsection Label="subsec-DownloadVerifyCertificate">
+<Heading>User preference <C>DownloadVerifyCertificate</C></Heading>
+<Index Key="DownloadVerifyCertificate"><C>DownloadVerifyCertificate</C></Index>
+
+The value <K>true</K> (the default) means that the server's certificate
+is checked in calls of <Ref Func="Download"/>,
+such that nothing gets downloaded if the certificate is invalid.
+
+If the value is <K>false</K> then those download methods that are based on
+<C>curl</C> or <C>wget</C> will omit the check of the server's certificate.
+
+One can set the value of the preference to <C>val</C> via
+<Ref Func="SetUserPreference" BookName="ref"/>, by calling
+<C>SetUserPreference( "utils", "DownloadVerifyCertificate", val )</C>,
+and access the current value via 
+<Ref Func="UserPreference" BookName="ref"/>, by calling
+<C>UserPreference( "utils", "DownloadVerifyCertificate" )</C>.
+
+</Subsection>
 
 </Section>
 

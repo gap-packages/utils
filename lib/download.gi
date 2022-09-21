@@ -179,6 +179,12 @@ InstallMethod( Download,
     function( url, opt )
     local errors, r, res;
 
+    # Set the default for 'verifyCert' if necessary.
+    if not IsBound( opt.verifyCert ) and
+       UserPreference( "utils", "DownloadVerifyCertificate" ) = false then
+      opt.verifyCert:= false;
+    fi;
+
     # Run over the methods.
     errors:= [];
     for r in Download_Methods do
