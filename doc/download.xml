@@ -85,16 +85,23 @@ true
 The value <K>true</K> (the default) means that the server's certificate
 is checked in calls of <Ref Func="Download"/>,
 such that nothing gets downloaded if the certificate is invalid.
-
-If the value is <K>false</K> then those download methods that are based on
-<C>curl</C> or <C>wget</C> will omit the check of the server's certificate.
-
+<P/>
+If the value is <K>false</K> then download methods are supposed to omit
+the check of the server's certificate (this may not be supported by all
+download methods).
+<P/>
 One can set the value of the preference to <C>val</C> via
 <Ref Func="SetUserPreference" BookName="ref"/>, by calling
 <C>SetUserPreference( "utils", "DownloadVerifyCertificate", val )</C>,
 and access the current value via 
 <Ref Func="UserPreference" BookName="ref"/>, by calling
 <C>UserPreference( "utils", "DownloadVerifyCertificate" )</C>.
+<P/>
+We recommend leaving this preference at its default value <K>true</K>.
+But sometimes it can be necessary to change it, e.g. to work around issues
+with old operating systems which may not be able to correctly verify new
+certificates. In general it is better to update such a system, but if that is
+not an option, then disabling certificate checks may be a good last resort.
 
 </Subsection>
 

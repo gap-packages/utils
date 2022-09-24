@@ -20,8 +20,8 @@
 ##  Note that currently the methods are *NOT* consistent in the case of
 ##  failures:
 ##
-##  - The function 'SingleHTTPRequest' does not regard the error code 301
-##    as failure.
+##  - The function 'SingleHTTPRequest' does not follow redirects as indicated
+##    by HTTP status codes 301 and 302.
 ##    This happens for example if one asks for the file at
 ##    'http://www.gap-system.org/Packages/utils.html'.
 ##
