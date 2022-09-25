@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.77 for GAP 4.12.0 (25/09/22) 
+ * (25/09/22) added Download operation by Thomas Breuer - new Chapter 8 
+
 ## Version 0.76 for GAP 4.12.0 (06/08/22) 
  * (06/08/22) added LeftCoset operations 
 
