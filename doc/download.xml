@@ -11,6 +11,17 @@
 <Chapter Label="chap-download">
 <Heading>Web Downloads</Heading>
 
+The <C>Download</C> operation has been written by Thomas Breuer, 
+incorporating a number of suggestions from Max Horn, 
+for version 0.77 of <Package>Utils</Package>. 
+It implements downloading a file from within &GAP;. 
+It can use the <Package>IO</Package> or <Package>curlInterface</Package> 
+packages, or <E>wget</E> or <E>curl</E>, if installed, 
+and it can be extended with other download methods quite easily. 
+It is envisaged that, once other packages have started to use it, 
+and any problems have been addressed, that the functions will be transferred 
+to the main &GAP; library. 
+
 <Section Label="sec-download">
 <Heading>Functions for downloading files from the web</Heading>
 
@@ -63,15 +74,15 @@ The following components are supported.
 <Example>
 <![CDATA[
 gap> url:= "https://www.gap-system.org/Packages/utils.html";;
-gap> res:= Download( url );;
-gap> res.success;
+gap> res1:= Download( url );;
+gap> res1.success;
 true
-gap> IsBound( res.result ) and IsString( res.result );
+gap> IsBound( res1.result ) and IsString( res1.result );
 true
-gap> res:= Download( Concatenation( url, "xxx" ) );;
-gap> res.success;
+gap> res2:= Download( Concatenation( url, "xxx" ) );;
+gap> res2.success;
 false
-gap> IsBound( res.error ) and IsString( res.error );
+gap> IsBound( res2.error ) and IsString( res2.error );
 true
 ]]>
 </Example>
@@ -90,7 +101,7 @@ If the value is <K>false</K> then download methods are supposed to omit
 the check of the server's certificate (this may not be supported by all
 download methods).
 <P/>
-One can set the value of the preference to <C>val</C> via
+One can set the value of the preference to be <C>val</C> via 
 <Ref Func="SetUserPreference" BookName="ref"/>, by calling
 <C>SetUserPreference( "utils", "DownloadVerifyCertificate", val )</C>,
 and access the current value via 
@@ -98,7 +109,7 @@ and access the current value via
 <C>UserPreference( "utils", "DownloadVerifyCertificate" )</C>.
 <P/>
 We recommend leaving this preference at its default value <K>true</K>.
-But sometimes it can be necessary to change it, e.g. to work around issues
+Sometimes it can be necessary to change it, e.g. to work around issues
 with old operating systems which may not be able to correctly verify new
 certificates. In general it is better to update such a system, but if that is
 not an option, then disabling certificate checks may be a good last resort.
