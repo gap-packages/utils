@@ -4,31 +4,31 @@
   
   [[20XBCP97[120X]  [16XBosma,  W.,  Cannon, J. and Playoust, C.[116X, [17XThe Magma algebra system.
   {I}. The user language[117X, [18XJ. Symbolic Comput.[118X, [19X24[119X, 3-4 (1997), 235--265 pages,
-  ((    Computational    algebra    and    number   theory   (London,   1993)}
-  https://doi.org/10.1006/jsco.1996.0125 )).
+  (    Computational    algebra    and    number    theory   (London,   1993)}
+  https://doi.org/10.1006/jsco.1996.0125 ).
   
   [[20XGH16[120X]  [16XGutsche,  S. and Horn, M.[116X, [17XAutoDoc - Generate documentation from GAP
-  source    code    (Version    2016.12.04)[117X    (2016),    ((    GAP   package,
-  https://github.com/gap-packages/AutoDoc )).
+  source    code    (Version    2016.12.04)[117X    (2016),    (    GAP    package,
+  https://github.com/gap-packages/AutoDoc ).
   
   [[20XHor17[120X] [16XHorn, M.[116X, [17XGitHubPagesForGAP - Template for easily using GitHub Pages
-  within    GAP    packages    (Version   0.2)[117X   (2017),   ((   GAP   package,
-  https://gap-system.github.io/GitHubPagesForGAP/ )).
+  within    GAP    packages    (Version    0.2)[117X   (2017),   (   GAP   package,
+  https://gap-system.github.io/GitHubPagesForGAP/ ).
   
   [[20XKoh17a[120X]  [16XKohl,  S.[116X, [17XRCWA - Residue-Class-Wise Affine Groups (Version 4.5.1)[117X
-  (2017), (( GAP package, https://stefan-kohl.github.io/rcwa.html )).
+  (2017), ( GAP package, https://stefan-kohl.github.io/rcwa.html ).
   
   [[20XKoh17b[120X]  [16XKohl,  S.[116X,  [17XResClasses  -  Set-Theoretic Computations with Residue
-  Classes      (Version      4.6.0)[117X      (2017),      ((      GAP     package,
-  https://stefan-kohl.github.io/resclasses.html )).
+  Classes      (Version      4.6.0)[117X      (2017),      (      GAP      package,
+  https://stefan-kohl.github.io/resclasses.html ).
   
   [[20XLN17[120X]  [16XLübeck,  F.  and  Neunhöffer,  M.[116X, [17XGAPDoc (Version 1.6)[117X, RWTH Aachen
-  (2017),                   ((                   GAP                  package,
-  https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html )).
+  (2017),                   (                   GAP                   package,
+  https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html ).
   
   [[20XWAOU17[120X] [16XWensley, C. D., Alp, M., Odabas, A. and Uslu, E. O.[116X, [17XXMod - Crossed
-  Modules  and  Cat1-groups  in  GAP  (Version  2.64)[117X  (2017), (( GAP package,
-  https://github.com/gap-packages/xmod )).
+  Modules  and  Cat1-groups  in  GAP  (Version  2.64)[117X  (2017),  ( GAP package,
+  https://github.com/gap-packages/xmod ).
   
   
   

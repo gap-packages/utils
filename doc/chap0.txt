@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.76
+                                      0.77
   
   
-                                 6 August 2022
+                               25 September 2022
   
   
                                  Thomas Breuer
@@ -141,21 +141,25 @@
   7 [33X[0;0YRecords[133X
     7.1 [33X[0;0YFunctions for records[133X
       7.1-1 AssignGlobals
-  8 [33X[0;0YVarious other functions[133X
-    8.1 [33X[0;0YFile operations[133X
-      8.1-1 Log2HTML
-    8.2 [33X[0;0YLaTeX strings[133X
-      8.2-1 IntOrOnfinityToLaTeX
-      8.2-2 LaTeXStringFactorsInt
-    8.3 [33X[0;0YConversion to [22XMagma[122X string[133X
-      8.3-1 ConvertToMagmaInputString
-  9 [33X[0;0YObsolete functions[133X
-    9.1 [33X[0;0YOperations from AutoDoc[133X
-    9.2 [33X[0;0YFunctions for printing[133X
-    9.3 [33X[0;0YOther obsolete functions[133X
-      9.3-1 [33X[0;0YApplicable Methods[133X
-      9.3-2 [33X[0;0YExponentOfPrime[133X
-  10 [33X[0;0YThe transfer procedure[133X
+  8 [33X[0;0YWeb Downloads[133X
+    8.1 [33X[0;0YFunctions for downloading files from the web[133X
+      8.1-1 Download
+      8.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[133X
+  9 [33X[0;0YVarious other functions[133X
+    9.1 [33X[0;0YFile operations[133X
+      9.1-1 Log2HTML
+    9.2 [33X[0;0YLaTeX strings[133X
+      9.2-1 IntOrOnfinityToLaTeX
+      9.2-2 LaTeXStringFactorsInt
+    9.3 [33X[0;0YConversion to [22XMagma[122X string[133X
+      9.3-1 ConvertToMagmaInputString
+  10 [33X[0;0YObsolete functions[133X
+    10.1 [33X[0;0YOperations from AutoDoc[133X
+    10.2 [33X[0;0YFunctions for printing[133X
+    10.3 [33X[0;0YOther obsolete functions[133X
+      10.3-1 [33X[0;0YApplicable Methods[133X
+      10.3-2 [33X[0;0YExponentOfPrime[133X
+  11 [33X[0;0YThe transfer procedure[133X
   
   
   [32X

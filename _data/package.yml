@@ -1,6 +1,6 @@
 name: utils
-version: 0.76
-date: 2022-08-06
+version: 0.77
+date: 2022-09-25
 description: |
     Utility functions in GAP
 
@@ -37,15 +37,20 @@ needed-pkgs:
       version: ">= 2.16"
       url: "https://gap-packages.github.io/polycyclic/"
 
+suggested-pkgs:
+    - name: "curlInterface"
+      version: ">= 2.3.0"
+      url: "https://gap-packages.github.io/curlInterface/"
+
 www: https://gap-packages.github.io/utils
 readme: README.md
 packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.76/utils-0.76.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.77/utils-0.77.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.76/utils-0.76.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.77/utils-0.77.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.

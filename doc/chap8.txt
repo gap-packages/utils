@@ -1,126 +1,87 @@
   
-  [1X8 [33X[0;0YVarious other functions[133X[101X
+  [1X8 [33X[0;0YWeb Downloads[133X[101X
+  
+  [33X[0;0YThe  [10XDownload[110X  operation  has been written by Thomas Breuer, incorporating a
+  number  of  suggestions  from  Max  Horn,  for  version  0.77  of  [5XUtils[105X. It
+  implements  downloading  a  file  from  within  [5XGAP[105X.  It  can  use the [5XIO[105X or
+  [5XcurlInterface[105X  packages,  or  [13Xwget[113X  or  [13Xcurl[113X,  if  installed,  and it can be
+  extended  with  other  download  methods quite easily. It is envisaged that,
+  once  other  packages  have  started  to  use it, and any problems have been
+  addressed, that the functions will be transferred to the main [5XGAP[105X library.[133X
   
   
-  [1X8.1 [33X[0;0YFile operations[133X[101X
+  [1X8.1 [33X[0;0YFunctions for downloading files from the web[133X[101X
   
-  [1X8.1-1 Log2HTML[101X
+  [1X8.1-1 Download[101X
   
-  [33X[1;0Y[29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XDownload[102X( [3Xurl[103X[, [3Xopt[103X] ) [32X function[133X
   
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  [33X[0;0YThis  function  downloads the file with the web address [3Xurl[103X, which must be a
+  string.[133X
   
-  [33X[0;0YThis function converts the [5XGAP[105X logfile [11Xfilename[111X to HTML. It appears that the
-  logfile should be in your current directory. The extension of the input file
-  must  be  [11X*.log[111X.  The  name of the output file is the same as the one of the
-  input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X. There is a
-  sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to your taste.[133X
+  [33X[0;0YThe  result is a record which has at least the component [10Xsuccess[110X, with value
+  [9Xtrue[109X if the download was successful and [9Xfalse[109X otherwise. In the former case,
+  the  component  [10Xresult[110X  is  bound, whose value is a string that contains the
+  contents  of the downloaded file. In the latter case, the component [10Xerror[110X is
+  bound, whose value is a string that describes the problem.[133X
+  
+  [33X[0;0YThe  function  calls  the methods stored in the global list [10XDownload_Methods[110X
+  until  one  of  them is successful. Currently there are methods based on the
+  [5XGAP[105X  functions  [2XDownloadURL[102X  ([14Xcurl:  DownloadURL[114X) and [2XSingleHTTPRequest[102X ([14XIO:
+  SingleHTTPRequest[114X),  and  methods  based  on  the external programs [10Xwget[110X and
+  [10Xcurl[110X.[133X
+  
+  [33X[0;0YAn optional record [3Xopt[103X can be given. The following components are supported.[133X
+  
+  [8X[10Xtarget[110X[8X[108X
+        [33X[0;6YIf  this  component is bound then its value must be a string that is a
+        local  filename,  and  the  function writes the downloaded contents to
+        this  file;  the  returned  record does not have a [10Xresult[110X component in
+        this case.[133X
+  
+  [8X[10XverifyCert[110X[8X[108X
+        [33X[0;6YIf this component is bound and has the value [9Xfalse[109X then those download
+        methods  that  are  based  on  [10Xcurl[110X or [10Xwget[110X will omit the check of the
+        server's  certificate.  The  same  effect is achieved for all [2XDownload[102X
+        calls  by  setting  the user preference [10XDownloadVerifyCertificate[110X (see
+        [14X8.1-2[114X) to [9Xfalse[109X and omitting the [10XverifyCert[110X component from [3Xopt[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XLogTo( "triv.log" );[127X[104X
-    [4X[25Xgap>[125X [27Xa := 33^5;[127X[104X
-    [4X[28X39135393[128X[104X
-    [4X[25Xgap>[125X [27XLogTo(); [127X[104X
-    [4X[25Xgap>[125X [27XLog2HTML( "triv.log" );     [127X[104X
+    [4X[25Xgap>[125X [27Xurl:= "https://www.gap-system.org/Packages/utils.html";;[127X[104X
+    [4X[25Xgap>[125X [27Xres1:= Download( url );;[127X[104X
+    [4X[25Xgap>[125X [27Xres1.success;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsBound( res1.result ) and IsString( res1.result );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xres2:= Download( Concatenation( url, "xxx" ) );;[127X[104X
+    [4X[25Xgap>[125X [27Xres2.success;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsBound( res2.error ) and IsString( res2.error );[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X8.2 [33X[0;0YLaTeX strings[133X[101X
+  [1X8.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[101X[1X[133X[101X
   
-  [1X8.2-1 IntOrOnfinityToLaTeX[101X
+  [33X[0;0YThe  value [9Xtrue[109X (the default) means that the server's certificate is checked
+  in  calls  of  [2XDownload[102X  ([14X8.1-1[114X),  such  that nothing gets downloaded if the
+  certificate is invalid.[133X
   
-  [33X[1;0Y[29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function[133X
+  [33X[0;0YIf  the  value is [9Xfalse[109X then download methods are supposed to omit the check
+  of  the  server's  certificate  (this  may  not be supported by all download
+  methods).[133X
   
-  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
+  [33X[0;0YOne  can  set  the  value  of the preference to be [10Xval[110X via [2XSetUserPreference[102X
+  ([14XReference:   SetUserPreference[114X),  by  calling  [10XSetUserPreference(  "utils",
+  "DownloadVerifyCertificate",  val  )[110X,  and  access  the  current  value  via
+  [2XUserPreference[102X   ([14XReference:  UserPreference[114X),  by  calling  [10XUserPreference(
+  "utils", "DownloadVerifyCertificate" )[110X.[133X
   
-  [33X[0;0Y[10XIntOrInfinityToLaTeX(n)[110X returns the LaTeX string for [3Xn[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( 10^3 );[127X[104X
-    [4X[28X"1000"[128X[104X
-    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( infinity );[127X[104X
-    [4X[28X"\\infty"[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  [1X8.2-2 LaTeXStringFactorsInt[101X
-  
-  [33X[1;0Y[29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function[133X
-  
-  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
-  
-  [33X[0;0YIt  returns  the  prime  factorization of the integer [22Xn[122X as a string in LaTeX
-  format.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XLaTeXStringFactorsInt( Factorial(12) );[127X[104X
-    [4X[28X"2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  
-  [1X8.3 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
-  
-  [1X8.3-1 ConvertToMagmaInputString[101X
-  
-  [33X[1;0Y[29X[2XConvertToMagmaInputString[102X( [3Xarg[103X ) [32X function[133X
-  
-  [33X[0;0YThe  function  [10XConvertToMagmaInputString( obj [, str] )[110X attempts to output a
-  string  [10Xs[110X  which  can  be  read into [22XMagma[122X [BCP97] so as to produce the same
-  group in that computer algebra system. In the second form the user specifies
-  the  name  of  the  resulting object, so that the output string has the form
-  [10X"str   :=   ..."[110X.   When   [10Xobj[110X   is   a  permutation  group,  the  operation
-  [10XPermGroupToMagmaFormat(obj)[110X  is  called.  This  function has been taken from
-  [11Xother.gi[111X  in the main library where it was called [10XMagmaInputString[110X. When [10Xobj[110X
-  is  a  pc-group,  the  operation  [10XPcGroupToMagmaFormat(obj)[110X  is called. This
-  function  was  private  code  of Max Horn. When [10Xobj[110X is a matrix group over a
-  finite  field,  the  operation [10XMatrixGroupToMagmaFormat(obj)[110X is called. This
-  function is a modification of private code of Frank Lübeck.[133X
-  
-  [33X[0;0YHopefully code for other types of group will be added in due course.[133X
-  
-  [33X[0;0YThese  functions  should  be  considered  [13Xexperimental[113X,  and more testing is
-  desirable.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );[127X[104X
-    [4X[28X"PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        [127X[104X
-    [4X[28X"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );[127X[104X
-    [4X[28X"PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XM := GL(2,5);;  Size(M); [127X[104X
-    [4X[28X480[128X[104X
-    [4X[25Xgap>[125X [27Xs1 := ConvertToMagmaInputString( M );[127X[104X
-    [4X[28X"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub<P |\[128X[104X
-    [4X[28X gens>;\n"[128X[104X
-    [4X[25Xgap>[125X [27XPrint( s1 );[127X[104X
-    [4X[28XF := GF(5);[128X[104X
-    [4X[28XP := GL(2,F);[128X[104X
-    [4X[28Xgens := [[128X[104X
-    [4X[28XP![2,0,0,1],[128X[104X
-    [4X[28XP![4,1,4,0][128X[104X
-    [4X[28X];[128X[104X
-    [4X[28Xsub<P | gens>;[128X[104X
-    [4X[25Xgap>[125X [27Xn1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;[127X[104X
-    [4X[25Xgap>[125X [27Xn2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;[127X[104X
-    [4X[25Xgap>[125X [27XN := Group( n1, n2 );;  Size( N );[127X[104X
-    [4X[28X5760[128X[104X
-    [4X[25Xgap>[125X [27Xs2 := ConvertToMagmaInputString( N, "gpN" );;[127X[104X
-    [4X[25Xgap>[125X [27XPrint( s2 );[127X[104X
-    [4X[28XF := GF(3^2);[128X[104X
-    [4X[28XP := GL(2,F);[128X[104X
-    [4X[28Xw := PrimitiveElement(F);[128X[104X
-    [4X[28Xgens := [[128X[104X
-    [4X[28XP![ 1, 1, 1,w^1],[128X[104X
-    [4X[28XP![ 1,w^3, 2,w^2][128X[104X
-    [4X[28X];[128X[104X
-    [4X[28XgpN := sub<P | gens>;[128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
+  [33X[0;0YWe recommend leaving this preference at its default value [9Xtrue[109X. Sometimes it
+  can be necessary to change it, e.g. to work around issues with old operating
+  systems  which  may  not  be  able  to correctly verify new certificates. In
+  general  it is better to update such a system, but if that is not an option,
+  then disabling certificate checks may be a good last resort.[133X
   

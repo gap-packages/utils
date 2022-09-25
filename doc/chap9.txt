@@ -1,94 +1,126 @@
   
-  [1X9 [33X[0;0YObsolete functions[133X[101X
+  [1X9 [33X[0;0YVarious other functions[133X[101X
   
   
-  [1X9.1 [33X[0;0YOperations from AutoDoc[133X[101X
+  [1X9.1 [33X[0;0YFile operations[133X[101X
   
-  [33X[0;0YThe file functions [10XFindMatchingFiles[110X and [10XCreateDirIfMissing[110X were copied from
-  package   [5XAutoDoc[105X   where   they  are  named  [10XAutoDoc_FindMatchingFiles[110X  and
-  [10XAutoDoc_CreateDirIfMissing[110X.[133X
+  [1X9.1-1 Log2HTML[101X
   
-  [33X[0;0YThe  string  function  [10XStringDotSuffix[110X was also copied from package [5XAutoDoc[105X,
-  where it is named [10XAUTODOC_GetSuffix[110X.[133X
+  [33X[1;0Y[29X[2XLog2HTML[102X( [3Xfilename[103X ) [32X function[133X
   
-  [33X[0;0YThe  function  [10XSetIfMissing[110X was also transferred from package [5XAutoDoc[105X, where
-  it  is  called  [10XAUTODOC_SetIfMissing[110X.  It  writes into a record provided the
-  position is not yet bound.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YAs  from  version  0.61,  all  these functions became obsolete in [5XUtils[105X, but
-  continue to be defined in [5XAutoDoc[105X.[133X
-  
-  
-  [1X9.2 [33X[0;0YFunctions for printing[133X[101X
-  
-  [33X[0;0YThe function [10XPrintOneItemPerLine[110X was used to prints lists vertically, rather
-  than horizontally. Since a very similar result may be achieved using the [5XGAP[105X
-  library  functions  [10XPerform[110X  and  [10XDisplay[110X,  this function became obsolete in
-  version 0.61.[133X
+  [33X[0;0YThis function converts the [5XGAP[105X logfile [11Xfilename[111X to HTML. It appears that the
+  logfile should be in your current directory. The extension of the input file
+  must  be  [11X*.log[111X.  The  name of the output file is the same as the one of the
+  input file except that the extension [11X*.log[111X is replaced by [11X*.html[111X. There is a
+  sample CSS file in [11Xutils/doc/gaplog.css[111X, which you can adjust to your taste.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xs3 := SymmetricGroup( 3 );; [127X[104X
-    [4X[25Xgap>[125X [27XL := KnownPropertiesOfObject( GeneratorsOfGroup( s3 ) );;[127X[104X
-    [4X[25Xgap>[125X [27XPerform( L, Display );[127X[104X
-    [4X[28XIsFinite[128X[104X
-    [4X[28XIsSmallList[128X[104X
-    [4X[28XIsGeneratorsOfMagmaWithInverses[128X[104X
-    [4X[28XIsGeneratorsOfSemigroup[128X[104X
-    [4X[28XIsSubsetLocallyFiniteGroup[128X[104X
-    [4X[25Xgap>[125X [27XPerform( s3, Display ); [127X[104X
-    [4X[28X()[128X[104X
-    [4X[28X(2,3)[128X[104X
-    [4X[28X(1,3)[128X[104X
-    [4X[28X(1,3,2)[128X[104X
-    [4X[28X(1,2,3)[128X[104X
-    [4X[28X(1,2)[128X[104X
+    [4X[25Xgap>[125X [27XLogTo( "triv.log" );[127X[104X
+    [4X[25Xgap>[125X [27Xa := 33^5;[127X[104X
+    [4X[28X39135393[128X[104X
+    [4X[25Xgap>[125X [27XLogTo(); [127X[104X
+    [4X[25Xgap>[125X [27XLog2HTML( "triv.log" );     [127X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X9.3 [33X[0;0YOther obsolete functions[133X[101X
+  [1X9.2 [33X[0;0YLaTeX strings[133X[101X
   
+  [1X9.2-1 IntOrOnfinityToLaTeX[101X
   
-  [1X9.3-1 [33X[0;0YApplicable Methods[133X[101X
+  [33X[1;0Y[29X[2XIntOrOnfinityToLaTeX[102X( [3Xn[103X ) [32X function[133X
   
-  [33X[0;0YThe function [10XPrintApplicableMethod[110X, which was included in versions from 0.41
-  to  0.58,  has been removed since it was considered superfluous. The example
-  shows how to print out a function.[133X
+  [33X[0;0YThis function has been transferred from package [5XResClasses[105X.[133X
+  
+  [33X[0;0Y[10XIntOrInfinityToLaTeX(n)[110X returns the LaTeX string for [3Xn[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );[127X[104X
-    [4X[28X#I  Searching Method for IsCyclic with 1 arguments:[128X[104X
-    [4X[28X#I  Total: 7 entries[128X[104X
-    [4X[28X#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: [128X[104X
-    [4X[28X36[128X[104X
-    [4X[28Xfunction( G ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XPrint( last );[127X[104X
-    [4X[28Xfunction ( G )[128X[104X
-    [4X[28X    if Length( GeneratorsOfGroup( G ) ) = 1 then[128X[104X
-    [4X[28X        return true;[128X[104X
-    [4X[28X    else[128X[104X
-    [4X[28X        TryNextMethod();[128X[104X
-    [4X[28X    fi;[128X[104X
-    [4X[28X    return;[128X[104X
-    [4X[28Xend[128X[104X
-    [4X[25Xgap>[125X [27XApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );[127X[104X
-    [4X[28Xfunction( <1 unnamed arguments> ) ... end[128X[104X
-    [4X[25Xgap>[125X [27XPrint( last );                                               [127X[104X
-    [4X[28Xfunction ( <<arg-1>> )[128X[104X
-    [4X[28X    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>[128X[104X
-    [4X[28Xend[128X[104X
+    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( 10^3 );[127X[104X
+    [4X[28X"1000"[128X[104X
+    [4X[25Xgap>[125X [27XIntOrInfinityToLaTeX( infinity );[127X[104X
+    [4X[28X"\\infty"[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-2 LaTeXStringFactorsInt[101X
+  
+  [33X[1;0Y[29X[2XLaTeXStringFactorsInt[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
+  
+  [33X[0;0YIt  returns  the  prime  factorization of the integer [22Xn[122X as a string in LaTeX
+  format.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XLaTeXStringFactorsInt( Factorial(12) );[127X[104X
+    [4X[28X"2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X9.3-2 [33X[0;0YExponentOfPrime[133X[101X
+  [1X9.3 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
   
-  [33X[0;0YThe  function  [10XExponentOfPrime[110X was originally transferred from package [5XRCWA[105X.
-  The command [10XExponentOfPrime([3Xn[103X[10X,[3Xp[103X[10X)[110X returned the exponent of the prime [3Xp[103X in the
-  prime factorization of [3Xn[103X.[133X
+  [1X9.3-1 ConvertToMagmaInputString[101X
   
-  [33X[0;0YSince  the  [5XGAP[105X  function  [10XPValuation[110X produces the same results, and does so
-  more quickly, this function has been made obsolete.[133X
+  [33X[1;0Y[29X[2XConvertToMagmaInputString[102X( [3Xarg[103X ) [32X function[133X
+  
+  [33X[0;0YThe  function  [10XConvertToMagmaInputString( obj [, str] )[110X attempts to output a
+  string  [10Xs[110X  which  can  be  read into [22XMagma[122X [BCP97] so as to produce the same
+  group in that computer algebra system. In the second form the user specifies
+  the  name  of  the  resulting object, so that the output string has the form
+  [10X"str   :=   ..."[110X.   When   [10Xobj[110X   is   a  permutation  group,  the  operation
+  [10XPermGroupToMagmaFormat(obj)[110X  is  called.  This  function has been taken from
+  [11Xother.gi[111X  in the main library where it was called [10XMagmaInputString[110X. When [10Xobj[110X
+  is  a  pc-group,  the  operation  [10XPcGroupToMagmaFormat(obj)[110X  is called. This
+  function  was  private  code  of Max Horn. When [10Xobj[110X is a matrix group over a
+  finite  field,  the  operation [10XMatrixGroupToMagmaFormat(obj)[110X is called. This
+  function is a modification of private code of Frank Lübeck.[133X
+  
+  [33X[0;0YHopefully code for other types of group will be added in due course.[133X
+  
+  [33X[0;0YThese  functions  should  be  considered  [13Xexperimental[113X,  and more testing is
+  desirable.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );[127X[104X
+    [4X[28X"PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        [127X[104X
+    [4X[28X"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );[127X[104X
+    [4X[28X"PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XM := GL(2,5);;  Size(M); [127X[104X
+    [4X[28X480[128X[104X
+    [4X[25Xgap>[125X [27Xs1 := ConvertToMagmaInputString( M );[127X[104X
+    [4X[28X"F := GF(5);\nP := GL(2,F);\ngens := [\nP![2,0,0,1],\nP![4,1,4,0]\n];\nsub<P |\[128X[104X
+    [4X[28X gens>;\n"[128X[104X
+    [4X[25Xgap>[125X [27XPrint( s1 );[127X[104X
+    [4X[28XF := GF(5);[128X[104X
+    [4X[28XP := GL(2,F);[128X[104X
+    [4X[28Xgens := [[128X[104X
+    [4X[28XP![2,0,0,1],[128X[104X
+    [4X[28XP![4,1,4,0][128X[104X
+    [4X[28X];[128X[104X
+    [4X[28Xsub<P | gens>;[128X[104X
+    [4X[25Xgap>[125X [27Xn1 := [ [ Z(9)^0, Z(9)^0 ], [ Z(9)^0, Z(9) ] ];;[127X[104X
+    [4X[25Xgap>[125X [27Xn2 := [ [ Z(9)^0, Z(9)^3 ], [ Z(9)^4, Z(9)^2 ] ];;[127X[104X
+    [4X[25Xgap>[125X [27XN := Group( n1, n2 );;  Size( N );[127X[104X
+    [4X[28X5760[128X[104X
+    [4X[25Xgap>[125X [27Xs2 := ConvertToMagmaInputString( N, "gpN" );;[127X[104X
+    [4X[25Xgap>[125X [27XPrint( s2 );[127X[104X
+    [4X[28XF := GF(3^2);[128X[104X
+    [4X[28XP := GL(2,F);[128X[104X
+    [4X[28Xw := PrimitiveElement(F);[128X[104X
+    [4X[28Xgens := [[128X[104X
+    [4X[28XP![ 1, 1, 1,w^1],[128X[104X
+    [4X[28XP![ 1,w^3, 2,w^2][128X[104X
+    [4X[28X];[128X[104X
+    [4X[28XgpN := sub<P | gens>;[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   
