@@ -19,7 +19,6 @@ ReadPackage( "utils", "lib/number.gi" );
 ReadPackage( "utils", "lib/print.gi" );
 ReadPackage( "utils", "lib/record.gi" );
 ReadPackage( "utils", "lib/string.gi" );
-version := GAPInfo.Version; 
-if not CompareVersionNumbers( version, "4.13.0" ) then 
+if not CompareVersionNumbers( GAPInfo.Version, "4.13.0" ) then 
     ReadPackage( "utils", "lib/download.gi" );
 fi; 
