@@ -19,8 +19,8 @@ TestDirectory(dir, rec(exitGAP := true,
     testOptions:=rec(compareFunction := "uptowhitespace")));
 
 ## download.tst now in tst-spec/ should only be run in early GAP versions 
-v := GAPInfo.Version; 
-if not CompareVersionNumbers( v, "4.13.0" ) then 
+version := GAPInfo.Version; 
+if not CompareVersionNumbers( version, "4.13.0" ) then 
     dir := DirectoriesPackageLibrary("utils","tst-spec");
     TestDirectory(dir, rec(exitGAP := true,
         testOptions:=rec(compareFunction := "uptowhitespace")));

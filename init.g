@@ -21,7 +21,7 @@ ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/print.gd" );
 ReadPackage( "utils", "lib/record.gd" );
 ReadPackage( "utils", "lib/string.gd" ); 
-v := GAPInfo.Version; 
-if not CompareVersionNumbers( v, "4.13.0" ) then 
+version := GAPInfo.Version; 
+if not CompareVersionNumbers( version, "4.13.0" ) then 
     ReadPackage( "utils", "lib/download.gd" );
 fi; 
