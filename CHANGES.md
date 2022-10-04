@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.77dev for GAP 4.12.0 (04/10/22) 
+ * (04/10/22) declared PreImagesRepresentativeNC in init.g 
+
 ## Version 0.77 for GAP 4.12.0 (25/09/22) 
  * (25/09/22) added Download operation by Thomas Breuer - new Chapter 8 
 

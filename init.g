@@ -5,6 +5,10 @@
 #Y  Copyright (C) 2015-2022, The GAP Group,  
 ##
 
+if not IsBound( PreImagesRepresentativeNC ) then 
+    BindGlobal( "PreImagesRepresentativeNC", PreImagesRepresentative ); 
+fi; 
+
 ##  read the function declarations
 
 ReadPackage( "utils", "lib/start.gd" );
@@ -20,5 +24,7 @@ ReadPackage( "utils", "lib/maps.gd" );
 ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/print.gd" );
 ReadPackage( "utils", "lib/record.gd" );
-ReadPackage( "utils", "lib/string.gd" );
-ReadPackage( "utils", "lib/download.gd" );
+ReadPackage( "utils", "lib/string.gd" ); 
+if not CompareVersionNumbers( GAPInfo.Version, "4.13.0" ) then 
+    ReadPackage( "utils", "lib/download.gd" );
+fi; 

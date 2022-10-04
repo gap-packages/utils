@@ -2,7 +2,7 @@
 ##
 #W  testall.g                   Utils Package                    Chris Wensley
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
@@ -17,4 +17,13 @@ fi;
 dir := DirectoriesPackageLibrary("utils","tst");
 TestDirectory(dir, rec(exitGAP := true,
     testOptions:=rec(compareFunction := "uptowhitespace")));
+
+## download.tst now in tst-spec/ should only be run in early GAP versions 
+version := GAPInfo.Version; 
+if not CompareVersionNumbers( version, "4.13.0" ) then 
+    dir := DirectoriesPackageLibrary("utils","tst-spec");
+    TestDirectory(dir, rec(exitGAP := true,
+        testOptions:=rec(compareFunction := "uptowhitespace")));
+fi; 
+
 FORCE_QUIT_GAP(1);
