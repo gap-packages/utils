@@ -99,7 +99,7 @@ gap> Intersection( lc2, lc4 );
 gap> G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;
 gap> phi := EpimorphismByGenerators( FreeGroup("a","b","c","d"), G );
 [ a, b, c, d ] -> [ (1,2,3), (3,4,5), (5,6,7), (7,8,9) ]
-gap> PreImagesRepresentative( phi, (1,2,3,4,5,6,7,8,9) );
+gap> PreImagesRepresentativeNC( phi, (1,2,3,4,5,6,7,8,9) );
 d*c*b*a
 gap> a := G.1;; b := G.2;; c := G.3;; d := G.4;;
 gap> d*c*b*a;

@@ -5,6 +5,10 @@
 #Y  Copyright (C) 2015-2022, The GAP Group,  
 ##
 
+if not IsBound( PreImagesRepresentativeNC ) then 
+    BindGlobal( "PreImagesRepresentativeNC", PreImagesRepresentative ); 
+fi; 
+
 ##  read the function declarations
 
 ReadPackage( "utils", "lib/start.gd" );
