@@ -40,6 +40,39 @@ InstallGlobalFunction( AssignGlobals,
           Set(names),"\n");
   end );
 
+
+InstallGlobalFunction( OptionRecordWithDefaults,
+  function(default, useroptions)
+    local name, ret;
+    ret := rec();
+
+    if IsList(useroptions) then
+      if IsEmpty(useroptions) then
+        return default;
+      elif Length(useroptions) = 1 then
+        useroptions := useroptions[1];
+      else
+        ErrorNoReturn("Too many arguments for function");
+      fi;
+    fi;
+
+    if not IsRecord(useroptions) then
+      ErrorNoReturn("Options should be a record");
+    fi;
+
+    ret := ShallowCopy(default);
+
+    for name in RecNames(useroptions) do
+      if not IsBound(default.(name)) then
+        ErrorNoReturn(Concatenation("Unknown option: " , name));
+      else
+        ret.(name) := useroptions.(name);
+      fi;
+    od;
+
+    return ret;
+  end);
+
 #############################################################################
 ##
 #E  record.gi  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here

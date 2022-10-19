@@ -36,6 +36,45 @@ gap> [a,b,c];
 ]]>
 </Example>
 
+<ManSection>
+   <Func Name="OptionRecordWithDefaults"
+         Arg="defaults, useroptions" />
+<Description>
+
+This function simplifies handling records which are intended
+to be used for expressing configuration options. <A>defaults</A>
+represents the a "default record", and <A>useroptions</A> lets
+the user give new values for values in <A>defaults</A>.
+<P/>
+The function returns a record with the same component names
+as <A>defaults</A> which has the same values as <A>defaults</A>,
+except for those component names in <A>useroptions</A>, where
+the values in <A>useroptions</A> are used instead.
+
+An error is given if <A>useroptions</A> contains any
+component names not in <A>defaults</A>.
+
+This function is designed to support functions with
+optional arguments given as a variadic argument, like
+<C>function(x,y,options...)</C>. To support this,
+if <A>useroptions</A> is an empty list it is treated as
+an empty record, and if <A>useroptions</A> is a list of length
+1 containing a record, this record is used as <A>useroptions</A>.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> defaults := rec(a := 1, b := 2);;
+gap> OptionRecordWithDefaults(defaults, rec(a := 7));
+rec( a := 7, b := 2 )
+gap> OptionRecordWithDefaults(defaults, rec(b := 7));
+rec( a := 1, b := 7 )
+gap> OptionRecordWithDefaults(defaults, rec(c := 7));
+Error, Unknown option: c
+]]>
+</Example>
+
 </Section>
 
 </Chapter>
