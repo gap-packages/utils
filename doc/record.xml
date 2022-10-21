@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2022, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -34,7 +34,12 @@ The following global variables have been assigned:
 gap> [a,b,c];
 [ 1, 2, 3 ]
 ]]>
-</Example>
+</Example> 
+
+</Section> 
+
+<Section Label="sec-options"> 
+<Heading>Option records for functions</Heading> 
 
 </Section> 
 
@@ -88,11 +93,13 @@ Error, Too many arguments for function
 This function is designed to support functions with optional arguments 
 given as a variable record, of the form <C>function(x,y,options...)</C>. 
 
-In the following, very contrived example function, <C>PrintDimensions</C>, 
+In the following, very contrived, example function, <C>PrintDimensions</C>, 
 the defaults are given by the variable <C>order</C> 
 which takes values <C>h</C>, <C>w</C> and <C>d</C> 
 having default values <M>1</M>, <M>2</M> and <M>3</M>. 
-These three values determine the order in which the three dimensions are printed.
+If there is a second argument, then 
+<C>OptionRecordWithDefaults( order, arg[2] );</C> is used to cvhange the values. 
+These three values then determine the order in which the three dimensions are printed using a <C>SortParallel</C> command. 
 
 <Listing>
 <![CDATA[
@@ -109,8 +116,10 @@ PrintDimensions := function( arg )
     len := Length( L );
     K := [ 1..len ]; 
     SortParallel( L, K ); 
-    Print( "dimensions: ", V[K[1]], " = ", dim[K[1]], ", " );
-    Print( V[K[2]], " = ", dim[K[2]], ", ", V[K[3]], " = ", dim[K[3]], "\n" );
+    Print( "dimensions: " ); 
+    Print( V[K[1]], " = ", dim[K[1]], ", " );
+    Print( V[K[2]], " = ", dim[K[2]], ", " );
+    Print( V[K[3]], " = ", dim[K[3]], "\n" );
 end;;
 ]]></Listing>
 
@@ -130,9 +139,6 @@ gap> PrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );
 dimensions: width = 31, depth = 17, height = 45
 ]]>
 </Example>
-
-
-
 
 </Section>
 
