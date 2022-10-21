@@ -15,6 +15,9 @@
 ##
 DeclareGlobalFunction( "AssignGlobals" );
 
+
+DeclareGlobalFunction( "OptionRecordWithDefaults" );
+
 #############################################################################
 ##
 #E  record.gd  . . . . . . . . . . . . . . . . . . . . . . . . . . . ends here
