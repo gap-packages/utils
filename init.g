@@ -25,6 +25,7 @@ ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/print.gd" );
 ReadPackage( "utils", "lib/record.gd" );
 ReadPackage( "utils", "lib/string.gd" ); 
-if not CompareVersionNumbers( GAPInfo.Version, "4.13.0" ) then 
+if not IsBound( Download ) then
     ReadPackage( "utils", "lib/download.gd" );
-fi; 
+    BindGlobal("DOWNLOAD_FROM_UTILS", true);
+fi;
