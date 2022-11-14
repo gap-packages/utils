@@ -41,17 +41,13 @@ gap> [a,b,c];
 <Section Label="sec-options"> 
 <Heading>Option records for functions</Heading> 
 
-</Section> 
-
-<Section Label="sec-options"> 
-<Heading>Option records for functions</Heading> 
-
 <ManSection>
    <Func Name="OptionRecordWithDefaults"
          Arg="defaults, useroptions" />
 <Description>
 
-This function simplifies handling records which are intended
+This functions has been transferred by Chris Jefferson from other packages. 
+It simplifies the handling of records which are intended
 to be used for expressing configuration options. 
 <A>defaults</A> represents the "default record", and <A>useroptions</A> 
 lets the user give new values for values in <A>defaults</A>.

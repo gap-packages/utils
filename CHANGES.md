@@ -1,6 +1,7 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.77dev for GAP 4.12.0 (04/10/22) 
+## Version 0.78 for GAP 4.12.1 (14/11/22) 
+ * (21/10/22) OptionRecordWithDefaults in 7.2 from Christopher Jefferson 
  * (04/10/22) declared PreImagesRepresentativeNC in init.g 
 
 ## Version 0.77 for GAP 4.12.0 (25/09/22) 
