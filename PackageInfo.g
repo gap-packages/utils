@@ -129,7 +129,7 @@ Autoload := false,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.12", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.12.1", 
   " - a collection of utility functions.\n"
 ),
 
