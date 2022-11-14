@@ -8,7 +8,7 @@ SetPackageInfo( rec(
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
 Version := "0.77dev",
-Date := "04/10/2022", # dd/mm/yyyy format
+Date := "21/10/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -47,6 +47,14 @@ Persons := [
     IsMaintainer  := false,
     Email         := "hulpke@math.colostate.edu",
     WWWHome       := "https://www.math.colostate.edu/~hulpke",
+  ),
+  rec(
+    LastName      := "Jefferson",
+    FirstNames    := "Christopher",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    WWWHome       := "https://caj.host.cs.st-andrews.ac.uk/",
+    Email         := "caj21@st-andrews.ac.uk",
   ),
   rec( 
     LastName      := "Kohl",

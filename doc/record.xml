@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  record.xml              Utils documentation                        -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2022, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -34,7 +34,17 @@ The following global variables have been assigned:
 gap> [a,b,c];
 [ 1, 2, 3 ]
 ]]>
-</Example>
+</Example> 
+
+</Section> 
+
+<Section Label="sec-options"> 
+<Heading>Option records for functions</Heading> 
+
+</Section> 
+
+<Section Label="sec-options"> 
+<Heading>Option records for functions</Heading> 
 
 <ManSection>
    <Func Name="OptionRecordWithDefaults"
@@ -42,36 +52,91 @@ gap> [a,b,c];
 <Description>
 
 This function simplifies handling records which are intended
-to be used for expressing configuration options. <A>defaults</A>
-represents the a "default record", and <A>useroptions</A> lets
-the user give new values for values in <A>defaults</A>.
+to be used for expressing configuration options. 
+<A>defaults</A> represents the "default record", and <A>useroptions</A> 
+lets the user give new values for values in <A>defaults</A>.
 <P/>
 The function returns a record with the same component names
-as <A>defaults</A> which has the same values as <A>defaults</A>,
-except for those component names in <A>useroptions</A>, where
-the values in <A>useroptions</A> are used instead.
+as <A>defaults</A> and which has the same values as <A>defaults</A>,
+except for those component names in <A>useroptions</A>, 
+where the values in <A>useroptions</A> are used instead.
 
 An error is given if <A>useroptions</A> contains any
 component names not in <A>defaults</A>.
 
-This function is designed to support functions with
-optional arguments given as a variadic argument, like
-<C>function(x,y,options...)</C>. To support this,
-if <A>useroptions</A> is an empty list it is treated as
-an empty record, and if <A>useroptions</A> is a list of length
-1 containing a record, this record is used as <A>useroptions</A>.
+If <A>useroptions</A> is an empty list it is treated as an empty record, 
+and if <A>useroptions</A> is a list of length <M>1</M> containing a record, 
+this record is used as <A>useroptions</A>.
 <P/>
 </Description>
 </ManSection>
 <Example>
 <![CDATA[
-gap> defaults := rec(a := 1, b := 2);;
-gap> OptionRecordWithDefaults(defaults, rec(a := 7));
-rec( a := 7, b := 2 )
-gap> OptionRecordWithDefaults(defaults, rec(b := 7));
-rec( a := 1, b := 7 )
-gap> OptionRecordWithDefaults(defaults, rec(c := 7));
-Error, Unknown option: c
+gap> defaults := rec( a := 1, b := 2, c := 3 );;
+gap> OptionRecordWithDefaults( defaults, rec( a := 6) );
+rec( a := 6, b := 2, c := 3 )
+gap> OptionRecordWithDefaults( defaults, rec( b := 7, c := 8 ) );
+rec( a := 1, b := 7, c := 8 )
+gap> OptionRecordWithDefaults( defaults, [ ] );
+rec( a := 1, b := 2, c := 3 )
+gap> OptionRecordWithDefaults( defaults, [ rec( c := 8 ) ] );
+rec( a := 1, b := 2, c := 8 )
+gap> OptionRecordWithDefaults( defaults, rec( d := 9 ) );
+Error, Unknown option: d
+gap> OptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );
+Error, Too many arguments for function
+gap> OptionRecordWithDefaults( defaults, [6,7,8] );
+Error, Too many arguments for function
+]]>
+</Example>
+
+This function is designed to support functions with optional arguments 
+given as a variable record, of the form <C>function(x,y,options...)</C>. 
+
+In the following, very contrived, example function, <C>PrintDimensions</C>, 
+the defaults are given by the variable <C>order</C> 
+which takes values <C>h</C>, <C>w</C> and <C>d</C> 
+having default values <M>1</M>, <M>2</M> and <M>3</M>. 
+If there is a second argument, then 
+<C>OptionRecordWithDefaults( order, arg[2] );</C> is used to cvhange the values. 
+These three values then determine the order in which the three dimensions are printed using a <C>SortParallel</C> command. 
+
+<Listing>
+<![CDATA[
+PrintDimensions := function( arg ) 
+    local nargs, dim, order, V, L, len, K, i; 
+    nargs := Length( arg ); 
+    dim := [ arg[1]!.height, arg[1]!.width, arg[1]!.depth ]; 
+    order := rec( h := 1, w := 2, d := 3 ); 
+    V := [ "height", "width", "depth" ]; 
+    if ( nargs > 1 ) and IsRecord( arg[2] ) then 
+        order := OptionRecordWithDefaults( order, arg[2] ); 
+    fi; 
+    L := [ order!.h, order!.w, order!.d ]; 
+    len := Length( L );
+    K := [ 1..len ]; 
+    SortParallel( L, K ); 
+    Print( "dimensions: " ); 
+    Print( V[K[1]], " = ", dim[K[1]], ", " );
+    Print( V[K[2]], " = ", dim[K[2]], ", " );
+    Print( V[K[3]], " = ", dim[K[3]], "\n" );
+end;;
+]]></Listing>
+
+In the example below the first call to <C>PrintDimensions</C> 
+has just one parameter, <C>mydim</C>, so the default order is used. 
+In the second call, alternate values for <C>h</C>, <C>w</C> and <C>d</C> 
+are given, causing the width to be printed first, 
+and then the depth and height.
+
+<Example>
+<![CDATA[
+gap> mydim := rec( height := 45, width := 31, depth := 17 ); 
+rec( depth := 17, height := 45, width := 31 )
+gap> PrintDimensions( mydim );
+dimensions: height = 45, width = 31, depth = 17
+gap> PrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );
+dimensions: width = 31, depth = 17, height = 45
 ]]>
 </Example>
 
