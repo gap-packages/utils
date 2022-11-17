@@ -4,7 +4,7 @@
 ##                                                           Alexander Hulpke
 ##                                                               Frank Lübeck
 ##                                                          
-#Y  Copyright (C) 2015-2017, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 
 #############################################################################
 ##

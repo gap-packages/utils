@@ -1,7 +1,9 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.78 for GAP 4.12.1 (14/11/22) 
- * (21/10/22) OptionRecordWithDefaults in 7.2 from Christopher Jefferson 
+## Version 0.78 for GAP 4.12.1 (17/11/22) 
+ * (17/11/22) removed (the dead) pcp option from PcGroupToMagmaFormat 
+              so that the dependency on Polycyclic could be removed 
+ * (21/10/22) added OptionRecordWithDefaults in 7.2 from Christopher Jefferson 
  * (04/10/22) declared PreImagesRepresentativeNC in init.g 
 
 ## Version 0.77 for GAP 4.12.0 (25/09/22) 
