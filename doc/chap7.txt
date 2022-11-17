@@ -24,3 +24,90 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  
+  [1X7.2 [33X[0;0YOption records for functions[133X[101X
+  
+  [1X7.2-1 OptionRecordWithDefaults[101X
+  
+  [33X[1;0Y[29X[2XOptionRecordWithDefaults[102X( [3Xdefaults[103X, [3Xuseroptions[103X ) [32X function[133X
+  
+  [33X[0;0YThis  functions has been transferred by Chris Jefferson from other packages.
+  It  simplifies  the  handling  of  records which are intended to be used for
+  expressing  configuration options. [3Xdefaults[103X represents the "default record",
+  and [3Xuseroptions[103X lets the user give new values for values in [3Xdefaults[103X.[133X
+  
+  [33X[0;0YThe  function returns a record with the same component names as [3Xdefaults[103X and
+  which  has  the same values as [3Xdefaults[103X, except for those component names in
+  [3Xuseroptions[103X,  where  the values in [3Xuseroptions[103X are used instead. An error is
+  given  if  [3Xuseroptions[103X  contains  any  component  names  not in [3Xdefaults[103X. If
+  [3Xuseroptions[103X  is  an  empty  list  it  is  treated as an empty record, and if
+  [3Xuseroptions[103X  is  a list of length [22X1[122X containing a record, this record is used
+  as [3Xuseroptions[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xdefaults := rec( a := 1, b := 2, c := 3 );;[127X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( a := 6) );[127X[104X
+    [4X[28Xrec( a := 6, b := 2, c := 3 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( b := 7, c := 8 ) );[127X[104X
+    [4X[28Xrec( a := 1, b := 7, c := 8 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ ] );[127X[104X
+    [4X[28Xrec( a := 1, b := 2, c := 3 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ rec( c := 8 ) ] );[127X[104X
+    [4X[28Xrec( a := 1, b := 2, c := 8 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( d := 9 ) );[127X[104X
+    [4X[28XError, Unknown option: d[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );[127X[104X
+    [4X[28XError, Too many arguments for function[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [6,7,8] );[127X[104X
+    [4X[28XError, Too many arguments for function[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis function is designed to support functions with optional arguments given
+  as   a  variable  record,  of  the  form  [10Xfunction(x,y,options...)[110X.  In  the
+  following,  very  contrived, example function, [10XPrintDimensions[110X, the defaults
+  are given by the variable [10Xorder[110X which takes values [10Xh[110X, [10Xw[110X and [10Xd[110X having default
+  values   [22X1[122X,   [22X2[122X   and   [22X3[122X.   If   there   is   a   second   argument,   then
+  [10XOptionRecordWithDefaults(  order,  arg[2]  );[110X is used to cvhange the values.
+  These  three  values  then determine the order in which the three dimensions
+  are printed using a [10XSortParallel[110X command.[133X
+  
+  [4X[32X[104X
+    [4X[104X
+    [4XPrintDimensions := function( arg ) [104X
+    [4X    local nargs, dim, order, V, L, len, K, i; [104X
+    [4X    nargs := Length( arg ); [104X
+    [4X    dim := [ arg[1]!.height, arg[1]!.width, arg[1]!.depth ]; [104X
+    [4X    order := rec( h := 1, w := 2, d := 3 ); [104X
+    [4X    V := [ "height", "width", "depth" ]; [104X
+    [4X    if ( nargs > 1 ) and IsRecord( arg[2] ) then [104X
+    [4X        order := OptionRecordWithDefaults( order, arg[2] ); [104X
+    [4X    fi; [104X
+    [4X    L := [ order!.h, order!.w, order!.d ]; [104X
+    [4X    len := Length( L );[104X
+    [4X    K := [ 1..len ]; [104X
+    [4X    SortParallel( L, K ); [104X
+    [4X    Print( "dimensions: " ); [104X
+    [4X    Print( V[K[1]], " = ", dim[K[1]], ", " );[104X
+    [4X    Print( V[K[2]], " = ", dim[K[2]], ", " );[104X
+    [4X    Print( V[K[3]], " = ", dim[K[3]], "\n" );[104X
+    [4Xend;;[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  the  example  below  the  first  call  to  [10XPrintDimensions[110X  has just one
+  parameter,  [10Xmydim[110X,  so  the  default  order  is  used.  In  the second call,
+  alternate  values  for [10Xh[110X, [10Xw[110X and [10Xd[110X are given, causing the width to be printed
+  first, and then the depth and height.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xmydim := rec( height := 45, width := 31, depth := 17 ); [127X[104X
+    [4X[28Xrec( depth := 17, height := 45, width := 31 )[128X[104X
+    [4X[25Xgap>[125X [27XPrintDimensions( mydim );[127X[104X
+    [4X[28Xdimensions: height = 45, width = 31, depth = 17[128X[104X
+    [4X[25Xgap>[125X [27XPrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );[127X[104X
+    [4X[28Xdimensions: width = 31, depth = 17, height = 45[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

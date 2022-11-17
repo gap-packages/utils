@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.77",
-Date := "25/09/2022", # dd/mm/yyyy format
+Version := "0.78",
+Date := "17/11/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -47,6 +47,14 @@ Persons := [
     IsMaintainer  := false,
     Email         := "hulpke@math.colostate.edu",
     WWWHome       := "https://www.math.colostate.edu/~hulpke",
+  ),
+  rec(
+    LastName      := "Jefferson",
+    FirstNames    := "Christopher",
+    IsAuthor      := true,
+    IsMaintainer  := false,
+    WWWHome       := "https://caj.host.cs.st-andrews.ac.uk/",
+    Email         := "caj21@st-andrews.ac.uk",
   ),
   rec( 
     LastName      := "Kohl",
@@ -109,9 +117,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.10.1",
-  NeededOtherPackages := [ [ "AutoDoc", ">= 2020.08.11" ], 
-                           [ "GAPDoc", ">= 1.6.4" ], 
-                           [ "polycyclic", ">= 2.16" ] ], 
+  NeededOtherPackages := [ ], 
   SuggestedOtherPackages := [ [ "curlInterface", ">= 2.3.0" ] ],
   ExternalConditions := [ ]
 ),
@@ -123,7 +129,7 @@ Autoload := false,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.12", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.12.1", 
   " - a collection of utility functions.\n"
 ),
 

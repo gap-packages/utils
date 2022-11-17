@@ -49,6 +49,7 @@
   MatrixGroupToMagmaFormat 9.3-1 
   [2XNextProbablyPrimeInt[102X 4.1-4 
   OKtoReadFromUtils 11. 
+  [2XOptionRecordWithDefaults[102X 7.2-1 
   PcGroupToMagmaFormat 9.3-1 
   PermGroupToMagmaFormat 9.3-1 
   [2XPrimeNumbersIterator[102X 4.1-5 

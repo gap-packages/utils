@@ -1,6 +1,6 @@
 name: utils
-version: 0.77
-date: 2022-09-25
+version: 0.78
+date: 2022-11-17
 description: |
     Utility functions in GAP
 
@@ -13,6 +13,8 @@ authors:
       url: https://github.com/mhorn
     - name: Alexander Hulpke
       url: https://www.math.colostate.edu/~hulpke
+    - name: Christopher Jefferson
+      url: https://caj.host.cs.st-andrews.ac.uk/
     - name: Stefan Kohl
       url: https://www.gap-system.org/DevelopersPages/StefanKohl/
     - name: Frank Lübeck
@@ -26,17 +28,6 @@ maintainers:
 
 GAP: ">=4.10.1"
 
-needed-pkgs:
-    - name: "AutoDoc"
-      version: ">= 2020.08.11"
-      url: "https://gap-packages.github.io/AutoDoc"
-    - name: "GAPDoc"
-      version: ">= 1.6.4"
-      url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "polycyclic"
-      version: ">= 2.16"
-      url: "https://gap-packages.github.io/polycyclic/"
-
 suggested-pkgs:
     - name: "curlInterface"
       version: ">= 2.3.0"
@@ -48,9 +39,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.77/utils-0.77.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.78/utils-0.78.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.77/utils-0.77.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.78/utils-0.78.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.

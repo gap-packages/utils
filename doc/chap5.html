@@ -252,7 +252,7 @@ LeftCoset((3,4),Group([ (1,2), (2,3) ]))
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">phi := EpimorphismByGenerators( FreeGroup("a","b","c","d"), G );</span>
 [ a, b, c, d ] -&gt; [ (1,2,3), (3,4,5), (5,6,7), (7,8,9) ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImagesRepresentative( phi, (1,2,3,4,5,6,7,8,9) );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImagesRepresentativeNC( phi, (1,2,3,4,5,6,7,8,9) );</span>
 d*c*b*a
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a := G.1;; b := G.2;; c := G.3;; d := G.4;;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d*c*b*a;</span>

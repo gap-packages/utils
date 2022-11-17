@@ -27,6 +27,11 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X84D82EB579B2ACCD">7.1-1 AssignGlobals</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X7E6207B47B9AA30C">7.2 <span class="Heading">Option records for functions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8322B9377CC590D2">7.2-1 OptionRecordWithDefaults</a></span>
+</div></div>
 </div>
 
 <h3>7 <span class="Heading">Records</span></h3>
@@ -53,6 +58,79 @@ The following global variables have been assigned:
 [ "a", "b", "c" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[a,b,c];</span>
 [ 1, 2, 3 ]
+
+</pre></div>
+
+<p><a id="X7E6207B47B9AA30C" name="X7E6207B47B9AA30C"></a></p>
+
+<h4>7.2 <span class="Heading">Option records for functions</span></h4>
+
+<p><a id="X8322B9377CC590D2" name="X8322B9377CC590D2"></a></p>
+
+<h5>7.2-1 OptionRecordWithDefaults</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OptionRecordWithDefaults</code>( <var class="Arg">defaults</var>, <var class="Arg">useroptions</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This functions has been transferred by Chris Jefferson from other packages. It simplifies the handling of records which are intended to be used for expressing configuration options. <var class="Arg">defaults</var> represents the "default record", and <var class="Arg">useroptions</var> lets the user give new values for values in <var class="Arg">defaults</var>.</p>
+
+<p>The function returns a record with the same component names as <var class="Arg">defaults</var> and which has the same values as <var class="Arg">defaults</var>, except for those component names in <var class="Arg">useroptions</var>, where the values in <var class="Arg">useroptions</var> are used instead. An error is given if <var class="Arg">useroptions</var> contains any component names not in <var class="Arg">defaults</var>. If <var class="Arg">useroptions</var> is an empty list it is treated as an empty record, and if <var class="Arg">useroptions</var> is a list of length <span class="SimpleMath">1</span> containing a record, this record is used as <var class="Arg">useroptions</var>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">defaults := rec( a := 1, b := 2, c := 3 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, rec( a := 6) );</span>
+rec( a := 6, b := 2, c := 3 )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, rec( b := 7, c := 8 ) );</span>
+rec( a := 1, b := 7, c := 8 )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, [ ] );</span>
+rec( a := 1, b := 2, c := 3 )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, [ rec( c := 8 ) ] );</span>
+rec( a := 1, b := 2, c := 8 )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, rec( d := 9 ) );</span>
+Error, Unknown option: d
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );</span>
+Error, Too many arguments for function
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OptionRecordWithDefaults( defaults, [6,7,8] );</span>
+Error, Too many arguments for function
+
+</pre></div>
+
+<p>This function is designed to support functions with optional arguments given as a variable record, of the form <code class="code">function(x,y,options...)</code>. In the following, very contrived, example function, <code class="code">PrintDimensions</code>, the defaults are given by the variable <code class="code">order</code> which takes values <code class="code">h</code>, <code class="code">w</code> and <code class="code">d</code> having default values <span class="SimpleMath">1</span>, <span class="SimpleMath">2</span> and <span class="SimpleMath">3</span>. If there is a second argument, then <code class="code">OptionRecordWithDefaults( order, arg[2] );</code> is used to cvhange the values. These three values then determine the order in which the three dimensions are printed using a <code class="code">SortParallel</code> command.</p>
+
+
+<div class="example"><pre>
+
+PrintDimensions := function( arg ) 
+    local nargs, dim, order, V, L, len, K, i; 
+    nargs := Length( arg ); 
+    dim := [ arg[1]!.height, arg[1]!.width, arg[1]!.depth ]; 
+    order := rec( h := 1, w := 2, d := 3 ); 
+    V := [ "height", "width", "depth" ]; 
+    if ( nargs &gt; 1 ) and IsRecord( arg[2] ) then 
+        order := OptionRecordWithDefaults( order, arg[2] ); 
+    fi; 
+    L := [ order!.h, order!.w, order!.d ]; 
+    len := Length( L );
+    K := [ 1..len ]; 
+    SortParallel( L, K ); 
+    Print( "dimensions: " ); 
+    Print( V[K[1]], " = ", dim[K[1]], ", " );
+    Print( V[K[2]], " = ", dim[K[2]], ", " );
+    Print( V[K[3]], " = ", dim[K[3]], "\n" );
+end;;
+</pre></div>
+
+<p>In the example below the first call to <code class="code">PrintDimensions</code> has just one parameter, <code class="code">mydim</code>, so the default order is used. In the second call, alternate values for <code class="code">h</code>, <code class="code">w</code> and <code class="code">d</code> are given, causing the width to be printed first, and then the depth and height.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mydim := rec( height := 45, width := 31, depth := 17 ); </span>
+rec( depth := 17, height := 45, width := 31 )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintDimensions( mydim );</span>
+dimensions: height = 45, width = 31, depth = 17
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );</span>
+dimensions: width = 31, depth = 17, height = 45
 
 </pre></div>
 
