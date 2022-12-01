@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.79 for GAP 4.12.1 (01/12/22) 
+ * (01/12/22) started the transfer of AlgebraHomomorphismByFunction
+              from both fr and xmodalg 
+
 ## Version 0.78 for GAP 4.12.1 (17/11/22) 
  * (17/11/22) removed (the dead) pcp option from PcGroupToMagmaFormat 
               so that the dependency on Polycyclic could be removed 
