@@ -1,87 +1,30 @@
   
-  [1X8 [33X[0;0YWeb Downloads[133X[101X
-  
-  [33X[0;0YThe  [10XDownload[110X  operation  has been written by Thomas Breuer, incorporating a
-  number  of  suggestions  from  Max  Horn,  for  version  0.77  of  [5XUtils[105X. It
-  implements  downloading  a  file  from  within  [5XGAP[105X.  It  can  use the [5XIO[105X or
-  [5XcurlInterface[105X  packages,  or  [13Xwget[113X  or  [13Xcurl[113X,  if  installed,  and it can be
-  extended  with  other  download  methods quite easily. It is envisaged that,
-  once  other  packages  have  started  to  use it, and any problems have been
-  addressed, that the functions will be transferred to the main [5XGAP[105X library.[133X
+  [1X8 [33X[0;0YAlgebras and their homomorphisms[133X[101X
   
   
-  [1X8.1 [33X[0;0YFunctions for downloading files from the web[133X[101X
+  [1X8.1 [33X[0;0YHomomorphisms by function[133X[101X
   
-  [1X8.1-1 Download[101X
+  [1X8.1-1 AlgebraHomomorphismByFunction[101X
   
-  [33X[1;0Y[29X[2XDownload[102X( [3Xurl[103X[, [3Xopt[103X] ) [32X function[133X
+  [33X[1;0Y[29X[2XAlgebraHomomorphismByFunction[102X( [3XA[103X, [3XB[103X, [3Xf[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XAlgebraWithOneHomomorphismByFunction[102X( [3XA[103X, [3XB[103X, [3Xf[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YA homomorphism from the algebra [3XA[103X to the algebra [3XB[103X.[133X
   
-  [33X[0;0YThis  function  downloads the file with the web address [3Xurl[103X, which must be a
-  string.[133X
+  [33X[0;0YThese  functions  have  been transferred from package [5XFR[105X. The first was also
+  transferred from the package [5XXModAlg[105X.[133X
   
-  [33X[0;0YThe  result is a record which has at least the component [10Xsuccess[110X, with value
-  [9Xtrue[109X if the download was successful and [9Xfalse[109X otherwise. In the former case,
-  the  component  [10Xresult[110X  is  bound, whose value is a string that contains the
-  contents  of the downloaded file. In the latter case, the component [10Xerror[110X is
-  bound, whose value is a string that describes the problem.[133X
-  
-  [33X[0;0YThe  function  calls  the methods stored in the global list [10XDownload_Methods[110X
-  until  one  of  them is successful. Currently there are methods based on the
-  [5XGAP[105X  functions  [2XDownloadURL[102X  ([14Xcurl:  DownloadURL[114X) and [2XSingleHTTPRequest[102X ([14XIO:
-  SingleHTTPRequest[114X),  and  methods  based  on  the external programs [10Xwget[110X and
-  [10Xcurl[110X.[133X
-  
-  [33X[0;0YAn optional record [3Xopt[103X can be given. The following components are supported.[133X
-  
-  [8X[10Xtarget[110X[8X[108X
-        [33X[0;6YIf  this  component is bound then its value must be a string that is a
-        local  filename,  and  the  function writes the downloaded contents to
-        this  file;  the  returned  record does not have a [10Xresult[110X component in
-        this case.[133X
-  
-  [8X[10XverifyCert[110X[8X[108X
-        [33X[0;6YIf this component is bound and has the value [9Xfalse[109X then those download
-        methods  that  are  based  on  [10Xcurl[110X or [10Xwget[110X will omit the check of the
-        server's  certificate.  The  same  effect is achieved for all [2XDownload[102X
-        calls  by  setting  the user preference [10XDownloadVerifyCertificate[110X (see
-        [14X8.1-2[114X) to [9Xfalse[109X and omitting the [10XverifyCert[110X component from [3Xopt[103X.[133X
+  [33X[0;0YThese  functions  construct  an  algebra  homomorphism  from  a one-argument
+  function.   They   do  not  check  that  the  function  actually  defines  a
+  homomorphism.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xurl:= "https://www.gap-system.org/Packages/utils.html";;[127X[104X
-    [4X[25Xgap>[125X [27Xres1:= Download( url );;[127X[104X
-    [4X[25Xgap>[125X [27Xres1.success;[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XIsBound( res1.result ) and IsString( res1.result );[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xres2:= Download( Concatenation( url, "xxx" ) );;[127X[104X
-    [4X[25Xgap>[125X [27Xres2.success;[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsBound( res2.error ) and IsString( res2.error );[127X[104X
-    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XA := MatrixAlgebra( Rationals, 2 );[127X[104X
+    [4X[28X( Rationals^[ 2, 2 ] )[128X[104X
+    [4X[25Xgap>[125X [27Xe1 := AlgebraHomomorphismByFunction( Rationals, A, f -> [[f,0],[0,0]] );[127X[104X
+    [4X[28XMappingByFunction( Rationals, ( Rationals^[ 2, 2 ] ), function( f ) ... end )[128X[104X
+    [4X[25Xgap>[125X [27X11^e1;[127X[104X
+    [4X[28X[ [ 11, 0 ], [ 0, 0 ] ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
-  
-  
-  [1X8.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[101X[1X[133X[101X
-  
-  [33X[0;0YThe  value [9Xtrue[109X (the default) means that the server's certificate is checked
-  in  calls  of  [2XDownload[102X  ([14X8.1-1[114X),  such  that nothing gets downloaded if the
-  certificate is invalid.[133X
-  
-  [33X[0;0YIf  the  value is [9Xfalse[109X then download methods are supposed to omit the check
-  of  the  server's  certificate  (this  may  not be supported by all download
-  methods).[133X
-  
-  [33X[0;0YOne  can  set  the  value  of the preference to be [10Xval[110X via [2XSetUserPreference[102X
-  ([14XReference:   SetUserPreference[114X),  by  calling  [10XSetUserPreference(  "utils",
-  "DownloadVerifyCertificate",  val  )[110X,  and  access  the  current  value  via
-  [2XUserPreference[102X   ([14XReference:  UserPreference[114X),  by  calling  [10XUserPreference(
-  "utils", "DownloadVerifyCertificate" )[110X.[133X
-  
-  [33X[0;0YWe recommend leaving this preference at its default value [9Xtrue[109X. Sometimes it
-  can be necessary to change it, e.g. to work around issues with old operating
-  systems  which  may  not  be  able  to correctly verify new certificates. In
-  general  it is better to update such a system, but if that is not an option,
-  then disabling certificate checks may be a good last resort.[133X
   
