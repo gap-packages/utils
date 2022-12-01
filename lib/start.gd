@@ -2,7 +2,7 @@
 ##
 #W  start.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2022, The GAP Group 
 
 DeclareInfoClass( "InfoUtils" );
 
@@ -12,7 +12,9 @@ DeclareInfoClass( "InfoUtils" );
 UtilsPackageVersions := 
   [ "autodoc",     "2016.01.31",    ## latest is 2017.09.08
     "resclasses",  "4.2.5",         ## latest is 4.7.1, 18/12/17 
-    "rcwa",        "4.1.5"          ## latest is 4.6.2, 26/06/18 
+    "rcwa",        "4.1.5",         ## latest is 4.6.2, 26/06/18 
+    "xmodalg",     "1.22",          ## latest is 1.22,  29/4/22  
+    "fr",          "2.4.11"         ## latest is 2.4.11, 21/10/22
   ];
 ##  (04/09/18) removed QPA from this list - no functions transferred 
 ##  (02/06/18) removed xmod from this list 
