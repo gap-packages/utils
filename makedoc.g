@@ -16,6 +16,7 @@ AutoDoc( rec(
                       "groups.xml",
                       "iterator.xml",
                       "record.xml",
+                      "algebras.xml",
                       "download.xml",
                       "others.xml",
                       "obsolete.xml",
@@ -23,9 +24,11 @@ AutoDoc( rec(
         bib := "bib.xml", 
         entities := rec( 
             AutoDoc := "<Package>AutoDoc</Package>",
+            fr := "<Package>FR</Package>",
             ResClasses := "<Package>ResClasses</Package>",
             RCWA := "<Package>RCWA</Package>",
             XMod := "<Package>XMod</Package>",
+            XModAlg := "<Package>XModAlg</Package>",
             Home := "<Package>Home</Package>",
             Magma := "<M>{\\sf Magma}</M>",
             MathJax := "<M>{\\sf MathJax}</M>"

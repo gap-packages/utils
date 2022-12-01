@@ -1,0 +1,44 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  algebras.xml              Utils documentation                      -->
+<!--                                                                     -->
+<!--  Copyright (C) 2015-2022, The GAP Group                             --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-algebras">
+<Heading>Algebras and their homomorphisms</Heading>
+
+<Section Label="sec-alghom">
+<Heading>Homomorphisms by function</Heading>
+
+<ManSection>
+   <Oper Name="AlgebraHomomorphismByFunction"        Arg="A B f" /> 
+   <Oper Name="AlgebraWithOneHomomorphismByFunction" Arg="A B f" />
+   <Returns>A homomorphism from the algebra <A>A</A> to the algebra <A>B</A>.
+   </Returns>
+<Description>
+These functions have been transferred from package &fr;. 
+The first was also transferred from the package &XModAlg;. 
+<P/>
+These functions construct an algebra homomorphism from a one-argument function. 
+They do not check that the function actually defines a homomorphism.
+<P/>
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> A := MatrixAlgebra( Rationals, 2 );
+( Rationals^[ 2, 2 ] )
+gap> e1 := AlgebraHomomorphismByFunction( Rationals, A, f -> [[f,0],[0,0]] );
+MappingByFunction( Rationals, ( Rationals^[ 2, 2 ] ), function( f ) ... end )
+gap> 11^e1;
+[ [ 11, 0 ], [ 0, 0 ] ]
+]]>
+</Example> 
+
+</Section>
+
+</Chapter>

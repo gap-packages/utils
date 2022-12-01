@@ -67,7 +67,7 @@ gap> for pair in urls do
 >      fi;
 >    od;
 
-##  the example from the manual
+##  the example 9.1.1 from the manual
 gap> url:= "https://www.gap-system.org/Packages/utils.html";;
 gap> res1:= Download( url );;
 gap> res1.success;
