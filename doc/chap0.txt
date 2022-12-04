@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.79
+                                      0.81
   
   
-                                1 December 2022
+                                4 December 2022
   
   
                                  Thomas Breuer
@@ -148,28 +148,25 @@
       7.1-1 AssignGlobals
     7.2 [33X[0;0YOption records for functions[133X
       7.2-1 OptionRecordWithDefaults
-  8 [33X[0;0YAlgebras and their homomorphisms[133X
-    8.1 [33X[0;0YHomomorphisms by function[133X
-      8.1-1 AlgebraHomomorphismByFunction
-  9 [33X[0;0YWeb Downloads[133X
-    9.1 [33X[0;0YFunctions for downloading files from the web[133X
-      9.1-1 Download
-      9.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[133X
-  10 [33X[0;0YVarious other functions[133X
-    10.1 [33X[0;0YFile operations[133X
-      10.1-1 Log2HTML
-    10.2 [33X[0;0YLaTeX strings[133X
-      10.2-1 IntOrOnfinityToLaTeX
-      10.2-2 LaTeXStringFactorsInt
-    10.3 [33X[0;0YConversion to [22XMagma[122X string[133X
-      10.3-1 ConvertToMagmaInputString
-  11 [33X[0;0YObsolete functions[133X
-    11.1 [33X[0;0YOperations from AutoDoc[133X
-    11.2 [33X[0;0YFunctions for printing[133X
-    11.3 [33X[0;0YOther obsolete functions[133X
-      11.3-1 [33X[0;0YApplicable Methods[133X
-      11.3-2 [33X[0;0YExponentOfPrime[133X
-  12 [33X[0;0YThe transfer procedure[133X
+  8 [33X[0;0YWeb Downloads[133X
+    8.1 [33X[0;0YFunctions for downloading files from the web[133X
+      8.1-1 Download
+      8.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[133X
+  9 [33X[0;0YVarious other functions[133X
+    9.1 [33X[0;0YFile operations[133X
+      9.1-1 Log2HTML
+    9.2 [33X[0;0YLaTeX strings[133X
+      9.2-1 IntOrOnfinityToLaTeX
+      9.2-2 LaTeXStringFactorsInt
+    9.3 [33X[0;0YConversion to [22XMagma[122X string[133X
+      9.3-1 ConvertToMagmaInputString
+  10 [33X[0;0YObsolete functions[133X
+    10.1 [33X[0;0YOperations from AutoDoc[133X
+    10.2 [33X[0;0YFunctions for printing[133X
+    10.3 [33X[0;0YOther obsolete functions[133X
+      10.3-1 [33X[0;0YApplicable Methods[133X
+      10.3-2 [33X[0;0YExponentOfPrime[133X
+  11 [33X[0;0YThe transfer procedure[133X
   
   
   [32X
