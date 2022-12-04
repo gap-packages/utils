@@ -7,7 +7,6 @@
 
 ## read the actual code 
 
-ReadPackage( "utils", "lib/algebras.gi" );
 ReadPackage( "utils", "lib/files.gi" );
 ReadPackage( "utils", "lib/groups.gi" );
 ReadPackage( "utils", "lib/iterator.gi" );

@@ -13,7 +13,6 @@ fi;
 
 ReadPackage( "utils", "lib/start.gd" );
 
-ReadPackage( "utils", "lib/algebras.gd" );
 ReadPackage( "utils", "lib/files.gd" );
 ReadPackage( "utils", "lib/groups.gd" );
 ReadPackage( "utils", "lib/iterator.gd" );
