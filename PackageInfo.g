@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.81",
-Date := "04/12/2022", # dd/mm/yyyy format
+Version := "0.81dev",
+Date := "23/12/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -77,10 +77,10 @@ Persons := [
     FirstNames    := "Chris",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "c.d.wensley@bangor.ac.uk",
+    Email         := "cdwensley.maths@btinternet.com",
     WWWHome       := "https://github.com/cdwensley",
-    Place         := "Bangor",
-    Institution   := "Bangor University"
+    Place         := "Llanfairfechan",
+    Institution   := ""
   )
 ],
 
