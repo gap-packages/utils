@@ -1,6 +1,6 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.81dev for GAP 4.12.1 (23/12/22) 
+## Version 0.82 for GAP 4.12.2 (09/02/23) 
  * (23/12/22) changed email address, deleted institution 
 
 ## Version 0.81 for GAP 4.12.1 (04/12/22) 

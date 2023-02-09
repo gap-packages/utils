@@ -27,6 +27,18 @@
 /doc/title.xml
 /doc/utils.xml
 
+tst/cset.g
+tst/download.g
+tst/groups.g
+tst/iterator.g
+tst/lcset.g
+tst/lists.g
+tst/number.g
+tst/others.g
+tst/print.g
+tst/record.g
+tst/testing.g
+
 /gh-pages/
 
 /not-used/
