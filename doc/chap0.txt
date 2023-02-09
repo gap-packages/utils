@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.81
+                                      0.82
   
   
-                                4 December 2022
+                                9 February 2023
   
   
                                  Thomas Breuer
@@ -52,7 +52,7 @@
       Email:    [7Xmailto:Frank.Luebeck@Math.RWTH-Aachen.De[107X
       Homepage: [7Xhttps://www.math.rwth-aachen.de/~Frank.Luebeck[107X
   Chris Wensley
-      Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
+      Email:    [7Xmailto:cdwensley.maths@btinternet.com[107X
       Homepage: [7Xhttps://github.com/cdwensley[107X
   
   -------------------------------------------------------
@@ -75,7 +75,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2015-2022, The GAP Group.[133X
+  [33X[0;0Y© 2015-2023, The GAP Group.[133X
   
   [33X[0;0YThe [5XUtils[105X package is free software; you can redistribute it and/or modify it
   under  the  terms of the GNU General Public License as published by the Free
