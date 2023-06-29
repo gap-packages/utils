@@ -12,7 +12,7 @@ gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
 
-## SubSection 6.1.1 
+## SubSection 7.1.1 
 gap> G := SmallGroup( 6,1);; 
 gap> s3 := Group( (5,6), (6,7) );; 
 gap> iter := AllIsomorphismsIterator( G, s3 );;
@@ -33,7 +33,7 @@ gap> AllIsomorphismsNumber( s3, s4 );
 gap> AllIsomorphisms( s3, s4 );
 [ ]
 
-## SubSection 6.1.2 
+## SubSection 7.1.2 
 gap> c3c3 := Group( (1,2,3), (4,5,6) );; 
 gap> iter := AllSubgroupsIterator( c3c3 );
 <iterator>
@@ -45,7 +45,7 @@ Group( [ (1,2,3)(4,5,6) ] )
 Group( [ (1,3,2)(4,5,6) ] )
 Group( [ (4,5,6), (1,2,3) ] )
 
-## Subsection 6.2.1 
+## Subsection 7.2.1 
 gap> it1 := Iterator( [ 1, 2, 3 ] );;
 gap> it2 := Iterator( [ 4, 5, 6 ] );;
 gap> iter := CartesianIterator( it1, it2 );;

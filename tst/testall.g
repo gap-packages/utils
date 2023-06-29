@@ -1,8 +1,8 @@
-##############################################################################
+############################################################################
 ##
-#W  testall.g                   Utils Package                    Chris Wensley
+#W  testall.g                   Utils Package                  Chris Wensley
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2023, The GAP Group 
 ##  
 
 LoadPackage( "utils" ); 
@@ -14,7 +14,7 @@ if not UtilsLoadingComplete then
     ReadPackage( "utils", "tst/loadall.g" ); 
 fi; 
 
-dir := DirectoriesPackageLibrary("utils","tst");
+dir := DirectoriesPackageLibrary( "utils", "tst" );
 TestDirectory(dir, rec(exitGAP := true,
     testOptions:=rec(compareFunction := "uptowhitespace")));
 

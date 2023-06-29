@@ -1,7 +1,7 @@
 #@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r;
-##############################################################################
+############################################################################
 ##
-#W  download.tst               Utils Package                     Thomas Breuer
+#W  download.tst               Utils Package                   Thomas Breuer
 ##
 #Y  Copyright (C) 2022, The GAP Group
 ##
@@ -48,7 +48,7 @@ gap> for pair in urls do
 >      file:= Filename( DirectoryTemporary(), "test" );
 >      res2:= List( meths,
 >               r -> [ r.download( url,
->                          rec( target:= Concatenation( file, r.position ) ) ),
+>                        rec( target:= Concatenation( file, r.position ) ) ),
 >                      r.position ] );;
 >      good2:= Filtered( res2, r -> r[1].success = true );;
 >      if expected = false and Length( good2 ) > 0 then
@@ -67,7 +67,7 @@ gap> for pair in urls do
 >      fi;
 >    od;
 
-##  the example 8.1.1 from the manual
+##  the example 9.1.1 from the manual
 gap> url:= "https://www.gap-system.org/Packages/utils.html";;
 gap> res1:= Download( url );;
 gap> res1.success;

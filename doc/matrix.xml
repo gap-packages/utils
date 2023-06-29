@@ -1,0 +1,93 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  matrix.xml          Utils documentation                            -->
+<!--                                                                     -->
+<!--  Copyright (C) 2023, The GAP Group                                  --> 
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-matrix">
+<Heading>Matrices</Heading>
+
+<Section Label="sec-matrix-ops">
+<Heading>Some operations for matrices</Heading>
+
+
+<ManSection>
+   <Oper Name="DirectSumDecompositionMatrices"
+         Arg="M" />
+<Description>
+In June 2023 Hongyi Zhao asked in the Forum for a function to implement 
+matrix decomposition into blocks. 
+Such a function was then provided by Pedro García-Sánchez. 
+Hongyi Zhao then requested that the function be added to 
+<Package>Utils</Package>. 
+What is provided here is a revised version of the original solution, 
+returning a list of decompositions. 
+<P/> 
+This function is a partial inverse to the undocumented library operation 
+<C>DirectSumMat</C>.  
+So if <M>L</M> is the list of diagonal decompositions of a matrix <M>M</M> 
+then each entry in <M>L</M> is a list of matrices, and the direct sum of 
+each of these lists is equal to the original <M>M</M>. 
+<P/> 
+In the examples, <M>M_6</M> is an obvious direct sum with <M>3</M> blocks. 
+<M>M_4</M> is an example with three decompositions, 
+while <M>M_8 = M_4 \oplus M_4</M> has <M>16</M> decompositions (not listed).
+<P/> 
+</Description>
+</ManSection>
+<Example>
+<![CDATA[
+gap> M6 := [ [1,2,0,0,0,0], [3,4,0,0,0,0], [5,6,0,0,0,0],                       
+>            [0,0,9,0,0,0], [0,0,0,1,2,3], [0,0,0,4,5,6] ];;
+gap> Display( M6 );
+[ [  1,  2,  0,  0,  0,  0 ],
+  [  3,  4,  0,  0,  0,  0 ],
+  [  5,  6,  0,  0,  0,  0 ],
+  [  0,  0,  9,  0,  0,  0 ],
+  [  0,  0,  0,  1,  2,  3 ],
+  [  0,  0,  0,  4,  5,  6 ] ]
+gap> L6 := DirectSumDecompositionMatrices( M6 );
+[ [ [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ], [ [ 9 ] ], [ [ 1, 2, 3 ], [ 4, 5, 6 ] ] 
+     ] ]
+
+gap> M4 := [ [0,3,0,0], [0,0,0,0], [0,0,0,0], [0,0,4,0] ];;
+gap> Display( M4 );
+[ [  0,  3,  0,  0 ],
+  [  0,  0,  0,  0 ],
+  [  0,  0,  0,  0 ],
+  [  0,  0,  4,  0 ] ]
+gap> L4 := DirectSumDecompositionMatrices( M4 );
+[ [ [ [ 0, 3 ] ], [ [ 0, 0 ], [ 0, 0 ], [ 4, 0 ] ] ], 
+  [ [ [ 0, 3 ], [ 0, 0 ] ], [ [ 0, 0 ], [ 4, 0 ] ] ], 
+  [ [ [ 0, 3 ], [ 0, 0 ], [ 0, 0 ] ], [ [ 4, 0 ] ] ] ]
+gap> for L in L4 do 
+>        A := DirectSumMat( L );; 
+>        if ( A = M4 ) then Print( "yes, A = M4\n" ); fi; 
+>    od;
+yes, A = M4
+yes, A = M4
+yes, A = M4
+
+gap> M8 := DirectSumMat( M4, M4 );; 
+gap> Display( M8 );
+[ [  0,  3,  0,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  0,  0,  0,  0 ],
+  [  0,  0,  4,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  0,  3,  0,  0 ],
+  [  0,  0,  0,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  0,  0,  0,  0 ],
+  [  0,  0,  0,  0,  0,  0,  4,  0 ] ]
+gap> L8 := DirectSumDecompositionMatrices( M8 );;
+gap> Length( L8 ); 
+16
+]]>
+</Example>
+
+</Section> 
+
+</Chapter>

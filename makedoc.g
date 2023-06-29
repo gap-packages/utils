@@ -14,6 +14,7 @@ AutoDoc( rec(
                       "lists.xml",
                       "number.xml",
                       "groups.xml",
+                      "matrix.xml",
                       "iterator.xml",
                       "record.xml",
                       "download.xml",
