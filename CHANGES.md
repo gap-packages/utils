@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.83 for GAP 4.12.2 (29/06/23) 
+ * (29/06/23) added DirectSumDecompositionMatrices 
+
 ## Version 0.82 for GAP 4.12.2 (09/02/23) 
  * (23/12/22) changed email address, deleted institution 
 

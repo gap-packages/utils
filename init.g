@@ -2,7 +2,7 @@
 ##
 #W  init.g                 GAP package `Utils'                  Chris Wensley
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group,  
+#Y  Copyright (C) 2015-2023, The GAP Group,  
 ##
 
 if not IsBound( PreImagesRepresentativeNC ) then 
@@ -21,6 +21,7 @@ ReadPackage( "utils", "lib/lcset.gd" );
 ReadPackage( "utils", "lib/lists.gd" );
 ReadPackage( "utils", "lib/magma.gd" );
 ReadPackage( "utils", "lib/maps.gd" );
+ReadPackage( "utils", "lib/matrix.gd" );
 ReadPackage( "utils", "lib/number.gd" );
 ReadPackage( "utils", "lib/print.gd" );
 ReadPackage( "utils", "lib/record.gd" );
