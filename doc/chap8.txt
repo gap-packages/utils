@@ -1,87 +1,113 @@
   
-  [1X8 [33X[0;0YWeb Downloads[133X[101X
-  
-  [33X[0;0YThe  [10XDownload[110X  operation  has been written by Thomas Breuer, incorporating a
-  number  of  suggestions  from  Max  Horn,  for  version  0.77  of  [5XUtils[105X. It
-  implements  downloading  a  file  from  within  [5XGAP[105X.  It  can  use the [5XIO[105X or
-  [5XcurlInterface[105X  packages,  or  [13Xwget[113X  or  [13Xcurl[113X,  if  installed,  and it can be
-  extended  with  other  download  methods quite easily. It is envisaged that,
-  once  other  packages  have  started  to  use it, and any problems have been
-  addressed, that the functions will be transferred to the main [5XGAP[105X library.[133X
+  [1X8 [33X[0;0YRecords[133X[101X
   
   
-  [1X8.1 [33X[0;0YFunctions for downloading files from the web[133X[101X
+  [1X8.1 [33X[0;0YFunctions for records[133X[101X
   
-  [1X8.1-1 Download[101X
+  [1X8.1-1 AssignGlobals[101X
   
-  [33X[1;0Y[29X[2XDownload[102X( [3Xurl[103X[, [3Xopt[103X] ) [32X function[133X
+  [33X[1;0Y[29X[2XAssignGlobals[102X( [3Xrec[103X ) [32X function[133X
   
-  [33X[0;0YThis  function  downloads the file with the web address [3Xurl[103X, which must be a
-  string.[133X
+  [33X[0;0YThis function has been transferred from package [5XRCWA[105X.[133X
   
-  [33X[0;0YThe  result is a record which has at least the component [10Xsuccess[110X, with value
-  [9Xtrue[109X if the download was successful and [9Xfalse[109X otherwise. In the former case,
-  the  component  [10Xresult[110X  is  bound, whose value is a string that contains the
-  contents  of the downloaded file. In the latter case, the component [10Xerror[110X is
-  bound, whose value is a string that describes the problem.[133X
-  
-  [33X[0;0YThe  function  calls  the methods stored in the global list [10XDownload_Methods[110X
-  until  one  of  them is successful. Currently there are methods based on the
-  [5XGAP[105X  functions  [2XDownloadURL[102X  ([14Xcurl:  DownloadURL[114X) and [2XSingleHTTPRequest[102X ([14XIO:
-  SingleHTTPRequest[114X),  and  methods  based  on  the external programs [10Xwget[110X and
-  [10Xcurl[110X.[133X
-  
-  [33X[0;0YAn optional record [3Xopt[103X can be given. The following components are supported.[133X
-  
-  [8X[10Xtarget[110X[8X[108X
-        [33X[0;6YIf  this  component is bound then its value must be a string that is a
-        local  filename,  and  the  function writes the downloaded contents to
-        this  file;  the  returned  record does not have a [10Xresult[110X component in
-        this case.[133X
-  
-  [8X[10XverifyCert[110X[8X[108X
-        [33X[0;6YIf this component is bound and has the value [9Xfalse[109X then those download
-        methods  that  are  based  on  [10Xcurl[110X or [10Xwget[110X will omit the check of the
-        server's  certificate.  The  same  effect is achieved for all [2XDownload[102X
-        calls  by  setting  the user preference [10XDownloadVerifyCertificate[110X (see
-        [14X8.1-2[114X) to [9Xfalse[109X and omitting the [10XverifyCert[110X component from [3Xopt[103X.[133X
+  [33X[0;0YIt  assigns  the  record components of [3Xrec[103X to global variables with the same
+  names.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xurl:= "https://www.gap-system.org/Packages/utils.html";;[127X[104X
-    [4X[25Xgap>[125X [27Xres1:= Download( url );;[127X[104X
-    [4X[25Xgap>[125X [27Xres1.success;[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XIsBound( res1.result ) and IsString( res1.result );[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xres2:= Download( Concatenation( url, "xxx" ) );;[127X[104X
-    [4X[25Xgap>[125X [27Xres2.success;[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsBound( res2.error ) and IsString( res2.error );[127X[104X
-    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xr := rec( a := 1, b := 2, c := 3 );;                                      [127X[104X
+    [4X[25Xgap>[125X [27XAssignGlobals( r );[127X[104X
+    [4X[28XThe following global variables have been assigned:[128X[104X
+    [4X[28X[ "a", "b", "c" ][128X[104X
+    [4X[25Xgap>[125X [27X[a,b,c];[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
   
-  [1X8.1-2 [33X[0;0YUser preference [10XDownloadVerifyCertificate[110X[101X[1X[133X[101X
+  [1X8.2 [33X[0;0YOption records for functions[133X[101X
   
-  [33X[0;0YThe  value [9Xtrue[109X (the default) means that the server's certificate is checked
-  in  calls  of  [2XDownload[102X  ([14X8.1-1[114X),  such  that nothing gets downloaded if the
-  certificate is invalid.[133X
+  [1X8.2-1 OptionRecordWithDefaults[101X
   
-  [33X[0;0YIf  the  value is [9Xfalse[109X then download methods are supposed to omit the check
-  of  the  server's  certificate  (this  may  not be supported by all download
-  methods).[133X
+  [33X[1;0Y[29X[2XOptionRecordWithDefaults[102X( [3Xdefaults[103X, [3Xuseroptions[103X ) [32X function[133X
   
-  [33X[0;0YOne  can  set  the  value  of the preference to be [10Xval[110X via [2XSetUserPreference[102X
-  ([14XReference:   SetUserPreference[114X),  by  calling  [10XSetUserPreference(  "utils",
-  "DownloadVerifyCertificate",  val  )[110X,  and  access  the  current  value  via
-  [2XUserPreference[102X   ([14XReference:  UserPreference[114X),  by  calling  [10XUserPreference(
-  "utils", "DownloadVerifyCertificate" )[110X.[133X
+  [33X[0;0YThis  functions has been transferred by Chris Jefferson from other packages.
+  It  simplifies  the  handling  of  records which are intended to be used for
+  expressing  configuration options. [3Xdefaults[103X represents the "default record",
+  and [3Xuseroptions[103X lets the user give new values for values in [3Xdefaults[103X.[133X
   
-  [33X[0;0YWe recommend leaving this preference at its default value [9Xtrue[109X. Sometimes it
-  can be necessary to change it, e.g. to work around issues with old operating
-  systems  which  may  not  be  able  to correctly verify new certificates. In
-  general  it is better to update such a system, but if that is not an option,
-  then disabling certificate checks may be a good last resort.[133X
+  [33X[0;0YThe  function returns a record with the same component names as [3Xdefaults[103X and
+  which  has  the same values as [3Xdefaults[103X, except for those component names in
+  [3Xuseroptions[103X,  where  the values in [3Xuseroptions[103X are used instead. An error is
+  given  if  [3Xuseroptions[103X  contains  any  component  names  not in [3Xdefaults[103X. If
+  [3Xuseroptions[103X  is  an  empty  list  it  is  treated as an empty record, and if
+  [3Xuseroptions[103X  is  a list of length [22X1[122X containing a record, this record is used
+  as [3Xuseroptions[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xdefaults := rec( a := 1, b := 2, c := 3 );;[127X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( a := 6) );[127X[104X
+    [4X[28Xrec( a := 6, b := 2, c := 3 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( b := 7, c := 8 ) );[127X[104X
+    [4X[28Xrec( a := 1, b := 7, c := 8 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ ] );[127X[104X
+    [4X[28Xrec( a := 1, b := 2, c := 3 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ rec( c := 8 ) ] );[127X[104X
+    [4X[28Xrec( a := 1, b := 2, c := 8 )[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, rec( d := 9 ) );[127X[104X
+    [4X[28XError, Unknown option: d[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );[127X[104X
+    [4X[28XError, Too many arguments for function[128X[104X
+    [4X[25Xgap>[125X [27XOptionRecordWithDefaults( defaults, [6,7,8] );[127X[104X
+    [4X[28XError, Too many arguments for function[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThis function is designed to support functions with optional arguments given
+  as   a  variable  record,  of  the  form  [10Xfunction(x,y,options...)[110X.  In  the
+  following,  very  contrived, example function, [10XPrintDimensions[110X, the defaults
+  are given by the variable [10Xorder[110X which takes values [10Xh[110X, [10Xw[110X and [10Xd[110X having default
+  values   [22X1[122X,   [22X2[122X   and   [22X3[122X.   If   there   is   a   second   argument,   then
+  [10XOptionRecordWithDefaults(  order,  arg[2]  );[110X is used to cvhange the values.
+  These  three  values  then determine the order in which the three dimensions
+  are printed using a [10XSortParallel[110X command.[133X
+  
+  [4X[32X[104X
+    [4X[104X
+    [4XPrintDimensions := function( arg ) [104X
+    [4X    local nargs, dim, order, V, L, len, K, i; [104X
+    [4X    nargs := Length( arg ); [104X
+    [4X    dim := [ arg[1]!.height, arg[1]!.width, arg[1]!.depth ]; [104X
+    [4X    order := rec( h := 1, w := 2, d := 3 ); [104X
+    [4X    V := [ "height", "width", "depth" ]; [104X
+    [4X    if ( nargs > 1 ) and IsRecord( arg[2] ) then [104X
+    [4X        order := OptionRecordWithDefaults( order, arg[2] ); [104X
+    [4X    fi; [104X
+    [4X    L := [ order!.h, order!.w, order!.d ]; [104X
+    [4X    len := Length( L );[104X
+    [4X    K := [ 1..len ]; [104X
+    [4X    SortParallel( L, K ); [104X
+    [4X    Print( "dimensions: " ); [104X
+    [4X    Print( V[K[1]], " = ", dim[K[1]], ", " );[104X
+    [4X    Print( V[K[2]], " = ", dim[K[2]], ", " );[104X
+    [4X    Print( V[K[3]], " = ", dim[K[3]], "\n" );[104X
+    [4Xend;;[104X
+  [4X[32X[104X
+  
+  [33X[0;0YIn  the  example  below  the  first  call  to  [10XPrintDimensions[110X  has just one
+  parameter,  [10Xmydim[110X,  so  the  default  order  is  used.  In  the second call,
+  alternate  values  for [10Xh[110X, [10Xw[110X and [10Xd[110X are given, causing the width to be printed
+  first, and then the depth and height.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xmydim := rec( height := 45, width := 31, depth := 17 ); [127X[104X
+    [4X[28Xrec( depth := 17, height := 45, width := 31 )[128X[104X
+    [4X[25Xgap>[125X [27XPrintDimensions( mydim );[127X[104X
+    [4X[28Xdimensions: height = 45, width = 31, depth = 17[128X[104X
+    [4X[25Xgap>[125X [27XPrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );[127X[104X
+    [4X[28Xdimensions: width = 31, depth = 17, height = 45[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   
