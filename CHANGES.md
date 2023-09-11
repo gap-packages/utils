@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.84 for GAP 4.12.2 (11/09/23) 
+ * (11/09/23) changed manual and test for DirectSumDecompositionMatrices 
+
 ## Version 0.83 for GAP 4.12.2 (29/06/23) 
  * (29/06/23) added DirectSumDecompositionMatrices 
 

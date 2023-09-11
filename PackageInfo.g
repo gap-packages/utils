@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.83",
-Date := "29/06/2023", # dd/mm/yyyy format
+Version := "0.84",
+Date := "11/09/2023", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
