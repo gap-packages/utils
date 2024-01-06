@@ -8,6 +8,9 @@
 if not IsBound( PreImagesRepresentativeNC ) then 
     BindGlobal( "PreImagesRepresentativeNC", PreImagesRepresentative ); 
 fi; 
+if not IsBound( IsMatrixOrMatrixObj ) then 
+    BindGlobal( "IsMatrixOrMatrixObj", IsMatrix ); 
+fi; 
 
 ##  read the function declarations
 
