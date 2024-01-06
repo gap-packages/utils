@@ -149,7 +149,7 @@ InstallMethod( LeftCosetsNC, "generic", IsIdenticalObj, [ IsGroup, IsGroup ], 0,
 function( G, U )
     local L; 
     L := RightCosetsNC( G, U ); 
-    return List( L, rc -> Inverse( rc ) ); 
+    return List( L, Inverse ); 
 end);
 
 

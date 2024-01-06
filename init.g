@@ -8,6 +8,12 @@
 if not IsBound( PreImagesRepresentativeNC ) then 
     BindGlobal( "PreImagesRepresentativeNC", PreImagesRepresentative ); 
 fi; 
+if not IsBound( IsMatrixOrMatrixObj ) then 
+    BindGlobal( "IsMatrixOrMatrixObj", IsMatrix ); 
+fi; 
+if not IsBound( MutableCopyMatrix ) then 
+    BindGlobal( "MutableCopyMatrix", ShallowCopy ); 
+fi; 
 
 ##  read the function declarations
 

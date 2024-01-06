@@ -279,8 +279,8 @@ function( G, H )
         Error( "<H> must be a subgroup of <G>" );
     fi;
     R := RightCosets( G, H );
-    ER := List( R, x -> Elements( x ) );
-    EL := List( ER, C -> List( C, x -> x^(-1) ) );
+    ER := List( R, Elements );
+    EL := List( ER, C -> List( C, Inverse ) );
     Info( InfoUtils, 3, "right cosets: ", ER );
     Info( InfoUtils, 3, " left cosets: ", EL );
     T := CommonRepresentatives( EL, ER );
