@@ -2,7 +2,7 @@
 ##
 #W  print.gi                  GAP4 package `Utils'              Chris Wensley
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2024, The GAP Group 
 
 #############################################################################
 ##  these operations have not been transferred from any other package  
@@ -24,7 +24,7 @@ function( arg )
     elif ( nargs = 2 ) then 
         L := arg[2]; 
         if IsList( L ) then 
-            ok := ForAll( L, n -> IsPosInt(n) ); 
+            ok := ForAll( L, IsPosInt ); 
             if not ok then 
                 Error( "L must only contain positive integers" ); 
             fi; 
@@ -120,7 +120,7 @@ function( L, posL )
 
     local  len, i;
 
-    if not ForAll( posL, n -> IsPosInt( n ) ) then 
+    if not ForAll( posL, IsPosInt ) then 
         Error( "posL should be a list of positive integers" ); 
     fi; 
     len := Length( L );
@@ -137,7 +137,7 @@ function( iter0, posL )
 
     local  iter, max, i, x;
 
-    if not ForAll( posL, n -> IsPosInt( n ) ) then 
+    if not ForAll( posL, IsPosInt ) then 
         Error( "posL should be a list of positive integers" ); 
     fi; 
     iter := ShallowCopy( iter0 ); 
