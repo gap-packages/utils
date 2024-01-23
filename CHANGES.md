@@ -1,7 +1,7 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.84dev for GAP 4.12.2 (08/01/24) 
- * (08/01/24) avoid tgrivial function wrappers in List and ForAll 
+## Version 0.85 for GAP 4.12.2 (23/01/24) 
+ * (08/01/24) avoid trivial function wrappers in List and ForAll 
 
 ## Version 0.84 for GAP 4.12.2 (11/09/23) 
  * (11/09/23) changed manual and test for DirectSumDecompositionMatrices 

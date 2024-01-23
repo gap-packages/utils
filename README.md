@@ -19,7 +19,7 @@ Other generally useful functions, which are not deemed suitable for the main lib
 
 ## Copyright
 
-The `Utils` package is Copyright {\copyright} The GAP Group, 2015-2022. 
+The `Utils` package is Copyright {\copyright} The GAP Group, 2015-2024. 
 
 `Utils` is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,6 +43,6 @@ of the GAP root directory.
 
 If you have a question relating to `Utils`, encounter any problems, 
 or wish to suggest other functions to be transferred to the package, please
- * email <c.d.wensley@bangor.ac.uk> 
+ * email <cdwensley.maths@btinternet.com> 
  * or report an issue on the GitHub issue tracker at: 
    <https://github.com/gap-packages/utils/issues/new> 
