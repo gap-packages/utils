@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.84",
-Date := "11/09/2023", # dd/mm/yyyy format
+Version := "0.85",
+Date := "23/01/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -146,7 +146,7 @@ TestFile := "tst/testall.g",
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2015-2023, The GAP Group. <P/>\n", 
+            "&copyright; 2015-2024, The GAP Group. <P/>\n", 
             "The &Utils; package is free software; you can redistribute it ", 
             "and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 
@@ -167,7 +167,7 @@ AutoDoc := rec(
             "<P/>\n", 
             "Bug reports, suggestions and comments are, of course, welcome.\n", 
             "Please contact the last author at ", 
-            "<Email>c.d.wensley@bangor.ac.uk</Email> ", 
+            "<Email>cdwensley.maths@btinternet.com</Email> ", 
             "or submit an issue at the GitHub repository ",
             "<URL>https://github.com/gap-packages/utils/issues/</URL>.\n" 
             ), 

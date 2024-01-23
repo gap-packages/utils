@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.84
+                                      0.85
   
   
-                               11 September 2023
+                                23 January 2024
   
   
                                  Thomas Breuer
@@ -73,14 +73,14 @@
   library.[133X
   
   [33X[0;0YBug  reports,  suggestions  and  comments  are,  of  course, welcome. Please
-  contact  the  last  author  at  [7Xmailto:c.d.wensley@bangor.ac.uk[107X or submit an
-  issue             at             the            GitHub            repository
+  contact  the  last author at [7Xmailto:cdwensley.maths@btinternet.com[107X or submit
+  an          issue          at          the         GitHub         repository
   [7Xhttps://github.com/gap-packages/utils/issues/[107X.[133X
   
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2015-2023, The GAP Group.[133X
+  [33X[0;0Y© 2015-2024, The GAP Group.[133X
   
   [33X[0;0YThe [5XUtils[105X package is free software; you can redistribute it and/or modify it
   under  the  terms of the GNU General Public License as published by the Free
