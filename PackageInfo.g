@@ -27,10 +27,10 @@ Persons := [
     FirstNames    := "Sebastian",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Email         := "gutsche@mathematik.uni-seigen.de",
+    Email         := "gutsche@mathematik.uni-siegen.de",
     WWWHome       := "https://sebasguts.github.io/",
-    Place         := "Seigen",
-    Institution   := "University of Seigen"
+    Place         := "Siegen",
+    Institution   := "University of Siegen"
   ),
   rec(
     LastName      := "Horn",
