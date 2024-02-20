@@ -1,5 +1,6 @@
 name: utils
-version: 0.85
+version: "0.85"
+license: "GPL-2.0-or-later"
 date: 2024-01-23
 description: |
     Utility functions in GAP
@@ -51,3 +52,30 @@ abstract: |
 status: deposited
 doc-html: doc/chap0_mj.html
 doc-pdf: doc/manual.pdf
+citeas: |
+    <p class='BibEntry'>
+    [<span class='BibKey'>BGHHGJKLW24</span>]   <b class='BibAuthor'>Breuer, T., Gutsche, S., Horn, M., Hulpke, A., García-Sánchez, P., Jefferson, C., Kohl, S., Lübeck, F. and Wensley, C.</b>,
+     <i class='BibTitle'>utils, Utility functions in GAP,
+             Version 0.85</i>
+     (<span class='BibYear'>2024</span>)<br />
+    (<span class='BibNote'>GAP package</span>),
+    <span class='BibHowpublished'><a href="https://gap-packages.github.io/utils">https://gap-packages.github.io/utils</a></span>.
+    </p>
+    
+
+bibtex: |
+    @misc{ utils0.85,
+      author =           {Breuer, T. and Gutsche, S. and Horn, M. and Hulpke, A.
+                          and  Garc{\a'\i}a-S{\a'a}nchez,  P.  and Jefferson, C.
+                          and Kohl, S. and L{\"u}beck, F. and Wensley, C.},
+      title =            {{utils}, Utility functions in GAP, {V}ersion 0.85},
+      month =            {Jan},
+      year =             {2024},
+      note =             {GAP package},
+      howpublished =     {\href           {https://gap-packages.github.io/utils}
+                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {}{}{}\texttt{utils}}},
+      keywords =         {},
+      printedkey =       {BGHHGJKLW24}
+    }
+
