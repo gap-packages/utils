@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.86 for GAP 4.13.1 (16/05/24) 
+ * (16/05/24) there have been just two minor adjustments since version 0.85
+
 ## Version 0.85 for GAP 4.12.2 (23/01/24) 
  * (08/01/24) avoid trivial function wrappers in List and ForAll 
 
