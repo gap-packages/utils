@@ -73,7 +73,7 @@ The following components are supported.
 <P/>
 <Example>
 <![CDATA[
-gap> url:= "https://www.gap-system.org/Packages/utils.html";;
+gap> url:= "https://www.gap-system.org/index.html";;
 gap> res1:= Download( url );;
 gap> res1.success;
 true

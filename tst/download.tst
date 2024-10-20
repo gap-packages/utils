@@ -17,13 +17,13 @@ gap> for i in [ 1 .. Length( meths ) ] do
 >      meths[i].position:= String( i );
 >    od;
 gap> urls:= [ # a http url that gets redirected to https
->             [ "http://www.gap-system.org/Packages/utils.html", true ],
+>             [ "http://www.gap-system.org/index.html", true ],
 >             # a http url that works as such
 >             [ "http://www.math.rwth-aachen.de/index.html", true ],
 >             # a https url that exists
->             [ "https://www.gap-system.org/Packages/utils.html", true ],
+>             [ "https://www.gap-system.org/index.html", true ],
 >             # a https url that does not exist
->             [ "https://www.gap-system.org/Packages/utilsxxx.html", false ],
+>             [ "https://www.gap-system.org/indexxxxx.html", false ],
 >           ];;
 
 ##  The problem is that the methods do not behave consistently
@@ -68,7 +68,7 @@ gap> for pair in urls do
 >    od;
 
 ##  the example 9.1.1 from the manual
-gap> url:= "https://www.gap-system.org/Packages/utils.html";;
+gap> url:= "https://www.gap-system.org/index.html";;
 gap> res1:= Download( url );;
 gap> res1.success;
 true
