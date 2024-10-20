@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.87 ready for GAP 4.14.0 (20/10/24) 
+ * (20/10/24) fix tests and examples to new GAP website
+
 ## Version 0.86 for GAP 4.13.1 (16/05/24) 
  * (16/05/24) there have been just two minor adjustments since version 0.85
 
