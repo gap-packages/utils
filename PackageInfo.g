@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.87",
-Date := "20/10/2024", # dd/mm/yyyy format
+Version := "0.87-dev",
+Date := "06/12/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -119,8 +119,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "Utility functions in GAP",
-  Autoload  := true
+  LongTitle := "Utility functions in GAP"
 ),
 
 Dependencies := rec(
@@ -131,8 +130,6 @@ Dependencies := rec(
 ),
 
 AvailabilityTest := ReturnTrue,
-
-Autoload := false, 
 
 Keywords := [ ], 
 
