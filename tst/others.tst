@@ -1,4 +1,4 @@
-#@local M, s1, n1, n2, N, s2;
+#@local a, F2, f, g, relq8, q8, M, s1, n1, n2, N, s2;
 ############################################################################
 ##
 #W  others.tst                   Utils Package                    
@@ -29,12 +29,23 @@ gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
 
 ## SubSection 10.3.1
+gap> ## permutation groups
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        
 "c5 := PermutationGroup<5|(1,2,3,4,5)>;\n"
+gap> ## pc-group
 gap> ConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );
 "PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"
+gap> ## fp-group
+gap> F2 := FreeGroup( 2 );;
+gap> f := F2.1;;  g := F2.2;;
+gap> relq8 := [ f^4, g^4, f*g*f*g^-1, f^2*g^2 ];; 
+gap> q8 := F2/relq8;; 
+gap> ConvertToMagmaInputString( q8 );
+no conversion function yet available for fp-groups
+fail
+gap> ## matrix group
 gap> M := GL(2,5);;  Size(M); 
 480
 gap> s1 := ConvertToMagmaInputString( M );

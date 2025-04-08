@@ -33,7 +33,6 @@ tst/groups.g
 tst/iterator.g
 tst/lcset.g
 tst/lists.g
-tst/magma.g
 tst/matrix.g
 tst/number.g
 tst/others.g
