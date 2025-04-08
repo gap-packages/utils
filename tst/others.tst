@@ -3,7 +3,7 @@
 ##
 #W  others.tst                   Utils Package                    
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;
@@ -56,7 +56,7 @@ gap> s2 := ConvertToMagmaInputString( N, "gpN" );;
 gap> Print( s2 );
 F := GF(3^2);
 P := GL(2,F);
-w := PrimitiveElement(F);
+w := PrimitiveRoot(F);
 gens := [
 P![ 1, 1, 1,w^1],
 P![ 1,w^3, 2,w^2]
