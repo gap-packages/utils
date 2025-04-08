@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  print.xml           Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2025, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -28,9 +28,11 @@ by specifying a first item and then a regular step.
 
 <ManSection>
    <Func Name="PrintSelection"
-         Arg="obj first step [last]" />
+         Arg="obj list"
+         Label="for a list of positions" />
    <Func Name="PrintSelection"
-         Arg="obj list" />
+         Arg="obj first step [last]"
+         Label="for a first item and a step" />
 <Description>
 This function, given three (or four) parameters, calls operations 
 <C>PrintSelectionFromList</C> or <C>PrintSelectionFromIterator</C> 

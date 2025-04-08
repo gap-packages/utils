@@ -3,8 +3,7 @@
 #W  magma.gi                  GAP4 package `Utils'                   Max Horn
 ##                                                           Alexander Hulpke
 ##                                                               Frank Lübeck
-##                                                          
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##
@@ -26,10 +25,12 @@ InstallGlobalFunction( ConvertToMagmaInputString,
         elif IsMatrixGroup( obj ) then 
             str := MatrixGroupToMagmaFormat( obj ); 
         elif IsFpGroup( obj ) then 
-            Error( "no conversion function yet available for fp-groups" ); 
-        ##  str := FpGroupToMagmaFormat( obj ); 
+            Print( "no conversion function yet available for fp-groups\n" );
+            return fail; 
+            ## str := FpGroupToMagmaFormat( obj ); 
         else 
-            Error( "no conversion function yet available for this group" ); 
+            Print( "no conversion function yet available for this group\n" );
+            return fail; 
         fi; 
         if ( len > 1 ) then 
             s := arg[2]; 
