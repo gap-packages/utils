@@ -123,10 +123,13 @@ InstallMethod( MatrixGroupToMagmaFormat, "matrix group over a finite field",
 
     mats := GeneratorsOfGroup( G );
     F := Field( Flat( mats ) );
+    if not IsFinite( F ) then
+      TryNextMethod();
+    fi;
     p := Characteristic( F ); 
     e := DegreeOverPrimeField( F ); 
     q := Size( F );
-    w := PrimitiveElement( F ); 
+    w := PrimitiveRoot( F );
     zero := Zero( F ); 
     one := One( F );
     matrix := mats[1];
