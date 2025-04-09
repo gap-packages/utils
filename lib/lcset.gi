@@ -23,7 +23,7 @@ function( g, U )
     ObjectifyWithAttributes( lc, fam!.leftCosetsDefaultType,
         Representative, g,
         ActingDomain, U, 
-        FunctionAction, OnLeftInverse, 
+        FunctionAction, OnRight,
         IsLeftCoset, true ); 
     if HasSize( U ) then 
         SetSize( lc, Size( U ) ); 

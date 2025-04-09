@@ -172,7 +172,7 @@ by converting <M>gU</M> to <M>Ug^{-1}</M>;
 applying the equivalent method for right cosets; 
 and, if necessary, converting back again to left cosets. 
 <P/> 
-<M>G</M> acts on <M>gU</M> by <C>OnLeftInverse</C>: 
+<M>G</M> acts on left cosets by <C>OnLeftInverse</C>:
 <M>(gU)^{g_0} = g_0^{-1}*(gU) = (g_0^{-1}g)U</M>. 
 <P/>
 </Description>
