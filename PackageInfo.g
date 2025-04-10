@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "utils", 
 Subtitle := "Utility functions in GAP",
-Version := "0.85",
-Date := "23/01/2024", # dd/mm/yyyy format
+Version := "0.89",
+Date := "10/04/2025", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -27,10 +27,10 @@ Persons := [
     FirstNames    := "Sebastian",
     IsAuthor      := true,
     IsMaintainer  := false,
-    Email         := "gutsche@mathematik.uni-seigen.de",
+    Email         := "gutsche@mathematik.uni-siegen.de",
     WWWHome       := "https://sebasguts.github.io/",
-    Place         := "Seigen",
-    Institution   := "University of Seigen"
+    Place         := "Siegen",
+    Institution   := "University of Siegen"
   ),
   rec(
     LastName      := "Horn",
@@ -119,8 +119,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "Utility functions in GAP",
-  Autoload  := true
+  LongTitle := "Utility functions in GAP"
 ),
 
 Dependencies := rec(
@@ -132,12 +131,10 @@ Dependencies := rec(
 
 AvailabilityTest := ReturnTrue,
 
-Autoload := false, 
-
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.12.1", 
+    "Loading Utils ", String( ~.Version ), " for GAP 4.14.0", 
   " - a collection of utility functions.\n"
 ),
 
@@ -146,7 +143,7 @@ TestFile := "tst/testall.g",
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2015-2024, The GAP Group. <P/>\n", 
+            "© 2015-2025, The GAP Group. <P/>\n", 
             "The &Utils; package is free software; you can redistribute it ", 
             "and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 

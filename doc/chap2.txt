@@ -13,8 +13,8 @@
   
   [1X2.1-1 PrintSelection[101X
   
-  [33X[1;0Y[29X[2XPrintSelection[102X( [3Xobj[103X, [3Xfirst[103X, [3Xstep[103X[, [3Xlast[103X] ) [32X function[133X
   [33X[1;0Y[29X[2XPrintSelection[102X( [3Xobj[103X, [3Xlist[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XPrintSelection[102X( [3Xobj[103X, [3Xfirst[103X, [3Xstep[103X[, [3Xlast[103X] ) [32X function[133X
   
   [33X[0;0YThis   function,   given   three  (or  four)  parameters,  calls  operations
   [10XPrintSelectionFromList[110X  or [10XPrintSelectionFromIterator[110X which prints the [13Xfirst[113X

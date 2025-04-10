@@ -139,24 +139,29 @@
   [22XgU[122X  to  [22XUg^-1[122X;  applying  the  equivalent  method  for right cosets; and, if
   necessary, converting back again to left cosets.[133X
   
-  [33X[0;0Y[22XG[122X acts on [22XgU[122X by [10XOnLeftInverse[110X: [22X(gU)^g_0 = g_0^-1*(gU) = (g_0^-1g)U[122X.[133X
+  [33X[0;0Y[22XG[122X acts on left cosets by [10XOnLeftInverse[110X: [22X(gU)^g_0 = g_0^-1*(gU) = (g_0^-1g)U[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xlc1 := LeftCoset( (1,2,3), Group( [ (1,2), (3,4) ] ) ); [127X[104X
-    [4X[28XLeftCoset((1,2,3),Group([ (1,2), (3,4) ]))[128X[104X
-    [4X[25Xgap>[125X [27XRepresentative( lc1 );[127X[104X
-    [4X[28X(1,2,3)[128X[104X
-    [4X[25Xgap>[125X [27XActingDomain( lc1 );[127X[104X
-    [4X[28XGroup([ (1,2), (3,4) ])[128X[104X
-    [4X[25Xgap>[125X [27XAsSet( lc1 );[127X[104X
-    [4X[28X[ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ][128X[104X
-    [4X[25Xgap>[125X [27X(1,2,3) in lc1;[127X[104X
+    [4X[25Xgap>[125X [27Xa4 := Group( (1,2,3), (2,3,4) );; SetName( a4, "a4" );[127X[104X
+    [4X[25Xgap>[125X [27Xk4 := Group( (1,2)(3,4), (1,3)(2,4) );; SetName( k4, "k4" );[127X[104X
+    [4X[25Xgap>[125X [27Xrc := RightCosets( a4, k4 );[127X[104X
+    [4X[28X[ RightCoset(k4,()), RightCoset(k4,(2,3,4)), RightCoset(k4,(2,4,3)) ][128X[104X
+    [4X[25Xgap>[125X [27Xlc := LeftCosets( a4, k4 );[127X[104X
+    [4X[28X[ LeftCoset((),k4), LeftCoset((2,4,3),k4), LeftCoset((2,3,4),k4) ][128X[104X
+    [4X[25Xgap>[125X [27XAsSet( lc[2] );[127X[104X
+    [4X[28X[ (2,4,3), (1,2,3), (1,3,4), (1,4,2) ][128X[104X
+    [4X[25Xgap>[125X [27XLeftCoset( (1,4,2), k4 ) = lc[2];[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xlc2 := (2,4,3) * lc1;   [127X[104X
-    [4X[28XLeftCoset((1,2,4),Group([ (1,2), (3,4) ]))[128X[104X
-    [4X[25Xgap>[125X [27Xlc3 := lc1^(2,3,4);;[127X[104X
-    [4X[25Xgap>[125X [27Xlc2 = lc3;            [127X[104X
+    [4X[25Xgap>[125X [27XRepresentative( lc[2] );[127X[104X
+    [4X[28X(2,4,3)[128X[104X
+    [4X[25Xgap>[125X [27XActingDomain( lc[2] );[127X[104X
+    [4X[28Xk4[128X[104X
+    [4X[25Xgap>[125X [27X(1,4,3) in lc[3];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X(1,2,3)*lc[2] = lc[3];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xlc[2]^(1,3,2) = lc[3];[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
@@ -170,14 +175,10 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xrc1 := Inverse( lc1 ); [127X[104X
-    [4X[28XRightCoset(Group([ (1,2), (3,4) ]),(1,3,2))[128X[104X
-    [4X[25Xgap>[125X [27Xrc4 := RightCoset( Group( (1,2), (2,3) ), (3,4) ); [127X[104X
-    [4X[28XRightCoset(Group([ (1,2), (2,3) ]),(3,4))[128X[104X
-    [4X[25Xgap>[125X [27Xlc4 := Inverse( rc4 );[127X[104X
-    [4X[28XLeftCoset((3,4),Group([ (1,2), (2,3) ]))[128X[104X
-    [4X[25Xgap>[125X [27XIntersection( lc2, lc4 );[127X[104X
-    [4X[28X[ (2,3,4), (1,2,3,4) ][128X[104X
+    [4X[25Xgap>[125X [27XInverse( rc[3] ) = lc[3];[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XInverse( lc[2] ) = rc[2];[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

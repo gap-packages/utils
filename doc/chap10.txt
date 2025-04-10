@@ -63,7 +63,7 @@
   [4X[32X[104X
   
   
-  [1X10.3 [33X[0;0YConversion to [22XMagma[122X[101X[1X string[133X[101X
+  [1X10.3 [33X[0;0YConversion to [22XMagma[122X[101X[1X strings[133X[101X
   
   [1X10.3-1 ConvertToMagmaInputString[101X
   
@@ -73,13 +73,18 @@
   string  [10Xs[110X  which  can  be  read into [22XMagma[122X [BCP97] so as to produce the same
   group in that computer algebra system. In the second form the user specifies
   the  name  of  the  resulting object, so that the output string has the form
-  [10X"str   :=   ..."[110X.   When   [10Xobj[110X   is   a  permutation  group,  the  operation
-  [10XPermGroupToMagmaFormat(obj)[110X  is  called.  This  function has been taken from
-  [11Xother.gi[111X  in the main library where it was called [10XMagmaInputString[110X. When [10Xobj[110X
-  is  a  pc-group,  the  operation  [10XPcGroupToMagmaFormat(obj)[110X  is called. This
-  function  was  private  code  of Max Horn. When [10Xobj[110X is a matrix group over a
-  finite  field,  the  operation [10XMatrixGroupToMagmaFormat(obj)[110X is called. This
-  function is a modification of private code of Frank Lübeck.[133X
+  [10X"str := ..."[110X.[133X
+  
+  [33X[0;0YWhen  [10Xobj[110X  is a permutation group, the operation [10XPermGroupToMagmaFormat(obj)[110X
+  is  called.  This  function has been taken from [11Xother.gi[111X in the main library
+  where it was called [10XMagmaInputString[110X.[133X
+  
+  [33X[0;0YWhen  [10Xobj[110X  is a pc-group, the operation [10XPcGroupToMagmaFormat(obj)[110X is called.
+  This function was private code of Max Horn.[133X
+  
+  [33X[0;0YWhen   [10Xobj[110X   is   a   matrix  group  over  a  finite  field,  the  operation
+  [10XMatrixGroupToMagmaFormat(obj)[110X  is called. This function is a modification of
+  private code of Frank Lübeck.[133X
   
   [33X[0;0YHopefully code for other types of group will be added in due course.[133X
   
@@ -88,12 +93,23 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X## permutation groups[127X[104X
     [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );[127X[104X
     [4X[28X"PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"[128X[104X
     [4X[25Xgap>[125X [27XConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        [127X[104X
-    [4X[28X"c5:=PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
+    [4X[28X"c5 := PermutationGroup<5|(1,2,3,4,5)>;\n"[128X[104X
+    [4X[25Xgap>[125X [27X## pc-group[127X[104X
     [4X[25Xgap>[125X [27XConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );[127X[104X
     [4X[28X"PolycyclicGroup< f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n>;\n"[128X[104X
+    [4X[25Xgap>[125X [27X## fp-group[127X[104X
+    [4X[25Xgap>[125X [27XF2 := FreeGroup( 2 );;[127X[104X
+    [4X[25Xgap>[125X [27Xf := F2.1;;  g := F2.2;;[127X[104X
+    [4X[25Xgap>[125X [27Xrelq8 := [ f^4, g^4, f*g*f*g^-1, f^2*g^2 ];; [127X[104X
+    [4X[25Xgap>[125X [27Xq8 := F2/relq8;; [127X[104X
+    [4X[25Xgap>[125X [27XConvertToMagmaInputString( q8 );[127X[104X
+    [4X[28Xno conversion function yet available for fp-groups[128X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27X## matrix group[127X[104X
     [4X[25Xgap>[125X [27XM := GL(2,5);;  Size(M); [127X[104X
     [4X[28X480[128X[104X
     [4X[25Xgap>[125X [27Xs1 := ConvertToMagmaInputString( M );[127X[104X

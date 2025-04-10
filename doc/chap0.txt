@@ -6,10 +6,10 @@
                            [1X Utility functions in [5XGAP[105X [101X
   
   
-                                      0.85
+                                      0.89
   
   
-                                23 January 2024
+                                 10 April 2025
   
   
                                  Thomas Breuer
@@ -36,7 +36,7 @@
       Email:    [7Xmailto:sam@math.rwth-aachen.de[107X
       Homepage: [7Xhttps://www.math.rwth-aachen.de/~Thomas.Breuer[107X
   Sebastian Gutsche
-      Email:    [7Xmailto:gutsche@mathematik.uni-seigen.de[107X
+      Email:    [7Xmailto:gutsche@mathematik.uni-siegen.de[107X
       Homepage: [7Xhttps://sebasguts.github.io/[107X
   Max Horn
       Email:    [7Xmailto:mhorn@rptu.de[107X
@@ -80,7 +80,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2015-2024, The GAP Group.[133X
+  [33X[0;0Y© 2015-2025, The GAP Group.[133X
   
   [33X[0;0YThe [5XUtils[105X package is free software; you can redistribute it and/or modify it
   under  the  terms of the GNU General Public License as published by the Free
@@ -166,7 +166,7 @@
     10.2 [33X[0;0YLaTeX strings[133X
       10.2-1 IntOrOnfinityToLaTeX
       10.2-2 LaTeXStringFactorsInt
-    10.3 [33X[0;0YConversion to [22XMagma[122X string[133X
+    10.3 [33X[0;0YConversion to [22XMagma[122X strings[133X
       10.3-1 ConvertToMagmaInputString
   11 [33X[0;0YObsolete functions[133X
     11.1 [33X[0;0YOperations from AutoDoc[133X

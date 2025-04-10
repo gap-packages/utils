@@ -48,7 +48,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xurl:= "https://www.gap-system.org/Packages/utils.html";;[127X[104X
+    [4X[25Xgap>[125X [27Xurl:= "https://www.gap-system.org/index.html";;[127X[104X
     [4X[25Xgap>[125X [27Xres1:= Download( url );;[127X[104X
     [4X[25Xgap>[125X [27Xres1.success;[127X[104X
     [4X[28Xtrue[128X[104X

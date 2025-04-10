@@ -1,7 +1,7 @@
 name: utils
-version: "0.85"
+version: "0.89"
 license: "GPL-2.0-or-later"
-date: 2024-01-23
+date: 2025-04-10
 description: |
     Utility functions in GAP
 
@@ -42,9 +42,9 @@ packageinfo: https://gap-packages.github.io/utils/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/utils/releases/download/v0.85/utils-0.85.tar.gz
+      url: https://github.com/gap-packages/utils/releases/download/v0.89/utils-0.89.tar.gz
     - name: .zip
-      url: https://github.com/gap-packages/utils/releases/download/v0.85/utils-0.85.zip
+      url: https://github.com/gap-packages/utils/releases/download/v0.89/utils-0.89.zip
 
 abstract: |
     The <span class="pkgname">Utils</span> package provides a collection   of utility functions gleaned from many packages.
@@ -54,28 +54,29 @@ doc-html: doc/chap0_mj.html
 doc-pdf: doc/manual.pdf
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>BGHHGJKLW24</span>]   <b class='BibAuthor'>Breuer, T., Gutsche, S., Horn, M., Hulpke, A., García-Sánchez, P., Jefferson, C., Kohl, S., Lübeck, F. and Wensley, C.</b>,
+    [<span class='BibKey'>BGHHGJKLW25</span>]   <b class='BibAuthor'>Breuer, T., Gutsche, S., Horn, M., Hulpke, A., García-Sánchez, P., Jefferson, C., Kohl, S., Lübeck, F. and Wensley, C.</b>,
      <i class='BibTitle'>utils, Utility functions in GAP,
-             Version 0.85</i>
-     (<span class='BibYear'>2024</span>)<br />
+             Version 0.89</i>
+     (<span class='BibYear'>2025</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/utils">https://gap-packages.github.io/utils</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ utils0.85,
+    @misc{ utils,
       author =           {Breuer, T. and Gutsche, S. and Horn, M. and Hulpke, A.
-                          and  Garc{\a'\i}a-S{\a'a}nchez,  P.  and Jefferson, C.
-                          and Kohl, S. and L{\"u}beck, F. and Wensley, C.},
-      title =            {{utils}, Utility functions in GAP, {V}ersion 0.85},
-      month =            {Jan},
-      year =             {2024},
+                          and  Garc{\a'\i}a\texttt{\symbol{45}}S{\a'a}nchez,  P.
+                          and  Jefferson, C. and Kohl, S. and L{\"u}beck, F. and
+                          Wensley, C.},
+      title =            {{utils}, {Utility functions in GAP}, {V}ersion 0.89},
+      month =            {Apr},
+      year =             {2025},
       note =             {GAP package},
       howpublished =     {\href           {https://gap-packages.github.io/utils}
-                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {\texttt{https://gap\texttt{\symbol{45}}packages.github.io/}\discretionary
                           {}{}{}\texttt{utils}}},
       keywords =         {},
-      printedkey =       {BGHHGJKLW24}
+      printedkey =       {BGHHGJKLW25}
     }
 

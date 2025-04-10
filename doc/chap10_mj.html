@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (Utils) - Chapter 10: Various other functions</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -36,7 +36,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87DEB2B58266F858">10.2-1 IntOrOnfinityToLaTeX</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7DC642B97CD02F4E">10.2-2 LaTeXStringFactorsInt</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X7BDFFBC379DE83E6">10.3 <span class="Heading">Conversion to <span class="SimpleMath">\({\sf Magma}\)</span> string</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X79F021B1830B68F6">10.3 <span class="Heading">Conversion to <span class="SimpleMath">\({\sf Magma}\)</span> strings</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8768D7707B4CBBD4">10.3-1 ConvertToMagmaInputString</a></span>
@@ -109,16 +109,22 @@
 
 </pre></div>
 
-<p><a id="X7BDFFBC379DE83E6" name="X7BDFFBC379DE83E6"></a></p>
+<p><a id="X79F021B1830B68F6" name="X79F021B1830B68F6"></a></p>
 
-<h4>10.3 <span class="Heading">Conversion to <span class="SimpleMath">\({\sf Magma}\)</span> string</span></h4>
+<h4>10.3 <span class="Heading">Conversion to <span class="SimpleMath">\({\sf Magma}\)</span> strings</span></h4>
 
 <p><a id="X8768D7707B4CBBD4" name="X8768D7707B4CBBD4"></a></p>
 
 <h5>10.3-1 ConvertToMagmaInputString</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConvertToMagmaInputString</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>The function <code class="code">ConvertToMagmaInputString( obj [, str] )</code> attempts to output a string <code class="code">s</code> which can be read into <span class="SimpleMath">\({\sf Magma}\)</span> <a href="chapBib_mj.html#biBMAGMA">[BCP97]</a> so as to produce the same group in that computer algebra system. In the second form the user specifies the name of the resulting object, so that the output string has the form <code class="code">"str := ..."</code>. When <code class="code">obj</code> is a permutation group, the operation <code class="code">PermGroupToMagmaFormat(obj)</code> is called. This function has been taken from <code class="file">other.gi</code> in the main library where it was called <code class="code">MagmaInputString</code>. When <code class="code">obj</code> is a pc-group, the operation <code class="code">PcGroupToMagmaFormat(obj)</code> is called. This function was private code of Max Horn. When <code class="code">obj</code> is a matrix group over a finite field, the operation <code class="code">MatrixGroupToMagmaFormat(obj)</code> is called. This function is a modification of private code of Frank Lübeck.</p>
+<p>The function <code class="code">ConvertToMagmaInputString( obj [, str] )</code> attempts to output a string <code class="code">s</code> which can be read into <span class="SimpleMath">\({\sf Magma}\)</span> <a href="chapBib_mj.html#biBMAGMA">[BCP97]</a> so as to produce the same group in that computer algebra system. In the second form the user specifies the name of the resulting object, so that the output string has the form <code class="code">"str := ..."</code>.</p>
+
+<p>When <code class="code">obj</code> is a permutation group, the operation <code class="code">PermGroupToMagmaFormat(obj)</code> is called. This function has been taken from <code class="file">other.gi</code> in the main library where it was called <code class="code">MagmaInputString</code>.</p>
+
+<p>When <code class="code">obj</code> is a pc-group, the operation <code class="code">PcGroupToMagmaFormat(obj)</code> is called. This function was private code of Max Horn.</p>
+
+<p>When <code class="code">obj</code> is a matrix group over a finite field, the operation <code class="code">MatrixGroupToMagmaFormat(obj)</code> is called. This function is a modification of private code of Frank Lübeck.</p>
 
 <p>Hopefully code for other types of group will be added in due course.</p>
 
@@ -127,12 +133,23 @@
 
 <div class="example"><pre>
 
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## permutation groups</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );</span>
 "PermutationGroup&lt;5|(1,2,3,4,5),\n(3,4,5)&gt;;\n"
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( Group( (1,2,3,4,5) ), "c5" );        </span>
-"c5:=PermutationGroup&lt;5|(1,2,3,4,5)&gt;;\n"
+"c5 := PermutationGroup&lt;5|(1,2,3,4,5)&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## pc-group</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( DihedralGroup( IsPcGroup, 10 ) );</span>
 "PolycyclicGroup&lt; f1,f2 |\nf1^2,\nf2^5,\nf2^f1 = f2^4\n&gt;;\n"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## fp-group</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">F2 := FreeGroup( 2 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := F2.1;;  g := F2.2;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">relq8 := [ f^4, g^4, f*g*f*g^-1, f^2*g^2 ];; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := F2/relq8;; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConvertToMagmaInputString( q8 );</span>
+no conversion function yet available for fp-groups
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## matrix group</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := GL(2,5);;  Size(M); </span>
 480
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := ConvertToMagmaInputString( M );</span>
@@ -170,6 +187,6 @@ gpN := sub&lt;P | gens&gt;;
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chap12_mj.html">12</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>
