@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2022, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2025, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -179,20 +179,25 @@ and, if necessary, converting back again to left cosets.
 </ManSection>
 <Example>
 <![CDATA[
-gap> lc1 := LeftCoset( (1,2,3), Group( [ (1,2), (3,4) ] ) ); 
-LeftCoset((1,2,3),Group([ (1,2), (3,4) ]))
-gap> Representative( lc1 );
-(1,2,3)
-gap> ActingDomain( lc1 );
-Group([ (1,2), (3,4) ])
-gap> AsSet( lc1 );
-[ (2,3), (2,4,3), (1,2,3), (1,2,4,3) ]
-gap> (1,2,3) in lc1;
+gap> a4 := Group( (1,2,3), (2,3,4) );; SetName( a4, "a4" );
+gap> k4 := Group( (1,2)(3,4), (1,3)(2,4) );; SetName( k4, "k4" );
+gap> rc := RightCosets( a4, k4 );
+[ RightCoset(k4,()), RightCoset(k4,(2,3,4)), RightCoset(k4,(2,4,3)) ]
+gap> lc := LeftCosets( a4, k4 );
+[ LeftCoset((),k4), LeftCoset((2,4,3),k4), LeftCoset((2,3,4),k4) ]
+gap> AsSet( lc[2] );
+[ (2,4,3), (1,2,3), (1,3,4), (1,4,2) ]
+gap> LeftCoset( (1,4,2), k4 ) = lc[2];
 true
-gap> lc2 := (2,4,3) * lc1;   
-LeftCoset((1,2,4),Group([ (1,2), (3,4) ]))
-gap> lc3 := lc1^(2,3,4);;
-gap> lc2 = lc3;            
+gap> Representative( lc[2] );
+(2,4,3)
+gap> ActingDomain( lc[2] );
+k4
+gap> (1,4,3) in lc[3];
+true
+gap> (1,2,3)*lc[2] = lc[3];
+true
+gap> c^(1,3,2) = lc[3];
 true
 ]]>
 </Example>
@@ -206,14 +211,10 @@ requirement, that <M>x*x^{-1}</M> is an identity, does not hold.
 <P/>
 <Example>
 <![CDATA[
-gap> rc1 := Inverse( lc1 ); 
-RightCoset(Group([ (1,2), (3,4) ]),(1,3,2))
-gap> rc4 := RightCoset( Group( (1,2), (2,3) ), (3,4) ); 
-RightCoset(Group([ (1,2), (2,3) ]),(3,4))
-gap> lc4 := Inverse( rc4 );
-LeftCoset((3,4),Group([ (1,2), (2,3) ]))
-gap> Intersection( lc2, lc4 );
-[ (2,3,4), (1,2,3,4) ]
+gap> Inverse( rc[3] ) = lc[3];
+true
+gap> Inverse( lc[2] ) = rc[2];
+true
 ]]>
 </Example> 
 </Subsection>

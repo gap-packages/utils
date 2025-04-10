@@ -1,6 +1,7 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.88 for GAP 4.14.1 (08/04/25) 
+## Version 0.89 for GAP 4.14.1 (10/04/25) 
+ * (10/04/25) corrected creation of left cosets
 
 ## Version 0.87 ready for GAP 4.14.0 (20/10/24)
  * (08/04/25) adjustments to magma.gi and others.tst

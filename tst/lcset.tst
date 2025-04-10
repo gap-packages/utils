@@ -1,4 +1,4 @@
-#@local  a, b, d, f, g, h, H1, H2, H3, K1, K2, K3, lc1, lc4, M, matcyc, rc5, s 
+#@local  a4, k4, rc, lc, a, b, d, f, g, h, H1, H2, H3, K1, K2, K3, lc1, lc4, M, matcyc, rc5, s 
 
 #############################################################################
 ##  adapted from gapdev/tst/tstinstall/cset.tst for left cosets 
@@ -7,9 +7,36 @@
 ##
 gap> START_TEST("lcset.tst");
 
-# basic coset tests
-gap> LeftCoset( (1,2), Group([(1,2,3),(2,3,4)]) ) 
->    = LeftCoset( (2,3), Group([(1,2,3),(2,3,4)]) );
+# section 5.2.1: basic coset tests
+gap> a4 := Group( (1,2,3), (2,3,4) );; SetName( a4, "a4" );
+gap> k4 := Group( (1,2)(3,4), (1,3)(2,4) );; SetName( k4, "k4" );
+gap> rc := RightCosets( a4, k4 );
+[ RightCoset(k4,()), RightCoset(k4,(2,3,4)), RightCoset(k4,(2,4,3)) ]
+gap> lc := LeftCosets( a4, k4 );
+[ LeftCoset((),k4), LeftCoset((2,4,3),k4), LeftCoset((2,3,4),k4) ]
+gap> AsSet( lc[2] );
+[ (2,4,3), (1,2,3), (1,3,4), (1,4,2) ]
+gap> LeftCoset( (1,4,2), k4 ) = lc[2];
+true
+gap> Representative( lc[2] );
+(2,4,3)
+gap> ActingDomain( lc[2] );
+k4
+gap> (1,4,3) in lc[3];
+true
+gap> (1,2,3)*lc[2] = lc[3];
+true
+gap> c^(1,3,2) = lc[3];
+true
+
+# section 5.2.2
+gap> Inverse( rc[3] ) = lc[3];
+true
+gap> Inverse( lc[2] ) = rc[2];
+true
+
+# many further tests
+gap> LeftCoset( (1,2), a4 ) = LeftCoset( (2,3), a4 );
 true
 gap> () in LeftCoset( (1,2), Group([(1,2,3,4)]) );
 false
