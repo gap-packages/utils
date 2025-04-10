@@ -26,6 +26,10 @@ gap> IsBiCoset( LeftCoset( (1,7), AlternatingGroup(6) ) );
 false
 gap> IsLeftCoset( LeftCoset( (1,2,3), MathieuGroup(12) ) );
 true
+gap> g:=SymmetricGroup(3);;
+gap> h:=Group((1,2));;
+gap> List(LeftCosets(g,h), SSortedList);
+[ [ (), (1,2) ], [ (1,3,2), (1,3) ], [ (2,3), (1,2,3) ] ]
 
 # test intersecting permutation cosets 
 gap> H1 := Group( [ (), (2,7,6)(3,4,5), (1,2,7,5,6,4,3) ] );; 
