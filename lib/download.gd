@@ -34,3 +34,21 @@ curl or wget will omit the check of the server's certificate."
   package:= "utils",
   ) );
 
+
+#############################################################################
+##
+#U  DownloadMaxTime
+##
+DeclareUserPreference( rec(
+  name:= "DownloadMaxTime",
+  description:= [
+    "The value '0' (the default) means that no timeout is set \
+in calls of 'Download'. \
+If the value is a positive integer 'n' then those download methods that \
+support a timeout will give up after 'n' seconds."
+    ],
+  default:= 0,
+  check:= val -> val = 0 or IsPosInt( val ),
+  package:= "utils",
+  ) );
+
