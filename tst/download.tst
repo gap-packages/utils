@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r;
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, io;
 ############################################################################
 ##
 #W  download.tst               Utils Package                   Thomas Breuer
@@ -54,8 +54,10 @@ gap> for pair in urls do
 >      if expected = false and Length( good2 ) > 0 then
 >        Print( "success for url ", url, "?\n" );
 >      fi;
->      if Length( good1 ) <> Length( good2 ) then
->        Print( "different success cases for url ", url, "\n" );
+>      if List( good1, x -> x[2] ) <> List( good2, x -> x[2] ) then
+>        Print( "different success cases for url ", url, ":\n",
+>               List( good1, x -> x[2] ), " vs. ", List( good2, x -> x[2] ),
+>               "\n" );
 >      fi;
 >      if Length( good1 ) > 0 then
 >        contents:= good1[1][1].result;
@@ -64,6 +66,23 @@ gap> for pair in urls do
 >            Print( "different files and contents for url ", url, "\n" );
 >          fi;
 >        od;
+>      fi;
+>      res3:= List( meths,
+>               r -> [ r.download( url,
+>                        rec( maxTime:= 10 ) ),
+>                      r.position ] );;
+>      good3:= Filtered( res3, r -> r[1].success = true );;
+>      if expected = false and Length( good3 ) > 0 then
+>        Print( "success for url ", url, "?\n" );
+>      fi;
+>      # The IO based method cannot handle the 'maxTime' parameter.
+>      io:= First( meths,
+>                  x -> StartsWith( x.name, "via SingleHTTPRequest" ) );
+>      good1:= Filtered( good1, x -> x[2] <> io.position );
+>      if List( good1, x -> x[2] ) <> List( good3, x -> x[2] ) then
+>        Print( "different success cases for url ", url, ":\n",
+>               List( good1, x -> x[2] ), " vs. ", List( good3, x -> x[2] ),
+>               "\n" );
 >      fi;
 >    od;
 
