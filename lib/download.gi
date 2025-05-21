@@ -40,6 +40,7 @@ Add( Download_Methods, rec(
     if not IsBound( opt.failOnError ) then
       opt.failOnError:= true;
     fi;
+    # 'DownloadURL' handles the options 'verifyCert' and 'maxTime'.
     res:= ValueGlobal( "DownloadURL" )( url, opt );
 
     if res.success = true and
@@ -58,6 +59,8 @@ Add( Download_Methods, rec(
 
     if not StartsWith( url, "http://" ) then
       return rec( success:= false, error:= "protocol is not http" );
+    elif IsBound( opt.maxTime ) and opt.maxTime <> 0 then
+      return rec( success:= false, error:= "no support for given timeout" );
     fi;
 
     rurl:= ReplacedString( url, "http://", "" );
@@ -76,7 +79,8 @@ Add( Download_Methods, rec(
                   error:= res.status );
     elif res.statuscode >= 400 then
       return rec( success:= false,
-                  error:= Concatenation( "HTTP error code ", res.statuscode ) );
+                  error:= Concatenation( "HTTP error code ",
+                                         String( res.statuscode ) ) );
     elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
       return rec( success:= true, result:= res.body );
     else
@@ -105,6 +109,9 @@ Add( Download_Methods, rec(
     fi;
     if IsBound( opt.verifyCert ) and opt.verifyCert = false then
       Add( args, "--no-check-certificate" );
+    fi;
+    if IsBound( opt.maxTime ) and IsPosInt( opt.maxTime ) then
+      Add( args, Concatenation( "--timeout=", String( opt.maxTime ) ) );
     fi;
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
@@ -147,6 +154,10 @@ Add( Download_Methods, rec(
     else
       Add( args, "-" );
     fi;
+    if IsBound( opt.maxTime ) and IsPosInt( opt.maxTime ) then
+      Add( args, "--max-time" );
+      Add( args, opt.maxTime );
+    fi;
     Add( args, url );
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
@@ -177,12 +188,20 @@ InstallMethod( Download,
 InstallMethod( Download,
     [ "IsString", "IsRecord" ],
     function( url, opt )
-    local errors, r, res;
+    local timeout, errors, r, res;
 
     # Set the default for 'verifyCert' if necessary.
     if not IsBound( opt.verifyCert ) and
        UserPreference( "utils", "DownloadVerifyCertificate" ) = false then
       opt.verifyCert:= false;
+    fi;
+
+    # Set the default for 'maxTime' if necessary.
+    if not IsBound( opt.maxTime ) then
+      timeout:= UserPreference( "utils", "DownloadMaxTime" );
+      if IsPosInt( timeout ) then
+        opt.maxTime:= timeout;
+      fi;
     fi;
 
     # Run over the methods.
@@ -213,6 +232,11 @@ InstallMethod( Download,
       return rec( success:= false, error:= "no method was available" );
     else
       # At least one method was tried but without success.
+      if IsBound( opt.maxTime ) then
+        Add( errors,
+             Concatenation( "(maxTime option was set to ",
+                            String( opt.maxTime ), ")" ) );
+      fi;
       return rec( success:= false,
                   error:= JoinStringsWithSeparator( errors, "; " ) );
     fi;
