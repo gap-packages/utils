@@ -75,10 +75,13 @@ gap> for pair in urls do
 >      if expected = false and Length( good3 ) > 0 then
 >        Print( "success for url ", url, "?\n" );
 >      fi;
->      # The IO based method cannot handle the 'maxTime' parameter.
 >      io:= First( meths,
 >                  x -> StartsWith( x.name, "via SingleHTTPRequest" ) );
->      good1:= Filtered( good1, x -> x[2] <> io.position );
+>      if io <> fail then
+>        # The IO based method is available.
+>        # It cannot handle the 'maxTime' parameter.
+>        good1:= Filtered( good1, x -> x[2] <> io.position );
+>      fi;
 >      if List( good1, x -> x[2] ) <> List( good3, x -> x[2] ) then
 >        Print( "different success cases for url ", url, ":\n",
 >               List( good1, x -> x[2] ), " vs. ", List( good3, x -> x[2] ),
