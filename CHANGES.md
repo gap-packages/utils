@@ -1,6 +1,10 @@
 # CHANGES log for the 'Utils' package
 
-## Version 0.89 for GAP 4.14.1 (10/04/25) 
+## Version 0.91 for GAP 4.14.0 (13/08/25) 
+ * (13/08/25) replaced DeclareGlobalFunction with DeclareGlobalName, etc.
+              removed all code related to SubdirectProductWithEmbeddings
+
+## Version 0.89 for GAP 4.14.0 (10/04/25) 
  * (10/04/25) corrected creation of left cosets
 
 ## Version 0.87 ready for GAP 4.14.0 (20/10/24)
