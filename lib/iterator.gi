@@ -2,7 +2,7 @@
 ##
 #W  iterator.gi              GAP4 package `Utils'               Chris Wensley
 ##  
-#Y  Copyright (C) 2015-2019, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 ##############################################################################
 ##
@@ -27,7 +27,7 @@ BindGlobal( "ShallowCopy_AllIsomorphisms",
     iter -> rec( firstiso := iter!.firstiso, 
              autoIterator := ShallowCopy( iter!.autoIterator ) ) ); 
 
-InstallGlobalFunction( "DoAllIsomorphismsIterator", 
+BindGlobal( "DoAllIsomorphismsIterator", 
 function( G, H )
 
     local iso, autoiter, iter;
@@ -117,7 +117,7 @@ BindGlobal( "ShallowCopy_AllSubgroups",
                  classIterator := ShallowCopy( iter!.classIterator ), 
                  subgpIterator := ShallowCopy( iter!.subgpIterator ) ) ); 
 
-InstallGlobalFunction( "DoAllSubgroupsIterator", 
+BindGlobal( "DoAllSubgroupsIterator", 
 function( G )
 
     local lat, ccs, classIterator, subgpIterator, iter;
@@ -171,7 +171,7 @@ BindGlobal( "ShallowCopy_CartesianIterator",
                      Iterator2 := ShallowCopy( iter!.Iterator2 ),  
                  Iterator2Copy := ShallowCopy( iter!.Iterator2Copy ) ) ); 
 
-InstallGlobalFunction( "DoCartesianIterator", 
+BindGlobal( "DoCartesianIterator", 
 function( iter1, iter2 )
 
     local iter;
@@ -231,7 +231,7 @@ BindGlobal( "ShallowCopy_UnorderedPairs",
                      Iterator2 := ShallowCopy( iter!.Iterator2 ),  
                  Iterator1Copy := ShallowCopy( iter!.Iterator1Copy ) ) ); 
 
-InstallGlobalFunction( "DoUnorderedPairsIterator", 
+BindGlobal( "DoUnorderedPairsIterator", 
 function( iter0 )
 
     local iter;

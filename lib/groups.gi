@@ -2,7 +2,7 @@
 ##
 #W  groups.gi                 GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from ResClasses 
@@ -84,7 +84,7 @@ InstallMethod( FittingLength, "default method", true, [ IsGroup ], 0,
 ##
 #F  ListOfPowers( <g>, <exp> ) . . . . . .  list of powers <g>^1 .. <g>^<exp>
 ##
-InstallGlobalFunction(  ListOfPowers,
+BindGlobal( "ListOfPowers",
 
   function ( g, exp )
 
@@ -111,7 +111,8 @@ InstallMethod( GeneratorsAndInverses, "for groups", true, [ IsGroup ], 0,
 ############################################################################# 
 ##  temporary methods for SubdirectProductWithEmbeddings 
 ##  
-InstallGlobalFunction(SubdirectProductWithEmbeddings,function(G,H,ghom,hhom)
+BindGlobal( "SubdirectProductWithEmbeddings",
+function(G,H,ghom,hhom)
 local iso;
   if ( Range( ghom, G ) <> Range( hhom, H ) ) or 
      ( Image( ghom, G ) <> Image( hhom, H ) ) then

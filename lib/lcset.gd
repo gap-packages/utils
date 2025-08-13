@@ -2,7 +2,7 @@
 ##
 #W  lcset.gd                  GAP4 package `Utils'               Chris Wensley
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##
@@ -31,5 +31,5 @@ DeclareOperation( "LeftCoset", [ IsObject, IsGroup ] );
 #O  LeftCosets( <G>, <U> ) . . . . . . . . . . . . . . . cosets gU for g in G 
 #O  LeftCosetsNC( <G>, <U> ) . . . . . . . . . . . . . . cosets gU for g in G 
 ##
-DeclareGlobalFunction( "LeftCosets" ); 
+DeclareGlobalName( "LeftCosets" ); 
 DeclareOperation( "LeftCosetsNC", [ IsGroup, IsGroup ] ); 

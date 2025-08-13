@@ -3,7 +3,7 @@
 #W  magma.gd                   GAP4 package `Utils'                   Max Horn
 ##                                                            Alexander Hulpke
 ##                                                   
-#Y  Copyright (C) 2015-2017, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function is new in Utils but calls functions which have been 
@@ -11,7 +11,7 @@
 ##
 #F  ConvertToMagmaInputString( <arg> )  . . output a string readable by Magma
 ##
-DeclareGlobalFunction( "ConvertToMagmaInputString" );
+DeclareGlobalName( "ConvertToMagmaInputString" );
 
 #############################################################################
 ##  this function was originally authored by Alexander Hulpke; 

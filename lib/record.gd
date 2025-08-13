@@ -3,7 +3,7 @@
 #W  record.gd                   GAP4 package `Utils'         Sebastian Gutsche
 ##                                                           Max Horn 
 ##                                                           Stefan Kohl 
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA
@@ -13,7 +13,7 @@
 ##  This auxiliary function assigns the record components of <record> to
 ##  global variables with the same names.
 ##
-DeclareGlobalFunction( "AssignGlobals" );
+DeclareGlobalName( "AssignGlobals" );
 
 
 #############################################################################
@@ -24,7 +24,7 @@ DeclareGlobalFunction( "AssignGlobals" );
 ##  This auxiliary function assigns the record components of <record> to
 ##  global variables with the same names.
 ##
-DeclareGlobalFunction( "OptionRecordWithDefaults" );
+DeclareGlobalName( "OptionRecordWithDefaults" );
 
 #############################################################################
 ##

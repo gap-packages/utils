@@ -3,7 +3,7 @@
 #W  files.gd                    GAP4 package `Utils'         Sebastian Gutsche
 ##                                                                    Max Horn
 ##                                                                 Stefan Kohl
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -20,7 +20,7 @@
 ##
 ##  - Adapt the style file rcwa/doc/gaplog.css to your taste.
 ##
-DeclareGlobalFunction( "Log2HTML" );
+DeclareGlobalName( "Log2HTML" );
 
 #############################################################################
 ##

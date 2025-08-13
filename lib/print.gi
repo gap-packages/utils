@@ -2,7 +2,7 @@
 ##
 #W  print.gi                  GAP4 package `Utils'              Chris Wensley
 ##
-#Y  Copyright (C) 2015-2024, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  these operations have not been transferred from any other package  
@@ -11,7 +11,7 @@
 #M  PrintSelectionFromList( <list>, <first>, <step>, <last> )
 #M  PrintSelectionFromIterator( <iterator>, <first>, <step>, <last> )
 ##
-InstallGlobalFunction( "PrintSelection", 
+BindGlobal( "PrintSelection", 
 
 function( arg ) 
 

@@ -2,7 +2,7 @@
 ##
 #W  iterator.gd                 GAP4 package `Utils'             Chris Wensley
 ##   
-#Y  Copyright (C) 2015-2019, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  These functions complement AllHomomorphisms, AllEndomorphisms, and 
@@ -15,7 +15,7 @@
 #O  AllIsomorphisms( <G>, <H> ) 
 ## 
 DeclareOperation( "AllIsomorphismsIterator", [ IsGroup, IsGroup ] );
-DeclareGlobalFunction( "DoAllIsomorphismsIterator" ); 
+DeclareGlobalName( "DoAllIsomorphismsIterator" ); 
 DeclareOperation( "AllIsomorphismsNumber", [ IsGroup, IsGroup ] );
 DeclareOperation( "AllIsomorphisms", [ IsGroup, IsGroup ] );
 
@@ -26,7 +26,7 @@ DeclareOperation( "AllIsomorphisms", [ IsGroup, IsGroup ] );
 #F  DoAllSubgroupsIterator  
 ## 
 DeclareOperation( "AllSubgroupsIterator", [ IsGroup ] );
-DeclareGlobalFunction( "DoAllSubgroupsIterator" ); 
+DeclareGlobalName( "DoAllSubgroupsIterator" ); 
 
 #############################################################################
 ##  These functions provide ways of combining two iterators into one 
@@ -37,6 +37,6 @@ DeclareGlobalFunction( "DoAllSubgroupsIterator" );
 #F  DoUnorderedPairsIterator  
 ## 
 DeclareOperation( "CartesianIterator", [ IsIterator, IsIterator ] );
-DeclareGlobalFunction( "DoCartesianIterator" ); 
+DeclareGlobalName( "DoCartesianIterator" ); 
 DeclareOperation( "UnorderedPairsIterator", [ IsIterator ] );
-DeclareGlobalFunction( "DoUnorderedPairsIterator" ); 
+DeclareGlobalName( "DoUnorderedPairsIterator" ); 

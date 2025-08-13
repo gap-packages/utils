@@ -9,7 +9,7 @@
 ##
 #F  ConvertToMagmaInputString( <obj> )  . . output a string readable by Magma 
 ##
-InstallGlobalFunction( ConvertToMagmaInputString,
+BindGlobal( "ConvertToMagmaInputString",
 
     function ( arg )
 

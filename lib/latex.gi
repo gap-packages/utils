@@ -2,14 +2,14 @@
 ##
 #W  latex.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group  
+#Y  Copyright (C) 2015-2025, The GAP Group  
 
 #############################################################################
 ##  this function has been transferred from ResClasses 
 ##
 #F  IntOrInfinityToLaTeX( n ) .  LaTeX string for a given integer or infinity
 ##
-InstallGlobalFunction( IntOrInfinityToLaTeX,
+BindGlobal( "IntOrInfinityToLaTeX",
 
   function( n )
     if   IsInt(n)      then return String(n);
@@ -22,7 +22,7 @@ InstallGlobalFunction( IntOrInfinityToLaTeX,
 ##
 #F  LaTeXStringFactorsInt( <n> ) . . . . prime factorization in LaTeX format
 ##
-InstallGlobalFunction( LaTeXStringFactorsInt,
+BindGlobal( "LaTeXStringFactorsInt",
 
   function ( n )
 
