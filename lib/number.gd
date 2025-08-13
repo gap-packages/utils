@@ -2,7 +2,7 @@
 ##
 #W  number.gd                    GAP4 package `Utils'             Stefan Kohl 
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA
@@ -17,7 +17,7 @@
 ##  `IsProbablyPrimeInt' instead of `IsPrimeInt'.
 ##  For large <n>, this function is much faster than `NextPrimeInt'.
 ##
-DeclareGlobalFunction( "NextProbablyPrimeInt" );
+DeclareGlobalName( "NextProbablyPrimeInt" );
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -27,7 +27,7 @@ DeclareGlobalFunction( "NextProbablyPrimeInt" );
 ##  Returns the set of all integers in the range [1..<maxn>] which have only
 ##  prime divisors in the range [2..<maxp>].
 ##
-DeclareGlobalFunction( "AllSmoothIntegers" );
+DeclareGlobalName( "AllSmoothIntegers" );
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -37,7 +37,7 @@ DeclareGlobalFunction( "AllSmoothIntegers" );
 ##
 ##  Iterator running through the prime numbers in ascending order.
 ##
-DeclareGlobalFunction ( "PrimeNumbersIterator" );
+DeclareGlobalName( "PrimeNumbersIterator" );
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -49,7 +49,7 @@ DeclareGlobalFunction ( "PrimeNumbersIterator" );
 ##  The only difference to `RestrictedPartitions' is that no repetitions are
 ##  allowed.
 ##
-DeclareGlobalFunction( "RestrictedPartitionsWithoutRepetitions" );
+DeclareGlobalName( "RestrictedPartitionsWithoutRepetitions" );
 
 #############################################################################
 ##  this function has been transferred from RCWA 

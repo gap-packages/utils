@@ -2,7 +2,7 @@
 ##
 #W  number.gi                 GAP4 package `Utils'                Stefan Kohl 
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -10,7 +10,7 @@
 #F  AllSmoothIntegers( <maxp>, <maxn> )
 #F  AllSmoothIntegers( <primes>, <maxn> )
 ##
-InstallGlobalFunction( AllSmoothIntegers,
+BindGlobal( "AllSmoothIntegers",
 
   function ( maxp, maxn )
 
@@ -44,7 +44,7 @@ InstallGlobalFunction( AllSmoothIntegers,
 ##
 #F  NextProbablyPrimeInt( <n> ) . . next integer passing `IsProbablyPrimeInt'
 ##
-InstallGlobalFunction( NextProbablyPrimeInt,
+BindGlobal( "NextProbablyPrimeInt",
 
   function ( n )
     if   -3 = n            then n := -2;
@@ -70,7 +70,7 @@ InstallGlobalFunction( NextProbablyPrimeInt,
 ##  The only difference to `RestrictedPartitions' is that no repetitions are
 ##  allowed.
 ##
-InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
+BindGlobal( "RestrictedPartitionsWithoutRepetitions",
 
   function ( n, S )
 
@@ -106,7 +106,7 @@ InstallGlobalFunction( RestrictedPartitionsWithoutRepetitions,
 #F  PrimeNumbersIterator(  )
 #F  PrimeNumbersIterator( chunksize )
 ##
-InstallGlobalFunction( PrimeNumbersIterator,
+BindGlobal( "PrimeNumbersIterator",
 
   function ( arg )
 

@@ -2,7 +2,7 @@
 ##
 #W  lists.gi                  GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  these functions have been transferred from ResClasses 
@@ -12,11 +12,11 @@
 #F  FloatQuotientsList( <list> )  . . . . . . . . . . . . dito, but as floats
 ##
 
-InstallGlobalFunction( DifferencesList,
+BindGlobal( "DifferencesList",
     list -> List( [ 2..Length(list) ],
                   pos -> list[ pos ] - list[ pos-1 ] ) );
 
-InstallGlobalFunction( QuotientsList, 
+BindGlobal( "QuotientsList", 
     function( list ) 
     local  len, pos, quot;
     len := Length( list ); 
@@ -31,7 +31,7 @@ InstallGlobalFunction( QuotientsList,
     return quot;
     end );
 
-InstallGlobalFunction( FloatQuotientsList,
+BindGlobal( "FloatQuotientsList",
     list -> List( QuotientsList( list ), Float ) );
 
 #############################################################################
@@ -62,7 +62,7 @@ InstallMethod( RandomCombination, "default method",
 ##
 #F  SearchCycle( <list> ) .  a utility function for detecting cycles in lists
 ##
-InstallGlobalFunction( SearchCycle,
+BindGlobal( "SearchCycle",
 
   function ( list )
 

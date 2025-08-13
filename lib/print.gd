@@ -2,12 +2,12 @@
 ##
 #W  print.gd                    GAP4 package `Utils'             Chris Wensley
 ##
-#Y  Copyright (C) 2015-2018, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 ##############################################################################
 ##  added global function and methods to print subsets of lists/iterators  
 ##  
-DeclareGlobalFunction( "PrintSelection" ); 
+DeclareGlobalName( "PrintSelection" ); 
 DeclareOperation( "PrintSelectionFromList", 
     [ IsList, IsPosInt, IsPosInt, IsPosInt ] ); 
 DeclareOperation( "PrintSelectionFromIterator", 

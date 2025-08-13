@@ -2,7 +2,7 @@
 ##
 #W  lcset.gi                 GAP4 package `Utils'                Chris Wensley
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##
@@ -138,7 +138,8 @@ end);
 #F  LeftCosets( <G> <U> ) . . . . . . . . . . . . left cosets of U by g \in G 
 #O  LeftCosetsNC( <G> <U> ) . . . . . . . . . . . left cosets of U by g \in G 
 ##
-InstallGlobalFunction( LeftCosets, function( G, U )
+BindGlobal( "LeftCosets", 
+function( G, U )
     if not IsSubset( G, U ) then
         Error("not contained");
     fi;

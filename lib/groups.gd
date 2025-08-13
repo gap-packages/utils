@@ -2,7 +2,7 @@
 ##
 #W  groups.gd                  GAP4 package `Utils'                Stefan Kohl
 ##
-#Y  Copyright (C) 2015-2016, The GAP Group 
+#Y  Copyright (C) 2015-2025, The GAP Group 
 
 #############################################################################
 ##  this function has been transferred from ResClasses 
@@ -34,7 +34,7 @@ if not IsBound( FittingLength ) then
 ##
 #F  ListOfPowers( <g>, <exp> ) . . . . . .  list of powers <g>^1 .. <g>^<exp>
 ##
-DeclareGlobalFunction( "ListOfPowers" );
+DeclareGlobalName( "ListOfPowers" );
 
 #############################################################################
 ##  this function has been transferred from RCWA 
@@ -49,7 +49,7 @@ DeclareOperation( "GeneratorsAndInverses", [ IsMagmaWithInverses ] );
 ##
 #O  SubdirectProductWithEmbeddings(<G>, <H>, <Ghom>, <Hhom> )
 ##
-DeclareGlobalFunction("SubdirectProductWithEmbeddings");
+DeclareGlobalName( "SubdirectProductWithEmbeddings" );
 DeclareOperation( "SubdirectProductWithEmbeddingsOp",
     [ IsGroup, IsGroup, IsGroupHomomorphism, IsGroupHomomorphism ] );
 DeclareAttribute( "SubdirectProductWithEmbeddingsInfo", IsGroup, "mutable" );
