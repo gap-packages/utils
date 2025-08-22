@@ -51,6 +51,17 @@ An optional record <A>opt</A> can be given.
 The following components are supported.
 <P/>
 <List>
+<Mark><C>maxTime</C></Mark>
+<Item>
+  If this component is bound then its value must be a nonnegative integer
+  <M>n</M>, meaning that the function gives up after <M>n</M> seconds.
+  <P/>
+  A zero value of <M>n</M> means that no timeout is set, the method will
+  never give up in this case.
+  <P/>
+  The default for <M>n</M> is given by the value of the user preference
+  <C>DownloadMaxTime</C> (see <Ref Subsect="subsec-DownloadMaxTime"/>).
+</Item>
 <Mark><C>target</C></Mark>
 <Item>
   If this component is bound then its value must be a string
@@ -63,7 +74,7 @@ The following components are supported.
   If this component is bound and has the value <K>false</K>
   then those download methods that are based on <C>curl</C> or <C>wget</C>
   will omit the check of the server's certificate.
-
+  <P/>
   The same effect is achieved for all <Ref Func="Download"/> calls
   by setting the user preference <C>DownloadVerifyCertificate</C>
   (see <Ref Subsect="subsec-DownloadVerifyCertificate"/>) to <K>false</K>
@@ -113,6 +124,24 @@ Sometimes it can be necessary to change it, e.g. to work around issues
 with old operating systems which may not be able to correctly verify new
 certificates. In general it is better to update such a system, but if that is
 not an option, then disabling certificate checks may be a good last resort.
+
+</Subsection>
+
+<Subsection Label="subsec-DownloadMaxTime">
+<Heading>User preference <C>DownloadMaxTime</C></Heading>
+<Index Key="DownloadMaxTime"><C>DownloadMaxTime</C></Index>
+
+The value <C>0</C> (the default) means that no timeout is set
+in calls of <Ref Func="Download"/>.
+If the value is a positive integer <M>n</M> then those download methods that
+support a timeout will give up after <M>n</M> seconds.
+<P/>
+One can set the value of the preference to be <C>val</C> via
+<Ref Func="SetUserPreference" BookName="ref"/>, by calling
+<C>SetUserPreference( "utils", "DownloadMaxTime", val )</C>,
+and access the current value via
+<Ref Func="UserPreference" BookName="ref"/>, by calling
+<C>UserPreference( "utils", "DownloadMaxTime" )</C>.
 
 </Subsection>
 
