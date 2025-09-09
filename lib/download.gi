@@ -99,6 +99,12 @@ Add( Download_Methods, rec(
   download:= function( url, opt )
     local res, outstream, exec, args, code;
 
+    if IsBound( opt.maxTime ) and opt.maxTime <> 0 then
+      # wget 1.20.3 ignores a given timeout.
+      # (wget 1.21.3 would support timeout.)
+      return rec( success:= false, error:= "no support for given timeout" );
+    fi;
+
     res:= "";
     outstream:= OutputTextString( res, true );
     exec:= Filename( DirectoriesSystemPrograms(), "wget" );

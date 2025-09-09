@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, io;
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad
 ############################################################################
 ##
 #W  download.tst               Utils Package                   Thomas Breuer
@@ -75,19 +75,27 @@ gap> for pair in urls do
 >      if expected = false and Length( good3 ) > 0 then
 >        Print( "success for url ", url, "?\n" );
 >      fi;
->      io:= First( meths,
->                  x -> StartsWith( x.name, "via SingleHTTPRequest" ) );
->      if io <> fail then
->        # The IO based method is available.
->        # It cannot handle the 'maxTime' parameter.
->        good1:= Filtered( good1, x -> x[2] <> io.position );
->      fi;
+>      # The IO and wget based methods are available.
+>      # They cannot handle the 'maxTime' parameter.
+>      bad:= Filtered( meths,
+>                  x -> StartsWith( x.name, "via SingleHTTPRequest" ) or
+>                       StartsWith( x.name, "via wget" ) );
+>      bad:= List( bad, x -> x.position );
+>      good1:= Filtered( good1, x -> not x[2] in bad );
 >      if List( good1, x -> x[2] ) <> List( good3, x -> x[2] ) then
 >        Print( "different success cases for url ", url, ":\n",
 >               List( good1, x -> x[2] ), " vs. ", List( good3, x -> x[2] ),
 >               "\n" );
 >      fi;
 >    od;
+
+##  test timeout
+gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 1 ) );;
+gap> res1.success = false;
+true
+gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 5 ) );;
+gap> res1.success = true;
+true
 
 ##  the example 9.1.1 from the manual
 gap> url:= "https://www.gap-system.org/index.html";;
