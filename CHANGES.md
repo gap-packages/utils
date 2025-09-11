@@ -1,5 +1,9 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.92 for GAP 4.14.0 (11/09/25)
+ * (10/09/25) support timeout in Download (Thomas Breuer)
+              added new release mechanism: .github/workflows/release.yml
+
 ## Version 0.91 for GAP 4.14.0 (13/08/25) 
  * (13/08/25) replaced DeclareGlobalFunction with DeclareGlobalName, etc.
               removed all code related to SubdirectProductWithEmbeddings
