@@ -134,7 +134,7 @@ AvailabilityTest := ReturnTrue,
 Keywords := [ ], 
 
 BannerString := Concatenation( 
-    "Loading Utils ", String( ~.Version ), " for GAP 4.14.0", 
+    "Loading Utils ", String( ~.Version ),
   " - a collection of utility functions.\n"
 ),
 
