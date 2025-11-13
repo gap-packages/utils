@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.93 for GAP 4.15.1 (13/11/25)
+ * (13/11/25) new release to fix the problem described in GAP issue 6164
+
 ## Version 0.92 for GAP 4.14.0 (11/09/25)
  * (10/09/25) support timeout in Download (Thomas Breuer)
               added new release mechanism: .github/workflows/release.yml
