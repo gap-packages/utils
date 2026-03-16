@@ -38,8 +38,7 @@ with <M>3</M> blocks.
 <M>M_4</M> is an example with three decompositions, 
 while <M>M_8 = M_4 \oplus M_4</M> has <M>16</M> decompositions (not listed).
 <P/> 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> M6 := [ [1,2,0,0,0,0], [3,4,0,0,0,0], [5,6,0,0,0,0],                       
 >            [0,0,9,0,0,0], [0,0,0,1,2,3], [0,0,0,4,5,6] ];;
 gap> Display( M6 );
@@ -84,8 +83,7 @@ gap> Display( M8 );
 gap> L8 := DirectSumDecompositionMatrices( M8 );;
 gap> Length( L8 ); 
 16
-]]>
-</Example>
+]]></Example>
 <P/>
 
 The current method does not, however, catch all possible decompositions. 
@@ -96,8 +94,7 @@ There are clearly two <M>2</M>-factor decompositions with a
 <M>2</M>-by-<M>3</M> and a <M>3</M>-by-<M>2</M> factor, 
 but these are not found at present.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> M5 := [ [1,2,0,0,0], [3,4,0,0,0], [0,0,0,0,0],
 >            [0,0,0,6,7], [0,0,0,8,9] ];;
 gap> Display(M5);
@@ -108,8 +105,7 @@ gap> Display(M5);
   [  0,  0,  0,  8,  9 ] ]
 gap> L5 := DirectSumDecompositionMatrices( M5 ); 
 [ [ [ [ 1, 2 ], [ 3, 4 ] ], [ [ 0 ] ], [ [ 6, 7 ], [ 8, 9 ] ] ] ]
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 

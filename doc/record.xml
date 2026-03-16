@@ -23,16 +23,14 @@ This function has been transferred from package &RCWA;.
 It assigns the record components of <A>rec</A>
 to global variables with the same names.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> r := rec( a := 1, b := 2, c := 3 );;                                      
 gap> AssignGlobals( r );
 The following global variables have been assigned:
 [ "a", "b", "c" ]
 gap> [a,b,c];
 [ 1, 2, 3 ]
-]]>
-</Example> 
+]]></Example> 
 </Description>
 </ManSection>
 
@@ -64,8 +62,7 @@ If <A>useroptions</A> is an empty list it is treated as an empty record,
 and if <A>useroptions</A> is a list of length <M>1</M> containing a record, 
 this record is used as <A>useroptions</A>.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> defaults := rec( a := 1, b := 2, c := 3 );;
 gap> OptionRecordWithDefaults( defaults, rec( a := 6) );
 rec( a := 6, b := 2, c := 3 )
@@ -81,8 +78,7 @@ gap> OptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );
 Error, Too many arguments for function
 gap> OptionRecordWithDefaults( defaults, [6,7,8] );
 Error, Too many arguments for function
-]]>
-</Example>
+]]></Example>
 
 This function is designed to support functions with optional arguments 
 given as a variable record, of the form <C>function(x,y,options...)</C>. 
@@ -122,16 +118,14 @@ In the second call, alternate values for <C>h</C>, <C>w</C> and <C>d</C>
 are given, causing the width to be printed first, 
 and then the depth and height.
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> mydim := rec( height := 45, width := 31, depth := 17 ); 
 rec( depth := 17, height := 45, width := 31 )
 gap> PrintDimensions( mydim );
 dimensions: height = 45, width = 31, depth = 17
 gap> PrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );
 dimensions: width = 31, depth = 17, height = 45
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 

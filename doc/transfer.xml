@@ -55,16 +55,14 @@ removed, and to specify &Utils; as a required package.
 (&Utils;:)
 Add strings <A>"home"</A> and <A>"m.n"</A> to the list 
 <C>UtilsPackageVersions</C> in the file <File>utils/lib/start.gd</File>. 
-<Log>
-<![CDATA[
+<Log><![CDATA[
 UtilsPackageVersions := 
   [ "autodoc",     "2016.01.31", 
     "resclasses",  "4.2.5", 
     "home",        "m.n",
     ...,           ... 
   ];
-]]>
-</Log>
+]]></Log>
 While the transfers are being made, it is essential that any new versions 
 of &Home; should be tested with the latest version of &Utils; 
 before they are released, so as to avoid loading failures.  
@@ -73,15 +71,13 @@ before they are released, so as to avoid loading failures.
 (&Utils;:)
 Include the function declaration and implementation sections 
 in suitable files, enclosed within a conditional clause of the form: 
-<Log>
-<![CDATA[
+<Log><![CDATA[
 if OKtoReadFromUtils( "Home" ) then
 . . . . . . 
  <the code> 
 . . . . . . 
 fi;
-]]>
-</Log>
+]]></Log>
 <Index>OKtoReadFromUtils</Index>
 The function <C>OKtoReadFromUtils</C> returns <K>true</K> 
 only if there is an installed version of &Home; 

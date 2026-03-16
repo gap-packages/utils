@@ -25,16 +25,14 @@ This method has been transferred from package &ResClasses;.
 It provides a method for <C>Comm</C> when the argument is a list 
 (enclosed in square brackets), and calls the function <C>LeftNormedComm</C>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Comm( [ (1,2), (2,3) ] );
 (1,2,3)
 gap> Comm( [(1,2),(2,3),(3,4),(4,5),(5,6)] );
 (1,5,6)
 gap> Comm(Comm(Comm(Comm((1,2),(2,3)),(3,4)),(4,5)),(5,6));  ## the same
 (1,5,6)
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -46,16 +44,14 @@ This function has been transferred from package &ResClasses;.
 <P/>
 It tests whether two elements in a group commute. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> D12 := DihedralGroup( 12 );
 <pc group of size 12 with 3 generators>
 gap> SetName( D12, "D12" ); 
 gap> a := D12.1;;  b := D12.2;;  
 gap> IsCommuting( a, b );
 false
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -68,8 +64,7 @@ This function has been transferred from package &RCWA;.
 The operation <C>ListOfPowers(g,exp)</C> returns the list 
 <M>[g,g^2,...,g^{exp}]</M> of powers of the element <M>g</M>.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ListOfPowers( 2, 20 );
 [ 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384,
  32768, 65536, 131072, 262144, 524288, 1048576 ]
@@ -78,8 +73,7 @@ gap> ListOfPowers( (1,2,3)(4,5), 12 );
  (1,2,3)(4,5), (1,3,2), (4,5), (1,2,3), (1,3,2)(4,5), () ]
 gap> ListOfPowers( D12.2, 6 );
 [ f2, f3, f2*f3, f3^2, f2*f3^2, <identity> of ... ]
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -92,14 +86,12 @@ This function has been transferred from package &RCWA;.
 This operation returns a list containing the generators of <M>G</M> 
 followed by the inverses of these generators.  
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> GeneratorsAndInverses( D12 );
 [ f1, f2, f3, f1, f2*f3^2, f3^2 ]
 gap> GeneratorsAndInverses( SymmetricGroup(5) );     
 [ (1,2,3,4,5), (1,2), (1,5,4,3,2), (1,2) ]
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -119,8 +111,7 @@ The upper and lower Fitting series and the Fitting length of a solvable
 group are described here: 
 <URL>https://en.wikipedia.org/wiki/Fitting_length</URL>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> upp:= UpperFittingSeries( D12 );;
 gap> List( upp, StructureDescription );
 [ "1", "C6", "D12" ]
@@ -142,8 +133,7 @@ gap> List( last, StructureDescription );
 [ "S4", "A4", "C2 x C2", "1" ]
 gap> FittingLength( S4);
 3
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -178,8 +168,7 @@ and, if necessary, converting back again to left cosets.
 <M>G</M> acts on left cosets by <C>OnLeftInverse</C>:
 <M>(gU)^{g_0} = g_0^{-1}*(gU) = (g_0^{-1}g)U</M>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> a4 := Group( (1,2,3), (2,3,4) );; SetName( a4, "a4" );
 gap> k4 := Group( (1,2)(3,4), (1,3)(2,4) );; SetName( k4, "k4" );
 gap> rc := RightCosets( a4, k4 );
@@ -200,8 +189,7 @@ gap> (1,2,3)*lc[2] = lc[3];
 true
 gap> lc[2]^(1,3,2) = lc[3];
 true
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -212,14 +200,12 @@ and conversely.
 This is an abuse of the attribute <C>Inverse</C>, since the standard 
 requirement, that <M>x*x^{-1}</M> is an identity, does not hold. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> Inverse( rc[3] ) = lc[3];
 true
 gap> Inverse( lc[2] ) = rc[2];
 true
-]]>
-</Example> 
+]]></Example> 
 </Subsection>
 
 </Section> 
@@ -240,8 +226,7 @@ Its intended use is when <M>G</M> is a free group,
 and a warning is printed when this is not the case. 
 Note that anything may happen if the resulting map is not a homomorphism! 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> G := Group( (1,2,3), (3,4,5), (5,6,7), (7,8,9) );;
 gap> phi := EpimorphismByGenerators( FreeGroup("a","b","c","d"), G );
 [ a, b, c, d ] -> [ (1,2,3), (3,4,5), (5,6,7), (7,8,9) ]
@@ -260,8 +245,7 @@ gap> Image( epi, (1,2,3) );
 ()
 gap> Image( epi, (1,3,2) );
 (8,9)
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -295,8 +279,7 @@ There are no embeddings in this record,
 but it is possible to use the embeddings into the direct product, 
 see <Ref Oper="Embedding" BookName="ref"/>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> s4 := Group( (1,2),(2,3),(3,4) );;
 gap> s3 := Group( (5,6),(6,7) );;
 gap> c3 := Subgroup( s3, [ (5,6,7) ] );;
@@ -321,8 +304,7 @@ gap> a := ImageElm( Embedding( dp, 1 ), (1,4,3) );;
 gap> b := ImageElm( Embedding( dp, 2 ), (5,7,6) );; 
 gap> a*b in Pfi;
 true
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -421,8 +403,7 @@ The operation <C>IdempotentEndomorphisms(G)</C> returns the list
 of these mappings obtained using <C>IdempotentEndomorphismsData(G)</C>. 
 The first of these is the zero map, the last is the identity.
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gens := [ (1,2,3,4), (1,2)(3,4) ];; 
 gap> d8 := Group( gens );;
 gap> SetName( d8, "d8" );
@@ -449,8 +430,7 @@ gap> IdempotentEndomorphisms( d8 );
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,4)(2,3), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (), (1,4)(2,3) ], 
   [ (1,2,3,4), (1,2)(3,4) ] -> [ (1,2,3,4), (1,2)(3,4) ] ]
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -458,13 +438,11 @@ The quaternion group <C>q8</C> is an example of a group with a tail:
 there is only one subgroup in the lattice which covers the identity subgroup. 
 The only idempotent isomorphisms of such groups are the identity mapping 
 and the zero mapping because the only pairs <M>N,R</M> are the whole group and the identity subgroup. 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> q8 := QuaternionGroup( 8 );;
 gap> IdempotentEndomorphisms( q8 );
 [ [ x, y ] -> [ <identity> of ..., <identity> of ... ], [ x, y ] -> [ x, y ] ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="DirectProductOfFunctions"
@@ -474,8 +452,7 @@ Given group homomorphisms <M>f_1 : G_1 \to G_2</M> and <M>f_2 : H_1 \to H_2</M>,
 this operation return the product homomorphism  
 <M>f_1 \times f_2 : G_1 \times G_2 \to H_1 \times H_2</M>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c4 := Group( (1,2,3,4) );; 
 gap> c2 := Group( (5,6) );; 
 gap> f1 := GroupHomomorphismByImages( c4, c2, [(1,2,3,4)], [(5,6)] );;
@@ -490,8 +467,7 @@ gap> f := DirectProductOfFunctions( c4c3, c2c6, f1, f2 );
 [ (1,2,3,4), (5,6,7) ] -> [ (1,2), (3,5,7)(4,6,8) ]
 gap> ImageElm( f, (1,4,3,2)(5,7,6) ); 
 (1,2)(3,7,5)(4,8,6)
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
@@ -503,8 +479,7 @@ Let <M>A_1,A_2</M> be groups of automorphism of groups <M>G_1,G_2</M>
 respectively.  The output of this function is a group <M>A_1 \times A_2</M> 
 of automorphisms of <M>G_1 \times G_2</M>. 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> c9 := Group( (1,2,3,4,5,6,7,8,9) );; 
 gap> ac9 := AutomorphismGroup( c9 );; 
 gap> q8 := QuaternionGroup( IsPermGroup, 8 );;
@@ -521,8 +496,7 @@ gap> a := genA[1]*genA[5];
   (10,11,12,13)(14,15,16,17) ]
 gap> ImageElm( a, (1,9,8,7,6,5,4,3,2)(10,14,12,16)(11,17,13,15) );
 (1,8,6,4,2,9,7,5,3)(10,16,12,14)(11,15,13,17)
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 
