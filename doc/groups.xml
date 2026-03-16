@@ -121,9 +121,12 @@ group are described here:
 <P/>
 <Example>
 <![CDATA[
-gap> UpperFittingSeries( D12 );  LowerFittingSeries( D12 );
-[ Group([  ]), Group([ f3, f2*f3 ]), Group([ f3, f2*f3, f1 ]) ]
-[ D12, Group([ f3 ]), Group([  ]) ]
+gap> upp:= UpperFittingSeries( D12 );;
+gap> List( upp, StructureDescription );
+[ "1", "C6", "D12" ]
+gap> low:= LowerFittingSeries( D12 );;
+gap> List( low, StructureDescription );
+[ "D12", "C3", "1" ]
 gap> FittingLength( D12 );
 2
 gap> S4 := SymmetricGroup( 4 );;
