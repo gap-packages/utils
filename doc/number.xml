@@ -35,8 +35,6 @@ In the alternative form, when <M>L</M> is a list of primes,
 the function returns the list of all positive integers 
 whose prime factors lie in <M>L</M>. 
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> AllSmoothIntegers( 3, 1000 );
@@ -52,6 +50,8 @@ gap> List( [3..20], n -> Length( AllSmoothIntegers( [5,11,17], 10^n ) ) );
   1374, 1595, 1843 ]
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 <ManSection>
    <Func Name="AllProducts"
@@ -64,8 +64,6 @@ all products of <A>k</A> entries of the list&nbsp;<A>L</A>.
 Note that every ordering of the entries is used so that, in the commuting case, 
 there are bound to be repetitions.  
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> AllProducts([1..4],3); 
@@ -79,6 +77,8 @@ gap> AllProducts( [(1,2,3),(2,3,4)], 2 );
 [ (2,4,3), (1,2)(3,4), (1,3)(2,4), (1,3,2) ]
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 <ManSection>
    <Func Name="RestrictedPartitionsWithoutRepetitions"
@@ -91,8 +91,6 @@ this function returns the list of partitions of <A>n</A>
 into distinct elements of <A>S</A>.
 Unlike <C>RestrictedPartitions</C>, no repetitions are allowed.
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> RestrictedPartitions( 20, [4..10] );
@@ -106,6 +104,8 @@ gap> RestrictedPartitionsWithoutRepetitions( 10^2, List([1..10], n->n^2 ) );
 [ [ 100 ], [ 64, 36 ], [ 49, 25, 16, 9, 1 ] ]
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 <ManSection>
    <Func Name="NextProbablyPrimeInt"
@@ -120,22 +120,18 @@ except that for reasons of performance it tests numbers only for
 For large <A>n</A>, this function is much faster than 
 <C>NextPrimeInt(<A>n</A>)</C> 
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> n := 2^251;
 3618502788666131106986593281521497120414687020801267626233049500247285301248
 gap> NextProbablyPrimeInt( n );
 3618502788666131106986593281521497120414687020801267626233049500247285301313
-gap> time;                     
-1
-gap> NextPrimeInt( n );        
+gap> NextPrimeInt( n );  # same result, just faster
 3618502788666131106986593281521497120414687020801267626233049500247285301313
-gap> time;             
-213
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 <ManSection>
    <Func Name="PrimeNumbersIterator"
@@ -144,15 +140,13 @@ gap> time;
 This function has been transferred from package &RCWA;. 
 <P/>
 This function returns an iterator which runs over the prime numbers 
-n ascending order; it takes an optional argument <C>chunksize</C> 
+in ascending order; it takes an optional argument <C>chunksize</C>
 which specifies the length of the interval which is sieved in one go 
 (the default is <M>10^7</M>), 
 and which can be used to balance runtime vs. memory consumption. 
 It is assumed that <C>chunksize</C> is larger than any gap between two 
 consecutive primes within the range one intends to run the iterator over. 
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> iter := PrimeNumbersIterator();;
@@ -169,6 +163,8 @@ gap> p;
 26861
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 
 </Section>

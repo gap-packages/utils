@@ -44,8 +44,6 @@ Alternatively, given two parameters,
 with the second parameter a list <C>L</C> of positive integers, 
 only the items at positions in <C>L</C> are printed. 
 <P/>
-</Description>
-</ManSection>
 <Example>
 <![CDATA[
 gap> L := List( [1..20], n -> n^5 );;
@@ -80,6 +78,8 @@ gap> PrintSelection( s5, 9, 11, 43 );
 42 : (1,5,2,3,4)
 ]]>
 </Example>
+</Description>
+</ManSection>
 
 </Section>
 

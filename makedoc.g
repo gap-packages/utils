@@ -7,6 +7,7 @@ LoadPackage( "GAPDoc" );
 LoadPackage( "AutoDoc" ); 
 
 AutoDoc( rec( 
+    extract_examples := true,
     scaffold := rec(
         ## MainPage := false, 
         includes := [ "intro.xml",

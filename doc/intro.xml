@@ -22,7 +22,8 @@ This package was first distributed as part of the &GAP; 4.8.2 distribution.
 The package is loaded with the command
 <Example>
 <![CDATA[
-gap> LoadPackage( "utils" ); 
+gap> LoadPackage( "utils" );
+true
 ]]>
 </Example>
 <P/>
@@ -75,16 +76,16 @@ can be found in the documentation folder.
 The <Code>html</Code> versions, with or without &MathJax;, 
 may be rebuilt as follows: 
 <P/>
-<Example>
+<Log>
 <![CDATA[
 gap> ReadPackage( "utils", "makedoc.g" ); 
 ]]>
-</Example>
+</Log>
 <P/>
 It is possible to check that the package has been installed correctly
 by running the test files (which terminates the &GAP; session): 
 <P/>
-<Example>
+<Log>
 <![CDATA[
 gap> ReadPackage( "utils", "tst/testall.g" );
 Architecture: . . . . . 
@@ -92,7 +93,7 @@ testing: . . . . .
 . . . 
 #I  No errors detected while testing
 ]]>
-</Example>
+</Log>
 <P/>
 
 Note that functions listed in this manual that are currently 
