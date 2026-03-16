@@ -18,6 +18,7 @@ AutoDoc( rec(
                       "iterator.xml",
                       "record.xml",
                       "download.xml",
+                      "gslp.xml",
                       "others.xml",
                       "obsolete.xml",
                       "transfer.xml" ],
