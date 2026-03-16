@@ -33,15 +33,13 @@ which you can adjust to your taste.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> LogTo( "triv.log" );
 gap> a := 33^5;
 39135393
 gap> LogTo(); 
 gap> Log2HTML( "triv.log" );     
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -60,14 +58,12 @@ This function has been transferred from package &ResClasses;.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> IntOrInfinityToLaTeX( 10^3 );
 "1000"
 gap> IntOrInfinityToLaTeX( infinity );
 "\\infty"
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
   <Func Name="LaTeXStringFactorsInt" 
@@ -81,12 +77,10 @@ It returns the prime factorization of the integer <M>n</M> as a string in
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -129,8 +123,7 @@ and more testing is desirable.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ## permutation groups
 gap> ConvertToMagmaInputString( Group( (1,2,3,4,5), (3,4,5) ) );
 "PermutationGroup<5|(1,2,3,4,5),\n(3,4,5)>;\n"
@@ -175,8 +168,7 @@ P![ 1, 1, 1,w^1],
 P![ 1,w^3, 2,w^2]
 ];
 gpN := sub<P | gens>;
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

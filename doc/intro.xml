@@ -20,11 +20,9 @@ This package was first distributed as part of the &GAP; 4.8.2 distribution.
 <P/> 
 
 The package is loaded with the command
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> LoadPackage( "utils" ); 
-]]>
-</Example>
+]]></Example>
 <P/>
 Functions have been transferred from the following packages: 
 <List>
@@ -75,24 +73,20 @@ can be found in the documentation folder.
 The <Code>html</Code> versions, with or without &MathJax;, 
 may be rebuilt as follows: 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ReadPackage( "utils", "makedoc.g" ); 
-]]>
-</Example>
+]]></Example>
 <P/>
 It is possible to check that the package has been installed correctly
 by running the test files (which terminates the &GAP; session): 
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> ReadPackage( "utils", "tst/testall.g" );
 Architecture: . . . . . 
 testing: . . . . . 
 . . . 
 #I  No errors detected while testing
-]]>
-</Example>
+]]></Example>
 <P/>
 
 Note that functions listed in this manual that are currently 

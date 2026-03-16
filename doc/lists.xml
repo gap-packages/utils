@@ -29,8 +29,7 @@ the list of length <M>n-1</M> containing all the differences
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> List( [1..12], n->n^3 );
 [ 1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728 ]
 gap> DifferencesList( last );
@@ -39,8 +38,7 @@ gap> DifferencesList( last );
 [ 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ]
 gap> DifferencesList( last );
 [ 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -57,8 +55,7 @@ An error is returned if an entry is zero.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> List( [0..10], n -> Factorial(n) );
 [ 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800 ]
 gap> QuotientsList( last );
@@ -74,8 +71,7 @@ gap> FloatQuotientsList( [1..10] );
 [ 2., 1.5, 1.33333, 1.25, 1.2, 1.16667, 1.14286, 1.125, 1.11111 ]
 gap> Product( last );
 10. 
-]]>
-</Example>
+]]></Example>
 
 
 <ManSection>
@@ -93,8 +89,7 @@ in order to be recognized as a cycle.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> L := [1..20];;  L[1]:=13;;                                              
 gap> for i in [1..19] do                                                     
 >        if IsOddInt(L[i]) then L[i+1]:=3*L[i]+1; else L[i+1]:=L[i]/2; fi;
@@ -120,8 +115,7 @@ gap> P := Positions( L, 157 );
 gap> Length( C );  DifferencesList( P );
 12
 [ 12, 12, 12, 12, 12, 12, 12 ]
-]]>
-</Example>
+]]></Example>
 
 <ManSection>
    <Oper Name="RandomCombination"
@@ -134,13 +128,11 @@ of a set <M>S</M>.
 <P/>
 </Description>
 </ManSection>
-<Log>
-<![CDATA[
+<Log><![CDATA[
 gap> ## "6 aus 49" is a common lottery in Germany
 gap> RandomCombination( [1..49], 6 ); 
 [ 2, 16, 24, 26, 37, 47 ]
-]]>
-</Log>
+]]></Log>
 
 </Section>
 
@@ -181,8 +173,7 @@ although a greedy algorithm is usually quicker.
 </Description>
 </ManSection>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> J := [ [1,2,3], [3,4], [3,4], [1,2,4] ];;
 gap> DistinctRepresentatives( J );
 [ 1, 3, 4, 2 ]
@@ -202,8 +193,7 @@ gap> trans := CommonTransversal( d16, c4 );
 [ (), (2,8)(3,7)(4,6), (1,2,3,4,5,6,7,8), (1,2)(3,8)(4,7)(5,6) ]
 gap> IsCommonTransversal( d16, c4, trans );
 true
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
@@ -225,16 +215,14 @@ is a composite of the functions <C>String( obj )</C> and
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> gens := GeneratorsOfGroup( DihedralGroup(12) );
 [ f1, f2, f3 ]
 gap> String( gens );                                
 "[ f1, f2, f3 ]"
 gap> BlankFreeString( gens );                       
 "[f1,f2,f3]"
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
