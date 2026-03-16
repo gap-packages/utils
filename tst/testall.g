@@ -14,6 +14,9 @@ if not UtilsLoadingComplete then
     ReadPackage( "utils", "tst/loadall.g" ); 
 fi; 
 
+# Create/update the testfiles containing the manual examples.
+ReadPackage( "utils", "makedoc.g" );
+
 dir := DirectoriesPackageLibrary( "utils", "tst" );
 TestDirectory(dir, rec(exitGAP := true,
     testOptions:=rec(compareFunction := "uptowhitespace")));
