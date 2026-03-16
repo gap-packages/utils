@@ -82,8 +82,7 @@ The following components are supported.
 </Item>
 </List>
 <P/>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> url:= "https://www.gap-system.org/index.html";;
 gap> res1:= Download( url );;
 gap> res1.success;
@@ -95,8 +94,7 @@ gap> res2.success;
 false
 gap> IsBound( res2.error ) and IsString( res2.error );
 true
-]]>
-</Example>
+]]></Example>
 </Description>
 </ManSection>
 

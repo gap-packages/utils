@@ -46,8 +46,7 @@ only the items at positions in <C>L</C> are printed.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> L := List( [1..20], n -> n^5 );;
 gap> PrintSelection( L, [18..20] );
 18 : 1889568
@@ -78,8 +77,7 @@ gap> PrintSelection( s5, 9, 11, 43 );
 20 : (2,4)
 31 : (1,5,2)
 42 : (1,5,2,3,4)
-]]>
-</Example>
+]]></Example>
 
 </Section>
 

@@ -25,16 +25,14 @@ to global variables with the same names.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> r := rec( a := 1, b := 2, c := 3 );;                                      
 gap> AssignGlobals( r );
 The following global variables have been assigned:
 [ "a", "b", "c" ]
 gap> [a,b,c];
 [ 1, 2, 3 ]
-]]>
-</Example> 
+]]></Example> 
 
 </Section> 
 
@@ -66,8 +64,7 @@ this record is used as <A>useroptions</A>.
 <P/>
 </Description>
 </ManSection>
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> defaults := rec( a := 1, b := 2, c := 3 );;
 gap> OptionRecordWithDefaults( defaults, rec( a := 6) );
 rec( a := 6, b := 2, c := 3 )
@@ -83,8 +80,7 @@ gap> OptionRecordWithDefaults( defaults, [ rec( b := 7 ), rec( c := 8 ) ] );
 Error, Too many arguments for function
 gap> OptionRecordWithDefaults( defaults, [6,7,8] );
 Error, Too many arguments for function
-]]>
-</Example>
+]]></Example>
 
 This function is designed to support functions with optional arguments 
 given as a variable record, of the form <C>function(x,y,options...)</C>. 
@@ -97,8 +93,7 @@ If there is a second argument, then
 <C>OptionRecordWithDefaults( order, arg[2] );</C> is used to cvhange the values. 
 These three values then determine the order in which the three dimensions are printed using a <C>SortParallel</C> command. 
 
-<Listing>
-<![CDATA[
+<Listing><![CDATA[
 PrintDimensions := function( arg ) 
     local nargs, dim, order, V, L, len, K, i; 
     nargs := Length( arg ); 
@@ -125,16 +120,14 @@ In the second call, alternate values for <C>h</C>, <C>w</C> and <C>d</C>
 are given, causing the width to be printed first, 
 and then the depth and height.
 
-<Example>
-<![CDATA[
+<Example><![CDATA[
 gap> mydim := rec( height := 45, width := 31, depth := 17 ); 
 rec( depth := 17, height := 45, width := 31 )
 gap> PrintDimensions( mydim );
 dimensions: height = 45, width = 31, depth = 17
 gap> PrintDimensions( mydim, rec( h:=3, w:=1, d:=2 ) );
 dimensions: width = 31, depth = 17, height = 45
-]]>
-</Example>
+]]></Example>
 
 </Section>
 
