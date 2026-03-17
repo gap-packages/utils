@@ -93,23 +93,16 @@ InstallMethod( NrOutputsOfGeneralizedStraightLineProgram,
     local data;
 
     if IsStraightLineProgram( gslp ) then
-      data:= LinesOfStraightLineProgram( gslp );
-      data:= data[ Length( data ) ];
+      # The value is in general not set in the construction.
+      data:= Last( LinesOfStraightLineProgram( gslp ) );
       if ForAll( data, IsList ) then
         return Length( data );
       else
         return 1;
       fi;
     else
-      data:= DataOfGeneralizedStraightLineProgram( gslp );
-      if data[1] = "union" then
-        return Sum( List( data[2],
-                          NrOutputsOfGeneralizedStraightLineProgram ), 0 );
-      else
-        data:= data[2];
-        data:= data[ Length( data ) ];
-        return NrOutputsOfGeneralizedStraightLineProgram( data );
-      fi;
+      # The value should get set in the construction.
+      Error( "attribute value got lost?" );
     fi;
     end );
 
@@ -123,12 +116,8 @@ InstallMethod( ResultOfGeneralizedStraightLineProgram,
     function( gslp, gens )
     local data, result, prg;
 
-    if IsStraightLineProgram( gslp ) then
-      # This is necessary because the method for slps was installed
-      # before the implication from gslps increased the rank of the filter
-      # `IsStraightLineProgram'.
-      TryNextMethod();
-    fi;
+    # We may assume that the 'IsStraightLineProgram' method has higher rank.
+    Assert( 1, not IsStraightLineProgram( gslp ) );
 
     data:= DataOfGeneralizedStraightLineProgram( gslp );
     if data[1] = "union" then
@@ -185,21 +174,18 @@ InstallMethod( EquivalentStraightLineProgram,
 ##
 InstallMethod( ViewString,
     [ "IsGeneralizedStraightLineProgram" ],
-    function( gslp )
-    if IsStraightLineProgram( gslp ) then
-      TryNextMethod();
-    fi;
-    return "<generalized straight line program>";
-    end );
+    gslp -> "<generalized straight line program>" );
+
+InstallMethod( ViewString,
+    [ "IsStraightLineProgram" ],
+    slp -> "<straight line program>" );
+#T eventually move this to the GAP library
 
 InstallMethod( String,
     [ "IsGeneralizedStraightLineProgram" ],
     function( gslp )
     local data;
 
-    if IsStraightLineProgram( gslp ) then
-      TryNextMethod();
-    fi;
     data:= DataOfGeneralizedStraightLineProgram( gslp );
     return Concatenation( "GeneralizedStraightLineProgram( \"",
                data[1], "\", [ ",
