@@ -7,6 +7,7 @@ LoadPackage( "GAPDoc" );
 LoadPackage( "AutoDoc" ); 
 
 AutoDoc( rec( 
+    extract_examples := true,
     scaffold := rec(
         ## MainPage := false, 
         includes := [ "intro.xml",
@@ -18,6 +19,7 @@ AutoDoc( rec(
                       "iterator.xml",
                       "record.xml",
                       "download.xml",
+                      "gslp.xml",
                       "others.xml",
                       "obsolete.xml",
                       "transfer.xml" ],

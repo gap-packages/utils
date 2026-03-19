@@ -1,0 +1,150 @@
+<!-- ------------------------------------------------------------------- -->
+<!--                                                                     -->
+<!--  gslp.xml                Utils documentation                        -->
+<!--                                                                     -->
+<!--  Copyright (C) 2026, The GAP Group                                  -->
+<!--                                                                     -->
+<!-- ------------------------------------------------------------------- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="chap-gslp">
+<Heading>Generalized Straight Line Programs</Heading>
+
+The functions described in this chapter have been written by Thomas Breuer,
+they are available since <Package>Utils</Package> 0.94.
+<P/>
+<E>Generalized straight line programs</E> (in the following abbreviated
+as <E>gslps</E>) are a generalization of the straight line programs
+that are described in the &GAP; library,
+see <Ref Sect="Straight Line Programs" BookName="ref"/>.
+Like the latter objects, gslps describe an efficient way for evaluating
+an abstract word at concrete generators.
+The difference is that gslps can be built
+from existing (generalized) straight line programs,
+whereas a straight line program is given by an explicit list of
+instructions (see <Ref Func="LinesOfStraightLineProgram" BookName="ref"/>).
+So the advantages of using a gslp instead of constructing an equivalent
+straight line program (see <Ref Func="EquivalentStraightLineProgram"/>)
+are that
+<P/>
+<List>
+<Item>
+    available objects (the building blocks of the gslp) are reused,
+</Item>
+<Item>
+    the internal structure of the gslp is retained
+    (one can access the building blocks if one wants), and
+</Item>
+<Item>
+    in the evaluation of a gslp, the intermediate results that arise in
+    a building block of the gslp can be garbage collected
+    as soon as the evaluation of this building block has finished.
+</Item>
+</List>
+<P/>
+A gslp in &GAP; is represented by an object in the category
+<Ref Filt="IsGeneralizedStraightLineProgram"/>.
+This object has exactly one of the following forms.
+<P/>
+<List>
+<Item>
+    It is a straight line program, that is, it lies in the
+    category <Ref Filt="IsStraightLineProgram" BookName="ref"/>,
+    and evaluation at some group elements is defined by
+    <Ref Oper="ResultOfStraightLineProgram" BookName="ref"/>.
+</Item>
+<Item>
+    It is of <Q>union</Q> kind, that is, the defining data are
+    a nonempty list <M>l</M> of gslps,
+    and evaluation at some group elements means to evaluate the
+    gslps in <M>l</M> at these group elements,
+    and to return the concatenation of the results.
+</Item>
+<Item>
+    It is of <Q>compose</Q> kind, that is, the defining data are
+    a nonempty list of gslps,
+    and evaluation at some group elements means
+    to evaluate the first of them at these elements,
+    then to evaluate the second of them at the result of the first
+    evaluation,
+    and so on, and to return the last result.
+</Item>
+</List>
+<P/>
+Here are two typical situations where gslps arise.
+In both cases, suppose that a list <M>l</M> of standard generators
+for a group <M>G</M> is given.
+<P/>
+<Enum>
+<Item>
+    Suppose that we know a straight line program for computing generators
+    <M>l'</M> of a maximal subgroup <M>M</M> of <M>G</M> from <M>l</M>.
+    For example, these data may be taken from the
+    <Package>ATLAS</Package> of Group Representations <Cite Key="AGRv3"/>.
+    If <M>M</M> is also a group for which the
+    <Package>ATLAS</Package> of Group Representations contains generators
+    and straight line programs,
+    we may be interested in computing standard generators <M>l''</M>
+    for <M>M</M> from <M>l'</M>.
+    <P/>
+    For that, a second straight line program may be needed,
+    and it makes sense to encode the computation of <M>l''</M> from
+    <M>l</M> via a gslp of <Q>compose</Q> kind.
+</Item>
+<Item>
+    Suppose that we are in fact interested in a downward extension
+    <M>H</M> of <M>G</M>, and that <M>\pi</M> is the natural epimorphism
+    from <M>H</M> to <M>G</M>, which maps a list <M>L</M>, say,
+    of standard generators of <M>H</M> to <M>l</M>.
+    Then the above gslp for <M>G</M> can be applied to <M>L</M>,
+    but the result <M>L'</M> may generate a proper subgroup of
+    <M>\pi^{-1}(M)</M> because some part of the kernel of <M>\pi</M> is
+    missing.
+    <P/>
+    A list <M>K</M> of generators of the kernel of <M>\pi</M> can be
+    described by a straight line program that takes <M>L</M> as its
+    input, and it makes sense to encode the computation of the
+    concatenation of <M>L'</M> and <M>K</M> from <M>L</M> via a gslp of
+    <Q>union</Q> kind.
+</Item>
+</Enum>
+<P/>
+
+Gslps can be constructed using <Ref Func="GeneralizedStraightLineProgram"
+Label="for kind and list"/>.
+<P/>
+Defining attributes for gslps are
+<Ref Attr="NrInputsOfGeneralizedStraightLineProgram"/>
+and <Ref Attr="DataOfGeneralizedStraightLineProgram"/>.
+The probably most interesting operation for gslps is
+<Ref Oper="ResultOfGeneralizedStraightLineProgram"/>.
+<P/>
+Currently we do not intend to provide methods applicable to
+generalized straight line programs for all operations that are defined for
+straight line programs.
+For example,
+there is no <Ref Func="IntermediateResultOfSLP" BookName="ref"/> method
+for generalized straight line programs.
+<P/>
+Special methods applicable to gslps are installed for the operations
+<Ref Meth="IsInternallyConsistent" Label="for gen. straight line program"/>,
+<Ref Oper="ViewString" BookName="ref"/>,
+and <Ref Oper="String" BookName="ref"/>.
+
+
+<Section Label="sec-gslp">
+<Heading>Functions for Generalized Straight Line Programs</Heading>
+
+<#Include Label="IsGeneralizedStraightLineProgram">
+<#Include Label="GeneralizedStraightLineProgram">
+<#Include Label="DataOfGeneralizedStraightLineProgram">
+<#Include Label="NrInputsOfGeneralizedStraightLineProgram">
+<#Include Label="NrOutputsOfGeneralizedStraightLineProgram">
+<#Include Label="ResultOfGeneralizedStraightLineProgram">
+<#Include Label="EquivalentStraightLineProgram">
+<#Include Label="IsInternallyConsistent_gslp">
+
+</Section>
+
+</Chapter>

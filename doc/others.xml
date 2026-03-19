@@ -30,16 +30,15 @@ except that the extension <File>*.log</File> is replaced by <File>*.html</File>.
 There is a sample CSS file in <File>utils/doc/gaplog.css</File>, 
 which you can adjust to your taste. 
 <P/>
-</Description>
-</ManSection>
-<P/>
-<Example><![CDATA[
+<Log><![CDATA[
 gap> LogTo( "triv.log" );
 gap> a := 33^5;
 39135393
 gap> LogTo(); 
 gap> Log2HTML( "triv.log" );     
-]]></Example>
+]]></Log>
+</Description>
+</ManSection>
 
 </Section>
 
@@ -48,15 +47,12 @@ gap> Log2HTML( "triv.log" );
 <Heading>&LaTeX; strings</Heading>
 
 <ManSection>
-  <Func Name="IntOrOnfinityToLaTeX" 
+  <Func Name="IntOrInfinityToLaTeX"
         Arg="n"/>
 <Description>
 This function has been transferred from package &ResClasses;. 
 <P/>
-<C>IntOrInfinityToLaTeX(n)</C> returns the &LaTeX; string for <A>n</A>. 
-<P/>
-</Description>
-</ManSection>
+<Ref Func="IntOrInfinityToLaTeX"/> returns the &LaTeX; string for <A>n</A>.
 <P/>
 <Example><![CDATA[
 gap> IntOrInfinityToLaTeX( 10^3 );
@@ -64,6 +60,8 @@ gap> IntOrInfinityToLaTeX( 10^3 );
 gap> IntOrInfinityToLaTeX( infinity );
 "\\infty"
 ]]></Example>
+</Description>
+</ManSection>
 
 <ManSection>
   <Func Name="LaTeXStringFactorsInt" 
@@ -74,13 +72,12 @@ This function has been transferred from package &RCWA;.
 It returns the prime factorization of the integer <M>n</M> as a string in 
 &LaTeX; format.
 <P/>
-</Description>
-</ManSection>
-<P/>
 <Example><![CDATA[
 gap> LaTeXStringFactorsInt( Factorial(12) );
 "2^{10} \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\cdot 11"
 ]]></Example>
+</Description>
+</ManSection>
 
 </Section>
 
@@ -119,9 +116,6 @@ Hopefully code for other types of group will be added in due course.
 <P/>
 These functions should be considered <E>experimental</E>, 
 and more testing is desirable. 
-<P/>
-</Description>
-</ManSection>
 <P/>
 <Example><![CDATA[
 gap> ## permutation groups
@@ -169,6 +163,8 @@ P![ 1,w^3, 2,w^2]
 ];
 gpN := sub<P | gens>;
 ]]></Example>
+</Description>
+</ManSection>
 
 </Section>
 
