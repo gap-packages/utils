@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  gslp.gi              GAP 4 package CTBlocks                 Thomas Breuer
+#W  gslp.gi              GAP 4 package utils                    Thomas Breuer
 ##
 
 

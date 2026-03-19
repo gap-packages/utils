@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  gslp.xml                Utils documentation                        -->
 <!--                                                                     -->
-<!--  Copyright (C) 2026, The GAP Group                                  --> 
+<!--  Copyright (C) 2026, The GAP Group                                  -->
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -11,8 +11,8 @@
 <Chapter Label="chap-gslp">
 <Heading>Generalized Straight Line Programs</Heading>
 
-The functions described in this chapter have been written by Thomas Breuer, 
-for version 0.94 of <Package>Utils</Package>. 
+The functions described in this chapter have been written by Thomas Breuer,
+they are available since <Package>Utils</Package> 0.94.
 <P/>
 <E>Generalized straight line programs</E> (in the following abbreviated
 as <E>gslps</E>) are a generalization of the straight line programs
@@ -21,19 +21,25 @@ see <Ref Sect="Straight Line Programs" BookName="ref"/>.
 Like the latter objects, gslps describe an efficient way for evaluating
 an abstract word at concrete generators.
 The difference is that gslps can be built
-from existing (generalized) straight line programs.
-So the advantages of using gslps are that
+from existing (generalized) straight line programs,
+whereas a straight line program is given by an explicit list of
+instructions (see <Ref Func="LinesOfStraightLinePrograms" BookName="ref"/>).
+So the advantages of using a gslp instead of constructing an equivalent
+straight line program (see <Ref Func="EquivalentStraightLineProgram"/>)
+are that
 <P/>
 <List>
 <Item>
-    available objects are reused,
+    available objects (the building blocks of the gslp) are reused,
 </Item>
 <Item>
-    the internal structure is retained, and
+    the internal structure of the gslp is retained
+    (one can access the building blocks if one wants), and
 </Item>
 <Item>
-    intermediate results of an evaluation are not kept longer than
-    until the relevant straight line program inside is evaluated.
+    in the evaluation of a gslp, the intermediate results that arise in
+    a building block of the gslp can be garbage collected
+    as soon as the evaluation of this building block has finished.
 </Item>
 </List>
 <P/>
@@ -50,9 +56,9 @@ This object has exactly one of the following forms.
 </Item>
 <Item>
     It is of <Q>union</Q> kind, that is, the defining data are
-    a nonempty list of gslps,
-    and evaluation at some group elements means to evaluate these
-    defining programs at these group elements,
+    a nonempty list <M>l</M> of gslps,
+    and evaluation at some group elements means to evaluate the
+    gslps in <M>l</M> at these group elements,
     and to return the concatenation of the results.
 </Item>
 <Item>
@@ -61,7 +67,7 @@ This object has exactly one of the following forms.
     and evaluation at some group elements means
     to evaluate the first of them at these elements,
     then to evaluate the second of them at the result of the first
-    evaluations,
+    evaluation,
     and so on, and to return the last result.
 </Item>
 </List>
@@ -82,10 +88,10 @@ for a group <M>G</M> is given.
     we may be interested in computing standard generators <M>l''</M>
     for <M>M</M> from <M>l'</M>.
     <P/>
-    For that, a second straight line program can be needed,
+    For that, a second straight line program may be needed,
     and it makes sense to encode the computation of <M>l''</M> from
     <M>l</M> via a gslp of <Q>compose</Q> kind.
-</Item> 
+</Item>
 <Item>
     Suppose that we are in fact interested in a downward extension
     <M>H</M> of <M>G</M>, and that <M>\pi</M> is the natural epimorphism
@@ -107,7 +113,7 @@ for a group <M>G</M> is given.
 
 Gslps can be constructed using <Ref Func="GeneralizedStraightLineProgram"
 Label="for kind and list"/>.
-<P/> 
+<P/>
 Defining attributes for gslps are
 <Ref Attr="NrInputsOfGeneralizedStraightLineProgram"/>
 and <Ref Attr="DataOfGeneralizedStraightLineProgram"/>.

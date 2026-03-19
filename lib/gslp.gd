@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  gslp.gd              GAP 4 package CTBlocks                 Thomas Breuer
+#W  gslp.gd              GAP 4 package utils                    Thomas Breuer
 ##
 ##  A remark on the name <Q>generalized straight line program</Q>:
 ##  We could have taken the viewpoint that these objects are the ones that
