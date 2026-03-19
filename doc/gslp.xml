@@ -23,7 +23,7 @@ an abstract word at concrete generators.
 The difference is that gslps can be built
 from existing (generalized) straight line programs,
 whereas a straight line program is given by an explicit list of
-instructions (see <Ref Func="LinesOfStraightLinePrograms" BookName="ref"/>).
+instructions (see <Ref Func="LinesOfStraightLineProgram" BookName="ref"/>).
 So the advantages of using a gslp instead of constructing an equivalent
 straight line program (see <Ref Func="EquivalentStraightLineProgram"/>)
 are that
