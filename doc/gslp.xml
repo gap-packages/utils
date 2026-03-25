@@ -63,10 +63,10 @@ This object has exactly one of the following forms.
 </Item>
 <Item>
     It is of <Q>compose</Q> kind, that is, the defining data are
-    a nonempty list of gslps,
+    a nonempty list <M>l</M> of gslps,
     and evaluation at some group elements means
-    to evaluate the first of them at these elements,
-    then to evaluate the second of them at the result of the first
+    to evaluate <M>l[1]</M> at these elements,
+    then to evaluate <M>l[2]</M> at the result of the first
     evaluation,
     and so on, and to return the last result.
 </Item>
