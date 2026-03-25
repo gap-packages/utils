@@ -5,7 +5,9 @@
 ##
 #Y  Copyright (C) 2022, The GAP Group
 ##
+gap> START_TEST( "download.tst" );
 
+##
 gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
@@ -97,19 +99,5 @@ gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 5 ) );;
 gap> res1.success = true;
 true
 
-##  the example 9.1.1 from the manual
-gap> url:= "https://www.gap-system.org/index.html";;
-gap> res1:= Download( url );;
-gap> res1.success;
-true
-gap> IsBound( res1.result ) and IsString( res1.result );
-true
-gap> res2:= Download( Concatenation( url, "xxx" ) );;
-gap> res2.success;
-false
-gap> IsBound( res2.error ) and IsString( res2.error );
-true
-
-#############################################################################
 ##
-#E
+gap> STOP_TEST( "download.tst" );

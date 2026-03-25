@@ -101,4 +101,22 @@ http://magma.maths.usyd.edu.au/magma/
   </other>
 </manual></entry>
 
+<entry id="AGRv3"><misc>
+  <author>
+    <name><first>Robert A.</first><last>Wilson</last></name>
+    <name><first>Peter</first><last>Walsh</last></name>
+    <name><first>Jonathan</first><last>Tripp</last></name>
+    <name><first>Ibrahim</first><last>Suleiman</last></name>
+    <name><first>Richard A.</first><last>Parker</last></name>
+    <name><first>Simon P.</first><last>Norton</last></name>
+    <name><first>Simon</first><last>Nickerson</last></name>
+    <name><first>Steve</first><last>Linton</last></name>
+    <name><first>John</first><last>Bray</last></name>
+    <name><first>Rachel</first><last>Abbott</last></name>
+  </author>
+  <title><C>ATLAS of Finite Group Representations</C></title>
+  <howpublished><URL>http://atlas.math.rwth-aachen.de/Atlas/v3</URL></howpublished>
+  <key>ATLAS</key>
+</misc></entry>
+
 </file>
