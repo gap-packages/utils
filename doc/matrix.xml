@@ -38,8 +38,6 @@ with <M>3</M> blocks.
 <M>M_4</M> is an example with three decompositions, 
 while <M>M_8 = M_4 \oplus M_4</M> has <M>16</M> decompositions (not listed).
 <P/> 
-</Description>
-</ManSection>
 <Example><![CDATA[
 gap> M6 := [ [1,2,0,0,0,0], [3,4,0,0,0,0], [5,6,0,0,0,0],                       
 >            [0,0,9,0,0,0], [0,0,0,1,2,3], [0,0,0,4,5,6] ];;
@@ -108,6 +106,8 @@ gap> Display(M5);
 gap> L5 := DirectSumDecompositionMatrices( M5 ); 
 [ [ [ [ 1, 2 ], [ 3, 4 ] ], [ [ 0 ] ], [ [ 6, 7 ], [ 8, 9 ] ] ] ]
 ]]></Example>
+</Description>
+</ManSection>
 
 </Section> 
 

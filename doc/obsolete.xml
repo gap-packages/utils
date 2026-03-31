@@ -53,6 +53,7 @@ gap> Perform( L, Display );
 IsFinite
 IsSmallList
 IsGeneratorsOfMagmaWithInverses
+IsAssociative
 IsGeneratorsOfSemigroup
 IsSubsetLocallyFiniteGroup
 gap> Perform( s3, Display ); 
@@ -77,12 +78,12 @@ which was included in versions from 0.41 to 0.58,
 has been removed since it was considered superfluous. 
 The example shows how to print out a function. 
 <P/> 
-<Example><![CDATA[
+<Log><![CDATA[
 gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 1, 1 );
-#I  Searching Method for IsCyclic with 1 arguments:
-#I  Total: 7 entries
-#I  Method 4: ``IsCyclic'' at /Applications/gap/gap4r9/lib/grp.gi:30 , value: 
-36
+#I  Searching Method for IsCyclic with 1 argument:
+#I  Total: 8 entries
+#I  Method 5: ``IsCyclic'' at GAPROOT/lib/grp.gi:
+34 , value: 36
 function( G ) ... end
 gap> Print( last );
 function ( G )
@@ -94,12 +95,12 @@ function ( G )
     return;
 end
 gap> ApplicableMethod( IsCyclic, [ Group((1,2,3),(4,5)) ], 0, 3 );
-function( <1 unnamed arguments> ) ... end
+function( obj ) ... end
 gap> Print( last );                                               
-function ( <<arg-1>> )
-    <<compiled GAP code from GAPROOT/lib/oper1.g:578>>
+function ( obj )
+    <<compiled GAP code>> from GAPROOT/lib/oper1.g:767
 end
-]]></Example>
+]]></Log>
 
 </Subsection>
 
