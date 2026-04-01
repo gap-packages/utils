@@ -14,7 +14,7 @@
 The functions described in this chapter have been written by Thomas Breuer,
 they are available since <Package>Utils</Package> 0.94.
 <P/>
-<E>Generalized straight line programs</E> (in the following abbreviated
+<E>Generalized straight line programs</E> (abbreviated
 as <E>gslps</E>) are a generalization of the straight line programs
 that are described in the &GAP; library,
 see <Ref Sect="Straight Line Programs" BookName="ref"/>.
@@ -43,6 +43,12 @@ are that
 </Item>
 </List>
 <P/>
+
+
+Perhaps, at this point, add a reminder of how slps work, and an example?
+<P/>
+
+
 A gslp in &GAP; is represented by an object in the category
 <Ref Filt="IsGeneralizedStraightLineProgram"/>.
 This object has exactly one of the following forms.
@@ -117,7 +123,7 @@ Label="for kind and list"/>.
 Defining attributes for gslps are
 <Ref Attr="NrInputsOfGeneralizedStraightLineProgram"/>
 and <Ref Attr="DataOfGeneralizedStraightLineProgram"/>.
-The probably most interesting operation for gslps is
+Probably the most interesting operation for gslps is
 <Ref Oper="ResultOfGeneralizedStraightLineProgram"/>.
 <P/>
 Currently we do not intend to provide methods applicable to
