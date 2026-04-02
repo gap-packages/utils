@@ -32,13 +32,11 @@
 ##  <Ref Filt="IsStraightLineProgram" BookName="ref"/>.
 ##  <P/>
 ##  <Example><![CDATA[
-##  gap> gslp:= GeneralizedStraightLineProgram( "union",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
-##  <generalized straight line program>
-##  gap> IsGeneralizedStraightLineProgram( gslp );
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> IsGeneralizedStraightLineProgram( gslp3 );
 ##  true
-##  gap> slp:= StraightLineProgram( [[[1,2]]], 1 );
-##  <straight line program>
+##  gap> slp := StraightLineProgram( [[[1,2]]], 1 );;
 ##  gap> IsGeneralizedStraightLineProgram( slp );
 ##  true
 ##  gap> IsGeneralizedStraightLineProgram( [ slp, slp ] );
@@ -75,10 +73,9 @@ InstallTrueMethod( IsGeneralizedStraightLineProgram, IsStraightLineProgram );
 ##  There is no default method to compute the value if it is not stored.
 ##  <P/>
 ##  <Example><![CDATA[
-##  gap> gslp:= GeneralizedStraightLineProgram( "union",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
-##  <generalized straight line program>
-##  gap> DataOfGeneralizedStraightLineProgram( gslp );
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> DataOfGeneralizedStraightLineProgram( gslp2 );
 ##  [ "union", [ <straight line program>, <straight line program> ] ]
 ##  ]]></Example>
 ##  </Description>
@@ -109,9 +106,9 @@ DeclareAttribute( "DataOfGeneralizedStraightLineProgram",
 ##  <A>gslp</A> is constructed.
 ##  <P/>
 ##  <Example><![CDATA[
-##  gap> NrInputsOfGeneralizedStraightLineProgram(
-##  >        GeneralizedStraightLineProgram( "union",
-##  >            [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> NrInputsOfGeneralizedStraightLineProgram( gslp2 );
 ##  1
 ##  ]]></Example>
 ##  <P/>
@@ -143,14 +140,16 @@ DeclareSynonymAttr( "NrInputsOfGeneralizedStraightLineProgram",
 ##  Note that the &GAP; library does not define a corresponding attribute
 ##  for straight line programs.
 ##  <P/>
+##  In the examples, glsp2 outputs <M>[p^2,p^3]</M>,
+##  while glsp3 outputs <M>p^6</M>.
 ##  <Example><![CDATA[
-##  gap> NrOutputsOfGeneralizedStraightLineProgram(
-##  >        GeneralizedStraightLineProgram( "union",
-##  >            [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> NrOutputsOfGeneralizedStraightLineProgram( gslp2 );
 ##  2
-##  gap> NrOutputsOfGeneralizedStraightLineProgram(
-##  >        GeneralizedStraightLineProgram( "compose",
-##  >            [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] ) );
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> NrOutputsOfGeneralizedStraightLineProgram( gslp3 );
 ##  1
 ##  ]]></Example>
 ##  </Description>
@@ -191,15 +190,23 @@ DeclareAttribute( "NrOutputsOfGeneralizedStraightLineProgram",
 ##  Label="for a list of lines (and the number of generators)"/> and
 ##  <C>l</C> returns a gslp.
 ##  <P/>
+##  In the examples <M>p^2, [p^2,p^3]</M> and <M>(p^2)^3</M>
+##  are computed, with <M>p=(1,2,3,4,5,6)</M>.
+##  <P/>
 ##  <Example><![CDATA[
-##  gap> GeneralizedStraightLineProgram( [[[1,2]]], 1 );
+##  gap> gslp1 := GeneralizedStraightLineProgram( [[[1,2]]], 1 );
 ##  <straight line program>
-##  gap> GeneralizedStraightLineProgram( "union",
+##  gap> ResultOfStraightLineProgram( gslp1, [(1,2,3,4,5,6)]  );  
+##  [ (1,3,5)(2,4,6) ]
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
 ##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
 ##  <generalized straight line program>
-##  gap> GeneralizedStraightLineProgram( "compose",
-##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
-##  <generalized straight line program>
+##  gap> ResultOfStraightLineProgram( gslp2, [(1,2,3,4,5,6)]  );
+##  [ (1,3,5)(2,4,6), (1,4)(2,5)(3,6) ]
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> ResultOfStraightLineProgram( gslp3, [(1,2,3,4,5,6)]  );
+##  [ () ]
 ##  ]]></Example>
 ##  </Description>
 ##  </ManSection>
@@ -245,23 +252,24 @@ DeclareGlobalFunction( "GeneralizedStraightLineProgram" );
 ##  </Item>
 ##  </List>
 ##  <P/>
-##  <Example><![CDATA[
-##  gap> gens:= [ (1,2,3,4,5,6) ];;
-##  gap> gslp:= GeneralizedStraightLineProgram( "union",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
-##  <generalized straight line program>
-##  gap> ResultOfGeneralizedStraightLineProgram( gslp, gens );
-##  [ (1,3,5)(2,4,6), (1,4)(2,5)(3,6) ]
-##  gap> gslp:= GeneralizedStraightLineProgram( "compose",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
-##  <generalized straight line program>
-##  gap> ResultOfGeneralizedStraightLineProgram( gslp, gens );
-##  [ () ]
-##  ]]></Example>
-##  <P/>
 ##  In order to avoid the introduction of unnecessary operations,
 ##  we define <Ref Oper="ResultOfGeneralizedStraightLineProgram"/> just as
 ##  a synonym of <Ref Oper="ResultOfStraightLineProgram" BookName="ref"/>.
+##  <P/>
+##  <Example><![CDATA[
+##  gap> gens := [ (1,2,3,4,5,6) ];;
+##  gap> gslp := StraightLineProgram( [ [ [1,2] ] ], 1 );;
+##  gap> ResultOfGeneralizedStraightLineProgram( gslp, gens );                             
+##  [ (1,3,5)(2,4,6) ]
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> ResultOfGeneralizedStraightLineProgram( gslp2, gens );
+##  [ (1,3,5)(2,4,6), (1,4)(2,5)(3,6) ]
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  > [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> ResultOfGeneralizedStraightLineProgram( gslp3, gens );
+##  [ () ]
+##  ]]></Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
@@ -290,23 +298,23 @@ DeclareOperation( "ResultOfGeneralizedStraightLineProgram",
 ##  output, for any list of input elements.
 ##  <P/>
 ##  <Example><![CDATA[
-##  gap> gslp:= GeneralizedStraightLineProgram( "union",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  >                 [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
 ##  <generalized straight line program>
-##  gap> slp:= EquivalentStraightLineProgram( gslp );
+##  gap> slp2 := EquivalentStraightLineProgram( gslp2 );
 ##  <straight line program>
-##  gap> Display( slp );
+##  gap> Display( slp2 );
 ##  # input:
 ##  r:= [ g1 ];
 ##  # program:
 ##  # return values:
 ##  [ r[1]^2, r[1]^3 ]
-##  gap> gslp:= GeneralizedStraightLineProgram( "compose",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  >                 [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );
 ##  <generalized straight line program>
-##  gap> slp:= EquivalentStraightLineProgram( gslp );
+##  gap> slp3 := EquivalentStraightLineProgram( gslp3 );
 ##  <straight line program>
-##  gap> Display( slp );
+##  gap> Display( slp3 );
 ##  # input:
 ##  r:= [ g1 ];
 ##  # program:

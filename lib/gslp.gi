@@ -218,13 +218,13 @@ InstallMethod( String,
 ##  compatible with the numbers of inputs and outputs of <A>gslp</A>.
 ##  <P/>
 ##  <Example><![CDATA[
-##  gap> gslp:= GeneralizedStraightLineProgram( "union",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
-##  gap> IsInternallyConsistent( gslp );
+##  gap> gslp2 := GeneralizedStraightLineProgram( "union",
+##  >                 [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> IsInternallyConsistent( gslp2 );
 ##  true
-##  gap> gslp:= GeneralizedStraightLineProgram( "compose",
-##  >               [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
-##  gap> IsInternallyConsistent( gslp );
+##  gap> gslp3 := GeneralizedStraightLineProgram( "compose",
+##  >                 [ [ [[[1,2]]], 1 ], [ [[[1,3]]], 1 ] ] );;
+##  gap> IsInternallyConsistent( gslp3 );
 ##  true
 ##  ]]></Example>
 ##  </Description>
