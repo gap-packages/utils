@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.94 for GAP 4.16.0 (30/04/26)
+ * (31/03/26) added new Ch.10 Generalized Straight Line Programs (Thomas Breuer)
+
 ## Version 0.93 for GAP 4.15.1 (13/11/25)
  * (13/11/25) new release to fix the problem described in GAP issue 6164
 

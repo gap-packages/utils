@@ -128,7 +128,7 @@ there is no <Ref Func="IntermediateResultOfSLP" BookName="ref"/> method
 for generalized straight line programs.
 <P/>
 Special methods applicable to gslps are installed for the operations
-<Ref Meth="IsInternallyConsistent" Label="for gen. straight line program"/>,
+<Ref Meth="IsInternallyConsistent" Label="for generalized straight line program"/>,
 <Ref Oper="ViewString" BookName="ref"/>,
 and <Ref Oper="String" BookName="ref"/>.
 

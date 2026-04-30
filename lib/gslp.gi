@@ -208,7 +208,7 @@ InstallMethod( String,
 ##  <#GAPDoc Label="IsInternallyConsistent_gslp"> 
 ##  <ManSection>
 ##  <Meth Name="IsInternallyConsistent" Arg='gslp'
-##   Label="for gen. straight line program"/>
+##   Label="for generalized straight line program"/>
 ##      
 ##  <Description>
 ##  For a generalized straight line program <A>gslp</A>,

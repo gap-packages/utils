@@ -189,7 +189,7 @@ DeclareAttribute( "NrOutputsOfGeneralizedStraightLineProgram",
 ##  such that <Ref Func="CallFuncList" BookName="ref"/>
 ##  applied to <Ref Func="GeneralizedStraightLineProgram"
 ##  Label="for a list of lines (and the number of generators)"/> and
-##  <C>l</C> returns a gslp.
+##  <M>l</M> returns a gslp.
 ##  <P/>
 ##  <Example><![CDATA[
 ##  gap> GeneralizedStraightLineProgram( [[[1,2]]], 1 );
