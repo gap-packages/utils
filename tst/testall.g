@@ -15,7 +15,9 @@ if not UtilsLoadingComplete then
 fi; 
 
 # Create/update the testfiles containing the manual examples.
-ReadPackage( "utils", "makedoc.g" );
+# (The "nopdf" option informs AutoDoc that it can skip generating
+# PDF files, which makes this much faster)
+ReadPackage( "utils", "makedoc.g" : nopdf );
 
 dir := DirectoriesPackageLibrary( "utils", "tst" );
 TestDirectory(dir, rec(exitGAP := true,
