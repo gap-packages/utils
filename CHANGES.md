@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.95 for GAP 4.16.0 (18/05/26)
+ * (18/05/26) PR#93 - avoid using the Small Groups Libeary in examples/
+
 ## Version 0.94 for GAP 4.16.0 (30/04/26)
  * (31/03/26) added new Ch.10 Generalized Straight Line Programs (Thomas Breuer)
 
