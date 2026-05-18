@@ -41,7 +41,7 @@ iterated over (this is, of course, just the order of the automorphisms group).
 The operation <C>AllIsomorphisms</C> produces the list or isomorphisms.
 <P/> 
 <Example><![CDATA[
-gap> G := SmallGroup( 6,1);; 
+gap> G := DihedralGroup(6);;
 gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> NextIterator( iter );
 [ f1, f2 ] -> [ (6,7), (5,6,7) ]

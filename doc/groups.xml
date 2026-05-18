@@ -355,7 +355,7 @@ gap> c1 := Centre( g1 );
 Group([ f3 ])
 gap> cp1 := CentralProduct( g1, g1, c1, IdentityMapping( c1 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp1 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IsomorphismGroups( cp1, ExtraspecialGroup( 2^5, "+" ) ) <> fail;
 true
 gap> g2 := QuaternionGroup( 8 );
 <pc group of size 8 with 3 generators>
@@ -363,7 +363,7 @@ gap> c2 := Centre( g2 );
 Group([ y2 ])
 gap> cp2 := CentralProduct( g2, g2, c2, IdentityMapping( c2 ) );
 Group([ f1, f2, f5, f3, f4, f5 ])
-gap> IdGroup( cp2 ) = IdGroup( ExtraspecialGroup( 2^5, "+" ) );
+gap> IsomorphismGroups( cp1, ExtraspecialGroup( 2^5, "+" ) ) <> fail;
 true
 gap> info2 := CentralProductInfo( cp2 );
 rec( phi := IdentityMapping( Group([ y2 ]) ), 

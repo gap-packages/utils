@@ -13,7 +13,7 @@ gap> UtilsLoadingComplete;
 true
 
 ## SubSection 7.1.1 
-gap> G := SmallGroup( 6,1);; 
+gap> G := DihedralGroup(6);;
 gap> s3 := Group( (5,6), (6,7) );; 
 gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> NextIterator( iter );
