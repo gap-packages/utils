@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.96 for GAP 4.16.0 (06/06/26)
+ * (06/06/26) testall.g adjusted to fix issue in oscar-system/GAP.jl/pull/1379.
+
 ## Version 0.95 for GAP 4.16.0 (18/05/26)
  * (18/05/26) PR#93 - avoid using the Small Groups Libeary in examples/
 
