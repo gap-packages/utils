@@ -92,10 +92,10 @@ gap> for pair in urls do
 >    od;
 
 ##  test timeout
-gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 1 ) );;
+gap> res1:= Download( "https://httpbin.org/delay/3", rec( maxTime:= 1 ) );;
 gap> res1.success = false;
 true
-gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 5 ) );;
+gap> res1:= Download( "https://httpbin.org/delay/3", rec( maxTime:= 5 ) );;
 gap> res1.success = true;
 true
 
