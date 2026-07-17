@@ -32,6 +32,22 @@ gap> res1:= iometh.download( Concatenation( baseurl, "?a=b#fragment" ),
 >                           rec() );;
 gap> res1.success;
 true
+gap> res1:= iometh.download( baseurl, rec() );;
+gap> res1.success;
+true
+gap> res1:= iometh.download( Concatenation( baseurl, "#fragment" ),
+>                           rec() );;
+gap> res1.success;
+true
+gap> res1:= iometh.download( "http:///missing-authority", rec() );;
+gap> res1.error;
+"invalid URL authority"
+gap> res1:= iometh.download( "http://127.0.0.1:80:90/", rec() );;
+gap> res1.error;
+"invalid URL authority"
+gap> res1:= iometh.download( "http://:80/", rec() );;
+gap> res1.error;
+"invalid URL authority"
 gap> res1:= iometh.download( "http://127.0.0.1:not-a-port/", rec() );;
 gap> res1.success = false;
 true
