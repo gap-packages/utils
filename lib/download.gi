@@ -55,7 +55,7 @@ Add( Download_Methods, rec(
   name:= "via SingleHTTPRequest (from the IO package)",
   isAvailable:= {} -> IsBoundGlobal( "SingleHTTPRequest" ),
   download:= function( url, opt )
-    local rurl, pos, domain, uri, res;
+    local rurl, pos, authority, domain, port, portstr, uri, fragment, res;
 
     if not StartsWith( url, "http://" ) then
       return rec( success:= false, error:= "protocol is not http" );
@@ -63,16 +63,67 @@ Add( Download_Methods, rec(
       return rec( success:= false, error:= "no support for given timeout" );
     fi;
 
-    rurl:= ReplacedString( url, "http://", "" );
-    pos:= Position( rurl, '/' );
-    domain:= rurl{ [ 1 .. pos-1 ] };
-    uri:= rurl{ [ pos .. Length( rurl ) ] };
-    if IsBound( opt.target ) and IsString( opt.target ) then
-      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri,
-                rec(), false, opt.target );
+    # Split the URL after 'http://' into the authority and HTTP request target.
+    # A query without an explicit path gets the default path '/'.
+    rurl:= url{ [ 8 .. Length( url ) ] };
+    pos:= PositionProperty( rurl, c -> c in "/?#" );
+    if pos = fail then
+      authority:= rurl;
+      uri:= "/";
     else
-      res:= ValueGlobal( "SingleHTTPRequest" )( domain, 80, "GET", uri,
-                rec(), false, false );
+      authority:= rurl{ [ 1 .. pos-1 ] };
+      uri:= rurl{ [ pos .. Length( rurl ) ] };
+      if StartsWith( uri, "?" ) then
+        uri:= Concatenation( "/", uri );
+      elif StartsWith( uri, "#" ) then
+        uri:= "/";
+      fi;
+    fi;
+
+    # A fragment is interpreted by the client and must not be sent to the
+    # server as part of the request target.
+    fragment:= Position( uri, '#' );
+    if fragment <> fail then
+      uri:= uri{ [ 1 .. fragment-1 ] };
+    fi;
+
+    # Separate the optional port from the host.  IO's HTTP client uses IPv4
+    # sockets, thus bracketed IPv6 addresses are not supported here.
+    domain:= authority;
+    port:= 80;
+    portstr:= fail;
+    if Length( authority ) = 0 or Position( authority, '@' ) <> fail then
+      return rec( success:= false, error:= "invalid URL authority" );
+    elif authority[1] = '[' then
+      return rec( success:= false,
+                  error:= "IPv6 addresses are not supported" );
+    else
+      pos:= Position( authority, ':' );
+      if pos <> fail then
+        if Position( authority, ':', pos ) <> fail then
+          return rec( success:= false, error:= "invalid URL authority" );
+        fi;
+        domain:= authority{ [ 1 .. pos-1 ] };
+        portstr:= authority{ [ pos+1 .. Length( authority ) ] };
+      fi;
+    fi;
+    if Length( domain ) = 0 then
+      return rec( success:= false, error:= "invalid URL authority" );
+    elif portstr <> fail then
+      port:= Int( portstr );
+      if not IsPosInt( port ) or port > 65535 then
+        return rec( success:= false, error:= "invalid URL port" );
+      fi;
+    fi;
+
+    # Preserve the complete authority, including brackets and a non-default
+    # port, in the HTTP Host header.
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      res:= ValueGlobal( "SingleHTTPRequest" )( domain, port, "GET", uri,
+                rec( Host:= authority ), false, opt.target );
+    else
+      res:= ValueGlobal( "SingleHTTPRequest" )( domain, port, "GET", uri,
+                rec( Host:= authority ), false, false );
     fi;
     if res.statuscode = 0 then
       return rec( success:= false,

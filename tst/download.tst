@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad, server, baseurl, iometh
 ############################################################################
 ##
 #W  download.tst               Utils Package                   Thomas Breuer
@@ -11,21 +11,58 @@ gap> START_TEST( "download.tst" );
 gap> ReadPackage( "utils", "tst/loadall.g" );;
 gap> UtilsLoadingComplete;
 true
+gap> LoadPackage( "io", false );
+true
+gap> ReadPackage( "utils", "tst/http-server.g" );;
+gap> server:= UTILS_StartHTTPTestServer();;
+gap> baseurl:= Concatenation( "http://127.0.0.1:",
+>                            String( server.port ) );;
 
 ##  Test the available Download methods
 gap> meths:= List( Filtered( Download_Methods, r -> r.isAvailable() ),
 >                  ShallowCopy );;
+gap> iometh:= First( meths,
+>                    r -> StartsWith( r.name, "via SingleHTTPRequest" ) );;
 gap> for i in [ 1 .. Length( meths ) ] do
 >      meths[i].position:= String( i );
 >    od;
-gap> urls:= [ # a http url that gets redirected to https
->             [ "http://www.gap-system.org/index.html", true ],
->             # a http url that works as such
->             [ "http://www.math.rwth-aachen.de/index.html", true ],
->             # a https url that exists
->             [ "https://www.gap-system.org/index.html", true ],
->             # a https url that does not exist
->             [ "https://www.gap-system.org/indexxxxx.html", false ],
+
+##  Test URL parsing in the SingleHTTPRequest based method.
+gap> res1:= iometh.download( Concatenation( baseurl, "?a=b#fragment" ),
+>                           rec() );;
+gap> res1.success;
+true
+gap> res1:= iometh.download( baseurl, rec() );;
+gap> res1.success;
+true
+gap> res1:= iometh.download( Concatenation( baseurl, "#fragment" ),
+>                           rec() );;
+gap> res1.success;
+true
+gap> res1:= iometh.download( "http:///missing-authority", rec() );;
+gap> res1.error;
+"invalid URL authority"
+gap> res1:= iometh.download( "http://127.0.0.1:80:90/", rec() );;
+gap> res1.error;
+"invalid URL authority"
+gap> res1:= iometh.download( "http://:80/", rec() );;
+gap> res1.error;
+"invalid URL authority"
+gap> res1:= iometh.download( "http://127.0.0.1:not-a-port/", rec() );;
+gap> res1.success = false;
+true
+gap> res1:= iometh.download( "http://127.0.0.1:65536/", rec() );;
+gap> res1.success = false;
+true
+gap> res1:= iometh.download(
+>      Concatenation( "http://[::1]:", String( server.port ), "/" ),
+>      rec() );;
+gap> res1.success = false;
+true
+gap> res1.error;
+"IPv6 addresses are not supported"
+gap> urls:= [ # an http url that works as such
+>             [ Concatenation( baseurl, "/success" ), true ],
 >           ];;
 
 ##  The problem is that the methods do not behave consistently
@@ -33,13 +70,15 @@ gap> urls:= [ # a http url that gets redirected to https
 ##  (Well, they even do not agree what failure means.)
 ##  The test results depend on which methods are available at runtime,
 ##  which makes them useless as automatic tests.
-##  Thus we test only working http and https urls.
-gap> urls:= urls{ [ 2, 3 ] };;
+##  Thus we test only a working http url.
 gap> for pair in urls do
 >      url:= pair[1];
 >      expected:= pair[2];
 >      res1:= List( meths, r -> [ r.download( url, rec() ), r.position ] );;
 >      good1:= Filtered( res1, r -> r[1].success = true );;
+>      if expected = true and Length( good1 ) <> Length( meths ) then
+>        Print( "failure for url ", url, "\n" );
+>      fi;
 >      if expected = false and Length( good1 ) > 0 then
 >        Print( "success for url ", url, "?\n" );
 >      fi;
@@ -92,12 +131,23 @@ gap> for pair in urls do
 >    od;
 
 ##  test timeout
-gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 1 ) );;
+gap> url:= Concatenation( baseurl, "/delay/3" );;
+gap> res1:= Download( url, rec( maxTime:= 1 ) );;
 gap> res1.success = false;
 true
-gap> res1:= Download( "https://httpbun.com/delay/3", rec( maxTime:= 5 ) );;
+gap> res1:= Download( url, rec( maxTime:= 5 ) );;
 gap> res1.success = true;
 true
+
+##  test errors and redirects
+gap> res1:= Download( Concatenation( baseurl, "/missing" ) );;
+gap> res1.success = false;
+true
+gap> res1:= Download( Concatenation( baseurl, "/redirect" ) );;
+gap> res1.success = true;
+true
+
+gap> UTILS_StopHTTPTestServer( server );;
 
 ##
 gap> STOP_TEST( "download.tst" );
