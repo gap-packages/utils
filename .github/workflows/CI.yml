@@ -38,6 +38,9 @@ jobs:
       - uses: gap-actions/setup-gap@v3
         with:
           gap-version: ${{ matrix.gap-version }}
+      - uses: gap-actions/install-pkg@v1
+        with:
+          packages: "curlInterface@2.4.0"
       - uses: gap-actions/build-pkg@v3
         with:
           extra-pkgs: "io nq profiling"
