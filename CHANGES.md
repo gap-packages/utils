@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.97 for GAP 4.16.0 (29/07/26)
+ * (29/07/26) various CI updates, etc.
+
 ## Version 0.96 for GAP 4.16.0 (06/06/26)
  * (06/06/26) testall.g adjusted to fix issue in oscar-system/GAP.jl/pull/1379.
 
