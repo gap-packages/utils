@@ -1,5 +1,8 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.98 for GAP 4.16.0 (04/08/26)
+ * (04/08/26) changed Fitting series examples to just show StructureDescription
+
 ## Version 0.97 for GAP 4.16.0 (29/07/26)
  * (29/07/26) various CI updates, etc.
 

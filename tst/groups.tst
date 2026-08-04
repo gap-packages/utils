@@ -8,7 +8,7 @@
 ##
 #W  groups.tst                  Utils Package                    
 ##
-#Y  Copyright (C) 2015-2022, The GAP Group 
+#Y  Copyright (C) 2015-2026, The GAP Group 
 ##  
 
 gap> ReadPackage( "utils", "tst/loadall.g" );;
@@ -49,6 +49,8 @@ gap> GeneratorsAndInverses( SymmetricGroup(5) );
 
 ## SubSection 5.1.5 
 gap> UFS := UpperFittingSeries( D12 );;
+gap> List( UFS, StructureDescription );
+[ "1", "C6", "D12" ]
 gap> Set( GeneratorsOfGroup( UFS[2] ) );  
 [ f3, f2*f3 ]
 gap> Set( GeneratorsOfGroup( UFS[3] ) );  
@@ -58,11 +60,11 @@ gap>  LowerFittingSeries( D12 );
 gap> FittingLength( D12 );
 2
 gap> S4 := SymmetricGroup( 4 );;
-gap> ufs := UpperFittingSeries( S4 );;
-gap> List( ufs, StructureDescription );
+gap> UpperFittingSeries( S4 );;
+gap> List( last, StructureDescription );
 [ "1", "C2 x C2", "A4", "S4" ]
-gap> lfs := LowerFittingSeries( S4 );;
-gap> List( lfs, StructureDescription );
+gap> LowerFittingSeries( S4 );;
+gap> List( last, StructureDescription );
 [ "S4", "A4", "C2 x C2", "1" ]
 gap> FittingLength( S4);
 3

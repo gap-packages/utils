@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  groups.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2025, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2026, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -112,11 +112,11 @@ group are described here:
 <URL>https://en.wikipedia.org/wiki/Fitting_length</URL>. 
 <P/>
 <Example><![CDATA[
-gap> upp:= UpperFittingSeries( D12 );;
-gap> List( upp, StructureDescription );
+gap> UpperFittingSeries( D12 );;
+gap> List( last, StructureDescription );
 [ "1", "C6", "D12" ]
-gap> low:= LowerFittingSeries( D12 );;
-gap> List( low, StructureDescription );
+gap> LowerFittingSeries( D12 );;
+gap> List( last, StructureDescription );
 [ "D12", "C3", "1" ]
 gap> FittingLength( D12 );
 2
@@ -124,8 +124,8 @@ gap> S4 := SymmetricGroup( 4 );;
 gap> UpperFittingSeries( S4 );;
 gap> List( last, StructureDescription );
 [ "1", "C2 x C2", "A4", "S4" ]
-gap> ser := LowerFittingSeries( S4 );;
-gap> List( ser, StructureDescription );
+gap> LowerFittingSeries( S4 );;
+gap> List( last, StructureDescription );
 [ "S4", "A4", "C2 x C2", "1" ]
 gap> FittingLength( S4);
 3
