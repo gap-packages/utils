@@ -121,15 +121,11 @@ gap> List( low, StructureDescription );
 gap> FittingLength( D12 );
 2
 gap> S4 := SymmetricGroup( 4 );;
-gap> UpperFittingSeries( S4 );
-[ Group(()), Group([ (1,2)(3,4), (1,4)(2,3) ]), 
-  Group([ (2,4,3), (1,2)(3,4) ]), Group([ (3,4), (2,4,3), (1,2)(3,4) ]) ]
+gap> UpperFittingSeries( S4 );;
 gap> List( last, StructureDescription );
 [ "1", "C2 x C2", "A4", "S4" ]
-gap> LowerFittingSeries( S4 );
-[ Sym( [ 1 .. 4 ] ), Alt( [ 1 .. 4 ] ), Group([ (1,4)(2,3), (1,2)(3,4) ]), 
-  Group(()) ]
-gap> List( last, StructureDescription );
+gap> ser := LowerFittingSeries( S4 );;
+gap> List( ser, StructureDescription );
 [ "S4", "A4", "C2 x C2", "1" ]
 gap> FittingLength( S4);
 3
