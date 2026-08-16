@@ -247,6 +247,9 @@ InstallMethod( Download,
     function( url, opt )
     local timeout, errors, r, res;
 
+    # Do not modify the caller's record when filling in the defaults below.
+    opt:= ShallowCopy( opt );
+
     # Set the default for 'verifyCert' if necessary.
     if not IsBound( opt.verifyCert ) and
        UserPreference( "utils", "DownloadVerifyCertificate" ) = false then

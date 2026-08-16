@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad, server, baseurl, iometh
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad, server, baseurl, iometh, opt, oldpref
 ############################################################################
 ##
 #W  download.tst               Utils Package                   Thomas Breuer
@@ -138,6 +138,19 @@ true
 gap> res1:= Download( url, rec( maxTime:= 5 ) );;
 gap> res1.success = true;
 true
+
+##  'Download' must not modify the given options record.
+##  The defaults are filled in only when the preferences differ from their
+##  default values, hence the 'SetUserPreference' call.
+gap> oldpref:= UserPreference( "utils", "DownloadMaxTime" );;
+gap> SetUserPreference( "utils", "DownloadMaxTime", 30 );
+gap> opt:= rec();;
+gap> res1:= Download( Concatenation( baseurl, "/success" ), opt );;
+gap> res1.success;
+true
+gap> RecNames( opt );
+[  ]
+gap> SetUserPreference( "utils", "DownloadMaxTime", oldpref );
 
 ##  test errors and redirects
 gap> res1:= Download( Concatenation( baseurl, "/missing" ) );;
