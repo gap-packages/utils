@@ -36,6 +36,13 @@ Add( Download_Methods, rec(
   download:= function( url, opt )
     local res;
 
+    if IsBound( opt.resume ) and opt.resume = true and
+       IsBound( opt.target ) and IsString( opt.target ) then
+      # Declining matters: this method would truncate the partial file that a
+      # method which can resume needs.
+      return rec( success:= false, error:= "no support for resuming" );
+    fi;
+
     opt:= ShallowCopy( opt );
     if not IsBound( opt.failOnError ) then
       opt.failOnError:= true;
@@ -61,6 +68,11 @@ Add( Download_Methods, rec(
       return rec( success:= false, error:= "protocol is not http" );
     elif IsBound( opt.maxTime ) and opt.maxTime <> 0 then
       return rec( success:= false, error:= "no support for given timeout" );
+    elif IsBound( opt.resume ) and opt.resume = true and
+         IsBound( opt.target ) and IsString( opt.target ) then
+      # No range request, so this would overwrite the partial file that a
+      # method which can resume needs.
+      return rec( success:= false, error:= "no support for resuming" );
     fi;
 
     # Split the URL after 'http://' into the authority and HTTP request target.
@@ -164,6 +176,10 @@ Add( Download_Methods, rec(
     else
       args:= [ "--quiet", "-O", "-", url ];
     fi;
+    if IsBound( opt.resume ) and opt.resume = true and
+       IsBound( opt.target ) and IsString( opt.target ) then
+      Add( args, "-c" );
+    fi;
     if IsBound( opt.verifyCert ) and opt.verifyCert = false then
       Add( args, "--no-check-certificate" );
     fi;
@@ -173,8 +189,10 @@ Add( Download_Methods, rec(
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
     if code <> 0 then
-      # wget may have created the target file; try to remove it
+      # wget may have created the target file; try to remove it, unless the
+      # caller wants to resume from what is there
       if IsBound( opt.target ) and IsString( opt.target ) and
+         not ( IsBound( opt.resume ) and opt.resume = true ) and
          IsExistingFile( opt.target ) and RemoveFile( opt.target ) <> true then
         Error( "Download cannot remove unwanted file ", opt.target );
       fi;
@@ -209,6 +227,11 @@ Add( Download_Methods, rec(
     if IsBound( opt.target ) and IsString( opt.target ) then
       Add( args, opt.target );
     else
+      Add( args, "-" );
+    fi;
+    if IsBound( opt.resume ) and opt.resume = true and
+       IsBound( opt.target ) and IsString( opt.target ) then
+      Add( args, "-C" );
       Add( args, "-" );
     fi;
     if IsBound( opt.maxTime ) and IsPosInt( opt.maxTime ) then
@@ -275,8 +298,10 @@ InstallMethod( Download,
         fi;
         # A failed method may have left a partial or bogus target file behind.
         # Remove it here, so that the guarantee holds for every method,
-        # including ones added to 'Download_Methods' from outside.
+        # including ones added to 'Download_Methods' from outside -- but not
+        # when resuming, where the partial file is the whole point.
         if IsBound( opt.target ) and IsString( opt.target ) and
+           not ( IsBound( opt.resume ) and opt.resume = true ) and
            IsExistingFile( opt.target ) then
           RemoveFile( opt.target );
         fi;

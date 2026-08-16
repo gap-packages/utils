@@ -1,4 +1,4 @@
-#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad, server, baseurl, iometh, opt, oldpref
+#@local meths, i, urls, pair, url, expected, res1, good1, n, file, res2, good2, contents, r, res3, good3, bad, server, baseurl, iometh, opt, oldpref, resumers, name
 ############################################################################
 ##
 #W  download.tst               Utils Package                   Thomas Breuer
@@ -163,6 +163,55 @@ gap> res1.success = false;
 true
 gap> IsExistingFile( file );
 false
+
+##  'resume' continues a partial file rather than fetching it again.  The
+##  test server answers a Range request with the remainder in upper case, so
+##  a resumed download is distinguishable from a restarted one.
+gap> resumers:= Filtered( meths, r -> r.name in [ "via curl", "via wget" ] );;
+gap> for r in resumers do
+>      FileString( file, "abcde" );;
+>      res1:= r.download( Concatenation( baseurl, "/resumable" ),
+>                         rec( target:= file, resume:= true ) );
+>      if res1.success <> true then
+>        Print( "resume failed for ", r.name, ": ", res1.error, "\n" );
+>      elif StringFile( file ) <> "abcdeFGHIJKLMNOPQRST" then
+>        Print( "did not resume for ", r.name, ": ", StringFile( file ), "\n" );
+>      fi;
+>      RemoveFile( file );
+>    od;
+
+##  Without 'resume' the target is replaced, not appended to.
+gap> FileString( file, "abcde" );;
+gap> res1:= Download( Concatenation( baseurl, "/resumable" ),
+>                     rec( target:= file ) );;
+gap> StringFile( file );
+"abcdefghijklmnopqrst"
+
+##  Methods that cannot resume decline, rather than discarding the partial
+##  file that a method which can resume needs.
+gap> iometh.download( Concatenation( baseurl, "/resumable" ),
+>                     rec( target:= file, resume:= true ) ).error;
+"no support for resuming"
+
+##  With 'resume', a failed download keeps the partial file to continue from.
+##  Without this, the clean-up in 'Download' would throw away the very thing
+##  the next attempt is meant to continue.
+gap> FileString( file, "abcde" );;
+gap> res1:= Download( Concatenation( baseurl, "/missing" ),
+>                     rec( target:= file, resume:= true ) );;
+gap> res1.success;
+false
+gap> StringFile( file );
+"abcde"
+gap> RemoveFile( file );;
+
+##  'resume' is only declined when it is actually requested: a method must
+##  not be skipped merely because the component is present.
+gap> res1:= Download( Concatenation( baseurl, "/file" ),
+>                     rec( target:= file, resume:= false ) );;
+gap> res1.success;
+true
+gap> RemoveFile( file );;
 
 ##  test errors and redirects
 gap> res1:= Download( Concatenation( baseurl, "/missing" ) );;
