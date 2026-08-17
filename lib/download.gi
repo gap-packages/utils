@@ -273,6 +273,13 @@ InstallMethod( Download,
         if res.success = true then
           return res;
         fi;
+        # A failed method may have left a partial or bogus target file behind.
+        # Remove it here, so that the guarantee holds for every method,
+        # including ones added to 'Download_Methods' from outside.
+        if IsBound( opt.target ) and IsString( opt.target ) and
+           IsExistingFile( opt.target ) then
+          RemoveFile( opt.target );
+        fi;
         Info( InfoUtils, 2, "Download method ", r.name, " failed with\n",
               "#I    ", res.error );
         Add( errors, Concatenation( r.name, ": ", res.error ) );

@@ -152,6 +152,18 @@ gap> RecNames( opt );
 [  ]
 gap> SetUserPreference( "utils", "DownloadMaxTime", oldpref );
 
+##  A failed download must not leave the target file behind, whichever
+##  method was tried.  'Download' is where that is guaranteed: an individual
+##  method may well leave a partial file, and one of them has to, since a
+##  resuming method needs what the previous attempt wrote.
+gap> file:= Filename( DirectoryTemporary(), "target" );;
+gap> res1:= Download( Concatenation( baseurl, "/missing" ),
+>                     rec( target:= file ) );;
+gap> res1.success = false;
+true
+gap> IsExistingFile( file );
+false
+
 ##  test errors and redirects
 gap> res1:= Download( Concatenation( baseurl, "/missing" ) );;
 gap> res1.success = false;
