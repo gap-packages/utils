@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  matrix.xml          Utils documentation                            -->
 <!--                                                                     -->
-<!--  Copyright (C) 2023, The GAP Group                                  --> 
+<!--  Copyright (C) 2015-2026, The GAP Group                                  --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -83,6 +83,14 @@ gap> Display( M8 );
 gap> L8 := DirectSumDecompositionMatrices( M8 );;
 gap> Length( L8 ); 
 16
+
+gap> M3 := [ [0,0,7,0,0,0,0], [0,0,0,8,0,0,0], [0,0,0,0,9,0,0] ];;
+gap> Display( M3 );  
+[ [  0,  0,  7,  0,  0,  0,  0 ],
+  [  0,  0,  0,  8,  0,  0,  0 ],
+  [  0,  0,  0,  0,  9,  0,  0] ]
+gap> L3 := DirectSumDecompositionMatrices( M3 );                  
+[ [ [ [ 0, 0, 7 ] ], [ [ 8 ] ], [ [ 9, 0, 0 ] ] ] ]
 ]]></Example>
 <P/>
 
