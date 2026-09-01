@@ -51,6 +51,7 @@ gap> AllIsomorphisms( G, s3 );
 [ [ f1, f2 ] -> [ (6,7), (5,6,7) ], [ f1, f2 ] -> [ (5,7), (5,6,7) ], 
   [ f1, f2 ] -> [ (5,6), (5,7,6) ], [ f1, f2 ] -> [ (6,7), (5,7,6) ], 
   [ f1, f2 ] -> [ (5,7), (5,7,6) ], [ f1, f2 ] -> [ (5,6), (5,6,7) ] ]
+gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
 true, false, false, true, false, false,
 gap> s4 := Group( (1,2),(2,3),(3,4) );;
