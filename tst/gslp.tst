@@ -5,6 +5,9 @@
 ##
 #Y  Copyright (C) 2026, The GAP Group
 ##
+##
+##  some tests other than those in the manual
+
 gap> START_TEST( "gslp.tst" );
 
 #
