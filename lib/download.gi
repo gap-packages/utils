@@ -40,11 +40,18 @@ Add( Download_Methods, rec(
     if not IsBound( opt.failOnError ) then
       opt.failOnError:= true;
     fi;
-    # 'DownloadURL' handles the options 'verifyCert' and 'maxTime'.
+    # 'DownloadURL' handles the options 'verifyCert' and 'maxTime'.  Newer
+    # versions can write the body to a file themselves, which keeps it out of
+    # memory; they call that option 'targetFile'.
+    if IsBound( opt.target ) and IsString( opt.target ) then
+      opt.targetFile:= opt.target;
+    fi;
     res:= ValueGlobal( "DownloadURL" )( url, opt );
 
     if res.success = true and
-       IsBound( opt.target ) and IsString( opt.target ) then
+       IsBound( opt.target ) and IsString( opt.target ) and
+       IsBound( res.result ) then
+      # an older 'DownloadURL' ignored 'targetFile' and returned the contents
       FileString( opt.target, res.result );
       Unbind( res.result );
     fi;
