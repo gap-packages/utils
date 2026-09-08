@@ -69,8 +69,11 @@ The following components are supported.
   and the function writes the downloaded contents to this file;
   the returned record does not have a <C>result</C> component in this case.
   <P/>
-  If the download fails then this file is not left behind,
-  unless <C>resume</C> is set.
+  If the download fails then a file created by the attempt is not left
+  behind, unless <C>resume</C> is set.  A file that was already there
+  before the call is not removed, since it is not ours to delete &ndash;
+  but note that a failed attempt may well have overwritten it, so its old
+  contents are not guaranteed either.
 </Item>
 <Mark><C>resume</C></Mark>
 <Item>

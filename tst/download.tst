@@ -213,6 +213,17 @@ gap> res1.success;
 true
 gap> RemoveFile( file );;
 
+##  A file that was already there is not removed by a failed download:
+##  'Download' only cleans up after itself.
+gap> FileString( file, "mine" );;
+gap> res1:= Download( Concatenation( baseurl, "/missing" ),
+>                     rec( target:= file ) );;
+gap> res1.success;
+false
+gap> IsExistingFile( file );
+true
+gap> RemoveFile( file );;
+
 ##  test errors and redirects
 gap> res1:= Download( Concatenation( baseurl, "/missing" ) );;
 gap> res1.success = false;

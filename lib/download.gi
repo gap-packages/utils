@@ -196,13 +196,6 @@ Add( Download_Methods, rec(
     code:= Process( DirectoryCurrent(), exec, InputTextNone(), outstream, args );
     CloseStream( outstream );
     if code <> 0 then
-      # wget may have created the target file; try to remove it, unless the
-      # caller wants to resume from what is there
-      if IsBound( opt.target ) and IsString( opt.target ) and
-         not ( IsBound( opt.resume ) and opt.resume = true ) and
-         IsExistingFile( opt.target ) and RemoveFile( opt.target ) <> true then
-        Error( "Download cannot remove unwanted file ", opt.target );
-      fi;
       return rec( success:= false,
                   error:= Concatenation( "Process returned ", String( code ) ) );
     elif not ( IsBound( opt.target ) and IsString( opt.target ) ) then
@@ -275,7 +268,7 @@ InstallMethod( Download,
 InstallMethod( Download,
     [ "IsString", "IsRecord" ],
     function( url, opt )
-    local timeout, errors, r, res;
+    local timeout, hadTarget, errors, r, res;
 
     # Do not modify the caller's record when filling in the defaults below.
     opt:= ShallowCopy( opt );
@@ -294,6 +287,11 @@ InstallMethod( Download,
       fi;
     fi;
 
+    # Whether the caller brought the target file, as opposed to a method
+    # creating it below.  We remove only what we created.
+    hadTarget:= IsBound( opt.target ) and IsString( opt.target ) and
+                IsExistingFile( opt.target );
+
     # Run over the methods.
     errors:= [];
     for r in Download_Methods do
@@ -305,10 +303,12 @@ InstallMethod( Download,
         fi;
         # A failed method may have left a partial or bogus target file behind.
         # Remove it here, so that the guarantee holds for every method,
-        # including ones added to 'Download_Methods' from outside -- but not
-        # when resuming, where the partial file is the whole point.
-        if IsBound( opt.target ) and IsString( opt.target ) and
+        # including ones added to 'Download_Methods' from outside.  Two
+        # files are not ours to delete: one the caller brought, and the
+        # partial one that a resumed download continues from.
+        if not hadTarget and
            not ( IsBound( opt.resume ) and opt.resume = true ) and
+           IsBound( opt.target ) and IsString( opt.target ) and
            IsExistingFile( opt.target ) then
           RemoveFile( opt.target );
         fi;
