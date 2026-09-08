@@ -4,7 +4,7 @@
 ##
 
 BindGlobal( "UTILS_HandleHTTPTestRequest", function( listener, socket )
-  local connection, line, parts, uri, body, status, location;
+  local connection, line, parts, uri, body, status, location, range, from;
 
   IO_close( listener );
   connection:= IO_WrapFD( socket, IO.DefaultBufSize, IO.DefaultBufSize );
@@ -16,8 +16,12 @@ BindGlobal( "UTILS_HandleHTTPTestRequest", function( listener, socket )
   fi;
   uri:= parts[2];
 
+  range:= fail;
   repeat
     line:= IO_ReadLine( connection );
+    if IsString( line ) and StartsWith( LowercaseString( line ), "range:" ) then
+      range:= line;
+    fi;
   until line = fail or line = "" or line = "\n" or line = "\r\n";
 
   body:= "download test response\n";
@@ -32,6 +36,27 @@ BindGlobal( "UTILS_HandleHTTPTestRequest", function( listener, socket )
     body:= "";
     status:= "302 Found";
     location:= "Location: /success\r\n";
+  elif StartsWith( uri, "/resumable" ) then
+    # Answer a 'Range: bytes=N-' request with the remainder, but in upper
+    # case, so that a test can tell a resumed download from a restarted one.
+    body:= "abcdefghijklmnopqrst";
+    if range <> fail then
+      from:= Int( Filtered( range, c -> c in "0123456789" ) );
+      if from <> fail and 0 < from and from < Length( body ) then
+        IO_Write( connection,
+            "HTTP/1.1 206 Partial Content\r\n",
+            "Content-Type: text/plain\r\n",
+            "Content-Range: bytes ", String( from ), "-",
+                String( Length( body ) - 1 ), "/", String( Length( body ) ),
+                "\r\n",
+            "Content-Length: ", String( Length( body ) - from ), "\r\n",
+            "Connection: close\r\n\r\n",
+            UppercaseString( body{ [ from+1 .. Length( body ) ] } ) );
+        IO_Flush( connection );
+        IO_Close( connection );
+        IO_exit( 0 );
+      fi;
+    fi;
   fi;
 
   IO_Write( connection,

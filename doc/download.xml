@@ -69,7 +69,28 @@ The following components are supported.
   and the function writes the downloaded contents to this file;
   the returned record does not have a <C>result</C> component in this case.
   <P/>
-  If the download fails then this file is not left behind.
+  If the download fails then this file is not left behind,
+  unless <C>resume</C> is set.
+</Item>
+<Mark><C>resume</C></Mark>
+<Item>
+  If this component is bound and has the value <K>true</K>,
+  and <C>target</C> is given,
+  then a partially downloaded file is continued rather than fetched again,
+  and it is kept if the download fails again.
+  <P/>
+  Methods that cannot resume decline the request, since they would discard
+  the partial file that a method which can resume needs; currently the
+  methods based on the external programs <C>curl</C> and <C>wget</C> resume.
+  If none is available the download fails, and the caller can retry without
+  <C>resume</C>.
+  <P/>
+  It is the caller's responsibility that an existing <C>target</C> really is
+  a prefix of what <A>url</A> delivers; otherwise the two get concatenated.
+  <P/>
+  If the server does not support range requests then no data is lost:
+  <C>wget</C> fetches the file again from the start, and <C>curl</C> fails
+  and leaves the partial file alone.
 </Item>
 <Mark><C>verifyCert</C></Mark>
 <Item>
