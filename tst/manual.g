@@ -1,0 +1,24 @@
+##  utils.g
+LoadPackage("utils");
+Print( "running utils01.tst\n" );
+Test( "tst/utils01.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils02.tst\n" );
+Test( "tst/utils02.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils03.tst\n" );
+Test( "tst/utils03.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils04.tst\n" );
+Test( "tst/utils04.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils05.tst\n" );
+Test( "tst/utils05.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils06.tst\n" );
+Test( "tst/utils06.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils07.tst\n" );
+Test( "tst/utils07.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils08.tst\n" );
+Test( "tst/utils08.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils09.tst\n" );
+Test( "tst/utils09.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils10.tst\n" );
+Test( "tst/utils10.tst", rec(compareFunction := "uptowhitespace") ); 
+Print( "running utils11.tst\n" );
+Test( "tst/utils11.tst", rec(compareFunction := "uptowhitespace") ); 

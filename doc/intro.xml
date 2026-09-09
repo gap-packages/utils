@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  intro.xml            Utils documentation            Chris Wensley  -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2018, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2026, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -78,8 +78,16 @@ may be rebuilt as follows:
 gap> ReadPackage( "utils", "makedoc.g" ); 
 ]]></Log>
 <P/>
-It is possible to check that the package has been installed correctly
-by running the test files (which terminates the &GAP; session): 
+
+This package now uses the <Package>AutoDoc</Package> package
+to extract test files from the examples in the manual.
+Many of the original test files,
+which duplicated these examples, have now been deleted.
+The user can ensure that the full set of test files exists on their system
+by rebuilding the manual, as described above.
+<P/>
+It is then possible to check that the package has been installed correctly
+by running the test suite (this terminates the &GAP; session): 
 <P/>
 <Log><![CDATA[
 gap> ReadPackage( "utils", "tst/testall.g" );

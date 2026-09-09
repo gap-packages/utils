@@ -1,5 +1,10 @@
 # CHANGES log for the 'Utils' package
 
+## Version 0.99 for GAP 4.16.1 (09/09/26)
+ * (09/09/26) since now using AutoDoc to extract tests from the manual,
+              many of the original tests are no longer needed, so removed.
+ * (08/09/26) extensive changes to the Download function
+
 ## Version 0.98 for GAP 4.16.0 (04/08/26)
  * (04/08/26) changed Fitting series examples to just show StructureDescription
 

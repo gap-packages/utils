@@ -2,7 +2,7 @@
 <!--                                                                     -->
 <!--  iterator.xml          Utils documentation                          -->
 <!--                                                                     -->
-<!--  Copyright (C) 2015-2019, The GAP Group                             --> 
+<!--  Copyright (C) 2015-2026, The GAP Group                             --> 
 <!--                                                                     -->
 <!-- ------------------------------------------------------------------- -->
 
@@ -54,6 +54,11 @@ gap> AllIsomorphisms( G, s3 );
 gap> iter := AllIsomorphismsIterator( G, s3 );;
 gap> for h in iter do Print( ImageElm( h, G.1 ) = (6,7), ", " ); od;
 true, false, false, true, false, false,
+gap> s4 := Group( (1,2),(2,3),(3,4) );;
+gap> AllIsomorphismsNumber( s3, s4 );
+0
+gap> AllIsomorphisms( s3, s4 );
+[ ]
 ]]></Example>
 </Description>
 </ManSection>
@@ -154,6 +159,24 @@ gap> pairs4 := UnorderedPairsIterator(iter4);
 gap> NextIterator( pairs4 );
 [ 4, 4 ]
 gap> IsDoneIterator( pairs4 );
+true
+]]></Example>
+
+Some trivial cases:
+<Example><![CDATA[
+gap> iter0 := IteratorList( [ ] );;
+gap> iter4 := IteratorList( [ 4 ] );; 
+gap> cart := CartesianIterator( iter0, iter0 );;
+gap> IsDoneIterator( cart );
+true
+gap> cart := CartesianIterator( iter0, iter4 );;
+gap> IsDoneIterator( cart );
+true
+gap> cart := CartesianIterator( iter4, iter0 );;
+gap> IsDoneIterator( cart );
+true
+gap> pairs0 := UnorderedPairsIterator( iter0 );;
+gap> IsDoneIterator( pairs0 );
 true
 ]]></Example>
 </Description>
