@@ -38,7 +38,7 @@ Persons := [
     IsAuthor      := true,
     IsMaintainer  := false,
     Email         := "mhorn@rptu.de",
-    WWWHome       := "https://github.com/mhorn",
+    WWWHome       := "https://www.quendi.de/math",
   ),
   rec(
     LastName      := "Hulpke",
